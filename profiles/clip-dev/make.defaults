@@ -1,0 +1,105 @@
+# We can't source /etc/clip-build.conf !
+# TODO: ln -s /.../clip-int /opt/clip-int
+
+CLIP_BASE="/opt/clip-int"
+
+# TODO: copy VIDEO_CARDS and INPUT_DEVICES in your /etc/make.conf
+INPUT_DEVICES="keyboard mouse"
+
+PORTDIR="${CLIP_BASE}/portage"
+DISTDIR="${CLIP_BASE}/distfiles-dev"
+
+GENTOO_MIRRORS="file://${CLIP_BASE}/distfiles-dev file://${CLIP_BASE}/distfiles file://${CLIP_BASE}/distfiles-extra-dev file://${CLIP_BASE}/distfiles-extra"
+FETCHCOMMAND="/usr/lib/portage/bin/clip-fetch \${URI} \${DISTDIR}/\${FILE}"
+RESUMECOMMAND="/usr/lib/portage/bin/clip-fetch \${URI} \${DISTDIR}/\${FILE}"
+
+MAKEOPTS="-j3"
+
+PKGDIR="/var/cache/packages"
+
+USE="
+alsa
+berkdb
+bitmap-fonts
+bzip2
+cairo
+caps
+clip-devstation
+clip-domains
+clip-tcb
+cracklib
+crypt
+cups
+cxx
+dbus
+erandom
+fts3
+-gdbm
+gif
+glibc-omitfp
+gstreamer
+gtk
+hardened
+iconv
+icu
+inotify
+introspection
+jpeg
+kde
+-kdeenablefinal
+kdehiddenvisibility
+lcms
+ldap
+libnotify
+midi
+minizip
+multislot
+ncurses
+nls
+nptl
+nptlonly
+ogg
+opengl
+openmp
+-orc
+pam
+pax_kernel
+pcsclite
+pic
+png
+-policykit
+pulseaudio
+qt
+qt3support
+qt4
+readline
+redland
+samba
+semantic-desktop
+sqlite
+ssl
+startup-notification
+svg
+system-cairo
+system-icu
+system-jpeg
+system-sqlite
+thread
+threads
+tiff
+truetype
+truetype-fonts
+-udev
+unicode
+urandom
+-uuid
+X
+xcb
+xml
+xorg
+-zeroconf
+zlib
+"
+LINGUAS="fr fr_FR fr-FR"
+
+# vim: set syntax=sh:

@@ -1,0 +1,22 @@
+# ChangeLog for dev-db/sqlcipher
+
+*sqlcipher-2.2.1-r2 (07 Mar 2016)
+
+  07 Mar 2016; Thomas Letan <clipos@ssi.gouv.fr>
+  +sqlcipher-2.2.1-r2.ebuild, -sqlcipher-2.2.1-r1.ebuild:
+  app-clip/fdp is a compilation dependency for clip-devstation
+
+  01 Dec 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  sqlcipher-2.2.1-r1.ebuild:
+  Add (masked) amd64 keyword.
+
+*sqlcipher-2.2.1-r1 (06 Dec 2013)
+
+  06 Dec 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +sqlcipher-2.2.1-r1.ebuild, -sqlcipher-2.2.1.ebuild,
+  +files/sqlcipher-2.2.1-clip-fdp.patch:
+  Add FDP support for clip.
+
+  06 Dec 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +sqlcipher-2.2.1.ebuild:
+  Initial import - SQLite 3.7.17 fork.

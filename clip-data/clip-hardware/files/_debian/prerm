@@ -1,0 +1,7 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+rc-update del hwconfig nonetwork \
+	|| echo " ! Failed to remove hwconfig init script !" >&2
+

@@ -1,0 +1,11 @@
+# TODO: copy VIDEO_CARDS and INPUT_DEVICES in your /etc/make.conf
+VIDEO_CARDS="fbdev"
+
+CFLAGS="${CFLAGS} -O2 -pipe -fomit-frame-pointer -march=armv7-a -mcpu=cortex-a9 -mfloat-abi=hard -mfpu=vfpv3-d16"
+CXXFLAGS="${CFLAGS}"
+
+#openmp is buggy in arm compiler
+USE="
+-cups
+-openmp
+"

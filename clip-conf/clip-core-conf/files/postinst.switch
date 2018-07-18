@@ -1,0 +1,100 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+
+MODS="/etc/modules"
+ARGS="/etc/bootargs"
+OUTPUT="/etc/core/machine"
+
+UMASK="$(umask)"
+
+umask 022
+
+get_machine() {
+	if grep -q "b44" "${MODS}"; then
+		echo "DELL_Latitude_D520" > "${OUTPUT}"
+		return 0
+	fi
+
+	if grep -q "sky2" "${MODS}"; then
+		echo "TOSHIBA_SatellitePro_U400" > "${OUTPUT}"
+		return 0
+	fi
+
+	if grep -q "e1000e" "${MODS}"; then
+		if grep -q "1280" "${ARGS}"; then
+			echo "DELL_Latitude_E4300" > "${OUTPUT}"
+			return 0
+		else
+			echo "LENOVO_Thinkpad_X61" > "${OUTPUT}"
+			return 0
+		fi
+	fi
+
+	if grep -q "tg3" "${MODS}"; then
+		if grep -q "iwlagn" "${MODS}"; then
+			echo "DELL_Latitude_E5500" > "${OUTPUT}"
+			return 0
+		fi
+		if grep -q "b43" "${MODS}"; then
+			echo "DELL_Latitude_D430" > "${OUTPUT}"
+			return 0
+		fi
+		if grep -q "iwl3945" "${MODS}"; then
+			if grep -q "1280" "${ARGS}"; then
+				echo "DELL_Latitude_D420" > "${OUTPUT}"
+				return 0
+			else 
+				echo "DELL_Latitude_D530" > "${OUTPUT}"
+				return 0
+			fi
+		fi
+	fi
+
+	echo "! Unrecognized hardware configuration" >&2
+	return 1
+}
+
+write_version() {
+	[[ -e "/boot/extlinux.conf" ]] || return 0
+
+	local currentfile=""
+
+	if [[ -L "/boot/extlinux.conf" ]]; then
+		 currentfile="$(readlink "/boot/extlinux.conf")"
+	else
+		 local _cur="$(cat "/boot/extlinux.conf")"
+		 currentfile=${_cur#include }
+	fi
+
+	case ${currentfile} in
+		extlinux_5.conf)
+			oldfile="extlinux_10.conf"
+			;;
+		extlinux_10.conf)
+			oldfile="extlinux_5.conf"
+			;;
+		*)
+			echo " ! Unsupported bootloader config : ${currentfile} !" >&2
+			return 0
+			;;
+	esac
+
+	# Note : inverted : current oldfile will be next currentfile...
+	sed -i -e "s:CLIP, version courante.*:CLIP, version courante (COREVERSION):" \
+		"/boot/${oldfile}" || echo " ! Failed to update ${oldfile} !" >&2
+
+	sed -i -e "s:CLIP, version precedente.*:CLIP, version precedente (COREVERSION):" \
+		"/boot/${currentfile}" || echo " ! Failed to update ${currentfile} !" >&2
+
+	return 0
+}
+
+if [[ ! -f "${OUTPUT}" ]]; then
+	get_machine || /bin/true
+fi
+
+umask "${UMASK}"
+
+write_version

@@ -1,0 +1,21 @@
+# ChangeLog for <sys-apps>/<baselayout-audit>
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  -baselayout-audit-1.0.ebuild:
+  Remove stale ebuild.
+
+*baselayout-audit-1.0.1 (16 Jul 2007)
+
+  16 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-audit-1.0.1.ebuild:
+  Create /etc symlinks and mountpoints with views.eclass. This
+  is not strictly needed, but I'd rather keep that part of the 
+  views uniform...
+
+*baselayout-audit-1.0 (25 Jun 2007)
+
+  25 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-audit-1.0.ebuild:
+  Initial import. Almost nothing in there, since most of the 
+  stuff that matters is either in the priv part or the update
+  view itself.

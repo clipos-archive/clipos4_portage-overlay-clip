@@ -1,0 +1,31 @@
+#!/bin/sh
+# Copyright 2013 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+SMARTCARDS_ADMIN_CONF_FILE="/etc/admin/conf.d/smartcards"
+
+source "/etc/conf.d/clip"
+
+source /lib/clip/import.sub
+
+import_conf_noerr "${SMARTCARDS_ADMIN_CONF_FILE}" '^[- _a-zA-Z0-9]*' PKCS11_AUTH_LABEL 2> /dev/null
+import_conf_noerr "${SMARTCARDS_ADMIN_CONF_FILE}" '^[- _a-zA-Z0-9]*' PKCS11_DISK_LABEL 2> /dev/null
+
+if [[ -z "${PKCS11_AUTH_LABEL}" ]] ; then
+	PKCS11_AUTH_LABEL=clip_auth
+fi
+
+if [[ -z "${PKCS11_DISK_LABEL}" ]] ; then
+	PKCS11_DISK_LABEL=clip_disk
+fi
+
+
+JAILS="$(echo "${CLIP_JAILS}" | tr '[a-z]' '[A-Z]' | sed -e 's/RM_/-/g')"
+start-stop-daemon --start \
+	-x /usr/sbin/userd \
+		-- ${JAILS} \
+		-s admin:/mounts/admin_priv/var/run/userd \
+		-s user:/mounts/user_priv/var/run/userd \
+		-a "${PKCS11_AUTH_LABEL}" \
+		-e "${PKCS11_DISK_LABEL}" 1>/dev/null

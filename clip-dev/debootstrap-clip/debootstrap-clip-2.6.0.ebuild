@@ -1,0 +1,19 @@
+# Copyright © 2007-2018 ANSSI. All Rights Reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="Debian bootstrap scripts for clip"
+SLOT="0"
+LICENSE="LGPL-2.1+"
+KEYWORDS="x86 ~amd64"
+SRC_URI="mirror://clip/${P}.tar.xz"
+RDEPEND=">=dev-util/debootstrap-1.0.42"
+IUSE=""
+
+src_install() {
+	einfo "Installing CLIP specific scripts"
+	dodir /usr/lib/debootstrap/scripts
+	insinto /usr/lib/debootstrap/scripts
+	for script in "${S}/scripts/"*; do
+		doins "${script}" 
+	done
+}

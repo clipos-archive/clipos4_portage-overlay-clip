@@ -1,0 +1,11 @@
+--- apt-0.8.15.2/methods/makefile.orig	2015-12-15 09:31:56.586799009 +0100
++++ apt-0.8.15.2/methods/makefile	2015-12-15 09:32:06.714521701 +0100
+@@ -53,7 +53,7 @@
+ 
+ # The https method
+ PROGRAM=https
+-SLIBS = -lapt-pkg -lcurl $(INTLLIBS)
++SLIBS = -lapt-pkg -lcurl $(INTLLIBS) -Wl,--no-as-needed -pthread
+ LIB_MAKES = apt-pkg/makefile
+ SOURCE = https.cc
+ include $(PROGRAM_H)

@@ -1,0 +1,23 @@
+# CLIP ChangeLog for www-plugins/script-safe
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  script-safe-1.0.6.16.ebuild:
+  Add amd64 keyword.
+
+*script-safe-1.0.6.16 (01 Apr 2014)
+
+  01 Apr 2014; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +script-safe-1.0.6.16.ebuild, -script-safe-1.0.6.13-r1.ebuild:
+
+*script-safe-1.0.6.13-r1 (28 Mar 2013)
+
+  28 Mar 2013; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +script-safe-1.0.6.13-r1.ebuild, -script-safe-1.0.6.13.ebuild,
+  +file/script-safe-no-sync-popup.patch:
+  Add a patch to remove the settings sync popup at first extension start.
+
+*script-safe-1.0.6.13 (15 Mar 2013)
+
+  15 mar 2012; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +script-safe-1.0.6.13.ebuild:
+  Initial import from Google Chrome WebStore.

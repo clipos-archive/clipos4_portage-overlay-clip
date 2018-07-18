@@ -1,0 +1,18 @@
+# ChangeLog for <app-clip>/<clip-update-user-data>
+
+  12 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  clip-update-user-data-1.0.1.ebuild:
+  Add amd64 keyword.
+
+*clip-update-user-data-1.0.1 (12 Oct 2009)
+
+  12 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-update-user-data-1.0.1.ebuild, -clip-update-user-data-1.0.ebuild:
+  Remove env-clearing call that crashes busybox and does not serve any 
+  purpose. Log to ${HOME}/.data-update.log, and clear it on each run.
+
+*clip-update-user-data-1.0 (08 Oct 2007)
+
+  08 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-update-user-data-1.0.ebuild:
+  Initial import.

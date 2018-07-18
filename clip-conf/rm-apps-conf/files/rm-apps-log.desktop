@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=RM APPS ChangeLog
+Name[fr]=Derniers changements RM-APPS
+Comment=Show last changes to RM applications
+Comment[fr]=Afficher les derniers changements des applications RM
+Exec=konqueror /usr/local/etc/rm-apps-release.html
+Icon=help_index
+Terminal=false
+Type=Application
+StartupNotify=false
+

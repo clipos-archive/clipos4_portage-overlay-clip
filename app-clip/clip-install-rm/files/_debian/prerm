@@ -1,0 +1,13 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+# Remove clip_install from the crontab
+/bin/grep -v clip_install /etc/cron/crontab/root > /etc/cron/crontab/root.new
+/bin/mv /etc/cron/crontab/root.new /etc/cron/crontab/root
+
+if [ `/bin/ls -s /etc/cron/crontab/root | /bin/awk '{print $1}'` -eq 0 ]
+then
+        # File root is empty
+	/bin/rm /etc/cron/crontab/root 
+fi

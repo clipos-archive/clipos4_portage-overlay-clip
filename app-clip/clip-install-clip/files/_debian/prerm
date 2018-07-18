@@ -1,0 +1,29 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+# Remove clip_core_install launch at boot
+/sbin/rc-update -d clip_core_install
+# Remove clip_apps_install launch at boot
+/sbin/rc-update -d clip_apps_install
+
+# Remove rm_core_install launch at boot
+if [ -f /etc/init.d/rm_core_install ]
+then
+	/sbin/rc-update -d rm_core_install
+fi
+# Remove rm_apps_install launch at boot
+if [ -f /etc/init.d/rm_apps_install ]
+then
+	/sbin/rc-update -d rm_apps_install
+fi
+
+# Remove clip_install from the crontab
+/bin/grep -v clip_install /update_root/etc/cron/crontab/root > /update_root/etc/cron/crontab/root.new
+/bin/mv /update_root/etc/cron/crontab/root.new /update_root/etc/cron/crontab/root
+
+if [ `/bin/ls -s /update_root/etc/cron/crontab/root | /bin/awk '{print $1}'` -eq 0 ]
+then
+	# File root is empty
+	/bin/rm /update_root/etc/cron/crontab/root
+fi

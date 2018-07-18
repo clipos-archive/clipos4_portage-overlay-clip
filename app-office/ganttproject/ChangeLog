@@ -1,0 +1,81 @@
+# CLIP ChangeLog for app-office/ganttproject
+
+  15 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +ganttproject-2.6.ebuild, -ganttproject-2.5.4.ebuild:
+  Add (masked) amd64 keyword.
+
+*ganttproject-2.6 (26 Nov 2012)
+
+  26 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.6.ebuild, -ganttproject-2.5.4.ebuild:
+  Bump to latest.
+
+*ganttproject-2.5.4 (07 Aug 2012)
+
+  07 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.5.4.ebuild, -ganttproject-2.5.1-r1.ebuild:
+  Bump to latest.
+
+*ganttproject-2.5.1-r1 (10 Jul 2012)
+
+  10 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.5.1-r1.ebuild, -ganttproject-2.5.1.ebuild:
+  Fix distfile.
+
+*ganttproject-2.5.1 (20 Apr 2012)
+
+  20 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.5.1.ebuild, -ganttproject-2.4.90.ebuild:
+  Bump to latest, force rebuild with CATEGORY_FR.
+
+*ganttproject-2.4.90 (13 Feb 2012)
+
+  13 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.4.90.ebuild, -ganttproject-2.0.10-r3.ebuild:
+  Bump to ganttproject-2.5-rc1
+
+*ganttproject-2.0.10-r3 (19 Aug 2011)
+
+  19 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.0.10-r3.ebuild, -ganttproject-2.0.10-r2.ebuild,
+  files/gantt.sh, +files/ganttproject.xml, 
+  files/ganttproject.desktop, +files/_debian/{postinst,postrm}:
+  Restore GTK+ theme, now that cairo issues have been resolved.
+  Add proper mime type for ganttproject files.
+
+*ganttproject-2.0.10-r2 (13 Apr 2011)
+
+  13 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.0.10-r2.ebuild, -ganttproject-2.0.10-r1.ebuild,
+  files/gantt.sh:
+  Disable GTK+ theme for now.
+
+*ganttproject-2.0.10-r1 (20 Jan 2011)
+
+  20 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.0.10-r1.ebuild, -ganttproject-2.0.10.ebuild,
+  files/gantt.sh:
+  Force GTK+ swing theme.
+
+*ganttproject-2.0.10 (22 Oct 2009)
+
+  22 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.0.10.ebuild, -ganttproject-2.0.9.ebuild:
+  Bump to latest.
+
+  20 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  ganttproject-2.0.9.ebuild:
+  Added DESCRIPTION_FR.
+
+*ganttproject-2.0.9 (10 Jul 2009)
+
+  10 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ganttproject-2.0.9.ebuild, -ganttproject-2.0.7.ebuild:
+  Bump to latest.
+
+*ganttproject-2.0.7 (29 Sep 2008)
+
+  29 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  ganttproject-2.0.7.ebuild, files/ganttproject.desktop, 
+  files/ganttproject.png:
+  Initial portage import.

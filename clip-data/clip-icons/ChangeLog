@@ -1,0 +1,120 @@
+# CLIP ChangeLog for x11-misc/adeskbar
+
+*clip-icons-1.0.18 (05 Sep 2014)
+
+  05 Sep 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.18.ebuild, -clip-icons-1.0.17.ebuild:
+  Add new icons for np-dr1 and np-dr2 (toggle-like icons).
+
+*clip-icons-1.0.17 (08 Jul 2014)
+
+  08 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.17.ebuild, -clip-icons-1.0.16.ebuild:
+  Add new icon set for rmh, rmb (toggle-like icons).
+  Add utilities-log-viewer icon.
+
+*clip-icons-1.0.16 (22 Apr 2013)
+
+  22 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.16.ebuild, -clip-icons-1.0.15.ebuild:
+  Add system-suspend icon.
+
+*clip-icons-1.0.14 (22 Feb 2013)
+
+  22 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.14.ebuild, -clip-icons-1.0.13.ebuild:
+  Change rmh, rmb icons.
+
+*clip-icons-1.0.13 (21 Feb 2013)
+
+  21 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.13.ebuild, -clip-icons-1.0.12.ebuild:
+  Add erase. Update keygen.
+
+*clip-icons-1.0.12 (05 Feb 2013)
+
+  05 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.12.ebuild, -clip-icons-1.0.11.ebuild:
+  Add new battery-charged icon by Florent Chabaud (#794 on
+  CLIP-test bugzilla).
+
+*clip-icons-1.0.11 (03 Jan 2013)
+
+  03 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.11.ebuild, -clip-icons-1.0.10.ebuild:
+  Add new network status icons, by Florent Chabaud (#339 on
+  CLIP-test bugzilla).
+
+*clip-icons-1.0.10 (12 Oct 2012)
+
+  12 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.10.ebuild, -clip-icons-1.0.9.ebuild:
+  Add webcam32 and keyboard icons.
+
+*clip-icons-1.0.9 (07 Sep 2012)
+
+  07 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.9.ebuild, -clip-icons-1.0.8-r1.ebuild:
+  Add computer-{server,desktop,tablet} icons.
+
+*clip-icons-1.0.8-r1 (02 Apr 2012)
+
+  02 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.8-r1.ebuild, -clip-icons-1.0.8.ebuild:
+  Force rebuild
+
+*clip-icons-1.0.8 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.8.ebuild, -clip-icons-1.0.7.ebuild:
+  Add a couple icons for clip-install-gui.
+
+*clip-icons-1.0.7 (28 Dec 2011)
+
+  28 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.7.ebuild, -clip-icons-1.0.6.ebuild:
+  Add a few more icons for clip-config.
+
+*clip-icons-1.0.6 (07 Nov 2011)
+
+  07 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.6.ebuild, -clip-icons-1.0.5.ebuild:
+  Add 'h' and 'b' level incons (same spirit but more generic
+  than the 'dr' and 'np' icons).
+
+*clip-icons-1.0.5 (03 Nov 2011)
+
+  03 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.5.ebuild, -clip-icons-1.0.4.ebuild:
+  Add a bunch of icons from fbpanel-clip.
+
+*clip-icons-1.0.4 (19 Jul 2011)
+
+  19 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.4.ebuild, -clip-icons-1.0.3.ebuild:
+  Change password, cdrom*, clock, usb*.
+  Add update and touchpad icons.
+
+*clip-icons-1.0.3 (11 Jul 2011)
+
+  11 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.3.ebuild, -clip-icons-1.0.2.ebuild:
+  Add level-{dr,np} icons.
+
+*clip-icons-1.0.2 (12 Apr 2011)
+
+  12 Apr 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.2.ebuild, -clip-icons-1.0.1.ebuild:
+  Add vpn-off icon.
+
+*clip-icons-1.0.1 (23 Mar 2011)
+
+  23 Mar 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-icons-1.0.1.ebuild, -clip-icons-1.0.0.ebuild:
+  Add battery, security and network icons.
+
+*clip-icons-1.0.0 (17 Feb 2011)
+
+  17 Feb 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-icons-1.0.0.ebuild:
+  Initial import from clip-fbpanel.

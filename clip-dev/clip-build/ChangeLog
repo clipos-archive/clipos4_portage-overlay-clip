@@ -1,0 +1,329 @@
+# ChangeLog for <clip-dev>/<clip-build>
+
+*clip-build-2.1.4 (13 Apr 2016)
+
+  13 Apr 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-build-2.1.4.ebuild, -clip-build-2.1.3.ebuild:
+  Add --newuse to emerge made by clip-build.
+
+*clip-build-2.1.3 (22 Mar 2016)
+
+  22 Mar 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-build-2.1.3.ebuild, -clip-build-2.1.2.ebuild:
+  Do not include environment variables form specfiles for dependencies
+  installations.
+
+*clip-build-2.1.2 (24 Feb 2016)
+
+  24 Feb 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-build-2.1.2.ebuild, -clip-build-2.1.1.ebuild:
+  Revert previously introduced CLIP_SPEC_INCLUDE.
+
+*clip-build-2.1.1 (23 Feb 2016)
+
+  23 Feb 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-build-2.1.1.ebuild, -clip-build-2.1.0.ebuild:
+  Introduce CLIP_SPEC_INCLUDE variable in clip-build.conf
+  for clip-bare.
+
+*clip-build-2.1.0 (19 Feb 2016)
+
+  19 Feb 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-build-2.1.0.ebuild, -clip-build-2.0.12-r1.ebuild:
+  Migrate from clip-tiny to clip-bare.
+  Support new distfiles layout.
+
+*clip-build-2.0.12-r1 (16 Feb 2016)
+
+  16 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-build-2.0.12-r1.ebuild, -clip-build-2.0.12.ebuild:
+  Set CLIP_ARCH to amd64 instead of x86_64.
+
+*clip-build-2.0.12 (20 Mar 2014)
+
+  20 Mar 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-build-2.0.12.ebuild, -clip-build-2.0.11.ebuild:
+  Fix XML parsing error in clip-build.
+  Add support of clip-tiny.
+
+*clip-build-2.0.11 (23 Dec 2013)
+
+  23 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.11.ebuild, -clip-build-2.0.10.ebuild:
+  Fix warnings with perl 5.16.
+
+*clip-build-2.0.10 (22 Oct 2013)
+
+  22 Oct 2013; ANSSI <clipos@ssi.gouv.fr>
+  +clip-build-2.0.10.ebuild, -clip-build-2.0.9.ebuild:
+  Add support for other arch - add CLIP_ARCH_x86|arm definition.
+
+*clip-build-2.0.9 (16 Oct 2013)
+
+  16 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.9.ebuild, -clip-build-2.0.8.ebuild:
+  Update default clip-build.conf - add {DEV,CTRL}_CHECK_KEY
+  definitions.
+
+*clip-build-2.0.8 (05 Aug 2013)
+
+  05 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.8.ebuild, -clip-build-2.0.7.ebuild:
+  Change clip-build profile to clip-dev when running with 
+  --depends.
+
+*clip-build-2.0.7 (11 Jul 2013)
+
+  11 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.7.ebuild, -clip-build-2.0.6-r1.ebuild:
+  Default to portage-overlay-clip/profiles as profile base 
+  directory in clip-compile.
+
+*clip-build-2.0.6-r1 (28 Jan 2013)
+
+  28 Jan 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-build-2.0.6-r1.ebuild, -clip-build-2.0.6.ebuild:
+  Don't put ${ROOT} in symlinks target.
+
+*clip-build-2.0.6 (30 Nov 2012)
+
+  30 Nov 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-build-2.0.6.ebuild, -clip-build-2.0.5-r1.ebuild:
+  Fix pkgdir, set default jobs number.
+
+*clip-build-2.0.5-r1 (28 Nov 2012)
+
+  28 Nov 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-build-2.0.5-r1.ebuild, -clip-build-2.0.5.ebuild:
+  Make sure ${ROOT}/usr/local exists before making the symlinks.
+
+  31 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-build-2.0.5.ebuild:
+  Create symlinks from /usr/local dirs to /usr dirs in postinst.
+
+*clip-build-2.0.5 (20 May 2011)
+
+  20 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.5.ebuild, -clip-build-2.0.4.ebuild:
+  Add '-u' emerge option when build DEPENDS to avoid useless
+  rebuilds.
+
+*clip-build-2.0.4 (16 May 2011)
+
+  16 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.4.ebuild, -clip-build-2.0.3.ebuild:
+  Improvements for clip-compile --depends : 
+   - use only DEPENDs, not {R,P}DEPENDs, for depgraph.
+   - mask out clip-core and clip-rm USE flags.
+   - support per-spec <provided/>
+
+*clip-build-2.0.3 (04 Jan 2011)
+
+  04 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.3.ebuild, -clip-build-2.0.2.ebuild:
+  Concatenate per-pkg options with global options before passing
+  them through the environment.
+
+*clip-build-2.0.2 (28 Jul 2010)
+
+  28 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.2.ebuild, -clip-build-2.0.1.ebuild:
+  Move settings from make.skel into clip-build.conf, use temporary
+  make.skel only. This simplifies configuration and allows a 
+  proper management of DISTDIR (different when building for clip
+  or clip-devstation).
+
+*clip-build-2.0.1 (21 Jul 2010)
+
+  21 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.1.ebuild, -clip-build-2.0.0.ebuild:
+  Oops, fix typo in debs path in clip-compile.
+
+*clip-build-2.0.0 (21 Jul 2010)
+
+  21 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-2.0.0.ebuild, -clip-build-1.0.22.ebuild:
+  Big revamp of build tools:
+   - local settings are regrouped in /etc/clip-build.conf
+   - clip-spec-annotate is no longer needed, instead a utility
+   called clip-specpp is automatically called by clip-build, 
+   doing the same work as spec-annotate + running the C preprocessor
+   on the spec
+   - clip-build now supports emerging build depends on the build
+   host based on a spec file
+   - new simple wrapper for clip-build : clip-compile - should
+   replace all homegrown core.sh / rm.sh / ... 
+
+*clip-build-1.0.22 (02 Sep 2009)
+
+  02 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.22.ebuild, -clip-build-1.0.21.ebuild:
+  Smallish changes to the way we call emerge, which is a lot
+  less complacent in portage-2.1.6.
+
+*clip-build-1.0.21 (29 Jan 2008)
+
+  29 Jan 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-build-1.0.21.ebuild, -clip-build-1.0.18.ebuild:
+  Little changes in compile-spec (clip-build wrapper).
+
+*clip-build-1.0.18 (23 Jan 2008)
+
+  23 Jan 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-build-1.0.18.ebuild, -clip-build-1.0.17.ebuild:
+  Allow portage profiles directory to be something different from
+  /usr/portage/profiles.
+
+*clip-build-1.0.17 (21 Dec 2007)
+
+  21 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.17.ebuild, -clip-build-1.0.16.ebuild:
+  Fix previous version, which was based on an earlier version than
+  clip-build-1.0.15 => this should reimport the srcdpkg and make.skel
+  features.
+
+*clip-build-1.0.16 (19 Dec 2007)
+
+  19 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.16.ebuild, -clip-build-1.0.15.ebuild:
+  Add missing test on rollback to avoid losing /etc/portage when
+  clip-build is interrupted too early. Fix potential race condition
+  if a portage file cannot be saved.
+  
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove all ebuilds before 1.0.15.
+
+*clip-build-1.0.15 (04 Oct 2007)
+
+  04 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.15.ebuild:
+  Merge my /etc/portage fix with EADS's additions to sample config
+  files.
+  Remove util-vserver everywhere. Fix priorities in clip views :
+  everything that goes in {user,admin,audit}_root is 'Important', 
+  not 'Required'.
+
+*clip-build-1.0.14 (04 Oct 2007)
+
+  04 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.14.ebuild:
+  Import EADS changes with the following changelog. Note that 
+  clip-build-1.0.{12,13} are not imported, and 1.0.14 does not
+  have my 1.0.12's fix. Messy, isn't it ? :)
+
+	*clip-build-1.0.14 (19 Sep 2007)
+
+	  19 Sep 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  +clip-build-1.0.14.ebuild:
+	  Mesa is missing and expat has a bad priority in clip-gtw.spec.xml.
+
+	*clip-build-1.0.13 (23 Jul 2007)
+
+	  23 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  +clip-build-1.0.13.ebuild:
+	  New version due to CLIP last release
+	  Add clip-gtw.spec.xml
+
+	*clip-build-1.0.12 (12 Jul 2007)
+
+	  12 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  +clip-build-1.0.12.ebuild:
+	  New version due to CLIP last release 
+
+*clip-build-1.0.12 (25 Sep 2007)
+
+  25 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.12.ebuild:
+  Fix the annoying bug where the original /etc/portage gets removed
+  when clip-build dies before saving it to /etc/portage.perlbkp.
+
+*clip-build-1.0.11 (21 Sep 2007)
+
+  21 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.11.ebuild:
+  Bump, add support for a /etc/make.skel file that is included 
+  at the top of temporary make.conf files.
+  This can be used to locally define more options, such as 
+  GENTOO_MIRROR or MAKEOPTS.
+  Also updated example files, and switched to i686-pc-linux-gnu
+  as CHOST (instead of silly i386-*).
+
+  07 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  -clip-build-1.0.ebuild, -clip-build-1.0.[1..8].ebuild:
+  Removing deprecated ebuilds; this is getting a little cluttered.
+
+*clip-build-1.0.10 (25 Apr 2007)
+
+  25 Apr 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-build-1.0.10.ebuild:
+  Add initial support for .src.deb generation
+  packages .deb and packages .src.deb use fields according to document
+  "specification du format de paquetage rev 2"
+
+*clip-build-1.0.9 (13 Oct 2006)
+
+  13 Oct 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.9.ebuild:
+  Version bump. Smallish fix for quotes handling in en vars.
+
+*clip-build-1.0.8 (18 Sep 2006)
+
+  18 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.8.ebuild:
+  Version bump. Add -pkgkey and -pkgnames cli options, to match
+  more specific ebuild groups and ebuild names. This changes the 
+  specfile syntax a little bit, updated dtd and examples.
+
+*clip-build-1.0.7 (08 Sep 2006)
+
+  08 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.7.ebuild:
+  Version bump. Smallish fixes, copyright.
+
+*clip-build-1.0.6 (21 Jul 2006)
+
+  21 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.6.ebuild:
+  Version bump. Add initial support for .deb generation, make it
+  possible to group several packages in a <pkgname> block.
+
+*clip-build-1.0.5 (13 Jul 2006)
+
+  13 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.5.ebuild:
+  Version bump. Add support for configurable PORTDIR. Update 
+  examples.
+
+*clip-build-1.0.4 (02 May 2006)
+
+  02 May 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.4.ebuild:
+  Version bump. Improved optoverride support : merge dependencies
+  without optoverride first, then package itself with optoverride.
+
+*clip-build-1.0.3 (28 Apr 2006)
+
+  28 Apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.3.ebuild:
+  Version bump. Add virtuals override support. Update dtd and examples.
+
+*clip-build-1.0.2 (19 apr 2006)
+
+  19 Apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.2.ebuild:
+  Version bump. Fix profile logic. Add keywords support. 
+  Update examples.
+
+*clip-build-1.0.1 (12 apr 2006)
+  
+  12 apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.1.ebuild:
+  Version bump. Fix some env passing bugs, support /etc/portage 
+  files for config-specific provided|masked|unmasked packages.
+  Switched to package-side makefile. Include examples.
+
+*clip-build-1.0 (10 apr 2006)
+  
+  10 apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-build-1.0.ebuild:
+  Initial import.

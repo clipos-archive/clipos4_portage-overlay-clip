@@ -1,0 +1,108 @@
+# CLIP Changelog for x11-plugins/noscript
+
+*noscript-2.9.5.2-r1 (10 Jan 2017)
+
+  10 Jan 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +noscript-2.9.5.2-r1.ebuild, -noscript-2.9.5.2.ebuild:
+  Add nohome patch.
+
+*noscript-2.9.5.2 (05 Jan 2017)
+
+  05 Jan 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +noscript-2.9.5.2.ebuild, -noscript-2.6.9.22.ebuild:
+  Update to latest.
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  noscript-2.6.9.22.ebuild:
+  Add amd64 keyword.
+
+*noscript-2.6.9.22 (15 May 2015)
+
+  15 May 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +noscript-2.6.9.22.ebuild, -noscript-2.6.9.10.ebuild:
+  Bump to latest.
+
+*noscript-2.6.9.10 (30 Dec 2014)
+
+  30 Dec 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.6.9.10.ebuild, -noscript-2.6.8.5.ebuild:
+  Bump to latest.
+
+*noscript-2.6.8.5 (08 Nov 2013)
+
+  08 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.6.8.5.ebuild, -noscript-2.6.1.ebuild:
+  Bump to latest.
+
+*noscript-2.6.1 (21 Nov 2012)
+
+  21 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.6.1.ebuild, -noscript-2.3.5.ebuild:
+  Bump to latest.
+
+*noscript-2.3.5 (26 Mar 2012)
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.3.5.ebuild, -noscript-2.2.4.ebuild:
+  Bump to latest.
+
+*noscript-2.2.4 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.2.4.ebuild, -noscript-2.1.7.ebuild:
+  Bump to latest.
+
+*noscript-2.1.7 (25 Oct 2011)
+
+  25 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.1.7.ebuild, -noscript-2.1.2.5.ebuild:
+  Bump to latest.
+
+*noscript-2.1.2.5 (10 Aug 2011)
+
+  10 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.1.2.5.ebuild, -noscript-2.0.8.1.ebuild,
+  +files/noscript-2.1-nohomepage.patch,
+  -files/noscript-1.10-nohomepage.patch:
+  Bump to latest, migrate to new firefox home.
+
+*noscript-2.0.8.1 (22 Dec 2010)
+
+  22 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-2.0.8.1.ebuild, -noscript-1.10-r1.ebuild:
+  Bump to latest.
+
+*noscript-1.10-r1 (25 Aug 2010)
+
+  25 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  noscript-1.10-r1.ebuild:
+  Use jar_epatch.
+
+  03 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +noscript-1.10-r1.ebuild, -noscript-1.10.ebuild,
+  +files/noscript-1.10-nohomepage.patch:
+  Remove the new tab startup homepage when a new version come up.
+
+*noscript-1.10 (26 Jul 2010)
+
+  26 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-1.10.ebuild, -noscript-1.9.9.77.ebuild:
+  Bump to latest and add firefox to deps.
+
+*noscript-1.9.9.77 (17 May 2010)
+
+  17 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-1.9.9.77.ebuild, -noscript-1.9.9.45.ebuild:
+  Update to latest.
+
+*noscript-1.9.9.45 (11 Feb 2010)
+
+  11 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +noscript-1.9.9.45.ebuild, -noscript-1.9.8.4.ebuild:
+  Bump to latest, firefox 3.6 compat.
+
+*noscript-1.9.8.4 (21 Aug 2009)
+
+  21 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  noscript-1.9.8.4.ebuild:
+  Initial import.

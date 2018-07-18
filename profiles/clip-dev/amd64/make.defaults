@@ -1,0 +1,13 @@
+# TODO: copy VIDEO_CARDS and INPUT_DEVICES in your /etc/make.conf
+VIDEO_CARDS="fbdev intel nouveau radeon"
+
+# TODO: tune C*FLAGS and MAKEOPTS for your architecture in /etc/make.conf
+# FIXME: 'haswell' set by default for now, but 'broadwell' strongly recommended
+# CFLAGS="-O2 -pipe -march=broadwell -mtune=broadwell -fomit-frame-pointer -Wformat -Wformat-security"
+CFLAGS="-O2 -pipe -march=haswell -mtune=haswell -fomit-frame-pointer -Wformat -Wformat-security"
+CXXFLAGS="${CFLAGS}"
+
+ABI_X86="64 32"
+USE="-ccsd -clip-ccsd"
+
+USE="abi_x86_64 "

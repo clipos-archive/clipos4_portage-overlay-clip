@@ -1,0 +1,23 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+# Launch clip_core_install at boot
+/sbin/rc-update -a clip_core_install nonetwork
+# Launch clip_apps_install at boot
+/sbin/rc-update -a clip_apps_install default
+
+# Launch rm_core_install at boot
+if [ -f /etc/init.d/rm_core_install ]
+then
+	/sbin/rc-update -a rm_core_install default
+fi
+# Launch rm_apps_install at boot 
+if [ -f /etc/init.d/rm_apps_install ]
+then
+	/sbin/rc-update -a rm_apps_install default
+fi
+
+# Add clip_install in the crontab
+cat /update_root/etc/cron/crontab/root_clip_install_clip >> /update_root/etc/cron/crontab/root
+

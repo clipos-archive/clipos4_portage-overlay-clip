@@ -1,0 +1,64 @@
+#!/sbin/runscript
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+description="Tag /proc files for vserver visibility"
+
+depend() {
+	before sysctl
+}
+
+do_vsattr() {
+	local file="/etc/vprocunhide/${1}"
+	local attr="--${2}"
+
+	[[ -f "${file}" ]] || return 0
+	local list="$(<"${file}")"
+	local reallist=""
+	for f in ${list}; do 
+		[[ -e ${f} ]] && reallist="${reallist} ${f}"
+	done
+	[[ -z "${reallist}" ]] && return 0
+	echo "${reallist}" | xargs vsattr ${attr}
+}
+
+unhide_batteries() {
+	local list=""
+	for d in /proc/acpi/battery/BAT*; do
+		[[ -d "${d}" ]] || continue
+		list="${list} ${d} ${d}/alarm ${d}/info ${d}/state"
+	done
+	[[ -z "${list}" ]] && return 0
+	echo "${list}" | xargs vsattr '--~hide' 
+}
+
+unhide_soundcards() {
+	local b="/proc/asound"
+	local list=""
+	for f in cards devices hwdep pcm timers version; do
+		[[ -f "${b}/${f}" ]] || continue
+		list="${list} ${b}/${f}"
+	done
+	for d in ${b}/card[0-9]*; do
+		[[ -d "${d}" ]] || continue
+		list="${list} ${d}"
+		for f in ${d}/*; do
+			[[ -f "${f}" ]] || continue
+			list="${list} ${f}"
+		done
+	done
+	[[ -z "${list}" ]] && return 0
+	echo "${list}" | xargs vsattr '--~hide' 
+}
+
+start() {
+	local ret=0
+	vebegin "Fixing /proc files visibility"
+	do_vsattr none '~admin' || ret=1
+	do_vsattr watch watch || ret=1
+	do_vsattr all '~hide' || ret=1
+	unhide_batteries || ret=1
+	unhide_soundcards || ret=1
+	veend $ret
+}
+

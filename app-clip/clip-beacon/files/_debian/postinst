@@ -1,0 +1,33 @@
+#!/bin/bash
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+set -e
+
+let "minutes=${RANDOM}"
+let "minutes%=40"
+CLIP_MINS="$(( ${minutes} + 10 ))"
+
+ETC_DIR="/etc/admin/beacon"
+CRONTAB="/update_root/etc/cron/crontab/root"
+
+/bin/echo "${CLIP_MINS} * * * * /usr/bin/clip-beacon" >> "${CRONTAB}" \
+ || /bin/echo " ! Failed to add clip-beacon to crontab !" >&2
+
+# Copy sensible defaults for CA, cert/key pair and URL from those for update.
+link_default () {
+	if [ -e "$1" -a ! -e "$2" ]; then
+    # won't fail if link or plain file already exist
+		ln -s "$1" "$2" || true
+	fi
+}
+link_default /etc/admin/clip_download/private/apt.cert.pem "${ETC_DIR}/cert"
+link_default /etc/admin/clip_download/private/apt.key.pem "${ETC_DIR}/key"
+link_default /etc/admin/clip_download/cacerts "${ETC_DIR}/ca"
+
+if [ ! -e "${ETC_DIR}/url" -a -e /etc/admin/clip_download/sources.list.clip ]; then
+	sed -n 's#.*\(https://.*\)/update-v1/.*#\1/beacon#p' \
+		/etc/admin/clip_download/sources.list.clip \
+		| head -1 > "${ETC_DIR}/url"
+	chown 4000:4000 "${ETC_DIR}/url"
+fi

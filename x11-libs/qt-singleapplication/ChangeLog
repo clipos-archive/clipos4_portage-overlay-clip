@@ -1,0 +1,31 @@
+# CLIP ChangeLog for x11-libs/qt-singleapplication
+
+*qt-singleapplication-2.6-r4 (23 Jan 2014)
+
+  23 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +qt-singleapplication-2.6-r4.ebuild, -qt-singleapplication-2.6-r3.ebuild,
+  +files/qt-singleapplication-2.6-getuid.patch:
+  Fix missing getuid includes.
+
+*qt-singleapplication-2.6-r3 (05 Jul 2013)
+
+  05 Jul 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +qt-singleapplication-2.6-r3.ebuild, -qt-singleapplication-2.6-r2.ebuild:
+  Fix LDFLAGS not beeing used on build.
+
+*qt-singleapplication-2.6-r2 (23 Mar 2012)
+
+  23 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +qt-singleapplication-2.6-r2.ebuild, -qt-singleapplication-2.6-r1.ebuild:
+  Force rebuild
+
+*qt-singleapplication-2.6-r1 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +qt-singleapplication-2.6-r1.ebuild, -qt-singleapplication-2.6.ebuild:
+  Rbump to force rebuild against newer libpng.
+
+*qt-singleapplication-2.6 (25 May 2010)
+
+  25 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  Initial import.

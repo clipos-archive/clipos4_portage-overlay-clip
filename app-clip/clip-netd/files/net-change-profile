@@ -1,0 +1,31 @@
+#!/bin/sh
+
+QUIET=""
+if [[ "${1}" == "-q" ]]; then
+	QUIET="yes"
+	shift
+fi
+
+NEWPROF="${1}"
+LINK="/etc/admin/conf.d/netconf"
+
+error() {
+	echo "${1}" >&2
+	exit 1
+}
+
+[[ -n "${NEWPROF}" ]] || error "Utilisation : net-change-profile <nom du profil>"
+
+[[ -d "/etc/admin/netconf.d/${NEWPROF}" ]] || error "Profil incorrect : ${NEWPROF}"
+
+rm -f "${LINK}" || error "Impossible de supprimer le lien"
+
+ln -s "/etc/admin/netconf.d/${NEWPROF}" "${LINK}" || error "Impossible de creer le lien"
+
+if [[ -n "${QUIET}" ]]; then
+	exec netd-client -s /var/run/netd
+else
+	netd-client -s /var/run/netd || error "Impossible d'activer le nouveau profil"
+
+	echo "Profil ${NEWPROF} active"
+fi

@@ -1,0 +1,34 @@
+--- usr/share/adeskbar/plugins/digiclock.py
++++ usr/share/adeskbar/plugins/digiclock.py
+@@ -1,3 +1,4 @@
++# -*- coding: utf-8 -*-
+ # adesk : "Clock" plugin
+ 
+ import gtk
+@@ -6,6 +7,7 @@
+ import time
+ 
+ import adesk.plugin as Plg
++import adesk.core as Core
+ 
+ class Plugin(Plg.PluginContainer):
+     def __init__(self, bar, settings):
+@@ -58,10 +60,18 @@
+         if not time_current == self.time_txt:
+             self.lb_time.set_markup(time_current)
+             self.time_txt = time_current
++            namedate_current = time.strftime(self.settings['name'], now).decode('iso-8859-1')
++            self.tooltip = namedate_current
+             if self.lb_date:
+                 self.lb_date.set_markup(date_current)
+                 self.date_txt = date_current
+         return True
++        
++    def onClick(self, widget, event):
++    	if not self.settings['exec_cmd'] == '':
++    	    cmd = self.settings['exec_cmd']
++    	    Core.launch_command(cmd)
++    
+ 
+     def resize(self):
+         if self.bar.cfg['position']=='top' or self.bar.cfg['position']=='bottom':

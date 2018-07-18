@@ -1,0 +1,15 @@
+# CLIP package-specifig use flags
+
+app-clip/clip-userclt:clip-admin - build the ADMINclip version of the client, rather than the default USERclip/AUDITclip one
+app-clip/core-services:clip-x11 - include support for the X11 jail 
+app-clip/rmh-config:clip-rmh-admin - include admin functions in rmh-config
+app-clip/verictl:veriexec-guest - build verictl for a 'guest' vserver context : no init.d scripts, etc.
+clip-layout/baselayout-clip:clip-x11 - include support for the X11 jail
+sys-kernel/clip-kernel:clip-devstation - install clip kernel sources on a dev station
+sys-kernel/clip-kernel:clip-modular - build a modular kernel.
+sys-kernel/clip-kernel:clip-light - build a kernel without CLSM and IPsec.
+sys-libs/gcc-lib:clip_intl - build libintl along with libstdc++/libgcc
+media-gfx/splash-theme-clip:clip-initrd - Build and install an initrd
+net-misc/openssh:clip-ssh - do not install sshd
+net-misc/openssh:clip-sshd - install only sshd, as /sbin/sshd
+x11-base/xorg-x11:clip-x11 - Install CLIP-specific configuration files

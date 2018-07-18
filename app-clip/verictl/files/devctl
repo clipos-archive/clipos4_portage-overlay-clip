@@ -1,0 +1,117 @@
+#!/sbin/runscript
+# Copyright 2006 SGDN/DCSSI
+# Copyright 2013-2014 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+description="Activate devctl"
+
+depend() {
+	need localmount swapon
+	before reducecap
+}
+
+set_root_perms() {
+	local rootdev= bootdev=
+	rootdev="$(grep -o 'root=/dev/[^ ]*' "/proc/cmdline")"
+	rootdev="${rootdev##root=}"
+	if [[ -z "${rootdev}" ]]; then
+		ewarn "Failed to get root device"
+		return 1
+	fi
+		
+	bootdev="$(grep -o 'boot=/dev/[^ ]*' "/proc/cmdline")"
+	bootdev="${bootdev##boot=}"
+	if [[ -z "${bootdev}" ]] ; then
+		if $(echo "${rootdev}" | grep -q -E '[0-9]+p[0-9]+$') ; then
+			bootdev="$(echo "${rootdev}" | sed 's/^\(.*\)p[0-9]*$/\1/')p1"
+		else
+			bootdev="${rootdev%%[0-9]*}1"
+		fi
+	fi
+
+	local rrange=16 brange=16
+	[[ "${rootdev/hd/}" != "${rootdev}" ]] && rrange=64
+	[[ "${bootdev/hd/}" != "${bootdev}" ]] && brange=64
+
+	local -a rootstat=( $(ls -l "${rootdev}") )
+	local -a bootstat=( $(ls -l "${bootdev}") )
+	local rootmaj= rootmin= bootmaj= bootmin=
+
+	rootmaj=${rootstat[4]%,}
+	rootmin=${rootstat[5]}
+
+	bootmaj=${bootstat[4]%,}
+	bootmin=${bootstat[5]}
+
+	if [[ -z "${rootmaj}" || -z "${rootmin}" || -z "${bootmaj}" || -z "${bootmin}" ]]; then
+		ewarn "Failed to get root/boot major/minor"
+		return 1
+	fi
+
+	local rootbasemin=$(( ${rootmin} - ( ${rootmin} % ${rrange} ) ))
+	local bootbasemin=$(( ${bootmin} - ( ${bootmin} % ${brange} ) ))
+	rrange=$(( $rrange - 1 ))
+	local ret=0
+	ebegin "Marking root disk read-only"
+	# Root device and its partitions are read-only
+	devctl -c "${rootmaj} ${rootbasemin} ${rrange} 1 rdxs" || ret=1
+	# Boot device cannot be accessed at all
+	devctl -c "${bootmaj} ${bootmin} 0 2 -" || ret=1
+	# Nor can the underlying disk
+	devctl -c "${bootmaj} ${bootbasemin} 0 2 -" || ret=1
+	eend $ret
+}
+
+set_mapper_perms() {
+	local maj=0
+	local swapmin=0
+	local ret=0
+	
+	maj="$(ls -l "/dev/mapper/swap0" | awk '{print $5}')"
+	maj="${maj%,}"
+
+	if [[ -z "${maj}" ]]; then
+		ewarn "Failed to get mapper major"
+		return 1
+	fi
+	
+	local min=0
+	local maxmin=0
+
+	ebegin "Setting permissions on mapper devices"
+	for d in /dev/mapper/*; do
+		[[ -b "${d}" ]] || continue
+		
+		min="$(ls -l "${d}" | awk '{print $6}')"
+		if [[ -z "${min}" ]]; then
+			ewarn "Failed to get minor for ${d}"
+			return 1
+		fi
+
+		if [[ "${d/swap/}" != "${d}" ]]; then
+			# Swap devices are completely no-go
+			devctl -c "${maj} ${min} 0 3 -" || ret=1
+			continue
+		fi
+
+		[[ ${min} -gt ${maxmin} ]] && maxmin=${min}
+	done
+	if [[ ${maxmin} -ne 0 ]]; then
+		# Mappings already set up at this point - apart from swap -
+		# correspond to the root device and are therefore readonly
+		devctl -c "${maj} 0 ${maxmin} 2 rdxs" || ret=1
+	fi
+
+	# Generic low-priority rule : all other device-mapper devices are user
+	# data devices
+	devctl -c "${maj} 0 254 1 rw" || ret=1
+	eend $?	
+}
+
+start() {
+	local ret=0
+	set_root_perms || ret=1
+	set_mapper_perms || ret=1
+	return $ret
+}

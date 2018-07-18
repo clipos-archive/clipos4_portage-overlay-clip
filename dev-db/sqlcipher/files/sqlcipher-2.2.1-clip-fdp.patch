@@ -1,0 +1,19 @@
+--- a/src/os_unix.c
++++ b/src/os_unix.c
+@@ -122,6 +122,7 @@
+ #include <sys/types.h>
+ #include <sys/stat.h>
+ #include <fcntl.h>
++#include <fdp-client.h>
+ #include <unistd.h>
+ #include <time.h>
+ #include <sys/time.h>
+@@ -334,7 +335,7 @@ struct unixFile {
+ ** which always has the same well-defined interface.
+ */
+ static int posixOpen(const char *zFile, int flags, int mode){
+-  return open(zFile, flags, mode);
++  return fdp_open(zFile, flags, mode);
+ }
+ 
+ /*

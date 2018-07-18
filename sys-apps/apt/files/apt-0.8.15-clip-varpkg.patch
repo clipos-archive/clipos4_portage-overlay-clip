@@ -1,0 +1,46 @@
+--- ./apt-pkg/init.cc.orig	2011-06-28 16:52:51.000000000 +0200
++++ ./apt-pkg/init.cc	2011-07-28 11:51:03.000000000 +0200
+@@ -40,12 +40,12 @@ bool pkgInitConfig(Configuration &Cnf)
+    Cnf.Set("Dir","/");
+    
+    // State   
+-   Cnf.Set("Dir::State","var/lib/apt/");
++   Cnf.Set("Dir::State","var/pkg/lib/apt/");
+    
+    /* Just in case something goes horribly wrong, we can fall back to the
+       old /var/state paths.. */
+    struct stat St;   
+-   if (stat("/var/lib/apt/.",&St) != 0 &&
++   if (stat("/var/pkg/lib/apt/.",&St) != 0 &&
+        stat("/var/state/apt/.",&St) == 0)
+       Cnf.Set("Dir::State","var/state/apt/");
+        
+@@ -54,7 +54,7 @@ bool pkgInitConfig(Configuration &Cnf)
+    Cnf.Set("Dir::State::mirrors","mirrors/");
+ 
+    // Cache
+-   Cnf.Set("Dir::Cache","var/cache/apt/");
++   Cnf.Set("Dir::Cache","var/pkg/cache/apt/");
+    Cnf.Set("Dir::Cache::archives","archives/");
+    Cnf.Set("Dir::Cache::srcpkgcache","srcpkgcache.bin");
+    Cnf.Set("Dir::Cache::pkgcache","pkgcache.bin");
+--- ./apt-pkg/deb/debsystem.cc.orig	2011-06-17 12:10:20.000000000 +0200
++++ ./apt-pkg/deb/debsystem.cc	2011-07-28 11:49:45.000000000 +0200
+@@ -165,7 +165,7 @@ bool debSystem::Initialize(Configuration
+       which is yet to be determined. The functions in pkgcachegen should
+       be the only users of these */
+    Cnf.CndSet("Dir::State::extended_states", "extended_states");
+-   Cnf.CndSet("Dir::State::status","/var/lib/dpkg/status");
++   Cnf.CndSet("Dir::State::status","/var/pkg/lib/dpkg/status");
+    Cnf.CndSet("Dir::Bin::dpkg","/usr/bin/dpkg");
+ 
+    if (StatusFile) {
+@@ -194,7 +194,7 @@ bool debSystem::ArchiveSupported(const c
+ signed debSystem::Score(Configuration const &Cnf)
+ {
+    signed Score = 0;
+-   if (FileExists(Cnf.FindFile("Dir::State::status","/var/lib/dpkg/status")) == true)
++   if (FileExists(Cnf.FindFile("Dir::State::status","/var/pkg/lib/dpkg/status")) == true)
+        Score += 10;
+    if (FileExists(Cnf.FindFile("Dir::Bin::dpkg","/usr/bin/dpkg")) == true)
+       Score += 10;

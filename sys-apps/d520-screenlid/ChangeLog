@@ -1,0 +1,12 @@
+# CLIP ChangeLog for <sys-apps>/<d520-screenlid>
+
+*d520-screenlid-1.0-r1 (01 Feb 2016)
+
+  01 Feb 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +d520-screenlid-1.0-r1.ebuild, -d520-screenlid-1.0.ebuild:
+  fix ebuild dependency expression to solve a syntax issue.
+
+  17 Jan 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  d520-screenlid-1.0:
+  Added scripts needed to handle correctly the screen lid and switch
+  the screen on when opening the laptop.

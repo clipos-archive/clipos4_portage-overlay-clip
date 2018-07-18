@@ -1,0 +1,2 @@
+/update_root/etc/clip_update/keys /update/var/empty/gen-crypt/etc/clip_update/keys   none   bind,ro,noexec,nosuid,nodev,noatime
+

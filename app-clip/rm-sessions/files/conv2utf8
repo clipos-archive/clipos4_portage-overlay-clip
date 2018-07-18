@@ -1,0 +1,28 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+FLAGDIR="${HOME}/.clip/stamp"
+FLAGFILE="${FLAGDIR}/conv2utf8"
+LOGFILE="${HOME}/conv2utf8.log"
+
+[[ -f "${FLAGFILE}" ]] && exit 0
+
+kdialog --title "Veuillez patienter" \
+	--msgbox "Veuillez patienter - conversion des encodages de noms de fichiers" &
+
+PID="$!"
+
+MSG="$(convmv --qfrom --qto --notest -f "ISO-8859-1" -t "UTF-8" -r "${HOME}" 2>&1)"
+RET=$?
+
+kill $PID
+if [[ $RET -ne 0 ]]; then
+	echo "${MSG}" > "${LOGFILE}"
+	kdialog --title "Erreur de conversion" \
+		--error "La conversion des noms de fichiers a échoué. Les messages d'erreur sont stockés dans le fichier ${LOGFILE}"
+	exit 1
+else
+	mkdir -p "${FLAGDIR}"
+	date >"${FLAGFILE}"
+fi

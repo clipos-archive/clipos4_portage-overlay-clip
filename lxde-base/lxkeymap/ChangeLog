@@ -1,0 +1,38 @@
+# CLIP Changelog for lxde-base/lxkeymap
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  lxkeymap-0.8.0.ebuild:
+  Add amd64 keyword.
+
+*lxkeymap-0.8.0 (13 Dec 2013)
+
+  13 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +lxkeymap-0.8.0.ebuild, -lxkeymap-0.4-r3.ebuild,
+  +files/lxkeymap-0.8.0-clip.patch,
+  -files/lxkeymap-0.4-clip.patch:
+  New release, based on Ubuntu's 0.8.0~bzr25+repack.
+  Adds support for --autostart to restore previous config.
+
+*lxkeymap-0.4-r3 (08 Aug 2013)
+
+  08 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +lxkeymap-0.4-r3.ebuild, -lxkeymap-0.4-r2.ebuild:
+  Fix data path. Use script.eclass.
+
+*lxkeymap-0.4-r2 (25 Jul 2013)
+
+  25 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +lxkeymap-0.4-r2.ebuild, -lxkeymap-0.4-r1.ebuild:
+  Force rebuild - switch to distutils-r1
+
+*lxkeymap-0.4-r1 (02 Apr 2012)
+
+  02 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +lxkeymap-0.4-r1.ebuild, -lxkeymap-0.4.ebuild:
+  Force rebuild
+
+*lxkeymap-0.4 (03 Aug 2011)
+
+  03 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  lxkeymap-0.4.ebuild, +files/lxkeymap-0.4-clip.patch:
+  Initial import. Add somewhat quick & dirty localization.

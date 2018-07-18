@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>clip-dcssi</herd>
+	<maintainer>
+		<name>Vincent Strubel</name>
+		<email>clipos@ssi.gouv.fr</email>
+	</maintainer>
+	<longdescription>
+		baselayout-audit provides the basic UNIX directory structure and
+		system files needed to run a chrooted audit view. (goes into 
+		rm_X/update_priv/audit_root)
+	</longdescription>
+</pkgmetadata>

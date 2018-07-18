@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE herds SYSTEM "http://www.gentoo.org/dtd/herds.dtd">
+<!--
+<?xml-stylesheet href="/xsl/herds.xsl" type="text/xsl" ?>
+<?xml-stylesheet href="/xsl/guide.xsl" type="text/xsl" ?>
+-->
+
+<herds>
+	<herd>
+		<name>clip_anssi</name>
+		<email>clipos@ssi.gouv.fr</email>
+		<description>CLIP packages managed by ANSSI</description>
+		<maintainer>
+			<email></email>
+		</maintainer>
+	</herd>
+</herds>
+
+<!--
+Local Variables:
+tab-width: 4
+sgml-indent-step: 4
+End:
+
+vim:ai:et:ts=4:nowrap
+-->

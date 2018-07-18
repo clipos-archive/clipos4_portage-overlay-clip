@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Synkron
+GenericName=Folder synchroniser
+GenericName[fr]=Outil de synchronisation de répertoires
+Comment=Synkron
+Exec=/usr/local/bin/synkron
+Icon=synkron.png
+Terminal=false
+Type=Application
+StartupNotify=false
+Categories=Qt;KDE;Utility;X-KDE-Utilities-File;
+

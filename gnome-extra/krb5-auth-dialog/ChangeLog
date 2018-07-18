@@ -1,0 +1,19 @@
+# CLIP Changelog for gnome-extra/krb5-auth-dialog
+
+*krb5-auth-dialog-3.12.0-r1 (09 Oct 2014)
+
+  09 Oct 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +krb5-auth-dialog-3.12.0-r1.ebuild, -krb5-auth-dialog-3.12.0.ebuild,
+  +krb5-auth-dialog-3.12.0-clip-fix-looping-grab-creds.patch,
+  +krb5-auth-dialog-3.12.0-clip-fix-useless-cred-copy.patch,
+  +krb5-auth-dialog-3.12.0-clip-threaded-grab-cred.patch:
+  Grab credentials (potentially slow operation depending on network)
+  in a thread, with a nice dialog to wait. (+ minor fixes)
+
+*krb5-auth-dialog-3.12.0 (06 Aug 2014)
+
+  06 Aug 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +krb5-auth-dialog-3.12.0.ebuild,
+  +files/krb5-auth-dialog-3.12.0-clip-i18n.patch,
+  +files/krb5-auth-dialog-3.12.0-clip-stay-systray.patch:
+  Initial import.

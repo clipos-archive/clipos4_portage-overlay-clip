@@ -1,0 +1,25 @@
+diff --git manifest.json.orig manifest.json
+index ac17ed5..1c7860e 100644
+--- manifest.json.orig
++++ manifest.json
+@@ -15,20 +15,6 @@
+ 		"default_title": "__MSG_browser_button_tooltip__",
+ 		"default_popup": "panel.html"
+ 	},
+-	"content_scripts": [
+-		{
+-			"all_frames": false,
+-			"js": ["includes/ghostery-min.js"],
+-			"matches": ["http://*/*", "https://*/*"],
+-			"run_at": "document_start"
+-		},
+-		{
+-			"all_frames": false,
+-			"js": ["includes/ghostery_dot_com.js"],
+-			"matches": ["http://*.ghostery.com/*", "https://*.ghostery.com/*"],
+-			"run_at": "document_end"
+-		}
+-	],
+ 	"default_locale": "en",
+ 	"description": "__MSG_short_description__",
+ 	"icons": {

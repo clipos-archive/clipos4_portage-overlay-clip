@@ -1,0 +1,63 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+rc-update add hwconfig nonetwork \
+	|| echo " ! Failed to add hwconfig init script !" >&2
+
+PROFILES="/usr/share/clip-hardware/profiles"
+HWTYPE_CONF="/etc/core/machine"
+
+[[ -f "${HWTYPE_CONF}" ]] || exit 0
+
+HWTYPE="$(cat "${HWTYPE_CONF}")"
+
+[[ -n "${HWTYPE}" ]] || exit 0
+
+PROFILE="${PROFILES}/${HWTYPE}"
+
+[[ -d "${PROFILE}" ]] || exit 0
+
+echo " * Updating hardware profile : ${HWTYPE}"
+
+if [[ -f "${PROFILE}/modules" ]]; then
+	cp "${PROFILE}/modules" "/etc/modules" \
+		|| echo " ! Failed to update modules configuration !" >&2
+fi
+
+if [[ -f "${PROFILE}/fw" ]]; then
+	cp "${PROFILE}/fw" "/etc/fw.conf" >&2
+fi
+
+if [[ -f "${PROFILE}/firmwares" ]]; then
+	cp "${PROFILE}/firmwares" "/etc/firmwares" \
+		|| echo " ! Failed to update firmwares configuration !" >&2
+fi
+
+if [[ -f "${PROFILE}/power" ]]; then
+	cp "${PROFILE}/power" "/etc/conf.d/power" \
+		|| echo " ! Failed to update power management configuration !" >&2
+fi
+
+if [[ -f "${PROFILE}/video" ]]; then
+	cp "${PROFILE}/video" "/etc/shared/video" \
+		|| echo " ! Failed to update video configuration !" >&2
+fi
+
+if [[ -f "${PROFILE}/bootargs" ]]; then
+	CRYPT="$(grep -woE 'crypt.?' "/etc/bootargs" "/proc/cmdline" | tail -n 1 | cut -d ":" -f 2)"
+	cp "${PROFILE}/bootargs" "/etc/bootargs" \
+		|| echo " ! Failed to update boot command line arguments !" >&2
+	if [[ -n "${CRYPT}" ]]; then
+		if [[ "$(wc -l "/etc/bootargs" | cut -d ' ' -f 1)" == "0" ]]; then
+			echo "${CRYPT}" > "/etc/bootargs"
+		else
+			sed -i -e "s/$/ ${CRYPT}/" "/etc/bootargs"
+		fi
+	fi
+fi
+
+# rebuild initrd with the new modules and firmwares
+[ -f /sbin/mkinitrd.clip ] && /sbin/mkinitrd.clip
+
+exit 0

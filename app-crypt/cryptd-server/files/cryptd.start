@@ -1,0 +1,25 @@
+#!/bin/sh
+# Copyright 2009 SGDN/DCSSI
+# Copyright 2013 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+source "/etc/conf.d/clip"
+
+FEATURES=@FEATURES@
+BSOCK=""
+
+echo "${CLIP_JAILS}" | grep -q rm_h || exit 0
+if echo "${CLIP_JAILS}" | grep -q rm_b; then
+	FEATURES="${FEATURES}cd"
+	BSOCK="-b /vservers/rm_b/user_priv/var/run/cryptd"
+fi
+
+PRELOAD="$(awk '{print "-p " $1}' /etc/cryptd.algos)"
+start-stop-daemon --start \
+	-x /usr/sbin/cryptd -- \
+		-r /vservers/rm_h/user_priv/var/run/cryptd \
+		 ${BSOCK} \
+		 -R /var/empty -X 401 -f "${FEATURES}" \
+		 ${PRELOAD} \
+		 -c /usr/bin/crypt_getpass.sh 1>/dev/null

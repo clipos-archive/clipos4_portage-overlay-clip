@@ -1,0 +1,24 @@
+# CLIP specific stuff
+clip-dev/clip-config-template-editor ~x86
+clip-dev/clip-installer ~x86
+dev-libs/softhsm ~x86
+
+# No stable version available
+sys-apps/fakeroot-ng ~x86
+dev-java/icedtea-bin ~x86
+dev-java/icedtea ~x86
+app-emulation/wine ~x86
+
+# Firefox
+www-client/firefox ~x86
+mail-client/thunderbird ~x86
+
+dev-python/PyQt4 ~x86
+
+media-fonts/libertine ~x86
+
+dev-vcs/git ~x86
+
+sys-devel/gcc ~x86
+
+app-misc/ca-certificates ~x86 ~amd64

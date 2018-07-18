@@ -1,0 +1,175 @@
+# Copyright © 2007-2018 ANSSI. All Rights Reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI=3
+
+DESCRIPTION="Tools allowing the creation of an installation disk for CLIP"
+HOMEPAGE="https://www.ssi.gouv.fr"
+SRC_URI="mirror://clip/${P}.tar.xz"
+
+LICENSE="LGPL-2.1+"
+SLOT="0"
+KEYWORDS="x86 arm amd64"
+IUSE="clip-livecd clip-devstation X"
+
+DEPEND=""
+RDEPEND="clip-livecd? (
+					app-clip/clip-eraser
+					app-arch/tar
+					sys-apps/baselayout
+					sys-apps/busybox[static,clip-livecd]
+					sys-boot/syslinux
+					app-editors/vim
+					sys-block/parted
+					app-shells/bash
+					>=clip-dev/clip-installer-2.15
+					>=clip-dev/debootstrap-clip-2.1.1
+					clip-layout/baselayout-sdk[clip-livecd]
+					dev-util/debootstrap
+					sys-fs/udev
+					>=sys-apps/openrc-0.12.4
+					sys-fs/dmraid[static]
+					sys-fs/lvm2[static]
+					sys-fs/cryptsetup
+					sys-apps/apt
+					sys-apps/pcsc-lite
+					dev-libs/opensc
+					app-crypt/ccid
+					sys-apps/util-linux
+					sys-apps/timer_entropyd
+					x86? (
+						>=sys-boot/syslinux-3.83
+						=sys-kernel/clip-kernel-4.4*[clip-livecd]
+					)
+					amd64? (
+						>=sys-boot/syslinux-3.83
+						=sys-kernel/clip-kernel-4.4*[clip-livecd]
+					)
+					arm? (
+						dev-embedded/u-boot-tools
+						=sys-kernel/clip-kernel-4.4*[clip-livecd]
+					)
+					sys-fs/mdadm
+					sys-apps/sysvinit
+					sys-apps/kbd
+					sys-process/procps
+					X? (
+						x11-base/xorg-server
+						x11-apps/setxkbmap
+						x11-apps/xrandr
+						x11-drivers/xf86-input-synaptics
+						app-clip/clip-viewer
+						>=x11-misc/adeskbar-0.4.3-r25
+						x11-wm/openbox
+						>=x11-misc/xdialog-2.3.1-r5
+						media-gfx/xloadimage
+						>=app-clip/clip-config-2.1.4
+						>=clip-dev/clip-install-config-1.1.3
+						>=clip-dev/clip-install-gui-1.3.0
+						app-editors/gvim
+						sys-apps/net-tools
+					)
+	    )
+		sys-fs/dosfstools
+		clip-devstation? (
+				clip-dev/clip-devutils
+				app-arch/dpkg
+				app-cdr/cdrkit
+				net-misc/rsync
+				sys-fs/squashfs-tools
+		)"
+
+src_install() {
+
+	local do_ext3_sda1=false
+	local do_install_bootloader=true
+	local do_uboot_image=false
+	local opt_LOADADDR_RAMDISK="0x0"
+
+	if [[ "${ARCH}" = arm ]] ; then
+		do_ext3_sda1=true
+		do_install_bootloader=false
+		do_uboot_image=true
+		case "${PLATFORM}" in
+			imx6q-sabrelite)
+				einfo "Target platform is FreeScale iMX6Q Sabre Lite"
+				opt_LOADADDR_RAMDISK="0x11000000"
+			;;
+			armada-370-eurisko|armada-370-mirabox)
+				einfo "Target platform is ${PLATFORM}"
+				opt_LOADADDR_RAMDISK="0x00000000"
+			;;
+			*)
+				eerror "Unknown platform !"
+				eerror "Please set PLATFORM variable"
+				die 1
+			;;
+		esac
+	fi
+
+	sed -i -e "s/@DO_EXT3_SDA1@/${do_ext3_sda1}/g" \
+		   "${S}"/sbin-scripts/init_partitions.sh
+
+	sed -i -e "s/@DO_INSTALL_BOOTLOADER@/${do_install_bootloader}/g" \
+		   "${S}"/sbin-scripts/full_install.sh
+
+	sed -i -e "s/@DO_UBOOT_IMAGE@/${do_uboot_image}/g" \
+		   -e "s/@ARCH@/${ARCH}/g" \
+		   -e "s/@LOADADDR_RAMDISK@/${opt_LOADADDR_RAMDISK}/g" \
+		   -e "s/@VERSION@/${PV}/g" \
+		   -e "s/@PLATFORM@/${PLATFORM}/g" \
+		   "${S}"/livecd-mkinitrd.sh
+
+	if use clip-livecd; then
+		dodir /usr/share/${PN}/lib
+		insinto /usr/share/${PN}/lib
+	    doins "${S}"/lib/keys_common.sh
+		insinto /sbin
+		exeinto /sbin
+		for i in "${S}"/sbin-scripts/*.sh; do
+			doexe $i
+		done
+		doexe "${S}"/livecd-mkinitrd.sh
+		doins "${S}"/sbin-scripts/aide.txt
+		doexe "${S}"/sbin-scripts/aide
+		dodir /usr/share/${PN}/initrd-files
+		insinto /usr/share/${PN}/initrd-files
+		doins -r "${S}/initrd-files"/*
+
+		insinto /usr/share/${PN}
+		doins -r "${S}/help"/*
+
+		dodir /boot
+		insinto /boot
+		for i in "${S}"/boot/*; do
+			doins $i
+		done
+
+		insinto "/etc/env.d"
+		doins "${FILESDIR}/99${PN}"
+		sed "s/@VERSION@/${PV}/g" "${FILESDIR}/${PN}.sh" >"${T}/${PN}.sh"
+		insinto "/usr/share/${PN}"
+		doins "${T}/${PN}.sh"
+		# We don't want etc-update features
+		dosym "/usr/share/${PN}/${PN}.sh" "/etc/profile.d/${PN}.sh"
+
+		insinto "/etc"
+		doins "${FILESDIR}/fstab"
+
+	elif use clip-devstation; then
+		dodir /opt/${PN}
+		cp -a "${S}"/* "${D}/opt/${PN}"
+		chmod +x ${D}/opt/clip-livecd/*.sh
+	fi
+}
+
+pkg_postinst() {
+	if use clip-livecd; then
+		env-update
+	elif use clip-devstation; then
+		ewarn "If you are upgrading from <=clip-livecd-2.5.4, you should upgrade"
+		ewarn "your loop directory:"
+		ewarn '# for pf in root var/{cache,log} {,var/}tmp; do rm -r "loop/${pf}" && \\'
+		ewarn '  mv "loop.persistent/${pf}" "loop/${pf}"; done'
+	fi
+}

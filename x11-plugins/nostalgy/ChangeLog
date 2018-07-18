@@ -1,0 +1,7 @@
+# CLIP Changelog for x11-plugins/nostalgy
+
+*nostalgy-0.2.33 (23 May 2016)
+
+  23 May 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +nostalgy-0.2.33.ebuild:
+  Initial import.

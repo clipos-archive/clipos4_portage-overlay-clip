@@ -1,0 +1,5 @@
+# ChangeLog for clip-livecd/amd64 profile directory
+
+  08 Aug 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +ChangeLog, +make.defaults, +package.accept_keywords, +parent:
+  Initial import, from clip-live/x86 profile.

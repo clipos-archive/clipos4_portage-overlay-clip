@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>clip-dcssi</herd>
+	<maintainer>
+		<name>Vincent Strubel</name>
+		<email>clipos@ssi.gouv.fr</email>
+	</maintainer>
+	<longdescription>
+		clip-libvserver : common clip vserver helper functions
+	</longdescription>
+    <use>
+	  <flag name="doc">Generate HTML API documentation</flag>
+      <flag name="net-ns">Enable support for Net Namespaces (must be supported by the kernel)</flag>
+    </use>
+</pkgmetadata>

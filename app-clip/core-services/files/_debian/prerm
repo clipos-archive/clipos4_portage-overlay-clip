@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for script in clip_audit clip_admin clip_sshd clip_user clip_update ; do
+	/sbin/rc-update del ${script} default
+done
+
+/sbin/rc-update del clip_audit nonetwork
+
+

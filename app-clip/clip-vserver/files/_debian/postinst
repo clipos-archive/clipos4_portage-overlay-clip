@@ -1,0 +1,22 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+if [[ -e "/etc/conf.d/clip" ]]; then
+	source "/etc/conf.d/clip"
+else
+	source "/etc/conf.d/.clip.confnew"
+fi
+
+if echo "${CLIP_JAILS}" | grep -q rm_b; then
+	echo "/vservers/rm_b" >> "/etc/jails/rm_h/nscleanup"
+	echo "/vservers/rm_b" >> "/etc/jails/secure_update_rm_h/nscleanup"
+fi
+
+if echo "${CLIP_JAILS}" | grep -q rm_h; then
+	echo "/vservers/rm_h" >> "/etc/jails/rm_b/nscleanup"
+	echo "/vservers/rm_h" >> "/etc/jails/secure_update_rm_b/nscleanup"
+fi
+
+/sbin/rc-update add clip_servers default
+

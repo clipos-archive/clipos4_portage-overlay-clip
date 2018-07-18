@@ -1,0 +1,18 @@
+# CLIP ChangeLog for media-gfx/usb-video-devices
+
+*usb-video-devices-1.1.0 (24 Jan 2014)
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  usb-video-devices-1.1.0.ebuild:
+  Add amd64 keyword, masked for now.
+
+  24 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-video-devices-1.1.0.ebuild, -usb-video-devices-1.0.0.ebuild:
+  Support 'none' as a webcam attribution setting.
+
+*usb-video-devices-1.0.0 (05 Oct 2012)
+
+  05 Oct 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +usb-video-devices-1.0.0.ebuild:
+  Initial build.
+

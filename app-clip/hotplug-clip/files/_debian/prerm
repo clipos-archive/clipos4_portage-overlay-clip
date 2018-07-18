@@ -1,0 +1,3 @@
+#!/bin/sh
+
+/sbin/rc-update del mkdevices default || echo "! rc-upadte del mkdevices failed !" >&2

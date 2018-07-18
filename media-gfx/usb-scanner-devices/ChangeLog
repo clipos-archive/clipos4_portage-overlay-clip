@@ -1,0 +1,31 @@
+# CLIP ChangeLog for media-gfx/usb-scanner-devices
+
+*usb-scanner-devices-1.1.0-r1 (02 Apr 2012)
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  usb-scanner-devices-1.1.0-r1.ebuild:
+  Add amd64 keyword.
+
+  02 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-scanner-devices-1.1.0-r1.ebuild, -usb-scanner-devices-1.1.0.ebuild:
+  Force rebuild.
+
+*usb-scanner-devices-1.1.0 (27 Dec 2011)
+
+  27 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-scanner-devices-1.1.0.ebuild, -usb-scanner-devices-1.0.0-r1.ebuild:
+  Make scanner jail attribution configurable through
+  /etc/admin/conf.d/devices.
+
+*usb-scanner-devices-1.0.0-r1 (12 Jul 2011)
+
+  12 Jul 2011; ANSSI <clipos@ssi.gouv.fr>
+  +usb-scanner-devices-1.0.0-r1.ebuild, -usb-scanner-devices-1.0.0.ebuild:
+  Create default config file in postinst
+
+*usb-scanner-devices-1.0.0 (08 Jul 2011)
+
+  08 Jul 2011; ANSSI <clipos@ssi.gouv.fr>
+  +usb-scanner-devices-1.0.0.ebuild:
+  Create devices automatically for USB scanners.
+

@@ -1,0 +1,6 @@
+#!/bin/sh
+
+cd "$BEACON_REPORT_DIR"
+
+date > datetime
+sha256sum /etc/localtime > localtime

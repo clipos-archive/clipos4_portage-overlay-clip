@@ -1,0 +1,7 @@
+#!/bin/bash
+
+set -e
+
+CRONTAB="/update_root/etc/cron/crontab/root"
+
+/bin/sed -i -e '/^.*clip-beacon.*$/d' "${CRONTAB}"

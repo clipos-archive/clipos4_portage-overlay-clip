@@ -1,0 +1,10 @@
+app-emulation/wine -prelink -realtime -udisks -gecko -mono
+dev-vcs/subversion -kde perl
+media-libs/libass -enca
+media-libs/phonon -gstreamer -qt5 vlc
+media-video/ffmpeg -mmx
+x11-libs/cairo -qt4
+>=media-gfx/exiv2-0.24-r1 xmp
+
+>=dev-lang/python-2.7.9-r2 sqlite
+>=app-text/ghostscript-gpl-9.10-r2 cups

@@ -1,0 +1,54 @@
+diff --git a/src/adesk/ui.py b/src/adesk/ui.py
+index e76daa9..534dfcb 100644
+--- a/usr/share/adeskbar/adesk/ui.py
++++ b/usr/share/adeskbar/adesk/ui.py
+@@ -435,32 +435,38 @@ class Menu:
+             separator.show()     
+             self.add_to_menu(settings_menu)
+ 
+-    def add_to_menu(self, gmenu_tree):
+-        for m in gmenu_tree.root.contents:
++    def _add_to_menu(self, gmenu_tree, menu):
++        """generic function to add menu entries at any nested level"""
++
++        try:
++            contents = gmenu_tree.contents
++        except AttributeError:
++            contents = gmenu_tree.root.contents
++
++        for m in contents:
+             if m.get_type() == gmenu.TYPE_DIRECTORY:
+ 
+-                item = self.append_menu_item(self.menu, m.get_name(), m.get_icon(), None)
++                item = self.append_menu_item(menu, m.get_name(), m.get_icon(), None)
+                 submenu = gtk.Menu()
+-            
+-                for app in m.contents:
+-                    if app.get_type() == gmenu.TYPE_ENTRY:
+-                        sub_item = self.append_menu_item(submenu, app.get_name(), app.get_icon(), app.get_comment())
+-                        sub_item.connect("activate", self.callback, app)
+-                        sub_item.show()
++
++                self._add_to_menu(m, submenu)
+ 
+                 item.set_submenu(submenu)
+                 item.show()
+                 
+             elif m.get_type() == gmenu.TYPE_SEPARATOR:
+                 separator = gtk.SeparatorMenuItem()
+-                self.menu.append(separator)
++                menu.append(separator)
+                 separator.show() 
+ 
+             elif m.get_type() == gmenu.TYPE_ENTRY:
+-                item = self.append_menu_item(self.menu, m.get_name(), m.get_icon(), m.get_comment())
++                item = self.append_menu_item(menu, m.get_name(), m.get_icon(), m.get_comment())
+                 item.connect("activate", self.callback, m)
+                 item.show()
+ 
++    def add_to_menu(self, gmenu_tree):
++        self._add_to_menu(gmenu_tree, self.menu)
++
+     def create_menu_item(self, label, icon_name, comment):
+         item = gtk.ImageMenuItem(label)
+ 

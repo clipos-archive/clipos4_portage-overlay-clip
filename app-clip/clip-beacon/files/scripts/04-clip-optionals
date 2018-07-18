@@ -1,0 +1,10 @@
+#!/bin/sh
+
+echo "[CORE]" > "$BEACON_REPORT_DIR"/optionals_pkgs
+cat /etc/admin/clip_install/optional.conf.clip >> "$BEACON_REPORT_DIR"/optionals_pkgs
+
+echo "[RM_H]" >> "$BEACON_REPORT_DIR"/optionals_pkgs
+cat /etc/admin/rm_h/clip_install/optional.conf.rm >> "$BEACON_REPORT_DIR"/optionals_pkgs
+
+echo "[RM_B]" >> "$BEACON_REPORT_DIR"/optionals_pkgs
+cat /etc/admin/rm_b/clip_install/optional.conf.rm >> "$BEACON_REPORT_DIR"/optionals_pkgs

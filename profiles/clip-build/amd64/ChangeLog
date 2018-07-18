@@ -1,0 +1,6 @@
+# ChangeLog for clip-build/amd64 profile directory
+
+  05 Aug 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +make.defaults, +parent:
+  New profile.
+

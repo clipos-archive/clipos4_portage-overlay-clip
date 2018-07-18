@@ -1,0 +1,14 @@
+# ChangeLog for clip-build/x86 profile directory
+
+  18 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  make.defaults, -use.force, parent:
+  Move most common definitions to a new parent profile: 'clip/x86'.
+
+  17 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  make.defaults, +use.force:
+  Add ARCH/ABI definitions.
+
+  12 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +make.defaults, +use.mask, +parent:
+  New profile.
+

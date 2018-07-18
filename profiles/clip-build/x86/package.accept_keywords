@@ -1,0 +1,17 @@
+# CLIP specific stuff
+
+dev-libs/softhsm ~x86
+
+# we need quick updates for firefox,thunderbird
+www-client/firefox ~x86
+mail-client/thunderbird ~86
+
+# we want the openfont variants
+media-fonts/libertine ~x86
+
+# No stable version
+dev-java/icedtea ~x86
+app-emulation/wine ~x86
+
+# No good reason?
+dev-vcs/git ~x86

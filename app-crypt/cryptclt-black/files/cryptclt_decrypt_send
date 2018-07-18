@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec cryptclt_black -i "${@}"

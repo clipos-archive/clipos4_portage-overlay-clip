@@ -1,0 +1,28 @@
+--- ./cmdline/apt-get.cc.orig	2013-07-17 17:07:58.000000000 +0200
++++ ./cmdline/apt-get.cc	2013-07-17 17:09:21.000000000 +0200
+@@ -3235,6 +3235,7 @@ int main(int argc,const char *argv[])
+       {'d',"download-only","APT::Get::Download-Only",0},
+       {'b',"compile","APT::Get::Compile",0},
+       {'b',"build","APT::Get::Compile",0},
++      {'r',"remote-only","APT::Get::Remote-Only",0},
+       {'s',"simulate","APT::Get::Simulate",0},
+       {'s',"just-print","APT::Get::Simulate",0},
+       {'s',"recon","APT::Get::Simulate",0},
+--- ./apt-pkg/deb/debmetaindex.cc.orig	2013-07-17 17:10:39.000000000 +0200
++++ ./apt-pkg/deb/debmetaindex.cc	2013-07-17 17:13:27.000000000 +0200
+@@ -345,6 +345,15 @@ class debSLTypeDebian : public pkgSource
+ 			   string const &Dist, string const &Section,
+ 			   bool const &IsSrc, map<string, string> const &Options) const
+    {
++      if (_config->FindB("APT::Get::Remote-Only",false) == true) {
++      	// Exclude all lines containing the 'local=true' option
++	map<string, string>::const_iterator const local = Options.find("local");
++	if (local != Options.end() && local->second == "true") {
++		// Skip this line
++		return true;
++	}
++      }	
++
+       map<string, string>::const_iterator const arch = Options.find("arch");
+       vector<string> const Archs =
+ 		(arch != Options.end()) ? VectorizeString(arch->second, ',') :

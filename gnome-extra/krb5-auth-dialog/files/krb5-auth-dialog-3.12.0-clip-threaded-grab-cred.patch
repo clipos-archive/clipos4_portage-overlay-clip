@@ -1,0 +1,481 @@
+Run authentication process in a thread.
+
+---
+ po/fr.po          |   4 ++
+ src/ka-applet.c   |   4 +-
+ src/ka-kerberos.c |  28 +++++++-
+ src/ka-kerberos.h |   1 +
+ src/ka-pwdialog.c | 204 +++++++++++++++++++++++++++++++++++++++++++++++++-----
+ src/ka-pwdialog.h |   6 +-
+ 6 files changed, 221 insertions(+), 26 deletions(-)
+
+diff --git a/po/fr.po b/po/fr.po
+index 6f28c9b..8882a41 100644
+--- a/po/fr.po
++++ b/po/fr.po
+@@ -208,6 +208,10 @@ msgstr "Le mot de passe que vous avez saisi n'est pas valide"
+ msgid "%s Error"
+ msgstr "Erreur %s"
+ 
++#: src/ka-pwdialog.c:505
++msgid "Authentication attempt pending. Please wait..."
++msgstr "Processus d'authentification en cours. Veuillez patienter..."
++
+ #. Translators: files from dummy-strings.c are *all* possible errors
+ #. returned from Kerberos (since Kerberos itself doesn't handle i18n). If in
+ #. doubt please translate strings from files starting with ka- and krb5-auth-
+diff --git a/src/ka-applet.c b/src/ka-applet.c
+index 8b99695..420f400 100644
+--- a/src/ka-applet.c
++++ b/src/ka-applet.c
+@@ -671,7 +671,7 @@ ka_notify_ticket_action_cb (NotifyNotification *notification G_GNUC_UNUSED,
+ 
+     if (strcmp (action, "ka-acquire-tgt") == 0) {
+         KA_DEBUG ("Getting new tgt");
+-        ka_grab_credentials (self);
++        ka_grab_credentials_async (self);
+     } else if (strcmp (action, "ka-remove-ccache") == 0) {
+         KA_DEBUG ("Removing ccache");
+         ka_destroy_ccache (self);
+@@ -1027,7 +1027,7 @@ ka_tray_icon_on_click (GtkStatusIcon *status_icon G_GNUC_UNUSED,
+     KaApplet *applet = KA_APPLET (data);
+ 
+     KA_DEBUG ("Trayicon clicked: %d", applet->priv->pw_prompt_secs);
+-    ka_grab_credentials (applet);
++    ka_grab_credentials_async (applet);
+     return TRUE;
+ }
+ 
+diff --git a/src/ka-kerberos.c b/src/ka-kerberos.c
+index 640f1ce..70779bf 100644
+--- a/src/ka-kerberos.c
++++ b/src/ka-kerberos.c
+@@ -64,6 +64,8 @@ static gboolean is_online = TRUE;
+ static gboolean kcontext_valid;
+ GFileMonitor *ccache_monitor;
+ 
++static gboolean grab_cred_pending;
++
+ static int grab_credentials (KaApplet *applet);
+ static int ka_renew_credentials (KaApplet *applet);
+ static gboolean ka_get_tgt_from_ccache (krb5_context context,
+@@ -626,14 +628,22 @@ ka_auth_password (KaApplet *applet, krb5_creds *creds,
+ {
+     krb5_error_code retval;
+     krb5_get_init_creds_opt *opts = NULL;
++    krb5_principal kprincipal_copy = NULL;
+ 
+     if ((retval = krb5_get_init_creds_opt_alloc (kcontext, &opts)))
+         goto out;
+     ka_set_ticket_options (applet, kcontext, opts, pk_userid, pk_anchors);
+ 
+-    retval = krb5_get_init_creds_password (kcontext, creds, kprincipal,
++    /* We have to make a copy of the principal so that it stays valid
++     * during the time krb5_get_init_creds_password runs, as the global
++     * kprincipal may be freed by the main thread */
++    krb5_copy_principal (kcontext, kprincipal, &kprincipal_copy);
++
++    retval = krb5_get_init_creds_password (kcontext, creds, kprincipal_copy,
+                                            NULL, auth_dialog_prompter, applet,
+                                            0, NULL, opts);
++
++    krb5_free_principal (kcontext, kprincipal_copy);
+   out:
+     if (opts)
+         krb5_get_init_creds_opt_free (kcontext, opts);
+@@ -1012,6 +1022,17 @@ ka_check_credentials (KaApplet *applet, const char *newprincipal)
+     return success;
+ }
+ 
++void
++ka_grab_credentials_async (KaApplet *applet)
++{
++    if (grab_cred_pending) {
++        KaPwDialog *pwdialog = ka_applet_get_pwdialog (applet);
++        ka_pwdialog_show_wait (pwdialog);
++        return;
++    }
++    grab_cred_pending = TRUE;
++    g_thread_new ("grabcred", (GThreadFunc) ka_grab_credentials, (gpointer) applet);
++}
+ 
+ /* initiate grabbing of credentials (e.g. on leftclick of tray icon) */
+ gboolean
+@@ -1023,6 +1044,7 @@ ka_grab_credentials (KaApplet *applet)
+     KaPwDialog *pwdialog = ka_applet_get_pwdialog (applet);
+ 
+     ka_pwdialog_set_persist (pwdialog, TRUE);
++    ka_pwdialog_show_wait (pwdialog);
+     do {
+         retval = grab_credentials (applet);
+         if (invalid_auth)
+@@ -1037,7 +1059,6 @@ ka_grab_credentials (KaApplet *applet)
+                                      ka_get_error_message (kcontext, retval),
+                                      is_online ? "" : _(" (No network connection)"));
+             ka_pwdialog_error (pwdialog, errmsg);
+-            g_free (errmsg);
+             break;
+         } else {
+             success = TRUE;
+@@ -1047,7 +1068,8 @@ ka_grab_credentials (KaApplet *applet)
+ 
+     ka_pwdialog_set_persist (pwdialog, FALSE);
+     credentials_expiring_real (applet);
+-
++    ka_pwdialog_hide_wait (pwdialog);
++    grab_cred_pending = FALSE;
+     return success;
+ }
+ 
+diff --git a/src/ka-kerberos.h b/src/ka-kerberos.h
+index e94bb63..d0b8b1f 100644
+--- a/src/ka-kerberos.h
++++ b/src/ka-kerberos.h
+@@ -27,6 +27,7 @@ gboolean ka_kerberos_destroy (void);
+ 
+ gboolean ka_destroy_ccache (KaApplet* applet);
+ gboolean ka_grab_credentials(KaApplet* applet);
++void ka_grab_credentials_async(KaApplet* applet);
+ gboolean ka_check_credentials (KaApplet *applet, const char* principal);
+ gboolean ka_get_service_tickets(GtkListStore *tickets,
+                                 gboolean hide_service_tickets);
+diff --git a/src/ka-pwdialog.c b/src/ka-pwdialog.c
+index 7653a4d..805727c 100644
+--- a/src/ka-pwdialog.c
++++ b/src/ka-pwdialog.c
+@@ -26,6 +26,10 @@
+ #include "ka-pwdialog.h"
+ #include "ka-entry-buffer.h"
+ 
++static GMutex pwdialog_sync_mutex;
++static GCond pwdialog_sync_cond;
++static gboolean pwdialog_sync_go;
++
+ struct _KaPwDialog {
+     GObject parent;
+ 
+@@ -47,8 +51,24 @@ struct _KaPwDialogPrivate {
+     gboolean persist;           /* don't hide the dialog when creds are still valid */
+     gboolean grabbed;           /* keyboard grabbed? */
+     GtkWidget *error_dialog;    /* error dialog */
++    GtkWidget *wait_dialog;     /* wait dialog */
++};
++
++struct pwdialog_run_args {
++    KaPwDialog *pwdialog;
++    gint retval;
+ };
+ 
++struct pwdialog_error_args {
++    KaPwDialog *pwdialog;
++    gchar *msg;
++};
++
++struct pwdialog_setup_args {
++    KaPwDialog *pwdialog;
++    const gchar *krb5prompt;
++    gboolean invalid_auth;
++};
+ 
+ static void
+ ka_pwdialog_init (KaPwDialog *pwdialog)
+@@ -67,6 +87,9 @@ ka_pwdialog_finalize (GObject *object)
+     gtk_widget_destroy (pwdialog->priv->error_dialog);
+     pwdialog->priv->error_dialog = NULL;
+ 
++    gtk_widget_destroy (pwdialog->priv->wait_dialog);
++    pwdialog->priv->wait_dialog = NULL;
++
+     if (parent_class->finalize != NULL)
+         parent_class->finalize (object);
+ }
+@@ -189,16 +212,35 @@ window_state_changed (GtkWidget *win, GdkEventWindowState *event,
+     return FALSE;
+ }
+ 
++static void
++pwdialog_sync_wait ()
++{
++    g_mutex_lock (&pwdialog_sync_mutex);
++    while (!pwdialog_sync_go)
++        g_cond_wait (&pwdialog_sync_cond, &pwdialog_sync_mutex);
++    pwdialog_sync_go = FALSE;
++    g_mutex_unlock (&pwdialog_sync_mutex);
++}
+ 
+-gint
+-ka_pwdialog_run (KaPwDialog *self)
++static void
++pwdialog_sync_signal_go ()
+ {
+-    GtkWidget *dialog = self->priv->dialog;
++    g_mutex_lock (&pwdialog_sync_mutex);
++    pwdialog_sync_go = TRUE;
++    g_cond_signal(&pwdialog_sync_cond);
++    g_mutex_unlock (&pwdialog_sync_mutex);
++}
++
++static gboolean
++pwdialog_run (struct pwdialog_run_args *args)
++{
++    KaPwDialog *pwdialog = args->pwdialog;
++    GtkWidget *dialog = pwdialog->priv->dialog;
+ 
+     /* cleanup old error dialog, if present (e.g. user didn't acknowledge
+      * the error but clicked the tray icon again) */
+-    if (self->priv->error_dialog)
+-        gtk_widget_hide (self->priv->error_dialog);
++    if (pwdialog->priv->error_dialog)
++        gtk_widget_hide (pwdialog->priv->error_dialog);
+ 
+     /* make sure we pop up on top */
+     gtk_window_set_keep_above (GTK_WINDOW (dialog), TRUE);
+@@ -207,22 +249,48 @@ ka_pwdialog_run (KaPwDialog *self)
+      * grab the keyboard so that people don't accidentally type their
+      * passwords in other windows.
+      */
+-    g_signal_connect (dialog, "map-event", G_CALLBACK (grab_keyboard), self);
++    g_signal_connect (dialog, "map-event", G_CALLBACK (grab_keyboard), pwdialog);
+     g_signal_connect (dialog, "unmap-event", G_CALLBACK (ungrab_keyboard),
+-                      self);
++                      pwdialog);
+     g_signal_connect (dialog, "window-state-event",
+-                      G_CALLBACK (window_state_changed), self);
++                      G_CALLBACK (window_state_changed), pwdialog);
+ 
+-    gtk_widget_grab_focus (self->priv->pw_entry);
++    gtk_widget_grab_focus (pwdialog->priv->pw_entry);
+     gtk_widget_show (dialog);
+-    return gtk_dialog_run (GTK_DIALOG (dialog));
++    args->retval = gtk_dialog_run (GTK_DIALOG (dialog));
++
++    pwdialog_sync_signal_go ();
++
++    return FALSE;
+ }
+ 
++gint
++ka_pwdialog_run (KaPwDialog *pwdialog)
++{
++    gint retval;
++    struct pwdialog_run_args *args = g_new (struct pwdialog_run_args, 1);
++    args->pwdialog = pwdialog;
+ 
+-void
+-ka_pwdialog_error (KaPwDialog *self, const char *msg)
++    g_idle_add ((GSourceFunc) pwdialog_run, (gpointer) args);
++
++    /* Wait for the dialog to have finished running
++     * (user has input his password or cancelled the dialog) */
++    pwdialog_sync_wait ();
++
++    retval = args->retval;
++    g_free (args);
++
++    return retval;
++}
++
++
++static gboolean
++pwdialog_error (struct pwdialog_error_args *args)
+ {
+-    GtkWidget *dialog = self->priv->error_dialog;
++    KaPwDialog *pwdialog = args->pwdialog;
++    gchar *msg = args->msg;
++
++    GtkWidget *dialog = pwdialog->priv->error_dialog;
+ 
+     gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
+                                               _
+@@ -231,8 +299,52 @@ ka_pwdialog_error (KaPwDialog *self, const char *msg)
+     gtk_widget_show (GTK_WIDGET (dialog));
+     gtk_dialog_run (GTK_DIALOG (dialog));
+     gtk_widget_hide (dialog);
++
++    g_free (args);
++    g_free (msg);
++
++    return FALSE;
++}
++
++void
++ka_pwdialog_error (KaPwDialog *pwdialog, gchar *msg)
++{
++    struct pwdialog_error_args *args = g_new (struct pwdialog_error_args, 1);
++    args->pwdialog = pwdialog;
++    args->msg = msg;
++
++    g_idle_add ((GSourceFunc) pwdialog_error, (gpointer) args);
++}
++
++static gboolean
++pwdialog_show_wait (KaPwDialog *pwdialog)
++{
++    GtkWidget *dialog = pwdialog->priv->wait_dialog;
++    gtk_widget_show (GTK_WIDGET (dialog));
++
++    return FALSE;
++}
++
++void
++ka_pwdialog_show_wait (KaPwDialog *pwdialog)
++{
++    g_idle_add ((GSourceFunc) pwdialog_show_wait, (gpointer) pwdialog);
++}
++
++static gboolean
++pwdialog_hide_wait (KaPwDialog *pwdialog)
++{
++    GtkWidget *dialog = pwdialog->priv->wait_dialog;
++    gtk_widget_hide (dialog);
++
++    return FALSE;
+ }
+ 
++void
++ka_pwdialog_hide_wait (KaPwDialog *pwdialog)
++{
++    g_idle_add ((GSourceFunc) pwdialog_hide_wait, (gpointer) pwdialog);
++}
+ 
+ void
+ ka_pwdialog_set_persist (KaPwDialog *pwdialog, gboolean persist)
+@@ -240,12 +352,20 @@ ka_pwdialog_set_persist (KaPwDialog *pwdialog, gboolean persist)
+     pwdialog->priv->persist = persist;
+ }
+ 
++static gboolean
++pwdialog_hide (KaPwDialog *pwdialog)
++{
++    gtk_widget_hide (pwdialog->priv->dialog);
++
++    return FALSE;
++}
++
+ void
+ ka_pwdialog_hide (const KaPwDialog *pwdialog, gboolean force)
+ {
+     KA_DEBUG ("PW Dialog persist: %d", pwdialog->priv->persist);
+     if (!pwdialog->priv->persist || force)
+-        gtk_widget_hide (pwdialog->priv->dialog);
++        g_idle_add ((GSourceFunc) pwdialog_hide, (gpointer) pwdialog);
+ }
+ 
+ const gchar *
+@@ -254,8 +374,8 @@ ka_pwdialog_get_password (KaPwDialog *pwdialog)
+     return gtk_entry_get_text (GTK_ENTRY (pwdialog->priv->pw_entry));
+ }
+ 
+-gboolean
+-ka_pwdialog_status_update (KaPwDialog *pwdialog)
++static gboolean
++pwdialog_status_update (KaPwDialog *pwdialog)
+ {
+     gchar *expiry_text;
+     gchar *expiry_markup;
+@@ -280,13 +400,23 @@ ka_pwdialog_status_update (KaPwDialog *pwdialog)
+     g_free (expiry_text);
+     g_free (expiry_markup);
+ 
+-    return TRUE;
++    return FALSE;
+ }
+ 
+ void
+-ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
+-                   gboolean invalid_auth)
++ka_pwdialog_status_update (KaPwDialog *pwdialog)
+ {
++    g_idle_add ((GSourceFunc) pwdialog_status_update, (gpointer) pwdialog);
++}
++
++static gboolean
++pwdialog_setup (struct pwdialog_setup_args *args)
++{
++
++    KaPwDialog *pwdialog = args->pwdialog;
++    const gchar *krb5prompt = args->krb5prompt;
++    gboolean invalid_auth = args->invalid_auth;
++
+     KaPwDialogPrivate *priv = pwdialog->priv;
+     gchar *wrong_markup = NULL;
+     gchar *prompt;
+@@ -331,6 +461,21 @@ ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
+ 
+     g_free (wrong_markup);
+     g_free (prompt);
++
++    g_free (args);
++    return FALSE;
++}
++
++void
++ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
++                   gboolean invalid_auth)
++{
++    struct pwdialog_setup_args *args = g_new (struct pwdialog_setup_args, 1);
++    args->pwdialog = pwdialog;
++    args->krb5prompt = krb5prompt;
++    args->invalid_auth = invalid_auth;
++
++    g_idle_add ((GSourceFunc) pwdialog_setup, (gpointer) args);
+ }
+ 
+ 
+@@ -344,6 +489,26 @@ ka_error_dialog_new (void)
+ 
+     gtk_window_set_title (GTK_WINDOW (dialog), _(KA_NAME));
+     gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
++    gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER_ALWAYS);
++    return dialog;
++}
++
++static GtkWidget *
++ka_wait_dialog_new (void)
++{
++    GtkWidget *dialog =
++        gtk_message_dialog_new (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
++                                GTK_MESSAGE_INFO, GTK_BUTTONS_NONE,
++                                _("%s"), KA_NAME);
++
++    gtk_message_dialog_format_secondary_text (GTK_MESSAGE_DIALOG (dialog),
++                                              _("Authentication attempt pending. Please wait..."));
++    gtk_window_set_keep_above (GTK_WINDOW (dialog), TRUE);
++    gtk_window_set_title (GTK_WINDOW (dialog), _(KA_NAME));
++    gtk_window_set_skip_taskbar_hint (GTK_WINDOW (dialog), FALSE);
++    gtk_window_set_position (GTK_WINDOW (dialog), GTK_WIN_POS_CENTER_ALWAYS);
++    g_signal_connect (dialog, "delete-event",
++            G_CALLBACK (gtk_widget_hide_on_delete), NULL);
+     return dialog;
+ }
+ 
+@@ -366,6 +531,7 @@ ka_pwdialog_create (GtkBuilder *xml)
+     gtk_entry_set_visibility (GTK_ENTRY (priv->pw_entry), FALSE);
+     g_object_unref (buffer);
+     priv->error_dialog = ka_error_dialog_new ();
++    priv->wait_dialog = ka_wait_dialog_new ();
+ 
+     entry_hbox = GTK_WIDGET (gtk_builder_get_object (xml, "entry_hbox"));
+     gtk_container_add (GTK_CONTAINER (entry_hbox), priv->pw_entry);
+diff --git a/src/ka-pwdialog.h b/src/ka-pwdialog.h
+index 5af1117..26daea3 100644
+--- a/src/ka-pwdialog.h
++++ b/src/ka-pwdialog.h
+@@ -53,10 +53,12 @@ void ka_pwdialog_setup (KaPwDialog *pwdialog, const gchar *krb5prompt,
+ gint ka_pwdialog_run (KaPwDialog *pwdialog);
+ void ka_pwdialog_hide (const KaPwDialog *pwdialog, gboolean force);
+ void ka_pwdialog_set_persist (KaPwDialog *pwdialog, gboolean persist);
+-void ka_pwdialog_error (KaPwDialog *pwdialog, const char *msg);
++void ka_pwdialog_error (KaPwDialog *pwdialog, gchar *msg);
++void ka_pwdialog_show_wait (KaPwDialog *pwdialog);
++void ka_pwdialog_hide_wait (KaPwDialog *pwdialog);
+ 
+ /* update the expiry information in the status entry */
+-gboolean ka_pwdialog_status_update (KaPwDialog *pwdialog);
++void ka_pwdialog_status_update (KaPwDialog *pwdialog);
+ const gchar *ka_pwdialog_get_password (KaPwDialog *dialog);
+ 
+ G_END_DECLS
+-- 
+1.9.1
+

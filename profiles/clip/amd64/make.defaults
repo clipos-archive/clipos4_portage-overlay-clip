@@ -1,0 +1,30 @@
+CHOST="x86_64-pc-linux-gnu"
+LDFLAGS="-Wl,-O1 -Wl,--as-needed -Wl,--sort-common -Wl,--warn-once -Wl,--hash-style=gnu"
+ARCH="amd64"
+ACCEPT_KEYWORDS="amd64"
+
+# 2006/06/07 - Danny van Dyk <kugelfang@gentoo.org>
+# Multilib settings for all amd64 subprofiles.
+MULTILIB_ABIS="amd64"
+DEFAULT_ABI="amd64"
+# Do not remove this one, or all kinds of hell breaks loose.
+ABI="amd64"
+
+# 64bit specific settings.
+CFLAGS_amd64="-m64"
+LDFLAGS_amd64="-m elf_x86_64"
+CHOST_amd64="x86_64-pc-linux-gnu"
+
+# Michał Górny <mgorny@gentoo.org> (03 Sep 2013)
+# Enable abi_x86_64 for packages that don't have it forced.
+ABI_X86="64"
+
+# Michał Górny <mgorny@gentoo.org> (26 Jan 2013)
+# Unhide the ABI_X86 USE_EXPAND.
+USE_EXPAND_HIDDEN="-ABI_X86"
+
+# Michał Górny <mgorny@gentoo.org> (25 Jun 2014)
+# Make the native ABI implicit so that MULTILIB_USEDEP can be satisfied
+# by non-multilib ebuilds when non-native ABIs are disabled.
+IUSE_IMPLICIT="abi_x86_64"
+SYMLINK_LIB="yes"

@@ -1,0 +1,527 @@
+# CLIP ChangeLog for app-clip/clip-gtw-net
+
+*clip-gtw-net-2.2.1-r1 (09 Mar 2017)
+
+  09 Mar 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.2.1-r1.ebuild, -clip-gtw-net-2.2.0-r1.ebuild:
+  Improve logging (cfg 1->2) so that we can see negotiated ciphersuites.
+  Release number is higher than in Clip 4.4.2 so as to privide an upgrade path
+
+*clip-gtw-net-2.2.1 (09 Mar 2017)
+
+  09 Mar 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.2.1.ebuild, -clip-gtw-net-2.2.0-r1.ebuild:
+
+*clip-gtw-net-2.2.0-r1 (15 Nov 2016)
+
+  15 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.2.0-r1.ebuild, -clip-gtw-net-2.2.0.ebuild:
+  Rbump to force update from 4.4.2.
+
+*clip-gtw-net-2.2.0 (08 Nov 2016)
+
+  08 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.2.0.ebuild, -clip-gtw-net-2.1.8.ebuild:
+  noccsd crypto only allows "strong" ciphersuites.
+  (be wary of the possible client compatitility breakage)
+
+*clip-gtw-net-2.1.8 (30 Aug 2016)
+
+  23 Sep 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.8.ebuild, -clip-gtw-net-2.1.7.ebuild:
+  Remove etc-hermes config and files. Civil crypto will be handled by
+  etc-noccsd.
+  It also enable IKEv2 fragmentation (RFC 7383) and increase log verbosity.
+
+*clip-gtw-net-2.1.7 (18 Nov 2014)
+
+  18 Nov 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.7.ebuild, -clip-gtw-net-2.1.6.ebuild:
+  Fix ipsec_list_clients not working with clients with multiple
+  rightsubnet addresses.
+
+*clip-gtw-net-2.1.6 (04 Aug 2014)
+
+  04 Aug 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.6.ebuild, -clip-gtw-net-2.1.5.ebuild:
+  Add more logging in ipsec_crl_reloader.
+
+*clip-gtw-net-2.1.5 (25 Jul 2014)
+
+  25 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.5.ebuild, -clip-gtw-net-2.1.4-r1.ebuild:
+  Add ipsec_crl_reloader script.
+
+*clip-gtw-net-2.1.4-r1 (24 Jul 2014)
+
+  24 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.4-r1.ebuild, -clip-gtw-net-2.1.4.ebuild:
+  Fix ebuild due to path changes.
+
+*clip-gtw-net-2.1.4 (01 Jul 2014)
+
+  01 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.4.ebuild, -clip-gtw-net-2.1.3.ebuild:
+  Fix ipsec_list_clients not working with clients with
+  rightsubnet != 0.0.0.0/0
+
+*clip-gtw-net-2.1.3 (07 Apr 2014)
+
+  07 Apr 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.3.ebuild, -clip-gtw-net-2.1.2.ebuild:
+  Remove newly unsupported "auth" parameter from Hermes IPsec config.
+
+*clip-gtw-net-2.1.2 (10 Mar 2014)
+
+  10 Mar 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.2.ebuild, -clip-gtw-net-2.1.1.ebuild:
+  Don't fail if IPSEC_CIVIL_CRYPTO is not defined.
+
+*clip-gtw-net-2.1.1 (03 Jan 2014)
+
+  03 Jan 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.1.ebuild, -clip-gtw-net-2.1.0.ebuild:
+  Support civil cryptography for responder IPsec tunnels.
+  Fix bug in netfilter ICMP rules setup.
+
+*clip-gtw-net-2.1.0 (17 Dec 2013)
+
+  17 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.1.0.ebuild, -clip-gtw-net-2.0.2-r1.ebuild:
+  Switch to new netfilter.sub interface in clip-sub-1.9 - use 
+  associative arrays for parameter passing.
+  Use named private keys in CCSD IKE config.
+
+*clip-gtw-net-2.0.2-r1 (13 Dec 2013)
+
+  13 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.0.2-r1.ebuild, -clip-gtw-net-2.0.2.ebuild,
+  files/postinst.mvppr:
+  Do *not* overwrite newer keys in /etc/admin/ike2 with older
+  keys from /etc/ike2 in postinst.
+
+*clip-gtw-net-2.0.2 (13 Dec 2013)
+
+  13 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.0.2.ebuild, -clip-gtw-net-2.0.1.ebuild:
+  Add /etc/conf.d/netconf file.
+  Force ETH1_IN to yes in gateway configs, to allow icmp error
+  messages to be sent on the internal NIC - this is needed for
+  proper PMTU discovery.
+
+*clip-gtw-net-2.0.1 (08 Nov 2013)
+
+  08 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.0.1.ebuild, -clip-gtw-net-2.0.0.ebuild:
+  Remove NET_{IMPORT_MULTI}_FILTER, now in clip-generic-net 3.0.2, and adjust
+  dependency accordingly.
+
+*clip-gtw-net-2.0.0 (22 Oct 2013)
+
+  22 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-2.0.0.ebuild, -clip-gtw-net-1.8.9.ebuild:
+  Switch to the modular config supported by clip-generic-net-3.0.
+
+*clip-gtw-net-1.8.9 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.9.ebuild, -clip-gtw-net-1.8.8.ebuild:
+  Move extra init snippets out of init.d and into /lib/rc/net.
+
+*clip-gtw-net-1.8.8 (10 Oct 2013)
+
+  10 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.8.ebuild, -clip-gtw-net-1.8.7.ebuild:
+  Minor ipsec.conf fixes for strongswan-5.
+
+*clip-gtw-net-1.8.7 (05 Mar 2013)
+
+  05 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.7.ebuild, -clip-gtw-net-1.8.6.ebuild:
+  Use new netfilter API from clip-sub >= 1.7.11.
+
+*clip-gtw-net-1.8.5 (18 Feb 2013)
+
+  18 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.5.ebuild, -clip-gtw-net-1.8.4.ebuild:
+  Fix NET_MULTI_FILTER.
+
+*clip-gtw-net-1.8.4 (04 Feb 2013)
+
+  04 Feb 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.4.ebuild, -clip-gtw-net-1.8.3.ebuild:
+  Similar !clip-ccsd behaviour as clip-ccsd.
+  Use AES-256, SHA-256 and ECP-384 algorithmes for !clip-ccsd.
+
+*clip-gtw-net-1.8.3 (28 Jan 2013)
+
+  28 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.3.ebuild, -clip-gtw-net-1.8.2.ebuild:
+  Fix !clip-ccsd IPsec config.
+
+*clip-gtw-net-1.8.2 (25 Jan 2013)
+
+  25 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.2.ebuild, -clip-gtw-net-1.8.1.ebuild:
+  Add support for public cryptography with !clip-ccsd.
+
+*clip-gtw-net-1.8.1 (11 Jan 2013)
+
+  11 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.1.ebuild, -clip-gtw-net-1.8.0.ebuild:
+  Use new netfilter API from clip-sub >= 1.7.9, add support 
+  for inbound ping.
+
+*clip-gtw-net-1.8.0 (29 May 2012)
+
+  29 May 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.8.0.ebuild, -clip-gtw-net-1.7.4.ebuild:
+  Support dynamic IPs for internal jails, and as a responder
+  for client and admin networks.
+  Support CTRSHMAC combined mode for CCSD-based ESP encryption.
+
+*clip-gtw-net-1.7.4 (25 Apr 2012)
+
+  25 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.7.4.ebuild, -clip-gtw-net-1.7.3.ebuild:
+  Fix filtering of icmp error messages.
+
+*clip-gtw-net-1.7.3 (03 Apr 2012)
+
+  03 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.7.3.ebuild, -clip-gtw-net-1.7.2.ebuild:
+  Fix ipsec_list_clients long conn name parsing.
+
+*clip-gtw-net-1.7.2 (03 Apr 2012)
+
+  03 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.7.2.ebuild, -clip-gtw-net-1.7.1.ebuild:
+  Set CLIENT_{ID,CA} as default values.
+  Set net log level to 1.
+
+*clip-gtw-net-1.7.1 (26 Mar 2012)
+
+  26 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.7.1.ebuild, -clip-gtw-net-1.7.0.ebuild:
+  Temporary fix for static and dynamic IPsec - subnet SPD bug.
+
+*clip-gtw-net-1.7.0 (16 Mar 2012)
+
+  16 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.7.0.ebuild, -clip-gtw-net-1.6.7.ebuild:
+  Fix MobIKE through NAT for all gateways.
+  Fix right{id,ca} for clip-hermes.
+
+*clip-gtw-net-1.6.7 (12 Mar 2012)
+
+  12 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.7.ebuild, -clip-gtw-net-1.6.6.ebuild:
+  Fix MobIKE through NAT for clip-hermes.
+  Smooth rekeying.
+
+*clip-gtw-net-1.6.6 (22 Feb 2012)
+
+  22 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.6.ebuild, -clip-gtw-net-1.6.5.ebuild,
+  files/_debian/postinst, +files/postinst.mvppr:
+  Fix Hermes config and log verbosity.
+  Add {UPDATE_GW,CLIENT}_{CA,ID} optional checks.
+  Update PPR postinst.
+
+*clip-gtw-net-1.6.5 (14 Feb 2012)
+
+  14 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.5.ebuild, -clip-gtw-net-1.6.4.ebuild:
+  Fix IPsec configuration to be able to use multiple gateways.
+
+  14 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-gtw-net-1.6.4.ebuild:
+  Make clip-anssi the default case.
+
+*clip-gtw-net-1.6.4 (14 Feb 2012)
+
+  14 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.4.ebuild, -clip-gtw-net-1.6.3.ebuild,
+  -files/ipsec-hermes.conf.skel:
+  Fix clip-hermes misuse.
+  Use clip-anssi and clip-hermes configuration.
+  Extend Hermes config to use multiple gateways.
+
+  07 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  files/ipsec-hermes.conf.skel:
+  Fix DPD config for Hermes.
+
+*clip-gtw-net-1.6.3 (31 Jan 2012)
+
+  31 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.3.ebuild, -clip-gtw-net-1.6.2-r1.ebuild:
+  Fix NET_MULTI_FILTER.
+
+*clip-gtw-net-1.6.2-r1 (20 Jan 2012)
+
+  20 Jan 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.2-r1.ebuild, -clip-gtw-net-1.6.2.ebuild,
+  +files/ipsec-hermes.conf.skel:
+  Change the IPsec configuration for Hermes gateway with an automagic static and
+  dynamic client configuration.
+
+*clip-gtw-net-1.6.2 (27 Oct 2011)
+
+  27 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.2.ebuild, -clip-gtw-net-1.6.1.ebuild:
+  Support activating the admin port at boot, if the default
+  profile specifies it.
+
+*clip-gtw-net-1.6.1 (26 Oct 2011)
+
+  26 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.1.ebuild, -clip-gtw-net-1.6.0.ebuild:
+  Add support for activating the admin port based on the current
+  net profile.
+
+*clip-gtw-net-1.6.0 (25 Oct 2011)
+
+  25 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.6.0.ebuild, -clip-gtw-net-1.5.2.ebuild:
+  Fix netfilter for peer-to-peer config. 
+  Add ADMIN_TARGETS config var for more precise filtering
+  on admin gateways.
+
+*clip-gtw-net-1.5.2 (18 Oct 2011)
+
+  18 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.5.2.ebuild, -clip-gtw-net-1.5.1.ebuild:
+  Fix CLIENT_NETWORKS import when no PEER_ADDR is defined.
+
+*clip-gtw-net-1.5.1 (08 Jul 2011)
+
+  08 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.5.1.ebuild, -clip-gtw-net-1.5.0.ebuild:
+  Fix ipsec_list_clients startup.
+  Add support for 'start' led.
+
+*clip-gtw-net-1.5.0 (10 May 2011)
+
+  10 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.5.0.ebuild, -clip-gtw-net-1.4.4.ebuild,
+  files/_debian/postinst:
+  Support PEER_ADDR variable to import a unique peer.
+  Move peer gateways' public keys into /etc/admin/ike2/cert.
+
+*clip-gtw-net-1.4.4 (29 Oct 2010)
+
+  29 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.4.4.ebuild, -clip-gtw-net-1.4.3.ebuild:
+  Switch back to auto=route for update. Use larger ipsec lifetimes
+  than clients.
+
+*clip-gtw-net-1.4.3 (13 Oct 2010)
+
+  13 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.4.3.ebuild, -clip-gtw-net-1.4.2.ebuild:
+  Switch to auto=start for update client config - fixes issues
+  with responder config.
+  Fix netfilter rules for ADMIN_NETWORKS. Fix startup of 
+  ipsec clients lister.
+
+*clip-gtw-net-1.4.2 (11 Oct 2010)
+
+  11 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.4.2.ebuild, -clip-gtw-net-1.4.1.ebuild:
+  Fix missing gtw-type on ipsec startup.
+
+*clip-gtw-net-1.4.1 (07 Oct 2010)
+
+  07 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.4.1.ebuild, -clip-gtw-net-1.4.0.ebuild,
+  files/_debian/postinst, -files/_debian/prerm:
+  Remove hardcoded /etc/conf.d/net files - those should
+  from now on be provided by the install profile.
+
+*clip-gtw-net-1.4.0 (30 Sep 2010)
+
+  30 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.4.0.ebuild, -clip-gtw-net-1.3.0.ebuild,
+  files/_debian/postinst:
+  Support ADMIN gateway type, which supports outbound SSH
+  connexions to clients.
+  Add a small utility script to list established client associations
+  every minute, into /var/log/ipsec_clients.
+
+*clip-gtw-net-1.3.0 (28 Aug 2009)
+
+  28 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.3.0.ebuild, -clip-gtw-net-1.2.1.ebuild:
+  Switch from a single CLIENT_NETWORK to multiple CLIENT_NETWORKS, 
+  to be able to easily extend the client address ranges.
+
+*clip-gtw-net-1.2.1 (18 Jun 2009)
+
+  18 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.2.1.ebuild, -clip-gtw-net-1.2.0.ebuild:
+  Get rid of racoon/racoon2 scripts.
+
+*clip-gtw-net-1.2.0 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.2.0.ebuild, -clip-gtw-net-1.1.2.ebuild:
+  Switch entirely to new netconf profiles, remove config files.
+
+*clip-gtw-net-1.1.2 (14 May 2009)
+
+  14 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.1.2.ebuild, -clip-gtw-net-1.1.1.ebuild:
+  Fix ipsec.conf.skel - do not start initiator connections automatically,
+  but route them and wait for traffic. This avoids unneeded 
+  negotiations, and also makes it possible for those connections
+  to be restarted. Also put initator connections killed by DPD on hold,
+  rather than clearing them, so they can be likewise restarted, 
+  and activate DPD (with a 'clear' action in that case) on responder
+  connections.
+
+*clip-gtw-net-1.1.1 (16 Jan 2009)
+
+  16 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.1.1.ebuild, -clip-gtw-net-1.1.0.ebuild:
+  Fix ipsec.conf.skel to allow RM_H-UPDATE tunnel with strongswan
+  UPDATE.
+
+*clip-gtw-net-1.1.0 (13 Jan 2009)
+
+  13 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.1.0.ebuild, -clip-gtw-net-1.0.17.ebuild:
+  Add support for strongswan. Remove useless predeb() hook (which
+  is redundant with that in clip-generic-net).
+
+*clip-gtw-net-1.0.17 (04 Dec 2008)
+
+  04 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.17.ebuild, -clip-gtw-net-1.0.16.ebuild:
+  Define kmp_sa_grace_period to force empty IKE SA expiration.
+  Use larger max_retry_to_send and retry_interval on responder
+  config, to avoid dropping connections for no good reason (since
+  we're not in a hurry anyway...).
+
+*clip-gtw-net-1.0.16 (02 Dec 2008)
+
+  02 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.16.ebuild, -clip-gtw-net-1.0.15.ebuild:
+  Change IKE SA rekey delay to 11100 secs. Differentiate rekey
+  delays between initiator and responder confs.
+
+*clip-gtw-net-1.0.15 (24 Nov 2008)
+
+  24 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.15.ebuild, -clip-gtw-net-1.0.14.ebuild:
+  Use finer-grained ipsec netfilter controls.
+  Remove ETH0_IN / ETH0_OUT definitions, which are no longer
+  needed for IKE.
+
+*clip-gtw-net-1.0.14 (04 Nov 2008)
+
+  04 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.14.ebuild, -clip-gtw-net-1.0.13.ebuild:
+  Allow UDP output to all non-privileged ports in default 
+  gateway config, to allow isakmp-nat-keepalive packets.
+  Allow output of RELATED icmp error messages on both interfaces,
+  to e.g. signal wrong addressing to clients or IPsec failures
+  to servers.
+
+*clip-gtw-net-1.0.13 (13 Oct 2008)
+
+  13 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.13.ebuild, -clip-gtw-net-1.0.12.ebuild:
+  Add NOLOG* to default netfilter config.
+
+*clip-gtw-net-1.0.12 (10 Sep 2008)
+
+  10 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.12.ebuild, -clip-gtw-net-1.0.11.ebuild:
+  Add ETH0_OUT for update gateways - this is needed for e.g. 
+  DPD.
+
+*clip-gtw-net-1.0.11 (09 Sep 2008)
+
+  09 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.11.ebuild, -clip-gtw-net-1.0.10.ebuild:
+  Adjust SA timeouts - make them somewhat longer than those 
+  for the clients, to avoid both peers rekeying at the same
+  time.
+
+*clip-gtw-net-1.0.10 (11 Aug 2008)
+
+  11 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.10.ebuild, -clip-gtw-net-1.0.9.ebuild:
+  Use /tmp/spmd.psk as temporary SPMD PSK when starting iked.
+
+*clip-gtw-net-1.0.9 (30 Jul 2008)
+
+  30 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.9.ebuild, -clip-gtw-net-1.0.8-r1.ebuild:
+  Re-add explicit pass_esp netfilter rule on ETH0 for update 
+  gateways (from -1.0.5), which somehow got chucked out of -1.0.8.
+
+*clip-gtw-net-1.0.8 (29 Jul 2008)
+
+  29 Jul 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.8.ebuild, -clip-gtw-net-1.0.7.ebuild:
+  netfilter.extra : add statements to return 1 in case of an error.
+
+*clip-gtw-net-1.0.7 (03 Jul 2008)
+
+  03 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.7.ebuild, -clip-gtw-net-1.0.6.ebuild:
+  Remove ETH0_OUT from GTW_UPDATE configs.
+  Fix force_ipsec_if() on eth0 : include all addresses except 
+  ETH0_ADDR.
+  Allow internal -> external ICMP error messages.
+
+*clip-gtw-net-1.0.6 (10 Jun 2008)
+
+  10 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.6.ebuild, -clip-gtw-net-1.0.5.ebuild:
+  Support fail-safe mode for net init scripts.
+  Add IPsec SA lifetime limits, supported by latest racoon2.
+
+*clip-gtw-net-1.0.5 (03 Apr 2008)
+
+  03 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.5.ebuild, -clip-gtw-net-1.0.4.ebuild:
+  Explicit creation of a pass_esp netfilter rule on ETH0 for 
+  update gateways.
+
+*clip-gtw-net-1.0.4 (03 Apr 2008)
+
+  03 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.4.ebuild, -clip-gtw-net-1.0.3.ebuild:
+  Deactivate key updates for racoon2 as they are not correctly
+  debugged with ccsdaka.
+
+*clip-gtw-net-1.0.3 (02 Apr 2008)
+
+  02 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.3.ebuild, -clip-gtw-net-1.0.2.ebuild:
+  Fix ETH0_IN/OUT : iked must be allowed to receive incoming 
+  connections and initiate outgoing ones on both types of gateways.
+  Fix clip-racoon2 support in ebuild.
+
+*clip-gtw-net-1.0.2 (01 Apr 2008)
+
+  01 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.2.ebuild, -clip-gtw-net-1.0.1.ebuild:
+  Switch to full CCSD racoon2 config (ccsdsig, ccsdaka, ccsd_subject...).
+
+*clip-gtw-net-1.0.1 (20 Mar 2008)
+
+  20 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.1.ebuild, -clip-gtw-net-1.0.ebuild:
+  Bump, switch to CCSD crypto for racoon2 (albeit still with a PSK
+  authentication).
+
+*clip-gtw-net-1.0 (13 Feb 2008)
+
+  13 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-gtw-net-1.0.ebuild:
+  Initial import. Common netbase package for gtw-update and gtw-rmh.
+  Postinst script requires a /etc/gtw-type file with either 'update' 
+  or 'rmh' in it.

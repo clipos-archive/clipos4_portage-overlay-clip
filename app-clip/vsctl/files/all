@@ -1,0 +1,5 @@
+/proc/asound
+/proc/cpuinfo
+/proc/meminfo
+/proc/stat
+/proc/version

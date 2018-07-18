@@ -1,0 +1,29 @@
+#!/sbin/runscript
+# Copyright 2013 ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+PROFILES="/usr/share/clip-hardware/profiles"
+HWTYPE_CONF="/etc/core/machine"
+
+
+depend() {
+	need veriexec
+	before reducecap
+}
+
+start() {
+	[[ -f "${HWTYPE_CONF}" ]] || return 0
+
+	local hwtype="$(cat "${HWTYPE_CONF}")"
+	[[ -n "${hwtype}" ]] || return 0
+
+	local scriptdir="${PROFILES}/${hwtype}/scripts"
+
+	[[ -d "${scriptdir}" ]] || return 0
+
+	for s in "${scriptdir}"/*; do
+		[[ -e "${s}" ]] || continue
+		${s} || ewarn "Hardware configuration script $(basename ${s}) returned an error"
+	done
+}

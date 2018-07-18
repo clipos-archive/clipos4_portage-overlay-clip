@@ -1,0 +1,47 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+OPTCONF="/etc/admin/clip_install/optional.conf.rm"
+OPTCPY="/var/pkg/cache/apt/clip_install/rm/apps/optional.conf.rm"
+
+if [ ! -f "${OPTCONF}" ]; then
+	touch "${OPTCONF}"
+fi
+chown 4000:4000 "${OPTCONF}"
+
+update_optcpy() {
+	local pkg="$1"
+	if dpkg -l "${pkg}" 2>/dev/null | grep -q -E '^ii '; then
+		grep -q "${pkg}" "${OPTCPY}" || echo "${pkg}" >> "${OPTCPY}"
+	fi
+}
+
+if grep -q "gnash" "${OPTCONF}" 2>/dev/null; then
+	echo " * gnash is already the default flash player"
+else
+	if grep -q "adobe-flash" "${OPTCONF}" 2>/dev/null; then
+		echo " * adobe-flash is the default flash player"
+		update_optcpy "gnash"
+	else
+		echo "gnash" >> "${OPTCONF}"
+	fi
+fi
+
+update_optcpy "acid-cryptofiler5"
+update_optcpy "acid5-utils"
+update_optcpy "p7zip"
+
+sed -i -e 's/^ldap-light-client$/rmh-config/' "${OPTCONF}"
+sed -i -e 's/^ublock-fx$/ublock-origin-fx/' "${OPTCONF}"
+sed -i -e 's/^pentadactyl-fx$/vimperator-fx/' "${OPTCONF}"
+
+sed -i -e '/^pxrinfo$/d' "${OPTCONF}"
+sed -i -e '/^klamav$/d' "${OPTCONF}"
+sed -i -e '/^trustedbird-extensions$/d' "${OPTCONF}"
+sed -i -e '/^openproj$/d' "${OPTCONF}"
+sed -i -e '/^gnash$/d' "${OPTCONF}"
+sed -i -e '/^opencpn$/d' "${OPTCONF}"
+sed -i -e '/^remserial$/d' "${OPTCONF}"
+sed -i -e '/^vlc$/d' "${OPTCONF}"
+sed -i -e '/^icaclient$/d' "${OPTCONF}"

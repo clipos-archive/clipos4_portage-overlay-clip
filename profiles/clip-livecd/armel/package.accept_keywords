@@ -1,0 +1,5 @@
+clip-dev/clip-installer ~arm
+app-misc/ca-certificates ~arm
+sys-devel/binutils ~arm
+sys-apps/dmidecode ~arm
+sys-process/lsof ~arm

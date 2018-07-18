@@ -1,0 +1,12 @@
+diff -pruN a/content/useragentswitcher/upgrade.js b/content/useragentswitcher/upgrade.js
+--- a/content/useragentswitcher/upgrade.js	2009-06-30 19:43:20.000000000 +0200
++++ b/content/useragentswitcher/upgrade.js	2010-08-25 11:32:09.000000000 +0200
+@@ -216,8 +216,6 @@ var UserAgentSwitcherUpgrade =
+ 
+ 			this.installUserAgents();
+ 
+-			window.getBrowser().addEventListener("load", UserAgentSwitcherUpgrade.openUpgradePage, false);
+-	
+ 			UserAgentSwitcherPreferences.setStringPreference("useragentswitcher.version", version);
+ 		}
+ 	}

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+CRONTAB="/update_root/etc/cron/crontab/root"
+rc-update del clip_download default
+
+sed -i -e '/^.*clip_download.*$/d' "${CRONTAB}"
+
+

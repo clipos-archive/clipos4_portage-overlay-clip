@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-ganttproject">
+    <sub-class-of type="application/xml"/>
+    <comment>Ganttproject Project</comment>
+    <comment xml:lang="fr">Projet Ganttproject</comment>
+    <icon name="ganttproject.png"/>
+    <glob pattern="*.gan"/>
+    <glob pattern="*.GAN"/>
+  </mime-type>
+</mime-info>

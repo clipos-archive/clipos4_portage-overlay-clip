@@ -1,0 +1,6 @@
+INPUT_DEVICES="keyboard mouse"
+PKGDIR="/var/cache/packages"
+
+USE="clip bzip2 crypt hardened nptl nptlonly pic zlib"
+LINGUAS="fr fr_FR fr-FR"
+

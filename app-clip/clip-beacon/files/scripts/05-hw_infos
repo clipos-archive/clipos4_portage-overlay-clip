@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cat /proc/cpuinfo > "$BEACON_REPORT_DIR"/cpuinfo
+head -1 /proc/meminfo > "$BEACON_REPORT_DIR"/total_mem

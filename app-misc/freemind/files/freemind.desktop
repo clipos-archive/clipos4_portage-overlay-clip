@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Freemind
+GenericName=Mind-map editor
+GenericName[fr]=Editeur de cartes mentales
+Comment=
+Icon=freemind
+Terminal=0
+Type=Application
+MimeType=application/x-freemind;
+Categories=Application;Office;
+Exec=freemind %F

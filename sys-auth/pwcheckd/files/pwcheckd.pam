@@ -1,0 +1,8 @@
+#%PAM-1.0 
+
+auth       required	pam_env.so
+auth       [success=ok default=1]	pam_wheel.so group=pkauth use_login trust
+auth       [success=done default=die]	pam_pkcs11.so
+auth       [success=done default=die]	pam_tcb.so shadow fork prefix=$2a$ count=8
+
+account sufficient	pam_permit.so

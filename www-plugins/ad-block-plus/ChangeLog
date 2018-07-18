@@ -1,0 +1,26 @@
+# CLIP ChangeLog for www-plugins/ad-block-plus
+
+  12 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  ad-block-plus-1.8.1.ebuild:
+  Add amd64 keyword.
+
+*ad-block-plus-1.8.1 (12 May 2014)
+
+  12 May 2014; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +ad-block-plus-1.8.1.ebuild, -ad-block-plus-1.7.4.ebuild:
+
+*ad-block-plus-1.7.4 (01 Apr 2014)
+
+  01 Apr 2014; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +ad-block-plus-1.7.4.ebuild, -ad-block-plus-1.4.4.ebuild:
+
+*ad-block-plus-1.4.4 (26 Sep 2013)
+
+  26 Sep 2013; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +ad-block-plus-1.4.4.ebuild, -ad-block-plus-1.4.ebuild:
+
+*ad-block-plus-4.1 (10 Avr 2013)
+
+  10 Avr 2013; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +ad-block-plus-4.1.ebuild:
+  Initial import from Google Chrome WebStore.

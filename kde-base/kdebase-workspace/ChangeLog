@@ -1,0 +1,299 @@
+# CLIP ChangeLog for kde-base/kdebase-workspace
+
+*kdebase-workspace-4.11.9-r4 (23 Feb 2016)
+
+  23 Feb 2016; Philippe Trebuchet <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.11.19.ebuild, -kdebase-workspace-4.11.9-r3.ebuild:
+  Initial commit of kde 4.14
+
+  08 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  kdebase-workspace-4.11.9-r3.ebuild:
+  Add (masked) amd64 keyword.
+
+*kdebase-workspace-4.11.9-r3 (21 Apr 2015)
+
+  21 Apr 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.11.9-r3.ebuild, -kdebase-workspace-4.11.9-r2.ebuild:
+  Force rebuild to drop python-exec dependency.
+
+*kdebase-workspace-4.11.9-r2 (03 Mar 2015)
+
+  03 Mar 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.11.9-r2.ebuild, -kdebase-workspace-4.11.9-r1.ebuild:
+  Disable screenlocker: it does not work anymore (buggy behavior that would
+  require importing KDM in CLIP) and never served any purpose.
+
+*kdebase-workspace-4.11.9-r1 (05 May 2014)
+
+  05 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.11.9-r1.ebuild, -kdebase-workspace-4.11.9.ebuild,
+  -files/qguiplatformplugin_kde-4.11.7-localization.patch:
+  Remove Qt localization patch, since this has been fixed upstream in
+  kdelibs 4.12.5.
+
+*kdebase-workspace-4.11.9 (05 May 2014)
+
+  05 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.11.9.ebuild, -kdebase-workspace-4.11.7-r1.ebuild,
+  -files/ksmserver-4.11.97-noplasmalock.patch,
+  -files/plasma-workspace-4.10.1-noplasmalock.patch,
+  -files/systemsettings-4.10.1-noplasmalock.patch:
+  Bump to latest.
+
+*kdebase-workspace-4.11.7-r1 (11 Apr 2014)
+
+  11 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.11.7-r1.ebuild, -kdebase-workspace-4.11.7.ebuild:
+  Force rebuild - generate doc.
+
+*kdebase-workspace-4.11.7 (12 Mar 2014)
+
+  12 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.11.7.ebuild, -kdebase-workspace-4.9.5-r3.ebuild,
+  -files/kdebase-workspace-4.9.5-systemtray-memleak.patch,
+  -files/krunner-4.6.2-noxf86misc.patch,
+  -files/systemsettings-4.9.4-clip-nohw.patch,
+  -files/qguiplatformplugin_kde-4.7.1-localization.patch,
+  +files/qguiplatformplugin_kde-4.11.7-localization.patch,
+  +files/ksmserver-4.11.97-noplasmalock.patch,
+  +files/plasma-workspace-4.10.1-noplasmalock.patch,
+  +files/systemsettings-4.10.1-noplasmalock.patch,
+  +files/systemsettings-4.11.7-clip-nohw.patch:
+  Bump to latest.
+
+*kdebase-workspace-4.9.5-r3 (08 Nov 2013)
+
+  08 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.9.5-r3.ebuild, -kdebase-workspace-4.9.5-r2.ebuild:
+  Force rebuild (icu revdep).
+
+*kdebase-workspace-4.9.5-r2 (06 Aug 2013)
+
+  06 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.9.5-r2.ebuild, -kdebase-workspace-4.9.5-r1.ebuild,
+  +files/kdebase-workspace-4.9.5-systemtray-memleak.patch:
+  Add a patch from rev 2c810db3e41d56ad7dd8ec3436f3cf3abcc31983 of the 4.10
+  branch to fix a (potentially severe) memleak in systemtray.
+
+*kdebase-workspace-4.9.5-r1 (24 Jul 2013)
+
+  24 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.9.5-r1.ebuild, -kdebase-workspace-4.9.5.ebuild:
+  Force rebuild.
+
+  13 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  kdebase-workspace-4.9.5.ebuild:
+  Fix ksysguard headers path.
+
+*kdebase-workspace-4.9.5 (05 Feb 2013)
+
+  05 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.9.5.ebuild, -kdebase-workspace-4.9.4.ebuild:
+  Bump to latest.
+
+*kdebase-workspace-4.9.4 (26 Dec 2012)
+
+  26 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.9.4.ebuild, -kdebase-workspace-4.7.3-r2.ebuild,
+  +files/systemsettings-4.9.4-clip-nohw.patch,
+  +files/kdebase-workspace-4.9.4-clip-cprefix.patch,
+  -files/kdebase-workspace-4.4.2-xinerama_cmake_automagic.patch,
+  -files/libs-plasmaclock-b13b4604.diff,
+  -files/plasma-workspace-4.7.3-weathercrash.patch,
+  -files/systemsettings-4.7.1-clip.patch,
+  -files/plasma-workspace-4.7.3-taskcrash.patch:
+  Bump to latest. Add a patch to fix a few hardcoded paths for CPREFIX.
+
+*kdebase-workspace-4.7.3-r2 (23 Mar 2012)
+
+  23 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.3-r2.ebuild, -kdebase-workspace-4.7.3-r1.ebuild:
+  Force rebuild.
+
+*kdebase-workspace-4.7.3-r1 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.3-r1.ebuild, -kdebase-workspace-4.7.3.ebuild,
+  +files/libs-plasmaclock-b13b4604.diff:
+  Add a patch from 4.7.4 to prevent some crashes.
+
+*kdebase-workspace-4.7.3 (15 Nov 2011)
+
+  15 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.3.ebuild, -kdebase-workspace-4.7.1-r4.ebuild,
+  +files/plasma-workspace-4.7.3-taskcrash.patch,
+  +files/plasma-workspace-4.7.3-weathercrash.patch,
+  -files/kwin-4.7.1-performance.patch:
+  Bump to latest.
+
+*kdebase-workspace-4.7.1-r4 (08 Nov 2011)
+
+  08 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.1-r4.ebuild, -kdebase-workspace-4.7.1-r3.ebuild,
+  -files/kickoff-4.7.1-clip-nohalt.patch:
+  Use the same 'noleave' patch on clip and hestia.
+
+*kdebase-workspace-4.7.1-r3 (06 Oct 2011)
+
+  06 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.1-r3.ebuild, -kdebase-workspace-4.7.1-r2.ebuild,
+  +files/kwin-4.7.1-performance.patch:
+  Add performance patch from upstream.
+
+*kdebase-workspace-4.7.1-r2 (28 Sep 2011)
+
+  28 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.1-r2.ebuild, -kdebase-workspace-4.7.1-r1.ebuild:
+  files/files/qguiplatformplugin_kde-4.7.1-localization.patch:
+  Fix KDE dialog localization patch for Qt apps, only better than previously.
+
+*kdebase-workspace-4.7.1-r1 (15 Sep 2011)
+
+  15 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.1-r1.ebuild, -kdebase-workspace-4.7.1.ebuild,
+  files/files/qguiplatformplugin_kde-4.7.1-localization.patch:
+  Fix KDE dialog localization patch for Qt apps.
+
+*kdebase-workspace-4.7.1 (13 Sep 2011)
+
+  13 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.7.1.ebuild, -kdebase-workspace-4.5.5-r2.ebuild,
+  +files/ksysguard-4.7.1-clip.patch,
+  +files/kickoff-4.7.1-clip-nohalt.patch,
+  +files/krunner-4.6.2-noxf86misc.patch,
+  +files/systemsettings-4.7.1-clip.patch,
+  +files/qguiplatformplugin_kde-4.7.1-localization.patch,
+  -files/qguiplatformplugin_kde-4.5.4-localization.patch,
+  -files/ksysguard-4.4.4-clip.patch,
+  -files/solid-4.4.69-darwin-compile-powermanager.patch,
+  -files/kickoff-4.4.4-clip-nohalt.patch,
+  -files/ksysguard-4.4.4-clip-vmstat-segfault.patch,
+  -files/systemsettings-4.5.4-clip.patch:
+  Bump to latest.
+
+  09 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  kdebase-workspace-4.5.5-r2.ebuild:
+  clip-deps fix - remove dependency on timezone-data.
+
+  31 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  kdebase-workspace-4.5.5-r2.ebuild:
+  Limit conflicts against exploded kde ebuilds to slot 4.
+
+  26 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  kdebase-workspace-4.5.5-r2.ebuild:
+  Fix missing khotkeys dbus interface build failure, by removing the sed
+  command on kmenuedit CMakeFiles.txt that only makes sense on split ebuilds.
+
+*kdebase-workspace-4.5.5-r2 (29 Apr 2011)
+
+  29 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.5.5-r2.ebuild, -kdebase-workspace-4.5.5-r1.ebuild:
+  Add missing kstyles.
+
+*kdebase-workspace-4.5.5-r1 (20 Jan 2011)
+
+  20 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.5.5-r1.ebuild, -kdebase-workspace-4.5.5.ebuild,
+  files/qguiplatformplugin_kde-4.5.4-localization.patch:
+  Modify qguiplatoform localization patch so as not to overwrite an
+  existing KDE locale...
+
+*kdebase-workspace-4.5.5 (10 Jan 2011)
+
+  10 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.5.5.ebuild, -kdebase-workspace-4.5.4-r1.ebuild:
+  Bump to latest.
+
+*kdebase-workspace-4.5.4-r1 (06 Jan 2011)
+
+  06 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.5.4-r1.ebuild, -kdebase-workspace-4.5.4.ebuild,
+  +files/qguiplatformplugin_kde-4.5.4-localization.patch:
+  Add a patch to provide localization of KFileDialogs in Qt-only apps.
+
+*kdebase-workspace-4.5.4 (20 Dec 2010)
+
+  20 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.5.4.ebuild, -kdebase-workspace-4.4.4-r3.ebuild,
+  -files/solid-4.3.1-darwin-compile-powermanager.patch,
+  +files/solid-4.4.69-darwin-compile-powermanager.patch,
+  -files/systemsettings-4.4.4-clip.patch,
+  +files/systemsettings-4.5.4-clip.patch:
+  Bump to latest. Remove kinfocenter for default install.
+
+*kdebase-workspace-4.4.4-r3 (10 Nov 2010)
+
+  10 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.4.4-r3.ebuild, -kdebase-workspace-4.4.4-r2.ebuild,
+  files/ksysguard-4.4.4-clip-vmstat-segfault.patch:
+  Leave ksysguardd in the installed files, and actually fix the issue that
+  made it segfault on clip (i.e. failure to open /proc/vmstat meant that a
+  SMPLoad struct array was not allocated, but still written to afterwards
+  on commands such as cpu/idle).
+
+*kdebase-workspace-4.4.4-r2 (06 Aug 2010)
+
+  06 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.4.4-r2.ebuild, -kdebase-workspace-4.4.4-r1.ebuild,
+  +files/kickoff-4.4.4-clip-noleave.patch:
+  Remove the whole leave section in the KickOff menu for clip-hermes.
+
+*kdebase-workspace-4.4.4-r1 (02 Jul 2010)
+
+  02 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.4.4-r1.ebuild, -kdebase-workspace-4.4.4.ebuild,
+  files/systemsettings-4.4.4-clip.patch:
+  Remove ksysguardd, remove hal power management kcm.
+
+*kdebase-workspace-4.4.4 (30 Jun 2010)
+
+  30 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.4.4.ebuild,
+  +files/kdebase-workspace-4.4.2-xinerama_cmake_automagic.patch,
+  +files/systemsettings-4.4.4-clip.patch, +files/ksysguard-4.4.4-clip.patch,
+  +files/kickoff-4.4.4-clip-nohalt.patch:
+  Add newest version, ~x86 for now.
+
+*kdebase-workspace-4.3.5-r2 (09 Feb 2010)
+
+  09 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.3.5-r2.ebuild, -kdebase-workspace-4.3.5-r1.ebuild:
+  Disable PAX_MPROTECT on systemsettings, which may run 
+  java code for soprano backend.
+
+*kdebase-workspace-4.3.5-r1 (05 Feb 2010)
+
+  05 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.3.5-r1.ebuild, -kdebase-workspace-4.3.5.ebuild,
+  +files/kwin-4.3.5-magiclamp-minimize.patch,
+  +files/solid-4.3.1-darwin-compile-powermanager.patch,
+  +files/solid-4.3.4-hal-2.patch, +files/solid-4.3.4-hal.patch:
+  Re-add missing solid patches. Add kwin patch (gentoo bug #295511).
+
+*kdebase-workspace-4.3.5 (03 Feb 2010)
+
+  03 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.3.5.ebuild, -kdebase-workspace-4.3.4-r1.ebuild,
+  -files/solid-4.3.4-hal.patch:
+  Bump to latest.
+
+*kdebase-workspace-4.3.4-r1 (05 Jan 2010)
+
+  05 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +kdebase-workspace-4.3.4-r1.ebuild, -kdebase-workspace-4.3.4.ebuild,
+  +files/ksysguard-4.3.4-clip.patch,
+  +files/kickoff-4.3.4-clip-nohalt.patch:
+  Remove wallpapers from package bundle - they take up most of the
+  space and don't need to be updated quite as often as the rest.
+  Add patch for ksysguard to enable it to work in a CLIP jail (where
+  /proc/1/ is generally not user-readable, which messes up ksysguard
+  process tree).
+  Add patch to remove halt / suspend / reboot / switch user options
+  in kickoff.
+
+*kdebase-workspace-4.3.4 (04 Jan 2010)
+
+  04 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  kdebase-workspace-4.3.4.ebuild:
+  Initial import - mix all useful kdebase-workspace packages 
+  into a single one.

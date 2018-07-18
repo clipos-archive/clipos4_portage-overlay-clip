@@ -1,0 +1,31 @@
+--- a/usr/share/adeskbar/adesk/bar.py
++++ b/usr/share/adeskbar/adesk/bar.py
+@@ -98,6 +98,7 @@ class BarManager():
+         self.win.connect('size-allocate', self.win_size_allocate)
+         self.win.connect("realize", self.update_strut)
+         self.win.connect("composited-changed", self.composite_changed)
++        self.win.get_screen().connect('size-changed', self.refresh_screen)
+ 
+     def gtkrc_changed (self, monitor, file, unknown, event):
+         print '------------------------>>>>>>>>>>>>>>>>>>>>>>>>>>>><'
+@@ -288,10 +289,6 @@ class BarManager():
+         # init all plugins
+         self.plg_mgr.on_init()
+ 
+-        ## FIXME!!
+-        # sometimes reposition doesn't work :/ .. quick hack
+-        gobject.timeout_add(500, self.reposition)
+-
+         if DEBUG and not 1:
+             for index in self.plg_mgr.index:
+                 print ('------------------------------------')
+@@ -712,6 +709,9 @@ class BarManager():
+         self.draw_bg()
+         self.update() 
+ 
++    def refresh_screen(self, screen):
++        self.update_all() 
++
+     def check_window_state(self):
+         if not self.init_flag:
+             return

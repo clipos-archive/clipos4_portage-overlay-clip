@@ -1,0 +1,14 @@
+
+CHOST=armv7a-hardfloat-linux-gnueabi
+ARCH=arm
+
+LDFLAGS="-Wl,-O1 -Wl,--as-needed -Wl,--sort-common -Wl,--warn-once -Wl,--hash-style=gnu"
+ACCEPT_KEYWORDS="arm ~arm **"
+
+#probleme de boucle infinie avec qemu lors du test correspondant dans les scripts configure
+gl_cv_func_printf_enomem="no"
+
+#probleme de ptrace avec qemu
+#effet de bord, l'exécution des ebuild est beaucoup plus rapide 
+FEATURES="-sandbox"
+

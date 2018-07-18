@@ -1,0 +1,24 @@
+#! /bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+if [ -f /etc/admin/ike2/cert/ccsd.pvr ] && [ -f /etc/admin/ike2/cert/ccsd.pwd ];
+then
+	# Migrate ccsd.{pvr,pwd} to ccsd-{rmh,update,admin,audit}.{pvr,pwd}
+	for dest in ccsd-rmh ccsd-admin ccsd-audit ccsd-update; do
+		# No overwrite if destination files both exist
+		if [ -f /mounts/admin_priv/etc.ike2/cert/${dest}.pvr ] && [ -f /mounts/admin_priv/etc.ike2/cert/${dest}.pwd ]; then
+			continue
+		fi
+		cp -a /etc/admin/ike2/cert/ccsd.pvr /mounts/admin_priv/etc.ike2/cert/${dest}.pvr
+		if [ "$?" -ne 0 ]; then
+			echo " ! Failed to copy to ${dest}.pvr" >&2
+			exit 1
+		fi
+		cp -a /etc/admin/ike2/cert/ccsd.pwd /mounts/admin_priv/etc.ike2/cert/${dest}.pwd
+		if [ "$?" -ne 0 ]; then
+			echo " ! Failed to copy to ${dest}.pwd" >&2
+			exit 1
+		fi
+	done
+fi

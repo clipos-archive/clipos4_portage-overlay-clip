@@ -1,0 +1,178 @@
+# CLIP ChangeLog for clip-layout/baselayout-core-admin
+
+*baselayout-core-admin-1.1 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.1.ebuild, -baselayout-core-admin-1.0-r23.ebuild:
+  Create lib64 on clip 64 bits.
+
+*baselayout-core-admin-1.0-r23 (29 Apr 2014)
+
+  29 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r23.ebuild, -baselayout-core-admin-1.0-r22.ebuild:
+  Add a /sys mount point.
+
+*baselayout-core-admin-1.0-r21 (26 Nov 2013)
+
+  26 Nov 2013; ANSSI <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r21.ebuild, -baselayout-core-admin-1.0-r20.ebuild:
+  Fixed permissions on installation of CA certificate for PKCS11.
+
+*baselayout-core-admin-1.0-r20 (08 Mar 2013)
+
+  08 Mar 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r20.ebuild, -baselayout-core-admin-1.0-r19.ebuild,
+  +files/mtab:
+  Add fake mtab needed by df.
+
+*baselayout-core-admin-1.0-r19 (05 Mar 2013)
+
+  05 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r19.ebuild, -baselayout-core-admin-1.0-r18.ebuild,
+  files/scripts/uninstall_ike.sh,
+  files/scripts/install_dl_cert.sh,
+  files/scripts/install_pkcs11_cert.sh,
+  files/scripts/install_ike.sh,
+  files/scripts/change_timezone.sh:
+  Add a confirmation window for timezone change + cleanup other scripts.
+
+*baselayout-core-admin-1.0-r18 (04 Mar 2013)
+
+  04 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r18.ebuild, -baselayout-core-admin-1.0-r17.ebuild,
+  +files/scripts/change_timezone.sh:
+  Add /usr/share/zoneinfo mountpoint, add timezone change script, by Florent
+  Chabaud.
+
+*baselayout-core-admin-1.0-r17 (19 Dec 2012)
+
+  19 Dec 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r17.ebuild, -baselayout-core-admin-1.0-r16.ebuild,
+  files/scripts/install_ike.sh:
+  Fix typo.
+
+*baselayout-core-admin-1.0-r16 (26 Mar 2012)
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r16.ebuild, -baselayout-core-admin-1.0-r15.ebuild:
+  Force rebuild
+
+*baselayout-core-admin-1.0-r15 (28 Dec 2011)
+
+  28 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r15.ebuild, -baselayout-core-admin-1.0-r14.ebuild,
+  -files/scripts/configure_ntp.sh, -files/scripts/configure_logfiles.sh:
+  Remove now useless scripts.
+
+*baselayout-core-admin-1.0-r14 (14 Jan 2011)
+
+  14 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r14.ebuild, 
+  -baselayout-core-admin-1.0-r13.ebuild,
+  +files/scripts/install_pkcs11_cert.sh:
+  Add PKCS11 cacert install script.
+
+*baselayout-core-admin-1.0-r13 (29 Sep 2009)
+
+  29 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r13.ebuild,
+  -baselayout-core-admin-1.0-r12.ebuild,
+  files/scripts/*:
+  More Xdialog fixes for 100dpi.
+
+*baselayout-core-admin-1.0-r12 (03 Sep 2009)
+
+  03 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r12.ebuild,
+  -baselayout-core-admin-1.0-r11.ebuild,
+  files/scripts/configure_logfiles.sh,
+  -files/scripts/list_optional.sh:
+  Fix sizes for 100dpi. Remove obsolete list_optional script.
+
+*baselayout-core-admin-1.0-r11 (03 Sep 2009)
+
+  03 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r11.ebuild, -baselayout-core-admin-1.0-r10.ebuild:
+
+*baselayout-core-admin-1.0-r10 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r10.ebuild, -baselayout-core-admin-1.0-r9.ebuild,
+  +fils/scripts/configure_ntp.sh:
+  Add NTP configuration script.
+
+*baselayout-core-admin-1.0-r9 (10 Jun 2009)
+
+  10 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r9.ebuild, -baselayout-core-admin-1.0-r8.ebuild,
+  +files/scripts/editor.sh, +files/scripts/list_optional.sh:
+  +scripts/install_ike.sh, +scripts/uninstall_ike.sh,
+  +scripts/install_dl_cert.sh, +scripts/configure_logfiles.sh:
+  Add scripts needed for UPDATE management with new ADMIN interface.
+
+*baselayout-core-admin-1.0-r8 (17 Dec 2008)
+
+  17 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r8.ebuild, -baselayout-core-admin-1.0-r7.ebuild:
+  Add /mnt/cdrom.
+
+*baselayout-core-admin-1.0-r7 (11 Apr 2008)
+
+  11 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r7.ebuild, -baselayout-core-admin-1.0-r6.ebuild:
+  Add /mnt/usb.
+
+*baselayout-core-admin-1.0-r6 (15 Nov 2007)
+
+  15 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r6.ebuild:
+  Add IUSE clip-deps to remove dependency on baselayout-clip.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove all ebuilds before 1.0-r5.
+
+*baselayout-core-admin-1.0-r5 (30 Oct 2007)
+
+  30 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r5.ebuild:
+  Merge EADS's -r4, removing newly added /backup/{clip,data}. This
+  is the same as -r3, with updated dependencies.
+
+*baselayout-core-admin-1.0-r4 (19 Oct 2007)
+
+  19 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r4.ebuild:
+  Merge EADS updates, with following changelog:
+
+	*baselayout-core-admin-1.0-r3 (04 Oct 2007)
+
+	  04 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  +baselayout-core-admin-1.0-r3.ebuild:
+	  Add /backup/{clip|data}.
+
+*baselayout-core-admin-1.0-r3 (02 Oct 2007)
+
+  02 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r3.ebuild:
+  Do not create openssl/install_cert mountpoints, since copies 
+  of those binaries are now installed from their respective 
+  packages. This basically reverts to 1.0-r1, except for the 
+  /usr/bin directory.
+
+*baselayout-core-admin-1.0-r2 (13 Aug 2007)
+
+  13 Aug 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r2.ebuild:
+  Add /usr/bin/openssl and /usr/bin/install_cert.
+
+*baselayout-core-admin-1.0-r1 (16 Jul 2007)
+
+  16 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0-r1.ebuild:
+  Remove useless src tarball. Create etc tree through views.eclass.
+
+*baselayout-core-admin-1.0 (20 Jun 2007)
+
+  20 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-core-admin-1.0.ebuild:
+  Initial dash at a core admin layout.

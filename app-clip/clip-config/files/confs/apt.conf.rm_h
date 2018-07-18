@@ -1,0 +1,5 @@
+Dir::Etc "/etc/admin/clip_download";
+Dir::Etc::SourceList "/etc/admin/clip_download/sources.list.rm_h";
+Dir::Cache "/var/pkg/rm_h/cache/apt/clip_download/rm";
+Dir::State "/var/pkg/rm_h/cache/apt/clip_download/rm"; 
+Dir::State::Status "/var/pkg/rm_h/lib/dpkg/status";

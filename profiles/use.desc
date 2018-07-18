@@ -1,0 +1,21 @@
+# CLIP-specific global use flag description
+
+clip - Support generic clip features.
+clip-anssi - support features specific to the ANSSI test network
+clip-ccsd - include CCSD crypto algorithms
+clip-core - build for CLIP core (as opposed to a RM jail).
+clip-deps - Remove some RDEPENDS that are automatically provided through ESSENTIAL packages in all CLIP versions.
+clip-devel - Build developpment versions: include programs and features useful for testing, but not for end-user interaction
+clip-dev-lxc - Set up LXC container configuration.
+clip-domains - build support for several X11 security domains.
+clip-gtw - build for a gateway / server configuration.
+clip-hermes - support features specific to the Hermes (Hestia clients or Hermes servers) configuration
+clip-rm - build for a RM jail in CLIP-RM
+clip-single - build for a clip-single configuration
+clip-tcb - build support for tcb, OpenWall's replacement for shadow
+core-deps - Remove some RDEPENDS that are automatically provided through ESSENTIAL packages in CLIP's core.
+core-rm - include support for RM jails in CLIP's core
+rm-core - build for RM CORE
+rm-deps - Remove some RDEPENDS that are automatically provided through ESSENTIAL packages in RM.
+rm-h - RM_H specific configuration.
+rm-b - RM_B specific configuration.

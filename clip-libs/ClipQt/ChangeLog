@@ -1,0 +1,46 @@
+# CLIP ChangeLog for clip-libs/ClipQt
+
+  05 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  ClipQt-2.0.1.ebuild:
+  Modernize packaging: use EAPI=5 and run autoreconf in src_prepare(). Drop all
+  other functions since we only do standard stuff.
+
+*ClipQt-2.0.1 (31 Dec 2013)
+
+  31 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ClipQt-2.0.1.ebuild, -ClipQt-2.0.0.ebuild:
+  Set config file encoding to UTF-8.
+
+*ClipQt-2.0.0 (28 May 2013)
+
+  28 May 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +ClipQt-2.0.0.ebuild, -ClipQt-1.0.3.ebuild:
+  Add support for inheritance of configuration profiles.
+
+*ClipQt-1.0.3 (25 Apr 2013)
+
+  25 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +ClipQt-1.0.3.ebuild, -ClipQt-1.0.2.ebuild:
+  Add a world-readable option for configuration files.
+
+  24 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  ClipQt-1.0.1.ebuild:
+  Depend on automake-1.10
+
+*ClipQt-1.0.2 (31 Jan 2011)
+
+  31 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ClipQt-1.0.2.ebuild, -ClipQt-1.0.1.ebuild:
+  Add profile validity support.
+
+*ClipQt-1.0.1 (01 Sep 2010)
+
+  01 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ClipQt-1.0.1.ebuild, -ClipQt-1.0.0.ebuild:
+  Move some more code from clip-config.
+
+*ClipQt-1.0.0 (04 Aug 2010)
+
+  04 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +ClipQt-1.0.0.ebuild:
+  Initial import.

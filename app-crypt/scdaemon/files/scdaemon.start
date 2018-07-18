@@ -1,0 +1,40 @@
+#!/bin/sh
+# Copyright 2013-2014 SGDSN/ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+grep -q '^SMARTCARD_SUPPORT=yes' "/etc/admin/conf.d/smartcards" \
+		|| exit 0
+
+source /lib/clip/import.sub
+source /lib/clip/jails.sub
+
+SOCKETPATH="/var/run/scdaemon"
+SCDAEMON_SOCKET="${SOCKETPATH}/socket"
+CONF_FILE="/etc/admin/conf.d/smartcards"
+
+import_conf_noerr "${CONF_FILE}" '(rm_b|rm_h|[ ])*' OPENPGP_JAILS 2>/dev/null
+
+[[ -n "${OPENPGP_JAILS}" ]] || exit 0
+
+declare -i RET=0
+for JAIL in ${OPENPGP_JAILS} ; do
+    DAEMON_JAIL="scdaemon_${JAIL}"
+    CTX="$(<"/etc/jails/${DAEMON_JAIL}/context")"
+
+    if ! jail_setup_wait "${DAEMON_JAIL}"; then
+	ewarn "Failed to set up jail : ${DAEMON_JAIL}"
+    	RET=1
+	continue
+    fi
+
+    mkdir -p "/vservers/${JAIL}/user_priv/${SOCKET_PATH}"
+    rm -f "/vservers/${JAIL}/user_priv/${SCDAEMON_SOCKET}"
+    if ! scdaemon --daemon -q -X "${CTX}" \
+			-S "/vservers/${JAIL}/user_priv/${SCDAEMON_SOCKET}" \
+			-C "${SCDAEMON_SOCKET}" ; then
+	ewarn "Failed to run scdaemon for ${DAEMON_JAIL}"
+	RET=1
+    fi
+done
+
+exit $RET

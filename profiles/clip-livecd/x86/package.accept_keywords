@@ -1,0 +1,3 @@
+# CLIP specific stuff
+clip-dev/clip-installer ~x86
+app-misc/ca-certificates ~x86

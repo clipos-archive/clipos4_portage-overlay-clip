@@ -1,0 +1,237 @@
+# ChangeLog for <app-clip>/<clip-install-common>
+
+*clip-install-common-2.3.0 (28 Jun 2016)
+
+  28 Jun 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-install-common-2.3.0.ebuild, -clip-install-common-2.2.5.ebuild:
+  Civil crypto support.
+
+*clip-install-common-2.2.5 (15 Oct 2013)
+
+  15 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.2.5.ebuild, -clip-install-common-2.2.4.ebuild,
+  +files/features:
+  Add a 'features' file in /usr/share/clip-install to list some features
+  added over time - this should help e.g. init scripts run clip_install
+  with supported options.
+  Support flag files, such as /var/pkg/mirrors/flags/rm_apps, remove such
+  a flag when an upgrade of rm_apps has been successful - this should help
+  avoid having to run clip_install when not necessary.
+
+*clip-install-common-2.2.4 (01 Mar 2013)
+
+  01 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.2.4.ebuild, -clip-install-common-2.2.3.ebuild:
+  Define g_dpkg_reinst_cache so that dpkg status fix works (again?).
+
+*clip-install-common-2.2.3 (07 Jun 2012)
+
+  07 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.2.3.ebuild, -clip-install-common-2.2.2.ebuild:
+  Add a binary wrapper to clip_install (original script renamed
+  _clip_install). Add a veriexec entry to give a forced inheritable 
+  CAP_FSETID to the wrapper, for use with the new 'enforce_inherit'
+  veriexec level flag.
+
+*clip-install-common-2.2.2 (12 Apr 2012)
+
+  12 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.2.2.ebuild, -clip-install-common-2.2.1-r1.ebuild:
+  Do not check dates on sig verification.
+
+*clip-install-common-2.2.1-r1 (22 Mar 2012)
+
+  22 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.2.1-r1.ebuild, -clip-install-common-2.2.1.ebuild:
+  Force rebuild.
+
+*clip-install-common-2.2.1 (14 Sep 2011)
+
+  14 Sep 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-install-common-2.2.1.ebuild, -clip-install-common-2.2.0.ebuild:
+  Fix optional package removal according to the dependency packages.
+
+*clip-install-common-2.2.0 (17 Aug 2011)
+
+  17 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.2.0.ebuild, -clip-install-common-2.1.0.ebuild:
+  Switch signature checks to ccsd-check-daemon.
+
+*clip-install-common-2.1.0 (08 Jan 2010)
+
+  08 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.1.0.ebuild, -clip-install-common-2.0.4.ebuild:
+  Support checking and interactive modes for boot time updates.
+
+*clip-install-common-2.0.4 (04 May 2009)
+
+  04 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.0.4.ebuild, -clip-install-common-2.0.3.ebuild:
+  Use an empty optional package files list for core updates, rather
+  than /dev/null.
+  Log to LOCAL7 rather than USER.
+
+*clip-install-common-2.0.3 (11 Mar 2009)
+
+  11 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.0.3.ebuild, -clip-install-common-2.0.2.ebuild:
+  Bump - port to latest CLIP::Pkg::Base.
+  Only use optional packages for secondary packages.
+
+*clip-install-common-2.0.2 (09 Mar 2009)
+
+  09 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.0.2.ebuild, -clip-install-common-2.0.1.ebuild:
+  Properly export $PATH to dpkg calls in clip_install.
+
+*clip-install-common-2.0.1 (20 Jan 2009)
+
+  20 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.0.1.ebuild, -clip-install-common-2.0.ebuild:
+  Support for optional packages and package removal.
+
+*clip-install-common-2.0 (23 Oct 2008)
+
+  23 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-2.0.ebuild, -clip-install-common-1.2.99-r3.ebuild:
+  Stabilise next generation.
+
+*clip-install-common-1.2.99-r3 (17 Oct 2008)
+
+  17 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.99-r3.ebuild, -clip-install-common-1.2.99-r2.ebuild:
+  Support a new -root option in clip_install, which selects a different
+  apt.conf file, typically for running a 'chrooted' upgrade (not really
+  chrooted in fact, but apt and dpkg are launched with a different root for
+  pkg install, pkg cache and pkg status - not pkg mirror though).
+  This will be used in the 'chroot-less' clip_install_clip_core.
+
+*clip-install-common-1.2.99-r2 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.99-r2.ebuild, -clip-install-common-1.2.99-r1.ebuild:
+  Support manual locking mechanism.
+
+*clip-install-common-1.2.99-r1 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.99-r1.ebuild, -clip-install-common-1.2.99.ebuild:
+  Support new cache/mirror layout for copyless upgrades.
+
+*clip-install-common-1.2.99 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.99.ebuild, -clip-install-common-1.2.8.ebuild:
+  Bump to 'ng', perl based version.
+
+*clip-install-common-1.2.8 (10 Oct 2008)
+
+  10 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.8.ebuild, -clip-install-common-1.2.7.ebuild:
+  Be more cautious when backing up entire directories, so that an 
+  incomplete backup doesn't end up being used instead of the original (#393).
+  Revert mirror backups possibly leftover by clip-download (#392).
+  Do not backup the cache before performing any actual download, to avoid
+  that step when no install needs to be performed, which is most of the time
+  (#395).
+
+*clip-install-common-1.2.7 (08 Apr 2008)
+
+  08 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.7.ebuild, -clip-install-common-1.2.6.ebuild:
+  Fix leftover /mounts/update_root paths in clip_install.
+  Fix leftover single CCSD verification key in clip_install.
+
+*clip-install-common-1.2.6 (07 Apr 2008)
+
+  07 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.6.ebuild, -clip-install-common-1.2.5.ebuild:
+  Workaround for 'awk {system("basename "$2)}' not working with
+  busybox awk.
+
+*clip-install-common-1.2.5 (28 Mar 2008)
+
+  28 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.5.ebuild, -clip-install-common-1.2.4-r1.ebuild:
+  Use two different keys for signature checks in clip-install.
+
+*clip-install-common-1.2.4-r1 (14 Jan 2008)
+
+  14 Jan 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.4-r1.ebuild, -clip-install-common-1.2.3-r1.ebuild:
+  Import EADS's -1.2.4, with the same ChangeLog as 1.2.1 -> 1.2.1-r1.
+  Original ChangeLog was :
+
+  	*clip-install-common-1.2.4 (07 Jan 2008)
+
+	  07 Jan 2008; EADS D&S <clipos@ssi.gouv.fr>
+	  +clip-install-common-1.2.4.ebuild:
+	  Ticket 86 correction (packages installed without log and
+	  verification)
+
+
+*clip-install-common-1.2.3-r1 (29 Nov 2007)
+
+  29 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.3-r1.ebuild, -clip-install-common-1.2.3.ebuild:
+  +clip-install-common-1.2.2-r1.ebuild:
+  Import EADS's 1.2.3, with same Changelog as 1.2.1 -> 1.2.1-r1.
+
+*clip-install-common-1.2.3 (12 Nov 2007)
+
+  12 Nov 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.3.ebuild:
+  Ticket 54 correction (connection key in /etc/clip_update)
+  Ticket 57 correction (do not exit after recover_from_error)
+
+*clip-install-common-1.2.2-r1 (08 Nov 2007)
+
+  08 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.2-r1.ebuild:
+  Import EADS's 1.2.2, with same diff as 1.2.1->1.2.1-r1.
+	
+*clip-install-common-1.2.2 (07 Now 2007)
+
+  07 Nov 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.2.ebuild:
+  Define BOOTSTRAP_NOVERIEXEC for rm core install.
+  Unset BOOTSTRAP_NOVERIEXEC on exit.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 1.2.1-r1.
+
+*clip-install-common-1.2.1-r1 (07 Nov 2007)
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.1-r1.ebuild:
+  Use clip-install-1.1-noforce.patch, rather than 1.2.1, since they
+  are the same.
+
+*clip-install-common-1.2.1 (16 Oct 2007)
+
+  16 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.1.ebuild:
+  Define BOOTSTRAP_NOVERIEXEC for clip core install.
+
+*clip-install-common-1.2 (03 Oct 2007)
+
+  03 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-common-1.2.ebuild:
+  -l option set use_logger to "no".
+  Correct conf file pathname for clip core install.
+  Improve the lock file management.
+
+*clip-install-common-1.1 (19 Jul 2007)
+
+  19 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-common-1.1.ebuild:
+  Integrates the new version of verify-sign-full.
+  Use_logger set to "yes".
+  Add messages in the syslog
+  Logger is in /bin in RM_H and RM_B
+
+*clip-install-common-1.0 (29 Jun 2007)
+
+  29 Jun 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-common-1.0.ebuild:
+  Initial import.

@@ -1,0 +1,32 @@
+# CLIP Changelog for www-plugins/firebug-fx
+
+*firebug-fx-2.0.18 (05 Jan 2017)
+
+  05 Jan 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +firebug-fx-2.0.18.ebuild, -firebug-fx-2.0.16.ebuild:
+  Update for firefox addon signature enforcement.
+
+*firebug-2.0.16 (23 May 2016)
+
+  23 May 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +firebug-fx-2.0.16.ebuild,-firebug-fx-2.0.9.ebuild:
+  Version bump.
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  firebug-fx-2.0.9.ebuild:
+  Add amd64 keyword.
+
+*firebug-2.0.9 (20 May 2015)
+
+  20 May 2015; Tony Cheneau <clipos@ssi.gouv.fr>:
+  +firebug-fx-2.0.9.ebuild:
+  -firebug-2.0.9.ebuild:
+  Rename package x11-plugins/firebug to www-plugins/firebug-fx
+
+*firebug-2.0.9 (15 May 2015)
+
+  15 May 2015; Tony Cheneau <clipos@ssi.gouv.fr>:
+  +firebug-2.0.9.ebuild:
+  Initial import.
+
+

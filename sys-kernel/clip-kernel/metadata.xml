@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>vserver</herd>
+	<maintainer>
+		<email>clipos@ssi.gouv.fr</email>
+	</maintainer>
+	<longdescription>
+		Build and install a clip-patched kernel, with a
+		CLIP configuration.
+	</longdescription>
+</pkgmetadata>

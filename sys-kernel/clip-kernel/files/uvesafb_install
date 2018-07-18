@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+MODE="$(/bin/cat /proc/cmdline | /bin/sed -n -r 's/.*?\<video=([-x@0-9]+).*/\1/p')"
+[ -z "${MODE}" ] && MODE="1024x768-32@60"
+/bin/insmod /lib/uvesafb.ko scroll=ywrap mtrr=3 "mode_option=${MODE}"

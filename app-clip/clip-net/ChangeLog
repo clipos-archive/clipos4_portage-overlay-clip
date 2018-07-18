@@ -1,0 +1,756 @@
+# ChangeLog for <app-clip/clip-net>
+
+*clip-net-5.3.3 (09 Mar 2017)
+
+  09 Mar 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.3.3.ebuild, -clip-net-5.3.2.ebuild:
+  Improve logging (cfg 1->2) so that we can see negotiated ciphersuites.
+
+*clip-net-5.3.2 (14 Nov 2016)
+
+  14 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.3.2.ebuild, -clip-net-5.3.1.ebuild:
+  Make the new round-robin behavior configurable via a new *_REDUNDANCY
+  parameter (e.g. RMH_REDUNDANCY=rr)
+  Default "linear" behavior (pre 5.3.1) is restored.
+
+*clip-net-5.3.1 (10 Nov 2016)
+
+  10 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.3.1.ebuild, -clip-net-5.3.0.ebuild:
+  Client configuration now provides round-robin among the IPsec gateways listed
+  for a same jail.
+
+*clip-net-5.2.3 (08 Nov 2016)
+
+  08 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.2.3.ebuild, -clip-net-5.2.2.ebuild:
+  noccsd crypo only allows a single "strong" ciphersuite.
+  (be wary of the possible gateway compatibility breakage)
+
+*clip-net-5.2.2 (06 Sep 2016)
+
+  06 Sep 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.2.2.ebuild, -clip-net-5.2.1.ebuild:
+  Remove etc-hermes config and files. It is merged into etc-default.
+
+  Bugfix: listing multiple target gateway now works correctly
+  Enable IKEv2 fragmentation and more verbose logging.
+
+*clip-net-5.2.1 (08 Oct 2015)
+
+  08 Oct 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.2.1.ebuild, -clip-net-5.2.0-r3.ebuild:
+  Fix ipsec.conf generation script.
+  Make RMB_ESP_CCSD=no by default to prevent behavior changes from previous
+  versions.
+
+*clip-net-5.2.0-r3 (07 Oct 2015)
+
+  07 Oct 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.2.0-r3.ebuild, -clip-net-5.2.0-r2.ebuild:
+  Fix a new typo in the CCSD private keys migration script.
+
+*clip-net-5.2.0-r2 (06 Oct 2015)
+
+  06 Oct 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.2.0-r2.ebuild, -clip-net-5.2.0-r1.ebuild:
+  Fix CCSD private keys migration when keys are absent.
+
+*clip-net-5.2.0-r1 (29 Sep 2015)
+
+  29 Sep 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.2.0-r1.ebuild, -clip-net-5.2.0.ebuild:
+  Handle CCSD private keys migration.
+
+*clip-net-5.2.0 (17 Jun 2015)
+
+  17 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.2.0.ebuild, -clip-net-5.1.12.ebuild:
+  More generic support for GOUV/CIVIL IPsec crypto.
+
+*clip-net-5.1.12 (26 Feb 2015)
+
+  26 Feb 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.1.12.ebuild, -clip-net-5.1.11.ebuild:
+  Fix unterminated quoting breaking IPsec networking.
+
+*clip-net-5.1.11 (24 Feb 2015)
+
+  24 Feb 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.1.11.ebuild, -clip-net-5.1.10.ebuild:
+  [CCSD] Add support for different GW keys.
+
+*clip-net-5.1.10 (24 Nov 2014)
+
+  24 Nov 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-5.1.10.ebuild, -clip-net-5.1.9.ebuild:
+  Add civil cryptography support for RMB as well.
+
+*clip-net-5.1.9 (18 Jul 2014)
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  clip-net-5.1.9.ebuild:
+  Add amd64 keyword, masked for now.
+
+  18 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.1.9.ebuild, -clip-net-5.1.8.ebuild:
+  Add support for a new XXX_ESP_CCSD variable in the network profile. When set
+  to true, the ESP tunnel uses CCSD.
+
+*clip-net-5.1.8 (16 Jun 2014)
+
+  16 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.1.8.ebuild, -clip-net-5.1.7.ebuild:
+  Improve the init script so that the RMB resolv.conf is loaded only when it
+  contains a character. If the file only contains cariage returns, it won't be
+  loaded.
+
+*clip-net-5.1.7 (12 Jun 2014)
+
+  12 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.1.7.ebuild, -clip-net-5.1.6.ebuild:
+  Add a corresponding netfilter rule when RMB IPsec tunnel is exclusive (as
+  opposed to the configuration where the RMB IPsec tunnel is connected to a
+  specific subnet and the netfilter rules only match this subnet).
+  Add a variable to prevent non-IPsec traffic to go outside RMB (default
+  behavior matches the current behavior: non-IPsec traffic passes through).
+
+*clip-net-5.1.6 (11 Jun 2014)
+
+  11 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-net-5.1.6.ebuild, -clip-net-5.1.5.ebuild:
+  The DNS configuration parameters on the RMB network profile are now applied
+  properly. The previous behavior was to use the DNS information learned through
+  the DHCP even when the network profile specified a different DNS entry.
+
+*clip-net-5.1.5 (30 May 2014)
+
+  30 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-5.1.5.ebuild, -clip-net-5.1.4.ebuild:
+  Support CCSD/non-CCSD IKE crypto for RMB tunnel, based on
+  a new RMB_IKE_X509 configuration variable.
+
+*clip-net-5.1.4 (15 May 2014)
+
+  15 May 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.1.4.ebuild, -clip-net-5.1.3.ebuild:
+  Use civil cryptography also for IKE negotiation.
+
+*clip-net-5.1.3 (11 Mar 2014)
+
+  11 Mar 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.1.3.ebuild, -clip-net-5.1.2.ebuild:
+  Use AES256/SHA256 only on civil cryptography for now.
+
+*clip-net-5.1.2 (28 Jan 2014)
+
+  28 Jan 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-net-5.1.2.ebuild, -clip-net-5.1.1.ebuild:
+  Fix Hestia IPsec configuration file for Strongswan 5.
+
+*clip-net-5.1.1 (03 Jan 2014)
+
+  03 Jan 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.1.1.ebuild, -clip-net-5.1.0.ebuild:
+  Add support for civil cryptography for IPsec tunnels.
+
+*clip-net-5.1.0 (17 Dec 2013)
+
+  17 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-5.1.0.ebuild, -clip-net-5.0.5-r1.ebuild:
+  Switch to new netfilter.sub interface in clip-sub-1.9 - use 
+  associative arrays for parameter passing.
+  Use named private keys in CCSD IKE config, and a different
+  key for rmb* connections.
+
+*clip-net-5.0.5-r1 (13 Dec 2013)
+
+  13 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-5.0.5-r1.ebuild, -clip-net-5.0.5.ebuild,
+  files/postinst.mvppr:
+  Do *not* overwrite newer keys in /etc/admin/ike2 with older
+  keys from /etc/ike2 in postinst.
+
+*clip-net-5.0.5 (13 Dec 2013)
+
+  13 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-5.0.5.ebuild, -clip-net-5.0.4.ebuild:
+  Add /etc/conf.d/netconf file, switch all clients to using
+  the slim netchooser rather than the boot-time prompt.
+
+*clip-net-5.0.4 (19 Nov 2013)
+
+  19 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-5.0.4.ebuild, -clip-net-5.0.3.ebuild:
+  Cleanup GW import loop. Add RMB IPsec support to the non-ccsd
+  config.
+
+*clip-net-5.0.3 (08 Nov 2013)
+
+  08 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.0.3.ebuild, -clip-net-5.0.2.ebuild:
+  Fix typo in ipsec.conf.skel support for RMB tunnels.
+
+*clip-net-5.0.2 (06 Nov 2013)
+
+  06 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-net-5.0.2.ebuild, -clip-net-5.0.1.ebuild:
+  Add support for RMB IPsec tunnel.
+
+*clip-net-5.0.1 (22 Oct 2013)
+
+  22 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-5.0.1.ebuild, -clip-net-5.0.0.ebuild:
+  Re-include fix from 4.1.8 which add been missed out in 5.0.0.
+
+*clip-net-5.0.0 (21 Oct 2013)
+
+  21 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-5.0.0.ebuild, -clip-net-4.1.9.ebuild:
+  Switch to the modular config supported by clip-generic-net-3.0.
+
+*clip-net-4.1.9 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.1.9.ebuild, -clip-net-4.1.8.ebuild:
+  Move extra init snippets out of init.d and into /lib/rc/net.
+
+*clip-net-4.1.8 (16 Oct 2013)
+
+  16 Oct 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-net-4.1.8.ebuild, -clip-net-4.1.7.ebuild:
+  Fix dynamic virtual IPs in UPDATE in Hestia.
+
+*clip-net-4.1.7 (10 Oct 2013)
+
+  10 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.1.7.ebuild, -clip-net-4.1.6.ebuild:
+  Minor ipsec.conf fixes for strongswan-5.
+
+*clip-net-4.1.6 (30 Aug 2013)
+
+  30 Aug 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-net-4.1.6.ebuild, -clip-net-4.1.5.ebuild:
+  Optional support for dynamic private addresses for Hestia
+
+*clip-net-4.1.5 (10 Apr 2013)
+
+  10 Apr 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-net-4.1.5.ebuild, -clip-net-4.1.4.ebuild:
+  Add support for ipsec config file (requires clip-generic-net 2.4.9)
+
+*clip-net-4.1.4 (05 Mar 2013)
+
+  05 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.1.4.ebuild, -clip-net-4.1.3.ebuild:
+  Use new netfilter API from clip-sub >= 1.7.11.
+
+*clip-net-4.1.3 (04 Feb 2013)
+
+  04 Feb 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-4.1.3.ebuild, -clip-net-4.1.2.ebuild:
+  New configuration for !clip-ccsd with similar behaviour as clip-ccsd.
+  Use AES-256, SHA-256 and ECP-384 algorithmes for !clip-ccsd.
+
+  25 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-net-4.1.2.ebuild:
+  Same behaviour for clip-hermes and !clip-ccsd.
+
+*clip-net-4.1.2 (11 Jan 2013)
+
+  11 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.1.2.ebuild, -clip-net-4.1.1.ebuild:
+  Use new netfilter API from clip-sub >= 1.7.9, add support 
+  for outbound ping.
+
+*clip-net-4.1.1 (29 May 2012)
+
+  29 May 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.1.1.ebuild, -clip-net-4.1.0.ebuild:
+  Support CCSD_CTRSHMAC combined mode.
+
+*clip-net-4.1.0 (26 Apr 2012)
+
+  26 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.1.0.ebuild, -clip-net-4.0.2.ebuild:
+  Support virtual IP in UPDATE, ADMIN, AUDIT and RMH jails.
+  Support configs with no RMH_GW.
+
+*clip-net-4.0.2 (25 Apr 2012)
+
+  25 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.0.2.ebuild, -clip-net-4.0.1.ebuild:
+  Fix filtering of icmp error messages.
+
+*clip-net-4.0.1 (06 Apr 2012)
+
+  06 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.0.1.ebuild, -clip-net-4.0.0.ebuild:
+  Make sure we have a functional /etc/hosts in RM jails.
+
+*clip-net-4.0.0 (13 Mar 2012)
+
+  13 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-4.0.0.ebuild, -clip-net-3.3.2.ebuild:
+  Support using virtual interfaces for rm_h and rm_b.
+
+*clip-net-3.3.2 (22 Feb 2012)
+
+  22 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-3.3.2.ebuild, -clip-net-3.3.1.ebuild, -files/preinst.ipsec,
+  -files/_debian/postinst, +files/postinst.mvppr:
+  Fix Hermes config and log verbosity.
+  Add {RMH,UPDATE}_GW_{CA,ID} optional checks, defined into /etc/conf.d/ipsec.
+  Update PPR postinst.
+
+*clip-net-3.3.1 (14 Feb 2012)
+
+  14 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-3.3.1.ebuild, -clip-net-3.3.0.ebuild,
+  -files/ipsec.conf.skel_hermes:
+  Fix multiple gateways.
+
+*clip-net-3.3.0 (18 Jan 2012)
+
+  18 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.3.0.ebuild, -clip-net-3.2.4.ebuild:
+  Support for multiple gateways.
+
+*clip-net-3.2.4 (11 May 2011)
+
+  11 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.2.4.ebuild, -clip-net-3.2.3-r3.ebuild,
+  +files/_debian/postinst:
+  Move peer gateways' public keys into /etc/admin/ike2/cert.
+
+*clip-net-3.2.3-r3 (29 Mar 2011)
+
+  29 Mar 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-3.2.3-r3.ebuild, -clip-net-3.2.3-r2.ebuild:
+  Force re-install.
+
+  06 Dec 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  files/preinst.ipsec:
+  Fix preinst for clip-installer.
+
+*clip-net-3.2.3-r2 (10 Nov 2010)
+
+  10 Nov 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-3.2.3-r2.ebuild, -clip-net-3.2.3-r1.ebuild,
+  files/ipsec.conf.skel_hermes, +files/preinst.ipsec:
+  Dynamic certificate configuration with /etc/conf.d/ipsec.
+
+*clip-net-3.2.3-r1 (29 Oct 2010)
+
+  29 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.2.3-r1.ebuild, -clip-net-3.2.3.ebuild:
+  Fake rbump to force update on those clients which got an 
+  improper /etc/conf.d/net through an installer bug.
+
+*clip-net-3.2.3 (07 Oct 2010)
+
+  07 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.2.3.ebuild, -clip-net-3.2.2.ebuild:
+  Fix potential command-line expansion issue in tr commands.
+  Add userfriendly error messages.
+
+*clip-net-3.2.2 (30 Sep 2010)
+
+  30 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.2.2.ebuild, -clip-net-3.2.1.ebuild:
+  Trim up the ipsec config, change DPD actions to 'restart', 
+  change IPsec / IKE lifetimes to 3h / 9h.
+
+*clip-net-3.2.1 (29 Sep 2010)
+
+  29 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.2.1.ebuild, -clip-net-3.2.0.ebuild:
+  Change admin ipsec DPD action to restart - makes more sense in
+  that case than hold.
+
+*clip-net-3.2.0 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.2.0.ebuild, -clip-net-3.1.0-r2.ebuild:
+  Add netlocal support for clip-generic-net-2
+
+*clip-net-3.1.0-r2 (12 Jul 2010)
+
+  12 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.1.0-r2.ebuild, -clip-net-3.1.0-r1.ebuild:
+  Rbump to force rebuild with proper distfile.
+
+*clip-net-3.1.0-r1 (02 Jul 2010)
+
+  02 Jul 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-3.1.0-r1.ebuild, -clip-net-3.1.0.ebuild:
+  Add ipsec update configuration for clip-hermes.
+
+*clip-net-3.1.0 (26 May 2010)
+
+  26 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.1.0.ebuild, -clip-net-3.0.1.ebuild:
+  Support FTP RELATED rules for RM_H / RM_B.
+
+*clip-net-3.0.1 (18 Mar 2010)
+
+  18 Mar 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-3.0.1.ebuild, -clip-net-3.0.0-r1.ebuild:
+  Fix rm_h detection.
+
+*clip-net-3.0.0-r1 (26 Feb 2010)
+
+  26 Feb 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-net-3.0.0-r1.ebuild, -clip-net-3.0.0.ebuild,
+  +files/ipsec.conf.skel_hermes:
+  Add ipsec.conf configuration for clip-hermes.
+
+*clip-net-3.0.0 (26 Jan 2010)
+
+  26 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-3.0.0.ebuild, -clip-net-2.3.3.ebuild:
+  Support single RM jails based on the contents of 
+  /etc/conf.d/clip.
+
+*clip-net-2.3.3 (31 Aug 2009)
+
+  31 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.3.3.ebuild, -clip-net-2.3.2.ebuild:
+  Copy proxy files on netconf activation.
+
+*clip-net-2.3.2 (16 Jul 2009)
+
+  16 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.3.2.ebuild, -clip-net-2.3.1.ebuild:
+  Add missing error detection in netfilter_extra.
+
+*clip-net-2.3.1 (18 Jun 2009)
+
+  18 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.3.1.ebuild, -clip-net-2.3.0.ebuild:
+  Switch to new clip-generic-net check_addr. Remove useless
+  scripts.
+
+*clip-net-2.3.0 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.3.0.ebuild, -clip-net-2.2.5.ebuild:
+  Switch entirely to netconf profile. Remove config files.
+
+*clip-net-2.2.5 (09 Jun 2009)
+
+  09 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.2.5.ebuild, -clip-net-2.2.4.ebuild:
+  Support ADMIN gateway if present. Support undefined UPDATE,
+  RM_H gateways.
+
+*clip-net-2.2.4 (03 Jun 2009)
+
+  03 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.2.4.ebuild, -clip-net-2.2.3.ebuild:
+  Add /etc/conf.d/wireless conffile.
+
+*clip-net-2.2.3 (03 Jun 2009)
+
+  03 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.2.3.ebuild, -clip-net-2.2.2.ebuild:
+  Add DHCP_RESOLV_CONF variable for dhcp DNS configuration of
+  RM_B networking.
+
+*clip-net-2.2.2 (14 May 2009)
+
+  14 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.2.2.ebuild, -clip-net-2.2.1.ebuild:
+  Fix ipsec.conf.skel - do not start connections automatically,
+  but route them and wait for traffic. This avoids unneeded 
+  negotiations, and also makes it possible for those connections
+  to be restarted. Also put connections killed by DPD on hold,
+  rather than clearing them, so they can be likewise restarted.
+
+*clip-net-2.2.1 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.2.1.ebuild, -clip-net-2.2.0.ebuild:
+  Remove local SSH in RM jails.
+
+*clip-net-2.2.0 (12 Jan 2009)
+
+  12 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.2.0.ebuild, -clip-net-2.1.3.ebuild:
+  Add support for strongswan.
+
+*clip-net-2.1.3 (05 Dec 2008)
+
+  05 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.1.3.ebuild, -clip-net-2.1.2.ebuild:
+  Add kmp_sa_grace_period in racoon2 conf skeleton, to make 
+  childless IKE SAs timeout after 60 secs.
+
+*clip-net-2.1.2 (02 Dec 2008)
+
+  02 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.1.2.ebuild, -clip-net-2.1.1.ebuild:
+  Change IKE_SA rekey delay to 10100 secs.
+
+*clip-net-2.1.1 (24 Nov 2008)
+
+  24 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.1.1.ebuild, -clip-net-2.1.0.ebuild:
+  Use finer-grained ipsec netfilter control.
+
+*clip-net-2.1.0 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.1.0.ebuild, -clip-net-2.0.8.ebuild:
+  Switch to 'ng' dhcp aware version.
+
+*clip-net-2.0.8 (13 Oct 2008)
+
+  13 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.8.ebuild, -clip-net-2.0.7.ebuild:
+  Add new definitions for NOLOG_* to default netfilter config
+
+*clip-net-2.0.7 (23 Sep 2008)
+
+  23 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.7.ebuild, -clip-net-2.0.6.ebuild:
+  Allow all non-privileged tcp ports on RM jails' local loops
+  in netfilter_extra, to support e.g. java.
+
+*clip-net-2.0.6 (11 Aug 2008)
+
+  11 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.6.ebuild, -clip-net-2.0.5.ebuild:
+  Use /tmp/spmd.psk temporary file as SPMD PSK.
+
+*clip-net-2.0.5 (10 Jun 2008)
+
+  10 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.5.ebuild, -clip-net-2.0.4.ebuild:
+  Add failsafe mode when config imports fail. Add checks for RM_H/B
+  intersection.
+  Add IPsec SA lifetime limits, supported by latest racoon2.
+
+*clip-net-2.0.4 (03 Apr 2008)
+
+  03 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.4.ebuild, -clip-net-2.0.3.ebuild:
+  Deactivate key updates for racoon2 as they are not correctly 
+  debugged with ccsdaka.
+
+*clip-net-2.0.3 (31 Mar 2008)
+
+  31 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.3.ebuild, -clip-net-2.0.2.ebuild:
+  Bump, switch to a full-ccsd config : 
+   - ccsd_pxrsubject as {my_,peers_}id
+   - ccsd_daka for key negociation
+   - ccsd_sig for IKEv2 authentication.
+
+*clip-net-2.0.2 (20 Mar 2008)
+
+  20 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.2.ebuild, -clip-net-2.0.1.ebuild:
+  New racoon2 config, with CCSD algorithms for both IPsec and IKE, 
+  but still a psk authentication.
+  Also sets a 60 secs dead peer detection polling interval (needs 
+  the latest racoon2 for this to work).
+
+*clip-net-2.0.1 (14 Feb 2008)
+
+  14 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.1.ebuild, -clip-net-2.0.ebuild:
+  Bump, works with clip-generic-net-1.0.1.
+
+*clip-net-2.0 (11 Feb 2008)
+
+  11 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-2.0.ebuild, -clip-net-1.4.6.ebuild:
+  Complete rewrite, make this work as an overlay of clip-generic-net.
+  Undo the client-side fixes of 1.4.6 (they are not really needed, a
+  fix on the server side is more adapted).
+
+*clip-net-1.4.6 (01 Feb 2008)
+
+  01 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.6.ebuild, -clip-net-1.4.5.ebuild:
+  Client-side fixes to enable Ike2 responders on the gateways.
+
+*clip-net-1.4.5 (29 Jan 2008)
+
+  29 Jan 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.5.ebuild, -clip-net-1.4.4.ebuild:
+  Add support for NAT-T. Bug #130.
+
+*clip-net-1.4.4 (04 Dec 2007)
+
+  04 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.4.ebuild, -clip-net-1.4.3-r2.ebuild:
+  Port to clip-sub-1.3.4.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 1.4.3-r2.
+
+*clip-net-1.4.3-r2 (06 Nov 2007)
+
+  06 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.3-r2.ebuild:
+  Proper conflict management with other clip*-net packages.
+
+*clip-net-1.4.3-r1 (17 Oct 2007)
+
+  17 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.3-r1.ebuild:
+  Add CLIP_CONF_FILES.
+
+*clip-net-1.4.3 (16 Oct 2007)
+
+  16 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.3.ebuild:
+  Fix netfilter default configuration : NTP is UDP, not TCP.
+  Fix init.d/netfilter import filter for clip-sub-1.3.3.
+
+*clip-net-1.4.2 (03 Oct 2007)
+
+  03 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.2.ebuild:
+  Merge (silent :( ) change from EADS's 1.3.1 : psk commutation 
+  in racoon init script.
+  
+*clip-net-1.4.1-r2 (18 Sep 2007)
+
+  18 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.1-r2.ebuild:
+  Take care of adding the 'netfilter' and 'networking' scripts to
+  runlevel default, instead of leaving that to baselayout-clip.
+
+*clip-net-1.4.1-r1 (13 Sep 2007)
+
+  13 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.1-r1.ebuild:
+  Do not install a default psk for racoon2...
+
+*clip-net-1.4.1 (28 Aug 2007)
+
+  28 Aug 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.1.ebuild:
+  Install conf files in /etc/admin/conf.d, under 4000:4000. 
+  Import from there.
+
+*clip-net-1.4.0 (31 Jul 2007)
+
+  31 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.4.0.ebuild:
+  Second bump, this time adding racoon2 scripts and config files
+  along those for racoon. The choice between the two is made 
+  through a new USE flag, clip-racoon2, which only affects which 
+  startup scripts are registered in the default runlevel.
+  Remove the stop() from netfilter, since it won't work on non
+  clip-devel systems, and is not a good idea anyway.
+
+*clip-net-1.3.1 (31 Jul 2007)
+
+  31 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.3.1.ebuild:
+  Switch to virtual dependencies for setkey/racoon, which now
+  provide 'spm' and 'kpmd', respectively. Other scripts should
+  now depend on those rather than setkey/racoon, as a first step
+  towards switching to racoon2.
+
+*clip-net-1.3.0 (02 Jul 2007)
+
+  02 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.3.0.ebuild:
+  Bump, update netfilter script to work with clip-sub-1.3.0, stricter
+  ipsec.conf blocking all external communications for USER.
+  Added racoon init script here, so it doesn't clutter ipsec-tools.
+
+*clip-net-1.2.8 (25 Jun 2007)
+
+  25 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.8.ebuild:
+  Add missing USER loop.
+
+*clip-net-1.2.7 (18 Jun 2007)
+
+  18 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.7.ebuild:
+  Compatible with clip-sub-1.2.4, open ports now need to be passed
+  as arguments to pass_local_lo(). TODO: add USER loop to make
+  it fit for use with the new audit/admin jails.
+
+*clip-net-1.2.6 (08 Jun 2007)
+
+  08 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.6.ebuild:
+  Bump, add placeholder definitions for AUDIT and ADMIN addresses.
+  
+*clip-net-1.2.5 (01 Jun 2007)
+
+  01 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.5.ebuild:
+  Bump, add new net config variables for secure_update_* contexts 
+  and USER context.
+  
+*clip-net-1.2.4 (10 May 2007)
+
+  10 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.4.ebuild:
+  Rename 'net' script to 'networking', 'net' has special meaning
+  in gentoo-land :(
+  Fixup depends : start net before clip_servers, as sshd needs
+  some if to be up...
+  Actually fix previous bug : initscript was bailing out when
+  deleting default route 'cause there was no default route...
+  => actually import the route and create the default.
+  
+*clip-net-1.2.3 (13 Apr 2007)
+
+  13 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.3.ebuild:
+  Net initscript: do not bail out when deleting default route.
+  
+*clip-net-1.2.2-r1 (20 Mar 2007)
+
+  20 Mar 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.2-r1.ebuild:
+  Provide virtual/clip-netbase to work along with clip-single.
+  
+*clip-net-1.2.2 (06 Dec 2006)
+
+  06 Dec 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.2.ebuild:
+  Bump, add setkey init script to load SPs separately, update net
+  script to depend on that, so we can be sure our SPs are in place 
+  when we bring the interface online.
+
+*clip-net-1.2.1 (22 Nov 2006)
+
+  22 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.1.ebuild:
+  Bump, set up config that works with ipsec config (only devel). 
+  Fix netfilter init script : pass_in esp was never reached,
+  esp packets were sent to outcorestate where they met a swift death.
+  Also set-up devel options in netfilter config : let core, rmh and 
+  update access http, so I can test my tunnels without installing a
+  whole bloody https server :)
+
+*clip-net-1.2 (16 Nov 2006)
+
+  16 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.2.ebuild:
+  Bump, init.d/netfilter updated to use new netfilter.sub.
+
+*clip-net-1.1 (08 Sep 2006)
+
+  08 Sept 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.1.ebuild:
+  Bump, use import.sub to safely import vars from config files, rather
+  than simply sourcing them. Add ipsec.conf to set SPDs.
+
+*clip-net-1.0 (23 Aug 2006)
+
+  23 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-net-1.0.ebuild:
+  Initial import.

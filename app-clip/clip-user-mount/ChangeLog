@@ -1,0 +1,412 @@
+# CLIP ChangeLog for app-clip/clip-user-mount
+
+*clip-user-mount-1.6.1 (12 Aug 2016)
+
+  12 Aug 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.6.1.ebuild, -clip-user-mount-1.6.0-r1.ebuild:
+
+*clip-user-mount-1.6.0-r1 (26 Feb 2016)
+
+  26 Feb 2016; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.6.0-r1.ebuild, -clip-user-mount-1.6.0.ebuild:
+  Removed SSM startup for not RM CLIP
+
+*clip-user-mount-1.6.0 (04 Nov 2015)
+
+  04 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.6.0.ebuild, -clip-user-mount-1.5.5.ebuild:
+  Starting SSM at user's session opening
+
+*clip-user-mount-1.5.5 (06 Mar 2015)
+
+  06 Mar 2015; ANSSI <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.5.5.ebuild, -clip-user-mount-1.5.4.ebuild:
+  Fix admin/audit groups identification in mkknownhosts.
+
+*clip-user-mount-1.5.4 (30 Apr 2014)
+
+  30 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.5.4.ebuild, -clip-user-mount-1.5.3-r1.ebuild:
+  Fix umount in jails with 3.13+ kernel.
+
+*clip-user-mount-1.5.3-r1 (07 Apr 2014)
+
+  07 Apr 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.5.3-r1.ebuild, -clip-user-mount-1.5.3.ebuild:
+  Fix missing /var/run/X11-unix when not using X.
+
+*clip-user-mount-1.5.3 (12 Feb 2014)
+
+  12 Feb 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.5.3.ebuild, -clip-user-mount-1.5.2.ebuild:
+  Fix bug in mount.clip when PKCS11_DISK_LABEL is not defined.
+
+*clip-user-mount-1.5.2 (11 Feb 2014)
+
+  11 Feb 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.5.2.ebuild, -clip-user-mount-1.5.1.ebuild:
+  Fix strong bug when mounting encrypted partition of a smartcard user.
+  New configuration scheme for smartcard users.
+
+*clip-user-mount-1.5.1 (05 Feb 2014)
+
+  05 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.5.1.ebuild, -clip-user-mount-1.5.0.ebuild:
+  Code cleanup, move /sbin/mount.common to /lib/clip/usermount.sub.
+
+*clip-user-mount-1.5.0 (18 Apr 2013)
+
+  18 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.5.0.ebuild, -clip-user-mount-1.4.13.ebuild,
+  files/fstab.session:
+  Add support for ext4 filesystems for user partitions.
+  Update vsctl dependency for nsmount support of multiple filesystems on command
+  line.
+
+*clip-user-mount 1.4.13 (28 Mar 2013)
+  28 Mar 2013; ANSSI <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.13.ebuild, -clip-user-mount-1.4.12.ebuild:
+  Changed certificate label for disk encryption.
+
+*clip-user-mount-1.4.12 (05 Oct 2012)
+
+  05 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.12.ebuild, -clip-user-mount-1.4.11.ebuild:
+  Fix umount.clip loop.
+
+*clip-user-mount-1.4.11 (04 Oct 2012)
+
+  04 Oct 2012; ANSSI <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.11.ebuild, -clip-user-mount-1.4.10-r1.ebuild:
+  Changed expected label for master key descryption of smartcard
+  user.
+
+*clip-user-mount-1.4.10-r1 (06 Aug 2012)
+
+  06 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.10-r1.ebuild, -clip-user-mount-1.4.10.ebuild,
+  files/fstab.session:
+  Add /dev/shm tmpfs mounts in rm_X/user - needed for e.g. chromium.
+
+*clip-user-mount-1.4.10 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.10.ebuild, -clip-user-mount-1.4.9.ebuild:
+  Add IPC cleanup in RM jails at session end.
+
+*clip-user-mount-1.4.9 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.9.ebuild, -clip-user-mount-1.4.8.ebuild:
+  Fix mkvartmp exit code.
+
+*clip-user-mount-1.4.8 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.8.ebuild, -clip-user-mount-1.4.7.ebuild:
+  Cleanup any stale xauth files in mkvartmp script.
+
+*clip-user-mount-1.4.7 (14 Mar 2012)
+
+  14 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.7.ebuild, -clip-user-mount-1.4.6.ebuild:
+  Add a script to point .ssh/known_hosts to /etc/known_hosts in
+  the CLIP home of every privileged user.
+
+  07 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-user-mount-1.4.6.ebuild:
+  Add missing core-rm IUSE.
+
+*clip-user-mount-1.4.6 (01 Jun 2011)
+
+  01 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.6.ebuild, -clip-user-mount-1.4.5.ebuild:
+  Fix dmcleanup overzealous behaviour on encrypted root systems.
+
+*clip-user-mount-1.4.5 (19 May 2011)
+
+  19 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.5.ebuild, -clip-user-mount-1.4.4.ebuild:
+  Add mount.rm script at session start and end.
+
+*clip-user-mount-1.4.4 (12 May 2011)
+
+  12 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.4.ebuild, -clip-user-mount-1.4.3.ebuild:
+  Clean-up leftover mounts at session opening.
+  Fix fsck notification.
+
+*clip-user-mount-1.4.3 (11 May 2011)
+
+  11 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.3.ebuild, -clip-user-mount-1.4.2.ebuild:
+  Clean-up dm-crypt mappings if needed before creating them.
+
+*clip-user-mount-1.4.2 (21 Apr 2011)
+
+  21 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.2.ebuild, -clip-user-mount-1.4.1.ebuild:
+  Display an infobox when a fsck of user partitions is needed.
+
+*clip-user-mount-1.4.1 (15 Dec 2010)
+
+  15 Dec 2010; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.1.ebuild, -clip-user-mount-1.4.0.ebuild:
+  Replaced the call to openssl by a call to ckiutl when trying
+  to decrypt the user's masterkey (pkcs11 auth).
+
+*clip-user-mount-1.4.0 (09 Nov 2010)
+
+  09 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.4.0.ebuild, -clip-user-mount-1.3.1.ebuild:
+  files/fstab.session:
+  Add support for mounts in core only, and use that to mount
+  clip-level home in core namespace, for use by e.g. usb scripts.
+  Factorize mount code somewhat.
+
+*clip-user-mount-1.3.0 (08 Nov 2010)
+
+  08 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.3.0.ebuild, -clip-user-mount-1.2.1.ebuild,
+  files/fstab.session:
+  Remove support for mounting session mounts in namespace 0, now
+  that USERclip is a permanent jail.
+
+*clip-user-mount-1.2.1 (15 Jul 2010)
+
+  15 Jul 2010; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.2.1.ebuild, -clip-user-mount-1.2.0.ebuild
+  Added functions for decrypting user partitions with a smarcard
+
+*clip-user-mount-1.2.0 (26 Jan 2010)
+
+  26 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.2.0.ebuild, -clip-user-mount-1.1.4.ebuild,
+  -files/fstab.session-single, -files/fstab.session.rm:
+  Make use of /etc/conf.d/clip to know which RM jails are there,
+  remove IUSE core-rm and clip-single.
+
+*clip-user-mount-1.1.4 (30 Dec 2009)
+
+  30 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.1.4.ebuild, -clip-user-mount-1.1.3.ebuild:
+  Add a new 'mkvartmp' script to create /home/user/.vartmp in each
+  RM jail's USER view.
+
+*clip-user-mount-1.1.3 (27 Oct 2009)
+
+  27 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.1.3.ebuild, -clip-user-mount-1.1.2-r2.ebuild:
+  Support usb monitoring (update usb_status on umount at end of 
+  session).
+
+*clip-user-mount-1.1.2-r2 (09 Sep 2009)
+
+  09 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.1.2-r2.ebuild, -clip-user-mount-1.1.2-r1.ebuild:
+  Support userd-server as an alternative dependency to clip-useradmin.
+
+*clip-user-mount-1.1.2-r1 (13 Jul 2009)
+
+  13 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.1.2-r1.ebuild, -clip-user-mount-1.1.2.ebuild,
+  files/fstab.session.rm:
+  Enlarge your /tmp ! tmpfs in RM USER views now 256M, rather than
+  a puny 16M.
+
+*clip-user-mount-1.1.2 (08 Jul 2009)
+
+  08 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.1.2.ebuild, -clip-user-mount-1.1.1.ebuild:
+  Allow priv_user profile to connect in nonetwork mode.
+
+*clip-user-mount-1.1.1 (06 Jul 2009)
+
+  06 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.1.1.ebuild, -clip-user-mount-1.1.0.ebuild:
+  Use a two-pass umount loop in umount.clip, to deal with 
+  a few corner cases (namely gpg-agent.sh preventing unmount of
+  /tmp but not appearing in the fuser -m output for it).
+
+*clip-user-mount-1.1.0 (16 Jun 2009)
+
+  16 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.1.0.ebuild, -clip-user-mount-1.0.17.ebuild:
+  Remove rm_admin profile and fix SSH known_hosts initialization
+  in makehome.sh script. Forked for CLIP-4.
+
+*clip-user-mount-1.0.17 (19 Feb 2009)
+
+  19 Feb 2009; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.17.ebuild, -clip-user-mount-1.0.16.ebuild:
+  add a script to restrict user sessions in no-network mode.
+
+*clip-user-mount-1.0.16 (18 Feb 2009)
+
+  18 Feb 2009; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.16.ebuild, -clip-user-mount-1.0.15.ebuild:
+  modify the permissions of authorized_keys on account creation
+  with makehome.sh
+
+*clip-user-mount-1.0.15 (25 Nov 2008)
+
+  25 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.15.ebuild, -clip-user-mount-1.0.14.ebuild:
+  umount.clip: try to unmount as many mountpoints as we can, rather
+  than stopping after the first failure. Also reduce the number of
+  tries in case of failure to unmount : if it doesn't work after five
+  tries, there's usually no point going all the way to 10 tries.
+
+*clip-user-mount-1.0.14 (24 Nov 2008)
+
+  24 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.14.ebuild, -clip-user-mount-1.0.13.ebuild:
+  Run fsck.ext2 on user crypt partitions before mounting them.
+
+*clip-user-mount-1.0.13 (05 Sep 2008)
+
+  05 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.13.ebuild, -clip-user-mount-1.0.12.ebuild:
+  Kill zombie processes in RM jails before unmounting user partitions.
+  Fix depends in ebuild - we need a recent busybox in rm.
+
+*clip-user-mount-1.0.12 (04 Sep 2008)
+
+  04 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.12.ebuild, -clip-user-mount-1.0.11.ebuild:
+  Fix kill mount loop in jails - busybox is not available in user
+  jail (use 'normal' fuser instead) + newer busybox fuser deals
+  fine with fuser -km -${sig}.
+
+*clip-user-mount-1.0.11 (24 Jul 2008)
+
+  24 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.11.ebuild, -clip-user-mount-1.0.10.ebuild:
+  Get rid of trailing ":sha256" in dm-crypt cipher spec.
+  Remove clean-xauth call, which is now superfluous since /user/tmp
+  is a tmpfs session mount.	
+
+*clip-user-mount-1.0.10 (19 Jun 2008)
+
+  19 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.10.ebuild, -clip-user-mount-1.0.9.ebuild:
+  Less verbose dd / mke2fs output when running makehome.sh.
+
+*clip-user-mount-1.0.9 (04 Jun 2008)
+
+  04 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.9.ebuild, -clip-user-mount-1.0.8.ebuild:
+  Do not mount session mounts in RM jails for ADMIN/AUDIT user 
+  sessions. Such mounts are not needed, and prevent ADMIN login
+  when RM jails failed to start.
+
+*clip-user-mount-1.0.8 (11 Apr 2008)
+
+  11 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.8.ebuild, -clip-user-mount-1.0.7.ebuild:
+  Clean up mounts in AUDITclip and ADMINclip on logout, to 
+  support CLIP usb keys.
+
+*clip-user-mount-1.0.7 (08 Apr 2008)
+
+  08 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.7.ebuild, -clip-user-mount-1.0.6-r1.ebuild:
+  Fix perms on /usr/bin scripts.
+
+*clip-user-mount-1.0.6-r1 (27 Mar 2008)
+
+  27 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.6-r1.ebuild, -clip-user-mount-1.0.6.ebuild,
+  files/fstab.session, files/fstab.session.single:
+  Make the USER tmpfs and bind mount default for all CLIP variants,
+  not just clip-single.
+
+*clip-user-mount-1.0.6 (26 Mar 2008)
+
+  26 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.6.ebuild, -clip-user-mount-1.0.5-r1.ebuild,
+  +files/fstab.session, +files/fstab.session.single,
+  +files/fstab.session.rm, -files/clean-xauth,
+  -files/fstab.tmp.rm, -files/fstab.crypt.rm,
+  -files/fstab.tmp, -files/fstab.tmp.single, -files/xdm-issue:
+  Bump. Move usr/bin scripts from FILESDIR to the distfile, add 
+  a fail-login script, called to fail the login for users who 
+  are not members of crypthomes. Merge all fstab.* into one 
+  single fstab.session. Support bind mounts. Fix umount order.
+
+  
+*clip-user-mount-1.0.5-r1 (21 Mar 2008)
+
+  21 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.5-r1.ebuild, -clip-user-mount-1.0.5.ebuild,
+  files/fstab.tmp.single:
+  Fix mount path for user tmp in clip-single : /user/tmp/tmp rather than
+  /tmp/tmp.
+
+*clip-user-mount-1.0.5 (18 Mar 2008)
+
+  18 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.5.ebuild, -clip-user-mount-1.0.4-r1.ebuild:
+  Use clip-sub:userkeys.sub for user key encryption and password
+  hashing.
+
+*clip-user-mount-1.0.4-r1 (07 Jan 2008)
+
+  07 Jan 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.4-r1.ebuild, -clip-user-mount-1.0.4.ebuild,
+  +files/xdm-issue:
+  Add a script to display the contents of /etc/admin/issue on each
+  user login, if such a file is present. The user is prompted to 
+  accept or refuse the displayed text. Cancelling at this point 
+  closes the session immediately.
+  Fixes bug #116.
+
+*clip-user-mount-1.0.4 (06 Dec 2007)
+
+  06 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.4.ebuild, -clip-user-mount-1.0.3.ebuild:
+  Switch to aes-lrw-benbi:sha256 for user home encryption, and to
+  aes-cbc for encrypting the keys.
+
+*clip-user-mount-1.0.3 (28 Nov 2007)
+
+  28 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.3.ebuild, -clip-user-mount-1.0.2.ebuild:
+  Add a 'dmcleanup' script, invoked at session close, to remove
+  dm-crypt mapping that are leftover after umount.clip invokations.
+  These are typically mappings for a USB stick that was mapped but
+  never mounted, or unmounted but not unplugged before session close.
+  Such a mapping does not appear in the per-jail mtab, and is thus not
+  dealt with by umount.clip.
+  This re-closes bug #27.
+
+*clip-user-mount-1.0.2 (22 Nov 2007)
+
+  22 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.2.ebuild, -clip-user-mount-1.0.1.ebuild:
+  Do not open a session if jail mtab's are not empty.
+  Fix clip-umount's way of calling kill.
+
+*clip-user-mount-1.0.1 (21 Nov 2007)
+
+  21 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.1.ebuild, -clip-user-mount-1.0-r1.ebuild:
+  Use "_admin" and "_audit" as the names for the hard-coded admin and
+  audit users.
+
+*clip-user-mount-1.0-r1 (08 Nov 2007)
+
+  08 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0-r1.ebuild, +files/clean-xauth,
+  -clip-user-mount-1.0.ebuild:
+  Add IUSE X. If set, install a 'clean-xauth' script to run on
+  session close under user's uid to remove any /tmp/.Xauth* 
+  files that user has write access to.
+
+*clip-user-mount-1.0 (30 Oct 2007)
+
+  30 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-user-mount-1.0.ebuild, +files/_debian/postinst, 
+  +files/_debian/prerm, +files/fstab.crypt, +files/fstab.tmp,
+  +files/fstab.crypt.rm, +files/fstab.tmp.rm, +files/fstab.tmp.single:
+  Initial import.

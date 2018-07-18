@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>clip-dcssi</herd>
+	<maintainer>
+		<name>Vincent Strubel</name>
+		<email>clipos@ssi.gouv.fr</email>
+	</maintainer>
+	<longdescription>
+		xscreensaver-pwcheck is called by xscreensaver to unlock a session
+		by checking the user's password against pwcheckd.
+	</longdescription>
+</pkgmetadata>

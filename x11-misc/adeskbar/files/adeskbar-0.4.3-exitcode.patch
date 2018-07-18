@@ -1,0 +1,45 @@
+--- a/usr/share/adeskbar/main.py	2011-02-15 09:45:46.000000000 +0100
++++ b/usr/share/adeskbar/main.py	2011-03-23 12:26:09.000000000 +0100
+@@ -14,6 +14,12 @@
+ import sys
+ import gtk
+ 
++def signal_handler(sig, frame):
++    import adesk.bar
++    global BAR_MGR
++    print('Received signal {0}: I\'m gonna die!'.format(sig))
++    BAR_MGR.doquit()
++
+ try:
+     GIO = True
+     import gio
+@@ -50,7 +56,9 @@
+     print
+ else:
+     import adesk.bar
++    import signal
+     global BAR_MGR
+     BAR_MGR = adesk.bar.BarManager(cfg_file)
++    signal.signal(signal.SIGTERM, signal_handler)
+     BAR_MGR.run()
+     
+--- a/usr/share/adeskbar/adesk/bar.py	2011-03-22 19:51:47.000000000 +0100
++++ b/usr/share/adeskbar/adesk/bar.py	2011-03-23 12:26:25.000000000 +0100
+@@ -25,6 +25,8 @@
+ ## Icon theme
+ ICON_THEME = gtk.icon_theme_get_default()
+ 
++RETCODE = 0
++
+ class BarManager():
+     """ class App - main bar config/function """
+     
+@@ -872,7 +874,7 @@
+             self.plg_mgr.plugins[ind].stop()
+         self.win.destroy()
+         gtk.main_quit()
+-        #~ sys.exit()
++        sys.exit(RETCODE)
+ 
+     def run(self):
+         core.logINFO('run ..', 'bar')

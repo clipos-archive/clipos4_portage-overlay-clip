@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-freemind">
+    <sub-class-of type="text/plain"/>
+    <comment>Freemind Map</comment>
+    <comment xml:lang="fr">Carte Freemind</comment>
+    <magic priority="100">
+        <match type="string" value="map version" offset="1"/>
+    </magic>
+    <icon name="freemind.png"/>
+    <glob pattern="*.mm"/>
+    <glob pattern="*.MM"/>
+  </mime-type>
+</mime-info>

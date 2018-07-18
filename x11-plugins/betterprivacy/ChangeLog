@@ -1,0 +1,59 @@
+# CLIP Changelog for x11-plugins/betterprivacy
+
+*betterprivacy-1.69-r1 (10 Jan 2017)
+
+  10 Jan 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +betterprivacy-1.69-r1.ebuild, -betterprivacy-1.69.ebuild:
+  Bump to trace amd64 keyword addition.
+
+*betterprivacy-1.69 (04 Jan 2017)
+
+  04 Jan 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +betterprivacy-1.69.ebuild, -betterprivacy-1.68-r2.ebuild:
+  Bump to meet the firefox addon signature enforcement.
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  betterprivacy-1.68-r2.ebuild:
+  Add amd64 keyword.
+
+*betterprivacy-1.68-r2 (08 Nov 2013)
+
+  08 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +betterprivacy-1.68-r2.ebuild, -betterprivacy-1.68-r1.ebuild:
+  Bump, support firefox-24.*.
+
+*betterprivacy-1.68-r1 (21 Nov 2012)
+
+  21 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +betterprivacy-1.68-r1.ebuild, -betterprivacy-1.68.ebuild:
+  Bump compatibility to firefox 17.*.
+
+*betterprivacy-1.68 (26 Mar 2012)
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +betterprivacy-1.68.ebuild, -betterprivacy-1.67-r1.ebuild,
+  -files/betterprivacy-1.67-fxversion.patch:
+  Bump to latest
+
+*betterprivacy-1.67-r1 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +betterprivacy-1.67-r1.ebuild, -betterprivacy-1.67.ebuild:
+  Bump compatibility to firefox 10.*.
+
+*betterprivacy-1.67 (10 Oct 2011)
+
+  10 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +betterprivacy-1.67.ebuild, -betterprivacy-1.66.ebuild:
+
+*betterprivacy-1.66 (10 Aug 2011)
+
+  10 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +betterprivacy-1.66.ebuild, -betterprivacy-1.48.3.ebuild:
+  Bump to latest, migrate to new firefox home.
+
+*betterprivacy-1.48.3 (29 Oct 2010)
+
+  29 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +betterprivacy-1.48.3.ebuild:
+  Initial import.

@@ -1,0 +1,6 @@
+app-emulation/wine -prelink -realtime -udisks -gecko -mono
+dev-vcs/subversion -kde
+media-libs/libass -enca
+media-libs/phonon -gstreamer -qt5 vlc
+media-video/ffmpeg -mmx
+x11-libs/cairo -qt4

@@ -1,0 +1,43 @@
+Prevent looping of grab_credentials in some cases
+
+When krb5_get_init_creds_password returns before the prompter
+is displayed (e.g. when the KDC has revoked the client's ability
+to authenticate because of too many false tries), and that
+invalid_auth has been set to FALSE in a previous attempt,
+grab_credentials will loop fast and make a huge number of requests,
+basically saturating the network or server.
+Easy fix: limit number of automatic retries after invalid attempts to 3.
+
+diff --git a/src/ka-kerberos.c b/src/ka-kerberos.c
+index 2b0106e..ee58e81 100644
+--- a/src/ka-kerberos.c
++++ b/src/ka-kerberos.c
+@@ -52,6 +52,8 @@
+ #include <hx509_err.h>
+ #endif
+ 
++#define MAX_INVALID_ATTEMPTS 3
++
+ static krb5_context kcontext;
+ static krb5_principal kprincipal;
+ static krb5_timestamp creds_expiry;
+@@ -1017,13 +1019,15 @@ ka_grab_credentials (KaApplet *applet)
+ {
+     int retval;
+     int success = FALSE;
++    int invalid_attempts = 0;
+     KaPwDialog *pwdialog = ka_applet_get_pwdialog (applet);
+ 
+     ka_pwdialog_set_persist (pwdialog, TRUE);
+     do {
+         retval = grab_credentials (applet);
+         if (invalid_auth)
+-            continue;
++            if (++invalid_attempts < MAX_INVALID_ATTEMPTS)
++                continue;
+         if (canceled)
+             break;
+         if (retval) {
+-- 
+1.9.1
+

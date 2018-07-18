@@ -1,0 +1,15 @@
+# TODO: copy VIDEO_CARDS and INPUT_DEVICES in your /etc/make.conf
+VIDEO_CARDS="fbdev intel nouveau radeon"
+
+# TODO: tune C*FLAGS and MAKEOPTS for your architecture in /etc/make.conf
+CFLAGS="-O2 -pipe -march=i686 -mtune=i686 -fomit-frame-pointer"
+CXXFLAGS="${CFLAGS}"
+
+USE="
+ccsd
+mmx
+sse
+sse2
+x86
+"
+

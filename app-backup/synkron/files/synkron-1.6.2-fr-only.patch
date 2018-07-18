@@ -1,0 +1,132 @@
+--- ./Synkron.pro.orig	2011-01-25 13:07:36.000000000 +0100
++++ ./Synkron.pro	2012-08-07 16:50:48.000000000 +0200
+@@ -67,19 +67,4 @@ win32 {
+      RCC_DIR = .build.win32/
+      RC_FILE = Synkron.rc
+ }
+-TRANSLATIONS += i18n/Synkron-Arabic.ts \
+-     i18n/Synkron-Brazilian_Portuguese.ts \
+-     i18n/Synkron-Chinese.ts \
+-     i18n/Synkron-Czech.ts \
+-     i18n/Synkron-Dutch.ts \
+-     i18n/Synkron-Finnish.ts \
+-     i18n/Synkron-French.ts \
+-     i18n/Synkron-German.ts \
+-     i18n/Synkron-Italian.ts \
+-     i18n/Synkron-Japanese.ts \
+-     i18n/Synkron-Polish.ts \
+-     i18n/Synkron-Russian.ts \
+-     i18n/Synkron-Slovak.ts \
+-     i18n/Synkron-Spanish.ts \
+-     i18n/Synkron-Valencian.ts \
+-     i18n/Synkron-Romanian.ts
++TRANSLATIONS += i18n/Synkron-French.ts
+--- ./i18n.qrc.orig	2011-01-15 21:18:12.000000000 +0100
++++ ./i18n.qrc	2012-08-07 16:50:16.000000000 +0200
+@@ -1,21 +1,7 @@
+ <RCC>
+     <qresource prefix="/">
+-        <file>i18n/Synkron-Arabic.qm</file>
+-        <file>i18n/Synkron-Brazilian_Portuguese.qm</file>
+         <file>i18n/Synkron-French.qm</file>
+-        <file>i18n/Synkron-German.qm</file>
+-        <file>i18n/Synkron-Italian.qm</file>
+-        <file>i18n/Synkron-Japanese.qm</file>
+-        <file>i18n/Synkron-Polish.qm</file>
+-        <file>i18n/Synkron-Russian.qm</file>
+-        <file>i18n/Synkron-Slovak.qm</file>
+-        <file>i18n/Synkron-Spanish.qm</file>
+-        <file>i18n/Synkron-Valencian.qm</file>
+         <file>i18n/Synkron-i18n.qm</file>
+-        <file>i18n/Synkron-Finnish.qm</file>
+-        <file>i18n/Synkron-Czech.qm</file>
+-        <file>i18n/Synkron-Chinese.qm</file>
+-        <file>i18n/Synkron-Dutch.qm</file>
+         <file>i18n/Synkron-Romanian.qm</file>
+     </qresource>
+ </RCC>
+--- ./src/mtpathdialogue.h.orig	2010-12-19 20:04:17.000000000 +0100
++++ ./src/mtpathdialogue.h	2012-08-07 16:50:16.000000000 +0200
+@@ -84,7 +84,7 @@ public slots:
+         if (folder) {
+             path = QFileDialog::getExistingDirectory(
+                         dialogue,
+-                        "Choose a directory",
++                        tr("Choose a directory"),
+                         QDir::homePath(),
+                         QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+         } else {
+--- ./src/main.cpp.orig	2011-01-25 13:07:36.000000000 +0100
++++ ./src/main.cpp	2012-08-07 16:50:16.000000000 +0200
+@@ -20,6 +20,8 @@
+ #include "mainwindow.h"
+ 
+ 
++#include <QLibraryInfo>
++
+ ClientConnection::ClientConnection(MainWindow * parent, QTcpSocket * socket)
+ {
+     c_parent = parent;
+@@ -258,9 +260,13 @@ int main(int argc, char *argv[])
+     }
+     if (lang == "C") { lang = "English"; sync_settings->setValue("lang", lang); }
+     if (lang != "English") {
+-        QTranslator * translator = new QTranslator;
+-        translator->load(QString(":/i18n/Synkron-%1.qm").arg(lang.replace(" ", "_")));
+-        app.installTranslator(translator);
++        QTranslator * qt_translator = new QTranslator;
++        qt_translator->load("qt_" + QLocale::system().name(), 
++            QLibraryInfo::location(QLibraryInfo::TranslationsPath));
++        app.installTranslator(qt_translator);
++        QTranslator * my_translator = new QTranslator;
++        my_translator->load(QString(":/i18n/Synkron-%1.qm").arg(lang.replace(" ", "_")));
++        app.installTranslator(my_translator);
+     }
+ 
+     MainWindow *window = new MainWindow (sync_settings);
+--- ./src/syncfolders.cpp.orig	2010-12-19 20:04:17.000000000 +0100
++++ ./src/syncfolders.cpp	2012-08-07 16:50:16.000000000 +0200
+@@ -230,7 +230,7 @@ void SyncFolder::browse()
+ {
+     QString text = QFileDialog::getExistingDirectory(
+                 this,
+-                "Choose a directory",
++                tr("Choose a directory"),
+                 QDir::homePath(),
+                 QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks);
+     if (text != "") folder_name_lne->setText(text);
+--- ./i18n/Synkron-French.ts.orig	2011-01-15 21:18:12.000000000 +0100
++++ ./i18n/Synkron-French.ts	2012-08-07 16:52:11.000000000 +0200
+@@ -654,6 +654,11 @@
+         <translation>Abandonner</translation>
+     </message>
+     <message>
++        <location filename="../mtpathdialogue.h" line="87"/>
++        <source>Choose a directory</source>
++        <translation>Choisissez un dossier</translation>
++    </message>
++    <message>
+         <location filename="../src/mtpathdialogue.h" line="91"/>
+         <source>Choose a file</source>
+         <translation>Choisissez un fichier</translation>
+@@ -2424,7 +2429,7 @@
+     <message>
+         <location filename="../src/syncfolders.cpp" line="199"/>
+         <source>Remove this folder</source>
+-        <translation>supprimer ce dossier</translation>
++        <translation>Supprimer ce dossier</translation>
+     </message>
+     <message>
+         <location filename="../src/syncfolders.cpp" line="210"/>
+@@ -2438,6 +2443,11 @@
+         <source>Folder path</source>
+         <translation>Chemin du dossier</translation>
+     </message>
++    <message>
++        <location filename="../synfolders.cpp" line="233"/>
++        <source>Choose a directory</source>
++        <translation>Choisissez un dossier</translation>
++    </message>
+ </context>
+ <context>
+     <name>SyncFolders</name>

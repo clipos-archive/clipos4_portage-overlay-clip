@@ -1,0 +1,6 @@
+# ChangeLog for clip/x86 profile directory
+
+  18 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  make.defaults, parent, use.force:
+  New profile - common definitions for clip x86 profiles.
+

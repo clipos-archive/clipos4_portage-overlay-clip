@@ -1,0 +1,45 @@
+# CLIP ChangeLog for app-misc/freemind
+
+  12 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  freemind-0.9.0-r1.ebuild:
+  Add (masked) amd64 keyword.
+  
+
+*freemind-0.9.0-r1 (23 Mar 2012)
+
+  23 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +freemind-0.9.0-r1.ebuild, -freemind-0.9.0.ebuild:
+  Force rebuild
+
+*freemind-0.9.0 (18 Aug 2011)
+
+  18 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +freemind-0.9.0.ebuild, -freemind-0.8.1-r2.ebuild,
+  +files/freemind.xml, files/freemind.desktop, 
+  +files/_debian/{postinst,postrm}:
+  Bump to latest. Building from source still is a mess...
+  Add proper mime type for freemind files.
+  Add /usr/local/etc/alt symlink.
+
+*freemind-0.8.1-r2 (13 Apr 2011)
+
+  13 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +freemind-0.8.1-r2.ebuild, -freemind-0.8.1-r1.ebuild,
+  files/freemind.properties:
+  Switch back to default swing theme for now, GTK is broken.
+
+*freemind-0.8.1-r1 (20 Jan 2011)
+
+  20 Jan 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +freemind-0.8.1-r1.ebuild, -freemind-0.8.1.ebuild,
+  files/freemind.properties:
+  Force theme to GTK because FreeMind don't care about default Java config...
+
+*freemind-0.8.1 (09 Sep 2009)
+
+  09 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  freemind-0.8.1.ebuild:
+  Initial import. Note : different ebuild from the gentoo one, which
+  is based on source - this one is based on the published 'binaries'
+  - i.e. class files - because I don't have time to dive into the mess
+  that is java build depends...

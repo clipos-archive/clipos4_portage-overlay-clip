@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Name=DavMail
+Comment=DavMail POP/SMTP/Caldav/LDAP Exchange Gateway
+Comment[fr]=Passerelle de connection MS Exchange
+Exec=/usr/local/lib/davmail/davmail.sh
+Icon=davmail
+Categories=Network;

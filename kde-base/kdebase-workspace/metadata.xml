@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+<herd>kde</herd>
+<use>
+	<flag name="consolekit">Enables support for authorization using consolekit</flag>
+	<flag name="gles">Enable support for GLES.</flag>
+	<flag name="json">Enable JSON support via <pkg>dev-libs/qjson</pkg></flag>
+	<flag name="pm-utils">Adds support for suspend/resume the system through <pkg>sys-power/pm-utils</pkg></flag>
+	<flag name="prison">Enable support for barcodes/QRcodes</flag>
+	<flag name="qalculate">Enable Qalculate runner using <pkg>sci-libs/libqalculate</pkg></flag>
+</use>
+</pkgmetadata>

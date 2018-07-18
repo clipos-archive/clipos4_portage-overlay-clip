@@ -1,0 +1,91 @@
+# Copyright 1999-2011 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+EAPI=5
+
+PYTHON_COMPAT=( python{2_5,2_6,2_7} pypy{1_9,2_0} )
+
+DISTUTILS_IN_SOURCE_BUILD=yes
+inherit distutils-r1
+
+DESCRIPTION="Clip dynamic menus"
+HOMEPAGE="https://www.ssi.gouv.fr"
+ANSSI_HELP_PVR="4.12"
+ANSSI_HELP="fbpanel-help-anssi-${ANSSI_HELP_PVR}"
+SRC_URI="mirror://clip/${P}.tar.xz
+		 clip-anssi? ( mirror://clip/${ANSSI_HELP}.tar.xz )"
+
+LICENSE="LGPL-2.1+"
+SLOT="0"
+KEYWORDS="x86 ~amd64"
+IUSE="clip-hermes clip-anssi clip-livecd clip-gtw"
+
+RDEPEND=">=app-clip/clip-config-2.3.0
+		clip? (
+			>=app-clip/clip-usb-clt-2.2.1
+			dev-python/python-xlib[clip-domains]
+			sys-power/acpi
+			>=x11-misc/xscreensaver-5.15-r2
+			>=app-clip/ssm-display-0.1.0
+		)
+		clip-livecd? (
+			app-clip/clip-config
+			clip-dev/clip-install-config
+			clip-dev/clip-install-gui
+			sys-apps/lshw
+			x11-terms/xterm
+		)
+		>=clip-data/clip-icons-1.0.16
+		dev-python/gnome-python-desktop-base
+		dev-python/libwnck-python
+		!<x11-misc/adeskbar-0.4.3-r11
+		!x11-misc/fbpanel
+"
+python_compile() {
+	cd python
+
+	distutils-r1_python_compile
+}
+
+
+python_install() {
+	cd python
+
+	distutils-r1_python_install
+}
+
+python_install_all() {
+	local base="clip"
+	use clip-hermes && base="hestia"
+	use clip-livecd && base="livecd"
+	insinto /usr/share/applications
+	doins "${S}/${base}"/applications/*
+	use clip-gtw && doins "${S}/gtw"/applications/*
+	insinto /usr/share/desktop-directories
+	doins "${S}/${base}"/desktop-directories/*
+	insinto /etc/xdg/menus
+	doins "${S}/${base}"/menus/*
+	if [[ -d "${S}/${base}/desktop-templates/" ]]; then
+		insinto /usr/share/desktop-templates
+		doins "${S}/${base}"/desktop-templates/*
+	fi
+	if [[ -d "${S}/${base}"/help ]]; then
+		insinto /usr/share
+		doins -r "${S}/${base}"/help
+	fi
+	insinto /usr/bin
+	dobin "${WORKDIR}/${P}/scripts"/*
+
+	if use clip-anssi; then
+		insinto /usr/share/help
+		doins "${WORKDIR}/${ANSSI_HELP}/html/"*.html
+		insinto /usr/share/help/img
+		doins "${WORKDIR}/${ANSSI_HELP}/html/img"/*
+	fi
+
+	if use clip-livecd; then
+		exeinto /usr/bin
+		doexe "${FILESDIR}/reboot.sh"
+	fi
+}

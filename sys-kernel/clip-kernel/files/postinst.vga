@@ -1,0 +1,4 @@
+for f in "/etc/bootargs" "/boot/extlinux_5.conf" "/boot/extlinux_10.conf"; do
+	sed -i -e 's/video=uvesafb:\([-x0-9]\+\),mtrr:3,ywrap/video=\1/' "${f}" || /bin/true
+	sed -i -r 's/video=([x0-9]+-[0-9]+)\>([^@]|$)/video=\1@60\2/' "$f" || /bin/true
+done

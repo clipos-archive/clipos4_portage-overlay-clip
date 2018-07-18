@@ -1,0 +1,2 @@
+CFLAGS="-O2 -pipe -march=i686 -mtune=i686 -fomit-frame-pointer"
+CXXFLAGS="${CFLAGS}"

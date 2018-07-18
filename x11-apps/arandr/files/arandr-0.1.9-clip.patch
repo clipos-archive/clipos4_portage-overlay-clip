@@ -1,0 +1,789 @@
+Traductions additionnelles.
+Entrées sorties sécurisées pour la gestion et le stockage des configuration d'écran.
+Comportement du glissé-déposé des écrans plus "snappy"
+Ajout d'un outil "standalone" pour restaurer les configurations enregistrées.
+diff --git a/data/po/fr.po b/data/po/fr.po
+index 3c0ba03..399c93c 100644
+--- a/data/po/fr.po
++++ b/data/po/fr.po
+@@ -22,70 +22,102 @@ msgstr ""
+ "X-Generator: Weblate 2.3-dev\n"
+ 
+ #: screenlayout/gui.py:117
++msgid "Screen Layout Editor"
++msgstr "Affichage"
++
++#: screenlayout/gui.py:125
+ msgid "_Layout"
+-msgstr "_Disposition"
++msgstr "_Configuration"
++
++#: screenlayout/gui.py:131
++msgid "Refresh connected screens"
++msgstr "Rafraîchir la liste des écrans connectés"
+ 
+-#: screenlayout/gui.py:128
++#: screenlayout/gui.py:138
+ msgid "_View"
+-msgstr "_Vue"
++msgstr "_Zoom"
+ 
+-#: screenlayout/gui.py:130
++#: screenlayout/gui.py:140
+ msgid "_Outputs"
+ msgstr "É_crans"
+ 
+-#: screenlayout/gui.py:131
++#: screenlayout/gui.py:141
+ msgid "Dummy"
+ msgstr "Écran"
+ 
+-#: screenlayout/gui.py:133
++#: screenlayout/gui.py:143
+ msgid "_System"
+ msgstr "_Système"
+ 
+-#: screenlayout/gui.py:134
+-msgid "_Keybindings (Metacity)"
+-msgstr "_Raccourci (Metacity)"
+-
+-#: screenlayout/gui.py:136
++#: screenlayout/gui.py:145
+ msgid "_Help"
+ msgstr "_Aide"
+ 
+-#: screenlayout/gui.py:140
++#: screenlayout/gui.py:149
+ msgid "1:4"
+ msgstr "1:4"
+ 
+-#: screenlayout/gui.py:141
++#: screenlayout/gui.py:150
+ msgid "1:8"
+ msgstr "1:8"
+ 
+-#: screenlayout/gui.py:142
++#: screenlayout/gui.py:151
+ msgid "1:16"
+ msgstr "1:16"
+ 
+-#: screenlayout/gui.py:189
+-msgid "Script Properties"
+-msgstr "Propriétés du script"
+-
+-#: screenlayout/gui.py:201
+-msgid "Script"
+-msgstr "Script"
+-
+-#: screenlayout/gui.py:217
++#: screenlayout/gui.py:207 screenlayout/gui.py:289
+ #, python-format
+ msgid ""
+ "XRandR failed:\n"
+ "%s"
+ msgstr ""
+-"Échec de XRandR :\n"
++"Erreur de la commande XRandR :\n"
+ "%s"
+ 
+-#: screenlayout/gui.py:227
++#: screenlayout/gui.py:218 screenrestore.py:35
+ msgid "Open Layout"
+ msgstr "Ouvrir une disposition"
+ 
+-#: screenlayout/gui.py:239
++#: screenlayout/gui.py:218 screenrestore.py:35
++msgid ""
++"Please pick a screen configuration that"
++" you want to restore from the following list:"
++msgstr ""
++"Veuillez choisir une configuration d'écran "
++"à restaurer depuis la liste suivante:"
++
++#: screenlayout/gui.py:244
+ msgid "Save Layout"
+ msgstr "Enregistrer une disposition"
+ 
++#: screenlayout/gui.py:244
++msgid "Configuration name:"
++msgstr "Nom de la configuration:"
++
++#: screenlayout/gui.py:252
++msgid "Confirm file overwrite"
++msgstr "Confirmation de l'écrasement"
++
++#: screenlayout/gui.py:256
++msgid ""
++"Please confirm that you want\n"
++" to overwrite the configuration."
++msgstr ""
++"Veuillez confirmer que vous voulez\n"
++"écraser la configuration."
++
++#: screenlayout/gui.py:272
++msgid "Delete Layout"
++msgstr "Supprimer une disposition"
++
++#: screenlayout/gui.py:272
++msgid ""
++"Please pick a screen configuration that you"
++" want to delete from the following list:"
++msgstr ""
++"Veuillez choisir une configuration d'écran"
++" à effacer depuis la liste suivante:"
++
+ #: screenlayout/meta.py:23
+ msgid "ARandR Screen Layout Editor"
+ msgstr "ARandR, configuration de la disposition des écrans"
+@@ -171,7 +203,7 @@ msgstr ""
+ 
+ #: screenlayout/widget.py:327
+ msgid "Active"
+-msgstr "Active"
++msgstr "Activé"
+ 
+ #: screenlayout/widget.py:335
+ msgid "Primary"
+@@ -202,3 +234,16 @@ msgstr "Une partie d'un écran se trouve en dehors de la zone virtuelle."
+ #: screenlayout/xrandr.py:278
+ msgid "An output is outside the virtual screen."
+ msgstr "Un écran se trouve en dehors de la zone virtuelle."
++
++#: screenrestore.py:27
++msgid "Screen Layout Selection"
++msgstr "Affichage"
++
++#: screenrestore.py:47
++msgid ""
++"You currently don't have any saved screen configuration, you can save some "
++"using the \"Screen Settings\" tool."
++msgstr ""
++"Vous n'avez pas de configuration d'écran enregistrée. Vous pouvez "
++"enregistrer une configuration d'écran en utilisant l'outil de configuration "
++"\"Paramètres d'affichage\""
+diff --git a/data/po/messages.pot b/data/po/messages.pot
+index 7fe4bff..36e6362 100644
+--- a/data/po/messages.pot
++++ b/data/po/messages.pot
+@@ -18,68 +18,94 @@ msgstr ""
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: screenlayout/gui.py:117
++msgid "Screen Layout Editor"
++msgstr ""
++
++#: screenlayout/gui.py:125
+ msgid "_Layout"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:128
++#: screenlayout/gui.py:131
++msgid "Refresh connected screens"
++msgstr ""
++
++#: screenlayout/gui.py:138
+ msgid "_View"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:130
++#: screenlayout/gui.py:140
+ msgid "_Outputs"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:131
++#: screenlayout/gui.py:141
+ msgid "Dummy"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:133
++#: screenlayout/gui.py:143
+ msgid "_System"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:134
+-msgid "_Keybindings (Metacity)"
+-msgstr ""
+-
+-#: screenlayout/gui.py:136
++#: screenlayout/gui.py:145
+ msgid "_Help"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:140
++#: screenlayout/gui.py:149
+ msgid "1:4"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:141
++#: screenlayout/gui.py:150
+ msgid "1:8"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:142
++#: screenlayout/gui.py:151
+ msgid "1:16"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:189
+-msgid "Script Properties"
+-msgstr ""
+-
+-#: screenlayout/gui.py:201
+-msgid "Script"
+-msgstr ""
+-
+-#: screenlayout/gui.py:217
++#: screenlayout/gui.py:207 screenlayout/gui.py:289
+ #, python-format
+ msgid ""
+ "XRandR failed:\n"
+ "%s"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:227
++#: screenlayout/gui.py:218 screenrestore.py:35
+ msgid "Open Layout"
+ msgstr ""
+ 
+-#: screenlayout/gui.py:239
++#: screenlayout/gui.py:218 screenrestore.py:35
++msgid ""
++"Please pick a screen configuration that you want to restore from the "
++"following list:"
++msgstr ""
++
++#: screenlayout/gui.py:244
+ msgid "Save Layout"
+ msgstr ""
+ 
++#: screenlayout/gui.py:244
++msgid "Configuration name:"
++msgstr ""
++
++#: screenlayout/gui.py:252
++msgid "Confirm file overwrite"
++msgstr ""
++
++#: screenlayout/gui.py:256
++msgid ""
++"Please confirm that you want\n"
++" to overwrite the configuration."
++msgstr ""
++
++#: screenlayout/gui.py:272
++msgid "Delete Layout"
++msgstr ""
++
++#: screenlayout/gui.py:272
++msgid ""
++"Please pick a screen configuration that you want to delete from the "
++"following list:"
++msgstr ""
++
+ #: screenlayout/meta.py:23
+ msgid "ARandR Screen Layout Editor"
+ msgstr ""
+@@ -188,3 +214,13 @@ msgstr ""
+ #: screenlayout/xrandr.py:278
+ msgid "An output is outside the virtual screen."
+ msgstr ""
++
++#: screenrestore.py:27
++msgid "Screen Layout Selection"
++msgstr ""
++
++#: screenrestore.py:47
++msgid ""
++"You currently don't have any saved screen configuration, you can save some "
++"using the \"Screen Settings\" tool."
++msgstr ""
+diff --git a/screenlayout/gui.py b/screenlayout/gui.py
+index b6f1ece..1b3e17a 100644
+--- a/screenlayout/gui.py
++++ b/screenlayout/gui.py
+@@ -31,6 +31,8 @@ from .meta import __version__, TRANSLATORS, COPYRIGHT, PROGRAMNAME, PROGRAMDESCR
+ #os.environ['DISPLAY']=':0.0'
+ 
+ import gettext
++from .secure_gui import SecureDirectoryList, SecureInputText
++
+ gettext.install('arandr')
+ 
+ 
+@@ -74,11 +76,13 @@ class Application(object):
+         <menubar name="MenuBar">
+             <menu action="Layout">
+                 <menuitem action="New" />
+-                <menuitem action="Open" />
+-                <menuitem action="SaveAs" />
++                <menuitem action="SecureOpen" />
++                <menuitem action="Save" />
++                <menuitem action="SecureSaveAs" />
++                <menuitem action="SecureDelete" />
+                 <separator />
+                 <menuitem action="Apply" />
+-                <menuitem action="LayoutSettings" />
++                <menuitem action="Refresh" />
+                 <separator />
+                 <menuitem action="Quit" />
+             </menu>
+@@ -90,37 +94,43 @@ class Application(object):
+             <menu action="Outputs" name="Outputs">
+                 <menuitem action="OutputsDummy" />
+             </menu>
+-            <menu action="System">
+-                <menuitem action="Metacity" />
+-            </menu>
+             <menu action="Help">
+                 <menuitem action="About" />
+             </menu>
+         </menubar>
+         <toolbar name="ToolBar">
+             <toolitem action="Apply" />
++            <toolitem action="Refresh" />
++            <toolitem action="Quit" />
+             <separator />
+             <toolitem action="New" />
+-            <toolitem action="Open" />
+-            <toolitem action="SaveAs" />
++            <toolitem action="SecureOpen" />
++            <toolitem action="Save" />
++            <toolitem action="SecureSaveAs" />
++            <toolitem action="SecureDelete" />
+         </toolbar>
+     </ui>
+     """
+ 
+     def __init__(self, file=None, randr_display=None, force_version=False):
+         self.window = window = gtk.Window()
+-        window.props.title = "Screen Layout Editor"
++        window.props.title = _("Screen Layout Editor")
++        window.set_default_size(640,640)
++
++        self.layoutdir = os.path.expanduser('~/.screenlayout/')
+ 
+         # actions
+         actiongroup = gtk.ActionGroup('default')
+         actiongroup.add_actions([
+             ("Layout", None, _("_Layout")),
+-            ("New", gtk.STOCK_NEW, None, None, None, self.do_new),
+-            ("Open", gtk.STOCK_OPEN, None, None, None, self.do_open),
+-            ("SaveAs", gtk.STOCK_SAVE_AS, None, None, None, self.do_save_as),
++            ("New", gtk.STOCK_NEW, None, '<Control>n', None, self.do_new),
++            ("SecureOpen", gtk.STOCK_OPEN, None, None, None, self.do_secure_open),
++            ("Save", gtk.STOCK_SAVE, None, '<Control>s', None, self.do_save),
++            ("SecureSaveAs", gtk.STOCK_SAVE_AS, None, '<Control><Alt>s', None, self.do_secure_save_as),
++            ("SecureDelete", gtk.STOCK_DELETE, None, '<Control>d', None, self.do_secure_delete),
++            ("Refresh", gtk.STOCK_REFRESH, None, '<Control>R', _("Refresh connected screens"), self.do_refresh),
+ 
+             ("Apply", gtk.STOCK_APPLY, None, '<Control>Return', None, self.do_apply),
+-            ("LayoutSettings", gtk.STOCK_PROPERTIES, None, '<Alt>Return', None, self.do_open_properties),
+ 
+             ("Quit", gtk.STOCK_QUIT, None, None, None, gtk.main_quit),
+ 
+@@ -131,7 +141,6 @@ class Application(object):
+             ("OutputsDummy", None, _("Dummy")),
+ 
+             ("System", None, _("_System")),
+-            ("Metacity", None, _("_Keybindings (Metacity)"), None, None, self.do_open_metacity),
+ 
+             ("Help", None, _("_Help")),
+             ("About", gtk.STOCK_ABOUT, None, None, None, self.about),
+@@ -157,8 +166,10 @@ class Application(object):
+         self.widget = widget.ARandRWidget(display=randr_display, force_version=force_version)
+         if file is None:
+             self.filetemplate = self.widget.load_from_x()
++            self.filename = None
+         else:
+             self.filetemplate = self.widget.load_from_file(file)
++            self.filename = file
+ 
+         self.widget.connect('changed', self._widget_changed)
+         self._widget_changed(self.widget)
+@@ -185,34 +196,13 @@ class Application(object):
+         self.window.resize(1,1)
+ 
+     @actioncallback
+-    def do_open_properties(self):
+-        d = gtk.Dialog(_("Script Properties"), None, gtk.DIALOG_MODAL, (gtk.STOCK_CLOSE, gtk.RESPONSE_ACCEPT))
+-        d.set_default_size(300,400)
+-
+-        script_editor = gtk.TextView()
+-        script_buffer = script_editor.get_buffer()
+-        script_buffer.set_text("\n".join(self.filetemplate))
+-        script_editor.props.editable = False
+-
+-        #wacom_options = gtk.Label("FIXME")
+-
+-        nb = gtk.Notebook()
+-        #nb.append_page(wacom_options, gtk.Label(_("Wacom options")))
+-        nb.append_page(script_editor, gtk.Label(_("Script")))
+-
+-        d.vbox.pack_start(nb)
+-        d.show_all()
+-
+-        d.run()
+-        d.destroy()
+-
+-    @actioncallback
+     def do_apply(self):
+         if self.widget.abort_if_unsafe():
+             return
+ 
+         try:
+             self.widget.save_to_x()
++            self.filetemplate = self.widget.load_from_x()
+         except Exception, e:
+             d = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("XRandR failed:\n%s")%e)
+             d.run()
+@@ -221,51 +211,84 @@ class Application(object):
+     @actioncallback
+     def do_new(self):
+         self.filetemplate = self.widget.load_from_x()
++        self.filename = None
+ 
+     @actioncallback
+-    def do_open(self):
+-        d = self._new_file_dialog(_("Open Layout"), gtk.FILE_CHOOSER_ACTION_OPEN, gtk.STOCK_OPEN)
++    def do_secure_open(self):
++        d = SecureDirectoryList(self.window, _("Open Layout"), _("Please pick a screen configuration that you want to restore from the following list:"), self.layoutdir)
+ 
+         result = d.run()
+-        filenames = d.get_filenames()
++
++        if result == gtk.RESPONSE_OK:
++            self.filename = os.path.join(self.layoutdir, d.filename)
++            self.filetemplate = self.widget.load_from_file(self.filename)
++
+         d.destroy()
+-        if result == gtk.RESPONSE_ACCEPT:
+-            assert len(filenames) == 1
+-            f = filenames[0]
+-            self.filetemplate = self.widget.load_from_file(f)
++
+ 
+     @actioncallback
+-    def do_save_as(self):
+-        d = self._new_file_dialog(_("Save Layout"), gtk.FILE_CHOOSER_ACTION_SAVE, gtk.STOCK_SAVE)
+-        d.props.do_overwrite_confirmation = True
++    def do_save(self):
++        if self.filename:
++            self.widget.save_to_file(self.filename, self.filetemplate)
++        else:
++            self.do_secure_save_as()
+ 
+-        result = d.run()
+-        filenames = d.get_filenames()
+-        d.destroy()
+-        if result == gtk.RESPONSE_ACCEPT:
+-            assert len(filenames) == 1
+-            f = filenames[0]
+-            if not f.endswith('.sh'): f = f + '.sh'
+-            self.widget.save_to_file(f, self.filetemplate)
+-
+-    def _new_file_dialog(self, title, type, buttontype):
+-        d = gtk.FileChooserDialog(title, None, type)
+-        d.add_button(gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL)
+-        d.add_button(buttontype, gtk.RESPONSE_ACCEPT)
+-
+-        layoutdir = os.path.expanduser('~/.screenlayout/')
++
++    @actioncallback
++    def do_secure_save_as(self):
+         try:
+-            os.makedirs(layoutdir)
++            os.makedirs(self.layoutdir)
+         except OSError:
+             pass
+-        d.set_current_folder(layoutdir)
+ 
+-        f = gtk.FileFilter()
+-        f.set_name('Shell script (Layout file)')
+-        f.add_pattern('*.sh')
+-        d.add_filter(f)
++        d = SecureInputText(self.window, _("Save Layout"), _("Configuration name:"), None)
+ 
+-        return d
++        result = d.run()
++        d.destroy()
++
++        if result == gtk.RESPONSE_OK:
++            filename = os.path.join(self.layoutdir, d.input_text)
++            if os.path.exists(filename):
++                d = gtk.Dialog( _("Confirm file overwrite"), self.window, gtk.DIALOG_MODAL,
++                                                          buttons = (gtk.STOCK_NO, gtk.RESPONSE_NO,
++                                                           gtk.STOCK_YES, gtk.RESPONSE_YES))
++
++                label = gtk.Label(_("Please confirm that you want\n to overwrite the configuration."))
++                label.set_justify("center")
++                d.vbox.pack_start(label, True, True, 0)
++                label.show()
++                d.show_all()
++                result = d.run()
++                d.destroy()
++
++                if result != gtk.RESPONSE_YES:
++                    return
++
++            self.filename = filename
++            self.widget.save_to_file(filename, self.filetemplate)
++
++    @actioncallback
++    def do_secure_delete(self):
++        d = SecureDirectoryList(self.window, _("Delete Layout"), _("Please pick a screen configuration that you want to delete from the following list:"), self.layoutdir)
++
++        result = d.run()
++
++        if result == gtk.RESPONSE_OK:
++            os.unlink(os.path.join(self.layoutdir, d.filename))
++
++        d.destroy()
++
++    @actioncallback
++    def do_refresh(self):
++        if self.widget.abort_if_unsafe():
++            return
++
++        try:
++            self.filetemplate = self.widget.load_from_x()
++        except Exception, e:
++            d = gtk.MessageDialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_ERROR, gtk.BUTTONS_OK, _("XRandR failed:\n%s")%e)
++            d.run()
++            d.destroy()
+ 
+     #################### widget maintenance ####################
+ 
+@@ -291,9 +314,7 @@ class Application(object):
+         d.props.translator_credits = "\n".join(TRANSLATORS)
+         d.props.copyright = COPYRIGHT
+         d.props.comments = PROGRAMDESCRIPTION
+-        licensetext = open(os.path.join(os.path.dirname(__file__), 'data', 'gpl-3.txt')).read()
+-        d.props.license = licensetext.replace('<', u'\u2329 ').replace('>', u' \u232a')
+-        d.props.logo_icon_name = 'video-display'
++        d.props.license = open(os.path.join(os.path.dirname(__file__), 'data', 'gpl-3.txt')).read()
+         d.run()
+         d.destroy()
+ 
+diff --git a/screenlayout/secure_gui.py b/screenlayout/secure_gui.py
+new file mode 100644
+index 0000000..65ac736
+--- /dev/null
++++ b/screenlayout/secure_gui.py
+@@ -0,0 +1,135 @@
++import gtk
++import os
++import gobject
++
++import gtk.keysyms as key
++
++class SecureDirectoryList(gtk.Dialog):
++    def __init__(self, parent, title, text_label, directory):
++        gtk.Dialog.__init__(self, title, parent, 0,
++            (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
++             gtk.STOCK_OK, gtk.RESPONSE_OK),
++            )
++
++        self.filename = None
++
++        self.set_response_sensitive(gtk.RESPONSE_OK, False)
++
++        try:
++            os.makedirs(directory)
++        except OSError:
++            pass
++
++        try:
++            directory = sorted(os.listdir(directory))
++        except OSError:
++            directory = []
++
++        label = gtk.Label(text_label)
++
++        scrolled_window = gtk.ScrolledWindow()
++        scrolled_window.set_policy(gtk.POLICY_AUTOMATIC, gtk.POLICY_AUTOMATIC)
++
++        screenlist = gtk.List()
++        screenlist.connect("selection_changed", self.updatename)
++        screenlist.set_selection_mode(gtk.SELECTION_BROWSE)
++        screenlist.connect("button_press_event", self.button_pressed)
++        screenlist.connect("key_release_event", self.key_pressed)
++
++        for filename in directory:
++            item = gtk.ListItem(filename)
++            item.set_name(filename)
++            screenlist.add(item)
++            item.show()
++
++        box = self.get_content_area()
++        box.add(label)
++        box.pack_start(scrolled_window, True, True, 0)
++        scrolled_window.add_with_viewport(screenlist)
++        screenlist.show()
++        self.show_all()
++
++    def button_pressed(self, gtklist, event):
++        if event.button == 1 and event.type == gtk.gdk._2BUTTON_PRESS:
++            self.response(gtk.RESPONSE_OK)
++        return False
++
++    def key_pressed(self, gtklist, event, func_data=None):
++        if event.type == gtk.gdk.KEY_RELEASE:
++            if event.keyval == key.Escape:
++                self.response(gtk.RESPONSE_CANCEL)
++                return False
++            elif event.keyval == key.Return:
++                self.response(gtk.RESPONSE_OK)
++                return False
++        return True
++
++    def updatename(self, gtklist, func_data=None):
++        if gtklist.get_selection():
++            self.set_response_sensitive(gtk.RESPONSE_OK, True)
++            self.filename = gtklist.get_selection()[0].name
++        else:
++            self.set_response_sensitive(gtk.RESPONSE_OK, False)
++
++
++class ASCIIEntry(gtk.Entry):
++    def __init__(self):
++        gtk.Entry.__init__(self)
++        self.connect("insert_text")
++
++
++
++class SecureInputText(gtk.Dialog):
++    def __init__(self, parent, title, prompt, filter=None):
++        gtk.Dialog.__init__(self, title, parent, 0,
++                            (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL,
++                             gtk.STOCK_OK, gtk.RESPONSE_OK),
++                            )
++
++        self.input_text = ""
++        self.set_response_sensitive(gtk.RESPONSE_OK, False)
++
++        label = gtk.Label(prompt)
++
++        entry = gtk.Entry()
++        entry.connect("insert_text", self.key_press)
++        entry.connect("changed", self.text_changed)
++        entry.connect("key_release_event", self.other_key_press)
++
++        box = self.get_content_area()
++        box.pack_start(label, True, True, 0)
++        box.add(entry)
++
++        self.show_all()
++
++    def text_changed(self, entry):
++        self.set_response_sensitive(gtk.RESPONSE_OK, len(entry.get_text()) and True or False)
++        self.input_text = entry.get_text()
++
++    def key_press(self, entry, text, length, position, func_data=None):
++        position = entry.get_position()
++
++        result = ''.join([c for c in text if c.isalnum()])
++
++        if result != '':
++            entry.handler_block_by_func(self.key_press)
++            entry.insert_text(result, position)
++            entry.handler_unblock_by_func(self.key_press)
++
++            gobject.idle_add(entry.set_position, position + len(result))
++
++        entry.stop_emission("insert_text")
++
++
++    def other_key_press(self, gtklist, event, func_data=None):
++        """
++            Catch Return and Escape press
++        """
++        if event.type == gtk.gdk.KEY_RELEASE:
++            if event.keyval == key.Escape:
++                self.response(gtk.RESPONSE_CANCEL)
++                return False
++            elif event.keyval == key.Return and self.input_text:
++                self.response(gtk.RESPONSE_OK)
++                return False
++        return True
+diff --git a/screenlayout/widget.py b/screenlayout/widget.py
+index de469e9..8e083d7 100644
+--- a/screenlayout/widget.py
++++ b/screenlayout/widget.py
+@@ -407,7 +407,7 @@ class ARandRWidget(gtk.DrawingArea):
+ 
+         self._draggingsnap = Snap(
+                 self._xrandr.configuration.outputs[self._draggingoutput].size,
+-                self.factor*5,
++                self.factor*30,
+                 [(Position((0,0)),self._xrandr.state.virtual.max)]+[
+                     (v.position, v.size) for (k,v) in self._xrandr.configuration.outputs.items() if k!=self._draggingoutput and v.active
+                 ]
+diff --git a/screenrestore.py b/screenrestore.py
+new file mode 100644
+index 0000000..e1b9fe2
+--- /dev/null
++++ b/screenrestore.py
+@@ -0,0 +1,52 @@
++#!/usr/bin/env python
++
++# a simple GUI for restoring screen with a saved configuration
++# Copyright (C) 2014 ANSSI
++# Author: Tony Cheneau <clipos@ssi.gouv.fr>
++
++import gettext
++import gtk
++import os
++import sys
++
++from screenlayout.secure_gui import SecureDirectoryList
++from screenlayout.xrandr import XRandR
++
++
++def load_from_file(xrandr, file):
++    data = open(file).read()
++    template = xrandr.load_from_string(data)
++    #xrandr._xrandr_was_reloaded()
++    xrandr.save_to_x()
++    return template
++
++if __name__ == '__main__':
++    layoutdir = os.path.expanduser('~/.screenlayout/')
++
++    window = gtk.Window()
++    window.props.title = _("Screen Layout Selection")
++    window.set_default_size(600,600)
++
++    xrandr = XRandR(display=None, force_version=False)
++
++    gettext.install("screenrestore")
++
++    if os.listdir(layoutdir):
++        d = SecureDirectoryList(window, _("Open Layout"), _("Please pick a screen configuration that you want to restore from the following list:"), layoutdir) 
++        result = d.run()
++
++        if result == gtk.RESPONSE_OK:
++            filetemplate = load_from_file(xrandr, os.path.join(layoutdir, d.filename))
++
++        d.destroy()
++    else:
++        d = gtk.MessageDialog(window,
++                              gtk.DIALOG_DESTROY_WITH_PARENT,
++                              gtk.MESSAGE_INFO,
++                              gtk.BUTTONS_OK,
++                              _("You currently don't have any saved screen configuration, you can save some using the \"Screen Settings\" tool."))
++        d.run()
++        d.destroy()
++
++
++    sys.exit(0)
+diff --git a/setup.py b/setup.py
+index c9fe791..8e0b67a 100755
+--- a/setup.py
++++ b/setup.py
+@@ -255,5 +255,5 @@ setup(name = PACKAGENAME,
+             ('share/applications', ['data/arandr.desktop']), # FIXME: use desktop-file-install?
+             ('share/man/man1', ['build/arandr.1.gz', 'build/unxrandr.1.gz']),
+             ],
+-        scripts = ['arandr', 'unxrandr'],
++        scripts = ['arandr', 'unxrandr', 'screenrestore.py'],
+ )

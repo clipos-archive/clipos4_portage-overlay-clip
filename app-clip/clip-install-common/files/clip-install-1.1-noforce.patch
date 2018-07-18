@@ -1,0 +1,11 @@
+--- scripts/clip_install.bck	2007-07-27 09:34:12.000000000 +0200
++++ scripts/clip_install	2007-07-27 09:35:48.000000000 +0200
+@@ -750,7 +750,7 @@
+ 
+ verify_file $g_conf_file
+ 
+-g_option_force=`${g_bin_dir}grep option_force ${g_conf_file} | ${g_bin_dir}awk -F "=" '{print $2}'`
++g_option_force="no"
+ if [ "${g_option_force}" != "yes" -a "${g_option_force}" != "no" ]
+ then
+ 	log "err" "Invalid option_force in ${g_conf_file}"

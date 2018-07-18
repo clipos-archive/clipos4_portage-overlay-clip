@@ -1,0 +1,11 @@
+--- a/usr/share/adeskbar/adesk/ui.py	2011-03-09 11:24:03.000000000 +0100
++++ b/usr/share/adeskbar/adesk/ui.py	2011-03-21 14:20:12.000000000 +0100
+@@ -57,7 +57,7 @@
+         self.plugin = None
+ 
+     def set_tooltip(self, text):
+-        self.label.set_text(text)
++        self.label.set_markup(text)
+ 
+     def expose(self, widget, event):
+         # On X11 this function returns whether a compositing

@@ -1,0 +1,15 @@
+#!/bin/sh
+
+JAIL="$(cat /etc/shared/jail_name)"
+MIN="0"
+
+case "${JAIL}" in
+	"rm_h")
+		MIN="5"
+		;;
+	"rm_b")
+		MIN="10"
+		;;
+esac
+
+sed -e "s/MIN/${MIN}/" /etc/cron/crontab/root_clip_install_rm >> /etc/cron/crontab/root

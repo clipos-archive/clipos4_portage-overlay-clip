@@ -1,0 +1,14 @@
+--- a/include/uapi/asm-generic/int-ll64.h	2013-07-01 00:13:29.000000000 +0200
++++ b/include/uapi/asm-generic/int-ll64.h	2013-07-19 14:56:33.264138062 +0200
+@@ -8,7 +8,11 @@
+ #ifndef _UAPI_ASM_GENERIC_INT_LL64_H
+ #define _UAPI_ASM_GENERIC_INT_LL64_H
+ 
++#ifdef __KERNEL__
+ #include <asm/bitsperlong.h>
++#else
++#include <asm-generic/bitsperlong.h>
++#endif
+ 
+ #ifndef __ASSEMBLY__
+ /*

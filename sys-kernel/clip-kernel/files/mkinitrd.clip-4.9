@@ -1,0 +1,282 @@
+#!/bin/bash
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+KERNEL_VER=@VERSION@
+
+warning() {
+	echo " !! ${1} !!" >&2
+}
+
+error() {
+	echo " ! ${1} !" >&2
+	exit 1
+}
+
+MOD_CONF="/etc/modules"
+MOD_EXTRA="/etc/modules.extra"
+MOD_BLACKLIST="/etc/modules.blacklist"
+
+FW_CONF="/etc/firmwares"
+FW_EXTRA="/etc/firmwares.extra"
+FW_BLACKLIST="/etc/firmwares.blacklist"
+
+
+FW_BASE="/lib/firmware"
+MODULES=""
+FIRMWARES=""
+
+# Most of the code is taken from mkinitrd...
+moduledep() {
+	if [ ! -f "/lib/modules/${KERNEL_VER}/modules.dep" ]; then
+		echo "No dep file found for kernel ${KERNEL_VER}" >&2
+		exit 1
+	fi
+
+	deps=$(awk 'BEGIN { searched=ARGV[2]; ARGV[2]=""; rc=1 } \
+		function modname(filename) { match(filename, /\/([^\/]+)\.k?o:?$/, ret); return ret[1] } \
+		function show() { if (orig == searched) { print dep; orig=""; rc=0; exit } } \
+		/^kernel/ { show(); \
+		orig=modname($1); dep=""; \
+		if ($2) { for (i = 2; i <= NF; i++) \
+			{ dep=sprintf("%s %s", dep, modname($i)); } } } \
+		/^	/ { dep=sprintf("%s %s", dep, modname($1));  } \
+		END	  { show(); exit(rc) }' /lib/modules/${KERNEL_VER}/modules.dep $1)
+}
+
+findmodule() {
+	local modName=$1
+
+	moduledep "${modName}"
+	for i in ${deps}; do
+		findmodule $i
+	done
+
+	fmPath=`(cd "/lib/modules/${KERNEL_VER}"; find . -name "$modName.ko" -type f ) \
+			| awk '{print $1}'`
+
+	if [ ! -f "/lib/modules/${KERNEL_VER}/${fmPath}" ]; then
+		warning "No module $modName found for kernel ${KERNEL_VER}, aborting."
+		return 0
+	fi
+
+	# only need to add each module once
+	if ! echo "${MODULES}" | grep -q "${fmPath}" 2>/dev/null ; then
+		MODULES="${MODULES} ${fmPath}"
+	fi
+}
+
+makehotplug() {
+	chmod +x "${MNTIMAGE}/sbin/hotplug" || return 1
+}
+
+#############################
+#           MAIN            #
+#############################
+
+if [ -z "${KERNEL_VER}" ]; then
+	echo "KERNEL_VER was not defined" >&2
+	exit 1
+fi
+
+if [ ! -d "/lib/modules/${KERNEL_VER}" ]; then
+	error "/lib/modules/${KERNEL_VER} is not a directory"
+fi
+
+if [ ! -e "${MOD_CONF}" ]; then
+	error "Cannot find  config file ${MOD_CONF}"
+fi
+
+echo " * Generating initrd for kernel ${KERNEL_VER} based on ${MOD_CONF}"
+
+mods=$(grep -v RAID "${MOD_CONF}" | awk '{print $1}')
+# Add extra modules, if not already in base conf
+if [[ -f "${MOD_EXTRA}" ]]; then
+	for mod in $(awk '{print $1}' "${MOD_EXTRA}"); do
+		echo "${mods}" | grep -qw "${mod}" || mods="${mods} ${mod}"
+	done
+fi
+
+# Exclude blacklisted modules
+if [[ -f "${MOD_BLACKLIST}" ]]; then
+	mods_ok=""
+	for mod in ${mods}; do
+		grep -qw "${mod}" "${MOD_BLACKLIST}" \
+			|| mods_ok="${mods_ok} ${mod}"
+	done
+else
+	mods_ok="${mods}"
+fi
+
+mods_ok="${mods_ok}"
+for mod in ${mods_ok}; do
+	findmodule "${mod}"
+done
+
+firmwares=""
+if [[ -f "${FW_CONF}" ]]; then
+	firmwares="$(cat "${FW_CONF}")"
+fi
+if [[ -f "${FW_EXTRA}" ]]; then
+	for fw in $(cat "${FW_EXTRA}"); do
+		echo "${firmwares}" | grep -qw "${fw}" \
+			|| firmwares="${firmwares} ${fw}"
+	done
+fi
+if [[ -f "${FW_BLACKLIST}" ]]; then
+	for fw in ${firmwares}; do
+		grep -qw "${fw}" "${FW_BLACKLIST}" \
+			|| FIRMWARES="${FIRMWARES} ${fw}"
+	done
+else
+	FIRMWARES="${firmwares}"
+fi
+
+# Not tmpfs on CLIP
+TMPDIR="/var/tmp"
+MNTIMAGE=$(mktemp -d ${TMPDIR}/initrd.XXXXXX)
+IMAGE=$(mktemp ${TMPDIR}/initrd.img.XXXXXX)
+
+if [ -z "${MNTIMAGE}" -o -z "${IMAGE}" ]; then
+	error "Error creating temporaries.  Try again"
+fi
+
+set -e
+
+mkdir -p "${MNTIMAGE}"
+mkdir -p "${MNTIMAGE}/lib"
+mkdir -p "${MNTIMAGE}/${FW_BASE}"
+mkdir -p "${MNTIMAGE}/bin"
+mkdir -p "${MNTIMAGE}/boot"
+mkdir -p "${MNTIMAGE}/etc"
+mkdir -p "${MNTIMAGE}/altdev"
+mkdir -p "${MNTIMAGE}/dev"
+mkdir -p "${MNTIMAGE}/proc"
+mkdir -p "${MNTIMAGE}/sys"
+mkdir -p "${MNTIMAGE}/sysroot"
+mkdir -p "${MNTIMAGE}/root"
+ln -s "bin" "${MNTIMAGE}/sbin"
+
+cp "/bin/initrd-sh" "${MNTIMAGE}/bin/sh"  || error "Failed to copy sh"
+cp "/lib/clip/devices.sub" "${MNTIMAGE}/lib/devices.sub" || error "Failed to copy devices.sub"
+cp "/sbin/initrd-clip" "${MNTIMAGE}/init" || error "Failed to copy init"
+cp "/sbin/initrd-modprobe" "${MNTIMAGE}/sbin/modprobe" || error "Failed to copy init"
+cp "/sbin/cryptsetup.static" "${MNTIMAGE}/bin/cryptsetup" || error "Failed to copy cryptsetup"
+
+for l in ash awk basename blockdev blkid cat cp dd dmesg echo egrep false grep insmod ls mkdir mknod mount raidautorun rev sed sha512sum sleep touch true umount usleep switch_root rm; do
+	ln -s /bin/sh "${MNTIMAGE}/bin/${l}"
+done
+ln -s /bin/sh "${MNTIMAGE}/bin/\["
+ln -s /bin/sh "${MNTIMAGE}/bin/\[\["
+
+for mod in ${MODULES}; do
+	cp -a "/lib/modules/${KERNEL_VER}/${mod}" "${MNTIMAGE}/lib" || error "Failed to copy modules"
+done
+
+for fw in ${FIRMWARES}; do
+	[[ -n "${fw}" ]] || continue
+	echo " * Adding firmware: ${FW_BASE}/${fw}"
+	mkdir -p "${MNTIMAGE}/${FW_BASE}/$(dirname "${fw}")" || error "Failed to create firmware directory"
+	cp -a "${FW_BASE}/${fw}" "${MNTIMAGE}/${FW_BASE}/${fw}" || warning "Failed to copy firmware ${fw}"
+done
+
+if [[ -n "${FIRMWARES}" ]]; then
+	cp "/sbin/hotplug.initrd" "${MNTIMAGE}/sbin/hotplug" || error "Failed to copy hotplug.initrd"
+fi
+
+cp "/usr/share/initrd/fr.kmap" "${MNTIMAGE}/etc/fr.kmap" || error "Failed to copy fr.kmap"
+
+chmod u+x "${MNTIMAGE}/bin"/* "${MNTIMAGE}/sbin"/* "${MNTIMAGE}/init"
+
+mknod -m 0600 "${MNTIMAGE}/dev/console" c 5 1
+mknod -m 0600 "${MNTIMAGE}/dev/null" c 1 3
+mknod -m 0600 "${MNTIMAGE}/dev/ram" b 1 1
+mknod -m 0600 "${MNTIMAGE}/dev/mem" c 1 1
+mknod -m 0600 "${MNTIMAGE}/dev/zero" c 1 5
+mknod -m 0600 "${MNTIMAGE}/dev/tty" c 5 0
+mknod -m 0600 "${MNTIMAGE}/dev/ttyS0" c 4 64
+
+for i in 1 2 3 4; do
+	mknod -m 0600 "${MNTIMAGE}/dev/tty${i}" c 4 ${i}
+done
+
+MODFILE="${MNTIMAGE}/sbin/load_modules"
+
+echo "#!/bin/sh" > "${MODFILE}"
+echo "" >> "${MODFILE}"
+
+cat >> "${MODFILE}" <<EOF
+error() {
+	echo "* Failed to load \${1} !" >&2
+	exit 1
+}
+
+EOF
+for mod in ${MODULES}; do
+	text=""
+	module=`echo ${mod} | sed "s|.*/||" | sed "s/.k\?o$//"`
+	fullmodule=`echo ${mod} | sed "s|.*/||"`
+
+	msg=" * Adding module: ${module}"
+	# Options in MOD_EXTRA override those in MOD_CONF
+	options="$(grep -E "^${module}[[:space:]]" "${MOD_CONF}" "${MOD_EXTRA}" 2>/dev/null | tail -n 1)"
+	if [[ -n "${options}" ]]; then
+		options="$(echo "${options}" | sed -e 's/\t/ /g' | cut -d" " -f2-)"
+		msg="${msg} with options ${options}"
+	fi
+
+	echo "${msg}"
+
+	case "${fullmodule}" in
+		uvesafb.ko)
+			cp "/sbin/uvesafb_install" "${MNTIMAGE}/bin" || error "Failed to copy uvesafb_install"
+			cp "/sbin/v86d" "${MNTIMAGE}/sbin/v86d" || exit 1 || error "Failed to copy v86d"
+			echo "uvesafb_install || error uvesafb" >> "${MODFILE}"
+			;;
+		drm_kms_helper.ko)
+			cp "/sbin/kms_install" "${MNTIMAGE}/bin" || error "Failed to copy kms_install"
+			echo "kms_install || error drm_kms_helper" >> "${MODFILE}"
+			;;
+		*)
+			if [[ "${options}" != "[noload]" ]]; then
+				echo "modprobe ${module} ${options} || error ${module}" >> "${MODFILE}"
+			else
+				echo "   [ module is declared noload - won't try to load it explicitly]"
+			fi
+			;;
+	esac
+done
+
+chmod +x "${MODFILE}"
+
+(cd "${MNTIMAGE}"; find . | cpio --quiet -H newc --create) > "${IMAGE}"
+gzip -9 < "${IMAGE}" > "/boot/initrd-clip.img"
+
+rm -rf "${MNTIMAGE}" "${IMAGE}"
+echo " * initrd generated successfully"
+
+ROOTDISK="$(awk '$2 == "/" {print $1}' /etc/fstab)"
+if [[ -z "${ROOTDISK}" ]]; then
+	echo " ! Could not read root disk !" >&2
+	exit 1
+fi
+
+ROOTNUM=""
+[[ "${ROOTDISK%5}" != "${ROOTDISK}" ]] && ROOTNUM="5"
+[[ "${ROOTDISK%10}" != "${ROOTDISK}" ]] && ROOTNUM="10"
+
+if [[ -z "${ROOTNUM}" ]]; then
+	echo " ! Could not read root disk number !" >&2
+	exit 1
+fi
+
+[[ -f "/boot/vmlinuz-clip" ]]    && mv "/boot/vmlinuz-clip" "/boot/vmlinuz-clip.${ROOTNUM}"
+[[ -f "/boot/initrd-clip.img" ]] && mv "/boot/initrd-clip.img" "/boot/initrd-clip.img.${ROOTNUM}"
+
+if @DO_UBOOT_IMAGE@ ; then
+	mkimage -A @ARCH@ -O linux -T ramdisk -a @LOADADDR_RAMDISK@ -n "CLIP @VERSION@ initrd" -d "/boot/initrd-clip.img" "/boot/initrd-clip.uimg" || error "Failed to generate initrd uImage"
+	mv "/boot/initrd-clip.uimg" "/boot/initrd-clip.img"
+	cp -f "/boot/initrd-clip.img" "/boot/initrd-clip.img.${ROOTNUM}"
+fi
+
+set +e

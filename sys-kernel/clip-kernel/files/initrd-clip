@@ -1,0 +1,561 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+# CLIP initrd
+# Copyright (c) 2011-2012 SGDSN/ANSSI
+# Authors:
+#   Vincent Strubel <clipos@ssi.gouv.fr>
+#   Mickaël Salaün <clipos@ssi.gouv.fr>
+
+export PATH="/bin:/sbin"
+CMDLINE="/proc/cmdline"
+
+warn() {
+	echo "${1}" >&2
+}
+
+error() {
+	warn
+	warn "${1}"
+	warn "Critical failure, panic and reboot"
+
+	sleep 9
+	echo 1 > /proc/sys/kernel/panic
+	exit
+}
+
+source "/lib/devices.sub" || error "Failed to source devices.sub"
+
+#########################################
+#                COMMON                 #
+#########################################
+
+initial_mounts() {
+	# N.B. : explicit path needed until bb can find /proc/self/exe
+	/bin/mount -t proc -o rw,nosuid,nodev,noexec,noatime proc "/proc" \
+		|| error "Failed to mount /proc"
+
+	mount -t sysfs -o rw,nosuid,nodev,noexec,noatime sys "/sys" \
+		|| error "Failed to mount /sys"
+	
+	mkdir -p "/altdev"
+	mount -t tmpfs -o rw,nosuid,noexec,noatime,mode=0755 dev "/altdev" \
+		|| error "Failed to mount /altdev"
+
+	make_std_devices "/altdev" "core" || error "Failed to create std devices"
+
+	mount --move "/altdev" "/dev" || error "Failed to move /altdev to /dev"
+
+	loadkmap < "/etc/fr.kmap" || warn "Failed to load fr keymap"
+
+	echo "4" > "/proc/sys/kernel/printk" || warn "Failed to set console verbosity level" 
+}
+
+setup_softraid() {
+	local dev="${1}" part
+	for i in 1 2 3 5 6 7 8 9 10 11 12 13; do
+		part="/dev/md${i}"
+		if [ ! -b "${part}" ]; then
+			mknod "${part}" b 9 "${i}" || error "Failed to create ${part}"
+		fi
+	done
+
+	raidautorun "${dev}" || error "Failed to enable soft raid devices"
+}
+
+get_info() {
+	local root="$(grep -o 'root=/dev/[^ ]*' "${CMDLINE}")"
+
+	[[ -n "${root}" ]] || error "Failed to get root disk"
+
+	root="${root##root=}"
+	ROOT_DEVICE=""
+	ROOT_DEVNUM=""
+	BOOT_DEVICE=""
+	if $(echo "${root}" | grep -q -E '[0-9]+p[0-9]+$') ; then
+		ROOT_DEVICE="$(echo "${root}" | sed 's/^\(.*\)p[0-9]*$/\1/')"
+		ROOT_DEVNUM="$(echo "${root}" | sed 's/^.*\(p[0-9]*\)$/\1/')"
+		BOOT_DEVICE="${ROOT_DEVICE}p1"
+	else
+		ROOT_DEVICE="${root%%[0-9]*}"
+		ROOT_DEVNUM="$(echo "${root}" | grep -o '[0-9]*')"
+		BOOT_DEVICE="${ROOT_DEVICE}1"
+	fi
+
+	[[ -n "${ROOT_DEVICE}" ]] || error "Failed to get root device"
+	[[ -n "${ROOT_DEVNUM}" ]] || error "Failed to get root device number"
+
+	CRYPT=""
+	if grep -q "crypt0" "${CMDLINE}"; then
+		CRYPT="crypt0"
+	fi
+
+	if grep -q "crypt1" "${CMDLINE}"; then
+		CRYPT="crypt1"
+	fi
+
+	if grep -q "crypt2" "${CMDLINE}"; then
+		mknod /dev/tpm0 c 10 224
+		CRYPT="crypt2"
+	fi
+
+	if grep -q "chpw0" "${CMDLINE}"; then
+		CRYPT="chpw0"
+	fi
+
+	if grep -q "chpw1" "${CMDLINE}"; then
+		CRYPT="chpw1"
+	fi
+}
+
+load_modules() {
+	[[ -f "/sbin/load_modules" ]] || error "/sbin/load_modules missing"
+
+	/sbin/load_modules || error "Failed to load modules"
+
+	echo 1 > "/proc/sys/kernel/modules_disabled" \
+		|| error "Failed to disable module loading"
+
+	# Set up devices
+	make_boot_devices "/dev" || error "Failed to create boot devices"
+
+	local rdev="${ROOT_DEVICE##*/}${ROOT_DEVNUM}"
+
+	if [[ "${rdev}" == "md" ]]; then
+		setup_softraid "${ROOT_DEVICE}${ROOT_DEVNUM}"
+	fi
+
+	# Wait for root device
+	local delay=120
+	while ! grep -q "${rdev}" "/proc/partitions"; do
+		# Some devices require a read to create all the partitions
+		dd if="${ROOT_DEVICE}" \
+			of="/dev/null" bs=512 count=1 2>/dev/null 
+		sleep 1
+		make_block_devices "/dev" 2>/dev/null
+		delay=$(( ${delay} - 1 ))
+		[[ "${delay}" -le 0 ]] && \
+			error "Timed-out waiting for root device ${rdev}"
+		echo -n "-"
+	done
+	while [[ ! -e "${ROOT_DEVICE}${ROOT_DEVNUM}" ]]; do
+		sleep 1
+		make_block_devices "/dev" 2>/dev/null
+		delay=$(( ${delay} - 1 ))
+		[[ "${delay}" -le 0 ]] && \
+			error "Timed-out waiting for root device ${rdev}"
+		echo -n "+"
+	done
+	while ! dd if="${ROOT_DEVICE}${ROOT_DEVNUM}" \
+			of="/dev/null" bs=512 count=1 2>/dev/null ; do
+		sleep 1
+		delay=$(( ${delay} - 1 ))
+		[[ "${delay}" -le 0 ]] && \
+			error "Timed-out waiting to read device ${rdev}"
+		echo -n "."
+	done
+	echo
+}
+
+switchroot() {
+	# Must not be left mounted, or rc sysinit
+	# will reboot us with extreme prejudice
+	umount "/sys" \
+		|| error "Failed to unmount /sys"
+	mount --move "/dev" "/sysroot/dev" \
+		|| error "Failed to move /dev to sysroot"
+
+	exec switch_root "/sysroot" "/sbin/init" 
+
+	error "Failed to switch root"
+}
+
+
+#########################################
+#                NOCRYPT                #
+#########################################
+
+switchroot_nocrypt() {
+	mount -o ro,noatime -t ext4 "${ROOT_DEVICE}${ROOT_DEVNUM}" "/sysroot" \
+		|| error "Failed to mount ${ROOT_DEVICE}${ROOT_DEVNUM} on /sysroot"
+
+	switchroot
+}
+
+#########################################
+#                CRYPT                  #
+#########################################
+
+addpw_partition() {
+	local dev="${1}"
+	local master_old="${2}"
+	local master_new="${3}"
+	local num="${4}"
+
+	[[ -n "${master_old}" ]] || error "Empty master key"
+	[[ -n "${master_new}" ]] || error "Empty master key"
+	[[ -n "${num}" ]] || error "Missing device number"
+
+	local key_old=""
+	local key_new=""
+
+	local npart=" ${num}"
+	[[ ${num} -ge 10 ]] && npart="${num}"
+	echo -n "    Ajout du nouveau mot de passe de la partition ${npart} ... "
+	key_old="$(echo "${master_old}${num}" | sha512sum | awk '{print $1}')"
+	key_new="$(echo "${master_new}${num}" | sha512sum | awk '{print $1}')"
+
+	[[ -n "${key_old}" ]] || error "Failed to derive key for ${dev} - ${num}"
+	[[ -n "${key_new}" ]] || error "Failed to derive key for ${dev} - ${num}"
+
+	local rdev="${dev}${num}"
+	if [[ ! -e "${rdev}" ]] ; then
+		rdev="${dev}p${num}"
+	fi
+	local name="${rdev#/dev/}"
+	printf '%s\n' "${key_old}" "${key_new}" | cryptsetup luksAddKey "${rdev}"\
+		|| return ${num}
+	echo '[ok]'
+	return 0
+}
+
+rmpw_partition() {
+	local dev="${1}"
+	local master_old="${2}"
+	local num="${3}"
+
+	[[ -n "${master_old}" ]] || error "Empty master key"
+	[[ -n "${num}" ]] || error "Missing device number"
+
+	local key_old=""
+
+	local npart=" ${num}"
+	[[ ${num} -ge 10 ]] && npart="${num}"
+	echo -n "    Retrait de l'ancien mot de passe de la partition ${npart} ... "
+	key_old="$(echo "${master_old}${num}" | sha512sum | awk '{print $1}')"
+
+	[[ -n "${key_old}" ]] || error "Failed to derive key for ${dev} - ${num}"
+
+	local rdev="${dev}${num}"
+	if [[ ! -e "${rdev}" ]] ; then
+		rdev="${dev}p${num}"
+	fi
+	local name="${rdev#/dev/}"
+	echo -n "${key_old}" | cryptsetup luksRemoveKey "${rdev}" \
+		|| return ${num}
+	echo '[ok]'
+	return 0
+}
+
+map_partition() {
+	local dev="${1}"
+	local master="${2}"
+	local num="${3}"
+
+	[[ -n "${master}" ]] || error "Empty master key"
+	[[ -n "${num}" ]] || error "Missing device number"
+
+	local key=""
+
+	local npart=" ${num}"
+	[[ ${num} -ge 10 ]] && npart="${num}"
+	echo -n "    Dechiffrement de la partition ${npart} ... "
+	key="$(echo "${master}${num}" | sha512sum | awk '{print $1}')"
+
+	[[ -n "${key}" ]] || error "Failed to derive key for ${dev} - ${num}"
+
+	local rdev="${dev}${num}"
+	if [[ ! -e "${rdev}" ]] ; then
+		rdev="${dev}p${num}"
+	fi
+	local name="${rdev#/dev/}"
+	echo -n "${key}" | cryptsetup luksOpen "${rdev}" "${name}" \
+		|| return ${num}
+	echo '[ok]'
+	return 0
+}
+
+init_mappings() {
+	local dev="${1}"
+	local master="${2}"
+
+	if [[ ! -d "/dev/mapper" ]]; then
+		mkdir -p "/dev/mapper"  || error "Failed to create /dev/mapper"
+	fi
+
+	echo "Veuillez patienter pendant le dechiffrement du disque ..."
+	# test de la première partition pour vérifier que la clé est bonne
+	if ! map_partition "${dev}" "${master}" 3;
+	then
+		warn "Echec du dechiffrement, verifier la clé"
+		return 1
+	fi
+	for i in 5 6 10 11; do 
+		map_partition "${dev}" "${master}" "${i}"
+	done
+
+	local vsparts=""
+	local root="/dev/mapper/${ROOT_DEVICE#/dev/}${ROOT_DEVNUM}"
+
+	mount -o ro,noatime -t ext4 "${root}" "/sysroot" \
+		|| error "Failed to mount ${root} as /sysroot"
+
+	if [[ -e "/sysroot/etc/conf.d/clip" ]]; then
+		local line="$(grep '^CLIP_JAILS' "/sysroot/etc/conf.d/clip")"
+		if echo "${line}" | grep -q "rm_h"; then
+			vsparts="${vsparts} 7"
+		fi
+		if echo "${line}" | grep -q "rm_b"; then
+			vsparts="${vsparts} 8"
+		fi
+	fi
+
+	if [[ -n "${vsparts}" ]]; then
+		for i in ${vsparts}; do
+			map_partition "${dev}" "${master}" "${i}"
+		done
+	fi
+	echo ""
+}
+
+chpw_partitions() {
+	local dev="${1}"
+	local master_old="${2}"
+	local master_new="${3}"
+
+	if [[ ! -d "/dev/mapper" ]]; then
+		mkdir -p "/dev/mapper"  || error "Failed to create /dev/mapper"
+	fi
+
+	echo "Veuillez patienter pendant le dechiffrement du disque ..."
+	# test de la partition root pour vérifier l'ancien mot de passe
+	if ! map_partition "${dev}" "${master_old}" ${ROOT_DEVNUM};
+	then
+		warn "Echec du dechiffrement, verifier la clé"
+		return 1
+	fi
+
+	local vsparts="3 5 6 10 11"
+	local root="/dev/mapper/${ROOT_DEVICE#/dev/}${ROOT_DEVNUM}"
+
+	mount -o rw,noatime -t ext4 "${root}" "/sysroot" \
+		|| error "Failed to mount ${root} as /sysroot"
+
+	if [[ -e "/sysroot/etc/conf.d/clip" ]]; then
+		local line="$(grep '^CLIP_JAILS' "/sysroot/etc/conf.d/clip")"
+		if echo "${line}" | grep -q "rm_h"; then
+			vsparts="${vsparts} 7"
+		fi
+		if echo "${line}" | grep -q "rm_b"; then
+			vsparts="${vsparts} 8"
+		fi
+	fi
+
+	if [[ -n "${vsparts}" ]]; then
+		for i in ${vsparts}; do
+			addpw_partition "${dev}" "${master_old}" "${master_new}" "${i}"
+		done
+		for i in ${vsparts}; do
+			rmpw_partition "${dev}" "${master_old}" "${i}"
+		done
+	fi
+	echo ""
+}
+
+
+#########################################
+#                CRYPT0                 #
+#########################################
+
+get_password_stdin() {
+	local pass=""
+
+	if [[ "$1" = 'old' ]]; then
+		echo "Mot de passe actuel de dechiffrement du disque :" >&2
+		read -s pass
+	elif [[ "$1" = 'new' ]]; then
+		local tmp=""
+		echo "Nouveau mot de passe de dechiffrement du disque :" >&2
+		read -s pass
+		echo "Seconde saisie :" >&2
+		read -s tmp
+		if [[ "$pass" != "$tmp" ]]; then
+			warn "Les deux saisies ne correspondent pas" >&2
+			return 0
+		fi
+	else
+		echo "Mot de passe de dechiffrement du disque :" >&2
+		read -s pass
+	fi
+
+	if [[ -z "$pass" ]]; then
+		warn "Mot de passe vide ou erreur de lecture" >&2
+		return 0
+	else
+		echo -n "${pass}"
+	fi
+}
+
+switchroot_crypt0() {
+	local tries=3
+	local pass=""
+
+
+	while [ "$tries" -gt 0 ];
+	do
+		tries=$((${tries}-1))
+		pass="$(get_password_stdin)"
+		if [[ -z "${pass}" ]];
+		then
+			continue;
+		fi
+		if init_mappings "${ROOT_DEVICE}" "${pass}";
+		then
+			switchroot
+			return 0
+		fi
+	done
+
+	error "Trop d'erreurs dans le dechiffrement du disque"
+}
+
+chpw_crypt0() {
+	local tries=3
+	local pass_old=""
+	local pass_new=""
+
+
+	while [ "$tries" -gt 0 ];
+	do
+		tries=$((${tries}-1))
+		pass_old="$(get_password_stdin old)"
+		pass_new="$(get_password_stdin new)"
+		if [[ -z "${pass_old}" -o -z "${pass_new}" ]];
+		then
+			continue;
+		fi
+		if chpw_partitions "${ROOT_DEVICE}" "${pass_old}" "${pass_new}";
+		then
+			sleep 5
+			exec switch_root "/sysroot" "/sbin/init" "6"
+			error "Failed to switch root"
+		fi
+	done
+}
+
+#########################################
+#                CRYPT1                 #
+#########################################
+
+get_password_builtin() {
+	local pass=""
+	[[ -f "/boot/master_key" ]] || error "Missing master key file"
+
+	pass="$(cat "/boot/master_key")"
+	[[ -n "${pass}" ]] || error "Empty master key"
+
+	echo -n "${pass}"
+}
+
+switchroot_crypt1() {
+	mount -t ext4,vfat -o ro "${BOOT_DEVICE}" /boot || error "Failed to mount /boot"
+	local pass="$(get_password_builtin)"
+	umount /boot || error "Failed to mount /boot"
+
+	[[ -n "${pass}" ]] || error "Empty password"
+
+	init_mappings "${ROOT_DEVICE}" "${pass}"
+
+	switchroot
+}
+
+get_password_tpm() {
+	local pass=""
+
+	[[ -f "/boot/master_key.1.seal" && -f "/boot/master_key.2.seal" ]] || error "Missing sealed key files"
+
+	pass="$(tpm_cmd unseal -i '/boot/master_key.1.seal')" \
+		|| pass="$(tpm_cmd unseal -i '/boot/master_key.2.seal')" \
+		|| error "couldn’t unseal primary key"
+
+	[[ -n "${pass}" ]] || error "Empty master key"
+
+	echo -n "${pass}"
+}
+
+
+switchroot_crypt2() {
+	mount -t ext4,vfat -o ro "${BOOT_DEVICE}" /boot || error "Failed to mount /boot"
+	local pass="$(get_password_tpm)"
+	umount /boot || error "Failed to mount /boot"
+
+	[[ -n "${pass}" ]] || error "Empty password"
+
+	init_mappings "${ROOT_DEVICE}" "${pass}"
+
+	switchroot
+}
+
+chpw_crypt1() {
+	mount -t ext4,vfat -o rw "${BOOT_DEVICE}" /boot || error "Failed to mount /boot"
+	local tries=3
+	local pass_old="$(get_password_builtin)"
+	local pass_new=""
+
+
+	while [ "$tries" -gt 0 ];
+	do
+		tries=$((${tries}-1))
+		pass_new="$(get_password_stdin new)"
+		if [[ -z "${pass_old}" -o -z "${pass_new}" ]];
+		then
+			continue;
+		fi
+		if chpw_partitions "${ROOT_DEVICE}" "${pass_old}" "${pass_new}";
+		then
+			for f in "/sysroot/etc/bootargs" "/boot/extlinux_5.conf" "/boot/extlinux_10.conf"; do
+				sed -i "s/crypt1/crypt0/g;" "${f}"
+				sed -i "s/chpw1/chpw0/g;" "${f}"
+				sed -i 's/Creer/Changer/;' "${f}"
+			done
+			rm /boot/master_key
+			sleep 5
+			exec switch_root "/sysroot" "/sbin/init" "6"
+			error "Failed to switch root"
+		fi
+	done
+}
+
+#########################################
+#                MAIN                   #
+#########################################
+
+initial_mounts
+
+get_info
+
+load_modules
+
+case "${CRYPT}" in
+	crypt0)
+		switchroot_crypt0
+		;;
+	crypt1)
+		switchroot_crypt1
+		;;
+	crypt2)
+		switchroot_crypt2
+		;;
+	chpw0)
+		chpw_crypt0
+		;;
+	chpw1)
+		chpw_crypt1
+		;;
+	*)
+		switchroot_nocrypt
+		;;
+esac
+
+error "M'enfin !?"

@@ -1,0 +1,158 @@
+# Mailcap file for CLIP
+
+# ACID
+application/acid5-csa; /usr/local/etc/alt/acid5-cryptofiler-open %s
+application/acid5-ssa; /usr/local/etc/alt/acid5-cryptofiler-open %s
+application/acid5-sca; /usr/local/etc/alt/acid5-cryptofiler-open %s
+application/acid5-ppr; /usr/local/etc/alt/acid5-cryptofiler-showkey %s
+application/acid5-pvr; /usr/local/etc/alt/acid5-cryptofiler-connect %s
+
+application/acid7-csa; /usr/local/etc/alt/acid7-decrypt %s; test=test -e /usr/local/etc/alt/acid7-decrypt
+application/acid7-pvr; /usr/local/etc/alt/acid7-keyinfo %s; test=test -e /usr/local/etc/alt/acid7-keyinfo
+application/acid7-ppr; /usr/local/etc/alt/acid7-keyinfo %s; test=test -e /usr/local/etc/alt/acid7-keyinfo
+
+# Misc doc types
+application/pdf; /usr/local/etc/alt/pdf-viewer %s
+application/postscript; /usr/local/etc/alt/postscript-viewer %s
+application/x-dvi; /usr/local/etc/alt/dvi-viewer %s
+application/xml; /usr/local/etc/alt/web-browser %s
+application/xml-dtd; /usr/local/etc/alt/web-browser %s
+application/xhtml+xml; /usr/local/etc/alt/web-browser %s
+application/x-tex; /usr/local/etc/alt/text-editor %s
+application/x-sh; /usr/local/etc/alt/text-editor %s
+
+# Archives
+application/x-bzip2; /usr/local/etc/alt/archive-viewer %s
+application/x-gzip; /usr/local/etc/alt/archive-viewer %s
+application/x-rar; /usr/local/etc/alt/archive-viewer %s
+application/x-tar; /usr/local/etc/alt/archive-viewer %s
+application/x-gtar; /usr/local/etc/alt/archive-viewer %s
+application/x-tarz; /usr/local/etc/alt/archive-viewer %s
+application/x-tbz; /usr/local/etc/alt/archive-viewer %s
+application/x-tbz2; /usr/local/etc/alt/archive-viewer %s
+application/x-tgz; /usr/local/etc/alt/archive-viewer %s
+application/zip; /usr/local/etc/alt/archive-viewer %s
+application/bzip2; /usr/local/etc/alt/archive-viewer %s
+application/gzip; /usr/local/etc/alt/archive-viewer %s
+application/rar; /usr/local/etc/alt/archive-viewer %s
+application/tar; /usr/local/etc/alt/archive-viewer %s
+application/tarz; /usr/local/etc/alt/archive-viewer %s
+application/tbz; /usr/local/etc/alt/archive-viewer %s
+application/tbz2; /usr/local/etc/alt/archive-viewer %s
+application/tgz; /usr/local/etc/alt/archive-viewer %s
+application/zip; /usr/local/etc/alt/archive-viewer %s
+
+# OpenOffice formats
+application/vnd.oasis.opendocument.chart; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.chart-template; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.database; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.formula; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.formula-template; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.graphics; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.graphics-template; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.image; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.image-template; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.presentation; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.presentation-template; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.spreadsheet; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.spreadsheet-template; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.text; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.text-master; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.text-template; /usr/local/etc/alt/office %s
+application/vnd.oasis.opendocument.text-web; /usr/local/etc/alt/office %s
+
+# Legacy OpenOffice formats
+application/vnd.sun.xml.calc; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.calc.template; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.draw; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.draw.template; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.impress; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.impress.template; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.math; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.writer; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.writer.global; /usr/local/etc/alt/office %s
+application/vnd.sun.xml.writer.template; /usr/local/etc/alt/office %s
+
+# OpenXML formats
+application/vnd.openxmlformats-officedocument.presentationml.presentation; /usr/local/etc/alt/office %s
+application/vnd.openxmlformats-officedocument.presentationml.slide; /usr/local/etc/alt/office %s
+application/vnd.openxmlformats-officedocument.presentationml.slideshow; /usr/local/etc/alt/office %s
+application/vnd.openxmlformats-officedocument.presentationml.template; /usr/local/etc/alt/office %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; /usr/local/etc/alt/office %s
+application/vnd.openxmlformats-officedocument.spreadsheetml.template; /usr/local/etc/alt/office %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; /usr/local/etc/alt/office %s
+application/vnd.openxmlformats-officedocument.wordprocessingml.template; /usr/local/etc/alt/office %s
+
+# Legacy MS Office formats
+application/msexcel; /usr/local/etc/alt/office %s
+application/vnd.ms-excel; /usr/local/etc/alt/office %s
+application/vnd.ms-excel.addin.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-excel.sheet.binary.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-excel.sheet.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-excel.template.macroenabled.12; /usr/local/etc/alt/office %s
+application/mspowerpoint; /usr/local/etc/alt/office %s
+application/vnd.ms-powerpoint; /usr/local/etc/alt/office %s
+application/vnd.ms-powerpoint.addin.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-powerpoint.presentation.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-powerpoint.slide.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-powerpoint.slideshow.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-powerpoint.template.macroenabled.12; /usr/local/etc/alt/office %s
+application/msword; /usr/local/etc/alt/office %s
+application/vnd.ms-word.document.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-word.template.macroenabled.12; /usr/local/etc/alt/office %s
+application/vnd.ms-works; /usr/local/etc/alt/office %s
+application/vnd.visio; /usr/local/etc/alt/office %s
+application/wordperfect; /usr/local/etc/alt/office %s
+application/x-mswrite; /usr/local/etc/alt/office %s
+application/rtf; /usr/local/etc/alt/office %s
+application/x-msaccess; /usr/local/etc/alt/office %s
+
+# Encrypted content
+application/pgp-encrypted; /usr/local/etc/alt/gpg-viewer %s
+application/pgp-keys; /usr/local/etc/alt/gpg-viewer %s
+application/pgp-signature; /usr/local/etc/alt/gpg-viewer %s
+
+# Sound
+application/ogg; /usr/local/etc/alt/audio-player %s
+application/x-flac; /usr/local/etc/alt/audio-player %s
+audio/*; /usr/local/etc/alt/audio-player %s
+
+# Image
+image/*; /usr/local/etc/alt/image-viewer %s
+
+# Plain text and source code
+text/plain; /usr/local/etc/alt/text-editor %s
+text/x-asm; /usr/local/etc/alt/text-editor %s
+text/x-bibtex; /usr/local/etc/alt/text-editor %s
+text/x-c; /usr/local/etc/alt/text-editor %s
+text/x-chdr; /usr/local/etc/alt/text-editor %s
+text/x-c++hdr; /usr/local/etc/alt/text-editor %s
+text/x-c++src; /usr/local/etc/alt/text-editor %s
+text/x-java; /usr/local/etc/alt/text-editor %s
+text/x-java-source; /usr/local/etc/alt/text-editor %s
+text/x-perl; /usr/local/etc/alt/text-editor %s
+text/x-python; /usr/local/etc/alt/text-editor %s
+text/x-sh; /usr/local/etc/alt/text-editor %s
+text/x-tex; /usr/local/etc/alt/text-editor %s
+
+# Rich text
+text/rtf; /usr/local/etc/alt/office %s
+text/richtext; /usr/local/etc/alt/office %s
+text/csv; /usr/local/etc/alt/office %s
+text/comma-separated-values; /usr/local/etc/alt/office %s
+
+# Web formats
+text/xml; /usr/local/etc/alt/web-browser %s
+text/html; /usr/local/etc/alt/web-browser %s
+application/x-java-jnlp-file; /usr/local/bin/javaws %s; test=test -x /usr/local/bin/javaws
+
+# Video
+video/*; /usr/local/etc/alt/video-player %s
+application/mp4; /usr/local/etc/alt/video-player %s
+
+# Conditionals
+application/x-freemind; /usr/local/etc/alt/freemind %s; test=test -x /usr/local/etc/alt/freemind
+application/x-ganttproject; /usr/local/etc/alt/ganttproject %s; test=test -x /usr/local/etc/alt/ganttproject
+image/svg+xml; inkscape %s; test=test -x /usr/local/bin/inkscape
+application/x-openproj; openproj %s; test=test -x /usr/local/bin/openproj
+application/vnd.ms-project; openproj %s; test=test -x /usr/local/bin/openproj

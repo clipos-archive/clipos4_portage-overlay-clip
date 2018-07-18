@@ -1,0 +1,65 @@
+# CLIP Changelog for x11-plugins/zotero
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  zotero-4.0.28.10.ebuild:
+  Add amd64 keyword.
+
+*zotero-4.0.28.10 (22 Dec 2015)
+
+  22 Dec 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +zotero-4.0.28.10.ebuild, -zotero-4.0.14.ebuild:
+  Bump to 4.0.28.10
+
+*zotero-4.0.14 (08 Nov 2013)
+
+  08 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-4.0.14.ebuild, -zotero-3.0.10.ebuild:
+  Bump to latest.
+
+*zotero-3.0.10 (21 Nov 2012)
+
+  21 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-3.0.10.ebuild, -zotero-3.0.3.ebuild:
+  Bump to latest.
+
+*zotero-3.0.3 (26 Mar 2012)
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-3.0.3.ebuild, -zotero-2.1.10-r1.ebuild:
+  Bump to latest
+
+*zotero-2.1.10-r1 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-2.1.10-r1.ebuild, -zotero-2.1.10.ebuild:
+  Bump compatibility to firefox 10.*.
+
+*zotero-2.1.10 (10 Oct 2011)
+
+  10 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-2.1.10.ebuild, -zotero-2.1.8.ebuild:
+  Bump to latest.
+
+*zotero-2.1.8 (10 Aug 2011)
+
+  10 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-2.1.8.ebuild, -zotero-2.0.3.ebuild:
+  Bump to latest, migrate to new firefox home.
+
+*zotero-2.0.3 (26 Jul 2010)
+
+  26 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-2.0.3.ebuild, -zotero-2.0_rc5.ebuild:
+  Bump to latest and add firefox to deps.
+
+*zotero-2.0_rc5 (11 Feb 2010)
+
+  11 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +zotero-2.0_rc5.ebuild, -zotero-1.0.10.ebuild:
+  Bump to latest, firefox-3.6 support.
+
+*zotero-1.0.10 (26 Aug 2009)
+
+  26 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  zotero-1.0.10.ebuild:
+  Initial import.

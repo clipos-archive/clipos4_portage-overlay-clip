@@ -1,0 +1,21 @@
+--- a/usr/share/adeskbar/plugins/battery.py
++++ b/usr/share/adeskbar/plugins/battery.py
+@@ -53,7 +53,9 @@ class Battery(UI.PopupWindow):
+             return False
+         else:
+             for battery in batteries:
+-                percent_left, charging_state, time_remaining = get_info(battery)
++                battery_info = get_info(battery)
++                if battery_info is None: continue
++                percent_left, charging_state, time_remaining = battery_info
+                 percent_left = float(percent_left)
+ 
+             if percent_left < 5:
+@@ -201,6 +203,7 @@ def get_info(battery):
+     state_file = os.path.join(batt_dir, 'state')
+     state_contents = read_lines(state_file)
+     if not state_contents: return
++    if get_value(state_contents, 'present') == 'no': return
+ 
+     charging_state          = get_value(state_contents, 'charging state')
+     remaining_capacity      = get_value(state_contents, 'remaining capacity')

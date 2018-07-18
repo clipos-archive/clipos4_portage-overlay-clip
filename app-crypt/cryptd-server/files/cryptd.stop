@@ -1,0 +1,11 @@
+#!/bin/sh
+# Copyright 2009 SGDN/DCSSI
+# Copyright 2013 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+source "/etc/conf.d/clip"
+
+echo "${CLIP_JAILS}" | grep -q rm_h || exit 0
+
+killall /usr/sbin/cryptd || killall -9 /usr/sbin/cryptd

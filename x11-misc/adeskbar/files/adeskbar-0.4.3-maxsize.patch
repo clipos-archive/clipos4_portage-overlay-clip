@@ -1,0 +1,115 @@
+--- a/usr/share/adeskbar/adesk/plugin.py	2011-05-12 09:55:56.000000000 +0200
++++ b/usr/share/adeskbar/adesk/plugin.py	2011-05-26 16:34:12.000000000 +0200
+@@ -76,6 +76,14 @@
+         self.tooltip = ''
+         self.has_tooltip = True
+ 
++        if 'max_size' in self.settings:
++            self.max_size = int(self.settings['max_size'])
++            # XXX
++            #self.resize()
++        else:
++            self.max_size = int(self.cfg['icon_size'])
++        
++
+     def do_expose_event(self, event):
+         a = self.get_allocation()
+         x, y = a.x, a.y
+@@ -95,7 +103,12 @@
+                 y = y - offset
+         else:
+             w, h = a.width, a.height
+-                
++
++        if self.cfg['position'] == 'bottom' or self.cfg['position'] == 'top':
++            w = self.max_size
++        else:
++            h = self.max_size
++        
+         ctx = self.window.cairo_create()
+         
+         if self.is_visible or self.cfg['icons_effects']==1:
+@@ -143,10 +156,15 @@
+         return False
+ 
+     def draw_frame(self, ctx, x, y):
++        h = w = int(self.cfg['icon_size'])
++        if self.cfg['position'] == 'bottom' or self.cfg['position'] == 'top':
++            h = self.max_size
++        else:
++            w = self.max_size
+         if self.is_pressed:
+-            pixbuf = self.app.pixbuf_pressed.scale_simple(self.cfg['icon_size']+4, self.cfg['icon_size']+4, gtk.gdk.INTERP_BILINEAR)
++            pixbuf = self.app.pixbuf_pressed.scale_simple(h+4, w+4, gtk.gdk.INTERP_BILINEAR)
+         else:
+-            pixbuf = self.app.pixbuf_glow.scale_simple(self.cfg['icon_size']+4, self.cfg['icon_size']+4, gtk.gdk.INTERP_BILINEAR)
++            pixbuf = self.app.pixbuf_glow.scale_simple(h+4, w+4, gtk.gdk.INTERP_BILINEAR)
+         ctx.set_source_pixbuf(pixbuf, x-2, y-2)
+         ctx.paint()
+         return
+@@ -170,6 +188,14 @@
+         w = h = self.cfg['icon_size']
+         self.pixbuf = None
+ 
++        w_zoom = h_zoom = int(self.app.zoom_size)
++        if self.cfg['position'] == 'bottom' or self.cfg['position'] == 'top':
++            w_zoom = self.max_size + (w_zoom - w)
++            w = self.max_size
++        else:
++            h_zoom = self.max_size + (h_zoom - h)
++            h = self.max_size
++
+         if is_separator:
+             if self.cfg['position'] == 'bottom' or self.cfg['position'] == 'top':
+                 w = w // 4
+@@ -178,13 +204,13 @@
+ 
+         if not path_icon:
+             self.pixbuf = Core.pixbuf_from_file('images/def_icon.png', w, h)
+-            self.pixbuf_zoom = Core.pixbuf_from_file('images/def_icon.png', self.app.zoom_size, self.app.zoom_size)
++            self.pixbuf_zoom = Core.pixbuf_from_file('images/def_icon.png', w_zoom, h_zoom)
+             self.current_icon = 'images/def_icon.png'
+             
+         ## real path .. load from file
+         elif path_icon[0] == '/' or ( len(path_icon) > 7 and path_icon[:7] == 'images/'):
+             self.pixbuf = Core.pixbuf_from_file(path_icon, w, h)
+-            self.pixbuf_zoom = Core.pixbuf_from_file(path_icon, self.app.zoom_size, self.app.zoom_size)
++            self.pixbuf_zoom = Core.pixbuf_from_file(path_icon, w_zoom, h_zoom)
+             self.current_icon = path_icon
+             
+         ## load from icon theme
+@@ -192,9 +218,9 @@
+             
+             ## FIX : gio.Error: Error opening file: No such file or directory
+             try:
+-                self.pixbuf = ICON_THEME.load_icon(path_icon, self.cfg['icon_size'], gtk.ICON_LOOKUP_USE_BUILTIN)
++                self.pixbuf = ICON_THEME.load_icon(path_icon, self.max_size, gtk.ICON_LOOKUP_USE_BUILTIN)
+                 #~ self.pixbuf_zoom = ICON_THEME.load_icon(path_icon, int(self.app.zoom_size), gtk.ICON_LOOKUP_USE_BUILTIN)
+-                self.pixbuf_zoom = self.pixbuf.scale_simple(int(self.app.zoom_size), int(self.app.zoom_size), gtk.gdk.INTERP_BILINEAR)
++                self.pixbuf_zoom = self.pixbuf.scale_simple(w_zoom, h_zoom, gtk.gdk.INTERP_BILINEAR)
+                 self.current_icon = path_icon
+             except:
+                 pass
+@@ -203,7 +229,7 @@
+         ## check if pixbuf is ok
+         if not self.pixbuf:
+             self.pixbuf = Core.pixbuf_from_file('images/def_icon.png', w, h)
+-            self.pixbuf_zoom = Core.pixbuf_from_file('images/def_icon.png', self.app.zoom_size, self.app.zoom_size)
++            self.pixbuf_zoom = Core.pixbuf_from_file('images/def_icon.png', w_zoom, h_zoom)
+             self.current_icon = 'images/def_icon.png'
+ 
+         if self.app.init_flag:
+@@ -213,7 +239,12 @@
+         pass
+ 
+     def resize(self):
+-        pass
++        w = h = int(self.cfg['icon_size'])
++        if self.cfg['position'] == 'bottom' or self.cfg['position'] == 'top':
++            w = self.max_size
++        else:
++            h = self.max_size
++        self.set_size_request(w, h)
+         
+     def restart(self):
+         pass

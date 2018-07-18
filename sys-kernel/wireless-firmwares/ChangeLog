@@ -1,0 +1,175 @@
+# ChangeLog for sys-kernel/wireless-firmwares
+
+*wireless-firmwares-4.4.4 (10 Nov 2017)
+
+  10 Nov 2017; Nicolas Godinho <clipos@ssi.gouv.fr>
+  +wireless-firmwares-4.4.4.ebuild, -wireless-firmwares-4.4.3.ebuild:
+  Add iwlwifi-8000C-{21,22,27,31}.ucode for the Lenovo ThinkPad X260 & X270 with
+  a 4.9 kernel.
+
+*wireless-firmwares-4.4.3 (08 Aug 2017)
+
+  08 Aug 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +wireless-firmwares-4.4.3.ebuild, -wireless-firmwares-4.4.2.ebuild:
+  Add ath10k and use of bz2 archive for 4.4.
+
+*wireless-firmwares-4.4.2 (01 Feb 2017)
+
+  01 Feb 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +wireless-firmwares-4.4.2.ebuild, -wireless-firmwares-4.4.1.ebuild:
+  Add iwlwifi-8000C-16.ucode for the Lenovo ThinkPad X260 on a 4.4 kernel
+  Bump EAPI so we could use a .xz archive.
+
+*wireless-firmwares-4.4.1-r1 (10 Jan 2017)
+
+  10 Jan 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +wireless-firmwares-4.4.1.ebuild, -wireless-firmwares-4.4.ebuild:
+  Add iwlwifi-7265-17, iwlwifi-3160-17 for 4.4 kernel support
+
+*wireless-firmwares-4.4 (17 Aug 2016)
+
+  17 Aug 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +wireless-firmwares-4.4.ebuild:
+  clip-kernel 4.4 support.
+
+*wireless-firmwares-3.14.4 (16 Sep 2015)
+
+  16 Sep 2015; Benjamin Morin <clipos@ssi.gouv.fr>
+  +wireless-firmwares-3.14.4.ebuild, -wireless-firmwares-3.14.3.ebuild:
+  Add iwlwifi-7265-8 and iwlwifi-7265-9 firmwares (in addition to rtl8723be
+  firmware, see commit message for details).
+
+*wireless-firmwares-3.14.3 (02 Apr 2015)
+
+  02 Apr 2015; ANSSI <clipos@ssi.gouv.fr>
+  +wireless-firmwares-3.14.3.ebuild, -wireless-firmwares-3.14.2.ebuild:
+  Add rtl8723be firmware.
+
+*wireless-firmwares-3.14.2 (27 Aug 2014)
+
+  27 Aug 2014; Benjamin Morin <clipos@ssi.gouv.fr>
+  +wireless-firmwares-3.14.2.ebuild, -wireless-firmwares-3.14.1.ebuild:
+  Add firmware iwlwifi latest firmware
+
+*wireless-firmwares-3.14.1 (01 Aug 2014)
+
+  01 Aug 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +wireless-firmwares-3.14.1.ebuild, -wireless-firmwares-3.14.0-r1.ebuild:
+  Fix 3.13 port to 3.14 and cleanup files attributes.
+
+*wireless-firmwares-3.14.0-r1 (23 Jul 2014)
+
+  23 Jul 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +wireless-firmwares-3.14.0-r1.ebuild, -wireless-firmwares-3.14.0.ebuild:
+  Fix empty package and a safeguard.
+
+*wireless-firmwares-3.14.0 (23 Jul 2014)
+
+  23 Jul 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +wireless-firmwares-3.14.0.ebuild, -wireless-firmwares-3.13.0.ebuild:
+  Add iwlwifi-7260 firmwares.
+
+*wireless-firmwares-3.13.0 (06 Jun 2014)
+
+  06 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-3.13.0.ebuild, -wireless-firmwares-2.1.ebuild:
+  Version bump, updates for 3.13 kernel.
+
+*wireless-firmwares-2.1 (07 Mar 2014)
+
+  07 Mar 2014; ANSSI <clipos@ssi.gouv.fr>
+  +wireless-firmwares-2.1.ebuild, -wireless-firmwares-2.0.ebuild:
+  Add firmwares for Marvell wireless cards.
+
+*wireless-firmwares-2.0 (15 Jul 2013)
+
+  15 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-2.0.ebuild, -wireless-firmwares-1.12.ebuild:
+  Move non-wireless firmwares to extra-firmwares.
+
+*wireless-firmwares-1.12 (25 Apr 2013)
+
+  25 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.12.ebuild, -wireless-firmwares-1.11.ebuild:
+  Update misc firmwares.
+
+*wireless-firmwares-1.11 (02 Oct 2012)
+
+  02 Oct 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.11.ebuild, -wireless-firmwares-1.10.ebuild:
+  add ath6kl firmwares (HP Slate 2 and DELL Latitude ST tablets).
+
+*wireless-firmwares-1.10 (27 Mar 2012)
+
+  27 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.10.ebuild, -wireless-firmwares-1.9.ebuild:
+  Bump misc. firmwares for kernel 3.2.
+
+*wireless-firmwares-1.9 (23 Nov 2011)
+
+  23 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.9.ebuild, -wireless-firmwares-1.8.ebuild:
+  Add rtl8192de firmware.
+
+*wireless-firmwares-1.8 (08 Sep 2011)
+
+  08 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.8.ebuild, -wireless-firmwares-1.7.ebuild:
+  Remove bnx2{,x} firmwares which conflict with older kernels.
+
+*wireless-firmwares-1.7 (24 Aug 2011)
+
+  24 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.7.ebuild, -wireless-firmwares-1.6.ebuild:
+  Add Atheros firmwares, along with some not-quite-wireless
+  firmwares for bnx2x and realtek ethernet adapters.
+
+*wireless-firmwares-1.6 (03 Aug 2011)
+
+  03 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.6.ebuild, -wireless-firmwares-1.5.ebuild:
+  Upgrade iwlwifi and brcm80211 firmwares, add zd1211 firmwares.
+
+*wireless-firmwares-1.5 (01 Jul 2011)
+
+  01 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.5.ebuild, -wireless-firmwares-1.4.ebuild:
+  Add RTL8192SE firmware.
+
+*wireless-firmwares-1.4 (23 May 2011)
+
+  23 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.4.ebuild, -wireless-firmwares-1.3.ebuild:
+  Add newer (and missing older) iwlwifi firmwares (current list now
+  matches debian package).
+
+*wireless-firmwares-1.3 (19 Oct 2010)
+
+  19 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.3.ebuild, -wireless-firmwares-1.2.ebuild:
+  Add Broadcom (brcm43), Ralink and Realtek firmwares.
+
+*wireless-firmwares-1.2 (03 Sep 2010)
+
+  03 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.2.ebuild, -wireless-firmwares-1.1.ebuild:
+  Bump, add missing iwlwifi-{1000,6000,6050} firmwares and update
+  b43.
+
+*wireless-firmwares-1.1 (07 Aug 2009)
+
+  07 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.1.ebuild, -wireless-firmwares-1.0.ebuild:
+  Add iwlwifi-5000-1.ucode (iwlagn 5100).
+
+*wireless-firmwares-1.0 (08 Jul 2009)
+
+  08 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +wireless-firmwares-1.0.ebuild, -wireless-firmwares-0.1.ebuild:
+  Add many firmwares : ipw2XXX, ralink, atmel, zd1201, b43.
+
+*wireless-firmwares-0.1 (29 May 2009)
+
+  29 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  wireless-firmwares-0.1.ebuild:
+  Initial import. Wireless firmwares for Intel wifi NICs.

@@ -1,0 +1,13 @@
+--- a/usr/share/adeskbar/plugins/tasklist.py
++++ b/usr/share/adeskbar/plugins/tasklist.py
+@@ -82,6 +82,10 @@ class Plugin(Plg.PluginContainer):
+         self.scr_width = screen.get_width()
+         self.scr_height = screen.get_height()
+         ws = screen.get_active_workspace()
++        while ws is None:
++            # Wait a workspace
++            time.sleep(.1)
++            ws = screen.get_active_workspace()
+         
+         self.is_virtual = ws.is_virtual()
+         self.num_workspaces = screen.get_workspace_count()                

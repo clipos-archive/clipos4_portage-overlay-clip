@@ -1,0 +1,63 @@
+#!/sbin/runscript
+# Copyright 2006 SGDN/DCSSI
+# Copyright 2013-2014 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+description="Create all veriexec contexts, load CLIP veriexec entries and activate CLIP contexts"
+
+depend() {
+	before reducecap clip_servers
+	need bootmisc
+}
+
+start() {
+	local ret=0
+	local gret=0
+	for jail in "/etc/jails"/*; do
+		[[ -e "${jail}/veriexec.ctx" ]] || continue
+		if ! verictl -x -c "$(<"${jail}/context") $(<"${jail}/veriexec.ctx")"; then
+			ret=1
+			ewarn "Failed to create veriexec context for jail ${jail##*/}"
+		fi
+	done
+	[[ $ret -eq 0 ]] || gret=1
+
+	ret=0
+	ebegin "Loading veriexec hashes (main)"
+			cat /etc/verictl.d/* | verictl -l -f '-' || ret=1
+	eend $ret 
+	[[ $ret -eq 0 ]] || gret=1
+
+	# N.B. : no enforce_mntro / lvl_immutable here, will be added in reducecap
+	if ! verictl -L active:ctx_immutable:ctxset_immutable ; then
+		ewarn "Failed to activate default veriexec context"
+		gret=1
+	fi
+
+	local updctx="$(</etc/jails/update/context)"
+	if ! verictl -U "${updctx}"; then
+		ewarn "Failed to set up update context (xid: ${updctx})"
+		gret=1
+	fi
+
+	ret=0
+	ebegin "Loading veriexec hashes (packages)"
+			cat /usr/local/etc/verictl.d/* | verictl -l -f '-' || ret=1
+	eend $ret
+	[[ $ret -eq 0 ]] || gret=1
+
+	ret=0
+	for jail in "/etc/jails"/*; do
+		[[ -e "${jail}/veriexec.level" ]] || continue
+		if ! verictl -L "$(<"${jail}/context")-$(<"${jail}/veriexec.level")"; then
+			ret=1
+			ewarn "Failed to activate veriexec context for jail $(basename ${jail})"
+		fi
+	done
+	[[ $ret -eq 0 ]] || gret=1
+
+	return $gret
+}
+
+# vim:ts=4

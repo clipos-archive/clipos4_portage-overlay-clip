@@ -1,0 +1,6 @@
+# Nombre d'archives de journaux anciens à conserver
+# (5-99)
+KEEP_FILES_NUMBER=10
+# Taille maximale d'un fichier de journaux avant archivage (kilo-octets)
+# (20-999999)
+KEEP_SIZE=512

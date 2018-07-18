@@ -1,0 +1,14 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+conffile="/etc/conf.d/scanners"
+
+if [[ "$1" == "configure" ]]; then
+	if [[ ! -e "$conffile" ]]; then
+		echo 'SCANNER_DEVPATH="/mounts/vsdev/rm_b/user_devs"' > $conffile
+	fi
+fi
+
+exit 0
+

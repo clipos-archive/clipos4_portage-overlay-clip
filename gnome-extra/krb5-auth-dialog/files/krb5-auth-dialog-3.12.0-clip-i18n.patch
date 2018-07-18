@@ -1,0 +1,29 @@
+--- po/fr.po
++++ po/fr.po
+@@ -1749,3 +1749,12 @@
+ #, c-format
+ msgid "Warning: running q-agent setuid on this system is dangerous\n"
+ msgstr "Avertissement : exécuter q-agent setuid sur ce système est dangereux\n"
++
++msgid "_About"
++msgstr "À _propos"
++
++msgid "_Quit"
++msgstr "_Quitter"
++
++msgid "Prefere_nces"
++msgstr "Préfére_nces"
+--- src/ka-applet.c
++++ src/ka-applet.c
+@@ -1225,9 +1225,10 @@
+     bind_textdomain_codeset (PACKAGE, "UTF-8");
+     bindtextdomain (PACKAGE, LOCALE_DIR);
+ 
++    gtk_init (&argc, &argv);
++
+     g_set_application_name (KA_NAME);
+ 
+-    gtk_init (&argc, &argv);
+     applet = ka_applet_create ();
+     if (!applet)
+         return 1;

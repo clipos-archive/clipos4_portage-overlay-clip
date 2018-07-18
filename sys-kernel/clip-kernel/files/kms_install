@@ -1,0 +1,6 @@
+#!/bin/sh
+set -e
+
+MODE="$(/bin/cat /proc/cmdline | /bin/sed -n -r 's/.*?\<video=([x0-9]+).*/\1/p')"
+[ -n "${MODE}" ] && MODE="edid_firmware=edid/${MODE}.bin"
+/bin/insmod /lib/drm_kms_helper.ko ${MODE}

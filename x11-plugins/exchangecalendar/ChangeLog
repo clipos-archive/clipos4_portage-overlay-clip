@@ -1,0 +1,32 @@
+# CLIP Changelog for x11-plugins/exchangecalendar
+
+*exchangecalendar-4.0.0_beta5 (14 Feb 2018)
+
+  14 Feb 2018; Tony Cheneau <clipos@ssi.gouv.fr>
+  +exchangecalendar-4.0.0_beta5.ebuild, -exchangecalendar-3.9.0.ebuild:
+  Bump to latest available version, now support thunderbird 52+
+  Switch to a new fork that is maintained.
+
+*exchangecalendar-3.9.0 (13 Feb 2017)
+
+  13 Feb 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +exchangecalendar-3.9.0.ebuild, -exchangecalendar-3.7.0.ebuild:
+  Bump to latest available version, now support thunderbird 45+
+
+*exchangecalendar-3.7.0 (03 Jun 2016)
+
+  03 Jun 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +exchangecalendar-3.7.0.ebuild, -exchangecalendar-3.5.0-r1.ebuild:
+  Bump to last version (Improve stability and performances)
+
+*exchangecalendar-3.5.0-r1 (23 May 2016)
+
+  23 May 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +exchangecalendar-3.5.0-r1.ebuild, -exchangecalendar-3.5.0.ebuild:
+  Force rebuild.
+
+*exchangecalendar-3.5.0 (08 Apr 2016)
+
+  08 Apr 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +exchangecalendar-3.5.0.ebuild:
+  Initial import.

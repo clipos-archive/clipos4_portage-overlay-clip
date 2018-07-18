@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# kernel's request_module() calls modprobe -q -- <module_name> <module_params>
+
+[[ "${1}" == '-q' ]] && shift
+[[ "${1}" == '--' ]] && shift 
+
+MODULE="${1}"
+grep -wq "${MODULE}" /proc/modules && exit 0
+shift
+
+exec insmod "/lib/${MODULE}.ko" "${@}"

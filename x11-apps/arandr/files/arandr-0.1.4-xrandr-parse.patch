@@ -1,0 +1,21 @@
+--- screenlayout/xrandr.py.orig	2011-07-12 20:20:44.000000000 +0200
++++ screenlayout/xrandr.py	2011-07-12 20:21:54.000000000 +0200
+@@ -3,6 +3,7 @@
+ import os
+ import subprocess
+ import warnings
++import re
+ 
+ from .auxiliary import BetterList, Size, Position, Geometry, FileLoadError, FileSyntaxError, InadequateConfiguration, Rotation, ROTATIONS, NORMAL
+ 
+@@ -130,8 +131,9 @@ class XRandR(object):
+                 if r in headline:
+                     o.rotations.add(r)
+ 
++	    m = re.compile('[0-9]+')
+             for d in details:
+-                o.modes.append(Size(int(a) for a in d.strip().split(" ")[0].split("x")))
++                o.modes.append(Size(int(m.match(a).group()) for a in d.strip().split(" ")[0].split("x")))
+ 
+             self.state.outputs[o.name] = o
+             self.configuration.outputs[o.name] = self.configuration.OutputConfiguration(active, geometry, rotation)

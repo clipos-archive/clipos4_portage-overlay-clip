@@ -1,0 +1,33 @@
+# CLIP ChangeLog for dev-vcs/git-repo
+
+  06 Jan 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  git-repo-1.12.16-r1.ebuild:
+  Add amd64 keyword.
+
+*git-repo-1.12.16-r1 (18 Nov 2014)
+
+  18 Nov 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +git-repo-1.12.16-r1.ebuild, -git-repo-1.12.16.ebuild:
+  Fix the --mirror command.
+
+*git-repo-1.10.5 (14 Nov 2014)
+
+  14 Nov 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +git-repo-1.12.16.ebuild, -git-repo-1.10.4-r1.ebuild:
+  Sync with latest stable.
+  Refresh offline patch.
+  Remove the fix for the commit-msg hook (no longer needed).
+
+*git-repo-1.10.4-r1 (14 Sep 2012)
+
+  14 Sep 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +git-repo-1.10.4-r1.ebuild, -git-repo-1.10.4.ebuild,
+  +files/git-repo-1.10.4-clip-hooks.patch:
+  Fix commit-msg hook.
+
+*git-repo-1.10.4 (13 Sep 2012)
+
+  13 Sep 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +git-repo-1.10.4.ebuild, +files/repo.sh,
+  +files/git-repo-1.10.4-offline.patch:
+  Initial packaging + offline patch.

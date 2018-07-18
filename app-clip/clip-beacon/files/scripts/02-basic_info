@@ -1,0 +1,11 @@
+#!/bin/sh
+
+cd "$BEACON_REPORT_DIR"
+
+uname -n > hostname
+ln -s /etc/core/machine machine
+cut -d: -f1,4 < /etc/passwd | sed -n 's/^\(.*\):3000$/\1/p' > priv_users
+cut -d: -f1,4 < /etc/passwd | sed -n 's/^\(.*\):3001$/\1/p' > admin_users
+cut -d: -f1,4 < /etc/passwd | sed -n 's/^\(.*\):3002$/\1/p' > audit_users
+cut -d: -f1,4 < /etc/passwd | sed -n 's/^\(.*\):3004$/\1/p' > nomad_users
+cut -d: -f1,4 < /etc/passwd | sed -n 's/^\(.*\):2000$/\1/p' > unpriv_users

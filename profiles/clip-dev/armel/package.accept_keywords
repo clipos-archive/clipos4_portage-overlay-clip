@@ -1,0 +1,21 @@
+# CLIP specific stuff
+clip-dev/clip-config-template-editor ~arm
+clip-dev/clip-installer ~arm
+dev-libs/softhsm ~arm
+
+# No stable version available
+sys-apps/fakeroot-ng ~arm
+
+# temporary fix for 4.3.5
+=dev-libs/gobject-introspection-common-1.32.1 ~arm
+=x11-proto/xcb-proto-1.7-r1 ~arm
+
+# Firefox
+www-client/firefox ~arm
+
+dev-python/PyQt4 ~arm
+
+# linux headers
+sys-kernel/linux-headers ~arm
+
+media-fonts/libertine ~arm

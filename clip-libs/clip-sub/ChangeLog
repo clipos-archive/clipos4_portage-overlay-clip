@@ -1,0 +1,580 @@
+# ChangeLog for <clip-libs/clip-sub>
+
+*clip-sub-1.9.10 (05 Oct 2016)
+
+  05 Oct 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.10.ebuild, -clip-sub-1.9.9.ebuild:
+  Fix sub script sourcing in subs/netfilter.sub script.
+
+*clip-sub-1.9.9 (22 Sep 2016)
+
+  22 Sep 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.9.ebuild, -clip-sub-1.9.8.ebuild:
+  Split the netfilter rules for IKE traffic to enable the following behavior:
+  - initiator (client) can choose any source port for IKE packets
+  - responder (gateway) can accept any incoming source packet
+  This is needed for selecting random sources port on client (fix for "broken"
+  home router).
+
+*clip-sub-1.9.8 (27 May 2015)
+
+  27 May 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.8.ebuild, -clip-sub-1.9.7.ebuild:
+  Add the bypass_ipsec function to the netfilter lib (needed for jail services).
+
+*clip-sub-1.9.7 (28 Jul 2014)
+
+  28 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.7.ebuild, -clip-sub-1.9.6.ebuild:
+  Do not fail when starting an interface if it is already UP.
+
+*clip-sub-1.9.6 (09 Jul 2014)
+
+  09 Jul 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.6.ebuild, -clip-sub-1.9.5.ebuild:
+  Fix problem with 'last' command when username is longer than 8 characters.
+
+*clip-sub-1.9.5 (23 Jun 2014)
+
+  23 Jun 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.5.ebuild, -clip-sub-1.9.4.ebuild:
+  Force MSS clamping to path MTU even for cleartext traffic.
+
+*clip-sub-1.9.4 (20 May 2014)
+
+  20 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.4.ebuild, -clip-sub-1.9.3.ebuild:
+  Code cleanup, add _pass_all_stateless_chains.
+
+*clip-sub-1.9.3 (11 Feb 2014)
+
+  11 Feb 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.3.ebuild, -clip-sub-1.9.2.ebuild:
+  Fix typo in setup_pass_args_{in,out}.
+
+*clip-sub-1.9.2 (06 Jan 2014)
+
+  06 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.2.ebuild, -clip-sub-1.9.1.ebuild:
+  Fix net.sub typo in previous commit.
+
+*clip-sub-1.9.1 (06 Jan 2014)
+
+  06 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.1.ebuild, -clip-sub-1.9.0.ebuild:
+  Code cleanup, add get_user_type() to misc.sub.
+
+*clip-sub-1.9.0 (17 Dec 2013)
+
+  17 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.9.0.ebuild, -clip-sub-1.8.2.ebuild:
+  Switch to associative arrays to pass most of create_stateless_chains()
+  arguments.
+
+*clip-sub-1.8.2 (08 Nov 2013)
+
+  08 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-sub-1.8.2.ebuild, -clip-sub-1.8.1.ebuild:
+  netfilter.sub - add a new force_ipsec_forward_dst() function to force IPsec
+  only for specific destination networks.
+
+*clip-sub-1.8.1 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.8.1.ebuild, -clip-sub-1.8.0.ebuild:
+  prompt.sub - display messages in tty8 to avoid tty1 clutter,
+  and possibly support parallel startup.
+
+*clip-sub-1.8.0 (11 Oct 2013)
+
+  11 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.8.0.ebuild, -clip-sub-1.7.11.ebuild:
+  Switch to functions.sh from openrc.
+
+*clip-sub-1.7.11 (05 Mar 2013)
+
+  05 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.11.ebuild, -clip-sub-1.7.10.ebuild:
+  Further API cleanup.
+
+*clip-sub-1.7.10 (04 Mar 2013)
+
+  04 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.10.ebuild, -clip-sub-1.7.9.ebuild:
+  Fix inverted source/destination in netfilter.sub:pass_compartment_if
+  - only concerns the forward case.
+
+*clip-sub-1.7.9 (11 Jan 2013)
+
+  11 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.9.ebuild, -clip-sub-1.7.8.ebuild:
+  netfilter.sub : cleanup API (warning : breaks API compat),
+  add pass_ping().
+
+  04 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  -clip-sub-1.7.3.1.ebuild:
+  Remove old.
+
+*clip-sub-1.7.8 (30 Apr 2012)
+
+  30 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.8.ebuild, -clip-sub-1.7.7.ebuild:
+  Set veth MTU to 1300 to avoid some MTU discovery issues.
+
+*clip-sub-1.7.7 (27 Apr 2012)
+*clip-sub-1.7.3.1 (27 Apr 2012)
+
+  27 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.7.ebuild, -clip-sub-1.7.6.ebuild:
+  Fix netfilter forward rules.
+
+  27 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.3.1.ebuild:
+  Fix netfilter forward rules.
+
+*clip-sub-1.7.6 (25 Apr 2012)
+
+  25 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.6.ebuild, -clip-sub-1.7.5.ebuild:
+  Fix typo in pass_icmp().
+
+*clip-sub-1.7.5 (25 Apr 2012)
+
+  25 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.5.ebuild, -clip-sub-1.7.4.ebuild:
+  netfilter.sub: Fix icmp error messages filtering for jails. 
+  Reject outbound packages explicitly, rather than dropping 
+  them silently.
+
+*clip-sub-1.7.4 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.4.ebuild, -clip-sub-1.7.3.ebuild:
+  Make the label optional in net_startif() & Co.
+
+*clip-sub-1.7.3 (17 Apr 2012)
+
+  17 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.3.ebuild, -clip-sub-1.7.2.ebuild:
+  Fix network intersect check.
+
+*clip-sub-1.7.2 (13 Apr 2012)
+
+  13 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.2.ebuild, -clip-sub-1.7.1.ebuild:
+  Fix _pass_ike.
+
+*clip-sub-1.7.1 (12 Apr 2012)
+
+  12 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.1.ebuild, -clip-sub-1.7.0.ebuild:
+  Fix source port filter.
+
+*clip-sub-1.7.0 (13 Mar 2012)
+
+  13 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.7.0.ebuild, -clip-sub-1.6.1.ebuild:
+  Support virtual interfaces.
+
+*clip-sub-1.6.1 (18 Jan 2012)
+
+  18 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.6.1.ebuild, -clip-sub-1.6.0.ebuild:
+  Support multiple IPsec gateways in netfilter.sub.
+
+*clip-sub-1.6.0 (27 Dec 2011)
+
+  27 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.6.0.ebuild, -clip-sub-1.5.13-r1.ebuild:
+  Add prompt.sub - generic way to prompt user during boot.
+
+*clip-sub-1.5.13-r1 (14 Dec 2011)
+
+  14 Dec 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.13-r1.ebuild, -clip-sub-1.5.13.ebuild:
+  Don't install /home stuff for a devstation.
+
+*clip-sub-1.5.13 (18 Oct 2011)
+
+  18 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.13.ebuild, -clip-sub-1.5.12.ebuild:
+  Fix Netfilter warning.
+
+*clip-sub-1.5.12 (26 Jul 2011)
+
+  26 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.12.ebuild, -clip-sub-1.5.11.ebuild:
+  netfilter.usb : micro-fix - change -i ! lo to ! -i lo.
+
+*clip-sub-1.5.11 (14 Jan 2011)
+
+  14 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.11.ebuild, -clip-sub-1.5.10.ebuild:
+  userkeys.sub : support logging through syslog when called
+  by userd.
+
+*clip-sub-1.5.10 (17 Dec 2010)
+
+  17 Dec 2010; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.10.ebuild, -clip-sub-1.5.9.ebuild:
+  More pkcs11 changes.
+
+*clip-sub-1.5.9 (10 Nov 2010)
+
+  10 Nov 2010; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.9.ebuild, -clip-sub-1.5.8.ebuild:
+  Modified the pkcs11 module used by openssl when decrypting
+  the user partition, in order to use the pkcs11 proxy.
+
+*clip-sub-1.5.8 (25 Oct 2010)
+
+  25 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.8.ebuild, -clip-sub-1.5.7.ebuild:
+  netfilter.sub - fix dhcp rules broken by previous version.
+
+*clip-sub-1.5.7 (18 Oct 2010)
+
+  18 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.7.ebuild, -clip-sub-1.5.6.ebuild:
+  Smallish fixes / cleanup for netfilter.sub functions.
+
+*clip-sub-1.5.6 (25 Aug 2010)
+
+  19 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.6.ebuild, -clip-sub-1.5.5.ebuild:
+  misc.sub: move regex escape and current user functions.
+
+*clip-sub-1.5.5 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.5.ebuild, -clip-sub-1.5.4.ebuild:
+  netfilter.sub: separate set_local_rules() outside of 
+  set_default_rules().
+
+*clip-sub-1.5.4 (02 Jui 2010)
+  02 Jui 2010; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.4.ebuild, -clip-sub-1.5.3.ebuild:
+  userkeys.sub : add smartcard support for disk key decryption
+
+*clip-sub-1.5.3 (21 Jun 2010)
+
+  21 Jun 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.3.ebuild, -clip-sub-1.5.2.ebuild:
+  net.sub: add the net_ifwaitup function.
+
+*clip-sub-1.5.2 (31 May 2010)
+
+  31 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.2.ebuild, -clip-sub-1.5.1.ebuild:
+  Fix netfilter.sub:flush_all() : properly reset CLIP_${table}_CHAINS
+  variables.
+
+*clip-sub-1.5.1 (27 May 2010)
+
+  27 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.1.ebuild, -clip-sub-1.5.0.ebuild:
+  netfilter.sub: rework drop_nolog and set_final_rules in a
+  more logical manner.
+
+*clip-sub-1.5.0 (26 May 2010)
+
+  26 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.5.0.ebuild, -clip-sub-1.4.10.ebuild:
+  Changes to netfilter.sub:
+	  - Code cleanup.
+	  - Support ftp RELATED rules.
+
+*clip-sub-1.4.10 (03 May 2010)
+
+  03 May 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.10.ebuild, -clip-sub-1.4.9.ebuild:
+  Add escape_regexp_ext function.
+
+*clip-sub-1.4.9 (23 Apr 2010)
+
+  23 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.9.ebuild, -clip-sub-1.4.8.ebuild:
+  More verbose net error reporting.
+
+*clip-sub-1.4.8 (28 Aug 2009)
+
+  28 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.8.ebuild, -clip-sub-1.4.7.ebuild:
+  Export two sub-functions of pass_compartment_if, to, respectively :
+   - set up the stateless chains, regardless of the address
+   - plug those stateless chains into INPUT/OUTPUT/FORWARD for a
+     given address.
+
+*clip-sub-1.4.7 (26 Aug 2009)
+
+  26 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.7.ebuild, -clip-sub-1.4.6.ebuild:
+  Use REJECT instead of DROP on local loop.
+  Clamp the TCP MSS to PMTU - 40 on ipsec jails.
+
+*clip-sub-1.4.6 (03 Aug 2009)
+
+  03 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.6.ebuild, -clip-sub-1.4.5.ebuild:
+  Support allowing error icmps on local loop.
+  Support setting MTU.
+
+*clip-sub-1.4.5 (16 Jul 2009)
+
+  16 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.5.ebuild, -clip-sub-1.4.4.ebuild:
+  Fix _MULTIPORT_REGEXP for port ranges.
+
+*clip-sub-1.4.4 (26 Nov 2008)
+
+  26 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.4.ebuild, -clip-sub-1.4.3.ebuild:
+  netfilter.sub:
+   - use sysctl net.ipv4.ip_local_port_range for local temporary
+     ports (#460)
+   - check SYN flags in pass_local_lo() rules (#461)
+   - remove redundant tcpcheck rules (#462)
+
+*clip-sub-1.4.3 (24 Nov 2008)
+
+  24 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.3.ebuild, -clip-sub-1.4.2.ebuild:
+  import.sub: new 'filter_conf' calls to apply a filter to 
+  already imported vars.
+  netfilter.sub:
+   - new pass_ipsec_if/all() functions : same as pass_esp, but
+   uses an optional remote peer address, and also deals with 
+   IKE flows. These IKE rules are not stateful, to avoid dropping
+   e.g. keepalive packets on clients.
+   - support optionnal tunnel source and destination addresses
+   in force_ipsec_if/all()
+   - remove stateful TCP flags check, add non-stateful checks to
+   FORWARD
+
+*clip-sub-1.4.2 (18 Nov 2008)
+
+  18 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.2.ebuild, -clip-sub-1.4.1.ebuild:
+  netfilter.sub: accept NEW TCP packets without the SYN flag.
+
+*clip-sub-1.4.1 (03 Nov 2008)
+
+  03 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.1.ebuild, -clip-sub-1.4.0.ebuild:
+  Support inserting passing rules at head of loopback chain, for 
+  failsafe mode.
+
+*clip-sub-1.4.0 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.4.0.ebuild, -clip-sub-1.3.16.ebuild:
+  Bump to dhcp-aware ng version.
+
+*clip-sub-1.3.16 (13 Oct 2008)
+
+  13 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.16.ebuild, -clip-sub-1.3.15.ebuild:
+  netfilter.sub: Add _drop_nolog() calls to set_final_rules() 
+  call, to allow the administrator to define non logging drops
+  for 'common' ports (*cough* UDP 137,138 *cough*).
+  import.sub: Add import_conf_all() to import all of those variables
+  that are passed as argument which are effectively defined, without
+  errors.
+
+*clip-sub-1.3.15 (01 Oct 2008)
+
+  01 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.15.ebuild, -clip-sub-1.3.14.ebuild:
+  Fix force_ipsec_all : do not apply to 'lo'.
+
+*clip-sub-1.3.14 (10 Sep 2008)
+
+  10 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.14.ebuild, -clip-sub-1.3.13.ebuild:
+  netfilter.sub : move force_ipsec_*() checks to mangle/PREROUTING
+  and mangle/POSTROUTING, to take FORWARD packets into account and
+  avoid ordering constraints with other rules.
+
+*clip-sub-1.3.13 (29 Jul 2008)
+
+  29 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.13.ebuild, -clip-sub-1.3.12.ebuild:
+ Fix error checking on local variable affectation in userkeys.sub.
+
+*clip-sub-1.3.12 (29 Jul 2008)
+
+  29 Jul 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.12.ebuild, -clip-sub-1.3.11.ebuild:
+  netfilter.sub : change loop argument to behave correctly with
+  arguments like "! ${ADDR}/${MASK}".
+
+*clip-sub-1.3.11 (03 Jul 2008)
+
+  03 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.11.ebuild, -clip-sub-1.3.10.ebuild:
+  netfilter.sub : pass_esp_all() and pass_esp_if() rather than
+  plain pass_esp(). Allow negative adress ranges in force_ipsec_*().
+  net.sub: stop interfaces before removing addresses from them.
+  Add net_route_gtw().
+
+*clip-sub-1.3.10 (03 Jun 2008)
+
+  10 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.10.ebuild, -clip-sub-1.3.9.ebuild:
+  Fix IP address import filter. Add import_noerr function to 
+  try to import without exiting on error (allows for recovery
+  strategies in the networking init scripts. Add check for 
+  intersecting networks in net.sub.
+
+*clip-sub-1.3.9 (21 May 2008)
+
+  21 May 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.9.ebuild, -clip-sub-1.3.8.ebuild:
+  userkeys.sub: switch openssl key-derivation hash from MD5 to 
+  SHA256.
+
+*clip-sub-1.3.8 (18 Mar 2008)
+
+  18 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.8.ebuild, -clip-sub-1.3.7.ebuild:
+  Add a userkeys.sub file, to provides common function for 
+  password hashing and user key encryption. The password hashing
+  now takes login.defs:CRYPT_ROUNDS into account when bcrypt'ing
+  a user's password. The key encryption functions use a bcrypt'ed
+  user password (with the same number of rounds as the user's 
+  shadow entry, but a different salt) as key when encrypting the 
+  user partition keys, rather than the password itself. This 
+  prevents a rather easy brute force attack on user passwords by
+  testing them against the encrypted keys rather than the shadow
+  hash.
+
+*clip-sub-1.3.7 (13 Feb 2008)
+
+  13 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.7.ebuild, -clip-sub-1.3.6.ebuild:
+  Bump. Minor fixes to the way 'forward' pass rules are generated.
+
+*clip-sub-1.3.6 (11 Feb 2008)
+
+  11 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.6.ebuild, -clip-sub-1.3.5.ebuild:
+  Fix import.sub to exit when import fails.
+  Fix netfilter.sub : dnat_if (with protocol as arg) rather
+  than dnat_tcp_if, fix force_ipsec to be able to be called
+  multiple times. Do not run netfilter.sub with 'set -u' as
+  USER_IN and suchlike might be unitialized.
+  Smallish cosmetic change to net.sub.
+
+*clip-sub-1.3.5 (01 Feb 2008)
+
+  01 Feb 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.5.ebuild, -clip-sub-1.3.4.ebuild:
+  Updates to netfilter.sub and net.sub. Support arbitrary address
+  prefix lengths, add net_get_subnet function, support netfilter
+  rules with arbitrary single port source and destination.
+
+*clip-sub-1.3.4 (04 Dec 2007)
+
+  04 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.4.ebuild, -clip-sub-1.3.3.ebuild:
+  Updates to netfilter.sub : remove hardcoded interface names, 
+  add dnat support.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 1.3.3.
+
+*clip-sub-1.3.3 (16 Oct 2007)
+
+  16 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.3.ebuild:
+  Add _pass_same() to netfilter.sub to fix {TCP,UDP}_{OUT,IN}_SAME 
+  handling.
+
+*clip-sub-1.3.2 (02 Oct 2007)
+
+  02 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.2.ebuild:
+  Merge from EADS's clip-sub-1.3.1, with following ChangeLog:
+
+	  *clip-sub-1.3.1 (07 Aug 2007)
+
+	  07 Aug 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  +clip-sub-1.3.1.ebuild:
+	  Add gtw functions.
+	
+*clip-sub-1.3.1 (25 Jul 2007)
+
+  25 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.1.ebuild:
+  Smallish fixes : better support for comments in import.sub and
+  mount.sub, fix mount.sub dealing with empty lines.
+
+*clip-sub-1.3.0 (02 Jul 2007)
+
+  02 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.3.0.ebuild:
+  Complete rewrite of networking.sub. Cleaner, more flexible, 
+  should allow easy configuration of inbound connections (e.g. 
+  ADMIN/AUDIT ssh), and provides better checking for ipsec 
+  policies.
+
+*clip-sub-1.2.5 (29 Jun 2007)
+
+  29 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.2.5.ebuild:
+  Bump, cleaner networking.sub.
+
+*clip-sub-1.2.4 (18 Jun 2007)
+
+  18 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.2.4.ebuild:
+  Bump, make pass_local_lo use multiports, and get the ports as
+  arguments.
+
+*clip-sub-1.2.3 (01 Jun 2007)
+
+  01 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.2.3.ebuild:
+  Bump. Add small net helper needed for vsctl init scripts.
+
+*clip-sub-1.2.2 (06 Dec 2006)
+
+  06 Dec 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.2.2.ebuild:
+  Bump. The weirdness with regards to POSTROUTING was indeed caused 
+  by a recent change in Linux - 2.6.16 more specifically. SP-bound 
+  packets will now go through POSTROUTING first as cleartext, and then 
+  once after each encap. This bump introduces a new check based on iptables'
+  policy match, which still needs a thorough analysis.
+
+*clip-sub-1.2.1 (22 Nov 2006)
+
+  22 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.2.1.ebuild:
+  Bump, fix netfilter.sub : deactivate POSTROUTING mangle check 
+  on marked packets that should be esp only. Seems like those packets 
+  are actually looped twice through POSTROUTING, once as cleartext then 
+  once as esp, and our check_esp rule kills them without mercy on the
+  first round.
+  Yuck, either something changed recently in Linux's IP stack, or I'm 
+  just very tired :(
+  
+*clip-sub-1.2 (16 Nov 2006)
+
+  16 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.2.ebuild:
+  Version bump, netfilter.sub updates : esp packets mangling, 
+  tighter stateful controls.
+
+*clip-sub-1.1 (08 Sept 2006)
+
+  08 Sept 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.1.ebuild:
+  Version bumb, add import.sub to support safe importing of vars 
+  from admin config files. Misc updates to net and netfilter code.
+
+*clip-sub-1.0 (23 Aug 2006)
+
+  23 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-sub-1.0.ebuild:
+  Initial import.

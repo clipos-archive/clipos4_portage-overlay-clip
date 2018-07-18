@@ -1,0 +1,59 @@
+diff -urpN pkcs11-proxy-1.0.1/src/pkcs11proxyd/Makefile.in pkcs11-proxy-1.0.1.new/src/pkcs11proxyd/Makefile.in
+--- pkcs11-proxy-1.0.1/src/pkcs11proxyd/Makefile.in	2014-06-11 18:13:30.000000000 +0000
++++ pkcs11-proxy-1.0.1.new/src/pkcs11proxyd/Makefile.in	2014-06-12 07:11:33.633228102 +0000
+@@ -1,7 +1,7 @@
+ filter_filter_dir = ../filter/filter
+ filter_backend_dir = ../filter/backend
+ filter_frontend_dir = ../filter/frontend
+-caml_link_dirs = -cclib -lpthread -cclib -lcamlidl -cclib -L$(bindings_dir)
++caml_link_dirs = -cclib -lpthread -cclib -lcamlidl -cclib -L$(bindings_dir) -cclib -lclip -cclib -lclipvserver
+ bindings_dir =  ../bindings-pkcs11
+ rpc-pkcs11_dir =  ../rpc-pkcs11
+ mem_prot_opt_caml=-ccopt -fPIC -ccopt -fPIE -ccopt -Wl,-z,relro,-z,now -ccopt -fstack-protector
+@@ -12,6 +12,7 @@ all:
+ 	#Compile Server
+ 	ocamlfind ocamlopt -pp "camlp4o pa_macro.cmo @caml_server_daemonize_define@ @caml_server_ssl_define@ @filter_define@" -package "netplex" @filter_include@ @caml_server_ssl_package@ -I $(bindings_dir) -I $(rpc-pkcs11_dir)  -c server.ml
+ 	ocamlfind ocamlopt @filter_include@ -package "str,netplex,config-file" @caml_server_ssl_package@ -linkpkg $(bindings_dir)/pkcs11.cmxa @filter_files@ $(rpc-pkcs11_dir)/pkcs11_rpclib.cmxa server.cmx $(caml_link_dirs) $(mem_prot_opt_caml) -o $(server_name)
++	gcc @CFLAGS@ -o $(server_name)-clip-launcher $(server_name)-clip-launcher.c -lclip @LDFLAGS@
+ 
+ install:
+ 	echo "Installing $(server_name) to ${prefix}/bin/$(server_name)"
+diff -urpN pkcs11-proxy-1.0.1/src/pkcs11proxyd/pkcs11proxyd-clip-launcher.c pkcs11-proxy-1.0.1.new/src/pkcs11proxyd/pkcs11proxyd-clip-launcher.c
+--- pkcs11-proxy-1.0.1/src/pkcs11proxyd/pkcs11proxyd-clip-launcher.c	1970-01-01 00:00:00.000000000 +0000
++++ pkcs11-proxy-1.0.1.new/src/pkcs11proxyd/pkcs11proxyd-clip-launcher.c	2014-06-12 07:12:02.233228835 +0000
+@@ -0,0 +1,35 @@
++#include <stdlib.h>
++#include <stdio.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++#include <clip/clip.h>
++
++int main(int argc, char* argv[], char* env[]){
++    int fd;
++
++    /*FIXME parse argv/argc */
++    if(argc < 3){
++        fprintf(stderr, "Error: not enough args!\n");
++	return -1;
++    }
++
++    /* Check the existence of the image file */
++    fd = open(argv[1], O_RDONLY);
++    if(fd < 0){
++        fprintf(stderr, "Error: image file %s doesn't seem to exist!\n", argv[1]);
++        return -1;
++    }
++    close(fd);
++    if(clip_daemonize()){
++        fprintf(stderr, "Error: Could not daemonize process\n");
++	return -1;
++    }
++    /* Reset umask to allow creation of a 777 socket in netplex context */
++    umask(0);
++
++    execve(argv[1], argv+1, env);
++    perror("execve");
++    return -1;
++}

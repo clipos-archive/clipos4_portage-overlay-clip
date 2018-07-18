@@ -1,0 +1,30 @@
+--- cmdline/apt-get.cc.bkp	2007-05-21 15:45:36.000000000 +0200
++++ cmdline/apt-get.cc	2007-05-21 16:02:00.000000000 +0200
+@@ -718,11 +718,13 @@
+ 
+       return true;
+    }
++   /* CLIP NO FORCE OPTION */
++#ifndef CLIP_NO_FORCE
+    else if (_config->FindB("APT::Get::Force-Yes",false) == true)
+    {
+       return true;
+    }
+-
++#endif
+    return _error->Error(_("There are problems and -y was used without --force-yes"));
+ }
+ 
+@@ -2587,7 +2587,11 @@
+ {
+    ioprintf(cout,_("%s %s for %s compiled on %s %s\n"),PACKAGE,VERSION,
+ 	    COMMON_ARCH,__DATE__,__TIME__);
+-	    
++
++#ifdef CLIP_NO_FORCE
++	cout << "CLIP NO FORCE option activated" << endl;
++#endif
++
+    if (_config->FindB("version") == true)
+    {
+       cout << _("Supported modules:") << endl;

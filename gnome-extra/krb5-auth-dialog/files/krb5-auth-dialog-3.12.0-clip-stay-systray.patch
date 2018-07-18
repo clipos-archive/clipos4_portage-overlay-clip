@@ -1,0 +1,32 @@
+--- src/ka-main-window.c
++++ src/ka-main-window.c
+@@ -142,9 +142,17 @@
+     }
+ }
+ 
+-void
++gboolean
+ ka_main_window_hide ()
+ {
+     KA_DEBUG("Hiding main window");
+     gtk_widget_hide (GTK_WIDGET(main_window));
++    /* returning TRUE will stop processing and other handlers won't be called.
++     * This avoids a bug that happens on CLIP, where quitting the main window
++     * that lists the tickets quits the entire program altogether, including
++     * the systray icon. On other Linux flavors that I tested, this doesn't
++     * happen, the window disappears but the systray icon stays, which is the
++     * expected behavior. I don't know why this is different on CLIP, but this
++     * fixes it. */
++    return TRUE;
+ }
+--- src/ka-main-window.h
++++ src/ka-main-window.h
+@@ -35,7 +35,7 @@
+ 
+ GtkApplicationWindow *ka_main_window_create (KaApplet *applet, GtkBuilder *xml);
+ void ka_main_window_show (KaApplet *applet);
+-void ka_main_window_hide (void);
++gboolean ka_main_window_hide (void);
+ 
+ 
+ #endif

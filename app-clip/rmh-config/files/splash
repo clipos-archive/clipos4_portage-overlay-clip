@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# KDE 4
+if [[ -e "/usr/local/bin/ksplashx" ]]; then
+	mkdir -p "/home/user/.kde4/share/config"
+	cat > "/home/user/.kde4/share/config/ksplashrc" <<EOF
+[KSplash]
+Engine=KSplashX
+Theme=RMH_ANSSI
+EOF
+fi

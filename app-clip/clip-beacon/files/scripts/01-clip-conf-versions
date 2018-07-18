@@ -1,0 +1,5 @@
+#!/bin/sh
+
+dpkg-query --show clip-core-conf clip-apps-conf > "$BEACON_REPORT_DIR"/clip_versions
+dpkg-query --admindir=/var/pkg/rm_h/lib/dpkg --show rm-core-conf rm-apps-conf-h | sed 's/rm-core-conf/rm-core-conf-h/' >> "$BEACON_REPORT_DIR"/clip_versions
+dpkg-query --admindir=/var/pkg/rm_b/lib/dpkg --show rm-core-conf rm-apps-conf-b | sed 's/rm-core-conf/rm-core-conf-b/' >> "$BEACON_REPORT_DIR"/clip_versions

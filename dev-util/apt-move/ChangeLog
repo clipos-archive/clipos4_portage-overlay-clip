@@ -1,0 +1,38 @@
+# CLIP ChanegLog for dev-util/apt-move
+
+*apt-move-4.2.23-r3.ebuild (05 Dec 2008)
+
+  05 Dec 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +files/apt-move-noash-nodash.patch +apt-move-4.2.23-r3.ebuild, -apt-move-4.2.23-r2.ebuild:
+  Modified apt-move so it does not need ash or dash.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  -apt-move-4.2.23.ebuild, -apt-move-4.2.23-r1.ebuild:
+  Remove stale ebuilds.
+
+  18 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  apt-move-4.2.23-r2.ebuild, +files/apt-move.conf.clip-single:
+  Add clip-single support.
+
+*apt-move-4.2.23-r2.ebuild (27 Oct 2006)
+
+  27 Oct 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-move-4.2.23-r2.ebuild, +files/apt-move-4.2.23-mawk-awk.patch:
+  Add a patch to replace debian-ish mawk with plain "awk".
+
+  27 Oct 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  apt-move-4.2.23-r1.ebuild:
+  Add app-shells/ash run dependency.
+
+*apt-move-4.2.23-r1 (26 Sep 2006)
+
+  26 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-move-4.2.23-r1.ebuild,+files/apt-move.conf.clip,
+  +files/apt-move.conf.rm:
+  Install default configuration files for both clip and rm.
+
+* apt-move-4.2.23 (21 Sep 2006)
+
+  21 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-move-4.2.23.ebuild:
+  Initial import.

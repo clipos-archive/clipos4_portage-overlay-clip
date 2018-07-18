@@ -1,0 +1,40 @@
+diff --git a/src/filter/filter/filter_actions.ml b/src/filter/filter/filter_actions.ml
+index 1016623..f7b770f 100644
+--- a/src/filter/filter/filter_actions.ml
++++ b/src/filter/filter/filter_actions.ml
+@@ -169,6 +169,13 @@ INCLUDE "p11fix_patches/secure_templates_patch.ml"
+ (* The existing sensitive keys patch:                                  *)
+ INCLUDE "p11fix_patches/existing_sensitive_keys_patch.ml"
+ 
++(***********************************************************************)
++(* ANSSI PKI PATCHES                                                   *)
++INCLUDE "anssipki_patches/anssipki_common.ml"
++INCLUDE "anssipki_patches/anssipki_filter_functions.ml"
++INCLUDE "anssipki_patches/anssipki_p12_import.ml"
++INCLUDE "anssipki_patches/anssipki_p12_export.ml"
++INCLUDE "anssipki_patches/anssipki_pin.ml"
+ 
+ (***********************************************************************)
+ (********* CUSTOM actions wrappers for the configuration file ******)
+@@ -188,6 +195,10 @@ let execute_action fun_name action argument = match action with
+ | "dangerous_sensitive_keys_paranoid" -> dangerous_sensitive_keys_paranoid fun_name argument
+ | "dangerous_sensitive_keys_escrow_encrypt" -> dangerous_sensitive_keys_escrow_encrypt fun_name argument
+ | "dangerous_sensitive_keys_escrow_all" -> dangerous_sensitive_keys_escrow_all fun_name argument
++| "anssipki_filter_usage" -> anssipki_filter_usage fun_name argument
++| "anssipki_p12_export_init" -> anssipki_p12_export_init fun_name argument
++| "anssipki_p12_import_init" -> anssipki_p12_import_init fun_name argument
++| "anssipki_pin" -> anssipki_pin fun_name argument
+ | _ -> identity fun_name argument
+ 
+ let string_check_action a = match a with
+@@ -206,6 +217,10 @@ let string_check_action a = match a with
+ | "dangerous_sensitive_keys_paranoid" -> a
+ | "dangerous_sensitive_keys_escrow_encrypt" -> a
+ | "dangerous_sensitive_keys_escrow_all" -> a
++| "anssipki_filter_usage" -> a
++| "anssipki_p12_export_init" -> a
++| "anssipki_p12_import_init" -> a
++| "anssipki_pin" -> a
+ | _ -> let error_string = Printf.sprintf "Error: unknown action option '%s'!" a in netplex_log_critical error_string; raise Config_file_wrong_type
+ 
+ 

@@ -1,0 +1,13 @@
+Index: chrome/content/noscript/MainParent.js
+===================================================================
+--- chrome.orig/content/noscript/MainParent.js
++++ chrome/content/noscript/MainParent.js
+@@ -87,7 +87,7 @@ var MainParent = {
+   },
+ 
+   firstRun: false,
+-  versionChecked: false,
++  versionChecked: true,
+   checkVersion: function() {
+     if (this.versionChecked) return;
+     this.versionChecked = true;

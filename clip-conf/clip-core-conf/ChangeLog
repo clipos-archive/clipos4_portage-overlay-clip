@@ -1,0 +1,5314 @@
+# CLIP ChangeLog for clip-conf/clip-core-conf
+
+*clip-core-conf-4.4.3-r149 (06 Jun 2018)
+
+  06 Jun 2018; Thibaut Sautereau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r149.ebuild, -clip-core-conf-4.4.3-r148.ebuild:
+  clip-kernel 4.4.135.
+
+*clip-core-conf-4.4.3-r148 (23 May 2018)
+
+  23 May 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r148.ebuild, -clip-core-conf-4.4.3-r147.ebuild:
+  RBump hotplug-clip 2.6.2.
+
+*clip-core-conf-4.4.3-r147 (11 May 2018)
+
+  11 May 2018; Thibaut Sautereau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r147.ebuild, -clip-core-conf-4.4.3-r146.ebuild:
+  clip-kernel 4.4.127-r2.
+
+*clip-core-conf-4.4.3-r146 (17 Apr 2018)
+
+  17 Apr 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r146.ebuild, -clip-core-conf-4.4.3-r145.ebuild:
+  clip-kernel 4.4.127.
+
+*clip-core-conf-4.4.3-r145 (14 Feb 2018)
+
+  14 Feb 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r145.ebuild, -clip-core-conf-4.4.3-r144.ebuild:
+  Fix various version mismatch.
+
+*clip-core-conf-4.4.3-r144 (13 Feb 2018)
+
+  13 Feb 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r144.ebuild, -clip-core-conf-4.4.3-r143.ebuild:
+  Rbump for linux-headers 4.4 rebuild.
+  Set clip-kernel 4.4 as default.
+
+*clip-core-conf-4.4.3-r143 (07 Feb 2018)
+
+  07 Feb 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r143.ebuild, -clip-core-conf-4.4.3-r142.ebuild:
+  clip-kernel 4.4.113-r1 & 4.9.74.
+
+*clip-core-conf-4.4.3-r142 (06 Feb 2018)
+
+  06 Feb 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r142.ebuild, -clip-core-conf-4.4.3-r141.ebuild:
+  Properly disable date checks for CCSD pkg signatures.
+
+*clip-core-conf-4.4.3-r141 (26 Jan 2018)
+
+  26 Jan 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r141.ebuild, -clip-core-conf-4.4.3-r140.ebuild:
+  clip-kernel 4.4.113.
+
+*clip-core-conf-4.4.3-r140 (24 Jan 2018)
+
+  24 Jan 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r140.ebuild, -clip-core-conf-4.4.3-r139.ebuild:
+  clip-kernel 4.4.109.
+
+*clip-core-conf-4.4.3-r139 (15 Jan 2018)
+
+  15 Jan 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r139.ebuild, -clip-core-conf-4.4.3-r138.ebuild:
+  Switch to 4.9 kernel by default.
+
+*clip-core-conf-4.4.3-r138 (27 Nov 2017)
+
+  27 Nov 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r138.ebuild, -clip-core-conf-4.4.3-r137.ebuild:
+  Add clip-beacon in hermes flavor to ease fleet management
+
+*clip-core-conf-4.4.3-r137 (10 Nov 2017)
+
+  10 Nov 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r137.ebuild, -clip-core-conf-4.4.3-r136.ebuild:
+  RBump wireless-firmwares 4.4 - Add iwlwifi firmwares compatible with kernel
+  4.9.
+  RBump clip-hardware 4.4 - Add support for HP EliteBook 820 G3 and add 4.9
+  firmwares to iwilwifi profiles for ThinkPad X260 and X270.
+
+*clip-core-conf-4.4.3-r136 (06 Nov 2017)
+
+  06 Nov 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r136.ebuild, -clip-core-conf-4.4.3-r135.ebuild:
+  RBump clip-hardware 4.4
+
+  26 Oct 2017; Timothée Ravier <clipos@ssi.gouv.fr>:
+  Add support for 4.9 kernels.
+
+*clip-core-conf-4.4.3-r135 (25 Oct 2017)
+
+  25 Oct 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r135.ebuild, -clip-core-conf-4.4.3-r134.ebuild:
+  Bump syslog-ng: disable local_port(40000) directive.
+
+*clip-core-conf-4.4.3-r134 (18 Oct 2017)
+
+  18 Oct 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r134.ebuild, -clip-core-conf-4.4.3-r133.ebuild:
+  Bump clip-hardware - add support for Lenovo ThinkPad X270
+
+*clip-core-conf-4.4.3-r133 (17 Oct 2017)
+
+  17 Oct 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r133.ebuild, -clip-core-conf-4.4.3-r132.ebuild:
+  Bump wpa_supplicant: fix KRACK attacks against WPA2.
+
+*clip-core-conf-4.4.3-r132 (08 Aug 2017)
+
+  08 Aug 2017; Nicolas Godinho <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r132.ebuild, -clip-core-conf-4.4.3-r131.ebuild:
+  RBump gen-crypt: fix issues reported by COSSI code review
+
+*clip-core-conf-4.4.3-r131 (08 Aug 2017)
+
+  08 Aug 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r131.ebuild, -clip-core-conf-4.4.3-r130.ebuild:
+  Add support for DELL Latitude E5570.
+
+*clip-core-conf-4.4.3-r130 (18 Jul 2017)
+
+  18 Jul 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r130.ebuild, -clip-core-conf-4.4.3-r129.ebuild:
+  Adjusts some mismatching versions between clip and rm
+
+*clip-core-conf-4.4.3-r129 (18 Jul 2017)
+
+  18 Jul 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r129.ebuild, -clip-core-conf-4.4.3-r128.ebuild:
+  RBump gen-crypt: disable expiration date check for CCSD
+
+*clip-core-conf-4.4.3-r128 (03 Jul 2017)
+
+  03 Jul 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r128.ebuild, -clip-core-conf-4.4.3-r127.ebuild:
+  Fix issue with full disk encryption password change menu: the menu doesn't
+  loop anymore if the switch_root fails.
+  Bump clip-kernel
+
+*clip-core-conf-4.4.3-r127 (29 Jun 2017)
+
+  29 Jun 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r127.ebuild, -clip-core-conf-4.4.3-r126.ebuild,
+  files/postint.switch:
+  Fix issue when boot loader labels were not update when migrating from
+  symlink to flat file for /boot/extlinux.conf.
+  Bump clip-hardware and syslinux.
+
+*clip-core-conf-4.4.3-r126 (19 Jun 2017)
+
+  19 Jun 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r126.ebuild, -clip-core-conf-4.4.3-r125.ebuild:
+  Update opensc, RBump clip-download & pkcs11-proxy.
+
+*clip-core-conf-4.4.3-r125 (15 Jun 2017)
+
+  15 Jun 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r125.ebuild, -clip-core-conf-4.4.3-r124.ebuild:
+  RBump strongswan - security update.
+
+*clip-core-conf-4.4.3-r124 (13 Jun 2017)
+
+  13 Jun 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r124.ebuild, -clip-core-conf-4.4.3-r123.ebuild:
+  Rbump busybox : add rm applet for initrd
+
+*clip-core-conf-4.4.3-r123 (10 May 2017)
+
+  10 May 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r123.ebuild, -clip-core-conf-4.4.3-r122.ebuild:
+  Rbump clip-kernel and bump clip-hardware: various hardware support
+  improvements for "legacy" computers (old Toshiba and HP) that are still
+  being used. Also, improve support for "current" models (webcam support).
+
+*clip-core-conf-4.4.3-r122 (20 Apr 2017)
+
+  20 Apr 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r122.ebuild, -clip-core-conf-4.4.3-r121.ebuild:
+  RBump clip-kernel 3.14 & 4.4.
+
+*clip-core-conf-4.4.3-r121 (12 Apr 2017)
+
+  12 Apr 2017; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r121.ebuild, -clip-core-conf-4.4.3-r120.ebuild:
+  Bump vsctl.
+
+*clip-core-conf-4.4.3-r120 (10 Mar 2017)
+
+  10 Mar 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r120.ebuild, -clip-core-conf-4.4.3-r119.ebuild:
+  Bump clip-kernel (3.14).
+
+*clip-core-conf-4.4.3-r119 (10 Mar 2017)
+
+  10 Mar 2017; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r119.ebuild, -clip-core-conf-4.4.3-r118.ebuild:
+  Add clip-tpm-0.1
+
+*clip-core-conf-4.4.3-r118 (09 Mar 2017)
+
+  09 Mar 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r118.ebuild, -clip-core-conf-4.4.3-r117.ebuild:
+  Bump clip-net and clip-gtw-net
+
+*clip-core-conf-4.4.3-r117 (01 Mar 2017)
+
+  01 Mar 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r117.ebuild, -clip-core-conf-4.4.3-r116.ebuild:
+  Change version format in bootloader entry to ensure consistency with status
+  from clip-menu-xdg
+
+*clip-core-conf-4.4.3-r116 (24 Feb 2017)
+
+  24 Feb 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r116.ebuild, -clip-core-conf-4.4.3-r115.ebuild:
+  Bump clip-kernel and clip-hardware (3.14).
+
+*clip-core-conf-4.4.3-r115 (23 Feb 2017)
+
+  23 Feb 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r115.ebuild, -clip-core-conf-4.4.3-r114.ebuild:
+  Force upgrade of gcc-lib5 and boost from 4.4.2
+
+*clip-core-conf-4.4.3-r114 (20 Feb 2017)
+
+  20 Feb 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r114.ebuild, -clip-core-conf-4.4.3-r113.ebuild:
+  Bump clip-hardware (4.4).
+
+*clip-core-conf-4.4.3-r113 (20 Feb 2017)
+
+  20 Feb 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r113.ebuild, -clip-core-conf-4.4.3-r112.ebuild:
+  Bump clip-kernel (4.4).
+
+*clip-core-conf-4.4.3-r112 (15 Feb 2017)
+
+  15 Feb 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r112.ebuild, -clip-core-conf-4.4.3-r111.ebuild:
+  Bump clip-libvserver.
+
+*clip-core-conf-4.4.3-r111 (14 Feb 2017)
+
+  14 Feb 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r111.ebuild, -clip-core-conf-4.4.3-r110.ebuild:
+  Bump clip-libvserver.
+
+*clip-core-conf-4.4.3-r109 (03 Feb 2017)
+
+  09 Feb 2017; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r110.ebuild, -clip-core-conf-4.4.3-r109.ebuild:
+  Bump opensc.
+
+*clip-core-conf-4.4.3-r109 (03 Feb 2017)
+
+  03 Feb 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r109.ebuild, -clip-core-conf-4.4.3-r108.ebuild:
+  RBump clip-kernel (3.14).
+
+*clip-core-conf-4.4.3-r108 (02 Feb 2017)
+
+  02 Feb 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r108.ebuild, -clip-core-conf-4.4.3-r107.ebuild:
+  RBump clip-kernel (4.4).
+
+*clip-core-conf-4.4.3-r107 (01 Feb 2017)
+
+  01 Feb 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r107.ebuild, -clip-core-conf-4.4.3-r106.ebuild:
+  Bump clip-hardware and wireless-firmwares: improve X250 and add X260 support
+
+*clip-core-conf-4.4.3-r106 (31 Jan 2017)
+
+  31 Jan 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r106.ebuild, -clip-core-conf-4.4.3-r105.ebuild:
+  RBump clip-kernel (4.4).
+
+*clip-core-conf-4.4.3-r105 (19 Jan 2017)
+
+  19 Jan 2017; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r105.ebuild, -clip-core-conf-4.4.3-r104.ebuild:
+  Bump gzip, fix clip instance versions in bootloader conf
+
+*clip-core-conf-4.4.3-r104 (10 Jan 2017)
+
+  10 Jan 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r104.ebuild, -clip-core-conf-4.4.3-r103.ebuild:
+  Bump clip-hardware and wireless-firmware for 4.4 kernels
+
+*clip-core-conf-4.4.3-r103 (30 Dec 2016)
+
+  30 Dec 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r103.ebuild, -clip-core-conf-4.4.3-r102.ebuild:
+  Update clip-kernel for tpm support in livecd.
+
+*clip-core-conf-4.4.3-r102 (22 Dec 2016)
+
+  22 Dec 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r102.ebuild, -clip-core-conf-4.4.3-r101.ebuild:
+  Rbump CLIP-Pkg-Base - fix optional applications listing issue.
+
+*clip-core-conf-4.4.3-r101 (28 Nov 2016)
+
+  28 Nov 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r101.ebuild, -clip-core-conf-4.4.3-r100.ebuild:
+  Rbump clip-kernel - Add rm to initrd and fix upgrade issue.
+
+*clip-core-conf-4.4.3-r100 (24 Nov 2016)
+
+  24 Nov 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r100.ebuild, -clip-core-conf-4.4.3-r99.ebuild:
+  Rbump scdaemon and fix libgcrypt dependency.
+
+*clip-core-conf-4.4.3-r99 (23 Nov 2016)
+
+  23 Nov 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r99.ebuild, -clip-core-conf-4.4.3-r98.ebuild:
+  RBump clip-kernel 4.4 - enable CONFIG_USB_NET_DRIVERS and explicitely set
+  CONFIG_CRYPTO_CCSD to y
+  Bump clip-hardware 4.4 - update profile for Intel NUC5I5RYK for 4.4 kernel
+
+*clip-core-conf-4.4.3-r98 (15 Nov 2016)
+
+  15 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r98.ebuild, -clip-core-conf-4.4.3-r97.ebuild:
+  Bump clip-net and clip-generic-net (modify IPsec behavior during failovers)
+  Rbump clip-gtw-net (force upgrade from 4.4.2)
+
+*clip-core-conf-4.4.3-r97 (08 Nov 2016)
+
+  08 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r97.ebuild, -clip-core-conf-4.4.3-r96.ebuild:
+  Bump clip-net and clip-gtw-net
+
+*clip-core-conf-4.4.3-r96 (07 Nov 2016)
+
+  07 Nov 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r96.ebuild, -clip-core-conf-4.4.3-r95.ebuild:
+  Rbump strongswan - enable IKEv2 fragmentation and random source port
+
+*clip-core-conf-4.4.3-r95 (20 Oct 2016)
+
+  20 Oct 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r95.ebuild, -clip-core-conf-4.4.3-r94.ebuild:
+  Rbump clip-kernel.
+
+*clip-core-conf-4.4.3-r94 (19 Oct 2016)
+
+  19 Oct 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r94.ebuild, -clip-core-conf-4.4.3-r93.ebuild:
+
+*clip-core-conf-4.4.3-r93 (17 Oct 2016)
+
+  17 Oct 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r93.ebuild, -clip-core-conf-4.4.3-r92.ebuild:
+  Rbump syslinux - Add submenu for chpw entry
+
+*clip-core-conf-4.4.3-r92 (11 Oct 2016)
+
+  11 Oct 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r92.ebuild, -clip-core-conf-4.4.3-r91.ebuild:
+  Rbump clip-kernel, syslinux - Add way to change disk encryption password
+
+*clip-core-conf-4.4.3-r91 (05 Oct 2016)
+
+  05 Oct 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r91.ebuild, -clip-core-conf-4.4.3-r90.ebuild:
+  clip-sub 1.9.10 update.
+
+*clip-core-conf-4.4.3-r90 (05 Oct 2016)
+
+  05 Oct 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r90.ebuild, -clip-core-conf-4.4.3-r89.ebuild:
+  Rbump clip-kernel - fix vserver.
+
+*clip-core-conf-4.4.3-r89 (05 Oct 2016)
+
+  05 Oct 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r89.ebuild, -clip-core-conf-4.4.3-r88.ebuild:
+  Fix visible flags order.
+
+*clip-core-conf-4.4.3-r88 (04 Oct 2016)
+
+  04 Oct 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r88.ebuild, -clip-core-conf-4.4.3-r87.ebuild:
+  Rbump vsctl for clip-kernel 4.4 changes.
+
+*clip-core-conf-4.4.3-r87 (26 Sep 2016)
+
+  26 Sep 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r87.ebuild, -clip-core-conf-4.4.3-r86.ebuild:
+  Rbump clip-sub, clip-net, clip-gtw-net - enable IKEv2 fragementation,
+  increase strongswan log verbosity and prepare for more IPsec iconfiguration
+  changes.
+
+*clip-core-conf-4.4.3-r86 (21 Sep 2016)
+
+  21 Sep 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r86.ebuild, -clip-core-conf-4.4.3-r85.ebuild:
+  Rbump stunnel - kill it as curent user
+
+*clip-core-conf-4.4.3-r85 (05 Sep 2016)
+
+  05 Sep 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r85.ebuild, -clip-core-conf-4.4.3-r84.ebuild:
+  Rbump stunnel - change init script and conf skel.
+
+*clip-core-conf-4.4.3-r84 (05 Sep 2016)
+
+  05 Sep 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r84.ebuild, -clip-core-conf-4.4.3-r83.ebuild:
+  Bump vsctl - extend support for UID/GID and env passing.
+
+*clip-core-conf-4.4.3-r83 (02 Sep 2016)
+
+  02 Sep 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r83.ebuild, -clip-core-conf-4.4.3-r82.ebuild:
+  Rbump stunnel - change init script.
+
+*clip-core-conf-4.4.3-r82 (18 Aug 2016)
+
+  18 Aug 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r82.ebuild, -clip-core-conf-4.4.3-r81.ebuild:
+  Fix CLIP-Pkd-Download for multiple occurences of one package in download
+  pending file.
+
+  17 Aug 2016; Timothée Ravier <clipos@ssi.gouv.fr>:
+  clip-kernel 4.4 support. No rbump necessary.
+
+*clip-core-conf-4.4.3-r81 (12 Aug 2016)
+
+  12 Aug 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r81.ebuild, -clip-core-conf-4.4.3-r80.ebuild:
+  Bump pam_exec_pwd, clip-user-mount; rbump fdp, stunnel : Split login/logout
+  hooks in multiple files.
+
+*clip-core-conf-4.4.3-r80 (09 Aug 2016)
+
+  09 Aug 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r80.ebuild, -clip-core-conf-4.4.3-r79.ebuild:
+  RBump stunnel : Make it stopable again (with BIND_SERVICE capability)
+
+*clip-core-conf-4.4.3-r79 (03 Aug 2016)
+
+  03 Aug 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r79.ebuild, -clip-core-conf-4.4.3-r78.ebuild:
+  Bump stunnel to 5.35.
+
+*clip-core-conf-4.4.3-r77 (12 Jul 2016)
+
+  12 Jul 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r77.ebuild, -clip-core-conf-4.4.3-r76.ebuild:
+  Bump gcc-lib to 5.3.0 on amd64.
+
+*clip-core-conf-4.4.3-r76 (08 Jul 2016)
+
+  08 Jul 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r76.ebuild, -clip-core-conf-4.4.3-r75.ebuild:
+  Civil crypto support (gen-crypt).
+
+*clip-core-conf-4.4.3-r75 (29 Jun 2016)
+
+  29 Jun 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r75.ebuild, -clip-core-conf-4.4.3-r74.ebuild:
+  Bump clip-kernel.
+  Bump clip-hardware - add profile for LENOVO ThinkPad X250
+
+*clip-core-conf-4.4.3-r74 (23 Jun 2016)
+
+  23 Jun 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r74.ebuild, -clip-core-conf-4.4.3-r73.ebuild:
+  Bump verictl - full amd64 support.
+
+*clip-core-conf-4.4.3-r73 (26 May 2016)
+
+  26 May 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r73.ebuild, -clip-core-conf-4.4.3-r72.ebuild:
+  RBump opensc - drop libtool dependency.
+
+*clip-core-conf-4.4.3-r72 (25 May 2016)
+
+  25 May 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r72.ebuild, -clip-core-conf-4.4.3-r71.ebuild:
+  Rbump kernel 3.14.68-r1 update.
+
+*clip-core-conf-4.4.3-r71 (24 May 2016)
+
+  24 May 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r71.ebuild, -clip-core-conf-4.4.3-r70.ebuild:
+  RBump apt, rebuild against newer libstdc++.
+
+*clip-core-conf-4.4.3-r70 (23 May 2016)
+
+  23 May 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r70.ebuild, -clip-core-conf-4.4.3-r69.ebuild:
+  Rbump kernel 3.14.68 update.
+
+*clip-core-conf-4.4.3-r69 (23 May 2016)
+
+  23 May 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r69.ebuild, -clip-core-conf-4.4.3-r68.ebuild:
+  Rbump openssl, openssh updates.
+
+*clip-core-conf-4.4.3-r68 (13 May 2016)
+
+  13 May 2016; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r68.ebuild, -clip-core-conf-4.4.3-r67.ebuild:
+  Rbump libacidcrypt
+
+*clip-core-conf-4.4.3-r67 (31 Mar 2016)
+
+  31 Mar 2016; Philippe Trebuchet <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r67.ebuild, -clip-core-conf-4.4.3-r66.ebuild:
+  Rbump perl fix multiuple CVE
+
+*clip-core-conf-4.4.3-r66 (30 Mar 2016)
+
+  30 Mar 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r66.ebuild, -clip-core-conf-4.4.3-r65.ebuild:
+  Rbump clip-hardware - add IBM System x3650 m4.
+
+*clip-core-conf-4.4.3-r65 (29 Mar 2016)
+
+  29 Mar 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r65.ebuild, -clip-core-conf-4.4.3-r64.ebuild:
+  Rump clip-kernel - enable AES-NI on all supported kernels (previously compiled
+  as a kernel module).
+
+*clip-core-conf-4.4.3-r64 (21 Mar 2016)
+
+  21 Mar 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r64.ebuild, -clip-core-conf-4.4.3-r63.ebuild:
+  Bump clip-kernel to 3.14.65.
+
+*clip-core-conf-4.4.3-r63 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r63.ebuild, -clip-core-conf-4.4.3-r62.ebuild:
+  Bump core-services.
+  Bump baselayout-core-update.
+
+*clip-core-conf-4.4.3-r62 (07 Mar 2016)
+
+  07 Mar 2016; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r62.ebuild, -clip-core-conf-4.4.3-r61.ebuild:
+  rbump sqlcipher: add fdp as a compilation dependency
+
+*clip-core-conf-4.4.3-r61 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r61.ebuild, -clip-core-conf-4.4.3-r60.ebuild:
+  Bump sysvinit.
+  Bump clip-usb-keys.
+  Bump clip-kernel.
+  Bump pam.
+  Bump boost.
+  Bump clip-kernel.
+
+*clip-core-conf-4.4.3-r60 (26 Feb 2016)
+
+  26 Feb 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r60.ebuild, -clip-core-conf-4.4.3-r59.ebuild:
+  Bump shadow.
+  Bump clip-user-mount.
+
+  25 Feb 2016; ANSSI <clipos@ssi.gouv.fr>
+  clip-core-conf-4.4.3-r59.ebuild:
+  Fix clip-bare dependencies.
+
+*clip-core-conf-4.4.3-r59 (23 Feb 2016)
+
+  23 Feb 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r59.ebuild, -clip-core-conf-4.4.3-r58.ebuild:
+  Rbump stunnel
+
+*clip-core-conf-4.4.3-r58 (22 Feb 2016)
+
+  22 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r58.ebuild, -clip-core-conf-4.4.3-r57.ebuild:
+  RBump clip-kernel - add support for pfring.ko
+
+*clip-core-conf-4.4.3-r57 (19 Feb 2016)
+
+  19 Feb 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r57.ebuild, -clip-core-conf-4.4.3-r56.ebuild:
+  Migrate from clip-tiny to clip-bare.
+
+*clip-core-conf-4.4.3-r56 (17 Feb 2016)
+
+  17 Feb 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r56.ebuild, -clip-core-conf-4.4.3-r55.ebuild:
+  Rbump glibc - fix CVE-2015-7547.
+
+*clip-core-conf-4.4.3-r55 (17 Feb 2016)
+
+  17 Feb 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r55.ebuild, -clip-core-conf-4.4.3-r54.ebuild:
+  Bump clip-kernel to 3.14.60-r1 (add sleep state to livecd kernel).
+
+*clip-core-conf-4.4.3-r54 (16 Feb 2016)
+
+  16 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r54.ebuild, -clip-core-conf-4.4.3-r53.ebuild:
+  Bump clip-kernel to 3.14.60 (grsecurity 3.1-3.14.60-201601311612)
+  RBump ncurses.
+  Bump cpio.
+
+*clip-core-conf-4.4.3-r53 (04 Feb 2016)
+
+  04 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r53.ebuild, -clip-core-conf-4.4.3-r52.ebuild:
+  Replace libtool by libltdl.
+
+*clip-core-conf-4.4.3-r52 (26 Jan 2016)
+
+  26 Jan 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r52.ebuild, -clip-core-conf-4.4.3-r51.ebuild:
+  Rbump clip-kernel - use newer version of clip-patches 
+  (grsecurity 3.1-3.14.58-201601192225)
+
+*clip-core-conf-4.4.3-r51 (21 Jan 2016)
+
+  21 Jan 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r51.ebuild, -clip-core-conf-4.4.3-r50.ebuild:
+  openssl 1.0.2e update
+
+*clip-core-conf-4.4.3-r50 (13 Jan 2016)
+
+  13 Jan 2016; Philippe Trebuchet <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r50.ebuild, -clip-core-conf-4.4.3-r49.ebuild:
+  RBump Perl
+
+*clip-core-conf-4.4.3-r49 (12 Jan 2016)
+
+  12 Jan 2016; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r49.ebuild, -clip-core-conf-4.4.3-r48.ebuild:
+  Bump app-crypt/pkcs11-proxy, app-clip/fdp, clip-layout/baselayout-clip, sys-apps/apt, sys-kernel/clip-kernel
+
+*clip-core-conf-4.4.3-r48 (12 Jan 2016)
+
+  12 Jan 2016; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r48.ebuild, -clip-core-conf-4.4.3-r47.ebuild:
+  Rbump cryptsetup - fix missing symlink.
+
+*clip-core-conf-4.4.3-r47 (05 Jan 2016)
+
+  05 Jan 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r47.ebuild, -clip-core-conf-4.4.3-r46.ebuild:
+  Bump ccid.
+
+*clip-core-conf-4.4.3-r46 (30 Dec 2015)
+
+  30 Dec 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r46.ebuild, -clip-core-conf-4.4.3-r45.ebuild:
+  Bump cryptsetup, switch to openssl backend and remove libgcrypt
+  (only used with cryptsetup, but incompatible with a static 
+  cryptsetup, which we use in the initrd).
+
+*clip-core-conf-4.4.3-r45 (30 Dec 2015)
+
+  30 Dec 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r45.ebuild, -clip-core-conf-4.4.3-r44.ebuild:
+  Bump libgpg-error, libgcrypt, libtasn1, e2fsprogs{,-libs} ; rbump 
+  cryptsetup (libgcrypt revdep).
+
+*clip-core-conf-4.4.3-r44 (16 Dec 2015)
+
+  16 Dec 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r44.ebuild, -clip-core-conf-4.4.3-r43.ebuild:
+  bump clip-hardware - add proper trackpad support to Thinkpad L450
+
+*clip-core-conf-4.4.3-r43 (14 Dec 2015)
+
+  14 Dec 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r43.ebuild, -clip-core-conf-4.4.3-r42.ebuild:
+  Rbump apt - copy apt client cert and key upon system update.
+
+*clip-core-conf-4.4.3-r42 (14 Dec 2015)
+
+  14 Dec 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r42.ebuild, -clip-core-conf-4.4.3-r41.ebuild:
+  Bump clip-kernel to 3.14.58.
+  Bump net-tools - update to latest stable.
+  Bump libacidcrypt - fix FTBFS on amd64.
+
+*clip-core-conf-4.4.3-r41 (03 Dec 2015)
+
+  03 Dec 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r41.ebuild, -clip-core-conf-4.4.3-r40.ebuild:
+  RBump baselayout-clip, baselayout-core-update - handle multilib dir symlinks
+  on amd64
+  Depend on syslinux on amd64.
+
+*clip-core-conf-4.4.3-r40 (01 Dec 2015)
+
+  01 Dec 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r40.ebuild, -clip-core-conf-4.4.3-r39.ebuild:
+  Bump fdp - fix build on amd64.
+  Bump gcc-lib.
+
+*clip-core-conf-4.4.3-r39 (01 Dec 2015)
+
+  01 Dec 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r39.ebuild, -clip-core-conf-4.4.3-r38.ebuild:
+  Rbump gcc-lib - switch to a clean gcc ebuild/eclass.
+
+*clip-core-conf-4.4.3-r38 (27 Nov 2015)
+
+  27 Nov 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r38.ebuild, -clip-core-conf-4.4.3-r37.ebuild:
+  RBump tar - version sync with 4.4.2.
+  RBump clip-generic-net - fix (ike)lifetime in clip-p2p-net
+  Make softhsm and friends depends on core-rm for now.
+
+*clip-core-conf-4.4.3-r37 (27 Nov 2015)
+
+  27 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r37.ebuild, -clip-core-conf-4.4.3-r36.ebuild:
+  Bump de pkcs11-proxy
+
+*clip-core-conf-4.4.3-r36 (25 Nov 2015)
+
+  25 Nov 2015; Philippe Trebuchet <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r36.ebuild, -clip-core-conf-4.4.3-r35.ebuild:
+  rbump fo perl INC path update
+
+*clip-core-conf-4.4.3-r35 (20 Nov 2015)
+
+  20 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r35.ebuild, -clip-core-conf-4.4.3-r34.ebuild:
+  Bump pkcs11-proxy
+
+*clip-core-conf-4.4.3-r34 (19 Nov 2015)
+
+  19 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r34.ebuild, -clip-core-conf-4.4.3-r33.ebuild:
+  Bump pkcs11-proxy,fdp
+
+*clip-core-conf-4.4.3-r33 (19 Nov 2015)
+
+  19 Nov 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r33.ebuild, -clip-core-conf-4.4.3-r32.ebuild:
+  Bump clip-hardware - add WiFi support to Thinkpad L450 hardware
+
+*clip-core-conf-4.4.3-r32 (18 Nov 2015)
+
+  18 Nov 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r32.ebuild, -clip-core-conf-4.4.3-r31.ebuild:
+  Rbump vsctl - add linux-headers as dependency
+  Bump clip-install-clip - fix an error in init script that prevents update to
+  be installed
+
+*clip-core-conf-4.4.3-r31 (13 Nov 2015)
+
+  13 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r31.ebuild, -clip-core-conf-4.4.3-r30.ebuild:
+  Bump fdp,clip-vserver
+
+*clip-core-conf-4.4.3-r30 (13 Nov 2015)
+
+  13 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r30.ebuild, -clip-core-conf-4.4.3-r29.ebuild:
+  Bump fdp,clip-vserver
+
+*clip-core-conf-4.4.3-r29 (12 Nov 2015)
+
+  12 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r29.ebuild, -clip-core-conf-4.4.3-r28.ebuild:
+  Bump clip-layout/baselayout-core-userpriv
+
+*clip-core-conf-4.4.3-r28 (06 Nov 2015)
+
+  06 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r28.ebuild, -clip-core-conf-4.4.3-r27.ebuild:
+  Bump curl
+
+*clip-core-conf-4.4.3-r27 (06 Nov 2015)
+
+  06 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r27.ebuild, -clip-core-conf-4.4.3-r26.ebuild:
+  Bump curl
+
+*clip-core-conf-4.4.3-r26 (04 Nov 2015)
+
+  04 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r26.ebuild, -clip-core-conf-4.4.3-r25.ebuild:
+  Bump syslinux, clip-generic-net
+
+*clip-core-conf-4.4.3-r25 (04 Nov 2015)
+
+  04 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r25.ebuild, -clip-core-conf-4.4.3-r24.ebuild:
+  Bump baselayout-cli,baselayout-rm, core-services, clip-vservers, clip-usermount
+  Added softhsm, libanssipki-crypto, tcl, fdp, sqlcipher, gmp
+
+*clip-core-conf-4.4.3-r24 (03 Nov 2015)
+
+  03 Nov 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r24.ebuild, -clip-core-conf-4.4.3-r23.ebuild:
+  Rbump strongswan - fix some reauthentication/rekeying issues with CCSD.
+
+*clip-core-conf-4.4.3-r23 (03 Nov 2015)
+
+  03 Nov 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r23.ebuild, -clip-core-conf-4.4.3-r22.ebuild:
+  Sync tar.
+
+*clip-core-conf-4.4.3-r22 (26 Oct 2015)
+
+  26 Oct 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r22.ebuild, -clip-core-conf-4.4.3-r21.ebuild:
+  Bump curl
+
+*clip-core-conf-4.4.3-r21 (23 Oct 2015)
+
+  23 Oct 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r21.ebuild, -clip-core-conf-4.4.3-r20.ebuild:
+  Rbump clip-kernel - improve intel i915 BDW support (HP Probook 430 G2)
+
+*clip-core-conf-4.4.3-r20 (22 Oct 2015)
+
+  22 Oct 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r20.ebuild, -clip-core-conf-4.4.3-r19.ebuild:
+  Rbump busybox and tar - only use the GNU tar.
+
+*clip-core-conf-4.4.3-r19 (22 Oct 2015)
+
+  22 Oct 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r19.ebuild, -clip-core-conf-4.4.3-r18.ebuild:
+  Rbump busybox - future-proof fix.
+
+*clip-core-conf-4.4.3-r18 (19 Oct 2015)
+
+  19 Oct 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r18.ebuild, -clip-core-conf-4.4.3-r17.ebuild:
+  Update for syslinux and clip-net versions.
+
+*clip-core-conf-4.4.3-r17 (15 Oct 2015)
+
+  15 Oct 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r17.ebuild, -clip-core-conf-4.4.3-r16.ebuild:
+  Update clip-core-conf for clip-hardware update in 3.14.24.
+
+
+*clip-core-conf-4.4.3-r16 (15 Oct 2015)
+
+  15 Oct 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r16.ebuild, -clip-core-conf-4.4.3-r15.ebuild:
+  Update clip-core-conf for clip-net-5.2.0 update in 5.2.1.
+
+*clip-core-conf-4.4.3-r15 (14 Oct 2015)
+
+  14 Oct 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r15.ebuild, -clip-core-conf-4.4.3-r14.ebuild:
+  Update clip-core-conf packages for dependency on linux-headers.
+
+*clip-core-conf-4.4.3-r14 (06 Oct 2015)
+
+  06 Oct 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r14.ebuild, -clip-core-conf-4.4.3-r13.ebuild:
+  RBump clip-net - fix CCSD private keys transition.
+
+*clip-core-conf-4.4.3-r12 (30 Sep 2015)
+
+  30 Sep 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r12.ebuild, -clip-core-conf-4.4.3-r11.ebuild:
+  Bump clip-hardware - fix iwldvm loading on Lenovo X240 and Dell E5550.
+  RBump clip-kernel - add rtlwifi backport from 3.18.
+  RBump clip-net - handle CCSD private keys transition.
+
+*clip-core-conf-4.4.3-r11 (30 Sep 2015)
+
+  30 Sep 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r11.ebuild, -clip-core-conf-4.4.3-r10.ebuild:
+  Bump media-libs/libpng
+
+*clip-core-conf-4.4.3-r10 (28 Sep 2015)
+
+  28 Sep 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r10.ebuild, -clip-core-conf-4.4.3-r9.ebuild:
+  Rbump clip-hardware - update wireless-firmware dependency.
+
+*clip-core-conf-4.4.3-r9 (18 Sep 2015)
+
+  18 Sep 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r9.ebuild, -clip-core-conf-4.4.3-r8.ebuild:
+  Bump clip-hardware and wireless-firmware - add support for Dell E5550, Lenovo
+  X240.
+
+*clip-core-conf-4.4.3-r8 (11 Sep 2015)
+
+  11 Sep 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r8.ebuild, -clip-core-conf-4.4.3-r7.ebuild:
+  Rbump clip-generic-net - Extend lifetime for the VPN flavour.
+
+*clip-core-conf-4.4.3-r7 (04 Sep 2015)
+
+  04 Sep 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r7.ebuild, -clip-core-conf-4.4.3-r6.ebuild:
+  Bump clip-download - Fix warnings.
+
+*clip-core-conf-4.4.3-r6 (04 Sep 2015)
+
+  04 Sep 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r6.ebuild, -clip-core-conf-4.4.3-r5.ebuild:
+  Rbump clip-netd - stunnel would not restart upon applying network
+  configuration
+
+*clip-core-conf-4.4.3-r5 (26 Aug 2015)
+
+  26 Aug 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r5.ebuild, -clip-core-conf-4.4.3-r4.ebuild:
+  Bump clip-hardware - Fix (old) ethernet glitch.
+
+*clip-core-conf-4.4.3-r4 (20 Aug 2015)
+
+  20 Aug 2015; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r4.ebuild, -clip-core-conf-4.4.3-r3.ebuild:
+  Bump clip-kernel to 3.14.51
+
+*clip-core-conf-4.4.3-r3 (18 Aug 2015)
+
+  18 Aug 2015; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r3.ebuild, -clip-core-conf-4.4.3-r2.ebuild:
+  Bump clip-kernel to 3.14.50
+
+*clip-core-conf-4.4.3-r2 (17 Aug 2015)
+
+  17 Aug 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r2.ebuild, -clip-core-conf-4.4.3-r1.ebuild:
+  Bump clip-hardware - improve graphics support on HP ProBook 430 G2.
+  Bump clip-kernel to 3.14.48.
+
+*clip-core-conf-4.4.3-r1 (30 Jul 2015)
+
+  30 Jul 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3-r1.ebuild, -clip-core-conf-4.4.3.ebuild:
+  Update syslinux installation in order to support UEFI:
+  Bump clip-install-clip
+  RBump syslinux
+  Bump clip-hardware
+  Apply various fix in order to compile clip-tiny:
+  RBum lipbxltck
+  RBump shadow
+
+*clip-core-conf-4.4.3 (29 Jul 2015)
+
+  29 Jul 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.3.ebuild, -clip-core-conf-4.4.2-r39.ebuild,
+  +files/clip-release-443.html, -files/clip-release-442.html:
+  Bump clip-core-conf.
+
+  29 Jul 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  clip-core-conf-4.4.2-r39.ebuild:
+  Store release useflags in /etc/shared/clip-flags.
+
+*clip-core-conf-4.4.2-r39 (13 Jul 2015)
+
+  13 Jul 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r39.ebuild, -clip-core-conf-4.4.2-r38.ebuild:
+  Bump clip-hardware - add wifi on Lenovo Thinkpad L510.
+  Rbump arping - force dep rebuild.
+
+*clip-core-conf-4.4.2-r38 (25 Jun 2015)
+
+  25 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r38.ebuild, -clip-core-conf-4.4.2-r37.ebuild:
+  Bump clip-kernel to 3.14.45.
+  Bump clip-hardware - UEFI support for Toshiba Portege R30.
+
+*clip-core-conf-4.4.2-r37 (19 Jun 2015)
+
+  19 Jun 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r37.ebuild, -clip-core-conf-4.4.2-r36.ebuild:
+  revert bump extra-firmwares
+
+*clip-core-conf-4.4.2-r36 (17 Jun 2015)
+
+  17 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r36.ebuild, -clip-core-conf-4.4.2-r35.ebuild:
+  Bump clip-net - more generic support for GOUV/CIVIL crypto.
+  Bump clip-hardware - add more KVM profiles
+  Bump extra-firmwares - add MS Surface pro firmware
+
+*clip-core-conf-4.4.2-r35 (10 Jun 2015)
+
+  10 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r35.ebuild, -clip-core-conf-4.4.2-r34.ebuild:
+  RBump strongswan - set retransmit_tries to 1.
+
+*clip-core-conf-4.4.2-r34 (09 Jun 2015)
+
+  09 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r34.ebuild, -clip-core-conf-4.4.2-r33.ebuild:
+  RBump splashutils - Fix build, bump freetype distfile.
+  Bump clip-hardware - Switch Dell D530 to ahci mode.
+  Bump clip-kernel to 3.14.44.
+
+*clip-core-conf-4.4.2-r33 (01 Jun 2015)
+
+  01 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r33.ebuild, -clip-core-conf-4.4.2-r32.ebuild:
+  RBump strongswan - fix CVE-2015-3991.
+  RBump clip-kernel - fix VServer race-condition and info-leak
+
+*clip-core-conf-4.4.2-r32 (26 May 2015)
+
+  26 May 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r32.ebuild, -clip-core-conf-4.4.2-r31.ebuild:
+  Don't install clip-gtw-net on clip-tiny for now.
+  Bump clip-net-virtual - support dependency on clip-generic-net.
+  RBump clip-generic-net - add support for clip-vpn setups, generic support for
+  jails services.
+  Bump clip-kernel - update Linux to 3.14.43, grsec to 3.1-3.14.43-201505222221.
+
+*clip-core-conf-4.4.2-r31 (20 May 2015)
+
+  20 May 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r31.ebuild, -clip-core-conf-4.4.2-r30.ebuild:
+  Add nginx for clip-rb.
+
+*clip-core-conf-4.4.2-r30 (19 May 2015)
+
+  19 May 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r30.ebuild, -clip-core-conf-4.4.2-r29.ebuild:
+  RBump boost, clip-baselayout, clip-hardware.
+
+*clip-core-conf-4.4.2-r29 (11 May 2015)
+
+  11 May 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r29.ebuild, -clip-core-conf-4.4.2-r28.ebuild:
+  Bump clip-kernel to 3.14.41.
+
+*clip-core-conf-4.4.2-r28 (04 May 2015)
+
+  04 May 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r28.ebuild, -clip-core-conf-4.4.2-r27.ebuild:
+  RBump strongswan - load revocation plugin.
+  Bump clip-install-clip, core-services, baselayout-core-userpriv, shadow,
+  wireless-firmwares.
+
+*clip-core-conf-4.4.2-r27 (30 Apr 2015)
+
+  30 Apr 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r27.ebuild, -clip-core-conf-4.4.2-r26.ebuild:
+  Rbump busybox - switch to non-static build where possible.
+  Bump freetype, glib, clip-user-mount, baselayout-clip, rbump sysvinit.
+
+*clip-core-conf-4.4.2-r26 (30 Apr 2015)
+
+  30 Apr 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r26.ebuild, -clip-core-conf-4.4.2-r25.ebuild:
+  Bump smartcard-monitor.
+
+*clip-core-conf-4.4.2-r25 (29 Apr 2015)
+
+  29 Apr 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r25.ebuild, -clip-core-conf-4.4.2-r24.ebuild:
+  Bump hotplug-clip - add powerdown support to device-admind.
+
+*clip-core-conf-4.4.2-r24 (22 Apr 2015)
+
+  22 Apr 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r24.ebuild, -clip-core-conf-4.4.2-r23.ebuild:
+  Bump clip-hardware - update KVM profile for video drivers.
+  Bump timezone-data - update to latest and remove conflict against glibc.
+  Bump clip-kernel to 3.14.39-r1.
+
+*clip-core-conf-4.4.2-r23 (17 Apr 2015)
+
+  17 Apr 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r23.ebuild, -clip-core-conf-4.4.2-r22.ebuild:
+  Bump clip-kernel, glibc, pam, strongswan, clip-hardware, busybox, openssl,
+  libffi, timezone-data, smartcard-monitor, lvm2, file, clip-net, hotplug-clip,
+  usb-printer-devices.
+  RBump libintl, db, cracklib, scdaemon.
+
+*clip-core-conf-4.4.2-r22 (27 Mar 2015)
+
+  27 Mar 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r22.ebuild, -clip-core-conf-4.4.2-r21.ebuild:
+  Rbump pkcs11-proxy - add read/write /tmp.
+
+*clip-core-conf-4.4.2-r21 (26 Mar 2015)
+
+  26 Mar 2015; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r21.ebuild, -clip-core-conf-4.4.2-r20.ebuild:
+  Rbump pkcs11-proxy.
+
+*clip-core-conf-4.4.2-r20 (25 Mar 2015)
+
+  25 Mar 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r20.ebuild, -clip-core-conf-4.4.2-r19.ebuild:
+  Rbump pkcs11-proxy - fix filter label, allow SetPin for core, fix read-write jail.
+  Rbump pcsc-lite - expose the smartcard monitor socket, fix read-write jail.
+  Rbump scdaemon - fix read-write jail.
+
+*clip-core-conf-4.4.2-r19 (12 Feb 2015)
+
+  12 Feb 2015; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r19.ebuild, -clip-core-conf-4.4.2-r18.ebuild:
+  Bump opensc
+
+*clip-core-conf-4.4.2-r18 (12 Feb 2015)
+
+  12 Feb 2015; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r18.ebuild, -clip-core-conf-4.4.2-r17.ebuild:
+  Bump proxy pkcs11
+
+*clip-core-conf-4.4.2-r17 (14 Jan 2015)
+
+  14 Jan 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r17.ebuild, -clip-core-conf-4.4.2-r16.ebuild: modify
+  hotplug-clip to handle the possible touchpad deactivation.
+
+*clip-core-conf-4.4.2-r16 (06 Jan 2015)
+
+  06 Jan 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r16.ebuild, -clip-core-conf-4.4.2-r15.ebuild:
+  Bump clip-hardware, fix missing nonumlock.
+  Rbump strongswan.
+
+*clip-core-conf-4.4.2-r15 (06 Jan 2015)
+
+  06 Jan 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r15.ebuild, -clip-core-conf-4.4.2-r14.ebuild:
+  Add support to virtio in clip-kernel
+
+*clip-core-conf-4.4.2-r14 (02 Jan 2015)
+
+  02 Jan 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r14.ebuild, -clip-core-conf-4.4.2-r13.ebuild:
+  Bump clip-kernel, boost.
+
+*clip-core-conf-4.4.2-r13 (31 Dec 2014)
+
+  31 Dec 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r13.ebuild, -clip-core-conf-4.4.2-r12.ebuild:
+  Bump curl.
+
+*clip-core-conf-4.4.2-r12 (30 Dec 2014)
+
+  30 Dec 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r12.ebuild, -clip-core-conf-4.4.2-r11.ebuild:
+  Security fixes :
+   - openssl
+   - file
+  Revert strongswan version as it is still a work in progress.
+
+*clip-core-conf-4.4.2-r11 (17 Dec 2014)
+
+  17 Dec 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r11.ebuild, -clip-core-conf-4.4.2-r10.ebuild:
+  Rbump strongswan - security fix for CVE-2014-9221.
+
+*clip-core-conf-4.4.2-r10 (24 Nov 2014)
+
+  24 Nov 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r10.ebuild, -clip-core-conf-4.4.2-r9.ebuild:
+  Bump clip-hardware - fix backlight.
+  Bump clip-net - support RMB civil crypto.
+
+*clip-core-conf-4.4.2-r9 (20 Nov 2014)
+
+  20 Nov 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r9.ebuild, -clip-core-conf-4.4.2-r8.ebuild:
+  Bump hotplug-clip - Fix screen plug/unplug issues when resuming from suspend.
+
+*clip-core-conf-4.4.2-r8 (18 Nov 2014)
+
+  18 Nov 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r8.ebuild, -clip-core-conf-4.4.2-r7.ebuild:
+  Bump clip-gtw-net - Fix ipsec_list_clients.
+
+*clip-core-conf-4.4.2-r7 (07 Nov 2014)
+
+  07 Nov 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r7.ebuild, -clip-core-conf-4.4.2-r6.ebuild:
+  Bump dhcpcd.
+
+*clip-core-conf-4.4.2-r6 (03 Nov 2014)
+
+  03 Nov 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r6.ebuild, -clip-core-conf-4.4.2-r5.ebuild:
+  Bump hotplug-clip, clip-usb-keys - Show full mount point options for USB disks
+  when clicking on the adeskbar button, even if USB_MOUNT_CURRENT_LEVEL is true.
+
+*clip-core-conf-4.4.2-r5 (03 Nov 2014)
+
+  03 Nov 2014; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r5.ebuild, -clip-core-conf-4.4.2-r4.ebuild:
+  Bump pkcs11-proxy
+
+*clip-core-conf-4.4.2-r4 (21 Oct 2014)
+
+  21 Oct 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r4.ebuild, -clip-core-conf-4.4.2-r3.ebuild:
+  RBump logrotate - Fix log retention by age.
+
+*clip-core-conf-4.4.2-r3 (21 Oct 2014)
+
+  21 Oct 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r3.ebuild, -clip-core-conf-4.4.2-r2.ebuild:
+  RBump strongswan - fix Mobike UDP encapsulation patch (regression since the
+  migration from 4.x to 5.x).
+
+*clip-core-conf-4.4.2-r2 (16 Oct 2014)
+
+  16 Oct 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r2.ebuild, -clip-core-conf-4.4.2-r1.ebuild:
+  RBump strongswan - Fix for encrypted keys (not supported anymore)
+
+*clip-core-conf-4.4.2-r1 (10 Oct 2014)
+
+  10 Oct 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2-r1.ebuild, -clip-core-conf-4.4.2.ebuild:
+  Rbump alsa-utils (again) - initialize all sound card instead of just the first
+  one it finds (fix for HDMI enabled computers).
+
+*clip-core-conf-4.4.2 (10 Oct 2014)
+
+  10 Oct 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.2.ebuild, -clip-core-conf-4.4.1-r72.ebuild:
+  Rbump alsa-utils - increase default master volume.
+
+*clip-core-conf-4.4.1-r72 (08 Oct 2014)
+
+  08 Oct 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r72.ebuild, -clip-core-conf-4.4.1-r71.ebuild:
+  Bump clip-kernel to 3.14.20.
+
+*clip-core-conf-4.4.1-r71 (07 Oct 2014)
+
+  07 Oct 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r71.ebuild, -clip-core-conf-4.4.1-r70.ebuild:
+  Bump clip-kernel - add patch for ALPSv7 touchpad support.
+
+*clip-core-conf-4.4.1-r70 (01 Oct 2014)
+
+  01 Oct 2014; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r70.ebuild, -clip-core-conf-4.4.1-r69.ebuild:
+  Bump pkcs11-proxy 
+
+*clip-core-conf-4.4.1-r69 (26 Sep 2014)
+
+  26 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r69.ebuild, -clip-core-conf-4.4.1-r68.ebuild:
+  Bump bash - security update (CVE-2014-7169)
+
+*clip-core-conf-4.4.1-r68 (24 Sep 2014)
+
+  24 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r68.ebuild, -clip-core-conf-4.4.1-r67.ebuild:
+  Bump bash - security update (CVE-2014-6271)
+
+*clip-core-conf-4.4.1-r67 (17 Sep 2014)
+
+  17 Sep 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r67.ebuild, -clip-core-conf-4.4.1-r66.ebuild:
+  Bump clip-generic-net - Fix WiFi access point scanning.
+
+*clip-core-conf-4.4.1-r66 (08 Sep 2014)
+
+  08 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r66.ebuild, -clip-core-conf-4.4.1-r65.ebuild:
+  Bump clip-kernel - update to 3.14.18
+
+*clip-core-conf-4.4.1-r65 (05 Sep 2014)
+
+  05 Sep 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r65.ebuild, -clip-core-conf-4.4.1-r64.ebuild:
+  Bump hotplug-clip, pwcheckd - fix current user detection (change in the last
+  command behavior)
+
+*clip-core-conf-4.4.1-r64 (04 Sep 2014)
+
+  04 Sep 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r64.ebuild, -clip-core-conf-4.4.1-r63.ebuild:
+  Bump busybox - add the route command to the clip livecd.
+
+*clip-core-conf-4.4.1-r63 (27 Aug 2014)
+
+  27 Aug 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r63.ebuild, -clip-core-conf-4.4.1-r62.ebuild:
+  Bump clip-hardware, wireless-firmwares - Add support for Toshiba Portege R30.
+
+*clip-core-conf-4.4.1-r62 (26 Aug 2014)
+
+  26 Aug 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r62.ebuild, -clip-core-conf-4.4.1-r61.ebuild:
+  Bump userd-server - fix bug that prevents password change since the latest
+  sys-apps/util-linux update.
+
+*clip-core-conf-4.4.1-r61 (14 Aug 2014)
+
+  14 Aug 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r61.ebuild, -clip-core-conf-4.4.1-r60.ebuild:
+  Bump pkcs11-proxy.
+
+*clip-core-conf-4.4.1-r60 (06 Aug 2014)
+
+  06 Aug 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r60.ebuild, -clip-core-conf-4.4.1-r59.ebuild:
+  RBump pkcs11-proxy - replace file bind mount by directory.
+  Bump hotplug-clip, userd-server, userd-client, libacidfile, pwcheckd - fix
+  build failure on amd64.
+  Bump sed, readline - new upstream release.
+  RBump sysvinit - stop using custom login program on livecd.
+  RBump pam_pkcs11 - fix build failure on amd64 because of a bad patch.
+
+*clip-core-conf-4.4.1-r59 (05 Aug 2014)
+
+  05 Aug 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r59.ebuild, -clip-core-conf-4.4.1-r58.ebuild:
+  RBump glib - Add gio module search path.
+
+*clip-core-conf-4.4.1-r58 (04 Aug 2014)
+
+  04 Aug 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r58.ebuild, -clip-core-conf-4.4.1-r57.ebuild:
+  Bump clip-gtw-net - Better logging in IPsec CRL reloader daemon.
+
+*clip-core-conf-4.4.1-r57 (01 Aug 2014)
+
+  01 Aug 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r57.ebuild, -clip-core-conf-4.4.1-r56.ebuild:
+  Bump wireless-firmwares - fix port to 3.14 .
+
+*clip-core-conf-4.4.1-r56 (30 Jul 2014)
+
+  30 Jul 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r56.ebuild, -clip-core-conf-4.4.1-r55.ebuild:
+  Bump clip-hardware - add WMI support for DELL Latitude E5440 profile.
+
+*clip-core-conf-4.4.1-r55 (29 Jul 2014)
+
+  29 Jul 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r55.ebuild, -clip-core-conf-4.4.1-r54.ebuild:
+  Bump opensc.
+
+*clip-core-conf-4.4.1-r54 (28 Jul 2014)
+
+  28 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r54.ebuild, -clip-core-conf-4.4.1-r53.ebuild:
+  Bump clip-generic-net, clip-sub - Fix networking restart error.
+
+*clip-core-conf-4.4.1-r53 (28 Jul 2014)
+
+  28 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r53.ebuild, -clip-core-conf-4.4.1-r52.ebuild:
+  Bump clip-generic-net - more network stats.
+  Bump core-services - more mountpoints for user session configuration.
+
+*clip-core-conf-4.4.1-r52 (25 Jul 2014)
+
+  25 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r52.ebuild, -clip-core-conf-4.4.1-r51.ebuild:
+  Bump clip-gtw-net, RBump clip-generic-net, strongswan - Add CRL support.
+
+*clip-core-conf-4.4.1-r51 (25 Jul 2014)
+
+  25 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r51.ebuild, -clip-core-conf-4.4.1-r50.ebuild:
+  Bump baselayout-clip - Fix slim not starting right after libpng update.
+
+*clip-core-conf-4.4.1-r50 (24 Jul 2014)
+
+  24 Jul 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r50.ebuild, -clip-core-conf-4.4.1-r49.ebuild:
+  Bump clip-hardware and wireless-firmwares - DELL Latitude E5440 profile.
+
+*clip-core-conf-4.4.1-r49 (24 Jul 2014)
+
+  24 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r49.ebuild, -clip-core-conf-4.4.1-r48.ebuild:
+  RBump clip-gtw-net.
+
+*clip-core-conf-4.4.1-r48 (21 Jul 2014)
+
+  21 Jul 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r48.ebuild, -clip-core-conf-4.4.1-r47.ebuild:
+  Bump pkcs11-proxy.
+
+*clip-core-conf-4.4.1-r47 (18 Jul 2014)
+
+  18 Jul 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r47.ebuild, -clip-core-conf-4.4.1-r46.ebuild:
+  Bump opensc to use a configuration file (only one slot for IAS-ECC
+  cards).
+
+*clip-core-conf-4.4.1-r46 (18 Jul 2014)
+
+  18 Jul 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r46.ebuild, -clip-core-conf-4.4.1-r45.ebuild:
+  Bump Caml Crush (jails mount)
+
+*clip-core-conf-4.4.1-r45 (18 Jul 2014)
+
+  18 Jul 2014; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r45.ebuild, -clip-core-conf-4.4.1-r44.ebuild:
+  Bump camlCrush (conf files again)
+
+*clip-core-conf-4.4.1-r44 (18 Jul 2014)
+
+  18 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r44.ebuild, -clip-core-conf-4.4.1-r43.ebuild:
+  Bump clip-net, clip-generic-net - add extra config variable XXX_ESP_CCSD for
+  hybrid tunnel (CCSD-IKE/AES-ESP) support.
+
+*clip-core-conf-4.4.1-r43 (15 Jul 2014)
+
+  15 Jul 2014; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r43.ebuild, -clip-core-conf-4.4.1-r42.ebuild:
+  Bump CamlCrush (conf files)
+
+*clip-core-conf-4.4.1-r42 (15 Jul 2014)
+
+  15 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r42.ebuild, -clip-core-conf-4.4.1-r41.ebuild:
+  Bump core-services - add extra mount points for the USER jail.
+
+*clip-core-conf-4.4.1-r41 (09 Jul 2014)
+
+  09 Jul 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r41.ebuild, -clip-core-conf-4.4.1-r40.ebuild:
+  Bump Caml Crush 1.0.2.
+
+*clip-core-conf-4.4.1-r39 (07 Jul 2014)
+
+  07 Jul 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r39.ebuild, -clip-core-conf-4.4.1-r38.ebuild:
+  Bump Caml Crush 1.0.2 (fix regression middleware).
+
+*clip-core-conf-4.4.1-r38 (07 Jul 2014)
+
+  07 Jul 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r38.ebuild, -clip-core-conf-4.4.1-r37.ebuild:
+  Bump core-services, rbump syslog-ng - add REMOTE_LOG_OTHER option.
+  Rbump clip-kernel, bump libpcre.
+
+*clip-core-conf-4.4.1-r37 (04 Jul 2014)
+
+  04 Jul 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r37.ebuild, -clip-core-conf-4.4.1-r36.ebuild:
+  Bump clip-kernel, libsamplerate.
+
+*clip-core-conf-4.4.1-r36 (03 Jul 2014)
+
+  03 Jul 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r36.ebuild, -clip-core-conf-4.4.1-r35.ebuild:
+  Bump pkcs11-proxy
+
+*clip-core-conf-4.4.1-r35 (01 Jul 2014)
+
+  01 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r35.ebuild, -clip-core-conf-4.4.1-r34.ebuild:
+  Bump clip-gtw-net - Fix ipsec_list_clients
+
+*clip-core-conf-4.4.1-r34 (25 Jun 2014)
+
+  25 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r34.ebuild, -clip-core-conf-4.4.1-r33.ebuild:
+  Bump curl, rbump clip-kernel.
+
+*clip-core-conf-4.4.1-r33 (25 Jun 2014)
+
+  25 Jun 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r33.ebuild, -clip-core-conf-4.4.1-r32.ebuild:
+  RBump pkcs11-proxy - sync Caml Crush 1.0.2.
+
+*clip-core-conf-4.4.1-r32 (23 Jun 2014)
+
+  23 Jun 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r32.ebuild, -clip-core-conf-4.4.1-r31.ebuild:
+  Bump clip-sub - Clamp MSS to PMTU for cleartext traffic.
+
+*clip-core-conf-4.4.1-r31 (20 Jun 2014)
+
+  20 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r31.ebuild, -clip-core-conf-4.4.1-r30.ebuild:
+  Bump clip-kernel.
+  Bump hotplug-clip - fix /sys perms, kill pulseaudio on sound context
+  switch. Bump/rbump libcap, attr, libtool - build fixes.
+  Bump clip-hardware - DELL Precision 3500 profile.
+
+*clip-core-conf-4.4.1-r30 (17 Jun 2014)
+
+  17 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r30.ebuild, -clip-core-conf-4.4.1-r29.ebuild:
+  RBump strongswan - CCSD support enabled by default on clip-hermes
+
+*clip-core-conf-4.4.1-r29 (16 Jun 2014)
+
+  16 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r29.ebuild, -clip-core-conf-4.4.1-r28.ebuild:
+  Bump clip-net to 5.1.8 - robustness improvement.
+  Bump clip-generic-net to 3.1.13 - bugfix.
+
+*clip-core-conf-4.4.1-r28 (12 Jun 2014)
+
+  12 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r28.ebuild, -clip-core-conf-4.4.1-r27.ebuild:
+  Bump clip-kernel and clip-hardware to 3.14. Yeepee.
+
+*clip-core-conf-4.4.1-r27 (12 Jun 2014)
+
+  12 Jun 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r27.ebuild, -clip-core-conf-4.4.1-r26.ebuild:
+  RBump stunnel - Support for RMB tunnels.
+
+*clip-core-conf-4.4.1-r26 (12 Jun 2014)
+
+  12 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r26.ebuild, -clip-core-conf-4.4.1-r25.ebuild:
+  Bump clip-net - add netfilter rule on RMB in case of an exclusive IPsec tunnel
+  and introduce configuration option to prevent non-IPsec traffic on RMB
+
+*clip-core-conf-4.4.1-r25 (11 Jun 2014)
+
+  11 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r25.ebuild, -clip-core-conf-4.4.1-r24.ebuild:
+  Bump clip-net - fix DNS support on RMB.
+
+*clip-core-conf-4.4.1-r24 (10 Jun 2014)
+
+  10 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r24.ebuild, -clip-core-conf-4.4.1-r23.ebuild:
+  Rbump clip-kernel. Bump {wireless,extra}-firmwares.
+  Bump openssl - security update.
+
+*clip-core-conf-4.4.1-r23 (04 Jun 2014)
+
+  04 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r23.ebuild, -clip-core-conf-4.4.1-r22.ebuild:
+  Bump clip-usb-keys - fix some Xdialog calls.
+  Bump busybox-*.
+
+*clip-core-conf-4.4.1-r22 (27 May 2014)
+
+  27 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r22.ebuild, -clip-core-conf-4.4.1-r21.ebuild:
+  Rbump clip-kernel, strongswan.
+  Bump clip-net - support mixed CCSD/non-CCSD IKE/ESP configs.
+  Bump baselayout-clip - try harder to resolve situations where 
+  /var/log is full.
+
+*clip-core-conf-4.4.1-r21 (22 May 2014)
+
+  22 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r21.ebuild, -clip-core-conf-4.4.1-r20.ebuild:
+  Bump dhcpcd, freetype, rbump bzip2 and splashutils.
+
+*clip-core-conf-4.4.1-r20 (20 May 2014)
+
+  20 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r20.ebuild, -clip-core-conf-4.4.1-r19.ebuild:
+  Rbump clip-kernel, bump clip-sub, clip-generic-net - fix wifi.
+  Bump util-linux, procpcs, rbump sysvinit, remove eject.
+
+*clip-core-conf-4.4.1-r19 (16 May 2014)
+
+  16 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r19.ebuild, -clip-core-conf-4.4.1-r18.ebuild:
+  Bump cracklib, libnl, wpa_supplicant.
+  Rbump vsctl - cleanup useless vprocunhide entries.
+
+*clip-core-conf-4.4.1-r18 (15 May 2014)
+
+  15 May 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r18.ebuild, -clip-core-conf-4.4.1-r17.ebuild:
+  RBump strongswan - build with openssl USE flag.
+	Bump clip-net - use civil cryptography for IKE negotation.
+  Bump clip-install-clip - backup all IKE config files.
+  RBump clip-generic-net - don't backup CCSD private keys and password, done in
+  clip-install-clip now.
+
+*clip-core-conf-4.4.1-r17 (15 May 2014)
+
+  15 May 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r17.ebuild, -clip-core-conf-4.4.1-r16.ebuild:
+  RBump alsa-utils - stop using obsolete /etc/conf.d/sound
+
+*clip-core-conf-4.4.1-r16 (12 May 2014)
+
+  12 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r16.ebuild, -clip-core-conf-4.4.1-r15.ebuild:
+  Bump libjpeg-turbo.
+
+*clip-core-conf-4.4.1-r15 (07 May 2014)
+
+  07 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r15.ebuild, -clip-core-conf-4.4.1-r14.ebuild:
+  Bump strongswan, rbump clip-kernel.
+  Bump userd-server - use PAM for password strength checks.
+  Bump clip-download - fix reported capitalization issues.
+
+*clip-core-conf-4.4.1-r14 (05 May 2014)
+
+  05 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r14.ebuild, -clip-core-conf-4.4.1-r13.ebuild:
+  Bump core-services, clip-vserver, rbump scdaemon, pkcs11-proxy, 
+  pcsc-lite - be more careful with /home/user when setting up jails.
+
+*clip-core-conf-4.4.1-r13 (02 May 2014)
+
+  02 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r13.ebuild, -clip-core-conf-4.4.1-r12.ebuild:
+  Bump hotplug-clip, core-services - fix sysfs perms both at startup
+  and when resuming from ACPI sleep.
+
+*clip-core-conf-4.4.1-r12 (30 Apr 2014)
+
+  30 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r12.ebuild, -clip-core-conf-4.4.1-r11.ebuild:
+  Bump clip-kernel, clip-hardware, core-services, hotplug-clip, 
+  baselayout-clip, clip-user-mount - kernel bump.
+
+*clip-core-conf-4.4.1-r11 (24 Apr 2014)
+
+  24 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r11.ebuild, -clip-core-conf-4.4.1-r10.ebuild:
+  Bump clip-generic-net - fix veth names for extra jails.
+
+*clip-core-conf-4.4.1-r10 (22 Apr 2014)
+
+  22 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r10.ebuild, -clip-core-conf-4.4.1-r9.ebuild:
+  Bump hotplug-clip - fix network bugs on resume.
+
+*clip-core-conf-4.4.1-r9 (18 Apr 2014)
+
+  18 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r9.ebuild, -clip-core-conf-4.4.1-r8.ebuild:
+  Bump clip-netd, hotplug, clip-usb-keys - stdio sanitization before
+  running external scripts.
+
+*clip-core-conf-4.4.1-r8 (16 Apr 2014)
+
+  16 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r8.ebuild, -clip-core-conf-4.4.1-r7.ebuild:
+  Bump grep - security update.
+  Rbump glib - fix dbus machine-id path.
+  Rbump pkcs11-proxy - don't error out of init script when some
+  parameters are missing.
+
+*clip-core-conf-4.4.1-r7 (10 Apr 2014)
+
+  10 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r7.ebuild, -clip-core-conf-4.4.1-r6.ebuild:
+  Bump strongswan - security fix.
+  Bump sysvinit, shadow, clip-user-mount - clip-tiny/arm support.
+  Bump libpng, rbump splashutils, bump libpcap.
+
+*clip-core-conf-4.4.1-r6 (08 Apr 2014)
+
+  08 Apr 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r6.ebuild, -clip-core-conf-4.4.1-r5.ebuild:
+  Bump OpenSSL - Heartbeat security fix.
+
+*clip-core-conf-4.4.1-r5 (07 Apr 2014)
+
+  07 Apr 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r5.ebuild, -clip-core-conf-4.4.1-r4.ebuild:
+  Bump clip-gtw-net - fix Hermes IPsec config.
+
+*clip-core-conf-4.4.1-r4 (26 Mar 2014)
+
+  26 Mar 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r4.ebuild, -clip-core-conf-4.4.1-r3.ebuild:
+  Bump clip-generic-net - fix wireless profile shutdown.
+  Bump clip-usb-keys - fix cdrom mount.
+
+*clip-core-conf-4.4.1-r3 (26 Mar 2014)
+
+  26 Mar 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r3.ebuild, -clip-core-conf-4.4.1-r2.ebuild:
+  Bump hotplug-clip - fix screen suspend/resume, usable without X11.
+
+*clip-core-conf-4.4.1-r2 (21 Mar 2014)
+
+  21 Mar 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r2.ebuild, -clip-core-conf-4.4.1-r1.ebuild:
+  Add clip-tiny config.
+  Unstable for ~x86.
+
+*clip-core-conf-4.4.1-r1 (11 Mar 2014)
+
+  11 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1-r1.ebuild, -clip-core-conf-4.4.1.ebuild:
+  Bump clip-generic-net, clip-net, clip-gtw-net - RMB IPsec
+  fixes (also in 4.4.0-r25).
+  Bump wireless-firmwares.
+
+*clip-core-conf-4.4.1 (11 Mar 2014)
+
+  11 Mar 2014; Thomas Calderon <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.1.ebuild, -clip-core-conf-4.4.0-r24.ebuild,
+  +files/clip-release-441.html, -files/clip-release-440.html:
+  Rbump syslog-ng - add /dev/log to new pkcs11-proxy jails.
+  Bump pkcs11-proxy - Switch to new pkcs11-proxy, A.K.A caml-crush.
+  Bump to 4.4.1.
+
+*clip-core-conf-4.4.0-r24 (05 Mar 2014)
+
+  05 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r24.ebuild, -clip-core-conf-4.4.0-r23.ebuild:
+  Bump clip-generic-net - fix veth names in pass_local_ssh.
+
+*clip-core-conf-4.4.0-r23 (04 Mar 2014)
+
+  04 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r23.ebuild, -clip-core-conf-4.4.0-r22.ebuild:
+  Bump clip-install-clip - fix typo.
+
+*clip-core-conf-4.4.0-r22 (04 Mar 2014)
+
+  04 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r22.ebuild, -clip-core-conf-4.4.0-r21.ebuild:
+  Bump clip-install-clip - force update checks on next boot following
+  a clip-core upgrate.
+  Bump xz-utils.
+
+*clip-core-conf-4.4.0-r21 (03 Mar 2014)
+
+  03 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r21.ebuild, -clip-core-conf-4.4.0-r20.ebuild:
+  Rbump syslog-ng - support /etc/syslog.d/*.script scripts.
+  Bump core-services, clip-usb-keys - manage uids for USB mounts 
+  dynamically, based on /etc/jails/*/usb.storage.
+
+*clip-core-conf-4.4.0-r20 (03 Mar 2014)
+
+  03 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r20.ebuild, -clip-core-conf-4.4.0-r19.ebuild:
+  Bump clip-libvserver, vsctl - support an arbitrary number of 
+  IPs per jail. 
+  Bump libacidfile - fix certificate parsing corner cases.
+  Bump file - security update.
+  Rbump tar - build fix.
+  Bump clip-hardware - add HP ProBook 6570b configs.
+
+*clip-core-conf-4.4.0-r19 (19 Feb 2014)
+
+  19 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r19.ebuild, -clip-core-conf-4.4.0-r18.ebuild:
+  Bump baselayout-clip - fix 'messages' logfile creation.
+  Bump clip-kernel.
+  Bump curl.
+
+*clip-core-conf-4.4.0-r18 (13 Feb 2014)
+
+  13 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r18.ebuild, -clip-core-conf-4.4.0-r17.ebuild:
+  Bump / rbump hotplug-clip, clip-user-mount, pam_pkcs11, pkcs11-proxy,
+  smartcard-monitor, userd-server, add libxlctk - smartcard fixes and 
+  support new models.
+  Bump clip-sub - fix for *_SAME_{UDP,TCP} import.
+
+*clip-core-conf-4.4.0-r17 (13 Feb 2014)
+
+  13 Feb 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r17.ebuild, -clip-core-conf-4.4.0-r16.ebuild:
+  Rbump busybox-*.
+
+*clip-core-conf-4.4.0-r16 (11 Feb 2014)
+
+  11 Feb 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r16.ebuild, -clip-core-conf-4.4.0-r15.ebuild:
+  Bump clip-sub - fix typo.
+
+*clip-core-conf-4.4.0-r15 (10 Feb 2014)
+
+  10 Feb 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r15.ebuild, -clip-core-conf-4.4.0-r14.ebuild:
+  Bump pkcs11-proxy.
+
+*clip-core-conf-4.4.0-r14 (07 Feb 2014)
+
+  07 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r14.ebuild, -clip-core-conf-4.4.0-r13.ebuild:
+  Bump clip-libvserver, vsctl - code cleanup, add vswatch.
+  Bump clip-vserver, clip-user-mount - code cleanup.
+
+*clip-core-conf-4.4.0-r13 (05 Feb 2014)
+
+  05 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r13.ebuild, -clip-core-conf-4.4.0-r12.ebuild:
+  Rbump clip-kernel - fix chromium termination.
+
+*clip-core-conf-4.4.0-r12 (04 Feb 2014)
+
+  04 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r12.ebuild, -clip-core-conf-4.4.0-r11.ebuild:
+  Bump clip-usb-keys - SD card fixes, change crypto key export format 
+  and add import script.
+  Bump verictl - code cleanup, load core entries in a single call.
+
+*clip-core-conf-4.4.0-r11 (30 Jan 2014)
+
+  30 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r11.ebuild, -clip-core-conf-4.4.0-r10.ebuild:
+  Bump timer-entropyd - be less of a CPU hog.
+  Bump clip-hardware - add SD card support for various models.
+
+*clip-core-conf-4.4.0-r10 (28 Jan 2014)
+
+  28 Jan 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r10.ebuild, -clip-core-conf-4.4.0-r9.ebuild:
+  RBump clip-vserver - Do not force CLIP_LAYOUT="mix" for Hestia.
+
+*clip-core-conf-4.4.0-r9 (28 Jan 2014)
+
+  28 Jan 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r9.ebuild, -clip-core-conf-4.4.0-r8.ebuild:
+  Bump clip-net - Fix Hestia IPsec configuration file.
+
+*clip-core-conf-4.4.0-r8 (28 Jan 2014)
+
+  28 Jan 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r8.ebuild, -clip-core-conf-4.4.0-r7.ebuild:
+  RBump stunnel - Fix init script.
+
+*clip-core-conf-4.4.0-r7 (24 Jan 2014)
+
+  24 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r7.ebuild, -clip-core-conf-4.4.0-r6.ebuild:
+  Bump hotplug-clip, usb-video-devices - sound capture configuration
+  + support for attributing webcams to 'none'.
+
+*clip-core-conf-4.4.0-r6 (22 Jan 2014)
+
+  22 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r6.ebuild, -clip-core-conf-4.4.0-r5.ebuild:
+  Rbump dpkg - add missing tar dependency.
+
+*clip-core-conf-4.4.0-r5 (21 Jan 2014)
+
+  21 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r5.ebuild, -clip-core-conf-4.4.0-r4.ebuild:
+  Bump baselayout-clip - fix test_fsck.
+  Rbump clip-kernel. Rbump scdaemo, move from init.d to local.d.
+
+*clip-core-conf-4.4.0-r4 (13 Jan 2014)
+
+  13 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r4.ebuild, -clip-core-conf-4.4.0-r3.ebuild:
+  Bump curl - security update.
+  Rbump ntp - fix veriexec entry.
+  Bump glib, libffi-core.
+  Rbump busybox-*, bump clip-install-clip - fixup busybox in RM_*
+  at boot.
+  Bump core-services - run ssh-update-known-hosts after clip_apps_install.
+
+*clip-core-conf-4.4.0-r3 (10 Jan 2014)
+
+  10 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r3.ebuild, -clip-core-conf-4.4.0-r2.ebuild:
+  Rbump libjpeg-turbo - security update.
+
+*clip-core-conf-4.4.0-r2 (10 Jan 2014)
+
+  10 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r2.ebuild, -clip-core-conf-4.4.0-r1.ebuild:
+  Bump clip-generic-net - fix static IP init.
+  Bump openrc.
+  Rbump clip-kernel, clip-hardware.
+
+*clip-core-conf-4.4.0-r1 (08 Jan 2014)
+
+  08 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0-r1.ebuild, -clip-core-conf-4.4.0.ebuild:
+  Bump syslog-ng, clip-vserver - fix RM syslog.
+  Bump clip-install-clip - fix invert_boot timeout.
+  Rbump clip-kernel - fix mkinitrd.
+
+*clip-core-conf-4.4.0 (08 Jan 2014)
+
+  08 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.4.0.ebuild, -clip-core-conf-4.3.8-r43.ebuild,
+  -files/clip-release-438.html, +files/clip-release-440.html,
+  files/postinst.misc:
+  Bump to 4.4.0.
+  Bump syslog-ng, add libpcre.
+  Bump openssl, libpng, hwids, rbump splashutils.
+  Replace module-init-tools with kmod, bump clip-kernel.
+  Postinst - change CLEARTEXT_LEVELS="clip ..." to 
+  CLEARTEXT_LEVELS="admin audit update ..." in /etc/usbkeys.conf.
+
+*clip-core-conf-4.3.8-r43 (06 Jan 2014)
+
+  06 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r43.ebuild, -clip-core-conf-4.3.8-r42.ebuild:
+  Bump clip-sub, clip-usb-keys - fixes for modular USB config.
+  Bump clip-generic-net - fix local SSH rules.
+  Bump vsctl, rbump core-services - support extra fstab.{internal,external}.d
+  directories in jail configurations.
+
+*clip-core-conf-4.3.8-r42 (02 Jan 2014)
+
+  02 Jan 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r42.ebuild, -clip-core-conf-4.3.8-r41.ebuild:
+  RBump clip-kernel - Enable GCM for IPsec.
+  RBump strongswan - fix responder CCSDAKA backend initialization.
+	Bump clip-net - Add support for civil cryptography for RMB IPsec tunnels.
+	Bump clip-gtw-net - Add support for civil cryptography for RMB IPsec tunnels
+	as responder and fix a bug in netfilter ICMP rules.
+
+*clip-core-conf-4.3.8-r41 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r41.ebuild, -clip-core-conf-4.3.8-r40.ebuild:
+  Bump core-services - run ssh-update-known-hosts at boot.
+
+*clip-core-conf-4.3.8-r40 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r40.ebuild, -clip-core-conf-4.3.8-r39.ebuild,
+  -files/postinst.knownhosts:
+  Bump core-services, clip-generic-net and userd-server - support SSH
+  access to extra jails based on /etc/jails/*/ssh.
+  Bump clip-vservers - remove leftover VNC sockets at boot, if any are
+  found.
+  Remove knownhosts postinst snippet - the global known_host file is
+  now updated as needed by openssh packages.
+
+*clip-core-conf-4.3.8-r39 (02 Jan 2014)
+
+  02 Jan 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r39.ebuild, -clip-core-conf-4.3.8-r38.ebuild:
+  Bump clip-generic-net - Fix UMTS network profiles.
+
+*clip-core-conf-4.3.8-r38 (31 Dec 2013)
+
+  31 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r38.ebuild, -clip-core-conf-4.3.8-r37.ebuild:
+  Bump clip-generic-net - better support for UTF-8 ESSIDs.
+  Bump clip-usb-keys, core-services, clip-vserver - modular USB jail
+  config.
+  Rbump all packages that install an init.d script - add openrc 
+  dependency through a new portage hook.
+
+*clip-core-conf-4.3.8-r37 (31 Dec 2013)
+
+  31 Dec 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r37.ebuild, -clip-core-conf-4.3.8-r36.ebuild:
+  RBump hotplug-clip - Add openrc dependency.
+
+*clip-core-conf-4.3.8-r35 (24 Dec 2013)
+
+  24 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r35.ebuild, -clip-core-conf-4.3.8-r34.ebuild:
+  Bump baselayout-clip, rbump syslog-ng and logrotate - customizable
+  syslog configuration.
+
+*clip-core-conf-4.3.8-r34 (23 Dec 2013)
+
+  23 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r34.ebuild, -clip-core-conf-4.3.8-r33.ebuild:
+  Bump baselayout-clip, syslog-ng - add 'download.log' file and 
+  fix clip-download/clip-install logging (hopefully).
+
+*clip-core-conf-4.3.8-r33 (23 Dec 2013)
+
+  23 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r33.ebuild, -clip-core-conf-4.3.8-r32.ebuild:
+  Bump dpkg.
+
+*clip-core-conf-4.3.8-r32 (23 Dec 2013)
+
+  23 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r32.ebuild, -clip-core-conf-4.3.8-r31.ebuild:
+  Bump perl, and bump / rbump all perl modules.
+
+*clip-core-conf-4.3.8-r31 (20 Dec 2013)
+
+  20 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r31.ebuild, -clip-core-conf-4.3.8-r30.ebuild:
+  Rbump freetype, expat - build fixes.
+  Bump gawk.
+
+*clip-core-conf-4.3.8-r29 (16 Dec 2013)
+
+  16 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r29.ebuild, -clip-core-conf-4.3.8-r28.ebuild:
+  Rbump clip-net, clip-gtw-net - fix postinst.
+
+*clip-core-conf-4.3.8-r28 (13 Dec 2013)
+
+  13 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r28.ebuild, -clip-core-conf-4.3.8-r27.ebuild:
+  Bump clip-*net - change client configs to not prompt for a network
+  profile at boot, but use the graphical nethchooser in slim.
+
+*clip-core-conf-4.3.8-r27 (12 Dec 2013)
+
+  12 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r27.ebuild, -clip-core-conf-4.3.8-r26.ebuild:
+  Bump clip-kernel.
+  Bump hotplug-clip, rbump alsa-utils - mask snd devices when not 
+  associated to a RM jail.
+  Bump clip-hardware - nonumlock on Sony Vaios.
+  Rbump busybox-*, curl.
+
+*clip-core-conf-4.3.8-r26 (27 Nov 2013)
+
+  27 Nov 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r26.ebuild, -clip-core-conf-4.3.8-r25.ebuild:
+  Bump clip-lib.
+
+*clip-core-conf-4.3.8-r25 (22 Nov 2013)
+
+  22 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r25.ebuild, -clip-core-conf-4.3.8-r24.ebuild:
+  RBump expat - multilib.
+
+*clip-core-conf-4.3.8-r24 (21 Nov 2013)
+
+  21 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r24.ebuild, -clip-core-conf-4.3.8-r23.ebuild:
+  Rbump splashutils, remove fbgrab and libpng15 - libpng revdep.
+  Bump curl - security update.
+  Bump clip-net - cosmetic changes.
+  Bump baselayout-clip - switch to openRC parallel mode.
+
+*clip-core-conf-4.3.8-r23 (20 Nov 2013)
+
+  20 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r23.ebuild, -clip-core-conf-4.3.8-r22.ebuild:
+  RBump libiconv - stabilization.
+
+*clip-core-conf-4.3.8-r22 (14 Nov 2013)
+
+  14 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r22.ebuild, -clip-core-conf-4.3.8-r21.ebuild:
+  Bump smartcard-monitor, rbump pcsc-lite, pkcs11-proxy, scdaemon - 
+  migrate config to '/etc/admin/conf.d/smartcards', support globally
+  disabling smartcard support.
+  Bump glibc, openssl.
+
+*clip-core-conf-4.3.8-r21 (14 Nov 2013)
+
+  14 Nov 2013; ANSSI <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r21.ebuild, -clip-core-conf-4.3.8-r20.ebuild:
+  Bump libgpg-error.
+  Bump scdaemon.
+
+*clip-core-conf-4.3.8-r20 (13 Nov 2013)
+
+  13 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r20.ebuild, -clip-core-conf-4.3.8-r19.ebuild:
+  Rbump boost and libjpeg-turbo following updates in rm-apps.
+
+*clip-core-conf-4.3.8-r19 (12 Nov 2013)
+
+  12 Nov 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r19.ebuild, -clip-core-conf-4.3.8-r18.ebuild:
+  Bump clip-usb-keys - fix ext4 and add ext3 support.
+
+*clip-core-conf-4.3.8-r18 (08 Nov 2013)
+
+  08 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r18.ebuild, -clip-core-conf-4.3.8-r17.ebuild:
+  Bump clip-net - Fix typo in ipsec.conf.skel.
+
+*clip-core-conf-4.3.8-r17 (08 Nov 2013)
+
+  08 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r17.ebuild, -clip-core-conf-4.3.8-r16.ebuild:
+  Bump clip-generic-net, clip-gtw-net - Move some import filter to
+  clip-generic-net.
+  Bump clib-sub - Add new function for forcing IPsec only for specific
+  destination networks.
+  Bump clip-net, clip-vserver - Add support for RMB IPsec tunnels.
+
+*clip-core-conf-4.3.8-r16 (07 Nov 2013)
+
+  07 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r16.ebuild, -clip-core-conf-4.3.8-r15.ebuild:
+  Bump clip-kernel.
+  Bump vsctl - fix ping sockets.
+
+*clip-core-conf-4.3.8-r15 (06 Nov 2013)
+
+  06 Nov 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r15.ebuild, -clip-core-conf-4.3.8-r14.ebuild:
+  Bump clip-generic-net - fix typos.
+
+*clip-core-conf-4.3.8-r14 (31 Oct 2013)
+
+  31 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r14.ebuild, -clip-core-conf-4.3.8-r13.ebuild:
+  Bump gcc-lib, libpng, add libpng15.
+  Bump iptables.
+  Bump clip-install-clip, rbump openrc - init script fixes.
+  Bump vsctl, rbump zlib - build fixes.
+
+*clip-core-conf-4.3.8-r13 (25 Oct 2013)
+
+  25 Oct 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r13.ebuild, -clip-core-conf-4.3.8-r12.ebuild:
+  RBump strongSwan - fix CVE-2013-6075.
+
+*clip-core-conf-4.3.8-r12 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r12.ebuild, -clip-core-conf-4.3.8-r11.ebuild:
+  Bump CLIP-Pkg-Download - clip-dev update.
+  Bump core-services, clip-vserver, rbump verictl - init scripts cleanup
+  + get veriexec context info from /etc/jail subdirs.
+  Bump clip-hardware - add nonumlock files.
+  Bump hotplug-clip, clip-sub, baselayout-clip, clip-install-clip, rbump
+  alsa-utils - cleanup init scripts, prompt on tty8 at boot to maybe 
+  support parallel boot in the future.
+
+*clip-core-conf-4.3.8-r10 (22 Oct 2013)
+
+  22 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r10.ebuild, -clip-core-conf-4.3.8-r9.ebuild:
+  Rbump dpkg - forced rebuild.
+
+*clip-core-conf-4.3.8-r9 (22 Oct 2013)
+
+  22 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r9.ebuild, -clip-core-conf-4.3.8-r8.ebuild:
+  Bump CLIP-Pkg-Download (clip-sdk update).
+  Bump clip-generic-net, clip-net, clip-gtw-net - switch to modular
+  design.
+  Bump clip-install-clip, baselayout-clip, clip-download - add -timeout
+  keyword where needed.
+
+*clip-core-conf-4.3.8-r8 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r8.ebuild, -clip-core-conf-4.3.8-r7.ebuild:
+  Bump clip-generic-net - typo fixes.
+  Bump CLIP-Pkg-Download - big optimization of Packages.gz generation.
+
+*clip-core-conf-4.3.8-r7 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r7.ebuild, -clip-core-conf-4.3.8-r6.ebuild:
+  Bump clip-generic-net - fix leftover paths.
+  Bump clip-install-clip, rbump splashutils - try to fix splash 
+  warnings during reboot after an upgrade.
+
+*clip-core-conf-4.3.8-r6 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r6.ebuild, -clip-core-conf-4.3.8-r5.ebuild:
+  Bump clip-*net, clip-vserver, clip-download, clip-install-clip -
+  initd scripts cleanup / optimization.
+
+*clip-core-conf-4.3.8-r5 (17 Oct 2013)
+
+  17 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r5.ebuild, -clip-core-conf-4.3.8-r4.ebuild:
+  Bump clip-install-clip - openrc + mirror flags minor fixes.
+  Bump baselayout-clip - openrc minor fixes.
+
+*clip-core-conf-4.3.8-r4 (16 Oct 2013)
+
+  16 Oct 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r4.ebuild, -clip-core-conf-4.3.8-r3.ebuild:
+  Bump clip-net - Fix UPDATE tunnel in Hestia with dynamic IPsec
+  addresses.
+
+*clip-core-conf-4.3.8-r3 (16 Oct 2013)
+
+  16 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r3.ebuild, -clip-core-conf-4.3.8-r2.ebuild:
+  Bump xz-utils, rename it to xz-utils-core, rbump dpkg to update
+  dependency.
+  Bump CLIP-Pkg-Download, clip-install-common and clip-install-clip,
+  use per-mirror flags to limit call to clip_install at boot time.
+  Rbump baselayout-clip, splashutils - openrc fixes.
+
+*clip-core-conf-4.3.8-r2 (15 Oct 2013)
+
+  15 Oct 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r2.ebuild, -clip-core-conf-4.3.8-r1.ebuild:
+  Add xz-utils, rbump dpkg - add XZ uncompress capability for update.
+
+*clip-core-conf-4.3.8-r1 (14 Oct 2013)
+
+  14 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8-r1.ebuild, -clip-core-conf-4.3.8.ebuild:
+  Bump baselayout-clip, hotplug-clip, clip-netd, clip-generic-net, 
+  clip-sub, smartcard-monitor, kbd, rbump ncurses, cryptd-server,
+  userd-server, splashutils, add openrc - switch to openrc startup.
+  Run IP checks in /etc/init.d/networking in the background.
+
+*clip-core-conf-4.3.8 (10 Oct 2013)
+
+  10 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.8.ebuild, -clip-core-conf-4.3.7-r25.ebuild,
+  +files/clip-release-438.html, -files/clip-release-437.html:
+  Bump hotplug-clip, rbump verictl - build fixes + fix sound 
+  switch.
+  Bump libacidfile, cryptd-server, vsctl - portability fixes.
+  Bump strongswan, clip-net, clip-gtw-net - major upgrade.
+  Bump CLIP-Pkg-Download, clip-install-clip, rbump baselayout-clip, 
+  clip-kernel - share RM jails (sda7/8) between clip1 and clip2.
+
+*clip-core-conf-4.3.7-r25 (20 Sep 2013)
+
+  20 Sep 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r25.ebuild, -clip-core-conf-4.3.7-r24.ebuild:
+  Bump clip-kernel.
+  Rbump clip-netd, vsctl - fix ipsec dynamic addresses.
+
+*clip-core-conf-4.3.7-r24 (04 Sep 2013)
+
+  04 Sep 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r24.ebuild, -clip-core-conf-4.3.7-r23.ebuild:
+  Rbump clip-kernel.
+
+*clip-core-conf-4.3.7-r23 (04 Sep 2013)
+
+  04 Sep 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r23.ebuild, -clip-core-conf-4.3.7-r22.ebuild:
+  Bump libtool.
+
+*clip-core-conf-4.3.7-r22 (30 Aug 2013)
+
+  30 Aug 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r22.ebuild, -clip-core-conf-4.3.7-r21.ebuild:
+  Bump clip-net - Support for dynamic private IPsec addresses in Hestia.
+
+*clip-core-conf-4.3.7-r21 (30 Aug 2013)
+
+  30 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r21.ebuild, -clip-core-conf-4.3.7-r20.ebuild:
+  Rbump clip-hardware - fix postinst...
+
+*clip-core-conf-4.3.7-r20 (29 Aug 2013)
+
+  29 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r20.ebuild, -clip-core-conf-4.3.7-r19.ebuild:
+  Rbump glibc, kernel - minor security fixes.
+
+*clip-core-conf-4.3.7-r19 (28 Aug 2013)
+
+  28 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r19.ebuild, -clip-core-conf-4.3.7-r18.ebuild:
+  Bump scdaemon - fix spurious crashes.
+  Rbump clip-hardware - fix postinst update of bootargs.
+  Bump hotplug-clip - fix for Mac internal keyboard.
+
+*clip-core-conf-4.3.7-r18 (26 Aug 2013)
+
+  26 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r18.ebuild, -clip-core-conf-4.3.7-r17.ebuild:
+  Bump hotplug-clip - add a time check to avoid reactivating a network
+  config if the network interface was unplugged for less than one minute.
+
+*clip-core-conf-4.3.7-r17 (23 Aug 2013)
+
+  23 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r17.ebuild, -clip-core-conf-4.3.7-r16.ebuild:
+  files/postinst.misc:
+  Finer grained access control for files in network profiles, conforming
+  with what we do in clip-config.
+
+*clip-core-conf-4.3.7-r16 (23 Aug 2013)
+
+  23 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r16.ebuild, -clip-core-conf-4.3.7-r15.ebuild,
+  files/postinst.misc, files/postinst.packages, files/postinst.rmh-net:
+  Rbump dhcpcd - more umask fixes. Postinst script - umask fixes.
+  Bump hotplug-clip - reactivate network profile when an interface is
+  plugged back in.
+
+*clip-core-conf-4.3.7-r15 (21 Aug 2013)
+
+  21 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r15.ebuild, -clip-core-conf-4.3.7-r14.ebuild:
+  Rbump clip-kernel. Bump core-services - add mountpoint for viewers.
+
+*clip-core-conf-4.3.7-r14 (20 Aug 2013)
+
+  20 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r14.ebuild, -clip-core-conf-4.3.7-r13.ebuild:
+  Rbump clip-kernel. Bump cryptsetup, busybox*, e2fsprogs{,-libs}, rbump
+  v86d.
+
+*clip-core-conf-4.3.7-r13 (14 Aug 2013)
+
+  14 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r13.ebuild, -clip-core-conf-4.3.7-r12.ebuild:
+  Rbump splashutils.
+
+*clip-core-conf-4.3.7-r12 (13 Aug 2013)
+
+  13 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r12.ebuild, -clip-core-conf-4.3.7-r11.ebuild:
+  Bump zlib.
+
+*clip-core-conf-4.3.7-r11 (09 Aug 2013)
+
+  09 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r11.ebuild, -clip-core-conf-4.3.7-r10.ebuild:
+  Rbump clip-kernel - add HR timers.
+  Bump alsa-{lib,utils}.
+
+*clip-core-conf-4.3.7-r10 (06 Aug 2013)
+
+  06 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r10.ebuild, -clip-core-conf-4.3.7-r9.ebuild:
+  Bump boost, libjpeg-turbo, libpng, file. Rbump glibc.
+  Bump clip-hardware - iMac support :)
+  Rbump alsa-utils, bump hotplug-clip, bump clip-kernel - support
+  dynamic switch of sound system between jails, require audio group
+  membership to access the devices.
+  Bump clip-usb-keys - ext4 support.
+
+*clip-core-conf-4.3.7-r9 (23 Jul 2013)
+
+  23 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r9.ebuild, -clip-core-conf-4.3.7-r8.ebuild:
+  Rbump clip-kernel - bump debian patch bundle.
+  Rbump apt, bump CLIP-Pkg-Download and clip-download - add a fallback
+  to remote mirrors only when downloading from a local mirror (e.g.
+  another RM jail) fails.
+  Rbump glibc - add FILE mangle patch.
+
+*clip-core-conf-4.3.7-r8 (17 Jul 2013)
+
+  17 Jul 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r8.ebuild, -clip-core-conf-4.3.7-r7.ebuild:
+  Bump clip-hardware - add profiles for Lenovo IdeaPad S205
+  and Toshiba Portege R930.
+
+*clip-core-conf-4.3.7-r7 (16 Jul 2013)
+
+  16 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r7.ebuild, -clip-core-conf-4.3.7-r6.ebuild:
+  Rbump clip-kernel, bump wireless-firmwares and add extra-firmwares -
+  split firmwares over two packages, add radeon GPU firmwares. 
+  Rbump glibc - security fix.
+  Bump vsctl - switch to '%' as separator for env var lists.
+
+*clip-core-conf-4.3.7-r6 (10 Jul 2013)
+
+  10 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r6.ebuild, -clip-core-conf-4.3.7-r5.ebuild:
+  Bump clip-kernel, curl.
+
+*clip-core-conf-4.3.7-r5 (05 Jul 2013)
+
+  05 Jul 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r5.ebuild, -clip-core-conf-4.3.7-r4.ebuild:
+  Bump clip-hardware - add profile for Lenovo ThinkStation S20.
+  Rbump baselayout-clip - fix group for /etc/tcb.
+
+*clip-core-conf-4.3.7-r4 (13 Jun 2013)
+
+  13 Jun 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r4.ebuild, -clip-core-conf-4.3.7-r3.ebuild:
+  Rbump clip-kernel, bump clip-hardware and clip-generic-net, add
+  ethtool - attempt to fix suspected ethernet flow control issues
+  on some models + provide a generic way to run hardware-specific
+  scripts at startup.
+
+*clip-core-conf-4.3.7-r3 (07 Jun 2013)
+
+  07 Jun 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r3.ebuild, -clip-core-conf-4.3.7-r2.ebuild:
+  Bump clip-download, rbump dhcpcd - fix umask issues. Bump 
+  hotplug-clip - fix firmware loading. Bump clip-kernel.
+
+*clip-core-conf-4.3.7-r2 (03 Jun 2013)
+
+  03 Jun 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r2.ebuild, -clip-core-conf-4.3.7-r1.ebuild:
+  RBump stunnel - Fix config file read permission.
+
+*clip-core-conf-4.3.7-r1 (31 May 2013)
+
+  31 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7-r1.ebuild, -clip-core-conf-4.3.7.ebuild:
+  Rbump clip-kernel, add clip-hardware - include h/w configuration
+  profiles in base install.
+  Bump hotplug-clip, rbump opensc - support Gemalto IAS ECC v2.0 
+  smartcards and Navigo readers.
+  Rbump vsctl, alsa-utils - fix soundcard init.
+
+*clip-core-conf-4.3.7 (21 May 2013)
+
+  21 May 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.7.ebuild, -clip-core-conf-4.3.6-r36.ebuild:
+  RBump stunnel - Fix TLS_GW variable needed.
+
+*clip-core-conf-4.3.6-r36 (15 May 2013)
+
+  15 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r36.ebuild, -clip-core-conf-4.3.6-r35.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.6-r35 (10 May 2013)
+
+  10 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r35.ebuild, -clip-core-conf-4.3.6-r34.ebuild:
+  Rbump clip-kernel - fix initrd warnings when booting off ext4.
+
+*clip-core-conf-4.3.6-r34 (07 May 2013)
+
+  07 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r34.ebuild, -clip-core-conf-4.3.6-r33.ebuild:
+  Bump userd-server - switch to fallocate.
+  Bump clip-generic-net - fix permissions.
+  Bump libacidcrypt, cryptd-server - support re-encrypted archives.
+
+*clip-core-conf-4.3.6-r33 (03 May 2013)
+
+  03 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r33.ebuild, -clip-core-conf-4.3.6-r32.ebuild:
+  Bump clip-kernel. Bump curl - security update. Bump clip-usb-keys -
+  add mmc support.
+  Rbump strongswan - fix ECDSA vuln.
+
+*clip-core-conf-4.3.6-r32 (25 Apr 2013)
+
+  25 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r32.ebuild, -clip-core-conf-4.3.6-r31.ebuild:
+  Bump wireless-firmwares - Update misc firmwares.
+
+*clip-core-conf-4.3.6-r31 (23 Apr 2013)
+
+  23 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r31.ebuild, -clip-core-conf-4.3.6-r30.ebuild:
+  Bump clip-generic-net - Enhance wireless interface detections.
+  Bump hotplug-clip - Fix firmware loading timeout.
+
+*clip-core-conf-4.3.6-r30 (19 Apr 2013)
+
+  19 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r30.ebuild, -clip-core-conf-4.3.6-r29.ebuild:
+  Rbump clip-kernel - handle ext4 everywhere in initrd.
+  Bump baselayout-clip - handle ext4 filesystems for system partitions.
+  Bump clip-user-mount - handle ext4 filesystems for user partitions.
+
+*clip-core-conf-4.3.6-r29 (18 Apr 2013)
+
+  18 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r29.ebuild, -clip-core-conf-4.3.6-r28.ebuild:
+  Rbump clip-kernel.
+  Rbump pkcs11-proxy, scdaemon - fix conffiles and init.d stop.
+  Bump hotplug-clip - add socket events to request suspend.
+  Bump vsctl - add multiple fs types support to nsmount.
+
+*clip-core-conf-4.3.6-r28 (12 Apr 2013)
+
+  12 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r28.ebuild, -clip-core-conf-4.3.6-r27.ebuild,
+  +files/postinst.ipsec:
+  Bump pcsc-lite, ccid, rbump pkcs11-proxy and scdaemon.
+  Rbump curl - add curl in ADMIN.
+  Bump clip-kernel.
+  Bump libtasn1.
+  Add postinst snippet to move gateway configs in net profiles into
+  the new 'ipsec' config file.
+
+*clip-core-conf-4.3.6-r27 (10 Apr 2013)
+
+  10 Apr 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r27.ebuild, -clip-core-conf-4.3.6-r26.ebuild:
+  Bump clip-generic-net, clip-net
+
+*clip-core-conf-4.3.6-r26 (10 Apr 2013)
+
+  10 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r26.ebuild, -clip-core-conf-4.3.6-r25.ebuild:
+  Add scdaemon.
+
+*clip-core-conf-4.3.6-r25 (09 Apr 2013)
+
+  09 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r25.ebuild, -clip-core-conf-4.3.6-r24.ebuild:
+  Bump baselayout-clip - fix hostname import.
+  Bump clip-usb-keys - add support for USB_LEVEL_ANY.
+  Rbump clip-kernel.
+
+*clip-core-conf-4.3.6-r24 (04 Apr 2013)
+
+  04 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r24.ebuild, -clip-core-conf-4.3.6-r23.ebuild:
+  Bump clip-kernel, backported drm.
+  Bump hotplug-clip - properly turn off disconnected screens.
+  Bump/rbump pkcs11-proxy, pam_pkcs11, smartcard-readers, clip-user-mount,
+  userd-server, add boost and libgtop11dotnet - support migrating users to 
+  smartcard auth, support .NET smartcards.
+  Bump cryptd-server - fix for file name encoding translation and handling.
+
+*clip-core-conf-4.3.6-r23 (29 Mar 2013)
+
+  29 Mar 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r23.ebuild, -clip-core-conf-4.3.6-r22.ebuild:
+  RBump stunnel - configurable tunnels.
+
+*clip-core-conf-4.3.6-r22 (18 Mar 2013)
+
+  18 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r22.ebuild, -clip-core-conf-4.3.6-r21.ebuild:
+  Bump clip-kernel. Bump libacidcryp - fix for self-encryption. Bump
+  pkcs11-proxy - fix umask. Bump clip-usb-keys - fix fsck.
+
+*clip-core-conf-4.3.6-r21 (13 Mar 2013)
+
+  13 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r21.ebuild, -clip-core-conf-4.3.6-r20.ebuild:
+  Rbump clip-kernel - add ext4 support. 
+  Bump ckiutl, rbump opensc - smartcard support.
+  Bump core-services - fix startup dependencies.
+  Bump splash-theme-clip - more supported resolutions.
+
+*clip-core-conf-4.3.6-r20 (13 Mar 2013)
+
+  13 Mar 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r20.ebuild, -clip-core-conf-4.3.6-r19.ebuild:
+  Add hwids, rbump clip-generic-net.
+
+*clip-core-conf-4.3.6-r19 (08 Mar 2013)
+
+  08 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r19.ebuild, -clip-core-conf-4.3.6-r18.ebuild:
+  Bump clip-kernel.
+  Rbump strongswan - fix COOKIE behaviour.
+
+*clip-core-conf-4.3.6-r18 (07 Mar 2013)
+
+  07 Mar 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r18.ebuild, -clip-core-conf-4.3.6-r17.ebuild:
+  Bump clip-usb-keys, baselayout-clip, clip-lib, clip-kernel, rbump shadow - set
+  a strict default umask for processes and mounts.
+
+*clip-core-conf-4.3.6-r17 (06 Mar 2013)
+
+  06 Mar 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r17.ebuild, -clip-core-conf-4.3.6-r16.ebuild:
+  RBump openssl - add back openssl/c_rehash binaries in admin jail.
+
+*clip-core-conf-4.3.6-r16 (05 Mar 2013)
+
+  05 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r16.ebuild, -clip-core-conf-4.3.6-r15.ebuild:
+  Bump clip-sub, clip-generic-net, clip-net, clip-gtw-net : netfilter
+  API cleanup, add support for SNAT_CLIENT_NETWORKS on gateways.
+  Bump hotplug-clip - typo fix.
+
+*clip-core-conf-4.3.6-r15 (04 Mar 2013)
+
+  04 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r15.ebuild, -clip-core-conf-4.3.6-r14.ebuild:
+  Bump clip-install-common, CLIP-Pkg-Base - fix some error recovery cases.
+  Bump clip-install-clip - copy ppr IKE2 keys on core upgrade.
+  Bump core-services - support timezone setting from ADMIN.
+  Bump splash-theme-clip - new resolutions.
+  Rbump pkcs11-proxy, pcsc-lite - smartcard improvements.
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.6-r13 (27 Feb 2013)
+
+  27 Feb 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r13.ebuild, -clip-core-conf-4.3.6-r12.ebuild:
+  RBump strongswan.
+
+*clip-core-conf-4.3.6-r12 (26 Feb 2013)
+
+  26 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r12.ebuild, -clip-core-conf-4.3.6-r11.ebuild:
+  Bump clip-kernel.
+  Bump clip-usb-keys, add pv - eyecandy changes.
+  Bump curl.
+
+*clip-core-conf-4.3.6-r11 (18 Feb 2013)
+
+  18 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r11.ebuild, -clip-core-conf-4.3.6-r10.ebuild:
+  Bump clip-gtw-net.
+
+*clip-core-conf-4.3.6-r10 (14 Feb 2013)
+
+  14 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r10.ebuild, -clip-core-conf-4.3.6-r9.ebuild:
+  Bump pkcs11-proxy - add filtering.
+  Rbump coreutils - fix veriexec entries.
+
+*clip-core-conf-4.3.6-r9 (12 Feb 2013)
+
+  12 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r9.ebuild, -clip-core-conf-4.3.6-r8.ebuild:
+  Bump clip-kernel, openssl - upstream updates.
+  Bump hotplug-clip - add screen hotplug handler.
+  Bump smartcard-monitor, rbump pkcs11-proxy, pcsc-lite - smartcard
+  fixes.
+
+  05 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-core-conf-4.3.6-r8.ebuild:
+  Rbump clip-kernel, fix grsec patch.
+  Bump clip-usb-keys - UDF support, fix popup message.
+
+*clip-core-conf-4.3.6-r8 (05 Feb 2013)
+
+  05 Feb 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r8.ebuild, -clip-core-conf-4.3.6-r7.ebuild:
+  Bump clip-net, clip-gtw-net - full IPsec configuration for civil crypto.
+
+*clip-core-conf-4.3.6-r7 (04 Feb 2013)
+
+  04 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r7.ebuild, -clip-core-conf-4.3.6-r6.ebuild:
+  Rbump clip-kernel.
+
+*clip-core-conf-4.3.6-r6 (30 Jan 2013)
+
+  30 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r6.ebuild, -clip-core-conf-4.3.6-r5.ebuild:
+  Rbump bzip2, busybox, splashutils - build fixes.
+  Bump freetype, security fix.
+  Bump libacidcrypt - fix certificate cache issue.
+
+*clip-core-conf-4.3.6-r5 (23 Jan 2013)
+
+  23 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r5.ebuild, -clip-core-conf-4.3.6-r4.ebuild:
+  Bump clip-kernel.
+  Bump clip-sub, vsctl, clip-*net, baselayout-clip - support for 
+  ping sockets and ping netfilter option.
+
+*clip-core-conf-4.3.6-r4 (14 Jan 2013)
+
+  14 Jan 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r4.ebuild, -clip-core-conf-4.3.6-r3.ebuild:
+  RBump clip-kernel.
+
+*clip-core-conf-4.3.6-r3 (08 Jan 2013)
+
+  08 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r3.ebuild, -clip-core-conf-4.3.6-r2.ebuild:
+  Bump clip-kernel.
+  Bump clip-generic-net, hotplug-clip - fix race conditions in 
+  network monitor.
+  Bump clip-usb-keys - add fsck of usb filesystems.
+  Rbump glibc - fix ldd.
+
+*clip-core-conf-4.3.6-r2 (04 Jan 2013)
+
+  04 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r2.ebuild, -clip-core-conf-4.3.6-r1.ebuild:
+  Rbump splashutils, remove readline5.
+
+*clip-core-conf-4.3.6-r1 (03 Jan 2013)
+
+  03 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6-r1.ebuild, -clip-core-conf-4.3.6.ebuild:
+  Bump ntp, rbump perl, remove old compat libs : libpng12, libpng14,
+  openssl98, db45.
+
+*clip-core-conf-4.3.6 (27 Dec 2012)
+
+  27 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.6.ebuild, -clip-core-conf-4.3.5-r32.ebuild:
+  Bump clip-kernel, glibc, gcc-lib, timezone-data, glib, alsa-lib, alsa-utils,
+  popt, coreutils, diffutils, gzip, attr, libcap, libgcrypt, glib, 
+  freetype, rbump cryptsetup, pam, tar and findutils - 
+  updates and build fixes.
+  Rbump vsctl - unmask /proc/asound/devices for pulseaudio.
+  Bump hotplug-clip, splash-theme-clip - initial support for Apple 
+  MacBooks.
+
+*clip-core-conf-4.3.5-r32 (04 Dec 2012)
+
+  04 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r32.ebuild, -clip-core-conf-4.3.5-r31.ebuild:
+  Bump clip-install-clip, rbump splashutils.
+
+*clip-core-conf-4.3.5-r31 (04 Dec 2012)
+
+  04 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r31.ebuild, -clip-core-conf-4.3.5-r30.ebuild:
+  Rbump clip-kernel, fix panic on boot.
+
+*clip-core-conf-4.3.5-r30 (04 Dec 2012)
+
+  04 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r30.ebuild, -clip-core-conf-4.3.5-r29.ebuild:
+  Rbump clip-kernel.
+
+*clip-core-conf-4.3.5-r29 (03 Dec 2012)
+
+  03 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r29.ebuild, -clip-core-conf-4.3.5-r28.ebuild:
+  Rbump clip-kernel.
+  Rbump glibc, fbgrab, splashutils - build fixes.
+  Remove OcsCryptoLib.
+
+*clip-core-conf-4.3.5-r28 (27 Nov 2012)
+
+  27 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r28.ebuild, -clip-core-conf-4.3.5-r27.ebuild:
+  Bump clip-kernel, fix suspend to RAM (hopefully).
+
+*clip-core-conf-4.3.5-r27 (22 Nov 2012)
+
+  22 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r27.ebuild, -clip-core-conf-4.3.5-r26.ebuild:
+  Bump libpng.
+
+*clip-core-conf-4.3.5-r26 (22 Nov 2012)
+
+  22 Nov 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r26.ebuild, -clip-core-conf-4.3.5-r25.ebuild:
+  Add usb-modeswitch. - needed for some wwan module support.
+  RBump clip-kernel. - add qmi_wwan backport and add config options for Huawei
+  wwan modules.
+  Bump hotplug-clip. - add support for ttyUSB wwan ttys and call usb_modeswitch
+  when needed.
+  Bump clip-generic-net - add support for Vodafone K4511 Huawei wwan modules.
+
+*clip-core-conf-4.3.5-r25 (21 Nov 2012)
+
+  21 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r25.ebuild, -clip-core-conf-4.3.5-r24.ebuild:
+  Bump dpkg, userd-server.
+
+*clip-core-conf-4.3.5-r24 (19 Nov 2012)
+
+  19 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r24.ebuild, -clip-core-conf-4.3.5-r23.ebuild:
+  Bump clip-kernel. Bump cryptd-server - add CMD_DELETE.
+  Bump clip-download, rbump core-services - update optional.conf files
+  after each download.
+
+*clip-core-conf-4.3.5-r23 (15 Nov 2012)
+
+  15 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r23.ebuild, -clip-core-conf-4.3.5-r22.ebuild:
+  Bump libusb, rbump pkcs11-proxy - smartcard fixes.
+  Bump stunnel for clip-hermes configs.
+
+*clip-core-conf-4.3.5-r22 (14 Nov 2012)
+
+  14 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r22.ebuild, -clip-core-conf-4.3.5-r21.ebuild:
+  Bump clip-kernel.
+  Bump smartcard-monitors, hotplug-clip, rbump ccid, 
+  pam-pkcs11, pcsc-lite - smartcard fixes, replace gnome-keyring
+  with app-crypt/pkcs11-proxy.
+  Bump hotplug-clip - wacom fixes.
+  Bump libgpg-error.
+
+*clip-core-conf-4.3.5-r21 (07 Nov 2012)
+
+  07 Nov 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r21.ebuild, -clip-core-conf-4.3.5-r20.ebuild:
+  Rbump clip-kernel, bump hotplug-clip - add support for serial wacom touchscreen.
+
+*clip-core-conf-4.3.5-r20 (07 Nov 2012)
+
+  07 Nov 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r20.ebuild, -clip-core-conf-4.3.5-r19.ebuild,
+  files/postinst.misc:
+  Rbump clip-download - move cert permissions fixes to clip-download.
+
+*clip-core-conf-4.3.5-r19 (06 Nov 2012)
+
+  06 Nov 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r19.ebuild, -clip-core-conf-4.3.5-r18.ebuild:
+  Bump clip-generic-net, clip-download, CLIP-Pkg-Download - use dynamic download
+  URL to identify client. Fix and move APT certificate & key.
+
+*clip-core-conf-4.3.5-r18 (26 Oct 2012)
+
+  26 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r18.ebuild, -clip-core-conf-4.3.5-r17.ebuild:
+  Rbump pcsc-lite.
+
+*clip-core-conf-4.3.5-r17 (25 Oct 2012)
+
+  25 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r17.ebuild, -clip-core-conf-4.3.5-r16.ebuild:
+  Bump busybox. Rbump clip-kernel.
+
+*clip-core-conf-4.3.5-r16 (24 Oct 2012)
+
+  24 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r16.ebuild, -clip-core-conf-4.3.5-r15.ebuild:
+  Bump clip-kernel.
+  Rbump pam_pkcs11, userd-server, pcsc-lite, add smartcard-monitor -
+  smartcard event notification improvements.
+
+*clip-core-conf-4.3.5-r15 (12 Oct 2012)
+
+  12 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r15.ebuild, -clip-core-conf-4.3.5-r14.ebuild:
+  Bump clip-kernel, clip-user-mount, zlib.
+
+*clip-core-conf-4.3.5-r14 (05 Oct 2012)
+
+  05 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r14.ebuild, -clip-core-conf-4.3.5-r13.ebuild:
+  Bump ccid, ckiutl, opensc, pcsc-lite, libp11, pam_pkcs11, clip-user-mount,
+  rbump gnome-keyring - smartcard support improvements.
+
+*clip-core-conf-4.3.5-r13 (05 Oct 2012)
+
+  05 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r13.ebuild, -clip-core-conf-4.3.5-r12.ebuild:
+  Rbump glib (security fix), glibc.
+
+  05 Oct 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>:
+  Add media-gfx/usb-video-devices for core-rm configs.
+  Rbump kernel - add camera support.
+
+*clip-core-conf-4.3.5-r12 (05 Oct 2012)
+
+  05 Oct 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r12.ebuild, -clip-core-conf-4.3.5-r11.ebuild:
+  Bump hotplug-clip - add camera support.
+
+*clip-core-conf-4.3.5-r11 (02 Oct 2012)
+
+  02 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r11.ebuild, -clip-core-conf-4.3.5-r10.ebuild:
+  Rbump logrotate - fix logrotate.conf generation.
+  Bump libacidfile - fix cert chain copy.
+
+*clip-core-conf-4.3.5-r10 (02 Oct 2012)
+
+  02 Oct 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r10.ebuild, -clip-core-conf-4.3.5-r9.ebuild:
+  Rbump syslinux - fix boot on HP Slate 2.
+  Bump wireless-firmwares - add ath6k firmnwares for tablets
+
+*clip-core-conf-4.3.5-r9 (27 Sep 2012)
+
+  27 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r9.ebuild, -clip-core-conf-4.3.5-r8.ebuild:
+  Bump file, libtasn1 - security updates.
+
+*clip-core-conf-4.3.5-r8 (07 Sep 2012)
+
+  07 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r8.ebuild, -clip-core-conf-4.3.5-r7.ebuild:
+  Rbump clip-vserver - fix postinst.
+
+*clip-core-conf-4.3.5-r7 (07 Sep 2012)
+
+  07 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r7.ebuild, -clip-core-conf-4.3.5-r6.ebuild:
+  Bump cryptd - filename encoding again.
+  Rbump clip-kernel, glibc.
+
+*clip-core-conf-4.3.5-r6 (05 Sep 2012)
+
+  05 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r6.ebuild, -clip-core-conf-4.3.5-r5.ebuild:
+  Bump libacidfile - cec pub key support.
+  Bump cryptd - fix filename encoding.
+  Bump hotplug-clip - fix network 'notification storms'.
+  Bump core-services - fix sshd launch race condition.
+  Rbump clip-kernel.
+
+*clip-core-conf-4.3.5-r5 (24 Aug 2012)
+
+  24 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r5.ebuild, -clip-core-conf-4.3.5-r4.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.5-r4 (16 Aug 2012)
+
+  16 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r4.ebuild, -clip-core-conf-4.3.5-r3.ebuild:
+  Bump clip-kernel, CLIP-Pkg-Install.
+
+*clip-core-conf-4.3.5-r3 (10 Aug 2012)
+
+  10 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r3.ebuild, -clip-core-conf-4.3.5-r2.ebuild:
+  Bump CLIP-Pkg-Install - fix clippkg_check_upgrade() and optional
+  package removal in certain cases.
+  Bump clip-download - change in optional package cache generation
+  for clip-config.
+
+*clip-core-conf-4.3.5-r2 (07 Aug 2012)
+
+  07 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r2.ebuild, -clip-core-conf-4.3.5-r1.ebuild:
+  Bump clip-kernel, rbump verictl and clip-user-mount - changes to 
+  core to support chromium (new CLSM privs, /dev/shm mounts).
+
+*clip-core-conf-4.3.5-r1 (02 Aug 2012)
+
+  02 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5-r1.ebuild, -clip-core-conf-4.3.5.ebuild:
+  Rbump clip-kernel.
+  Replace jpeg with libjpeg-turbo, remove jpeg6.
+
+*clip-core-conf-4.3.5 (30 Jul 2012)
+
+  30 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.5.ebuild, -clip-core-conf-4.3.4-r23.ebuild:
+  -files/clip-release-433.html, -files/clip-release-434.html,
+  -files/clip-release-432.html, +files/clip-release-435.html:
+  Bump libpng to 1.5, add 1.4 compat version.
+  Bump glib.
+
+*clip-core-conf-4.3.4-r23 (30 Jul 2012)
+
+  30 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r23.ebuild, -clip-core-conf-4.3.4-r22.ebuild,
+  -clip-core-conf-4.3.3-r34.ebuild, -clip-core-conf-4.3.2-r19.ebuild:
+  Bump clip-kernel, hotplug-clip, clip-usb-keys, core-services.
+  Rbump bash.
+  Remove old.
+
+*clip-core-conf-4.3.4-r22 (19 Jul 2012)
+
+  19 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r22.ebuild, -clip-core-conf-4.3.4-r21.ebuild:
+  Rbump logrotate - add missing /var/log/keep.
+  Bump hotplug-clip - add support for thinkpad and toshiba extra keys.
+
+*clip-core-conf-4.3.4-r21 (18 Jul 2012)
+
+  18 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r21.ebuild, -clip-core-conf-4.3.4-r20.ebuild:
+  Bump libacidcrypt, libacidfile - use safe-iop + fix allocation bug.
+
+*clip-core-conf-4.3.4-r20 (16 Jul 2012)
+
+  16 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r20.ebuild, -clip-core-conf-4.3.4-r19.ebuild:
+  Bump clip-kernel, libpng and libpng12.
+
+*clip-core-conf-4.3.4-r19 (13 Jul 2012)
+
+  13 Jul 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r19.ebuild, -clip-core-conf-4.3.4-r18.ebuild:
+  Bump stunnel - force net jail binding.
+
+*clip-core-conf-4.3.4-r18 (13 Jul 2012)
+
+  13 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r18.ebuild, -clip-core-conf-4.3.4-r17.ebuild:
+  Bump hotplug-clip - add network interface link up/down notification.
+
+*clip-core-conf-4.3.4-r17 (11 Jul 2012)
+
+  11 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r17.ebuild, -clip-core-conf-4.3.4-r16.ebuild,
+  files/postinst.misc:
+  Fix mkdir error.
+
+*clip-core-conf-4.3.4-r16 (11 Jul 2012)
+
+  11 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r16.ebuild, -clip-core-conf-4.3.4-r15.ebuild:
+  Rbump logrotate - support KEEPDAYS.
+  Bump clip-usb-keys - support usb mount action.
+
+  10 Jul 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  files/postinst.misc:
+  Mkdir clip_download cert if not already there.
+
+*clip-core-conf-4.3.4-r15 (09 Jul 2012)
+
+  09 Jul 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r15.ebuild, -clip-core-conf-4.3.4-r14.ebuild:
+  Rbump strongswan - fix compilation.
+
+*clip-core-conf-4.3.4-r14 (09 Jul 2012)
+
+  09 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r14.ebuild, -clip-core-conf-4.3.4-r13.ebuild:
+  Rbump clip-kernel - fix UTF-8 support for removable tokens.
+  Bump baselayout-clip - add missing log file.
+  Rbump alsa-utils - fix warnings when no sound card is present.
+  Rbump clip-vserver - minor fix in postinst.
+
+*clip-core-conf-4.3.4-r13 (06 Jul 2012)
+
+  06 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r13.ebuild, -clip-core-conf-4.3.4-r12.ebuild:
+  Rbump logrotate - fix missing attributes after rotation.
+  Bump hotplug-clip - fix mkdevices restart (for devel use mostly).
+  Rbump clip-vserver - fix invalid CLIP_LAYOUT.
+  Bump clip-kernel.
+
+  03 Jul 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-core-conf-4.3.4-r12.ebuild, files/postinst*:
+  Rename postinst files.
+  Fix x509 files owner.
+
+*clip-core-conf-4.3.4-r12 (21 Jun 2012)
+
+  21 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r12.ebuild, -clip-core-conf-4.3.4-r11.ebuild:
+  Bump clip-kernel.
+  Bump hotplug-clip - remove /dev/input/mice.
+  Bump CLIP-Pkg-{Base,Install} : try installing without optional 
+  packages if full upgrade (configurations + optional packages) fails.
+  Bump cryptd-server, userd-server - NOP.
+
+*clip-core-conf-4.3.4-r11 (18 Jun 2012)
+
+  18 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r11.ebuild, -clip-core-conf-4.3.4-r10.ebuild:
+  Rbump verictl (fix context capbounds).
+  Rbump glibc.
+
+*clip-core-conf-4.3.4-r10 (15 Jun 2012)
+
+  15 Jun 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r10.ebuild, -clip-core-conf-4.3.4-r9.ebuild,
+  files/postinst:
+  Remove ca-certificates, rbump openssl - purge Internet CA.
+
+*clip-core-conf-4.3.4-r9 (15 Jun 2012)
+
+  15 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r9.ebuild, -clip-core-conf-4.3.4-r8.ebuild:
+  Bump CLIP-Pkg-{Base,Download}, clip-download - better error
+  notification in case downloading an update fails.
+  Bump baselayout-clip and rbump logrotate - fix rotated log removal
+  and initial log file permission.
+
+*clip-core-conf-4.3.4-r8 (13 Jun 2012)
+
+  13 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r8.ebuild, -clip-core-conf-4.3.4-r7.ebuild:
+  Rbump glibc - fix env sanitization. Bump clip-install-clip - 
+  fix rm_core_install warning.
+
+*clip-core-conf-4.3.4-r7 (13 Jun 2012)
+
+  13 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r7.ebuild, -clip-core-conf-4.3.4-r6.ebuild:
+  Bump clip-kernel, wpa_supplicant.
+  Rbump glibc.
+
+*clip-core-conf-4.3.4-r6 (08 Jun 2012)
+
+  08 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r6.ebuild, -clip-core-conf-4.3.4-r5.ebuild:
+  Rbump clip-install-clip to force rebuild.
+
+*clip-core-conf-4.3.4-r5 (08 Jun 2012)
+
+  08 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r5.ebuild, -clip-core-conf-4.3.4-r4.ebuild:
+  Bump hotplug-clip, baselayout-clip - fix warnings.
+  Bump clip-install-common, verictl, clip-kernel, clip-vserver -
+  add enforce_inherit veriexec flag.
+  Bump clip-install-clip - add prompt before applying clip-apps/rm-apps
+  updates at boot time.
+
+*clip-core-conf-4.3.4-r4 (06 Jun 2012)
+
+  06 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r4.ebuild, -clip-core-conf-4.3.4-r3.ebuild:
+  Bump baselayout-clip, rbump verictl, add logrotate, cronbase, 
+  dcron - support rotating log files.
+
+*clip-core-conf-4.3.4-r3 (05 Jun 2012)
+
+  05 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r3.ebuild, -clip-core-conf-4.3.4-r2.ebuild:
+  Bump clip-kernel, hotplug-clip (fix input device management), 
+  strongswan, cryptd-server (fix UTF-8 support).
+
+*clip-core-conf-4.3.4-r2 (29 May 2012)
+
+  29 May 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r2.ebuild, -clip-core-conf-4.3.4-r1.ebuild:
+  Bump openssl* - security update.
+  Rbump clip-kernel - grsec bump.
+  Bump clip-net/clip-gtw-net - support for combined mode in CCSD IPsec,
+  support for dynamic jail addresses in gateways.
+
+*clip-core-conf-4.3.4-r1 (25 May 2012)
+
+  25 May 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4-r1.ebuild, -clip-core-conf-4.3.4.ebuild:
+  Rbump sysvinit - fix circular conflict loop.
+
+*clip-core-conf-4.3.4 (25 May 2012)
+
+  25 May 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.4.ebuild, +files/clip-release-434.html,
+  -files/clip-release-431.html, -files/clip-release-430.html,
+  -clip-core-conf-4.3.1-r12.ebuild, -clip-core-conf-4.3.0-r27.ebuild:
+  Bump clip-kernel, clip-generic-net, clip-net, clip-netd, clip-sub,
+  core-services, clip-vserver, rbump strongswan, syslog-ng : support
+  for combined mode in CCSD IPsec, support for dynamic addresses for
+  jails.
+  Bump util-linux, rbump sysvinit.
+
+*clip-core-conf-4.3.3-r34 (24 May 2012)
+
+  24 May 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r34.ebuild, -clip-core-conf-4.3.3-r33.ebuild:
+  Bump clip-kernel - set vesa display frequency.
+
+*clip-core-conf-4.3.3-r33 (21 May 2012)
+
+  21 May 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r33.ebuild, -clip-core-conf-4.3.3-r32.ebuild:
+  Rbump clip-kernel - disable Intel AES NI.
+
+*clip-core-conf-4.3.3-r32 (07 May 2012)
+
+  07 May 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r32.ebuild, -clip-core-conf-4.3.3-r31.ebuild:
+  Rbump strongswan - accept missing x509 policies.
+
+*clip-core-conf-4.3.3-r31 (02 May 2012)
+
+  02 May 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r31.ebuild, -clip-core-conf-4.3.3-r30.ebuild:
+  Rbump strongswan - fix missing x509 OID.
+
+*clip-core-conf-4.3.3-r30 (25 Apr 2012)
+
+  25 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r30.ebuild, -clip-core-conf-4.3.3-r29.ebuild:
+  Bump clip-sub - fix typo.
+
+*clip-core-conf-4.3.3-r29 (25 Apr 2012)
+
+  25 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r29.ebuild, -clip-core-conf-4.3.3-r28.ebuild:
+  Bump clip-user-mount - cleanup IPCs in jails when closing a session.
+  Bump clip-sub, clip{,-generic,-gtw}-net : fix icmp error handling, 
+  reject rather than drop unauthorized outbound packets.
+  Rbump clip-kernel - fix softraid support.
+
+*clip-core-conf-4.3.3-r28 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r28.ebuild, -clip-core-conf-4.3.3-r27.ebuild:
+  Bump clip-user-mount - fix bug in xauth cleanup...
+  Bump vsctl - fix child reaping in a PID namespace.
+
+*clip-core-conf-4.3.3-r27 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r27.ebuild, -clip-core-conf-4.3.3-r26.ebuild:
+  Bump core-services - run clip_admin and clip_sshd after clip_update.
+  Bump clip-user-mount - cleanup xauth files when opening a session. 
+
+*clip-core-conf-4.3.3-r26 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r26.ebuild, -clip-core-conf-4.3.3-r25.ebuild:
+  Bump clip-sub, clip-generic-net - remove useless labels on interfaces.
+  Bump dhcpcd - fix unneeded netconf restarts on 'carrier lost'.
+  Bump clip-kernel.
+  Bump openssl* - security bump.
+  Bump clip-download - include category information in clip-config list.
+
+*clip-core-conf-4.3.3-r25 (17 Apr 2012)
+
+  17 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r25.ebuild, -clip-core-conf-4.3.3-r24.ebuild:
+  Bump clip-sub - fix net check.
+
+*clip-core-conf-4.3.3-r24 (17 Apr 2012)
+
+  17 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r24.ebuild, -clip-core-conf-4.3.3-r23.ebuild:
+  Bump clip-usb-keys - fix CD-ROM mounting.
+  Bump cryptd - fix for pinentry usage.
+  Rbump syslog-ng - fix double ike entries.
+  Bump clip-generic-net - fix UMTS ipsec and PIN codes.
+
+*clip-core-conf-4.3.3-r23 (16 Apr 2012)
+
+  16 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r23.ebuild, -clip-core-conf-4.3.3-r22.ebuild:
+  Bump cryptd - use pinentry.
+  Rbump strongswan - OID addition.
+
+*clip-core-conf-4.3.3-r22 (16 Apr 2012)
+
+  16 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r22.ebuild, -clip-core-conf-4.3.3-r21.ebuild:
+  Bump clip-kernel. Bump clip-sub, CLIP-Pkg-Base - typo fixes.
+
+*clip-core-conf-4.3.3-r21 (13 Apr 2012)
+
+  13 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r21.ebuild, -clip-core-conf-4.3.3-r20.ebuild:
+  Bump libacidfile, libacidcrypt, cryptd-server - allow decryption of
+  outdated archives, fix error code in case of user cancellation.
+  Bump userd-server - fix cancellation of new user dialog.
+  Bump clip-usb-keys, module-init-tools, diffutifs, ncurses, rbump shadow 
+  - fix build.
+  Bump clip-sub - fix port range for remote NATs.
+
+*clip-core-conf-4.3.3-r20 (10 Apr 2012)
+
+  10 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r20.ebuild, -clip-core-conf-4.3.3-r19.ebuild:
+  Bump clip-net - fix host name resolution in RM jails.
+  Bump core-services - fix /proc in USER.
+
+*clip-core-conf-4.3.3-r19 (06 Apr 2012)
+
+  06 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r19.ebuild, -clip-core-conf-4.3.3-r18.ebuild:
+  Bump expat, libpng* - security update.
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.3-r18 (03 Apr 2012)
+
+  03 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r18.ebuild, -clip-core-conf-4.3.3-r17.ebuild:
+  Rbump clip-kernel - fix display.
+  Bump clip-gtw-net - fix client cert check and conn listing.
+
+*clip-core-conf-4.3.3-r17 (03 Apr 2012)
+
+  03 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r17.ebuild, -clip-core-conf-4.3.3-r16.ebuild:
+  Bump vsctl - fix build and privileges.
+
+*clip-core-conf-4.3.3-r16 (02 Apr 2012)
+
+  02 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r16.ebuild, -clip-core-conf-4.3.3-r15.ebuild:
+  Rbump usb-scanner-devices, libusb, db45 after certificate expiration.
+
+*clip-core-conf-4.3.3-r15 (02 Apr 2012)
+
+  02 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r15.ebuild, -clip-core-conf-4.3.3-r14.ebuild:
+  Bump clip-gtw-net - fix subnet SPD.
+
+*clip-core-conf-4.3.3-r14 (29 Mar 2012)
+
+  29 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r14.ebuild, -clip-core-conf-4.3.3-r12.ebuild:
+  Bump a bunch of packages, too many to list them all, following 
+  signing certificate change. Highlights - bump gcc-lib, glibc, clip-kernel,
+  freetype, jpeg...
+
+*clip-core-conf-4.3.3-r12 (19 Mar 2012)
+
+  19 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r12.ebuild, -clip-core-conf-4.3.3-r11.ebuild,
+  +files/postinst.knownhosts: 
+  Bump clip-kernel, clip-net, clip-generic-net, clip-libvserver, vsctl,
+  clip-vserver, core-services, clip-user-mount, userd-server, clip-download,
+  clip-install-clip, rbump baselayout-clip and baselayout-core-updatepriv -
+  switch to PID and NET namespaces on most jails, use local-only addresses.
+  Bump openssl - security update. Bump strongswan.
+
+*clip-core-conf-4.3.3-r11 (16 Mar 2012)
+
+  16 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r11.ebuild, -clip-core-conf-4.3.3-r10.ebuild:
+  Rbump strongswan, bump clip-gtw-net - fix MobIKE.
+
+*clip-core-conf-4.3.3-r10 (29 Feb 2012)
+
+  29 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r10.ebuild, -clip-core-conf-4.3.3-r9.ebuild:
+  Bump strongswan.
+  Rbump fbgrab - libpng revdep rebuild.
+
+  24 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  files/postinst: 
+  Modify postinst to remove klamav from optional packages lists
+  in RM jails, since this may otherwise block updates in those 
+  jails. No rbump, will be picked up in next updates. Also commited
+  separately in the CLIP_V04.03.02_P3 tag, as clip-core-conf-4.3.2-r19.
+
+*clip-core-conf-4.3.3-r9 (24 Feb 2012)
+
+  24 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r9.ebuild, -clip-core-conf-4.3.3-r8.ebuild:
+  Rbump clip-usb-keys - use conffile list.
+
+*clip-core-conf-4.3.3-r8 (24 Feb 2012)
+
+  24 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r8.ebuild, -clip-core-conf-4.3.3-r7.ebuild:
+  Bump baselayout-clip, stunnel. Rbump baselayout-rm - initial use of
+  VaultGuard with Stunnel.
+
+*clip-core-conf-4.3.3-r7 (22 Feb 2012)
+
+  22 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r7.ebuild, -clip-core-conf-4.3.3-r6.ebuild:
+  Bump clip-kernel.
+  Bump libpng/libpng12 - security bump.
+
+*clip-core-conf-4.3.3-r6 (22 Feb 2012)
+
+  22 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r6.ebuild, -clip-core-conf-4.3.3-r5.ebuild:
+  Bump clip-{gtw-,}net, clip-usb-keys.
+
+*clip-core-conf-4.3.3-r5 (20 Feb 2012)
+
+  20 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r5.ebuild, -clip-core-conf-4.3.3-r4.ebuild:
+  Bump glib, add libffi-core (dependency of glib).
+  Bump hotplug-clip - fix eventd logging.
+
+*clip-core-conf-4.3.3-r4 (20 Feb 2012)
+
+  20 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r4.ebuild, -clip-core-conf-4.3.3-r3.ebuild:
+  Bump clip-vserver.
+
+*clip-core-conf-4.3.3-r3 (16 Feb 2012)
+
+  16 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r3.ebuild, -clip-core-conf-4.3.3-r2.ebuild:
+  Bump busybox-*. Bump vsctl / clip-libs - fix ENODEV handling.
+  Bump hotplug-clip - fix resume from sleep on some hardware.
+
+*clip-core-conf-4.3.3-r2 (15 Feb 2012)
+
+  15 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r2.ebuild, -clip-core-conf-4.3.3-r1.ebuild:
+  Rbump verictl{,-update}.
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.3-r1 (14 Feb 2012)
+
+  14 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3-r1.ebuild, -clip-core-conf-4.3.3.ebuild:
+  Bump clip-{,generic,gtw}-net - multiple gateways.
+
+*clip-core-conf-4.3.3 (13 Feb 2012)
+
+  13 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.3.ebuild, -clip-core-conf-4.2.4-r5.ebuild,
+  +files/clip-release-433.html, -files/clip-release-424.html:
+  First try at 4.3.3. Remove old.
+  Bump clip-kernel.
+  Bump clip-sub / clip-generic-net - new ipsec activation script.
+  Bump openssl - security update.
+  Bump hotplug-clip - support tablet on Lenovo X220T, and hopefully
+  other, similar configs.
+
+  08 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-core-conf-4.3.2-r19.ebuild:
+  Remove Clip layout postinst (already in clip-vserver).
+
+*clip-core-conf-4.3.2-r19 (07 Feb 2012)
+
+  07 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r19.ebuild, -clip-core-conf-4.3.2-r18.ebuild:
+  Bump clip-kernel, clip-gtw-net, strongswan, core-services.
+  Improve IPsec for Hermes.
+  Exclude stunnel for clip-gtw.
+  Fix Clip release names for Hermes.
+
+*clip-core-conf-4.3.2-r18 (12 Jan 2012)
+
+  12 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r18.ebuild, -clip-core-conf-4.3.2-r17.ebuild:
+  Bump openssl.
+
+*clip-core-conf-4.3.2-r17 (11 Jan 2012)
+
+  11 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r17.ebuild, -clip-core-conf-4.3.2-r16.ebuild:
+  Bump libacidfile - more tolerant certificate parsing.
+
+*clip-core-conf-4.3.2-r16 (10 Jan 2012)
+
+  10 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r16.ebuild, -clip-core-conf-4.3.2-r15.ebuild:
+  Bump libacidfile - more tolerant file attributes parsing.
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.2-r15 (04 Jan 2012)
+
+  04 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r15.ebuild, -clip-core-conf-4.3.2-r14.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.2-r14 (04 Jan 2012)
+
+  04 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r14.ebuild, -clip-core-conf-4.3.2-r13.ebuild:
+  Bump baselayout-clip - fix current.geom creation + fix for system.
+
+*clip-core-conf-4.3.2-r13 (02 Jan 2012)
+
+  02 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r13.ebuild, -clip-core-conf-4.3.2-r12.ebuild:
+  Rbump syslinux - fix SVIDEO output issues.
+  Rbump alsa-utils - cleanup devices on startup.
+
+*clip-core-conf-4.3.2-r12 (30 Dec 2011)
+
+  30 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r12.ebuild, -clip-core-conf-4.3.2-r11.ebuild:
+  Revert strongswan again - still some unresolved issues.
+
+*clip-core-conf-4.3.2-r11 (28 Dec 2011)
+
+  28 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r11.ebuild, -clip-core-conf-4.3.2-r10.ebuild,
+  +files/postinst.devices:
+  Rbump alsa-utils, bump clip-sub, clip-generic-net, 
+  usb-{printer,scanner}-devices - make sound cards, USB printers and
+  scanners attribution to a given RM jail configurable at runtime.
+
+*clip-core-conf-4.3.2-r10 (26 Dec 2011)
+
+  26 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r10.ebuild, -clip-core-conf-4.3.2-r9.ebuild:
+  Rbump clip-kernel.
+  Bump strongswan - without the problematic patch.
+
+*clip-core-conf-4.3.2-r9 (22 Dec 2011)
+
+  22 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r9.ebuild, -clip-core-conf-4.3.2-r8.ebuild:
+  Bump clip-usb-keys - more explicit error messages for some corner 
+  cases.
+  Bump clip-kernel.
+
+*clip-core-conf-4.3.2-r8 (15 Dec 2011)
+
+  15 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r8.ebuild, -clip-core-conf-4.3.2-r7.ebuild:
+  Revert strongswan. Rbump clip-kernel - add vga arbitration.
+
+*clip-core-conf-4.3.2-r7 (14 Dec 2011)
+
+  14 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r7.ebuild, -clip-core-conf-4.3.2-r6.ebuild:
+  Bump clip-kernel. Bump strongswan.
+  Rbump clip-sub.
+
+*clip-core-conf-4.3.2-r6 (05 Dec 2011)
+
+  05 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r6.ebuild, -clip-core-conf-4.3.2-r5.ebuild:
+  Bump clip-generic-net - support /etc/conf.d/net alternatives.
+  Bump clip-usb-keys - multiple umount, multiple prompts for decryption
+  passwords.
+
+*clip-core-conf-4.3.2-r5 (24 Nov 2011)
+
+  24 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r5.ebuild, -clip-core-conf-4.3.2-r4.ebuild:
+  Bump clip-kernel (which is now what used to be clip-kernel-modular), 
+  wireless-firmwares, remove clip-kernel-modular (virtual).
+  Bump freetype - security update.
+  Rbump syslinux for dependency fix.
+
+*clip-core-conf-4.3.2-r4 (14 Nov 2011)
+
+  14 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r4.ebuild, -clip-core-conf-4.3.2-r3.ebuild:
+  Bump clip-kernel.
+  Rbump clip-usb-keys - fix usbkeys.conf quotes.
+
+*clip-core-conf-4.3.2-r3 (14 Nov 2011)
+
+  14 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r3.ebuild, -clip-core-conf-4.3.2-r2.ebuild:
+  Rbump clip-usb-keys.
+
+*clip-core-conf-4.3.2-r2 (10 Nov 2011)
+
+  10 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r2.ebuild, -clip-core-conf-4.3.2-r1.ebuild:
+  Bump hotplug-clip, add touchscreen initial support.
+  Rbump clip-kernel - add missing driver.
+  Fix postinst to switch existing configs to the 'mixborder' layout.
+  Rbump tar - build fix.
+
+*clip-core-conf-4.3.2-r1 (10 Nov 2011)
+
+  10 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2-r1.ebuild, -clip-core-conf-4.3.2.ebuild:
+  Bump clip-vserver - fix mixborder layout.
+
+*clip-core-conf-4.3.2 (09 Nov 2011)
+
+  09 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.2.ebuild, +files/clip-release-432.html:
+  Bump clip-generic-net - netfilter port list import fix.
+  Bump clip-netd, clip-usb-keys - support for mixborder visual layout.
+
+*clip-core-conf-4.3.1-r12 (27 Oct 2011)
+
+  27 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r12.ebuild, -clip-core-conf-4.3.1-r11.ebuild:
+  Bump pam - security update.
+
+*clip-core-conf-4.3.1-r10 (25 Oct 2011)
+
+  25 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r10.ebuild, -clip-core-conf-4.3.1-r9.ebuild:
+  Bump clip-kernel, clip-gtw-net, clip-usb-keys, clip-vserver.
+
+*clip-core-conf-4.3.1-r8 (21 Oct 2011)
+
+  21 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r8.ebuild, -clip-core-conf-4.3.1-r7.ebuild:
+  Rbump clip-kernel - fix mkinitrd.clip.
+
+*clip-core-conf-4.3.1-r7 (19 Oct 2011)
+
+  19 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r7.ebuild, -clip-core-conf-4.3.1-r6.ebuild:
+  Bump core-services.
+
+*clip-core-conf-4.3.1-r6 (19 Oct 2011)
+
+  19 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r6.ebuild, -clip-core-conf-4.3.1-r5.ebuild:
+  Bump freetype (security bump).
+
+*clip-core-conf-4.3.1-r5 (18 Oct 2011)
+
+  18 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r5.ebuild, -clip-core-conf-4.3.1-r4.ebuild:
+  Bump clip-kernel. Bump clip-sub, clip-gtw-net - gateway fixes.
+
+*clip-core-conf-4.3.1-r4 (17 Oct 2011)
+
+  17 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r4.ebuild, -clip-core-conf-4.3.1-r3.ebuild:
+  Bump core-services - current domain detection.
+
+*clip-core-conf-4.3.1-r3 (11 Oct 2011)
+
+  11 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r3.ebuild, -clip-core-conf-4.3.1-r2.ebuild:
+  Rbump clip-kernel*.
+
+*clip-core-conf-4.3.1-r2 (11 Oct 2011)
+
+  11 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r2.ebuild, -clip-core-conf-4.3.1-r1.ebuild:
+  Rbump clip-kernel, bump findutils.
+
+*clip-core-conf-4.3.1-r1 (05 Oct 2011)
+
+  05 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1-r1.ebuild, -clip-core-conf-4.3.1.ebuild:
+  Bump clip-kernel, verictl, add initial audit support.
+  Bump splash-theme-clip - final logo version.
+
+*clip-core-conf-4.3.1 (27 Sep 2011)
+
+  27 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.1.ebuild, +files/clip-release-431.html,
+  -clip-core-conf-4.2.3-r8.ebuild, -files/clip-release-423.html:
+  Rbump clip-kernel, bump openssl, vsctl.
+
+*clip-core-conf-4.3.0-r27 (19 Sep 2011)
+
+  19 Sep 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r27.ebuild, -clip-core-conf-4.3.0-r26.ebuild:
+  Bump CLIP-Pkg-Base, CLIP-Pkg-Install, clip-download.
+
+*clip-core-conf-4.3.0-r26 (15 Sep 2011)
+
+  15 Sep 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r26.ebuild, -clip-core-conf-4.3.0-r25.ebuild:
+  Bump CLIP-Pkg-Base, CLIP-Pkg-Install, clip-install-common, clip-download.
+
+*clip-core-conf-4.3.0-r25 (08 Sep 2011)
+
+  08 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r25.ebuild, -clip-core-conf-4.3.0-r24.ebuild:
+  Bump wireless-firmwares - remove conflicts with older kernels.
+
+*clip-core-conf-4.3.0-r24 (07 Sep 2011)
+
+  07 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r24.ebuild, -clip-core-conf-4.3.0-r23.ebuild:
+  Rbump clip-kernel - add missing dependency on wireless-firmwares +
+  minor clip-lsm/grsec/vserver updates.
+
+*clip-core-conf-4.3.0-r23 (02 Sep 2011)
+
+  02 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r23.ebuild, -clip-core-conf-4.3.0-r22.ebuild:
+  Bump ca-certificates.
+
+*clip-core-conf-4.3.0-r22 (31 Aug 2011)
+
+  31 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r22.ebuild, -clip-core-conf-4.3.0-r21.ebuild:
+  Bump CLIP-Pkg-Base - fix chroot privileges.
+  Rbump splashutils, bump splash-theme-clip - new wallpapers.
+  Rbump ncurses (nop).
+
+*clip-core-conf-4.3.0-r21 (30 Aug 2011)
+
+  30 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r21.ebuild, -clip-core-conf-4.3.0-r20.ebuild:
+  Bump clip-kernel - upstream updates.
+  Bump verictl, vsctl - compilation fixes.
+  Bump stunnel.
+  Bump splashutils, jpeg, splash-theme-clip, iproute2, ipsec-tools
+  - newer upstreame releases.
+  Bump alsa-lib and alsa-utils.
+
+*clip-core-conf-4.3.0-r20 (25 Aug 2011)
+
+  25 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r20.ebuild, -clip-core-conf-4.3.0-r19.ebuild:
+  Bump clip-kernel, wireless-firmwares, clip-libvserver - switch to 3.0
+  kernel.
+  Bump baselayout-clip, hotplug-clip - improved filesystem resilience.
+  Bump libacidfile - support 0x80 file attribute in CSA archives.
+
+*clip-core-conf-4.3.0-r19 (17 Aug 2011)
+
+  17 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r19.ebuild, -clip-core-conf-4.3.0-r18.ebuild:
+  Bump db, add db45.
+  Rbump clip-kernel - fix initrd for crypt0 disks.
+
+*clip-core-conf-4.3.0-r18 (17 Aug 2011)
+
+  17 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r18.ebuild, -clip-core-conf-4.3.0-r17.ebuild:
+  Bump CLIP-Pkg-Base, clip-download, clip-install-common,
+  clip-lib, libacidcrypt : switch to signature checking daemon.
+
+*clip-core-conf-4.3.0-r17 (16 Aug 2011)
+
+  16 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r17.ebuild, -clip-core-conf-4.3.0-r16.ebuild:
+  Rbump clip-kernel - fix battery monitor race condition, fix DELL 
+  touchpad support.
+  Bump clip-generic-net - UMTS improvements.
+
+*clip-core-conf-4.3.0-r16 (11 Aug 2011)
+
+  11 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r16.ebuild, -clip-core-conf-4.3.0-r15.ebuild:
+  Rbump libpng. Rbump glibc - security update. Bump gcc-lib.
+
+*clip-core-conf-4.3.0-r15 (09 Aug 2011)
+
+  09 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r15.ebuild, -clip-core-conf-4.3.0-r14.ebuild:
+  Rbump clip-kernel - encrypted root fixes.
+  Bump strongswan.
+  Bump freetype - security update.
+  Bump hotplug-clip, rbump ozerocdoff - fix Option ZeroCD handling
+  with newer kernels.
+
+*clip-core-conf-4.3.0-r14 (04 Aug 2011)
+
+  04 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r14.ebuild, -clip-core-conf-4.3.0-r13.ebuild:
+  Bump clip-kernel, fix clip-lsm initialization panic.
+
+*clip-core-conf-4.3.0-r13 (03 Aug 2011)
+
+  03 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r13.ebuild, -clip-core-conf-4.3.0-r12.ebuild:
+  Bump clip-kernel, wireless-firmwares - switch to a 2.6.39 kernel.
+
+*clip-core-conf-4.3.0-r12 (01 Aug 2011)
+
+  01 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r12.ebuild, -clip-core-conf-4.3.0-r11.ebuild:
+  Bump core-services - make /sys r/o again in X11.
+  Bump clip-download - generate optional package lists for clip-config.
+
+*clip-core-conf-4.3.0-r11 (29 Jul 2011)
+
+  29 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r11.ebuild, -clip-core-conf-4.3.0-r10.ebuild:
+  Bump clip-kernel, clip-libvserver, rbump iptables and syslog-ng: 
+  fix or mask various CLSM warnings, especially fix netlink access 
+  control. Add missing iwlwifi firmwares for hardware configs that 
+  need them.
+  Bump clip-generic-net - fix import issue on some nonetwork profiles.
+  Bump clip-usb-keys - fix USB signature check.
+
+*clip-core-conf-4.3.0-r10 (28 Jul 2011)
+
+  28 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r10.ebuild, -clip-core-conf-4.3.0-r9.ebuild:
+  Bump curl - security update.
+  Bump apt, dpkg, CLIP-Pkg-Download, clip-download - apt update.
+
+*clip-core-conf-4.3.0-r9 (27 Jul 2011)
+
+  27 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r9.ebuild, -clip-core-conf-4.3.0-r8.ebuild:
+  Bump libacidfile - fix certificate parsing.
+  Bump clip-kernel - fix 'fd outside of chroot' tests.
+
+*clip-core-conf-4.3.0-r8 (26 Jul 2011)
+
+  26 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r8.ebuild, -clip-core-conf-4.3.0-r7.ebuild:
+  Bump iptables, clip-sub.
+
+*clip-core-conf-4.3.0-r7 (21 Jul 2011)
+
+  21 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r7.ebuild, -clip-core-conf-4.3.0-r6.ebuild:
+  Bump clip-usb-keys, hotplug-clip - fix user mount.
+
+*clip-core-conf-4.3.0-r6 (19 Jul 2011)
+
+  19 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r6.ebuild, -clip-core-conf-4.3.0-r5.ebuild:
+  Bump bash. Rbump clip-kernel - fix O_MAYEXEC.
+
+*clip-core-conf-4.3.0-r5 (18 Jul 2011)
+
+  18 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r5.ebuild, -clip-core-conf-4.3.0-r4.ebuild:
+  Bump dhcpcd - the newer version is needed for recent kernels.
+  Bump clip-generic-net - fix check_route call for dynamically 
+  configured routes.
+
+*clip-core-conf-4.2.4-r5 (13 Jul 2011)
+
+  13 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.4-r5.ebuild, -clip-core-conf-4.2.4-r4.ebuild:
+  Bump clip-vserver.
+
+*clip-core-conf-4.3.0-r4 (13 Jul 2011)
+
+  13 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r4.ebuild, -clip-core-conf-4.3.0-r3.ebuild:
+  Bump verictl.
+
+*clip-core-conf-4.3.0-r3 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r3.ebuild, -clip-core-conf-4.3.0-r2.ebuild:
+  Rbump clip-vserver - postinst update.
+  Bump libpng and libpng12 - security update.
+  Rbump glib - fix dbus machine-id path.
+  Bump hotplug-clip, rbump clip-kernel - attempt to fix lost keyboard on 
+  resume from suspend.
+
+*clip-core-conf-4.3.0-r2 (12 Jul 2011)
+
+  12 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r2.ebuild, -clip-core-conf-4.3.0-r1.ebuild:
+  Bump clip-vserver - clip layout configuration.
+
+*clip-core-conf-4.3.0-r1 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0-r1.ebuild, -clip-core-conf-4.3.0.ebuild:
+  Bump hotplug-clip - fix scanner / smartcard reader removal.
+  Rbump usb-scanner-devices - add missing postinst.
+
+*clip-core-conf-4.3.0 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.3.0.ebuild, +files/clip-release-430.html,
+  -files/clip-release-420.html, -files/clip-release-421.html,
+  -files/clip-release-422.html, -clip-core-conf-4.2.0-r11.ebuild,
+  -clip-core-conf-4.2.1-r16.ebuild, -clip-core-conf-4.2.2-r6.ebuild:
+  Bump clip-kernel to 2.6.38.8. Bump hotplug-clip and add 
+  usb-scanner-devices - support scanners.
+  Remove old configs.
+
+*clip-core-conf-4.2.4-r3 (07 Jul 2011)
+
+  07 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.4-r3.ebuild, -clip-core-conf-4.2.4-r2.ebuild:
+  Bump CLIP-Pkg-Base.
+
+*clip-core-conf-4.2.4-r2 (06 Jul 2011)
+
+  06 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.4-r2.ebuild, -clip-core-conf-4.2.4-r1.ebuild:
+  Rbump CLIP-Pkg-* - specific level configuration.
+
+*clip-core-conf-4.2.4-r1 (04 Jul 2011)
+
+  04 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.4-r1.ebuild, -clip-core-conf-4.2.4.ebuild:
+  Bump clip-kernel, wireless-firmwares, clip-generic-net - support
+  RTL8192SE wireless chips.
+  Bump clip-usb-keys.
+
+*clip-core-conf-4.2.4 (30 Jun 2011)
+
+  30 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.4.ebuild, +files/clip-release-424.html:
+  Bump clip-kernel.
+
+*clip-core-conf-4.2.3-r8 (20 Jun 2011)
+
+  20 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r8.ebuild, -clip-core-conf-4.2.3-r7.ebuild:
+  Bump clip-usb-keys, hotplug-clip.
+
+*clip-core-conf-4.2.3-r7 (08 Jun 2011)
+
+  08 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r7.ebuild, -clip-core-conf-4.2.3-r6.ebuild:
+  Bump clip-kernel (grsec bump, vserver warnings fix). Rbump 
+  OcsCryptolib and clip-download - path QA fixes.
+
+*clip-core-conf-4.2.3-r6 (01 Jun 2011)
+
+  01 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r6.ebuild, -clip-core-conf-4.2.3-r5.ebuild:
+  Bump clip-user-mount - fix dmcleanup on encrypted root.
+  Bump vsctl, clip-lib - keep up with portage versions.
+
+*clip-core-conf-4.2.3-r5 (25 May 2011)
+
+  25 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r5.ebuild, -clip-core-conf-4.2.3-r4.ebuild:
+  Bump libgcrypt, libgpg-error, rbump expat, cracklib, gzip, apt :
+  match what is actually in portage.
+  Rbump glib - fix clip-deps.
+
+*clip-core-conf-4.2.3-r4 (24 May 2011)
+
+  24 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r4.ebuild, -clip-core-conf-4.2.3-r3.ebuild:
+  Bump clip-kernel - new upstream + procfd fixes. Bump libacidfile
+  and libacidcrypt - zlib/64 bit fixes. Bump libcap (build fix).
+  Remove mkinitrd. Rbump busybox-initrd - re-add softraid support.
+
+*clip-core-conf-4.2.3-r3 (23 May 2011)
+
+  23 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r3.ebuild, -clip-core-conf-4.2.3-r2.ebuild:
+  Bump clip-kernel and clip-download - fix CLSM_PRIV_PROCFD. Bump 
+  wireless-firmwares, add missing iwlwifi firmwares (some yet unused by
+  the kernel). Rbump hotplug-clip to force update from buggy version.
+
+*clip-core-conf-4.2.3-r2 (23 May 2011)
+
+  23 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r2.ebuild, -clip-core-conf-4.2.3-r1.ebuild:
+  Rbump clip-download - fix start-stop-daemon privs.
+  Bump hotplug-clip - cleanup devices on resume from suspend.
+
+*clip-core-conf-4.2.3-r1 (20 May 2011)
+
+  20 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3-r1.ebuild, -clip-core-conf-4.2.3.ebuild:
+  Bump baselayout-clip, verictl, clip-kernel, clip-user-mount -
+  core support for FUSE mounts in RM jails.
+
+*clip-core-conf-4.2.3 (18 May 2011)
+
+  18 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.3.ebuild, +files/clip-release-423.html:
+  Bump glib. Bump perl and rbump all perl modules.
+
+*clip-core-conf-4.2.2-r6 (17 May 2011)
+
+  17 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.2-r6.ebuild, -clip-core-conf-4.2.2-r5.ebuild:
+  Bump hotplug-clip - fix for input device notification on wake-up
+  from sleep.
+
+*clip-core-conf-4.2.2-r5 (16 May 2011)
+
+  16 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.2-r5.ebuild, -clip-core-conf-4.2.2-r4.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.2.2-r4 (12 May 2011)
+
+  12 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.2-r4.ebuild, -clip-core-conf-4.2.2-r3.ebuild:
+  Rbump openssl, bump clip-download - fix install_cert.
+  Bump clip-user-mount - fsck notification fix + leftover mounts cleanup.
+
+*clip-core-conf-4.2.2-r3 (11 May 2011)
+
+  11 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.2-r3.ebuild, -clip-core-conf-4.2.2-r2.ebuild:
+  Rbump clip-kernel - add missing USB net drivers.
+
+*clip-core-conf-4.2.2-r2 (10 May 2011)
+
+  10 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.2-r2.ebuild, -clip-core-conf-4.2.2-r1.ebuild:
+  Bump clip-generic-net, clip-net, clip-gtw-net, core-services - add support for 
+  ADMIN_IF and PEER_ADDR in gateway configs, move IKEv2 peers' public keys 
+  to /etc/admin/ike2/cert.
+  Bump clip-user-mount - add dm cleanup fix.
+
+*clip-core-conf-4.2.2-r1 (09 May 2011)
+
+  09 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.2-r1.ebuild, -clip-core-conf-4.2.2.ebuild:
+  Bump clip-usb-keys - devctl fix.
+
+*clip-core-conf-4.2.2 (09 May 2011)
+
+  09 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.2.ebuild, +file/clip-release-422.html:
+  Rbump clip-kernel, verictl, bump hotplug-clip, clip-usb-keys,
+  clip-libvserver, add ntfs3g - support FUSE mounting of NTFS usb keys.
+
+*clip-core-conf-4.2.1-r16 (02 May 2011)
+
+  02 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r16.ebuild, -clip-core-conf-4.2.1-r15.ebuild,
+  files/postinst.rmh-net:
+  Bump hotplug-clip, rbump pcsc-lite - fix /dev/bus/usb perms and smartcard
+  reader hotplug.
+  RM_H config fix - make sure we have a 'localhost' line in RM_H's /etc/hosts.
+
+*clip-core-conf-4.2.1-r15 (29 Apr 2011)
+
+  29 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r15.ebuild, -clip-core-conf-4.2.1-r14.ebuild:
+  Rbump syslinux - fix for encrypted root.
+
+*clip-core-conf-4.2.1-r14 (28 Apr 2011)
+
+  28 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r14.ebuild, -clip-core-conf-4.2.1-r13.ebuild,
+  +files/postinst.rmh-net:
+  Bump clip-kernel. Add postinst for IUSE clip-anssi to update RM_H
+  DNS/proxy parameters in all net profiles.
+  Bump clip-usb-keys - fix PATH definition.
+
+*clip-core-conf-4.2.1-r13 (22 Apr 2011)
+
+  22 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r13.ebuild, -clip-core-conf-4.2.1-r12.ebuild:
+  Bump libacidcrypt, cryptd - support encryption without explicit 
+  recipients.
+  Bump libacidfile - fix key intersection with redundant tokens.
+
+*clip-core-conf-4.2.1-r12 (21 Apr 2011)
+
+  21 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r12.ebuild, -clip-core-conf-4.2.1-r11.ebuild:
+  Bump clip-kernel. Bump clip-user-mount, add fsck notification. Rbump
+  pam_pkcs11 - fix pkcs11_eventmgr dependencies.
+
+*clip-core-conf-4.2.1-r11 (20 Apr 2011)
+
+  20 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r11.ebuild, -clip-core-conf-4.2.1-r10.ebuild:
+  Bump file, libacidfile.
+
+*clip-core-conf-4.2.1-r10 (14 Apr 2011)
+
+  14 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r10.ebuild, -clip-core-conf-4.2.1-r9.ebuild:
+  Move libxml2 back to clip-apps, remove gettext and rbump glibc to
+  solve the dependency issue.
+
+*clip-core-conf-4.2.1-r9 (14 Apr 2011)
+
+  14 Apr 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r9.ebuild, -clip-core-conf-4.2.1-r8.ebuild:
+  Import libxml2 from clip-apps-conf (gettext dependency).
+
+*clip-core-conf-4.2.1-r8 (13 Apr 2011)
+
+  13 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r8.ebuild, -clip-core-conf-4.2.1-r7.ebuild:
+  Rbump syslinux - add fallback for missing /dev on upgrade.
+  Rbump glibc - fix locales.
+
+*clip-core-conf-4.2.1-r7 (13 Apr 2011)
+
+  13 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r7.ebuild, -clip-core-conf-4.2.1-r6.ebuild:
+  Bump glibc, glib, gettext.
+
+*clip-core-conf-4.2.1-r6 (06 Apr 2011)
+
+  06 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r6.ebuild, -clip-core-conf-4.2.1-r5.ebuild:
+  Bump syslinux - fix for installed version numbers get overwritten
+  on upgrade in extlinux config files.
+  Bump clip-install-clip - fix for empty /dev during core upgrade.
+
+*clip-core-conf-4.2.1-r5 (06 Apr 2011)
+
+  06 Apr 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r5.ebuild, -clip-core-conf-4.2.1-r4.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.2.1-r4 (06 Apr 2011)
+
+  06 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r4.ebuild, -clip-core-conf-4.2.1-r3.ebuild:
+  Bump clip-kernel. Bump clip-install-clip, CLIP-Mount, rbump 
+  baselayout-clip, syslinux and verictl - full disk encryption fixes.
+
+*clip-core-conf-4.2.1-r3 (28 Mar 2011)
+
+  28 Mar 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r3.ebuild, -clip-core-conf-4.2.1-r2.ebuild:
+  Bump core-services, clip-vserver, clip-kernel*.
+  Rbump clip-net.
+
+*clip-core-conf-4.2.1-r2 (25 Mar 2011)
+
+  25 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r2.ebuild, -clip-core-conf-4.2.1-r1.ebuild:
+  Rbump clip-kernel, busybox-initrd - initrd fr kmap path change + 
+  trim up clip-lsm, remove swapoff hook.
+  Bump baselayout-clip - do not umount swap on stop + check for required
+  fscks and notify user on boot.
+  Bump clip-usb-keys - fix for openssl-1.
+
+*clip-core-conf-4.2.1-r1 (23 Mar 2011)
+
+  23 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1-r1.ebuild, -clip-core-conf-4.2.1.ebuild:
+  Rbump cryptsetup - fix verictl entry.
+
+*clip-core-conf-4.2.1 (22 Mar 2011)
+
+  22 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.1.ebuild, +files/clip-release-420.html:
+  Bump clip-kernel, hotplug-clip, core-services, baselayout-clip,
+  clip-usb-keys, usb-printer-devices, cryptsetup, rbump alsa-utils
+  and busybox-initrd - switch to a fully dynamic /dev and /x11/dev.
+  Bump openssl to 1.0 and add openssl98 for ABI compat.
+
+  22 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  -clip-core-conf-4.1.5-r8.ebuild_hermes,
+  -files/clip-release-415.html, -files/clip-release-414.html,
+  -clip-core-conf-4.1.4-r22.ebuild, -clip-core-conf-4.1.5-r24.ebuild:
+  Remove old configs.
+
+*clip-core-conf-4.2.0-r11 (09 Mar 2011)
+
+  09 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r11.ebuild, -clip-core-conf-4.2.0-r10.ebuild:
+  Rbump clip-kernel, for a change (brcm80211 fixes).
+
+*clip-core-conf-4.2.0-r10 (08 Mar 2011)
+
+  08 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r10.ebuild, -clip-core-conf-4.2.0-r9.ebuild:
+  Bump clip-kernel some more.
+
+*clip-core-conf-4.2.0-r9 (04 Mar 2011)
+
+  04 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r9.ebuild, -clip-core-conf-4.2.0-r8.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.2.0-r8 (02 Mar 2011)
+
+  02 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r8.ebuild, -clip-core-conf-4.2.0-r7.ebuild:
+  Bump core-services, clip-generic-net - support net_list creation 
+  by admin. Bump v86d, openssl, glibc - security updates. Rbump clip-kernel
+  to follow v86d upgrade, rbump vsctl and clip-lib for licence fix.
+
+*clip-core-conf-4.2.0-r7 (10 Feb 2011)
+
+  10 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r7.ebuild, -clip-core-conf-4.2.0-r6.ebuild,
+  files/postinst:
+  Remove dangling sccreatedev symlink in default runlevel.
+
+*clip-core-conf-4.2.0-r6 (10 Feb 2011)
+
+  10 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r6.ebuild, -clip-core-conf-4.2.0-r5.ebuild:
+  Rbump readline5 - fix dependencies.
+
+*clip-core-conf-4.2.0-r5 (09 Feb 2011)
+
+  09 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r5.ebuild, -clip-core-conf-4.2.0-r4.ebuild:
+  Bump readline to 6 + add readline5 for compat - avoids nasty surprises
+  when newer packages link to readline6.
+
+*clip-core-conf-4.2.0-r4 (08 Feb 2011)
+
+  08 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r4.ebuild, -clip-core-conf-4.2.0-r3.ebuild:
+  Bump hotplug-clip - fix init script dependencies.
+
+*clip-core-conf-4.2.0-r3 (08 Feb 2011)
+
+  08 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r3.ebuild, -clip-core-conf-4.2.0-r2.ebuild:
+  Bump hotplug-clip, remove smartcard-readers - handle all usb devices
+  in /dev/bus/usb.
+  Rbump baselayout-clip - fix multiple group definitions after fresh
+  install.
+
+*clip-core-conf-4.2.0-r2 (04 Feb 2011)
+
+  04 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r2.ebuild, -clip-core-conf-4.2.0-r1.ebuild:
+  Bump hotplug-clip - do not suspend during reboot / halt.
+  Bump clip-generic-net - properly clean up wired_mac / has_wifi 
+  files.
+  Rbump gnome-keyring - add respawner + fix startup wait loop.
+
+*clip-core-conf-4.2.0-r1 (03 Feb 2011)
+
+  03 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0-r1.ebuild, -clip-core-conf-4.2.0.ebuild:
+  Bump vsctl, rm-devices, clip-vserver - fix vsctl enter with
+  PID namespaces.
+  Bump everything related to smartcards.
+
+*clip-core-conf-4.2.0 (27 Jan 2011)
+
+  27 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.2.0.ebuild, -clip-core-conf-4.1.6-r9.ebuild,
+  -files/clip-release-416.html, +files/clip-release-420.html:
+  Bump libacidcrypt, libacidfile, cryptd-server. Bump syslog-ng.
+  Rename to 4.2.0.
+
+*clip-core-conf-4.1.6-r9 (19 Jan 2011)
+
+  19 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r9.ebuild, -clip-core-conf-4.1.6-r8.ebuild:
+  Rbump clip-kernel, baselayout-core-*priv, bump vsctl, clip-libvserver,
+  core-services, rm-devices, clip-install-clip : PID namespaces and 
+  multiple devpts instances.
+
+*clip-core-conf-4.1.6-r8 (18 Jan 2011)
+
+  18 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r8.ebuild, -clip-core-conf-4.1.6-r7.ebuild:
+  +files/postinst:
+  Oops, fix version number logic (inverted files).
+
+*clip-core-conf-4.1.6-r7 (18 Jan 2011)
+
+  18 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r7.ebuild, -clip-core-conf-4.1.6-r6.ebuild,
+  +files/postinst, -files/_debian/postinst:
+  Include current version number and build date in bootloader entries.
+
+*clip-core-conf-4.1.6-r6 (17 Jan 2011)
+
+  17 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r6.ebuild, -clip-core-conf-4.1.6-r5.ebuild:
+  Rbump syslinux, clip-kernel - fix system install.
+  Rbump pam_pkcs11 - fix CA cert path.
+
+*clip-core-conf-4.1.6-r5 (14 Jan 2011)
+
+  14 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r5.ebuild, -clip-core-conf-4.1.6-r4.ebuild:
+  Bump userd-server, clip-sub - fix password change.
+  Bump clip-install-clip, syslinux, clip-download - new bootloader 
+  config + proper rollback to previous config.
+
+*clip-core-conf-4.1.6-r4 (13 Jan 2011)
+
+  13 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r4.ebuild, -clip-core-conf-4.1.6-r3.ebuild:
+  Bump clip-kernel. Bump clip-generic-net - umts timeout shrinkage + 
+  PIN codes up to 8 chars.
+
+*clip-core-conf-4.1.6-r3 (06 Jan 2011)
+
+  06 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r3.ebuild, -clip-core-conf-4.1.6-r2.ebuild:
+  Rbump clip-kernel - smallish fixes to CLSM_NETPRIV.
+  Rbump pwcheckd, openssl - remove ELFRELOCS marking.
+
+*clip-core-conf-4.1.6-r2 (04 Jan 2011)
+
+  04 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r2.ebuild, -clip-core-conf-4.1.6-r1.ebuild:
+  Bump userd.
+  Rbump clip-kernel, bump clip-libvserver - IPC namespaces.
+
+*clip-core-conf-4.1.6-r1 (20 Dec 2010)
+
+  20 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6-r1.ebuild, -clip-core-conf-4.1.6.ebuild:
+  Bump userd, clip-sub, clip-user-mount, userd-server - smartcard
+  improvements, initial user creation support.
+
+*clip-core-conf-4.1.6 (15 Dec 2010)
+
+  15 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.6.ebuild, +files/clip-release-416.html:
+  Initial 4.1.6 version. Bump clip-kernel, activate IOMMU support.
+  Bump libpng to 1.4 (with a 1.2 version kept for compatibility).
+  Bump glib.
+
+*clip-core-conf-4.1.5-r24 (06 Dec 2010)
+
+  06 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r24.ebuild, -clip-core-conf-4.1.5-r23.ebuild:
+  Rbump pam_pkcs11. Bump openssl (security fix), clip-download (fix
+  failures in error recovery).
+
+*clip-core-conf-4.1.5-r23 (29 Nov 2010)
+
+  29 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r23.ebuild, -clip-core-conf-4.1.5-r22.ebuild:
+  Bump clip-kernel, wpa_supplicant and clip-generic-net, switch to 
+  systematic use of wpa_supplicant for wireless net profiles.
+
+*clip-core-conf-4.1.5-r22 (23 Nov 2010)
+
+  23 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r22.ebuild, -clip-core-conf-4.1.5-r21.ebuild:
+  Rbump freetype - security update.
+  Bump libacidfile, cryptd - double free fix.
+  Bump core-services and vsctl - fix cryptsetup remove of USER home part
+  on logout.
+
+*clip-core-conf-4.1.5-r21 (18 Nov 2010)
+
+  18 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r21.ebuild, -clip-core-conf-4.1.5-r20.ebuild:
+  Bump openssl, clip-generic-net. Rbump stunnel.
+
+*clip-core-conf-4.1.5-r20 (18 Nov 2010)
+
+  18 Nov 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r20.ebuild, -clip-core-conf-4.1.5-r19.ebuild:
+  Rbump clip-net.
+
+*clip-core-conf-4.1.5-r19 (12 Nov 2010)
+
+  12 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r19.ebuild, -clip-core-conf-4.1.5-r18.ebuild:
+  Rbump gnome-keyring, pam_pkcs11, pam, shadow, bump clip-sub - PKCS11 fixes.
+  Rbump clip-kernel - ptrace logging fix.
+  Bump clip-generic-net - checkip.sh fixes.
+  Bump clip-user-mount, clip-usb-keys, pwcheckd, cryptd-server, 
+  rbump xinit, slim, dhcpcd,  
+  - persistent USER jail fixes.
+  Bump verictl - more lenient unload behavior.
+
+*clip-core-conf-4.1.5-r18 (08 Nov 2010)
+
+  08 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r18.ebuild, -clip-core-conf-4.1.5-r17.ebuild:
+  Bump clip-vserver, clip-user-mount, core-services, vsctl - persistent
+  USER jail. Bump clip-generic-net - wpa fixes. 
+  Rbump pwcheckd, gnome-keyring - PKCS11 fixes.
+  Bump clip-usb-keys - hotplug detach fix.
+  Add time-entropyd.
+
+*clip-core-conf-4.1.5-r17 (04 Nov 2010)
+
+  04 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r17.ebuild, -clip-core-conf-4.1.5-r16.ebuild:
+  Bump sysvinit, userd-server, rbump shadow - 32 chars user names.
+  Bump clip-usb-keys - race condition fixes.
+  Bump PKCS11 tools, add gnome-keyring.
+  Bump clip-generic-net, fix IF_NUMBER off by one.
+
+*clip-core-conf-4.1.5-r16 (03 Nov 2010)
+
+  03 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r16.ebuild, -clip-core-conf-4.1.5-r15.ebuild:
+  Bump CLIP-Pkg-Download.
+
+*clip-core-conf-4.1.5-r15 (02 Nov 2010)
+
+  02 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r15.ebuild, -clip-core-conf-4.1.5-r14.ebuild:
+  Bump clip-kernel, core-services.
+
+*clip-core-conf-4.1.5-r14 (27 Oct 2010)
+
+  27 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r14.ebuild, -clip-core-conf-4.1.5-r13.ebuild:
+  Rbump clip-kernel, baselayout-clip, verictl - radeon support.
+  Rbump clip-net - fix improperly installed /etc/conf.d/net.
+  Bump clip-gtw-net - better ipsec lifetimes. 
+
+*clip-core-conf-4.1.5-r13 (25 Oct 2010)
+
+  25 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r13.ebuild, -clip-core-conf-4.1.5-r12.ebuild:
+  Rbump clip-kernel.
+
+*clip-core-conf-4.1.5-r12 (25 Oct 2010)
+
+  25 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r12.ebuild, -clip-core-conf-4.1.5-r11.ebuild:
+  Bump hotplug-clip, freetype, clip-sub, rbump busybox-* and clip-kernel.
+
+*clip-core-conf-4.1.5-r11 (25 Oct 2010)
+
+  25 Oct 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r11.ebuild, -clip-core-conf-4.1.5-r10.ebuild:
+  Rbump glibc - security fix.
+
+*clip-core-conf-4.1.5-r10 (19 Oct 2010)
+
+  19 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r10.ebuild, -clip-core-conf-4.1.5-r9.ebuild:
+  Rbump clip-kernel, bump wireless-firmwares - add support for staging
+  wireless drivers.
+  Bump splash-theme-clip - add 1024x600 config.
+
+*clip-core-conf-4.1.5-r9 (18 Oct 2010)
+
+  18 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r9.ebuild, -clip-core-conf-4.1.5-r8.ebuild:
+  Bump clip-sub, clip-gtw-net.
+
+*clip-core-conf-4.1.5-r8 (12 Oct 2010)
+
+  12 Oct 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r8.ebuild, -clip-core-conf-4.1.5-r7.ebuild:
+  Rbump strongswan.
+
+*clip-core-conf-4.1.5-r7 (08 Oct 2010)
+
+  08 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r7.ebuild, -clip-core-conf-4.1.5-r6.ebuild:
+  Rbump busybox-initrd.
+  Add libacidcrypt for clip-gtw.
+
+*clip-core-conf-4.1.5-r6 (07 Oct 2010)
+
+  07 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r6.ebuild, -clip-core-conf-4.1.5-r5.ebuild:
+  Bump clip-gtw-net, clip-net, clip-generic-net and clip-install-clip.
+
+*clip-core-conf-4.1.5-r5 (05 Oct 2010)
+
+  05 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r5.ebuild, -clip-core-conf-4.1.5-r4.ebuild:
+  Bump clip-net, clip-generic-net, clip-gtw-net, strongswan, 
+  libacidcrypt, core-services - configurable CCSD lib, self-jailing 
+  charon.
+  Rbump syslog-ng - remote admin fixes.
+  Rbump clip-kernel - security fix.
+
+*clip-core-conf-4.1.5-r4 (27 Sep 2010)
+
+  27 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r4.ebuild, -clip-core-conf-4.1.5-r3.ebuild:
+  Bump clip-kernel, bzip2, syslog-ng and its dependencies / reverse
+  deps as needed. Rbump busybox. Bump baselayout-clip.
+
+*clip-core-conf-4.1.5-r3 (16 Sep 2010)
+
+  16 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r3.ebuild, -clip-core-conf-4.1.5-r2.ebuild:
+  Rbump zlib - deps.
+
+*clip-core-conf-4.1.5-r2 (16 Sep 2010)
+
+  16 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r2.ebuild, -clip-core-conf-4.1.5-r1.ebuild:
+  Bump zlib, busybox.
+
+*clip-core-conf-4.1.5-r1 (13 Sep 2010)
+
+  13 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5-r1.ebuild, -clip-core-conf-4.1.5.ebuild,
+  +files/clip-release-415.html:
+  Bump dpkg, add TimeDate, bump clip-generic-net.
+
+*clip-core-conf-4.1.5 (08 Sep 2010)
+
+  08 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.5.ebuild, -clip-core-conf-4.1.4-r23.ebuild:
+  +clip-core-conf-4.1.4-r22.ebuild:
+  Bump 4.1.4-r23 to 4.1.5 (no changes except moving it to ~x86) and 
+  revert 4.1.4-r22, as this is the tagged version.
+
+*clip-core-conf-4.1.4-r23 (06 Sep 2010)
+
+  06 Sep 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r23.ebuild, -clip-core-conf-4.1.4-r22.ebuild:
+  Bump clip-generic-net - network boot menu.
+  Rbump stunnel.
+
+*clip-core-conf-4.1.4-r22 (06 Sep 2010)
+
+  06 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r22.ebuild, -clip-core-conf-4.1.4-r21.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.1.4-r21 (03 Sep 2010)
+
+  03 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r21.ebuild, -clip-core-conf-4.1.4-r20.ebuild:
+  Bump wireless-tools, splash-theme-clip.
+
+*clip-core-conf-4.1.4-r20 (02 Sep 2010)
+
+  02 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r20.ebuild, -clip-core-conf-4.1.4-r19.ebuild:
+  Bump clip-generic-net - fix has_if_ethX generation for nonetwork confs.
+
+*clip-core-conf-4.1.4-r19 (02 Sep 2010)
+
+  02 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r19.ebuild, -clip-core-conf-4.1.4-r18.ebuild:
+  Bump userd-server - new postinst configuration goodness. Rbump
+  baselayout-clip - fix postinst.
+
+*clip-core-conf-4.1.4-r18 (27 Aug 2010)
+
+  27 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r18.ebuild, -clip-core-conf-4.1.4-r17.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.1.4-r17 (27 Aug 2010)
+
+  27 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r17.ebuild, -clip-core-conf-4.1.4-r16.ebuild:
+  Bump clip-kernel, busybox-*.
+
+*clip-core-conf-4.1.4-r16 (26 Aug 2010)
+
+  26 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r16.ebuild, -clip-core-conf-4.1.4-r15.ebuild:
+  Bump clip-sub, stunnel.
+
+*clip-core-conf-4.1.4-r15 (23 Aug 2010)
+
+  23 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r15.ebuild, -clip-core-conf-4.1.4-r14.ebuild:
+  Bump clip-kernel, clip-generic-net, vsctl, verictl, core-services :
+  kernel upgrade, network fixes, support for new 'script' veriexec entries.
+
+*clip-core-conf-4.1.4-r14 (12 Aug 2010)
+
+  12 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r14.ebuild, -clip-core-conf-4.1.4-r13.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.1.4-r13 (11 Aug 2010)
+
+  11 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r13.ebuild, -clip-core-conf-4.1.4-r12.ebuild:
+  Bump clip-kernel, freetype.
+
+  05 Jul 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  files/clip-release-414.html, files/clip-release-41.html:
+  Typo fix.
+
+*clip-core-conf-4.1.4-r11 (04 Aug 2010)
+
+  04 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r11.ebuild, -clip-core-conf-4.1.4-r10.ebuild:
+  Bump clip-generic-net, clip-net, and all packages that use the net
+  config - implement nonetwork mode.
+  Bump userd-server and baselayout-clip - PKCS#11 auth support.
+  Bump clip-kernel.
+
+*clip-core-conf-4.1.3-r5 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.3-r5.ebuild, -clip-core-conf-4.1.3-r4.ebuild:
+  Rbump strongswan - security update.
+
+*clip-core-conf-4.1.4-r10 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r10.ebuild, -clip-core-conf-4.1.4-r9.ebuild:
+  Rbump strongswan, bump freetype - security updates.
+  Bump clip-generic-net - umts fixes.
+  Rbump clip-kernel - new i915 patch.
+  Bump libacidfile / cryptd - proper algo token management on encryption.
+
+*clip-core-conf-4.1.4-r9 (29 Jul 2010)
+
+  29 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r9.ebuild, -clip-core-conf-4.1.4-r8.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.1.4-r8 (28 Jul 2010)
+
+  28 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r8.ebuild, -clip-core-conf-4.1.4-r7.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.1.4-r7 (28 Jul 2010)
+
+  28 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r7.ebuild, -clip-core-conf-4.1.4-r6.ebuild:
+  Rbump e2fsprogs-libs.
+
+*clip-core-conf-4.1.4-r6 (27 Jul 2010)
+
+  27 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r6.ebuild, -clip-core-conf-4.1.4-r5.ebuild:
+  Bump ca-certificates, e2fsprogs, coreutils, util-linux, pam.
+
+*clip-core-conf-4.1.4-r5 (20 Jul 2010)
+
+  20 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r5.ebuild, -clip-core-conf-4.1.4-r4.ebuild:
+  Bump gcc-lib, rbump OcsCryptolib.
+
+*clip-core-conf-4.1.4-r4 (20 Jul 2010)
+
+  20 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r4.ebuild, -clip-core-conf-4.1.4-r3.ebuild:
+  Bump hotplug-clip.
+
+*clip-core-conf-4.1.4-r3 (19 Jul 2010)
+
+  19 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r3.ebuild, -clip-core-conf-4.1.4-r2.ebuild:
+  Bump hotplug-clip, tar, tcb, baselayout-clip.
+
+*clip-core-conf-4.1.4-r2 (16 Jul 2010)
+
+  16 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r2.ebuild, -clip-core-conf-4.1.4-r1.ebuild:
+  Rbump glibc, add pkcs11 support packages.
+
+*clip-core-conf-4.1.4-r1 (12 Jul 2010)
+
+  12 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4-r1.ebuild, -clip-core-conf-4.1.4.ebuild:
+  Rbump clip-net.
+
+*clip-core-conf-4.1.4 (12 Jul 2010)
+
+  12 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.4.ebuild, -clip-core-conf-4.1.2-r14.ebuild,
+  +files/clip-release-414.html:
+  Bump clip-kernel. Remove old.
+
+*clip-core-conf-4.1.3-r4 (06 Jul 2010)
+
+  06 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.3-r4.ebuild, -clip-core-conf-4.1.3-r3.ebuild,
+  -clip-core-conf-4.0.15.ebuild, -files/clip-release.html:
+  Bump clip-generic-net.
+  Remove old.
+
+*clip-core-conf-4.1.3-r3 (01 Jul 2010)
+
+  01 Jul 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.3-r3.ebuild, -clip-core-conf-4.1.3-r2.ebuild:
+  Bump clip-generic-net, stunnel, clip-net.
+
+*clip-core-conf-4.1.3-r2 (29 Jun 2010)
+
+  29 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.3-r2.ebuild, -clip-core-conf-4.1.3-r1.ebuild:
+  Bump clip-generic-net, libpng.
+
+*clip-core-conf-4.1.3-r1 (24 Jun 2010)
+
+  24 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.3-r1.ebuild, -clip-core-conf-4.1.3.ebuild:
+  Rbump glibc, clip-netd, clip-generic-net.
+
+*clip-core-conf-4.1.3 (24 Jun 2010)
+
+  24 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.3.ebuild:
+  First 4.1.3 release.
+  Bump glibc, libpng, jpeg. Bump hotplug-clip, clip-generic-net, 
+  clip-netd, clip-sub. Rbump wireless-tools. Add arping and libnet.
+
+*clip-core-conf-4.1.2-r14 (10 Jun 2010)
+
+  10 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r14.ebuild, -clip-core-conf-4.1.2-r13.ebuild:
+  Bump cryptd-server, clip-usb-keys.
+
+*clip-core-conf-4.1.2-r13 (10 Jun 2010)
+
+  10 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r13.ebuild, -clip-core-conf-4.1.2-r12.ebuild:
+  Bump clip-usb-keys.
+
+*clip-core-conf-4.1.2-r12 (10 Jun 2010)
+
+  10 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r12.ebuild, -clip-core-conf-4.1.2-r11.ebuild:
+  Rbump clip-kernel (R500 support).
+
+*clip-core-conf-4.1.2-r11 (09 Jun 2010)
+
+  09 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r11.ebuild, -clip-core-conf-4.1.2-r10.ebuild:
+  Bump libacidfile.
+
+*clip-core-conf-4.1.2-r10 (08 Jun 2010)
+
+  08 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r10.ebuild, -clip-core-conf-4.1.2-r9.ebuild:
+  Bump cryptd-server, libacidcrypt.
+
+*clip-core-conf-4.1.2-r9 (07 Jun 2010)
+
+  07 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r9.ebuild, -clip-core-conf-4.1.2-r8.ebuild:
+  Bump clip-usb-keys, openssl.
+
+*clip-core-conf-4.1.2-r8 (04 Jun 2010)
+
+  04 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r8.ebuild, -clip-core-conf-4.1.2-r7.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.1.2-r7 (03 Jun 2010)
+
+  03 Jun 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r7.ebuild, -clip-core-conf-4.1.2-r6.ebuild:
+  Bump clip-usb-keys.
+
+*clip-core-conf-4.1.2-r6 (02 Jun 2010)
+
+  02 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r6.ebuild, -clip-core-conf-4.1.2-r5.ebuild:
+  Bump clip-generic-net, clip-usb-keys, libacidcrypt. Rbump clip-kernel.
+  NTFS / ext2 removable token support, acid password change fixes.
+  Fixed HTML in changelog :)
+
+*clip-core-conf-4.1.2-r5 (31 May 2010)
+
+  31 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r5.ebuild, -clip-core-conf-4.1.2-r4.ebuild:
+  Rbump clip-kernel.
+  Bump hotplug-clip, clip-generic-net, clip-sub.
+
+*clip-core-conf-4.1.2-r4 (27 May 2010)
+
+  27 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r4.ebuild, -clip-core-conf-4.1.2-r3.ebuild:
+  Bump core-services, baselayout-core-{admin,audit}priv : keep
+  /var/shared in audit/admin as well.
+
+*clip-core-conf-4.1.2-r3 (27 May 2010)
+
+  27 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r3.ebuild, -clip-core-conf-4.1.2-r2.ebuild:
+  Bump clip-generic-net, clip-net, clip-sub, hotplug-clip and 
+  clip-kernel-*.
+
+*clip-core-conf-4.1.2-r2 (25 May 2010)
+
+  25 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r2.ebuild, -clip-core-conf-4.1.2-r1.ebuild:
+  Rbump clip-kernel.
+  Bump clip-usb-keys, busybox-rm and busybox-update.
+
+*clip-core-conf-4.1.2-r1 (10 May 2010)
+
+  10 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2-r1.ebuild, -clip-core-conf-4.1.2.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.1.2 (10 May 2010)
+
+  10 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.2.ebuild, -clip-core-conf-4.1.1-r9.ebuild:
+  Bump clip-kernel and hotplug-clip - add support for sleep.
+  Bump clip-generic-net / clip-sub - ipsec status.
+
+*clip-core-conf-4.1.1-r9 (03 May 2010)
+
+  03 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r9.ebuild, -clip-core-conf-4.1.1-r8.ebuild:
+  Rbump clip-kernel, strongswan.
+  Bump libacidcrypt, libacidfile, cryptd-server.
+
+*clip-core-conf-4.1.1-r8 (28 Apr 2010)
+
+  28 Apr 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r8.ebuild, -clip-core-conf-4.1.1-r7.ebuild:
+  Bump strongswan.
+
+*clip-core-conf-4.1.1-r7 (27 Apr 2010)
+
+  27 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r7.ebuild, -clip-core-conf-4.1.1-r6.ebuild:
+  Bump curl, clip-generic-net, clip-sub.
+
+*clip-core-conf-4.1.1-r6 (23 Apr 2010)
+
+  23 Apr 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r6.ebuild, -clip-core-conf-4.1.1-r5.ebuild:
+  Add stunnel for hermes.
+
+*clip-core-conf-4.1.1-r5 (22 Apr 2010)
+
+  22 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r5.ebuild, -clip-core-conf-4.1.1-r4.ebuild:
+  Bump clip-kernel, hotplug-clip and baselayout, add libusb and 
+  ozerocdoff - userland ZeroCD nuking.
+  Bump glib and popt.
+
+*clip-core-conf-4.1.1-r4 (19 Apr 2010)
+
+  19 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r4.ebuild, -clip-core-conf-4.1.1-r3.ebuild:
+  rbump clip-kernel.
+
+*clip-core-conf-4.1.1-r3 (19 Apr 2010)
+
+  19 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r3.ebuild, -clip-core-conf-4.1.1-r2.ebuild:
+  Bump clip-install-clip - fix mirror copy for rm jails in some cases.
+
+*clip-core-conf-4.1.1-r2 (08 Apr 2010)
+
+  08 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r2.ebuild, -clip-core-conf-4.1.1-r1.ebuild:
+  Bump clip-kernel, CLIP-Pkg-Base, CLIP-Pkg-Download.
+
+*clip-core-conf-4.1.1-r1 (01 Apr 2010)
+
+  01 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1-r1.ebuild, -clip-core-conf-4.1.1.ebuild:
+  Bump clip-kernel, cryptd server and CLIP-Pkg-Base.
+
+*clip-core-conf-4.0.15 (31 Mar 2010)
+
+  31 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.15.ebuild, -clip-core-conf-4.0.14-r2.ebuild:
+  Bump cryptd-server.
+
+*clip-core-conf-4.1.1 (26 Mar 2010)
+
+  26 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.1.ebuild, -clip-core-conf-4.1.0-r15.ebuild:
+  Bump kbd, ntp, openssl, baselayout-core-{user,update}priv, core-services.
+
+*clip-core-conf-4.1.0-r15 (23 Mar 2010)
+
+  23 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r15.ebuild, -clip-core-conf-4.1.0-r14.ebuild:
+  Bump clip-net / clip-generic-net / clip-netd - support for showing
+  profiles names, quick switch of net profiles and fix for RM_B detection
+  on mono jail CLIP-RM.
+  Bump clip-kernel - fixes for KMS on 965GM (fake CRT), switch all supported
+  laptops to KMS.
+
+*clip-core-conf-4.1.0-r14 (18 Mar 2010)
+
+  18 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r14.ebuild, -clip-core-conf-4.1.0-r13.ebuild:
+  Bump clip-kernel (2.6.32.10).
+
+*clip-core-conf-4.1.0-r13 (18 Mar 2010)
+
+  18 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r13.ebuild, -clip-core-conf-4.1.0-r12.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.1.0-r12 (11 Mar 2010)
+
+  11 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r12.ebuild, -clip-core-conf-4.1.0-r11.ebuild:
+  Bump clip-kernel, baselayout-clip, core-services for KMS support.
+  Bump wpa_supplicant.
+  Bump jpeg.
+
+*clip-core-conf-4.1.0-r11 (05 Mar 2010)
+
+  05 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r11.ebuild, -clip-core-conf-4.1.0-r10.ebuild:
+  Bump clip-kernel, clip-generic-net.
+
+*clip-core-conf-4.1.0-r10 (04 Mar 2010)
+
+  04 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r10.ebuild, -clip-core-conf-4.1.0-r9.ebuild:
+  Revbump baselayout-clip.
+
+*clip-core-conf-4.1.0-r9 (04 Mar 2010)
+
+  04 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r9.ebuild, -clip-core-conf-4.1.0-r8.ebuild:
+  Bump clip-kernel.
+
+*clip-core-conf-4.1.0-r8 (18 Feb 2010)
+
+  18 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r8.ebuild, -clip-core-conf-4.1.0-r7.ebuild:
+  Bump clip-kernel, vsctl, clip-usb-keys, syslog-ng, baselayout-clip,
+  util-linux, clip-generic-net : bump kernel, add MS_TRACE option 
+  support, fix net_status initialization with dhcp failure, support
+  UDF *DROMs. Bump expat (security update).
+
+*clip-core-conf-4.1.0-r7 (10 Feb 2010)
+
+  10 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r7.ebuild, -clip-core-conf-4.1.0-r6.ebuild:
+  Bump gzip.
+
+*clip-core-conf-4.1.0-r6 (10 Feb 2010)
+
+  10 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r6.ebuild, -clip-core-conf-4.1.0-r5.ebuild:
+  Bump CLIP-Pkg-Install.
+
+*clip-core-conf-4.1.0-r5 (09 Feb 2010)
+
+  09 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r5.ebuild, -clip-core-conf-4.1.0-r4.ebuild:
+  Bump clip-vserver.
+
+*clip-core-conf-4.1.0-r4 (05 Feb 2010)
+
+  05 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r4.ebuild, -clip-core-conf-4.1.0-r3.ebuild:
+  Bump gcc-lib.
+
+*clip-core-conf-4.1.0-r3 (02 Feb 2010)
+
+  02 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r3.ebuild, -clip-core-conf-4.1.0-r2.ebuild:
+  Bump clip-vserver, clip-install-clip.
+
+*clip-core-conf-4.1.0-r2 (02 Feb 2010)
+
+  02 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r2.ebuild, -clip-core-conf-4.1.0-r1.ebuild:
+  Bump clip-vserver, glibc.
+
+*clip-core-conf-4.1.0-r1 (01 Feb 2010)
+
+  01 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0-r1.ebuild, -clip-core-conf-4.1.0.ebuild:
+  Bump clip-vserver - create has_jail_rm* in USER jail, and
+  fullscreen in USER and RM's USER, as needed.
+
+*clip-core-conf-4.1.0 (29 Jan 2010)
+
+  29 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.1.0.ebuild, +files/clip-release-41.html:
+  Initial release of clip-core 4.1. Bump many core packages to 
+  support single RM jail configurations.
+
+*clip-core-conf-4.0.14-r1 (19 Jan 2010)
+
+  19 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.14-r1.ebuild, -clip-core-conf-4.0.14.ebuild:
+  Bump clip-download, libacidcrypt.
+
+*clip-core-conf-4.0.14 (12 Jan 2010)
+
+  12 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.14.ebuild, -clip-core-conf-4.0.13.ebuild:
+  Bump clip-install-{common,clip}, CLIP-Pkg-{Base,Install}, 
+  clip-download, clip-generic-net.
+
+*clip-core-conf-4.0.13 (08 Jan 2010)
+
+  08 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.13.ebuild, -clip-core-conf-4.0.12-r4.ebuild:
+  Urgent bump - fix kernel hso tty_major option.
+
+*clip-core-conf-4.0.12-r4 (30 Dec 2009)
+
+  30 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.12-r4.ebuild, -clip-core-conf-4.0.12-r3.ebuild:
+  Bump baselayout-rm, clip-user-mount : /var/tmp management in RM
+  USER views.
+
+*clip-core-conf-4.0.12-r3 (29 Dec 2009)
+
+  29 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.12-r3.ebuild, -clip-core-conf-4.0.12-r2.ebuild:
+  Bump clip-generic-net.
+
+*clip-core-conf-4.0.12-r2 (22 Dec 2009)
+
+  22 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.12-r2.ebuild, -clip-core-conf-4.0.12-r1.ebuild:
+  Bump clip-generic-net - MAC address display. Bump clip-usb-keys -
+  support for mounting tokens when signature check fails. Bump 
+  splashutils - typo.
+
+*clip-core-conf-4.0.12-r1 (16 Dec 2009)
+
+  16 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.12-r1.ebuild, -clip-core-conf-4.0.12.ebuild:
+  Bump clip-kernel, openssl, cryptd, libacid{crypt,file}, clip-lib,
+  alsa-{lib,utils}, glib.
+
+*clip-core-conf-4.0.12 (12 Nov 2009)
+
+  12 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.12.ebuild, -clip-core-conf-4.0.11-r5.ebuild:
+  Bump clip-kernel, clip-usb-keys, openssl.
+
+*clip-core-conf-4.0.11-r5 (06 Nov 2009)
+
+  06 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.11-r5.ebuild, -clip-core-conf-4.0.11-r4.ebuild:
+  Bump clip-generic-net - fix the fix for empty UMTS params.
+  Bump clip-kernel : add CVE-2009-3547 fix + thinkpad crt enabling
+  hack.
+
+*clip-core-conf-4.0.11-r4 (05 Nov 2009)
+
+  05 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.11-r4.ebuild, -clip-core-conf-4.0.11-r3.ebuild:
+  Bump clip-usb-keys - window size + status dec fixes.
+  Bump clip-generic-net - fix for empty UMTS params.
+
+*clip-core-conf-4.0.11-r3 (04 Nov 2009)
+
+  04 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.11-r3.ebuild, -clip-core-conf-4.0.11-r2.ebuild:
+  Bump clip-usb-keys - USB hub support.
+
+*clip-core-conf-4.0.11-r2 (02 Nov 2009)
+
+  02 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.11-r2.ebuild, -clip-core-conf-4.0.11-r1.ebuild,
+  +files/_debian/postinst:
+  Add postinst to generate /etc/core/machine.
+  Bump clip-kernel-*, userd-server, clip-usb-keys, v86d, syslinux, 
+  splash-theme-clip, baselayout-clip.
+
+*clip-core-conf-4.0.11-r1 (29 Oct 2009)
+
+  29 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.11-r1.ebuild, -clip-core-conf-4.0.11.ebuild:
+  Bump clip-usb-keys / clip-user-mount / core-services - support 
+  status update for fbpanel.
+  Bump clip-generic-net / clip-kernel - more 3G support + status
+  notification.
+
+*clip-core-conf-4.0.11 (21 Oct 2009)
+
+  21 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.11.ebuild, -clip-core-conf-4.0.10-r4.ebuild:
+  Bump clip-generic-net, baselayout-clip - initial support for
+  3G.
+
+*clip-core-conf-4.0.10-r4 (12 Oct 2009)
+
+  12 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.10-r4.ebuild, -clip-core-conf-4.0.10-r3.ebuild:
+  Bump vsctl - mount read-only if read-write fails.
+
+*clip-core-conf-4.0.10-r3 (08 Oct 2009)
+
+  08 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.10-r3.ebuild, -clip-core-conf-4.0.10-r2.ebuild:
+  Bump clip-lib, clip-libvserver, cryptd-server, libacidcrypt - 
+  merge fixes from BIS code review. Bump clip-generic-net - really
+  detect hidden essid.
+
+*clip-core-conf-4.0.10-r2 (02 Oct 2009)
+
+  02 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.10-r2.ebuild, -clip-core-conf-4.0.10-r1.ebuild:
+  Fake bump to test CONFDEPS checks in new CLIP_Pkg-Base.
+
+*clip-core-conf-4.0.10-r1 (30 Sep 2009)
+
+  30 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.10-r1.ebuild, -clip-core-conf-4.0.10.ebuild:
+  Bump CLIP-Pkg-Download.
+
+*clip-core-conf-4.0.10 (30 Sep 2009)
+
+  30 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.10.ebuild, -clip-core-conf-4.0.9-r4.ebuild:
+  Bump verictl, clip-generic-net, findutils, dpkg, clip-pkg-base, 
+  glib, curl.
+
+*clip-core-conf-4.0.9-r4 (11 Sep 2009)
+
+  11 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.9-r4.ebuild, -clip-core-conf-4.0.9-r3.ebuild:
+  Bump userd-server.
+
+*clip-core-conf-4.0.9-r3 (11 Sep 2009)
+
+  11 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.9-r3.ebuild, -clip-core-conf-4.0.9-r2.ebuild:
+  Bump userd-server, clip-user-mount, clip-pkg-download.
+
+*clip-core-conf-4.0.9-r2 (09 Sep 2009)
+
+  09 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.9-r2.ebuild, -clip-core-conf-4.0.9-r1.ebuild:
+  Add userd-server, remove clip-useradmin.
+
+*clip-core-conf-4.0.9-r1 (08 Sep 2009)
+
+  08 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.9-r1.ebuild, -clip-core-conf-4.0.9.ebuild:
+  Bump clip-generic-net, clip-netd, dhcpcd : support for scanning 
+  wireless networks. Bump clip-usb-keys - 100dpi fix. Bump glibc :
+  fix UTF-8 locales.
+
+*clip-core-conf-4.0.9 (03 Sep 2009)
+
+  03 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.9.ebuild, -clip-core-conf-4.0.8-r6.ebuild:
+  Bump clip-net - RM proxy support.
+
+*clip-core-conf-4.0.8-r6 (31 Aug 2009)
+
+  31 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.8-r6.ebuild, -clip-core-conf-4.0.8-r5.ebuild:
+  Bump CLIP-Pkg-Download : fix partial files leftover.
+
+*clip-core-conf-4.0.8-r5 (28 Aug 2009)
+
+  28 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.8-r5.ebuild, -clip-core-conf-4.0.8-r4.ebuild:
+  Bump clip-sub, clip-gtw-net : support multiple client networks.
+  Bump CLIP-Pkg-Base: add clippkg_cache_get_all_fields().
+
+*clip-core-conf-4.0.8-r4 (27 Aug 2009)
+
+  27 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.8-r4.ebuild, -clip-core-conf-4.0.8-r3.ebuild:
+  Bump apt.
+
+*clip-core-conf-4.0.8-r3 (27 Aug 2009)
+
+  27 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.8-r3.ebuild, -clip-core-conf-4.0.8-r2.ebuild:
+  Bump hotplug-clip.
+
+*clip-core-conf-4.0.8-r2 (26 Aug 2009)
+
+  26 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.8-r2.ebuild, -clip-core-conf-4.0.8-r1.ebuild:
+  Bump clip-kernel, clip-sub - reject / TCPMSS.
+
+*clip-core-conf-4.0.8-r1 (26 Aug 2009)
+
+  26 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.8-r1.ebuild, -clip-core-conf-4.0.8.ebuild:
+  Bump Compress-Raw-Zlib, expat.
+  Bump clip-usb-keys, hotplug-clip, usb-printer-devices.
+
+*clip-core-conf-4.0.8 (21 Aug 2009)
+
+  21 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.8.ebuild, -clip-core-conf-4.0.7-r1.ebuild:
+  Bump apt / perl (support for clip-apps-conf-4.0.5).
+  Bump CLIP-Pkg-Base (no failure on non-fetcheable source).
+  Bump curl.
+
+*clip-core-conf-4.0.7-r1 (17 Aug 2009)
+
+  17 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.7-r1.ebuild, -clip-core-conf-4.0.7.ebuild:
+  Bump syslinux, clip-kernel (NULL ptr dereference in socket).
+
+*clip-core-conf-4.0.7 (07 Aug 2009)
+
+  07 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.7.ebuild, -clip-core-conf-4.0.6.ebuild:
+  Bump clip-kernel, clip-sub, clip-generic-net. Add v86d.
+
+*clip-core-conf-4.0.6 (29 Jul 2009)
+
+  29 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.6.ebuild, -clip-core-conf-4.0.5-r2.ebuild:
+  Bump cryptd-server.
+
+*clip-core-conf-4.0.5-r2 (23 Jul 2009)
+
+  23 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.5-r2.ebuild, -clip-core-conf-4.0.5-r1.ebuild:
+  Bump strongswan.
+
+*clip-core-conf-4.0.5-r1 (22 Jul 2009)
+
+  22 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.5-r1.ebuild, -clip-core-conf-4.0.5.ebuild:
+  Silent bump for tests.
+
+*clip-core-conf-4.0.5 (22 Jul 2009)
+
+  22 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.5.ebuild, -clip-core-conf-4.0.4.ebuild:
+  Bump clip-usb-keys, clip-useradmin, shadow, baselayout-clip and
+  baselayout-update* : new removable storage functionality, 
+  adapt to slim replacing xdm. Bump clip-install-clip : prompt
+  the user before installing upgrades.
+
+*clip-core-conf-4.0.4 (17 Jul 2009)
+
+  17 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.4.ebuild, -clip-core-conf-4.0.3-r1.ebuild:
+  Bump clip-kernel (fix veriexec sleep-inside-lock), and 
+  CLIP-Pkg-* (improved dpkg error recovery). Bump apt - augmented
+  download timeout.
+
+*clip-core-conf-4.0.3-r1 (16 Jul 2009)
+
+  16 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.3-r1.ebuild, -clip-core-conf-4.0.3.ebuild:
+  Bump clip-sub, clip-net, clip-generic-net, to fix #822 (bad 
+  error detection in netfilter) and #823 (missing support for
+  port ranges in _MULTIPORT_REGEXP).
+
+*clip-core-conf-4.0.3 (13 Jul 2009)
+
+  13 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.3.ebuild, -clip-core-conf-4.0.2.ebuild:
+  Bump clip-user-mount, clip-generic-net, clip-vserver.
+
+*clip-core-conf-4.0.2 (08 Jul 2009)
+
+  08 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.2.ebuild, -clip-core-conf-4.0.1-r1.ebuild:
+  Bump clip-kernel, clip-usb-keys, clip-netd/dhcpcd, clip-generic-net.
+  Add eject.
+
+*clip-core-conf-4.0.1-r1 (29 Jun 2009)
+
+  29 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.1-r1.ebuild, -clip-core-conf-4.0.1.ebuild:
+  Bump clip-generic-net - 64 hex digits WPA PSK support. 
+  Bump clip-kernel - make usblp a built-in rather than a module - 
+  because I'm too lame to have thought of that when installing
+  the first clients.
+  Bump usb-printer-devices - fix conf file path.
+
+*clip-core-conf-4.0.1 (26 Jun 2009)
+
+  26 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.1.ebuild, -clip-core-conf-4.0.0.ebuild,
+  files/clip-release.html:
+  Add usb-printer-devices, bump strongswan.
+
+*clip-core-conf-4.0.0 (24 Jun 2009)
+
+  24 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-4.0.0.ebuild, -clip-core-conf-3.99.19.ebuild,
+  files/clip-release.html:
+  Here we go...
+  Bump clip-kernel to 2.6.29.5 along the way, 'cause I'm a playah...
+
+*clip-core-conf-3.99.19 (24 Jun 2009)
+
+  24 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.19.ebuild, -clip-core-conf-3.99.18.ebuild:
+  Bump clip-useradmin, clip-usb-keys, clip-netd, baselayout-clip.
+
+*clip-core-conf-3.99.18 (22 Jun 2009)
+
+  22 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.18.ebuild, -clip-core-conf-3.99.17-r1.ebuild:
+  Bump clip-generic-net - signal wifi availability to ADMIN.
+  Bump clip-useradmin, baselayout-clip, clip-usb-keys - add priv_user
+  user profile.
+  Bump clip-download - fix network restart.
+
+*clip-core-conf-3.99.17 (18 Jun 2009)
+
+  18 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.17.ebuild, -clip-core-conf-3.99.16-r3.ebuild:
+  Bump strongswan, clip-net*, alsa-utils:
+   - use 127.0.1.1 as default USER/ADMIN/AUDIT addr
+   - generate sound devices dynamically
+
+*clip-core-conf-3.99.16-r3 (17 Jun 2009)
+
+  17 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.16-r3.ebuild, -clip-core-conf-3.99.16-r2.ebuild:
+  Bump ntp, libpng.
+
+*clip-core-conf-3.99.16-r2 (16 Jun 2009)
+
+  16 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.16-r2.ebuild, -clip-core-conf-3.99.16-r1.ebuild:
+  Bump CLIP-Pkg-Base.
+
+*clip-core-conf-3.99.16-r1 (16 Jun 2009)
+
+  16 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.16-r1.ebuild, -clip-core-conf-3.99.16.ebuild:
+  Bump clip-useradmin, clip-user-mount.
+
+*clip-core-conf-3.99.16 (15 Jun 2009)
+
+  15 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.16.ebuild, -clip-core-conf-3.99.15.ebuild,
+  -files/clip-release.log, +files/clip-release.html:
+  Bump net tools to switch to netconf and support wpa (initial support
+  only). Miscellaneous kernel fixes.
+  Replace text changelog with html one.
+  Add clip-netd.
+
+*clip-core-conf-3.99.15 (09 Jun 2009)
+
+  09 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.15.ebuild, -clip-core-conf-3.99.14.ebuild:
+  Bump clip-useradmin (unlock fix).
+  Bump apt (deep install dependency upgrade check).
+  Bump core-services for ADMIN jail.
+  Bump iptables.
+
+*clip-core-conf-3.99.14 (03 Jun 2009)
+
+  03 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.14.ebuild, -clip-core-conf-3.99.13.ebuild:
+  Bump clip-usb-keys, clip-kernel, add busybox-initrd and
+  wireless-firmwares, wireless-tools, hotplug-clip. Bump clip-generic-net
+  and clip-net. Bump clip-kernel and verictl. Add basic wireless
+  support.
+
+*clip-core-conf-3.99.13 (28 May 2009)
+
+  28 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.13.ebuild, -clip-core-conf-3.99.12.ebuild:
+  Bump CLIP-Pkg*, libacidfile/libacidcrypt + cryptd-server.
+
+*clip-core-conf-3.99.12 (25 May 2009)
+
+  25 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.12.ebuild, -clip-core-conf-3.99.11.ebuild:
+  Bump clip-kernel, util-linux, verictl, baselayout-clip, and pam.
+
+*clip-core-conf-3.99.11 (20 May 2009)
+
+  20 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.11.ebuild, -clip-core-conf-3.99.10.ebuild:
+  Bump clip-usb-keys.
+
+*clip-core-conf-3.99.10 (18 May 2009)
+
+  18 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.10.ebuild, -clip-core-conf-3.99.9.ebuild:
+  Bump libacidcrypt, libacidfile, and their reverse depends.
+
+*clip-core-conf-3.99.9 (14 May 2009)
+
+  14 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.9.ebuild, -clip-core-conf-3.99.8.ebuild:
+  Bump strongswan, clip-*net.
+
+*clip-core-conf-3.99.8 (13 May 2009)
+
+  13 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.8.ebuild, -clip-core-conf-3.99.7.ebuild:
+  Bump clip-usb-keys.
+
+*clip-core-conf-3.99.7 (12 May 2009)
+
+  12 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.7.ebuild, -clip-core-conf-3.99.6.ebuild:
+  Bump cryptd-server, clip-pkg-*.
+
+*clip-core-conf-3.99.6 (06 May 2009)
+
+  06 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.6.ebuild, -clip-core-conf-3.99.5.ebuild:
+  Bump clip-install-clip, cryptd-server and its dependencies.
+
+*clip-core-conf-3.99.5 (05 May 2009)
+
+  05 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.5.ebuild, -clip-core-conf-3.99.4.ebuild:
+  Bump clip-kernel, freetype.
+
+*clip-core-conf-3.99.4 (04 May 2009)
+
+  04 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.4.ebuild, -clip-core-conf-3.99.3.ebuild:
+  Bump CLIP-Pkg-*, clip-install-*, clip-download.
+
+*clip-core-conf-3.99.3 (30 Apr 2009)
+
+  30 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.3.ebuild, -clip-core-conf-3.99.2.ebuild,
+  files/clip-release.log:
+  Minor bumps to clip-kernel / clip-libvserver. Add cryptd by 
+  default.
+
+*clip-core-conf-3.99.2 (24 Apr 2009)
+
+  24 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.2.ebuild, -clip-core-conf-3.99.1.ebuild:
+  Bump busybox, core-services.
+
+*clip-core-conf-3.99.1 (20 Apr 2009)
+
+  20 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-core-conf-3.99.1.ebuild, -clip-core-conf-3.99.0.ebuild:
+  Switch to 2.6.28 kernel.
+
+  02 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-core-conf-3.99.0.ebuild:
+  Fix package lists for gateways, update (no revbump) package lists.
+
+*clip-core-conf-3.99.0 (25 Mar 2009)
+
+  25 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-core-conf-3.99.0.ebuild:
+  Initial import.

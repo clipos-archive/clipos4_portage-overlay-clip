@@ -1,0 +1,161 @@
+--- apt-move.bkp	2006-10-27 19:30:34.436890984 +0200
++++ apt-move	2006-10-27 19:30:46.911994480 +0200
+@@ -69,7 +69,7 @@
+ 
+ FETCH=/usr/lib/apt-move/fetch	# crappy replacement for apt-get
+ : ${SCRIPTS=/usr/share/apt-move}
+-awk="mawk -f $SCRIPTS/cmpbignum.awk -f $SCRIPTS/cmpversion.awk -f"
++awk="awk -f $SCRIPTS/cmpbignum.awk -f $SCRIPTS/cmpversion.awk -f"
+ awk="$awk $SCRIPTS/getdist.awk -f"
+ MOVE3=$SCRIPTS/move3
+ MOVE4="$awk $SCRIPTS/move4"
+@@ -210,7 +210,7 @@
+ }
+ 
+ sortind() {
+-	mawk '
++	awk '
+ 		{
+ 			file = $1
+ 			n = split(file, a, /[_\/]/)
+@@ -279,7 +279,7 @@
+ 	for i; do
+ 		dist=${i%%.*}
+ 		[ -d $dir/$dist ] || mkdir $dir/$dist
+-		mawk -f $SCRIPTS/getdist.awk -f $pf-awk $i > $pf-tmp1
++		awk -f $SCRIPTS/getdist.awk -f $pf-awk $i > $pf-tmp1
+ 		< $pf-tmp1 sort -k 1,1 > $dir/$dist/local
+ 	done
+ }
+@@ -312,7 +312,7 @@
+ 		fi
+ 		[ $# -eq 1 ] && [ ! -e "$1" ] && continue
+ 		printf '%s\n' "$@"
+-	done | xargs -r mawk '
++	done | xargs -r awk '
+ 		function process() {
+ 			if (name == "")
+ 				return
+@@ -351,13 +351,13 @@
+ 	cd $OLDPWD
+ 	< $pf-tmp2 sort -k 3,3 |
+ 		join -a 1 -o 1.1,1.2,1.4,2.2,1.3 - $TMPHOME/code-alias |
+-		mawk '{print $1 " " $2 " " $4 " " $3}' | sort -k 1,1 |
++		awk '{print $1 " " $2 " " $4 " " $3}' | sort -k 1,1 |
+ 		join -a 1 -e - -o 2.2,2.3,2.4,1.2 $pf-tmp1 - |
+-		mawk '
++		awk '
+ 			$1 == "-" { $1 = "'$ARCH'" }
+ 			$2 == "-" { $2 = "'$DIST'" }
+ 			{ print }
+-		' | sort -k 1,2 | mawk '
++		' | sort -k 1,2 | awk '
+ 			{ key = $2 "." $1 }
+ 			file != key {
+ 				if (file && close(file)) {
+@@ -456,7 +456,7 @@
+ 
+ 	sort -k 1,1 -m $pf-old "$@" | $GET2 |
+ 		sort -k 1,1 -sum $dir/local - |
+-		mawk '{
++		awk '{
+ 			printf "%-30s\t%-9s\t%-15s\t%-9s\t%s\n",
+ 				$1, $2, $3, $4, $5
+ 		}' | unexpand -a > $dist.binary
+@@ -472,7 +472,7 @@
+ 	[ -f $dir/debian ] || > $dir/debian
+ 
+ 	sort -k 1,1 -sum $dir/local $dir/debian |
+-		mawk '{
++		awk '{
+ 			printf "%-30s\t%-9s\t%-15s\t%s\n",
+ 				$1, $2, $3, $4
+ 		}' | unexpand -a > $dist.source
+@@ -485,7 +485,7 @@
+ 	for i in binary source; do
+ 		set *.$i
+ 		if [ $# -gt 1 ] || [ -e "$1" ]; then
+-			printf '%s\n' "$@" | mawk '
++			printf '%s\n' "$@" | awk '
+ 				{
+ 					f = $0
+ 					d = substr(f, 1, length(f) - 7)
+@@ -577,7 +577,7 @@
+ 		return
+ 	fi
+ 
+-	< $pf-new cut -d ' ' -f 1 | mawk '
++	< $pf-new cut -d ' ' -f 1 | awk '
+ 		{ rel[$0] = 1 }
+ 		END {
+ 			file = "binary"
+@@ -855,7 +855,7 @@
+ 	waitall
+ 
+ 	cd .apt-move
+-	< $pf-pkg sortind | mawk '
++	< $pf-pkg sortind | awk '
+ 		{
+ 			name = $1
+ 			ver = $2
+@@ -873,7 +873,7 @@
+ 		}
+ 	'
+ 
+-	< $pf-dsc1 mawk '
++	< $pf-dsc1 awk '
+ 		{
+ 			src = $1
+ 			ver = $2
+@@ -1060,7 +1060,7 @@
+ 	fi
+ 
+ 	join -o 2.1,2.3,2.5 .apt-move/$DIST.arch.$ARCH - |
+-		join -a 1 - $pf-old | mawk "$changed"' { print $1 " " $2 }' |
++		join -a 1 - $pf-old | awk "$changed"' { print $1 " " $2 }' |
+ 		tee $pf-tmp1 | sed 's/^[^ ]*_\([^ ]*\) .*/\1_*/' > $pf-tmp2
+ 	sed 's/.* \(.*\)$/\1 binary-'$ARCH'/' $pf-tmp1 | pkgdir |
+ 		paste -d / - $pf-tmp2
+@@ -1091,7 +1091,7 @@
+ 	fi
+ 
+ 	join -o 1.1,1.3,1.4,2.2 -a 1 - $pf-old |
+-		mawk "$changed"' { print $1 " " $2 }' | tee $pf-tmp1 |
++		awk "$changed"' { print $1 " " $2 }' | tee $pf-tmp1 |
+ 		sed 's/^[^ ]*_\([^ ]*\) .*/\1_*/' > $pf-tmp2
+ 	sed 's/.* \(.*\)/\1 source/' $pf-tmp1 | pkgdir |
+ 		paste -d / - $pf-tmp2
+@@ -1356,7 +1356,7 @@
+ 	set Contents-*
+ 	[ $# -eq 1 ] && [ ! -e "$1" ] && return
+ 	for j; do
+-		sort $j | mawk '
++		sort $j | awk '
+ 			prev != $1 {
+ 				if (prev != "") {
+ 					printf "%-59s %s\n", prev, pkg
+@@ -1574,7 +1574,7 @@
+ 	dpkg --get-selections | sort -sb -k 2,2 > $pf-tmp1
+ 	echo install | join -j2 2 -o 2.1 - $pf-tmp1 > $f
+ 	if [ -f .apt-move/$DIST.binary ]; then
+-		mawk -F '[ \t_]' '{ print $3 " " $2 }' .apt-move/$DIST.binary |
++		awk -F '[ \t_]' '{ print $3 " " $2 }' .apt-move/$DIST.binary |
+ 			sort | join -o 1.2 - $f | sort -u
+ 	fi > $f-src
+ }
+--- del1.bkp	2006-10-27 19:31:18.441201312 +0200
++++ del1	2006-10-27 19:31:30.618350104 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/mawk -f
++#!/usr/bin/awk -f
+ 
+ BEGIN {
+ 	err = "/dev/stderr"
+--- pkg1.bkp	2006-10-27 19:31:23.171482200 +0200
++++ pkg1	2006-10-27 19:31:36.827406184 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/mawk -f
++#!/usr/bin/awk -f
+ # $Id: pkg1,v 1.5 2003/02/22 10:56:33 herbert Exp $
+ 
+ function read(err) {

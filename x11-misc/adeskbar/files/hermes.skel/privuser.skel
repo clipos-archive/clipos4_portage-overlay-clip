@@ -1,0 +1,172 @@
+cat > "${OUTFILE}" << EOF
+## ADeskBar config
+[CONFIG]
+tooltips=True
+fade_hidden=False
+icon_space=10
+background_gradient_color=#333333
+icons_effects=1
+show_border=0
+smooth_hide=1
+background_color=#000000
+bar_size=100
+rounded_corner=0
+bar_style=0
+fixed_mode=True
+icon_size=24
+reserve_space=True
+hidden_size=1
+opacity=100
+fixed_size=100.0
+border_color=#313335
+padding=4
+zoom_factor=1.1
+keep_below=False
+offset_pos=4
+bg_color_sub=#EEEEEE
+border_color_sub=#7F7F7F
+align=center
+timer=1
+bg_gradient=False
+auto_hide=0
+auto_raise=1
+offset_align=0
+position=left
+fake_trans=False
+
+[LAUNCHER/1]
+use_menu_properties=1
+cmd=@menuselect
+menu_path=/usr/local/etc/xdg/menus/leave.menu
+name=leave
+icon=clip
+
+[LAUNCHER/2]
+size=20
+cmd=@spacer
+name=Spacer
+icon=images/plugins/spacer.png
+
+[LAUNCHER/3]
+use_menu_properties=1
+cmd=@menuselect
+menu_path=/usr/local/etc/xdg/menus/admin.menu
+name=config
+icon=preferences-system
+
+[LAUNCHER/4]
+size=20
+cmd=@spacer
+name=Spacer
+icon=images/plugins/spacer.png
+
+[LAUNCHER/5]
+cmd=@switchview
+name=switch
+icon=images/plugins/spacer.png
+max_size=65
+core_color=${CORE_COLOR}
+EOF
+
+i=1
+for jail_name in ${JAIL_NAMES}; do
+	# make it lower_case
+	jail_name=$(echo -n ${jail_name}|tr [:upper:] [:lower:])
+	# make it upper case
+	JAIL_NAME=$(echo -n ${jail_name}|tr [:lower:] [:upper:])
+	for param_suffix in DESC IMG AUTOSTART COLOR; do
+		conf_param="${JAIL_NAME}_${param_suffix}"
+		declare "JAIL_${param_suffix}"="${!conf_param}"
+	done
+
+	cat >> "${OUTFILE}" << EOF
+viewer${i}_name=${JAIL_DESC}
+viewer${i}_img=${JAIL_IMG}
+viewer${i}_color=${JAIL_COLOR}
+viewer${i}_cmd=/usr/local/bin/${jail_name}_session.sh
+viewer${i}_level=${jail_name}
+viewer${i}_class=^Vncviewer\$
+viewer${i}_title=^.*: Visionneuse ${JAIL_NAME}\$
+viewer${i}_flag=/var/run/has_jail_${jail_name}
+viewer${i}_autostart=${JAIL_AUTOSTART}
+EOF
+	let i=i+1
+done
+
+cat >> "${OUTFILE}" << EOF
+
+[LAUNCHER/6]
+size=20
+cmd=@spacer
+name=Spacer
+icon=images/plugins/spacer.png
+
+[LAUNCHER/7]
+use_menu_properties=1
+cmd=@menuselect
+menu_path=/usr/local/etc/xdg/menus/media.menu
+name=media
+icon=drive-removable-media-usb-pendrive
+
+[LAUNCHER/8]
+use_menu_properties=1
+cmd=@menuselect
+menu_path=/usr/local/etc/xdg/menus/net.menu
+name=net
+icon=network
+
+[LAUNCHER/9]
+size=20
+cmd=@spacer
+name=Spacer
+icon=images/plugins/spacer.png
+
+[LAUNCHER/10]
+use_menu_properties=1
+cmd=@menuselect
+menu_path=/usr/local/etc/xdg/menus/sys.menu
+name=sys
+icon=security-low
+
+EOF
+
+cat >> "${OUTFILE}" << EOF
+
+[LAUNCHER/11]
+use_menu_properties=1
+cmd=@menuselect
+menu_path=/usr/local/etc/xdg/menus/power.menu
+name=power
+icon=no-battery
+
+
+[LAUNCHER/12]
+name=Mode présentation
+cmd=@autohide
+icon=display
+
+EOF
+
+if [[ -n ${HAS_CLOCK} && ${HAS_CLOCK} == "yes" ]]; then
+	cat >> "${OUTFILE}" << EOF
+
+[LAUNCHER/13]
+size=20
+cmd=@spacer
+name=Spacer
+icon=images/plugins/spacer.png
+
+[LAUNCHER/14]
+cmd=@digiclock
+name=%A %d %B %Y
+date=
+time=%H%n%M
+time_color=#FFFFAA
+date_color=#EEEEEE
+time_font=Arial Bold 12
+date_font=Sans Bold 8
+icon=images/plugins/digiclock.png
+exec_cmd=/usr/local/bin/xdialog.sh "\${XAUTHORITY}" --no-cancel --ok-label Fermer --title Calendrier --calendar Calendrier 0 0
+
+EOF
+fi

@@ -1,0 +1,9 @@
+#!/sbin/runscript
+
+depend() {
+	need ipsec
+}
+
+start() {
+	einfo "Networking services started"
+}

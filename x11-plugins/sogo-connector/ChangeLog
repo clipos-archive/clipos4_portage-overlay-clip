@@ -1,0 +1,17 @@
+# CLIP Changelog for x11-plugins/sogo-connector
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  sogo-connector-24.0.0.ebuild:
+  Add amd64 keyword
+
+*sogo-connector-24.0.0 (08 Nov 2013)
+
+  08 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +sogo-connector-24.0.0.ebuild, -sogo-connector-17.0.3.ebuild:
+  Bump to latest.
+
+*sogo-connector-17.0.3 (09 Apr 2013)
+
+  09 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  sogo-connector-17.0.3.ebuild:
+  Initial import.

@@ -1,0 +1,38 @@
+#!/bin/bash
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+SRC="${1}"
+DEST="${2}"
+
+PROTO="$(echo "${SRC}" | cut -d: -f1)"
+
+case "${PROTO}" in
+	file)
+		URI="${SRC##file://}"
+		# Hack because distfiles is automatically appended to URI by portage...
+		W=$(dirname "${URI}")
+		W=$(dirname "${W}")
+		URI=$(basename "${URI}")
+		URI="${W}/${URI}"
+
+		if [[ -e "${URI}" ]] ; then
+			if [[ -e "${DEST}" && ! -L "${DEST}" ]] ; then
+				echo "File ${DEST} exists but is not a symlink !!!" >&2
+				exit 10
+			else
+				rm -f "${DEST}"
+				ln -s "${URI}" "${DEST}"
+			fi
+		else
+			echo "Not found ${URI}" >&2
+			exit 10
+		fi
+	;;
+
+	*)
+		echo "Don't know how to fetch for protocol ${PROTO}" >&2
+		echo "This may be related to bug #3547" >&2
+		exit 20
+	;;
+esac

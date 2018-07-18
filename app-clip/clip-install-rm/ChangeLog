@@ -1,0 +1,128 @@
+# ChangeLog for <app-clip>/<clip-install-rm>
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  clip-install-rm-2.0.1-r2.ebuild:
+  Add amd64 keyword, masked for now.
+
+  29 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  files/root_clip_install_rm:
+  Really fix option parsing.
+
+*clip-install-rm-2.0.1-r2 (28 Jan 2009)
+
+  28 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-2.0.1-r2.ebuild, -clip-install-rm-2.0.1-r1.ebuild,
+  files/root_clip_install_rm:
+  Fix ionice options with a --.
+
+*clip-install-rm-2.0.1-r1 (23 Jan 2009)
+
+  23 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-2.0.1-r1.ebuild, -clip-install-rm-2.0.1.ebuild,
+  files/root_clip_install_rm:
+  Run clip_install cron jobs under ionice -c 3.
+
+*clip-install-rm-2.0.1 (20 Jan 2009)
+
+  20 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-2.0.1.ebuild, -clip-install-rm-2.0.ebuild:
+  Support for optional packages.
+
+*clip-install-rm-2.0 (24 Oct 2008)
+
+  24 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-2.0.ebuild, -clip-install-rm-1.3.99.ebuild:
+  Stabilize clip-update ng.
+
+*clip-install-rm-1.3.99 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.3.99.ebuild, -clip-install-rm-1.3.3-r1.ebuild:
+  Add new cache paths needed by clip_download.
+
+*clip-install-rm-1.3.3-r1 (03 Oct 2008)
+
+  03 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.3.3-r1.ebuild, -clip-install-rm-1.3.3.ebuild,
+  files/root_clip_install_rm, files/_debian/postinst:
+  Make cron calls to clip_install less intrusive:
+   - launch RM_H / RM_B (and CLIP) with 5 minutes in between each call, 
+   rather than simultaneously
+   - run clip_install at nice 15.
+
+  20 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  -files/_debian/conffiles:
+  Remove static conffiles.
+
+*clip-install-rm-1.3.3 (19 Nov 2007)
+
+  19 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.3.3.ebuild, -clip-installer-1.3.2.ebuild:
+  Bump, activate logging to syslog during rm core upgrade.
+
+*clip-install-rm-1.3.2 (07 Nov 2007)
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.3.2.ebuild, -clip-installer-1.3.1.ebuild:
+  Undo SGDN changes to apt.conf.d : this was not supposed to 
+  be installed in core... My mistake.
+
+  22 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.3.1.ebuild:
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 1.3.1.
+
+*clip-install-rm-1.3.1 (22 Oct 2007)
+
+  22 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.3.1.ebuild:
+  Merge 1.2.1 into 1.3.
+
+*clip-install-rm-1.2.1 (17 Oct 2007)
+
+  17 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.2.1.ebuild, -files/_debian/conffiles:
+  Add CLIP_CONF_FILES support. Remove /etc/admin/clip_install/apt.conf.d 
+  from install, since it conflicts with clip-install-clip (which was not
+  detected until now because clip-install-clip used to install it in
+  /mounts/admin_priv/etc.admin ...).
+
+*clip-install-rm-1.3 (03 Oct 2007)
+
+  03 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.3.ebuild:
+  Call clip-install with the -l parameter (no syslog available
+  up to now).
+
+*clip-install-rm-1.2 (27 Jul 2007)
+
+  27 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.2.ebuild:
+  Remove the part of the installation which installs files in the core and
+  deplace it into clip-install-clip.
+  Modify and correct postint and prerm scripts.
+  Modify crontab installation.
+  Modify the owner and group of /etc/admin/clip_install
+
+*clip-install-rm-1.1 (12 Jul 2007)
+
+  12 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.1.ebuild:
+  Modification of the script etc/init.d/rm_core_install.
+
+*clip-install-rm-1.0.1 (16 Jul 2007)
+
+  16 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.0.1.ebuild:
+  Init script: pass addresses imported from /etc/conf.d/net, with
+  a more restrictive netmask. Use contexts numbers 1001 and 1002
+  for secure_update_rm_* jails. Have the init script start before
+  clip-servers (TODO: make sure it completes before we try to
+  setup the final RM jails).
+
+*clip-install-rm-1.0 (29 Jun 2007)
+
+  29 Jun 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-rm-1.0.ebuild:
+  Initial import.

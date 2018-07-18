@@ -1,0 +1,3 @@
+core_CONF=/etc/admin/conf.d/pkcs11proxyd-conf/core/conf/pkcs11proxyd_core.conf
+rm_b_CONF=/etc/admin/conf.d/pkcs11proxyd-conf/rm_b/conf/pkcs11proxyd_rm_b.conf
+rm_h_CONF=/etc/admin/conf.d/pkcs11proxyd-conf/rm_h/conf/pkcs11proxyd_rm_h.conf

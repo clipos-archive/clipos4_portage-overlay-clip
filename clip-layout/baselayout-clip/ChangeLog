@@ -1,0 +1,1368 @@
+# ChangeLog for <sys-apps>/<baselayout-clip>
+
+*baselayout-clip-2.1.3 (02 Nov 2017)
+
+  02 Nov 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.1.3.ebuild, -baselayout-clip-2.1.2.ebuild:
+  Refresh xorg-config on xdm start.
+  Add cgroup support.
+
+*baselayout-clip-2.1.1-r1 (17 Oct 2016)
+
+  17 Oct 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.1.1-r1.ebuild, -baselayout-clip-2.1.1.ebuild:
+  Added dependency on jail_init virtual service provided by init_cgroups.
+
+*baselayout-clip-2.1.1 (16 Dec 2015)
+
+  16 Dec 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.1.1.ebuild, -baselayout-clip-2.1.0-r1.ebuild:
+  Enlarged SSM tmpfs for databases
+
+*baselayout-clip-2.1.0-r1 (02 Dec 2015)
+
+  02 Dec 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.1.0-r1.ebuild, -baselayout-clip-2.1.0.ebuild:
+  Handle multilib symlinks (lib64->lib).
+
+*baselayout-clip-2.1.0 (03 Nov 2015)
+
+  03 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.1.0.ebuild, -baselayout-clip-2.0.16-r2.ebuild:
+  Added temporary file systems for SSM
+
+*baselayout-clip-2.0.16-r2 (13 May 2015)
+
+  13 May 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.16-r2.ebuild, -baselayout-clip-2.0.16-r1.ebuild:
+  Remove useless symlink from boot partition (/boot/boot -> /boot)
+
+*baselayout-clip-2.0.16-r1 (13 Mar 2015)
+
+  13 Mar 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.16-r1.ebuild, -baselayout-clip-2.0.16.ebuild,
+  +files/rb/passwd, +files/rb/group:
+  Add new user/group for clip-rb.
+
+*baselayout-clip-2.0.16 (06 Mar 2015)
+
+  06 Mar 2015; ANSSI <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.16.ebuild, -baselayout-clip-2.0.15.ebuild:
+  Fix missing colon in group file.
+
+*baselayout-clip-2.0.15 (25 Jul 2014)
+
+  25 Jul 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.15.ebuild, -baselayout-clip-2.0.14.ebuild:
+  Fix slim not starting right after update due to libpng update.
+
+*baselayout-clip-2.0.14 (06 Jun 2014)
+
+  06 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.14.ebuild, -baselayout-clip-2.0.13.ebuild:
+  Fix typo in previous version.
+
+*baselayout-clip-2.0.13 (30 May 2014)
+
+  30 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.13.ebuild, -baselayout-clip-2.0.12.ebuild:
+  Try harder to rotate logfiles when /var/log is full. Reserve
+  20% of it to root, to help with that.
+
+*baselayout-clip-2.0.12 (29 Apr 2014)
+
+  29 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.12.ebuild, -baselayout-clip-2.0.11.ebuild:
+  Remove usbfs mount, for use with 3.13+ kernels.
+
+*baselayout-clip-2.0.11 (18 Mar 2014)
+
+  18 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.11.ebuild, -baselayout-clip-2.0.10.ebuild:
+  Add /etc/fstab.d support.
+
+*baselayout-clip-2.0.10 (18 Feb 2014)
+
+  18 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.10.ebuild, -baselayout-clip-2.0.9.ebuild:
+  Fix 'messages' logfile creation.
+
+*baselayout-clip-2.0.9 (20 Jan 2014)
+
+  20 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.9.ebuild, -baselayout-clip-2.0.8.ebuild:
+  Fix test_fsck - add a random max mount count between 20 and 40
+  for filesystems that lack such a max count.
+
+*baselayout-clip-2.0.8 (24 Dec 2013)
+
+  24 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.8.ebuild, -baselayout-clip-2.0.7.ebuild:
+  More modular logfiles init script, supporting extra logging
+  definitions in /etc/jails/*/syslog.socket and /etc/syslog.d.
+
+*baselayout-clip-2.0.7 (23 Dec 2013)
+
+  23 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.7.ebuild, -baselayout-clip-2.0.6.ebuild:
+  Add 'download.log' log file.
+
+*baselayout-clip-2.0.6 (19 Nov 2013)
+
+  19 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.6.ebuild, -baselayout-clip-2.0.5.ebuild:
+  checkfs - display fsck output on tty8 as well.
+  Activate parallel mode in openRC.
+
+*baselayout-clip-2.0.5 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.5.ebuild, -baselayout-clip-2.0.4.ebuild:
+  checkfs - display messages on tty8 to avoid clutter on tty1.
+
+*baselayout-clip-2.0.4 (22 Oct 2013)
+
+  22 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.4.ebuild, -baselayout-clip-2.0.3.ebuild:
+  Fix timeouts/dependencies in a few scripts.
+
+*baselayout-clip-2.0.3 (16 Oct 2013)
+
+  16 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.3.ebuild, -baselayout-clip-2.0.2-r1.ebuild:
+  Minor fixes :
+   - init.d/logfiles import warnings were too verbose
+   - we did not set splash back to silent after running checkfs in
+     verbose mode.
+
+*baselayout-clip-2.0.2-r1 (15 Oct 2013)
+
+  15 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.2-r1.ebuild, -baselayout-clip-2.0.2.ebuild:
+  Ooops, turns out /etc/core/group *really* needed to be a conffile, 
+  otherwise our actual users stop being members of crypthomes, etc.
+  Reinstate group as conffile, and add generic handling of new groups
+  and users in postinst, by adding missing lines from /etc/$f.base
+  to /etc/core/$f, for f={passwd,group}.
+
+*baselayout-clip-2.0.2 (14 Oct 2013)
+
+  14 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.2.ebuild, -baselayout-clip-2.0.1.ebuild:
+  Make use of the local init.d script to launch smaller scripts
+  after xdm.
+
+*baselayout-clip-2.0.1 (14 Oct 2013)
+
+  14 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.1.ebuild, -baselayout-clip-2.0.0.ebuild:
+  Smallish fix to xdm script.
+
+*baselayout-clip-2.0.0 (11 Oct 2013)
+
+  11 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-2.0.0.ebuild, -baselayout-clip-1.11.13-r2.ebuild:
+  First version using openrc - all rc stuff now provided by 
+  sys-apps/openrc. Most init scripts have been slightly updated, 
+  but retain the same behaviour for the most part.
+  /etc/group is no longer a conffile, since we only ever update
+  it through core updates anyway...
+
+*baselayout-clip-1.11.13-r2 (07 Oct 2013)
+
+  07 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.13-r2.ebuild, -baselayout-clip-1.11.13-r1.ebuild:
+  Change fstab generation - always use sda7/sda8 for RM jails, wether in
+  clip1 or clip2.
+
+*baselayout-clip-1.11.13-r1 (05 Jul 2013)
+
+  05 Jul 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.13-r1.ebuild, -baselayout-clip-1.11.13.ebuild:
+  Force gid 409 for shadow group in /etc/tcb.
+
+*baselayout-clip-1.11.13 (11 Apr 2013)
+
+  11 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.13.ebuild, -baselayout-clip-1.11.12.ebuild:
+  Correctly handle ext4 filesystems.
+
+*baselayout-clip-1.11.12 (28 Mar 2013)
+
+  28 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.12.ebuild, -baselayout-clip-1.11.11.ebuild:
+  Support '-' in hostname.
+
+*baselayout-clip-1.11.11 (07 Mar 2013)
+
+  07 Mar 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.11.ebuild, -baselayout-clip-1.11.10.ebuild:
+  Fix urandom main umask.
+
+*baselayout-clip-1.11.10 (11 Jan 2013)
+
+  11 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.10.ebuild, -baselayout-clip-1.11.9.ebuild:
+  Add new group : ping (gid 322), to control access to ping sockets.
+
+*baselayout-clip-1.11.9 (09 Jul 2012)
+
+  09 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.9.ebuild, -baselayout-clip-1.11.8.ebuild:
+  Add history.log to rotated logfiles.
+
+*baselayout-clip-1.11.8 (14 Jun 2012)
+
+  14 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.8.ebuild, -baselayout-clip-1.11.7.ebuild:
+  Fix logfiles initial permissions.
+
+*baselayout-clip-1.11.7 (07 Jun 2012)
+
+  07 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.7.ebuild, -baselayout-clip-1.11.6.ebuild:
+  Fix false warnings in halt.sh.
+
+*baselayout-clip-1.11.6 (06 Jun 2012)
+
+  06 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.6.ebuild, -baselayout-clip-1.11.5-r1.ebuild:
+  Support log rotation through logrotate.
+  Make swapon a separate init script.
+  Cleanup a few files.
+
+*baselayout-clip-1.11.5-r1 (05 Mar 2012)
+
+  05 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.5-r1.ebuild, -baselayout-clip-1.11.5.ebuild:
+  Enable ip forwarding in clients.
+
+*baselayout-clip-1.11.5 (23 Feb 2012)
+
+  23 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.5.ebuild, -baselayout-clip-1.11.4.ebuild:
+  Add vault user and groups.
+
+*baselayout-clip-1.11.4 (04 Jan 2012)
+
+  04 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.4.ebuild, -baselayout-clip-1.11.3.ebuild:
+  Fix current.geom generation when there is no video=.... boot argument.
+
+*baselayout-clip-1.11.3 (25 Aug 2011)
+
+  25 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.3.ebuild, -baselayout-clip-1.11.2.ebuild:
+  Better ext3 mount options - barrier=1, errors=panic.
+  Add support for injecting an admin-provided random seed in urandom
+  at boot time.
+
+*baselayout-clip-1.11.2 (19 May 2011)
+
+  19 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.2.ebuild, -baselayout-clip-1.11.1-r1.ebuild:
+  Add mtab group.
+
+*baselayout-clip-1.11.1-r1 (28 Mar 2011)
+
+  28 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.1-r1.ebuild, -baselayout-clip-1.11.1.ebuild:
+  Rbump to force rebuild with newer rootdisk.eclass.
+
+*baselayout-clip-1.11.1 (23 Mar 2011)
+
+  23 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.1.ebuild, -baselayout-clip-1.11.0.ebuild:
+  Halt / reboot sequence fixes:
+   - we no longer need to swapoff (since unmounting /dev is not 
+   necessary now)
+   - change cryptsetup mappings removal in a way I hope will mostly
+   work for encrypted roots.
+  Test filesystems with a custom utility before fsck'ing them, so as
+  to be able to notify user if checks will be performed.
+
+*baselayout-clip-1.11.0 (16 Mar 2011)
+
+  16 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.11.0.ebuild, -baselayout-clip-1.10.1-r2.ebuild:
+  Switch to a dynamic /dev inherited from initrd and /x11/dev created
+  at boot, remove static /dev, /mounts/dev and /mounts/x11_priv/dev.
+  Switch to aes-xts-plain-512 for swap encryption.
+
+*baselayout-clip-1.10.1-r2 (11 Mar 2011)
+
+  11 Mar 2011; Arnauld Michelizza <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.10.1-r2.ebuild, -baselayout-clip-1.10.1-r1.ebuild:
+  Fix localmount to disable mkswap warning message when using full disk.
+
+*baselayout-clip-1.10.1-r1 (07 Feb 2011)
+
+  07 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.10.1-r1.ebuild, -baselayout-clip-1.10.1.ebuild:
+  Fix postinstall to not add non-missing groups when 'grep' is not 
+  present.
+
+  03 Fev 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  baselayout-clip-1.10.1.ebuild:
+  Fix a slight (and old) ordering bug in postinst : remove wrong
+  nomad_user group before adding it.
+
+*baselayout-clip-1.10.1 (01 Fev 2011)
+
+  01 Fev 2011; Benjamin Morin <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.10.1.ebuild, -baselayout-clip-1.10.0-r1.ebuild:
+  Add pcscd group.
+
+*baselayout-clip-1.10.0-r1 (28 Oct 2010)
+
+  28 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.10.0-r1.ebuild, -baselayout-clip-1.10.0.ebuild:
+  Add /dev/mem to x11 devices.
+
+*baselayout-clip-1.10.0 (23 Sep 2010)
+
+  23 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.10.0.ebuild, -baselayout-clip-1.9.4-r2.ebuild,
+  files/logfiles:
+  Create /etc/audit and move logfiles to it => log options should
+  be administered by an auditor, not an administrator.
+  Create new journal files : update, ike, cryptd.
+  Use bigger journal files by default.
+
+*baselayout-clip-1.9.4-r2 (02 Sep 2010)
+
+  02 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.4-r2.ebuild, -baselayout-clip-1.9.4-r1.ebuild:
+  Fix pkauth group creation in postinst, cleanup duplicate nomad_user
+  entries created by previous postinst.
+
+*baselayout-clip-1.9.4-r1 (04 Aug 2010)
+
+  04 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.4-r1.ebuild, -baselayout-clip-1.9.4.ebuild:
+  Also add pkauth on existing configs through a postinst.
+
+*baselayout-clip-1.9.4 (19 Jul 2010)
+
+  19 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.4.ebuild, -baselayout-clip-1.9.3.ebuild:
+  Add pkauth group. Make xdm init script depend on mkevents.
+
+*baselayout-clip-1.9.3 (21 Apr 2010)
+
+  21 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.3.ebuild, -baselayout-clip-1.9.2.ebuild:
+  Add mount of usbfs for zerocdoff.
+
+*baselayout-clip-1.9.2 (11 Mar 2010)
+
+  11 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.2.ebuild, -baselayout-clip-1.9.1-r2.ebuild:
+  Also fix /etc/init.d/xdm for newer video= params.
+
+*baselayout-clip-1.9.1-r2 (11 Mar 2010)
+
+  11 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.1-r2.ebuild, -baselayout-clip-1.9.1-r1.ebuild:
+  Add /sys mountpoint in X11 jail, add dri/card0 to X11 devs.
+
+*baselayout-clip-1.9.1-r1 (04 Mar 2010)
+
+  04 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.1-r1.ebuild, -baselayout-clip-1.9.1.ebuild:
+  Make root's shadow file a nocopy CONFFILE.
+
+*baselayout-clip-1.9.1 (18 Feb 2010)
+
+  18 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.1.ebuild, -baselayout-clip-1.9.0.ebuild:
+  Add fstrace.log log file. Also make root's shadow file a 
+  CONFFILE, cause I'm fed with re-instrumenting my system :)
+
+*baselayout-clip-1.9.0 (27 Jan 2010)
+
+  27 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.9.0.ebuild, -baselayout-clip-1.8.6.ebuild:
+  Remove core-rm switch, make the package adapt at postinst to
+  no RM/one RM jail/two RM jails cases.
+
+*baselayout-clip-1.8.6 (02 Nov 2009)
+
+  02 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.6.ebuild, -baselayout-clip-1.8.5-r1.ebuild:
+  Add nomad_user group.
+  Write current screen geom to /etc/core/current.geom in xdm init
+  script.
+  Create some missing /dev/sdX devices.
+
+*baselayout-clip-1.8.5-r1 (21 Oct 2009)
+
+  21 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.5-r1.ebuild, -baselayout-clip-1.8.5.ebuild:
+  Add ttyHS{0,1,2} devices for UMTS NICs.
+
+*baselayout-clip-1.8.5 (21 Jul 2009)
+
+  21 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.5.ebuild, -baselayout-clip-1.8.4.ebuild:
+  Support starting SLIM as login manager, instead of XDM.
+
+*baselayout-clip-1.8.4 (24 Jun 2009)
+
+  24 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.4.ebuild, -baselayout-clip-1.8.3.ebuild:
+  Add mount_update group.
+
+*baselayout-clip-1.8.3 (22 Jun 2009)
+
+  22 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.3.ebuild, -baselayout-clip-1.8.2-r1.ebuild:
+  Remove useless rm_admin group, add new 'priv_user' group instead.
+
+*baselayout-clip-1.8.2-r1 (18 Jun 2009)
+
+  18 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.2-r1.ebuild, -baselayout-clip-1.8.2.ebuild:
+  Remove static sound devices. These are now generated dynamically
+  by the alsasound init script.
+
+*baselayout-clip-1.8.2 (15 Jun 2009)
+
+  15 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.2.ebuild, -baselayout-clip-1.8.1.ebuild:
+  Restore splash after xdm termination, during halt sequence.
+  Switch to netconf entirely.
+  Support logging to syslog from rc-scripts.
+
+*baselayout-clip-1.8.1 (10 Jun 2009)
+
+  10 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.1.ebuild, -baselayout-clip-1.8.0-r1.ebuild:
+  Support netconf networking profiles.
+  Use kilooctets rather than octets for logfile max size.
+
+*baselayout-clip-1.8.0-r1 (22 May 2009)
+
+  22 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.0-r1.ebuild, -baselayout-clip-1.8.0.ebuild:
+  Add rtc0 device, needed by newer kernels.
+
+*baselayout-clip-1.8.0 (20 Apr 2009)
+
+  20 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.8.0.ebuild, -baselayout-clip-1.7.19-r2.ebuild:
+  Port to kernel 2.6.28.
+
+*baselayout-clip-1.7.19-r2 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.19-r2.ebuild, -baselayout-clip-1.7.19-r1.ebuild:
+  Remove RM ADMIN.
+
+*baselayout-clip-1.7.19-r1 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.19-r1.ebuild, -baselayout-clip-1.7.19.ebuild:
+  Create sound devices in CLIP's core.
+
+*baselayout-clip-1.7.19 (06 Mar 2009)
+
+  06 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.19.ebuild, -baselayout-clip-1.7.18.1.ebuild:
+  Remove backup mount points.
+
+*baselayout-clip-1.7.18.1 (25 Feb 2009)
+
+  25 Feb 2009; Olivier Levillain <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.18.1.ebuild, -baselayout-clip-1.7.18.ebuild:
+  Add a trap to avoid Ctrl-C at boot.
+
+*baselayout-clip-1.7.18 (17 Dec 2008)
+
+  17 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.18.ebuild, -baselayout-clip-1.7.17.ebuild:
+  Create more sdX devices to support multiple simultaneous USB
+  tokens.
+
+*baselayout-clip-1.7.17 (17 Sep 2008)
+
+  17 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.17.ebuild, -baselayout-clip-1.7.16.ebuild:
+  Fix double XDM startup message.
+  Add a preliminary 'dhcp' user/group to passwd/group.
+
+*baselayout-clip-1.7.16 (26 Aug 2008)
+
+  26 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.16.ebuild, -baselayout-clip-1.7.15-r1.ebuild:
+  Display contents of /etc/shared/clip-release on boot.
+  Remove useless /etc/clip-release.
+
+*baselayout-clip-1.7.15-r1 (29 Jul 2008)
+
+  29 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.15-r1.ebuild, -baselayout-clip-1.7.15.ebuild:
+  Bump TCB_PV to 1.3 to fix group ownership (shadow instead of auth)
+  on default TCB files.
+
+*baselayout-clip-1.7.15 (23 Jul 2008)
+
+  23 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.15.ebuild, -baselayout-clip-1.7.14-r2.ebuild:
+  Add stop() function to init.d/clock, to store the current time in the
+  HW clock.
+  Set random seed size to 2048 rather than 512, since GRKERNSEC_RANDNET
+  quadruples the entropy pool size.
+
+*baselayout-clip-1.7.14-r2 (17 Jul 2008)
+
+  17 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.14-r2.ebuild, -baselayout-clip-1.7.14-r1.ebuild:
+  Remove /etc/core/* from conffiles : these are not to be copied on 
+  core update, since they are already shared.
+  Add them to CONFFILES_NO_COPY instead.
+
+*baselayout-clip-1.7.14-r1 (16 Jul 2008)
+
+  16 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.14-r1.ebuild, -baselayout-clip-1.7.14.ebuild:
+  Switch to CCSD veriexec hashes.
+
+*baselayout-clip-1.7.14 (10 Jul 2008)
+
+  10 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.14.ebuild, -baselayout-clip-1.7.13-r1.ebuild:
+  Fixed .pwd.lock bind mount. A simple symlink is enough to do the trick.
+  Fix init.d/logfiles to always rotate dmesg log file.
+  Turn x11_priv/dev/random into a symlink.
+
+*baselayout-clip-1.7.13-r1 (19 May 2008)
+
+  19 May 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.13-r1.ebuild, -baselayout-clip-1.7.13.ebuild:
+  Bump tcb distfile to fix group ownership.
+
+*baselayout-clip-1.7.13 (28 Apr 2008)
+
+  28 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.13.ebuild, -baselayout-clip-1.7.12-r1.ebuild:
+  Update fstab - mount admin_priv's etc.ike2 to /etc/admin/ike2.
+
+*baselayout-clip-1.7.12-r1 (24 Apr 2008)
+
+  24 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.12-r1.ebuild, -baselayout-clip-1.7.12.ebuild:
+  Add CLSM_PRIV_PROCFD and CAP_KILL to start-stop-daemon.
+
+*baselayout-clip-1.7.12 (15 Apr 2008)
+
+  15 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.12.ebuild, -baselayout-clip-1.7.11-r1.ebuild:
+  Add hsqldb user and group.
+
+*baselayout-clip-1.7.11-r1 (14 Apr 2008)
+
+  14 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.11-r1.ebuild, -baselayout-clip-1.7.11.ebuild:
+  Add /mnt/usb mountpoint and /home/usb_keys storage for USB RSA key
+  export.
+
+*baselayout-clip-1.7.11 (07 Apr 2008)
+
+  07 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.11.ebuild, -baselayout-clip-1.7.10-r1.ebuild:
+  Set _admin and _audit login shells to /bin/login_shell.sh to 
+  properly export LC_ALL/LANG.
+
+*baselayout-clip-1.7.10-r1 (13 Mar 2008)
+
+  13 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.10-r1.ebuild, -baselayout-clip-1.7.10.ebuild:
+  Move /mounts/update_root to /update_root.
+
+*baselayout-clip-1.7.10 (07 Mar 2008)
+
+  07 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.10.ebuild, -baselayout-clip-1.7.9.ebuild:
+  Make /var/lib/init.d mount executable, to allow sourcing files
+  from there with a O_MAYEXEC-aware bash.
+
+*baselayout-clip-1.7.9 (23 Jan 2008)
+
+  23 Jan 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.9.ebuild, -baselayout-clip-1.7.8.ebuild:
+  Add separate SSP log files, since glibc-2.6 logs SSP violations 
+  to syslog.
+
+*baselayout-clip-1.7.8 (12 Dec 2007)
+
+  12 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.8.ebuild, -baselayout-clip-1.7.7.ebuild:
+  Bug #105: 
+  	- add sysctl to runlevel default
+  	- fix LOGGER_SERVICE management in /sbin/rc when switching
+  	  to r/l shutdown or reboot
+  	- more cleanup of r/l sysinit in /sbin/rc
+  	- add support for RC_ORDER_TRACE=yes in /etc/conf.d/rc to
+  	  trace init scripts operations in /var/log/rc.log.
+
+*baselayout-clip-1.7.7 (06 Dec 2007)
+
+  06 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.7.ebuild, -baselayout-clip-1.7.6.ebuild:
+  Switch to aes-lrw-benbi:sha256 for swap encryption.
+
+*baselayout-clip-1.7.6 (04 Dec 2007)
+
+  04 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.6.ebuild, -baselayout-clip-1.7.5.ebuild:
+  Fix 'audit' => '_audit' in /etc/core/group (bug #76).
+
+*baselayout-clip-1.7.5 (23 Nov 2007)
+
+  23 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.5.ebuild, -baselayout-clip-1.7.4.ebuild,
+  files/logfiles:
+  Improved logfiles management : define a minimum size under which 
+  files are not rotated.
+
+*baselayout-clip-1.7.4 (21 Nov 2007)
+
+  21 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.4.ebuild, -baselayout-clip-1.7.3-r1.ebuild:
+  Change admin and audit users to _admin and _audit, to avoid 
+  confusions when creating a local admin account.
+
+  20 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  -files/_debian/conffiles:
+  Remove static conffiles.
+
+  19 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  baselayout-clip-1.7.3-r2.ebuild,
+  Remove unused update_fstab line.
+  
+*baselayout-clip-1.7.3-r2 (16 Nov 2007)
+
+  16 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.3-r2.ebuild,
+  -baselayout-clip-1.7.3-r1.ebuild:
+  Create missing /etc/.pwd.lock.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove all ebuilds before 1.7.3-r1.
+  
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  baselayout-clip-1.7.3-r1.ebuild:
+  Smallish fix: add missing conffiles: hostname and logfiles.
+
+*baselayout-clip-1.7.3-r1 (30 Oct 2007)
+
+  30 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.3-r1.ebuild:
+  Add CLIP_CONF_FILES support for /etc/core/{passwd,group}.
+
+*baselayout-clip-1.7.3 (30 Oct 2007)
+
+  30 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.3.ebuild:
+  Merge from EADS's -1.4.15-r4: make backup mounts read-only.
+
+*baselayout-clip-1.7.2 (19 Oct 2007)
+
+  19 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.2.ebuild:
+  Merge from EADS's 1.4.15-r3 : add /backup/{data,clip}, and 
+  matching fstab entries, add cdrom device (although this is 
+  /dev/sr rather than /dev/hdX - using the SCSI cdrom driver).
+
+*baselayout-clip-1.7.1-r1 (17 Oct 2007)
+
+  17 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.1-r1.ebuild:
+  Add CLIP_CONF_FILES.
+
+* baselayout-clip-1.4.15-r4 (16 Oct 2007)
+  16 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.15-r4.ebuild:
+  Mount backup partitions with ro option.
+
+*baselayout-clip-1.7.1 (15 Oct 2007)
+
+  15 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.1.ebuild:
+  Remove static generation of /etc/fstab. The package now only 
+  installs /etc/fstab.tmpl (template with symbolic device names).
+  /etc/fstab is generated by a postinst script based on fstab.tmpl,
+  using either the existing /etc/fstab (supposedly leftover from
+  a previous version of the package, since it is no longer removed at
+  uninstall) or the environment (on a first install) to provide the
+  actual device numbers. If no /etc/fstab is present when postinst
+  is run, the following variables must be defined :
+  	- CLIP_ROOT_PART : typically /dev/{h,s}da{5,9} or /dev/md{5,9}.
+	- CLIP_HOME_PART : /dev/XXX2
+	- CLIP_LOG_PART : /dev/XXX3
+	- CLIP_SWAP_PART : /dev/XXX9
+  All of this is based on the latest rootdisk.eclass. Note that the 
+  upgrade path is broken from <1.7.1, since older versions remove 
+  /etc/fstab at uninstall. The only way to upgrade is to manually 
+  define the environment variables before calling dpkg. I could 
+  provide a smoother upgrade path by checking /proc/mounts if /etc/fstab
+  is not found, but that would probably not be worth the effort given
+  that this is not out yet anyway...
+  Also fixed a smallish false alarm that would give a '[!!]' status when 
+  making device nodes when USE clip-gtw was not set.
+  
+*baselayout-clip-1.7.0-r1 (10 Oct 2007)
+
+  10 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.0-r1.ebuild:
+  Add x11_priv/var tree so we do not need to expose the core's 
+  /var (especially /var/run) to x11.
+
+* baselayout-clip-1.4.15-r3 (04 Oct 2007)
+  04 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.15-r3.ebuild:
+  Add hdc or hda device for cdrom and dvd.
+  Mount backup partitions.
+
+*baselayout-clip-1.7.0 (24 Sep 2007)
+
+  24 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.7.0.ebuild:
+  Initial try at a merge between baselayout-clip-1.6.2 and EADS's
+  baselayout-clip-1.4.15-r2. New tcb/core mounts from home, new 
+  rm directories in /home, support for ip forwarding, new device 
+  order with a fixed common device for home and logs each, and 
+  swap device moved to the ninth partition. IUSE clip-gtw support
+  added.
+
+*baselayout-clip-1.6.2 (18 Sep 2007)
+
+  18 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.6.2.ebuild:
+  Some runlevel cleanup : leave the rc-update for any script that 
+  is not provided in this package to whatever package provides it.
+  That means networking, netfilter, veriexec, devctl and reducecap
+  are now added to their runlevel by their own packages' maintainer 
+  scripts.
+  Move devctl init script to app-clip/verictl.
+  Remove leftover 'sysctl' in runlevel boot : sysctl only happens in
+  runlevel nonetwork, after a possible core install.
+
+* baselayout-clip-1.4.15-r2 (03 Sep 2007)
+
+  03 Sep 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.15-r2.ebuild:
+  Change the partition table.
+  Move the tcb and core directories to the /home directory.
+  Create /home/adminclip, /home/auditclip and /home/adminrm?.
+  Add conffiles for passwd, group and root/shadow files.
+  Add /etc/.pwd.lock (password lock file).
+
+*baselayout-clip-1.6.1 (31 Aug 2007)
+
+  31 Aug 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.6.1.ebuild:
+  Support different screen resolutions through the new screen-geom
+  eclass. The system's resolution is written to /etc/core/screen.geom
+  by a postinst script, which gets it either from its environment 
+  - when bootstraping the system - or from the file itself when found.
+  This file is protected by an IMMUTABLE attribute so that, if it ever 
+  gets exposed in ADMIN (which will probably happen for /etc/core), it
+  won't be modifiable by the admin.
+  Move the sysctl init script to the nonetwork runlevel, after 
+  clip_core_install, so we can still change such attributes when 
+  installing the core system.
+
+*baselayout-clip-1.6.0 (29 Aug 2007)
+
+  29 Aug 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.6.0.ebuild:
+  More cleanup of init scripts. Import files from /etc/admin.
+
+*baselayout-clip-1.5.4 (28 Aug 2007)
+
+  28 Aug 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.5.4.ebuild:
+  Bump init scripts : remove useless code and scripts. Start to
+  move r/w /etc/env.d to /var/env.d, it might still serve some purpose.
+  Lookup swap device in /etc/fstab -> we need CLIP_SWAP_DEV defined.
+  Support other root disks than /dev/hda => we need CLIP_ROOT_DISK defined
+  to e.g. 'hda' or 'sda'.
+  Remove latemount init script, since the stop() part (which really mattered)
+  was never called anyway (boot script...). Do the same thing by hand in
+  halt.sh.
+  
+*baselayout-clip-1.5.3 (21 Aug 2007)
+
+  21 Aug 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.5.3.ebuild:
+  Bump to use new block device access control scheme based on 
+  devctl. Updated roroot init script.
+  /var is now mounted 'exec' in core, so we can bind it 'exec' 
+  in update...
+
+  20 Aug 2007; EADS D&S <clipos@ssi.gouv.fr>
+  baselayout-clip-1.4.15-r1.ebuild:
+  Add sdb device for clip-usb-keys
+
+*baselayout-clip-1.5.2 (08 Aug 2007)
+
+  08 Aug 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.5.2.ebuild:
+  Remove util-vserver's vprocunhide, which is now provided by 
+  app-clip/vsctl. Add noatime to fstab mounts.
+
+  07 Aug 2007; EADS D&S <clipos@ssi.gouv.fr>
+  baselayout-clip-1.4.15-r1.ebuild:
+  Add MAKEDEV generic-clip-gtw for the md devices.
+  Modify roroot to add md devices.
+  Modify default init scripts for clip-gtw
+
+*baselayout-clip-1.5.1 (31 Jul 2007)
+
+  31 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.5.1.ebuild:
+  Further reduce the default init script set : remove racoon and
+  setkey, since we now have the choice between those and racoon2 
+  scripts.
+  Provide a pseudo-logrotate on boot through /etc/init.d/logfiles.
+  Logfiles are gzipped and backed-up (with IMMUTABLE attribute) in
+  /var/log/keep on each boot. The number of back-ups to keep is 
+  5 by default, but this can be raised (but not lowered) through 
+  /etc/admin/logfiles.conf:KEEP_FILES_NUMBER (max 99).
+  Move sysctl to a separate init script.
+  Fix sysctl.conf (really disable CAP_LINUX_IMMUTABLE, not CAP_SETPCAP).
+  Move vprocunhide to runlevel boot, and before sysctl, so it works 
+  with a fixed sysctl.conf...
+
+*baselayout-clip-1.4.15-r1 (27 Jul 2007)
+
+  27 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.15-r1.ebuild:
+  Modify disktype (hda,sda,md) depending of the target (clip-gtw,
+  clip-sgdn, client by default) for fstab* and localmount.
+  Add /mounts/update_priv/pkgs
+  Modify audit home directory (/home/admin now).
+
+*baselayout-clip-1.5.0 (24 Jul 2007)
+
+  24 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.5.0.ebuild, +files/fstab.core-rm:
+  Add IUSE clip-x11 to create the skeleton of an x11 view in /x11,
+  along with devices in /mounts/x11_priv/dev. 
+  Also streamlined a bit the generic-clip* MAKEDEV profiles : removed
+  useless devices such as mem/kmem/port, or unused ones such as ramX,
+  input/eventX or input/jsX.
+  Remove multiple files from source tarball :
+   - fstab is base fstab (fit for clip-single), RM mounts are added 
+   through files/fstab.core-rm.
+   - rc-lists/default provides the base default services, others need
+   to be added through their respective pkg's postinst scripts, except
+   for xdm which cannot be added by the xdm package (secondary package).
+
+*baselayout-clip-1.4.15 (16 Jul 2007)
+
+  16 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.15.ebuild:
+  Add a /etc/localtime -> core/localtime symlink.
+  Move protocols, shells and services files to an /etc/shared directory,
+  that will be shared among the clip jails.
+
+*baselayout-clip-1.4.14 (10 Jul 2007)
+
+  10 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.14.ebuild:
+  Remove obsolete update scripts from runlevel default.
+
+*baselayout-clip-1.4.13 (28 Jun 2007)
+
+  28 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.13.ebuild:
+  Create rm log files if needed. Make the ebuild more balanced 
+  between core-rm/clip-single, to make it easier to add new 
+  configs. Remove IUSE clip-lsm, which is the default anyway.
+  
+*baselayout-clip-1.4.12-r1 (26 Jun 2007)
+
+  26 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.12-r1.ebuild:
+  Small fix : make sure /vservers perms are 700, to make sure 
+  non-root users of the core cannot peek into the multilevel 
+  jails.
+
+*baselayout-clip-1.4.12 (21 Jun 2007)
+
+  21 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.12.ebuild:
+  Added clip_admin to default runlevel. We now have all jails 
+  running :)
+
+*baselayout-clip-1.4.11 (18 Jun 2007)
+
+  18 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.11.ebuild:
+  Added core_audit/core_admin/audit groups and audit user.
+  Created some placeholder directories for the future 
+  admin jail.
+  Added clip_sshd service to runlevel default.
+  Removed domainname from /etc/issue, thus avoiding a DNS 
+  call that would have agetty try to open a socket and thus
+  pollute the clsm logs :)
+
+*baselayout-clip-1.4.10 (12 Jun 2007)
+
+  12 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.10.ebuild:
+  New init script, 'roroot', which is called in the boot runlevel
+  to setup the immutable block devices as supported by 
+  clip-kernel-2.6.19.7-r9.
+  
+*baselayout-clip-1.4.9 (08 Jun 2007)
+
+  08 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.9.ebuild:
+  Add admin and audit context definitions, replace syslog-ng 
+  script with clip_audit, create audit mountpoints and 
+  remove /var/syslog/log stuff.
+
+*baselayout-clip-1.4.8 (01 Jun 2007)
+
+  01 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.8.ebuild:
+  Minor bump, add an 'interp' group for when we need to regulate
+  access to an interpreter (see java).
+
+*baselayout-clip-1.4.7 (30 May 2007)
+
+  30 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.7.ebuild:
+  Bump, add 'logfiles' init script to the boot runlevel, to properly
+  set up perms and attributes on log files on boot. Drop 
+  CAP_LINUX_IMMUTABLE in the cap-bound to make append-only mandatory.
+
+*baselayout-clip-1.4.6 (10 May 2007)
+
+  10 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.6.ebuild:
+  Bump, switch xdm script to vsctl, add a dummy X jail in /etc/jails.
+  Add update scripts to runlevel default.
+  Rename 'net' script to networking : 'net' has a specific meaning 
+  for gentoo init scripts...
+
+*baselayout-clip-1.4.5 (07 May 2007)
+
+  07 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.5.ebuild:
+  Bump, add secure_update_rm_{h,b} contexts declaration.
+
+*baselayout-clip-1.4.4 (26 Apr 2007)
+
+  26 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.4.ebuild:
+  Bump, mount /update in main fstab.
+
+*baselayout-clip-1.4.3 (12 Apr 2007)
+
+  12 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.3.ebuild:
+  Bump. Do proper killalls in all non-admin contexts. Have xdm script
+  kill X explicitly, since it no longer runs in the same context.
+  
+*baselayout-clip-1.4.2 (26 Feb 2007)
+
+  26 Feb 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.2.ebuild:
+  Bump tcb distfile, cleanup users and groups
+  
+*baselayout-clip-1.4.1 (08 Feb 2007)
+
+  08 Feb 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.1.ebuild:
+  Bump. Remove SYS_MODULE masking from sysctl.conf, so we can do it
+  afterwards in /etc/init.d/reducecap.
+  
+*baselayout-clip-1.4-r3 (30 Jan 2007)
+
+  30 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4-r3.ebuild:
+  clip-lsm : add veriexec and reducecap to default runlevel, add
+  verictl to RDEPENDS.
+
+  
+*baselayout-clip-1.4-r2 (24 Jan 2007)
+
+  24 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4-r2.ebuild:
+  Add IUSE clip-lsm, create /dev/veriexec if set.
+
+  
+*baselayout-clip-1.4-r1 (18 Jan 2007)
+
+  18 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4-r1.ebuild:
+  Remove user priv part, moved to clip-layout/baselayout-core-userpriv
+
+*baselayout-clip-1.4 (16 Jan 2007)
+
+  16 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.4.ebuild:
+  Add clip-single support : generate a baselayout for a clip system
+  without RM_H/B.
+
+*baselayout-clip-1.3.11 (06 Dec 2006)
+
+  06 Dec 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.11.ebuild:
+  Bump, fix xdm init script to depend on clip_user, which it does 
+  because of the use of /user/tmp. Add a smallish sleep after 
+  killing xdm, to give Xorg time to die a proper death in turn.
+  TODO : make it work without hackish sleeps.
+
+*baselayout-clip-1.3.10 (22 Nov 2006)
+
+  22 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.10.ebuild:
+  Bump, add racoon user and group.
+
+*baselayout-clip-1.3.9 (21 Nov 2006)
+
+  21 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.9.ebuild:
+  Bump, move USER / UPDATE mounts out of fstab, make vservers mounts
+  noauto, add clip_user and clip_update to default runlevel (removing update).
+  Remove numlock.
+
+*baselayout-clip-1.3.8 (20 Nov 2006)
+
+  20 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.8.ebuild:
+  Bump : switch to /var/pkg instead of /var/{lib,cache} for pkg state
+  export to update view.
+  Also, at last, fix tcb archive to use its own PV, rather than bumping
+  the unchanged archive on every source bump.... Should have done that
+  right from the start.
+
+*baselayout-clip-1.3.7-r1 (16 Nov 2006)
+
+  16 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.7-r1.ebuild:
+  Create /mounts/viewers directory. Remove /viewers.
+  Create /mounts/user_priv/var/run/authdir.
+
+*baselayout-clip-1.3.7 (13 Nov 2006)
+
+  13 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.7.ebuild:
+  Bump. Add /update/pkgs/rm_{h,b} mounting from vservers' update_priv,
+  as placeholders for where the core update service should place pkgs
+  it has downloaded for the jails' update services.
+
+*baselayout-clip-1.3.6 (10 Nov 2006)
+
+  10 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.6.ebuild:
+  Bump. Fix halt.sh to work with /update mounts. 
+  Add racoon and update to default runlevel.
+  Do not create update devices, these are better left to 
+  updatepriv.
+
+*baselayout-clip-1.3.5 (09 Nov 2006)
+
+  09 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.5.ebuild:
+  Bump, add initial support for an update view. Only mount points
+  and devices are created here.
+  Spread nosuid amongst /user mount points. NB: we need to move
+  viewer-launch to /usr
+
+*baselayout-clip-1.3.4 (09 Nov 2006)
+
+  09 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.4.ebuild:
+  Bump, mount /etc/core to /user/etc/core instead of full /etc 
+  binding. Goes with baselayout-core-user-1.0.2.
+  Do not chvt when stopping xdm.
+
+*baselayout-clip-1.3.3 (03 Nov 2006)
+
+  03 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.3.ebuild:
+  Bump. Mount /var/run/authdir to /user/var/run/authdir for XDM's
+  Xauthority. Fix some mount opts. Fix useless warnings in xdm's
+  init scripts.
+
+*baselayout-clip-1.3.2 (20 Oct 2006)
+
+  20 Oct 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.2.ebuild:
+  Bump, fix rc to not mount devpts automatically, adjust /conf.d/rc:
+  no RETRY_KILL, but FAIL_ON_ZOMBIE, fix local to not do anything, 
+  remove local.{stop,start}, do not create /etc/modules.d, 
+  /etc/modules.autoload.d and /lib/rcscripts/net.modules.d, which are 
+  not needed.
+
+*baselayout-clip-1.3.1 (13 Oct 2006)
+
+  13 Oct 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.1.ebuild:
+  Use specific tar magics rather than the standard unpack for tcb
+  files, since we need to preserve permissions on those.
+  Also fix wrong perms for pts in fstab (a 'nodev' /dev/pts does
+  not help us much...)
+
+*baselayout-clip-1.3.0 (12 Oct 2006)
+
+  12 Oct 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.3.0.ebuild:
+  First go at a tcb compatible baselayout. Removed shadow. Needs
+  glibc and shadow to be built with USE clip-tcb.
+
+*baselayout-clip-1.2.3 (11 Oct 2006)
+
+  11 Oct 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.2.3.ebuild:
+  Misc options fixes in fstab (pts noexec, etc...), fix sbin/rc to 
+  mount /var/lib/init.d nodev,nosuid,noexec as well.
+
+*baselayout-clip-1.2.2-r1 (27 Sep 2006) 
+
+  27 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.2.2-r1.ebuild:
+  Actually create /var/lib/xkb in user_priv, needed for xkbcomp.
+  
+*baselayout-clip-1.2.2 (26 Sep 2006) 
+
+  26 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.2.2.ebuild:
+  Fix halt.sh to not kill rc when trying to umount /user view.
+  Add syslog to runlevel default.
+  Set default keymap to fr instead of dvorak, in the hope that it
+  will lure other devs to the platform :)
+
+*baselayout-clip-1.2.1 (25 Sep 2006)
+
+  25 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.2.1.ebuild:
+  Fix fstab for /user view: mount bind /etc (TODO find better solution,
+  needed e.g. for ld.so.cache (LD_LIBRARY_PATH ?). Mount bind /tmp (needed
+  for X socket between xdm and xorg -> todo fix xdm to use /user/tmp.
+  Add /dev/ptmx to user devs, try to fix spurious killings on halt.
+
+*baselayout-clip-1.2.0 (19 Sep 2006)
+
+  19 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.2.0.ebuild:
+  Add a "user view", by creating user devices (new MAKEDEV profile:
+  'generic-clip-user' in /mounts/userdev, a user_root and user_priv
+  directories under /mounts, and proper mounts inside fstab. Basic 
+  principle is: everything that can be seen read-only is bind
+  mounted as such from the same directory in core (ex: /bin, /lib, /usr),
+  or from the same mountpoint as that used for core (ex: /mounts/usr).
+  All subtrees that need write access are specific to the user view, using
+  either a pseudo fs (/tmp, /proc, /dev/pts), or a user_priv directory (/dev,
+  /var). The var subtree creation code is now factorized in a separate
+  routine.
+
+*baselayout-clip-1.1.4 (18 Sep 2006)
+
+  18 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.1.4.ebuild: 
+  Add cap-bound sysctl to drop CAP_SYS_RAWIO, CAP_SYS_MODULE. 
+  Symplify bootmisc init script, remove rmnologin boot script
+  that doesn't make much sense on a read-only root.
+
+*baselayout-clip-1.1.3-r1 (18 Sep 2006)
+
+  18 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.1.3-r1.ebuild:
+  Provide symlink from /etc/X11 to /usr/local/etc/X11.
+
+*baselayout-clip-1.1.3 (13 Sep 2006)
+
+  13 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.1.3.ebuild:
+  Add mountpoint for /viewers, add a mount bind to fstab.
+  Add xdm init.d script, moved from x11-apps/xinit.
+  
+*baselayout-clip-1.1.2 (08 Sep 2006)
+
+  08 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.1.2.ebuild:
+  Added default ld.so.conf.
+
+*baselayout-clip-1.1.1 (24 Aug 2006) 
+
+  24 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.1.1.ebuild:
+  Bump, trimmed down some more by removing unneeded init.d scripts, 
+  module managemente stuff (module*.d), and advanced networking 
+  modules from net-modules.d. We keep a dummy 'modules' init.d 
+  script to avoid a dependency headache. Also added numlock to 
+  runlevel default.
+
+*baselayout-clip-1.1.0 (23 Aug 2006)
+
+  23 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.1.0.ebuild:
+  Actually remove net.eth0 and net.lo completely, as well as net
+  from conf.d. Those are now replaced by net from app-clip/clip-net.
+  Add that to the default runlevel rc-list.
+
+*baselayout-clip-1.0.9 (21 Aug 2006)
+
+  21 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.9.ebuild:
+  Sources : add net.eth0 to runlevel default, update passwd and 
+  group with default users and groups (sshd, crypthomes, admin, 
+  rm_admin).
+  Ebuild : create /home/user as core mount point for encrypted
+  homes.
+
+*baselayout-clip-1.0.8-r1 (08 Aug 2006)
+
+  08 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.8-r1.ebuild:
+  Add /home tree for encrypted homes, with proper permissions 
+  (root's eyes only).
+
+*baselayout-clip-1.0.8 (07 Aug 2006)
+
+  07 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.8.ebuild:
+  Version bump. Proper fix for halt.sh : do not run fuser -km on
+  any stale bind mount of /dev or /var.
+  Fstab update : switch to tmpfs for /tmp.
+
+*baselayout-clip-1.0.7 (04 Aug 2006)
+
+  04 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.7.ebuild:
+  Version bump to add support for dm-crypt and GRKERNSEC_IO.
+  Added rtc to the generic-clip MAKEDEV profile. We need 
+  a /dev/rtc, otherwise hwclock will resort to iopl(3) to 
+  set up the clock, which fails on a GRKERNSEC_IO system.
+  Changed /etc/init.d/localmount to mount an encrypted swap
+  through cryptsetup. Change reflected in fstab by removing
+  the swap line.
+  Also added a test to /etc/init.d/halt.sh so that we do not
+  run fuser -km on /dev when it won't let itself be unmounted,
+  as that would kill halt.sh itself and stop the reboot...
+  Ebuild changes: create /dev/mapper for device mapper to work.
+
+*baselayout-clip-1.0.6-r1 (28 Jul 2006)
+
+  28 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.6-r1.ebuild:
+  Add /mounts/vsdev for jails' devices. See clip-layout/rm-devices.
+  Also add creation of /var/log/{u,wtmp}, with proper permissions 
+  except that utmp group ownership is based on the build host's 
+  notion of that group. See also sys-libs/libutempter.
+
+*baselayout-clip-1.0.6 (24 Jul 2006)
+
+  24 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.6.ebuild:
+  Fix fsck flags in fstab. 
+  Put back default MAX_VT (63 instead of 15) in MAKEDEV, because
+  having less causes issues with splashutils.
+  Properly create /dev/{fd,std{in,out,err}} symlinks... 
+  Set svcmount in conf.d/rc, as well as RC_FORCE_AUTO, 
+  and RC_USE_FSTAB. 
+
+*baselayout-clip-1.0.5 (18 Jul 2006)
+
+  18 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.5.ebuild:
+  Version bump, switching to /usr/local rather than /usr as
+  the base prefix for packages in CLIP. Also replace stupid
+  kdir() leftovers with proper keepdir() calls.
+
+*baselayout-clip-1.0.4 (12 Jul 2006)
+
+  12 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-cilp-1.0.4.ebuild:
+  Big overhaul. Remove all pkg_{pre,post}inst stuff, moving it in
+  src_install; In any case this will never be installed in a 'live' 
+  root fs. Remove build and bootstrap from IUSE, since we're always
+  build-ing and never bootstrap-ing. Remove clip IUSE, since this can
+  hardly be more clip-centric as it is.
+  Remove all unneeded stuff (e.g. multilib, and live system upgrade 
+  magics, and the whole kdir/unkdir hack).
+  CLIP_ROOT_DEV and CLIP_SWAP_DEV are the only env vars needed now, 
+  the other configurable devices are set in the /,/home,/mounts, 
+  /vserver/rm_{h,b} order starting from CLIP_ROOT_DEV. Note that those
+  vars are now only the numeric part, assuming the root fs is on hda, 
+  as in 'mount /dev/hda${CLIP_ROOT_DEV} /'. We'll deal with slave ide
+  and sata some other day (i.e. when we see such a config). NOTE: this
+  will eventually have to be moved in a 'preinst' script, that gets 
+  those vars from whatever 'upgrade-the-core-into-a-fresh-partition' 
+  system we eventually come up with. But we will supposedly know what
+  'preinst' really means in CLIP before we set up that system, so 
+  we'll basically put this on hold until then...
+
+*baselayout-clip-1.0.3-r1 (26 Jun 2006)
+
+  26 Jun 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.3-r1.ebuild:
+  Create /mounts/dev/{pts,shm}... Fixup /mounts/xauth perms.
+  Remove clip-build USE flag which does seem to be used...
+  Force creation of runlevels symlinks even if scripts are not
+  present in /etc/init.d (needed to create xdm and clip_* symlinks).
+
+*baselayout-clip-1.0.3 (23 Jun 2006)
+
+  23 Jun 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.3.ebuild:
+  Version bump that truly supports read-only root. Fixes some 
+  perms on +t directories, creates xauth mounts points for
+  viewers, updates fstab and adds a latemount init script 
+  to mount devpts and shm after /mounts/dev has been remounted
+  on /dev. Also cleans up rc-lists to remove unneeded init scripts
+  and add clip_* and xdm to default runlevel.
+  
+*baselayout-clip-1.0.2 (22 Jun 2006)
+
+  22 Jun 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.2.ebuild:
+  Version bump, fixed generic-clip MAKEDEV profile to remove 
+  unneeded devices (console, pty -> no longer supported by 
+  clip-kernel, etc)
+
+*baselayout-clip-1.0.1 (04 May 2006)
+
+  04 May 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.1.ebuild:
+  Version bump : update to fstab (/viewers -> /mounts/viewers, 
+  /mounts/dev, fix mounts that must be rw at this point), 
+  sysctl.conf (kernel.vshelper + misc ipv4 sysctl), add 
+  init.d/root_ro.
+  Create device nodes in /mounts/dev as well as /dev, so that 
+  we can mount that rw when / switches to ro.
+
+*baselayout-clip-1.0-r3 (03 May 2006)
+
+  03 May 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0-r3.ebuild:
+  Properly deal with /etc/core stuff : create symlinks, install
+  actual files.
+  Generate a proper /etc/clip-release :)
+  
+*baselayout-clip-1.0-r2 (02 May 2006)
+
+  02 May 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0-r2.ebuild:
+  Update fstab on the go in pkg_postinst.
+
+*baselayout-clip-1.0-r1 (28 Apr 2006)
+  
+  28 Apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0-r1.ebuild:
+  Err... Actually create the device nodes, this time...
+
+*baselayout-clip-1.0 (27 Apr 2006)
+
+  27 Apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-clip-1.0.ebuild:
+  Initial import, based on baselayout-1.11.14-r6, with all patches 
+  applied in the distfile.

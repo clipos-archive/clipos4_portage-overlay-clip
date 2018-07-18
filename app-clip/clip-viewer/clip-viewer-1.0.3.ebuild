@@ -1,0 +1,35 @@
+# Copyright © 2007-2018 ANSSI. All Rights Reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+EAPI="2"
+
+inherit verictl2
+
+DESCRIPTION="CLIP Viewer app for html / plain text logs and help files"
+HOMEPAGE="https://www.ssi.gouv.fr"
+SRC_URI="mirror://clip/${P}.tar.xz"
+
+LICENSE="LGPL-2.1+ LGPL-3"
+SLOT="0"
+KEYWORDS="x86 ~amd64"
+IUSE=""
+
+RDEPEND="dev-qt/qtgui"
+DEPEND="${RDEPEND}"
+
+src_configure() {
+	econf || die "configure failed"
+}
+
+src_compile() {
+	emake || die "make failed"
+}
+
+src_install() {
+	emake DESTDIR="${D}" install || die "make install failed"
+}
+
+pkg_predeb() {
+	VERIEXEC_CTX=503 doverictld2  ${CPREFIX:-/usr}/bin/clip-viewer e - - - c ccsd
+	VERIEXEC_CTX=504 doverictld2  ${CPREFIX:-/usr}/bin/clip-viewer e - - - c ccsd
+}

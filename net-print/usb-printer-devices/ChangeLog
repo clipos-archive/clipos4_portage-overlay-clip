@@ -1,0 +1,84 @@
+# CLIP ChangeLog for net-print/usb-printer-devices
+
+*usb-printer-devices-1.1.1 (04 Mar 2015)
+
+  04 Mar 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +usb-printer-devices-1.1.1.ebuild, -usb-printer-devices-1.1.0-r1.ebuild:
+  Update /sys device path to usbmisc.
+
+*usb-printer-devices-1.1.0-r1 (26 Mar 2012)
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  usb-printer-devices-1.1.0-r1.ebuild:
+  Add amd64 keyword, masked for now.
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-printer-devices-1.1.0-r1.ebuild, -usb-printer-devices-1.1.0.ebuild:
+  Force rebuild
+
+*usb-printer-devices-1.1.0 (27 Dec 2011)
+
+  27 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-printer-devices-1.1.0.ebuild, -usb-printer-devices-1.0.1.ebuild:
+  Make printer paths configurable by the admin, through
+  /etc/admin/conf.d/devices.
+
+*usb-printer-devices-1.0.1 (22 Mar 2011)
+
+  22 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-printer-devices-1.0.1.ebuild, -usb-printer-devices-1.0.0.ebuild:
+  Add user notification of plugged / unplugged printers through 
+  clip-device-notify.
+
+*usb-printer-devices-1.0.0 (17 Mar 2011)
+
+  17 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-printer-devices-1.0.0.ebuild, -usb-printer-devices-0.0.1-r6.ebuild,
+  -files/_debian:
+  Switch to newer hotplug script layout, from hotplug-clip-2, remove
+  init script.
+
+*usb-printer-devices-0.0.1-r6 (21 Aug 2009)
+  21 Aug 2009; Benjamin Morin <clipos@ssi.gouv.fr>
+  +usb-printer-devices-0.0.1-r6.ebuild, -usb-printer-devices-0.0.1-r5.ebuild,
+  -files/printerdev.ADD.sh -files/files/printerdev-common.sh -files/usbprinterdev.initd.clip -files/printerdev.DEL.sh
+  Moved scripts in a clip dev module, remove obsolete version.
+
+*usb-printer-devices-0.0.1-r5 (21 Aug 2009)
+
+  21 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-printer-devices-0.0.1-r5.ebuild, -usb-printer-devices-0.0.1-r4.ebuild,
+  -usb-printer-devices-0.0.1-r3.ebuild, files/printerdev.ADD.sh:
+  Fix dosbin install path, remove obsolete version.
+
+*usb-printer-devices-0.0.1-r4 (20 Aug 2009)
+  20 Aug 2009; Benjamin Morin <clipos@ssi.gouv.fr>
+  +files/printerdev-common.sh +files/printerdev.ADD.sh +files/printerdev.DEL.sh
+  Added scripts that are called by hotplug (printerdev.ADD|DEL.sh)
+  Reorganized the structure for the printer device creation basic functions (printerdev-common).
+  The new structure allows the functions to be shared by the hotplug scripts and the init scripts (usbprinterdev.initd.clip)
+	
+*usb-printer-devices-0.0.1-r3 (29 Jun 2009)
+
+  29 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-printer-devices-0.0.1-r3.ebuild, -usb-printer-devices-0.0.1-r2.ebuild,
+  files/usbprinterdev.initd.clip:
+  Fix config file path in the init script, to use the config file actually 
+  installed on some clients.
+
+*usb-printer-devices-0.0.1-r2 (26 Jun 2009)
+
+  26 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +usb-printer-devices-0.0.1-r2.ebuild, -usb-printer-devices-0.0.1-r1.ebuild,
+  +files/_debian/prerm, +file/_debian/postinst: 
+  Remove unused eclasses / IUSE, add prerm / postinst to add / remove
+  usbprinterdev to default runlevel. 
+
+*usb-printer-devices-0.0.1-r1 (18 Jun 2009)
+
+  18 Jun 2009; Benjamin Morin <clipos@ssi.gouv.fr>
+  +usb-printer-devices-0.0.1-r1.ebuild, 
+  files/usbprinterdev.initd.clip: 
+  Have the usbprinterdev init script create devices dynamically
+  based on /sys/class/usb files
+

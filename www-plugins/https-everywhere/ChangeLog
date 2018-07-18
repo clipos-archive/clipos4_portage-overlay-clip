@@ -1,0 +1,24 @@
+# CLIP ChangeLog for www-plugins/https-everywhere
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  https-everywhere-2014.4.25.ebuild:
+  Add amd64 keyword.
+
+*https-everywhere-2014.4.25 (12 May 2014)
+
+  12 May 2014; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +https-everywhere-2014.4.25.ebuild, -https-everywhere-3.7-r1.ebuild:
+
+*https-everywhere-3.7-r1 (10 Apr 2013)
+
+  10 Apr 2013; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +files/https-everywhere-3.7-options.patch,
+  +files/options.js
+  +files/options.html
+  +https-everywhere-3.7-r1.ebuild, -https-everywhere-3.7.ebuild:
+
+*https-everywhere-3.7 (15 Mar 2013)
+
+  15 mar 2013; Baptiste Gourdin <clipos@ssi.gouv.fr>
+  +https-everywhere-3.7.ebuild:
+  Initial import from Google Chrome WebStore.

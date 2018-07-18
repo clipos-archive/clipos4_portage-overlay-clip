@@ -1,0 +1,263 @@
+# ChangeLog for <sys-apps/apt>
+
+*apt-0.8.15.2-r6 (24 May 2016)
+
+  24 May 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2-r6.ebuild, -apt-0.8.15.2-r5.ebuild:
+  RBump to force rebuild against new libstdc++.
+
+*apt-0.8.15.2-r5 (21 Dec 2015)
+
+  21 Dec 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2-r5.ebuild, -apt-0.8.15.2-r4.ebuild,
+  +files/apt-0.8.15-clip-fix-https-link.patch:
+  Minimal fix to force link against pthread with binutils 2.24+.
+
+*apt-0.8.15.2-r4 (14 Dec 2015)
+
+  14 Dec 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2-r4.ebuild, -apt-0.8.15.2-r3.ebuild:
+  Add /etc/admin/clip_download/apt.{cert,key}.pem to CLIP_CONF_FILES_VIRT.
+
+*apt-0.8.15.2-r3 (17 Jul 2013)
+
+  17 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2-r3.ebuild, -apt-0.8.15.2-r2.ebuild,
+  +files/apt-0.8.15-clip-local-sources.patch:
+  New patch - adds a 'Remote-Only' / -r option to apt-get, 
+  which forces it to ignore any source from sources.list 
+  tagged '[local=true]'. Needed to perform fallback 
+  downloads from alternative mirrors.
+
+*apt-0.8.15.2-r2 (23 Mar 2012)
+
+  23 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2-r2.ebuild, -apt-0.8.15.2-r1.ebuild:
+  Force rebuild
+
+*apt-0.8.15.2-r1 (21 Oct 2011)
+
+  21 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2-r1.ebuild, -apt-0.8.15.2.ebuild:
+  Create /etc/apt/apt.conf.d for clip-livecd and fix use.
+
+*apt-0.8.15.2 (02 Sep 2011)
+
+  02 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2.ebuild, -apt-0.8.15.2-r1.ebuild:
+  Revert version to avoid having to update the CLIP clients :)
+
+*apt-0.8.15.2-r1 (02 Sep 2011)
+
+  02 Sep 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2-r1.ebuild, -apt-0.8.15.2.ebuild:
+  Create /etc/apt/apt.conf.d for clip-devstation.
+
+*apt-0.8.15.2 (28 Jul 2011)
+
+  28 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.8.15.2.ebuild, -apt-0.7.14-r8.ebuild,
+  -files/apt-0.7.14-clip-deepdeps.patch,
+  -files/apt-0.7.14-copy-link.patch,
+  -files/apt-0.7.14-gcc4-libintl.patch,
+  -files/apt-0.7.14-gcc44.patch,
+  -files/apt-0.7.14-https-no-timeout.patch,
+  -files/apt-0.7.9-clip-dpkglog.patch,
+  -files/apt-0.7.9-clip-varpkg.patch,
+  -files/apt-0.7.9-clip-https.patch,
+  +files/apt-0.8.15-clip-copy-link.patch,
+  +files/apt-0.8.15-clip-deep-deps.patch,
+  +files/apt-0.8.15-clip-dpkglog.patch,
+  +files/apt-0.8.15-clip-no-nls.patch,
+  +files/apt-0.8.15-clip-https.patch,
+  +files/apt-0.8.15-clip-varpkg.patch:
+  Bump to latest, port patches.
+  Same changeset, plus :
+   - apt log files (apt_dpkg.log) are now created with a 
+   'syslog' group ownership, so that AUDIT can read them.
+   - https method now supports optionnal client cert and key 
+   option - i.e. these can be specified, but no error will
+   ensue if the corresponding files are not present.
+
+  05 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  apt-0.7.14-r8.ebuild, +files/apt-0.7.14-gcc44.patch:
+  Fix build with gcc-4.4.
+
+*apt-0.7.14-r8 (18 Sep 2009)
+
+  18 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r8.ebuild, -apt-0.7.14-r7.ebuild:
+  Add missing clip-rm IUSE.
+
+*apt-0.7.14-r7 (27 Aug 2009)
+
+  27 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r7.ebuild, -apt-0.7.14-r6.ebuild,
+  files/apt-0.7.14-https-no-timeout.patch:
+  Better fix for the download timeout issue : apply the original
+  timeout of 120s, but only if the connection speed is < 1b/s 
+  during 120s. Fix from Ubuntu bug #354972.
+
+*apt-0.7.14-r6 (20 Aug 2009)
+
+  20 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r6.ebuild, -apt-0.7.14-r5.ebuild:
+  Copy apt-cache into ADMINclip's /usr/bin, for use 
+  with latest clip-config.
+
+*apt-0.7.14-r5 (17 Jul 2009)
+
+  17 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r5.ebuild, -apt-0.7.14-r4.ebuild,
+  files/apt-0.7.14-https-no-timeout.patch:
+  Triple the download timeout.
+
+*apt-0.7.14-r4 (05 Jun 2009)
+
+  05 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r4.ebuild, -apt-0.7.14-r3.ebuild,
+  +files/apt-0.7.14-clip-deepdeps:
+  Patch apt to use a deeper dependency lookup loop when running
+  apt-get install <foo>, so as to upgrade all dependencies of 
+  <foo> that can be upgraded, even when <foo> cannot be ugraded.
+  Needed to automatically update the dependencies of optional packages.
+
+  24 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  apt-0.7.14-r3.ebuild:
+  Do not create /var/pkg/lib/dpkg/status on clip-livecd, 
+  it conflicts with dpkg.
+
+  17 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  apt-0.7.14-r3.ebuild:
+  Switch to verictl2.eclass.
+
+*apt-0.7.14-r3 (19 Mar 2009)
+
+  19 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r3.ebuild, -apt-0.7.14-r2.ebuild,
+  +files/apt-0.7.14-gcc4-libintl.patch:
+  Fix compilation with gcc4.
+
+  23 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  apt-0.7.14-r2.ebuild:
+  Keyword x86.
+
+*apt-0.7.14-r2 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r2.ebuild, -apt-0.7.14-r1.ebuild,
+  +files/apt-0.7.14-copy-link.patch:
+  Patch the copy method to first try to link (hardlink) source
+  and destination, then only do an actual copy if linking fails.
+
+*apt-0.7.14-r1 (19 Sep 2008)
+
+  19 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14-r1.ebuild, -apt-0.7.14.ebuild,
+  +files/apt-0.7.14-https-no-timeout.patch:
+  Do not time-out active https connection, only time-out on 
+  establishing the connection, to avoid interrupting downloads.
+
+*apt-0.7.14 (01 Aug 2008)
+
+  01 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.14.ebuild, -apt-0.7.9-r2.ebuild:
+  Bump to latest from Debian testing, to fix debian bug #464559
+
+*apt-0.7.9-r2 (11 Jun 2008)
+
+  11 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.9-r2.ebuild, -apt-0.7.9-r1.ebuild:
+  Create a missing directory that makes the build fail when 
+  doxygen is installed on the build system.
+  Switch to CCSD veriexec hash.
+
+*apt-0.7.9-r1 (17 Jan 2008)
+
+  17 Jan 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.9-r1.ebuild, -apt-0.7.9.ebuild, -apt-0.7.1-r3.ebuild,
+  +files/apt-0.7.9-clip-dpkglog.patch, +files/apt-0.7.9-clip-noforce.patch,
+  +files/apt-0.7.9-clip-https.patch, +files/apt-0.7.9-clip-varpkg.patch,
+  -files/apt-0.7.1-clip-https.patch, -files/apt-0.7.1-clip-noforce.patch,
+  -files/apt-0.7.1-clip-varpkg.patch:
+  Merge changes from 0.7.1-r2 => -r3 into 0.7.9. Cleanup older versions.
+
+*apt-0.7.9 (14 Jan 2008)
+
+  14 Jan 2008; EADS D&S <clipos@ssi.gouv.fr>
+  +apt-0.7.9.ebuild:
+  Ticket 70 correction.
+
+*apt-0.7.1-r3 (21 Dec 2007)
+
+  21 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.7.1-r3.ebuild, -apt-0.7.1-r2.ebuild:
+  Install apt headers. Create /var/pkg/*/apt directories when IUSE
+  clip-devstation is set. This makes apt usable on a development 
+  station (bug #112).
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 0.7.1-r2.
+
+*apt-0.7.1-r2 (20 July 2007)
+
+  20 July 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +apt-0.7.1-r2.ebuild
+  Add IUSE clip-devel, which creates a verictl CLSM_PRIV_NETCLIENT
+  entry for the http method.
+  Add IUSE clip-core, which creates a verictl CLSM_PRIV_NETCLIENT
+  entry for the https method.
+
+*apt-0.7.1-r1 (20 June 2007)
+
+  29 June 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +apt-0.7.1-r1.ebuild:
+  Correction of a minor bug (removing Warning messages).
+  Customizes the previous version to CLIP: add patches.
+
+*apt-0.7.1 (20 June 2007)
+
+  29 June 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +apt-0.7.1.ebuild:
+  Add the HTTPS method for download.
+
+*apt-0.6.44.2-r5 (02 May 2007)
+
+  02 May 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +apt-0.6.44.2-r5.ebuild:
+  Add the NO_FORCE_OPTION compilation directive to disable
+  the "--force*" options of apt-get 
+  
+*apt-0.6.44.2-r4 (26 Mar 2007)
+
+  26 Mar 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.6.44.2-r4.ebuild:
+  Add verictl support for new CLIP LSM networking hooks : allow
+  the 'http' method to connect to the network.
+  
+*apt-0.6.44.2-r3 (20 Nov 2006)
+
+  20 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.6.44.2-r3.ebuild, +files/apt-0.6.44.2-clip-varpkg.patch:
+  Bump, install all localstate stuff in /var/pkg rather than /var.
+  Bump RDEPEND on dpkg to match this (1.13.11-r1), add RDEPEND on 
+  baselayouts to complement it.
+
+*apt-0.6.44.2-r2 (21 Sep 2006)
+
+  21 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.6.44.2-r2.ebuild:
+  Install apt-pkg headers as well, so we can build e.g. apt-move
+  on the developper systems.
+
+*apt-0.6.44.2-r1 (11 Sep 2006)
+
+  11 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.6.44.2-r1.ebuild:
+  Fix permissions, now that we are really using this...
+
+*apt-0.6.44.2 (27 Jul 2006)
+
+  17 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +apt-0.6.44.2.ebuild:
+  Initial import.

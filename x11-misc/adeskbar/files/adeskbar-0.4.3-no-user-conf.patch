@@ -1,0 +1,57 @@
+--- a/usr/share/adeskbar/adesk/bar.py	2011-03-22 19:51:47.000000000 +0100
++++ b/usr/share/adeskbar/adesk/bar.py	2011-03-24 19:12:58.000000000 +0100
+@@ -53,7 +55,6 @@
+ 
+         ## Load user/default config
+         self.load_config()
+-        self.create_menu()
+ 
+         ## Dbus service
+         #~ if adesk.init_dbus():
+@@ -90,7 +91,6 @@
+ 
+     def init_bar_callback(self):
+         ## Window callback
+-        self.win.connect("button_press_event", self.bar_released)
+         self.win.connect("leave-notify-event", self.bar_leave_notify)
+         self.win.connect("enter-notify-event", self.bar_enter_notify)
+         self.win.connect('expose-event', self.expose)
+--- a/usr/share/adeskbar/adesk/config.py	2011-03-24 18:58:51.000000000 +0100
++++ b/usr/share/adeskbar/adesk/config.py	2011-03-24 19:04:12.000000000 +0100
+@@ -54,24 +54,16 @@
+     CONFIG['icons_effects']=3
+     
+     
+-    home = os.environ['HOME']
+-
+-    ## custom config
+-    if os.access("%s/.config/adeskbar/%s.cfg" % (home, cfg_file), os.F_OK|os.R_OK):
+-        Core.logINFO("config = %s/.config/adeskbar/%s.cfg" % (home, cfg_file), 'config')
+-        conf_path = "%s/.config/adeskbar/%s.cfg" % (home, cfg_file)
+-
+-    ## read default config
+-    elif os.access("default.cfg", os.F_OK|os.R_OK):
+-        Core.logINFO("config = default.cfg", 'config')
+-        conf_path = 'default.cfg'
++    ## read custom default config
++    if os.access("%s.cfg" % cfg_file, os.F_OK|os.R_OK):
++        Core.logINFO("config = %s.cfg" % cfg_file, 'config')
++        conf_path = "%s.cfg" % cfg_file
+ 
+     ## no config ? exit !
+     else:
+         Core.logINFO("ERROR : can't read config !!!", 'config')
+         #~ Core.show_msg("Sorry, but can't read config !!!")
+         sys.exit()
+-    del home
+ 
+     f = open(conf_path,'r')
+ 
+@@ -156,6 +148,7 @@
+ def save(cfg_file, config_data, ind_launcher, launchers, drawers):
+     """ save config to file"""
+     Core.logINFO("save ..", 'config')
++    return
+ 
+     str_cfg = '## ADeskBar config\n'
+ 

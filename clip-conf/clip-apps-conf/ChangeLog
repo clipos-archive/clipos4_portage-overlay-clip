@@ -1,0 +1,2960 @@
+# CLIP ChangeLog for clip-conf/clip-apps-conf
+
+*clip-apps-conf-4.4.3-r61 (14 Feb 2018)
+
+  14 Feb 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r61.ebuild, -clip-apps-conf-4.4.3-r60.ebuild:
+  Fix various version mismatch.
+
+*clip-apps-conf-4.4.3-r60 (13 Feb 2018)
+
+  13 Feb 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r60.ebuild, -clip-apps-conf-4.4.3-r59.ebuild:
+  Rbump for linux-headers 4.4 rebuild.
+
+  10 Nov 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  clip-apps-conf-4.4.3-r59.ebuild:
+  Add dependency on x11-libs/libXScrnSaver (needed for new xf86-video-intel).
+
+*clip-apps-conf-4.4.3-r59 (08 Nov 2017)
+
+  08 Nov 2017; Nicolas Godinho <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r59.ebuild, -clip-apps-conf-4.4.3-r58.ebuild:
+  Bump all the packages related to X.Org server and dependencies as well as
+  XScreensaver.
+
+*clip-apps-conf-4.4.3-r58 (24 Oct 2017)
+
+  24 Oct 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r58.ebuild, -clip-apps-conf-4.4.3-r57.ebuild:
+  Add clip-nagios-svagents to clip-gtw.
+
+*clip-apps-conf-4.4.3-r57 (19 Sep 2017)
+
+  19 Sep 2017; Nicolas Godinho <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r57.ebuild, -clip-apps-conf-4.4.3-r56.ebuild:
+  Bump Busybox to version 1.25.1.
+
+*clip-apps-conf-4.4.3-r56 (19 Sep 2017)
+
+  19 Sep 2017; Nicolas Godinho <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r56.ebuild, -clip-apps-conf-4.4.3-r55.ebuild:
+  Rbump OpenSSH to version 7.5p1-r2 (bad shebang in sshd init script).
+
+*clip-apps-conf-4.4.3-r55 (15 Sep 2017)
+
+  15 Sep 2017; Nicolas Godinho <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r55.ebuild, -clip-apps-conf-4.4.3-r54.ebuild:
+  Bump OpenSSH to version 7.5p1-r1.
+
+*clip-apps-conf-4.4.3-r54 (18 Jul 2017)
+
+  18 Jul 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r54.ebuild, -clip-apps-conf-4.4.3-r53.ebuild:
+  Adjusts some mismatching versions between clip and rm
+
+*clip-apps-conf-4.4.3-r53 (10 Jul 2017)
+
+  10 Jul 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r53.ebuild, -clip-apps-conf-4.4.3-r52.ebuild:
+  Remove a clip-core package dependency for libassuan, pinentry and
+  libcanberra.
+
+*clip-apps-conf-4.4.3-r52 (28 Jun 2017)
+
+  28 Jun 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r52.ebuild, -clip-apps-conf-4.4.3-r51.ebuild:
+  RBump clip-installer to support TLS keys save/restore
+
+*clip-apps-conf-4.4.3-r51 (13 Jun 2017)
+
+  13 Jun 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r51.ebuild, -clip-apps-conf-4.4.3-r50.ebuild:
+  RBump busybox add rm applet to initrd
+
+*clip-apps-conf-4.4.3-r50 (02 Jun 2017)
+
+  02 Jun 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r50.ebuild, -clip-apps-conf-4.4.3-r49.ebuild:
+  Rbump tigervnc - keep in sync with rm-apps-conf
+
+*clip-apps-conf-4.4.3-r49 (21 Apr 2017)
+
+  21 Apr 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r49.ebuild, -clip-apps-conf-4.4.3-r48.ebuild:
+  Rbump xkeyboard-config to keep it in sync with rm-apps-conf
+
+*clip-apps-conf-4.4.3-r48 (10 Mar 2017)
+
+  10 Mar 2017; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r48.ebuild, -clip-apps-conf-4.4.3-r47.ebuild:
+  Bump clip-installer: clip-tpm aware clip-installer
+
+*clip-apps-conf-4.4.3-r47 (01 Mar 2017)
+
+  01 Mar 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r47.ebuild, -clip-apps-conf-4.4.3-r46.ebuild:
+  Bump clip-menu-xdg: improve message and version display
+
+*clip-apps-conf-4.4.3-r46 (05 Dec 2016)
+
+  05 Dec 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r46.ebuild, -clip-apps-conf-4.4.3-r45.ebuild:
+  Bump clip-menu-xdg: add more menus to the "Hestia" flavor
+
+*clip-apps-conf-4.4.3-r45 (07 Nov 2016)
+
+  07 Nov 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r45.ebuild, -clip-apps-conf-4.4.3-r44.ebuild:
+  Rbump clip-menu-xdg : fix issue with version display on GTW
+
+*clip-apps-conf-4.4.3-r44 (28 Oct 2016)
+
+  28 Oct 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r44.ebuild, -clip-apps-conf-4.4.3-r43.ebuild:
+  Rbump xorg-server to add conflict with xf86-video-modesetting.
+
+*clip-apps-conf-4.4.3-r43 (27 Oct 2016)
+
+  27 Oct 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r43.ebuild, -clip-apps-conf-4.4.3-r42.ebuild:
+  tigervnc 1.4.2-r2 update.
+
+*clip-apps-conf-4.4.3-r42 (05 Oct 2016)
+
+  05 Oct 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r42.ebuild, -clip-apps-conf-4.4.3-r41.ebuild:
+  Fix visible flags order.
+
+*clip-apps-conf-4.4.3-r41 (05 Oct 2016)
+
+  05 Oct 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r41.ebuild, -clip-apps-conf-4.4.3-r40.ebuild:
+  RBump xorg-server (revert xorg-server-*-r1 bump).
+
+*clip-apps-conf-4.4.3-r40 (26 Sep 2016)
+
+  26 Sep 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r40.ebuild, -clip-apps-conf-4.4.3-r39.ebuild:
+  RBump xvkbd - fix issue with keyboard not showing up again after being closed
+
+*clip-apps-conf-4.4.3-r39 (21 Sep 2016)
+
+  21 Sep 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r39.ebuild, -clip-apps-conf-4.4.3-r38.ebuild:
+  Bump clip-menu-xdg - display full version number
+  Bump clip-installer to latest
+
+*clip-apps-conf-4.4.3-r38 (02 Sep 2016)
+
+  02 Sep 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r38.ebuild, -clip-apps-conf-4.4.3-r37.ebuild:
+  Rbump openssh* - add delta with CLIP 4.4.3 .
+
+*clip-apps-conf-4.4.3-r37 (02 Sep 2016)
+
+  02 Sep 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r37.ebuild, -clip-apps-conf-4.4.3-r36.ebuild:
+  Rbump openssh* - fix backporting to enhance sandboxing.
+
+*clip-apps-conf-4.4.3-r36 (29 Jul 2016)
+
+  29 Jul 2016; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r36.ebuild, -clip-apps-conf-4.4.3-r35.ebuild:
+  RBump qtcurve - fix crash with inkscape.
+
+*clip-apps-conf-4.4.3-r35 (22 Jul 2016)
+
+  22 Jul 2016; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r35.ebuild, -clip-apps-conf-4.4.3-r34.ebuild:
+  rbump x11 intel driver - force build against last xorg
+
+*clip-apps-conf-4.4.3-r34 (20 Jun 2016)
+
+  20 Jun 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r34.ebuild, -clip-apps-conf-4.4.3-r33.ebuild:
+  RBump fltk - fix missing rpath preventing vncviewer to start.
+
+*clip-apps-conf-4.4.3-r33 (23 May 2016)
+
+  23 May 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r33.ebuild, -clip-apps-conf-4.4.3-r32.ebuild:
+  Rbump openssl, openssh updates.
+
+*clip-apps-conf-4.4.3-r32 (19 May 2016)
+
+  19 May 2016; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r32.ebuild, -clip-apps-conf-4.4.3-r31.ebuild:
+  RBump atk, QtCore, harfbuzz and cairo
+
+*clip-apps-conf-4.4.3-r31 (04 Apr 2016)
+
+  04 Apr 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r31.ebuild, -clip-apps-conf-4.4.3-r30.ebuild:
+  RBump libxml2.
+
+*clip-apps-conf-4.4.3-r30 (21 Mar 2016)
+
+  21 Mar 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r30.ebuild, -clip-apps-conf-4.4.3-r29.ebuild:
+  Mark xf86-video-modesetting as removed in 4.4.3, replaced by xorg-server.
+  Add libassuan and libedev (new dependencies in 4.4.3).
+
+*clip-apps-conf-4.4.3-r29 (21 Mar 2016)
+
+  21 Mar 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r29.ebuild, -clip-apps-conf-4.4.3-r28.ebuild:
+  Bump fltk to latest stable.
+
+*clip-apps-conf-4.4.3-r28 (08 Mar 2016)
+
+  08 Mar 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r28.ebuild, -clip-apps-conf-4.4.3-r27.ebuild:
+  RBump tigervnc - sync to latest gentoo stable and build with xorg-server 1.17.
+
+*clip-apps-conf-4.4.3-r27 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r27.ebuild, -clip-apps-conf-4.4.3-r26.ebuild:
+  Bump baselayout-core-{admin,audit,user}.
+
+*clip-apps-conf-4.4.3-r26 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r26.ebuild, -clip-apps-conf-4.4.3-r25.ebuild:
+  Add clip-usb-clt to clip-bare.
+
+*clip-apps-conf-4.4.3-r25 (22 Feb 2016)
+
+  22 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r25.ebuild, -clip-apps-conf-4.4.3-r24.ebuild:
+  Bump clip-installer - migrate to clip-bare.
+
+*clip-apps-conf-4.4.3-r24 (19 Feb 2016)
+
+  19 Feb 2016; ANSSI <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r24.ebuild, -clip-apps-conf-4.4.3-r23.ebuild:
+  Remove useless dependencies to mime-types and libxml2 in clip-tiny.
+  Migrate from clip-tiny to clip-bare.
+
+*clip-apps-conf-4.4.3-r23 (19 Feb 2016)
+
+  19 Feb 2016; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r23.ebuild, -clip-apps-conf-4.4.3-r22.ebuild:
+  rbump adeskbar, openbox - Remove migration scripts
+
+*clip-apps-conf-4.4.3-r22 (17 Feb 2016)
+
+  17 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r22.ebuild, -clip-apps-conf-4.4.3-r21.ebuild:
+  Bump mesa, xorg-server, libdrm, pinentry, xtrans, xf86-video-ati, xinit,
+  libXfont
+
+*clip-apps-conf-4.4.3-r21 (16 Feb 2016)
+
+  16 Feb 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r21.ebuild, -clip-apps-conf-4.4.3-r20.ebuild:
+  Rbump openbox, adeskbar - revert previous commit.
+
+*clip-apps-conf-4.4.3-r20 (04 Feb 2016)
+
+  04 Feb 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r20.ebuild, -clip-apps-conf-4.4.3-r19.ebuild:
+  RBump tigervnc - Fix CVE-2014-8241 
+
+  18 Jan 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  files/clip-apps-release-443.html:
+  Update changelog.
+
+*clip-apps-conf-4.4.3-r19 (15 Jan 2016)
+
+  15 Jan 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r19.ebuild, -clip-apps-conf-4.4.3-r18.ebuild:
+  RBump openssh - security fix (CVE-2016-0777, CVE-2016-0778)
+
+*clip-apps-conf-4.4.3-r18 (12 Jan 2016)
+
+  12 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r18.ebuild, -clip-apps-conf-4.4.3-r17.ebuild:
+  Bump libcanberra to latest stable.
+
+*clip-apps-conf-4.4.3-r17 (12 Jan 2016)
+
+  12 Jan 2016; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r17.ebuild, -clip-apps-conf-4.4.3-r16.ebuild:
+  Bump pp-clip/ssm-display, x11-misc/clip-menu-xdg
+
+*clip-apps-conf-4.4.3-r16 (08 Jan 2016)
+
+  08 Jan 2016; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r16.ebuild, -clip-apps-conf-4.4.3-r15.ebuild:
+  Rbump openssh* - enhance sandboxing.
+
+*clip-apps-conf-4.4.3-r15 (30 Dec 2015)
+
+  30 Dec 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r15.ebuild, -clip-apps-conf-4.4.3-r14.ebuild:
+  Bump libXfont, gdk-pixbuf, openssh*, libxml2 - security updates.
+  Rbump tigervnc - libgcrypt revdep.
+
+*clip-apps-conf-4.4.3-r14 (14 Dec 2015)
+
+  14 Dec 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r14.ebuild, -clip-apps-conf-4.4.3-r13.ebuild:
+  Bump xvkbd.
+  Depend on acpi and x11 drivers on amd64 too.
+
+*clip-apps-conf-4.4.3-r13 (27 Nov 2015)
+
+  27 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r13.ebuild, -clip-apps-conf-4.4.3-r12.ebuild:
+  Bump de ssm-display
+
+*clip-apps-conf-4.4.3-r12 (19 Nov 2015)
+
+  19 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r12.ebuild, -clip-apps-conf-4.4.3-r11.ebuild:
+  Bump ssm-display
+
+*clip-apps-conf-4.4.3-r11 (04 Nov 2015)
+
+  04 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r11.ebuild, -clip-apps-conf-4.4.3-r10.ebuild:
+  Added ssm-display
+
+*clip-apps-conf-4.4.3-r10 (22 Oct 2015)
+
+  22 Oct 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r10.ebuild, -clip-apps-conf-4.4.3-r9.ebuild:
+  Rbump busybox - only use the GNU tar from the core.
+
+*clip-apps-conf-4.4.3-r9 (22 Oct 2015)
+
+  22 Oct 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r9.ebuild, -clip-apps-conf-4.4.3-r8.ebuild:
+  Rbump busybox - future-proof fix.
+
+*clip-apps-conf-4.4.3-r8 (14 Oct 2015)
+
+  14 Oct 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r8.ebuild, -clip-apps-conf-4.4.3-r7.ebuild:
+  Update clip-apps-conf packages for dependency on linux-headers.
+
+*clip-apps-conf-4.4.3-r7 (08 Oct 2015)
+
+  08 Oct 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r7.ebuild, -clip-apps-conf-4.4.3-r6.ebuild:
+  Update clip-core-conf dependency to match glib and glibc requirements.
+
+*clip-apps-conf-4.4.3-r6 (14 Sep 2015)
+
+  14 Sep 2015; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r6.ebuild, -clip-apps-conf-4.4.3-r5.ebuild:
+  Bump x11-base/xorg-server: Qemu cirrus driver graphical corruption fix.
+
+*clip-apps-conf-4.4.3-r5 (11 Sep 2015)
+
+  11 Sep 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r5.ebuild, -clip-apps-conf-4.4.3-r4.ebuild:
+  Bump clip-installer - Fix more warnings and add more checks.
+
+*clip-apps-conf-4.4.3-r4 (04 Sep 2015)
+
+  04 Sep 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r4.ebuild, -clip-apps-conf-4.4.3-r3.ebuild:
+  Bump clip-installer - Fix warnings.
+
+*clip-apps-conf-4.4.3-r3 (24 Aug 2015)
+
+  24 Aug 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r3.ebuild, -clip-apps-conf-4.4.3-r2.ebuild:
+  Rbump openssh - enable multiple concurrent connections on audit and admin
+  jails.
+
+*clip-apps-conf-4.4.3-r2 (14 Aug 2015)
+
+  14 Aug 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r2.ebuild, -clip-apps-conf-4.4.3-r1.ebuild:
+  RBump xorg-server - Support for intel card with disabled acceleration
+
+*clip-apps-conf-4.4.3-r1 (30 Jul 2015)
+
+  30 Jul 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3-r1.ebuild, -clip-apps-conf-4.4.3.ebuild:
+  Store clip-apps useflags in /usr/local/etc/clip-apps-flags
+
+*clip-apps-conf-4.4.3 (30 Jul 2015)
+
+  30 Jul 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.3.ebuild, -clip-apps-conf-4.4.2-r16.ebuild,
+  +files/clip-apps-release-443.html, -files/clip-apps-release-442.html:
+  RBump clip-installer - UEFI support
+
+*clip-apps-conf-4.4.2-r16 (07 Jul 2015)
+
+  07 Jul 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r16.ebuild, -clip-apps-conf-4.4.2-r15.ebuild:
+  Bump clip-config - improve ergonomy in the date changing dialog.
+
+*clip-apps-conf-4.4.2-r15 (15 Jun 2015)
+
+  15 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r15.ebuild, -clip-apps-conf-4.4.2-r14.ebuild:
+  Bump clip-installer - fix bashisms in config-admin.sub.
+
+*clip-apps-conf-4.4.2-r14 (15 Jun 2015)
+
+  15 Jun 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r14.ebuild, -clip-apps-conf-4.4.2-r13.ebuild:
+  Add clip-installer to help configuration import for _admin with a tarball.
+
+*clip-apps-conf-4.4.2-r13 (09 Jun 2015)
+
+  09 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r13.ebuild, -clip-apps-conf-4.4.2-r12.ebuild:
+  RBump slim - remove clip-hermes USE flag and add dep on clip-kernel.
+
+*clip-apps-conf-4.4.2-r12 (01 Jun 2015)
+
+  01 Jun 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r12.ebuild, -clip-apps-conf-4.4.2-r11.ebuild:
+  RBump python - fix W^X for python modules.
+
+*clip-apps-conf-4.4.2-r11 (20 May 2015)
+
+  20 May 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r11.ebuild, -clip-apps-conf-4.4.2-r10.ebuild:
+  Fix user changelog path.
+
+*clip-apps-conf-4.4.2-r10 (19 May 2015)
+
+  19 May 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r10.ebuild, -clip-apps-conf-4.4.2-r9.ebuild:
+  Bump harfbuzz - latest stable.
+  RBump qtcore - rebuild against icu 54.1.
+  RBump xinit - add support for autoinst in livecd.
+  RBump xf86-input-synaptics - fix issues with touchpad disabling.
+
+*clip-apps-conf-4.4.2-r9 (19 May 2015)
+
+  19 May 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r9.ebuild, -clip-apps-conf-4.4.2-r8.ebuild:
+  Rbump adeskbar, openbox - add default config for clip-hermes.
+
+*clip-apps-conf-4.4.2-r8 (30 Apr 2015)
+
+  30 Apr 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r8.ebuild, -clip-apps-conf-4.4.2-r7.ebuild:
+  Rbump busybox - avoid static linking where possible as that breaks
+  all libnss_* stuff (id, whoami, etc.).
+  Bump atk, pango, cairo, gtk+, numpy.
+
+*clip-apps-conf-4.4.2-r7 (22 Apr 2015)
+
+  22 Apr 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r7.ebuild, -clip-apps-conf-4.4.2-r6.ebuild:
+  Add xf86-video-modesetting.
+  Drop python-exec.
+  RBump pygobjects:2, python-xlib, pyinotify - drop dependency on python-exec.
+  RBump pyxdg - sync to latest.
+  Bump xf86-video-intel - improve support for Broadwell
+  Bump libXcomposite.
+
+*clip-apps-conf-4.4.2-r6 (17 Apr 2015)
+
+  17 Apr 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r5.ebuild, -clip-apps-conf-4.4.2-r4.ebuild:
+  Bump xorg-server, mkfontdir, busybox, font-cursor-misc, font-adobe-75dpi,
+  font-alias, encodings, xauth, xsetroot, iceauth, xbitmaps, luit, sessreg,
+  font-misc-misc, xmessage, rgb, python, libXtst, gdk-pixbuf.
+  RBump xinit.
+
+*clip-apps-conf-4.4.2-r5 (20 Feb 2015)
+
+  20 Feb 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r5.ebuild, -clip-apps-conf-4.4.2-r4.ebuild:
+  Rbump adeskbar: add a new presentation mode plugin
+
+*clip-apps-conf-4.4.2-r4 (14 Jan 2015)
+
+  14 Jan 2015; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r4.ebuild, -clip-apps-conf-4.4.2-r3.ebuild:
+  add xinput and modify xf86-input-synaptics to enable touchpad deactivation.
+
+*clip-apps-conf-4.4.2-r3 (02 Jan 2015)
+
+  02 Jan 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r3.ebuild, -clip-apps-conf-4.4.2-r2.ebuild:
+  Bump libxml2, libXmu.
+  Rbump harfbuzz, qtcore.
+
+*clip-apps-conf-4.4.2-r2 (30 Dec 2014)
+
+  30 Dec 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r2.ebuild, -clip-apps-conf-4.4.2-r1.ebuild:
+  Security bumps for openssh and dbus.
+
+*clip-apps-conf-4.4.1-r32 (13 Nov 2014)
+
+  13 Nov 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.2-r1.ebuild, -clip-apps-conf-4.4.1-r31.ebuild:
+  Bump xrandr - sync with gentoo stable
+  Bump arandr - reintroduce screen configuration saving, add standalone tool to
+  load screen configuration
+
+*clip-apps-conf-4.4.1-r31 (13 Oct 2014)
+
+  13 Oct 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r31.ebuild, -clip-apps-conf-4.4.1-r30.ebuild:
+  Drop ttmkfdir.
+  RBump ttf-bitstream-vera-sans - Drop dependency on ttmkfdir.
+
+*clip-apps-conf-4.4.1-r30 (24 Sep 2014)
+
+  24 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r30.ebuild, -clip-apps-conf-4.4.1-r29.ebuild:
+  RBump corefonts.
+
+*clip-apps-conf-4.4.1-r29 (24 Sep 2014)
+
+  24 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r29.ebuild, -clip-apps-conf-4.4.1-r28.ebuild:
+  Bump python.
+
+*clip-apps-conf-4.4.1-r28 (19 Sep 2014)
+
+  19 Sep 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r28.ebuild, -clip-apps-conf-4.4.1-r27.ebuild:
+  Bump clip-config - add support for KEEP_DAYS configuration variable
+  for log files retention in duration.
+
+*clip-apps-conf-4.4.1-r27 (09 Sep 2014)
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  clip-apps-conf-4.4.1-r27.ebuild:
+  Add amd64 keyword, masked for now.
+
+  09 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r27.ebuild, -clip-apps-conf-4.4.1-r26.ebuild:
+  Bump python, libXrandr.
+  Fix category typo in xterm dependency.
+  Fix category for xbitmaps.
+
+*clip-apps-conf-4.4.1-r26 (05 Sep 2014)
+
+  05 Sep 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r26.ebuild, -clip-apps-conf-4.4.1-r25.ebuild:
+  Bump clip-icons - add new for NP-DR1 and NP-DR2 deployments
+
+*clip-apps-conf-4.4.1-r25 (04 Sep 2014)
+
+  04 Sep 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r25.ebuild, -clip-apps-conf-4.4.1-r24.ebuild:
+  Bump busybox - add the route command to the clip livecd.
+
+*clip-apps-conf-4.4.1-r24 (01 Sep 2014)
+
+  01 Sep 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r24.ebuild, -clip-apps-conf-4.4.1-r23.ebuild:
+  Bump clip-menu-xdg - slight update to menu entries and various improvement to
+  the network tooltip.
+
+*clip-apps-conf-4.4.1-r23 (26 Aug 2014)
+
+  26 Aug 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r23.ebuild, -clip-apps-conf-4.4.1-r22.ebuild:
+  Bump userd-client - keep in sync with userd-server.
+
+*clip-apps-conf-4.4.1-r22 (28 Jul 2014)
+
+  28 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r22.ebuild, -clip-apps-conf-4.4.1-r21.ebuild:
+  Bump clip-menu-xdg - network icon show more information about the IPsec
+  configuration and the local network configuration.
+
+*clip-apps-conf-4.4.1-r21 (15 Jul 2014)
+
+  15 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r21.ebuild, -clip-apps-conf-4.4.1-r20.ebuild:
+  Bump clip-icons - add extra icon for the "audit" menu
+  Rbump adeskbar - modify menu entries in the clip-hermes skeleton
+  Rbump xinit - openbox load colors from configuration files in /etc/conf.d/session
+  Rbump openbox - add skeleton file to load colors from a configuration file in
+  /etc/conf.d/session
+
+*clip-apps-conf-4.4.1-r20 (09 Jul 2014)
+
+  09 Jul 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r20.ebuild, -clip-apps-conf-4.4.1-r19.ebuild:
+  Rbump adeskbar - nested menu support.
+
+*clip-apps-conf-4.4.1-r19 (07 Jul 2014)
+
+  07 Jul 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r19.ebuild, -clip-apps-conf-4.4.1-r18.ebuild:
+  Bump clip-config, add REMOTE_LOG_OTHER option to audit GUI.
+  Bump xf86-input-{synaptics,evdev}, rbump libxml2.
+  Bump dbus - security fix.
+
+*clip-apps-conf-4.4.1-r18 (04 Jul 2014)
+
+  04 Jul 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r18.ebuild, -clip-apps-conf-4.4.1-r17.ebuild:
+  Bump pango, libX11, libXv, harfbuzz, add lzo and rbump cairo.
+  Rbump xinit, adeskbar - configurability improvements.
+
+*clip-apps-conf-4.4.1-r17 (27 Jun 2014)
+
+  27 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r17.ebuild, -clip-apps-conf-4.4.1-r16.ebuild:
+  Bump xscreensaver - fix issue with Xdialog when changing locking delay.
+  Previous behavior would cause the session to lock in only a few seconds.
+
+*clip-apps-conf-4.4.1-r16 (11 Jun 2014)
+
+  11 Jun 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r16.ebuild, -clip-apps-conf-4.4.1-r15.ebuild:
+  Bump clip-config - fix DNS configuration support on RMB.
+
+*clip-apps-conf-4.4.1-r15 (10 Jun 2014)
+
+  10 Jun 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r15.ebuild, -clip-apps-conf-4.4.1-r14.ebuild:
+  Bump clip-config - Add TLS tunnel widget for RMB.
+
+*clip-apps-conf-4.4.1-r14 (04 Jun 2014)
+
+  04 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r14.ebuild, -clip-apps-conf-4.4.1-r13.ebuild:
+  Bump busybox-*. Bump clip-config - fix access to inheritable networking
+  parameters when the 'default' profile is defined as no-net.
+  Bump clip-menu-xdg - fix battery monitor bug.
+
+*clip-apps-conf-4.4.1-r13 (03 Jun 2014)
+
+  03 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r13.ebuild, -clip-apps-conf-4.4.1-r12.ebuild:
+  Bump clip-config - fix gateway settings changes on profile switch.
+  Rbump qtgui - security fix.
+
+*clip-apps-conf-4.4.1-r12 (22 May 2014)
+
+  22 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r12.ebuild, -clip-apps-conf-4.4.1-r11.ebuild:
+  Bump mesa, libdrm, xorg-server, x11-drivers/*, rbump tigervnc - xorg
+  update.
+  Bump fontconfig.
+
+*clip-apps-conf-4.4.1-r11 (20 May 2014)
+
+  20 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r11.ebuild, -clip-apps-conf-4.4.1-r10.ebuild:
+  Bump libXfont.
+
+*clip-apps-conf-4.4.1-r10 (12 May 2014)
+
+  12 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r10.ebuild, -clip-apps-conf-4.4.1-r9.ebuild:
+  Rbump libxml2, bump openssh*.
+
+*clip-apps-conf-4.4.1-r9 (07 May 2014)
+
+  07 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r9.ebuild, -clip-apps-conf-4.4.1-r8.ebuild:
+  Bump userd-client.
+
+*clip-apps-conf-4.4.1-r8 (05 May 2014)
+
+  05 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r8.ebuild, -clip-apps-conf-4.4.1-r7.ebuild:
+  Rbump xinit - fix lxkeymap autostart race condition.
+
+*clip-apps-conf-4.4.1-r7 (02 May 2014)
+
+  02 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r7.ebuild, -clip-apps-conf-4.4.1-r6.ebuild:
+  Bump clip-menu-xdg - switch battery monitor to /sys interface.
+
+*clip-apps-conf-4.4.1-r6 (30 Apr 2014)
+
+  30 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r6.ebuild, -clip-apps-conf-4.4.1-r5.ebuild:
+  Bump libvorbis, rbump baselayout-core-admin.
+
+*clip-apps-conf-4.4.1-r5 (16 Apr 2014)
+
+  16 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r5.ebuild, -clip-apps-conf-4.4.1-r4.ebuild:
+  Rbump fontconfig.
+  Bump dbus, libxcb, qtcurve, rbump dbus-glib.
+
+*clip-apps-conf-4.4.1-r4 (10 Apr 2014)
+
+  10 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r4.ebuild, -clip-apps-conf-4.4.1-r3.ebuild:
+  Bump dependency to clip-core-conf-4.4.1-r7.
+
+*clip-apps-conf-4.4.1-r3 (10 Apr 2014)
+
+  10 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r3.ebuild, -clip-apps-conf-4.4.1-r2.ebuild:
+  Bump tigervnc - security update.
+  Bump pango, atk, gdk-pixbuf, libnotify, rbump gtk+.
+  Bump clip-config.
+  Rbump pygobject.
+  Merge all !clip-tiny packages in a single statement.
+
+*clip-apps-conf-4.4.1-r2 (21 Mar 2014)
+
+  21 Mar 2014; ANSSI <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r2.ebuild, -clip-apps-conf-4.4.1-r1.ebuild:
+  Add clip-tiny config.
+  Unstable for ~x86.
+
+*clip-apps-conf-4.4.1-r1 (18 Mar 2014)
+
+  18 Mar 2014; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1-r1.ebuild, -clip-apps-conf-4.4.1.ebuild:
+  RBump xscreensaver - fix for overlapping monitors.
+
+*clip-apps-conf-4.4.1 (10 Mar 2014)
+
+  10 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.1.ebuild, -clip-apps-conf-4.4.0-r13.ebuild,
+  -files/clip-apps-release-440.html, +files/clip-apps-release-441.html:
+  Bump qt* to 4.8.5, bump qtcurve (unified package, replaces 
+  qtcurve-qt4 and gtk-engines-qtcurve).
+
+*clip-apps-conf-4.4.0-r13 (03 Mar 2014)
+
+  03 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r13.ebuild, -clip-apps-conf-4.4.0-r12.ebuild:
+  Rbump xorg-server - ARM fix.
+  Rbump xinit - add support for custom menus.
+
+*clip-apps-conf-4.4.0-r12 (13 Feb 2014)
+
+  13 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r12.ebuild, -clip-apps-conf-4.4.0-r11.ebuild:
+  Rbump baselayout-core-admin, userd-client - smartcard fixes.
+
+*clip-apps-conf-4.4.0-r11 (13 Feb 2014)
+
+  13 Feb 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r11.ebuild, -clip-apps-conf-4.4.0-r10.ebuild:
+  Rbump busybox-*.
+
+*clip-apps-conf-4.4.0-r10 (11 Feb 2014)
+
+  11 Feb 2014; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r10.ebuild, -clip-apps-conf-4.4.0-r9.ebuild:
+  Bump clip-config - fix display bug.
+
+*clip-apps-conf-4.4.0-r9 (04 Feb 2014)
+
+  04 Feb 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r9.ebuild, -clip-apps-conf-4.4.0-r8.ebuild:
+  Bump clip-usb-clt, clip-menu-xdg - add USB crypto key import.
+
+*clip-apps-conf-4.4.0-r8 (28 Jan 2014)
+
+  28 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r8.ebuild, -clip-apps-conf-4.4.0-r7.ebuild:
+  Rbump xkeyboard-config, add setxkbmap.
+
+*clip-apps-conf-4.4.0-r7 (24 Jan 2014)
+
+  24 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r7.ebuild, -clip-apps-conf-4.4.0-r6.ebuild:
+  Rbump slim - fix error display.
+  Bump clip-config - add sound capture configuration.
+
+*clip-apps-conf-4.4.0-r6 (24 Jan 2014)
+
+  24 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r6.ebuild, -clip-apps-conf-4.4.0-r5.ebuild:
+  Bump libfontenc, rbump qt-singleapplication - build fixes.
+
+*clip-apps-conf-4.4.0-r5 (21 Jan 2014)
+
+  21 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r5.ebuild, -clip-apps-conf-4.4.0-r4.ebuild:
+  Bump clip-config - do not exit abruptly if a wireless scan fails.
+
+*clip-apps-conf-4.4.0-r4 (15 Jan 2014)
+
+  15 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r4.ebuild, -clip-apps-conf-4.4.0-r3.ebuild:
+  Bump gtk+, librsvg, rbump gdk-pixbuf.
+  Bump openssh.
+
+*clip-apps-conf-4.4.0-r3 (13 Jan 2014)
+
+  13 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r3.ebuild, -clip-apps-conf-4.4.0-r2.ebuild:
+  Rbump python, pygobject - libffi revdep.
+
+*clip-apps-conf-4.4.0-r2 (13 Jan 2014)
+
+  13 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r2.ebuild, -clip-apps-conf-4.4.0-r1.ebuild:
+  Bump libwnck, openbox. Rbump busybox.
+
+*clip-apps-conf-4.4.0-r1 (10 Jan 2014)
+
+  10 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0-r1.ebuild, -clip-apps-conf-4.4.0.ebuild:
+  Bump libXfont - security update.
+  Bump/rbump x11-libs to latest stable and xorg-2.eclass.
+
+*clip-apps-conf-4.4.0 (08 Jan 2014)
+
+  08 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.4.0.ebuild, -clip-apps-conf-4.3.8-r24.ebuild:
+  -files/clip-apps-release-438.html, +files/clip-apps-release-440.html:
+  Bump to 4.4.0.
+  Rbump qtcore - security fix.
+
+*clip-apps-conf-4.3.8-r24 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r24.ebuild, -clip-apps-conf-4.3.8-r23.ebuild:
+  Rbump openssh - do not run ssh-update-known-hosts in postinst, that
+  does not work...
+
+*clip-apps-conf-4.3.8-r23 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r23.ebuild, -clip-apps-conf-4.3.8-r22.ebuild:
+  Run ssh-update-known-hosts in postinst.
+
+*clip-apps-conf-4.3.8-r22 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r22.ebuild, -clip-apps-conf-4.3.8-r21.ebuild:
+  Rbump openssh* - manage known_hosts file in postinst.
+  Bump userd-client.
+
+*clip-apps-conf-4.3.8-r21 (31 Dec 2013)
+
+  31 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r21.ebuild, -clip-apps-conf-4.3.8-r20.ebuild:
+  Bump ClipQt - switch profiles to UTF-8.
+  Rbump openssh, add openssh-audit, openssh-admin - split ssh daemons.
+
+*clip-apps-conf-4.3.8-r20 (23 Dec 2013)
+
+  23 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r20.ebuild, -clip-apps-conf-4.3.8-r19.ebuild:
+  Bump clip-menu-xdg, add download.log.
+
+*clip-apps-conf-4.3.8-r19 (23 Dec 2013)
+
+  23 Dec 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r19.ebuild, -clip-apps-conf-4.3.8-r18.ebuild:
+  Bump clip-config - Fix crashes on invalid hosts or tls_tunnels files.
+
+*clip-apps-conf-4.3.8-r18 (20 Dec 2013)
+
+  20 Dec 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r18.ebuild, -clip-apps-conf-4.3.8-r17.ebuild:
+  Bump clip-config - Hosts file configuration widget improvements.
+
+*clip-apps-conf-4.3.8-r17 (20 Dec 2013)
+
+  20 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r17.ebuild, -clip-apps-conf-4.3.8-r16.ebuild:
+  Bump pixman, xorg-server - security updates.
+  Bump libdrm, xf86-video-intel, libpthread-stubs, libpciaccess, mesa,
+  shared-mime-info, atk, pango, iso-codes - gentoo updates.
+
+*clip-apps-conf-4.3.8-r16 (18 Dec 2013)
+
+  18 Dec 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r16.ebuild, -clip-apps-conf-4.3.8-r15.ebuild:
+  Bump clip-config - Add widget for hosts file configuration.
+
+*clip-apps-conf-4.3.8-r15 (13 Dec 2013)
+
+  13 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r15.ebuild, -clip-apps-conf-4.3.8-r14.ebuild:
+  Bump lxkeymap, add dbus-python, rbump xinit - restore keymap config
+  at session start.
+  Rbump slim - add netchooser in non-HESTIA configs as well.
+
+*clip-apps-conf-4.3.8-r14 (12 Dec 2013)
+
+  12 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r14.ebuild, -clip-apps-conf-4.3.8-r13.ebuild:
+  Bump clip-config - change messages to reflect automatic installs in
+  RM jails.
+  Rbump busybox-* - add inotify support.
+  Rbump baselayout-core-admin - permission fix for PKCS11 support.
+
+*clip-apps-conf-4.3.8-r13 (22 Nov 2013)
+
+  22 Nov 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r13.ebuild, -clip-apps-conf-4.3.8-r12.ebuild:
+  Bump fontconfig.
+
+*clip-apps-conf-4.3.8-r12 (22 Nov 2013)
+
+  22 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r12.ebuild, -clip-apps-conf-4.3.8-r11.ebuild:
+  Rbump qtgui.
+
+*clip-apps-conf-4.3.8-r11 (22 Nov 2013)
+
+  22 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r11.ebuild, -clip-apps-conf-4.3.8-r10.ebuild:
+  Bump clip-config.
+
+*clip-apps-conf-4.3.8-r10 (21 Nov 2013)
+
+  21 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r10.ebuild, -clip-apps-conf-4.3.8-r9.ebuild:
+  Bump feh, slim, rbump fltk - libpng revdep.
+
+*clip-apps-conf-4.3.8-r9 (15 Nov 2013)
+
+  15 Nov 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r9.ebuild, -clip-apps-conf-4.3.8-r8.ebuild:
+  Bump clip-config - add smartcards config.
+  Rbump qtcore - icu revdep.
+
+*clip-apps-conf-4.3.8-r8 (07 Nov 2013)
+
+  07 Nov 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r8.ebuild, -clip-apps-conf-4.3.8-r7.ebuild:
+  Rbump qtgui - fix broken update due to conflict between Qt packages.
+
+*clip-apps-conf-4.3.8-r7 (05 Nov 2013)
+
+  05 Nov 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r7.ebuild, -clip-apps-conf-4.3.8-r6.ebuild:
+  Rbump adeskbar - fit bar to screen resolution.
+
+*clip-apps-conf-4.3.8-r6 (31 Oct 2013)
+
+  31 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r6.ebuild, -clip-apps-conf-4.3.8-r5.ebuild:
+  Bump cairo, pixman, rbump libpng revdeps.
+
+*clip-apps-conf-4.3.8-r5 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r5.ebuild, -clip-apps-conf-4.3.8-r4.ebuild:
+  Rbump xinit - support nonumlock hardware profiles.
+
+*clip-apps-conf-4.3.8-r3 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r3.ebuild, -clip-apps-conf-4.3.8-r2.ebuild:
+  Bump clip-menu-xdg - add rc.log viewer.
+
+*clip-apps-conf-4.3.8-r2 (17 Oct 2013)
+
+  17 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r2.ebuild, -clip-apps-conf-4.3.8-r1.ebuild:
+  Bump xorg-server, rbump tigervnc - security update.
+
+*clip-apps-conf-4.3.8-r1 (16 Oct 2013)
+
+  16 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8-r1.ebuild, -clip-apps-conf-4.3.8.ebuild:
+  Rbump tigervnc, add back xsetroot.
+  Rbump xinit - support for openRC.
+
+  16 Oct 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-apps-conf-4.3.8.ebuild, -files/clip-apps-release-437.html,
+  +files/clip-apps-release-438.html:
+  Rename user changelog.
+
+*clip-apps-conf-4.3.8 (15 Oct 2013)
+
+  15 Oct 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.8.ebuild, -clip-apps-conf-4.3.7-r25.ebuild:
+  Rbump libxml2.
+
+  05 Sep 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-apps-conf-4.3.7-r25.ebuild:
+  Only depend on fltk if use core-rm is set.
+
+*clip-apps-conf-4.3.7-r25 (04 Sep 2013)
+
+  04 Sep 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r25.ebuild, -clip-apps-conf-4.3.7-r24.ebuild:
+  Bump xvkbd, rbump libXaw3d.
+
+*clip-apps-conf-4.3.7-r24 (04 Sep 2013)
+
+  04 Sep 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r24.ebuild, -clip-apps-conf-4.3.7-r23.ebuild:
+  Remove glew. Rbump xvkbd, replace Xaw3d with libXaw3d.
+
+*clip-apps-conf-4.3.7-r23 (29 Aug 2013)
+
+  29 Aug 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r23.ebuild, -clip-apps-conf-4.3.7-r22.ebuild:
+  RBump adeskbar, xinit - Fix Hestia not working with viewmode "mixborder"
+
+*clip-apps-conf-4.3.7-r22 (28 Aug 2013)
+
+  28 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r22.ebuild, -clip-apps-conf-4.3.7-r21.ebuild:
+  Rbump xorg-server - fix nouveau config.
+  Rbump adeskbar - clip-livecd fixes.
+  Add numlockx, rbump xinit - activate numlock by default.
+  Rbump python - security fix.
+  Bump xkeyboard-config.
+
+*clip-apps-conf-4.3.7-r21 (26 Aug 2013)
+
+  26 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r21.ebuild, -clip-apps-conf-4.3.7-r20.ebuild:
+  Rbump tigervnc, xorg-server - fix input modifiers issues in vncviewer.
+
+*clip-apps-conf-4.3.7-r20 (23 Aug 2013)
+
+  23 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r20.ebuild, -clip-apps-conf-4.3.7-r19.ebuild:
+  Bump clip-config - fix resolv.conf perms.
+  Rbump tigervnc - fix isoLevel3 press.
+
+*clip-apps-conf-4.3.7-r19 (23 Aug 2013)
+
+  23 Aug 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r19.ebuild, -clip-apps-conf-4.3.7-r18.ebuild:
+  Bump clip-config - Fix permissions for hosts and hostname files in network
+  profiles.
+
+*clip-apps-conf-4.3.7-r18 (22 Aug 2013)
+
+  22 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r18.ebuild, -clip-apps-conf-4.3.7-r17.ebuild:
+  Rbump fltk, tigervnc - fix Control+key, better support for extended
+  screens.
+
+*clip-apps-conf-4.3.7-r17 (21 Aug 2013)
+
+  21 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r17.ebuild, -clip-apps-conf-4.3.7-r16.ebuild:
+  Update clip-core-conf dependency.
+
+*clip-apps-conf-4.3.7-r16 (21 Aug 2013)
+
+  21 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r16.ebuild, -clip-apps-conf-4.3.7-r15.ebuild:
+  Bump xorg-server, rbump x11-drivers/*.
+  Add fltk, rbump baselayout-viewer, bump tigervnc.
+
+*clip-apps-conf-4.3.7-r15 (20 Aug 2013)
+
+  20 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r15.ebuild, -clip-apps-conf-4.3.7-r14.ebuild:
+  Bump busybox*.
+
+*clip-apps-conf-4.3.7-r14 (13 Aug 2013)
+
+  13 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r14.ebuild, -clip-apps-conf-4.3.7-r13.ebuild:
+  Bump gtk+, gdk-pixbuf, gtk-engines-qtcurve.
+  Bump libdrm, xf86-video-{intel,nouveau,ati}.
+
+*clip-apps-conf-4.3.7-r13 (09 Aug 2013)
+
+  09 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r13.ebuild, -clip-apps-conf-4.3.7-r12.ebuild:
+  Rbump arandr, adeskbar, lxkeymap, xinit, bump clip-menu-xdg - 
+  fix python paths and optimize.
+
+*clip-apps-conf-4.3.7-r12 (07 Aug 2013)
+
+  07 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r12.ebuild, -clip-apps-conf-4.3.7-r11.ebuild:
+  Bump xset, remove talloc, xft, xsetroot, libxkbui, libXvMC.
+
+*clip-apps-conf-4.3.7-r11 (06 Aug 2013)
+
+  06 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r11.ebuild, -clip-apps-conf-4.3.7-r10.ebuild:
+  Rbump libxml2, python, cairo, dev-qt/* - force rebuild.
+  Bump mesa, pixman.
+  Bump clip-config - dynamic sound switching support.
+
+*clip-apps-conf-4.3.7-r10 (25 Jul 2013)
+
+  25 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r10.ebuild, -clip-apps-conf-4.3.7-r9.ebuild:
+  Bump python, bump all python packages.
+
+*clip-apps-conf-4.3.7-r9 (23 Jul 2013)
+
+  23 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r9.ebuild, -clip-apps-conf-4.3.7-r8.ebuild:
+  Bump Qt, move to dev-qt/qt* naming scheme while retaining virtual
+  qt-* packages to help with the transition.
+  Bump clip-config - tag local mirrors in sources.list.
+  Bump libogg.
+
+*clip-apps-conf-4.3.7-r8 (16 Jul 2013)
+
+  16 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r8.ebuild, -clip-apps-conf-4.3.7-r7.ebuild:
+  Bump libxml2, dbus - security fixes.
+  Rbump slim - fix wallpaper updates on screen geometry changes.
+
+*clip-apps-conf-4.3.7-r7 (10 Jul 2013)
+
+  10 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r7.ebuild, -clip-apps-conf-4.3.7-r6.ebuild:
+  Bump libXi, libXvMC - security fixes.
+  Rbump slim, xinit - fix support for some multi-head displays.
+
+*clip-apps-conf-4.3.7-r6 (05 Jul 2013)
+
+  05 Jul 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r6.ebuild, -clip-apps-conf-4.3.7-r5.ebuild:
+  RBump qt-singleapplication - correctly set LDFLAGS at build time.
+  Bump mesa - security fix.
+
+*clip-apps-conf-4.3.7-r5 (13 Jun 2013)
+
+  13 Jun 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r5.ebuild, -clip-apps-conf-4.3.7-r4.ebuild:
+  Bump xf86-video-intel.
+
+*clip-apps-conf-4.3.7-r4 (07 Jun 2013)
+
+  07 Jun 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r4.ebuild, -clip-apps-conf-4.3.7-r3.ebuild:
+  Bump libX{11,v,ext,cursor,render,randr,vMC,fixes,t,i,inerama,xf86vvm},
+  libdrm, libxcb and mesa - security fixes.
+
+*clip-apps-conf-4.3.7-r3 (31 May 2013)
+
+  31 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r3.ebuild, -clip-apps-conf-4.3.7-r2.ebuild:
+  Rbump openssh - switch to aes-ctr.
+
+*clip-apps-conf-4.3.7-r2 (30 May 2013)
+
+  30 May 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r2.ebuild, -clip-apps-conf-4.3.7-r1.ebuild:
+  RBump slim - Fix wallpaper for Hestia.
+
+*clip-apps-conf-4.3.7-r1 (28 May 2013)
+
+  28 May 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7-r1.ebuild, -clip-apps-conf-4.3.7.ebuild:
+  Bump ClipQt, clip-config - Network profile inheritance.
+
+*clip-apps-conf-4.3.7 (24 May 2013)
+
+  24 May 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.7.ebuild, -clip-apps-conf-4.3.6-r30.ebuild:
+  Rbump openbox - fix window draging.
+
+*clip-apps-conf-4.3.6-r30 (15 May 2013)
+
+  15 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r30.ebuild, -clip-apps-conf-4.3.6-r29.ebuild:
+  Rbump clip-config, xinit.
+
+*clip-apps-conf-4.3.6-r29 (07 May 2013)
+
+  07 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r29.ebuild, -clip-apps-conf-4.3.6-r28.ebuild:
+  Bump userd-client.
+
+*clip-apps-conf-4.3.6-r28 (03 May 2013)
+
+  03 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r28.ebuild, -clip-apps-conf-4.3.6-r27.ebuild:
+  Rbump clip-menu-xdg, adeskbar - keep up with livecd revs.
+  Rbump gdk-pixbuf, add librsvg, libcroco - proper svg deps.
+
+*clip-apps-conf-4.3.6-r27 (25 Apr 2013)
+
+  25 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r27.ebuild, -clip-apps-conf-4.3.6-r26.ebuild:
+  Bump ClipQt, clip-config - fix net profile permissions.
+
+*clip-apps-conf-4.3.6-r26 (22 Apr 2013)
+
+  22 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r26.ebuild, -clip-apps-conf-4.3.6-r25.ebuild:
+  Bump clip-menu-xdg, clip-icons - fix the new layout.
+
+*clip-apps-conf-4.3.6-r25 (18 Apr 2013)
+
+  18 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r25.ebuild, -clip-apps-conf-4.3.6-r24.ebuild:
+  Bump clip-menu-xdg, rbump adeskbar - add sleep button, further simplify
+  menus. Rbump xinit.
+
+*clip-apps-conf-4.3.6-r24 (12 Apr 2013)
+
+  12 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r24.ebuild, -clip-apps-conf-4.3.6-r23.ebuild:
+  Bump pygtk. Depend on clip-core-conf >= 4.3.6-r28, for net profile
+  updates expected by clip-config.
+
+*clip-apps-conf-4.3.6-r23 (10 Apr 2013)
+
+  10 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r23.ebuild, -clip-apps-conf-4.3.6-r22.ebuild:
+  bump clip-config - fix webcams variable name.
+
+*clip-apps-conf-4.3.6-r22 (09 Apr 2013)
+
+  09 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r22.ebuild, -clip-apps-conf-4.3.6-r21.ebuild:
+  Rbump adeskbar, bump clip-menu-xdg - fix nomad/audit menus + add 
+  log analysis interface.
+
+*clip-apps-conf-4.3.6-r21 (04 Apr 2013)
+
+  04 Apr 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r21.ebuild, -clip-apps-conf-4.3.6-r20.ebuild:
+  Bump userd-client, clip-icons - support for user account migration
+  to smartcards.
+  Rbump tigervnc.
+  Bump xf86-video-intel.
+
+*clip-apps-conf-4.3.6-r20 (29 Mar 2013)
+
+  29 Mar 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r20.ebuild, -clip-apps-conf-4.3.6-r19.ebuild:
+  Bump clip-config - TLS tunnels widget.
+
+*clip-apps-conf-4.3.6-r19 (22 Mar 2013)
+
+  22 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r19.ebuild, -clip-apps-conf-4.3.6-r18.ebuild:
+  Bump cairo, gtk+, clip-config, openbox.
+
+*clip-apps-conf-4.3.6-r18 (18 Mar 2013)
+
+  18 Mar 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r18.ebuild, -clip-apps-conf-4.3.6-r17.ebuild:
+  Bump clip-menu-xdg, rbump adeskbar - cosmetic fixes.
+
+*clip-apps-conf-4.3.6-r17 (13 Mar 2013)
+
+  13 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r17.ebuild, -clip-apps-conf-4.3.6-r16.ebuild:
+  Rbump xscreensaver - fix initial lock timeout.
+
+*clip-apps-conf-4.3.6-r16 (13 Mar 2013)
+
+  13 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r16.ebuild, -clip-apps-conf-4.3.6-r15.ebuild:
+  Bump cairo.
+
+*clip-apps-conf-4.3.6-r15 (08 Mar 2013)
+
+  08 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r15.ebuild, -clip-apps-conf-4.3.6-r14.ebuild:
+  Bump mesa, X11 drivers: intel, nouveau, ati, wacom, synaptics.
+
+*clip-apps-conf-4.3.6-r14 (08 Mar 2013)
+
+  08 Mar 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r14.ebuild, -clip-apps-conf-4.3.6-r13.ebuild:
+  Rbump baselayout-core-{admin,audit} - add mtab.
+
+*clip-apps-conf-4.3.6-r13 (07 Mar 2013)
+
+  07 Mar 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r13.ebuild, -clip-apps-conf-4.3.6-r12.ebuild:
+  Bump clip-menu-xdg - set explicit file permissions.
+
+*clip-apps-conf-4.3.6-r12 (05 Mar 2013)
+
+  05 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r12.ebuild, -clip-apps-conf-4.3.6-r11.ebuild:
+  Rbump baselayout-core-admin - better timezone change interface.
+  Bump clip-config - support for SNAT_CLIENT_NETWORKS on gateways.
+
+*clip-apps-conf-4.3.6-r11 (04 Mar 2013)
+
+  04 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r11.ebuild, -clip-apps-conf-4.3.6-r10.ebuild:
+  Bump clip-wallpapers, rbump slim, xinit - use normalized sizes for
+  wallpapers.
+  Remove xloadimage, add feh + imlib2 + giblib.
+  Rbump baselayout-core-admin, bump clip-menu-xdg - support setting 
+  timezone from ADMIN.
+  Bump dbus-glib - security update.
+
+*clip-apps-conf-4.3.6-r10 (26 Feb 2013)
+
+  26 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r10.ebuild, -clip-apps-conf-4.3.6-r9.ebuild:
+  Bump clip-usb-clt, clip-menu-xdg, clip-config, clip-icons, 
+  rbump adeskbar, openbox, xscreensaver - simplify UI menus, 
+  rename RM_H and RM_B to Haut and Bas respectively.
+  Bump libxml2 - security update.
+
+*clip-apps-conf-4.3.6-r9 (12 Feb 2013)
+
+  12 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r9.ebuild, -clip-apps-conf-4.3.6-r8.ebuild:
+  Bump clip-icons, clip-menu-xdg, rbump adeskbar - more fixes for 
+  net and battery status monitors.
+  Rbump mesa, tigervnc - upstream fixes.
+  Rbump slim, bump adeskbar - improvements to screen resizing and
+  multiple screens handling.
+
+*clip-apps-conf-4.3.6-r8 (11 Feb 2013)
+
+  11 Feb 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r8.ebuild, -clip-apps-conf-4.3.6-r7.ebuild:
+  Rbump openssh - fix xauth path.
+
+*clip-apps-conf-4.3.6-r7 (04 Feb 2013)
+
+  04 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r7.ebuild, -clip-apps-conf-4.3.6-r6.ebuild:
+  Rbump openssh - permissions fix.
+
+*clip-apps-conf-4.3.6-r6 (04 Feb 2013)
+
+  04 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r6.ebuild, -clip-apps-conf-4.3.6-r5.ebuild:
+  Rbump userd-client, busybox - build fixes.
+  Rbump openssh - fix key permissions.
+
+*clip-apps-conf-4.3.6-r5 (01 Feb 2013)
+
+  01 Feb 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r5.ebuild, -clip-apps-conf-4.3.6-r4.ebuild:
+  RBump pygobject.
+
+*clip-apps-conf-4.3.6-r4 (23 Jan 2013)
+
+  23 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r4.ebuild, -clip-apps-conf-4.3.6-r3.ebuild:
+  Bump clip-menu-xdg - fix audit menus.
+  Rbump xscreensaver - disable captureStderr.
+  Bump clip-config - add support for ping netfilter authorization.
+
+*clip-apps-conf-4.3.6-r3 (04 Jan 2013)
+
+  04 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r3.ebuild, -clip-apps-conf-4.3.6-r2.ebuild:
+  Bump clip-icons, clip-menu-xdg, xinit, rbump adeskbar - fix some 
+  net status monitor issues.
+
+*clip-apps-conf-4.3.6-r2 (03 Jan 2013)
+
+  03 Jan 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r2.ebuild, -clip-apps-conf-4.3.6-r1.ebuild:
+  Bump python. Remove libsexy.
+
+*clip-apps-conf-4.3.6-r1 (28 Dec 2012)
+
+  28 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6-r1.ebuild, -clip-apps-conf-4.3.6.ebuild:
+  Bump xf86-input-wacom, xf86-video-intel, mesa, xterm.
+
+*clip-apps-conf-4.3.6 (27 Dec 2012)
+
+  27 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.6.ebuild, -clip-apps-conf-4.3.5-r20.ebuild:
+  Bump fontconfig, cairo, gdk-pixbuf, pango, gtk+, libxcb - updates.
+  Rbump xorg-server - fix EXA bug revealed by cairo-1.12.
+  Bump clip-wallpapers - support for MacBook screen geometries.
+  Rbump xinit - clip-livecd update. Rbump dbus-glib - rebuild.
+
+*clip-apps-conf-4.3.5-r20 (03 Dec 2012)
+
+  03 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r20.ebuild, -clip-apps-conf-4.3.5-r19.ebuild:
+  Rbump libmng to keep pace with what we have in portage.
+
+*clip-apps-conf-4.3.5-r19 (28 Nov 2012)
+
+  28 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r19.ebuild, -clip-apps-conf-4.3.5-r18.ebuild:
+  Rbump libxml2.
+
+*clip-apps-conf-4.3.5-r18 (21 Nov 2012)
+
+  21 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r18.ebuild, -clip-apps-conf-4.3.5-r17.ebuild:
+  Bump userd-client.
+
+*clip-apps-conf-4.3.5-r17 (19 Nov 2012)
+
+  19 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r17.ebuild, -clip-apps-conf-4.3.5-r16.ebuild:
+  Bump libdrm, pixman, xf86-video-{intel,nouveau}.
+
+*clip-apps-conf-4.3.5-r16 (14 Nov 2012)
+
+  14 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r16.ebuild, -clip-apps-conf-4.3.5-r15.ebuild:
+  Rbump xscreensaver - fix some locking failures.
+  Rbump synaptics driver - fix possible segfault when resuming from
+  suspend.
+
+*clip-apps-conf-4.3.5-r15 (07 Nov 2012)
+
+  07 Nov 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r15.ebuild, -clip-apps-conf-4.3.5-r14.ebuild:
+  Rbump xf86-input-wacom, slim - add support for Wacom tablet touchscreens
+
+*clip-apps-conf-4.3.5-r14 (26 Oct 2012)
+
+  26 Oct 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r14.ebuild, -clip-apps-conf-4.3.5-r13.ebuild:
+  Rbump adeskbar, bump clip-menu-xdg - fix Hestia menu.
+
+*clip-apps-conf-4.3.5-r13 (25 Oct 2012)
+
+  25 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r13.ebuild, -clip-apps-conf-4.3.5-r12.ebuild:
+  Bump busybox.
+
+*clip-apps-conf-4.3.5-r12 (24 Oct 2012)
+
+  24 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r12.ebuild, -clip-apps-conf-4.3.5-r11.ebuild:
+  Bump mesa, mkfontscale to latest versions.
+
+*clip-apps-conf-4.3.5-r11 (12 Oct 2012)
+
+  12 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r11.ebuild, -clip-apps-conf-4.3.5-r10.ebuild:
+  Rbump xorg-server - possible fix for segfaults.
+  Rbump qt-* - build options fix.
+  Rbump xvkbd, add cellwriter.
+  Bump clip-config, clip-icons - webcam initial support.
+
+*clip-apps-conf-4.3.5-r10 (05 Oct 2012)
+
+  05 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r10.ebuild, -clip-apps-conf-4.3.5-r9.ebuild:
+  Bump qt-*, dbus, dbus-glib, qtcurve.
+
+*clip-apps-conf-4.3.5-r9 (02 Oct 2012)
+
+  02 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r9.ebuild, -clip-apps-conf-4.3.5-r8.ebuild:
+  Rbump xscreensaver - fix localized string encoding.
+  Rbump xf86-input-evdev - no-op.
+  Rbump libxml2 - security update.
+
+*clip-apps-conf-4.3.5-r8 (27 Sep 2012)
+
+  27 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r8.ebuild, -clip-apps-conf-4.3.5-r7.ebuild:
+  Bump mesa, libdrm, xf86-video-{nouveau,intel} - fix mesa/drivers/drm
+  inconsistencies. Rbump xorg-server - disable PalmDetect on synaptics
+  touchpads.
+  Bump tigervnc.
+
+*clip-apps-conf-4.3.5-r7 (07 Sep 2012)
+
+  07 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r7.ebuild, -clip-apps-conf-4.3.5-r6.ebuild:
+  Bump clip-icons.
+  Rbump xf86-input-evdev, xvkbd - HP Slate support fixes.
+
+*clip-apps-conf-4.3.5-r6 (05 Sep 2012)
+
+  05 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r6.ebuild, -clip-apps-conf-4.3.5-r5.ebuild:
+  Rbump slim, xvkbd - fix Xresource loading.
+
+*clip-apps-conf-4.3.5-r5 (05 Sep 2012)
+
+  05 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r5.ebuild, -clip-apps-conf-4.3.5-r4.ebuild:
+  Bump clip-config - minor fix for package management cache.
+
+*clip-apps-conf-4.3.5-r4 (16 Aug 2012)
+
+  16 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r4.ebuild, -clip-apps-conf-4.3.5-r3.ebuild:
+  Bump xf86-input-evdev, rbump xf86-input-synaptics.
+
+*clip-apps-conf-4.3.5-r3 (10 Aug 2012)
+
+  10 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r3.ebuild, -clip-apps-conf-4.3.5-r2.ebuild:
+  Bump clip-config - fix package management GUI refresh, use new 
+  optional package cache from clip-download.
+
+*clip-apps-conf-4.3.5-r2 (08 Aug 2012)
+
+  08 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r2.ebuild, -clip-apps-conf-4.3.5-r1.ebuild:
+  Revert cairo to 1.10. Rbump xloadimage.
+
+*clip-apps-conf-4.3.5-r1 (02 Aug 2012)
+
+  02 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5-r1.ebuild, -clip-apps-conf-4.3.5.ebuild:
+  Bump xorg-server, various X11 libs and all X11 drivers. Bump 
+  slim and tigervnc.
+
+*clip-apps-conf-4.3.5 (30 Jul 2012)
+
+  30 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.5.ebuild, -clip-apps-conf-4.3.4-r8.ebuild,
+  -clip-apps-conf-4.3.2-r15.ebuild, -clip-apps-conf-4.3.3-r16.ebuild,
+  -files/clip-apps-release-432.html, -files/clip-apps-release-433.html,
+  +files/clip-apps-release-435.html:
+  Bump libdrm, xf86-video-*. Bump cairo, atk, gtk+. Rbump qt-gui for
+  libpng revdep rebuild. Remove old.
+
+*clip-apps-conf-4.3.4-r8 (18 Jul 2012)
+
+  18 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r8.ebuild, -clip-apps-conf-4.3.4-r7.ebuild:
+  Rbump pinentry.
+
+*clip-apps-conf-4.3.4-r7 (13 Jul 2012)
+
+  13 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r7.ebuild, -clip-apps-conf-4.3.4-r6.ebuild:
+  Bump clip-menu-xdg, rbump openbox and xscreensaver - wrapper to 
+  launch xscreensaver as needed.
+
+*clip-apps-conf-4.3.4-r6 (11 Jul 2012)
+
+  11 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r6.ebuild, -clip-apps-conf-4.3.4-r5.ebuild:
+  Bump libxml2 - security update.
+  Bump clip-menu-xdg, clip-usb-clt, rbump adeskbar - add digital
+  clock and usb mount action.
+  Rbump tigervnc.
+
+*clip-apps-conf-4.3.4-r5 (05 Jul 2012)
+
+  05 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r5.ebuild, -clip-apps-conf-4.3.4-r4.ebuild:
+  Rbump xrdb, add libmcpp - fix preprocessing.
+
+*clip-apps-conf-4.3.4-r4 (21 Jun 2012)
+
+  21 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r4.ebuild, -clip-apps-conf-4.3.4-r3.ebuild:
+  Bump userd-client - fix library symlinks.
+
+*clip-apps-conf-4.3.4-r3 (15 Jun 2012)
+
+  15 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r3.ebuild, -clip-apps-conf-4.3.4-r2.ebuild:
+  Bump clip-config - new error codes for failed downloads.
+
+*clip-apps-conf-4.3.4-r2 (06 Jun 2012)
+
+  06 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r2.ebuild, -clip-apps-conf-4.3.4-r1.ebuild:
+  Rbump xinit following switch to logrotate.
+
+*clip-apps-conf-4.3.4-r1 (05 Jun 2012)
+
+  05 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4-r1.ebuild, -clip-apps-conf-4.3.4.ebuild:
+  Bump xorg-server, rbump qt-gui.
+  Bump clip-config - support dynamic IPs on gateways.
+  Bump install-ccsd - fix lock file permissions.
+
+*clip-apps-conf-4.3.4 (25 May 2012)
+
+  25 May 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.4.ebuild, +files/clip-apps-release-434.html,
+  -files/clip-apps-release-430.html -files/clip-apps-release-431.html,
+  -clip-apps-conf-4.3.0-r17.ebuild -clip-apps-conf-4.3.1-r14.ebuild:
+  Bump clip-config - support dynamic addresses for jails.
+  Remove old.
+
+*clip-apps-conf-4.3.3-r16 (26 Apr 2012)
+
+  26 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r16.ebuild, -clip-apps-conf-4.3.3-r15.ebuild:
+  Rbump openssh - fix postinst.
+
+*clip-apps-conf-4.3.3-r15 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r15.ebuild, -clip-apps-conf-4.3.3-r14.ebuild:
+  Rbump libxklavier - fix iso-codes path.
+  Bump openssh, add $HOME/.ssh-remote path.
+  Bump clip-config - support categories in optional packages display.
+
+*clip-apps-conf-4.3.3-r14 (16 Apr 2012)
+
+  16 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r14.ebuild, -clip-apps-conf-4.3.3-r13.ebuild:
+  Add pinentry.
+
+*clip-apps-conf-4.3.3-r13 (13 Apr 2012)
+
+  13 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r13.ebuild, -clip-apps-conf-4.3.3-r12.ebuild:
+  Bump gconf, rbump libglade - build fixes.
+  Bump userd-client.
+
+*clip-apps-conf-4.3.3-r12 (10 Apr 2012)
+
+  10 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r12.ebuild, -clip-apps-conf-4.3.3-r11.ebuild:
+  Rbump mime-types.
+
+*clip-apps-conf-4.3.3-r11 (02 Apr 2012)
+
+  02 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r11.ebuild, -clip-apps-conf-4.3.3-r10.ebuild:
+  Bump a bunch of packages after certificate expiration.
+
+*clip-apps-conf-4.3.3-r10 (29 Mar 2012)
+
+  29 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r10.ebuild, -clip-apps-conf-4.3.3-r9.ebuild:
+  Rbump gdk-pixbuf - nop.
+
+*clip-apps-conf-4.3.3-r9 (29 Mar 2012)
+
+  29 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r9.ebuild, -clip-apps-conf-4.3.3-r8.ebuild:
+  Bump / rbump a whole bunch of packages following certificate expiration.
+
+*clip-apps-conf-4.3.3-r8 (19 Mar 2012)
+
+  19 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r8.ebuild, -clip-apps-conf-4.3.3-r7.ebuild:
+  Bump clip-menu-xdg, userd-client, clip-config, rbump libnotify
+  and xdialog - switch to new local addresses and NET namespaces.
+
+*clip-apps-conf-4.3.3-r7 (16 Mar 2012)
+
+  16 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r7.ebuild, -clip-apps-conf-4.3.3-r6.ebuild:
+  Bump clip-menu-xdg - gateway menu.
+
+*clip-apps-conf-4.3.3-r6 (29 Feb 2012)
+
+  29 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r6.ebuild, -clip-apps-conf-4.3.3-r5.ebuild:
+  Rbump libxml2 - security bump.
+
+*clip-apps-conf-4.3.3-r5 (22 Feb 2012)
+
+  22 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r5.ebuild, -clip-apps-conf-4.3.3-r4.ebuild:
+  Bump libvorbis - security bump.
+  Bump xf86-video-nouveau, xf86-input-synaptics.
+
+*clip-apps-conf-4.3.3-r4 (22 Feb 2012)
+
+  22 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r4.ebuild, -clip-apps-conf-4.3.3-r3.ebuild:
+  Rbump gtk+.
+
+*clip-apps-conf-4.3.3-r3 (20 Feb 2012)
+
+  20 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r3.ebuild, -clip-apps-conf-4.3.3-r2.ebuild:
+  Bump gtk+, gdk-pixbuf, fontconfig. Remove libffi - moved to core.
+
+*clip-apps-conf-4.3.3-r2 (16 Feb 2012)
+
+  16 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r2.ebuild, -clip-apps-conf-4.3.3-r1.ebuild:
+  Bump busybox.
+
+*clip-apps-conf-4.3.3-r1 (15 Feb 2012)
+
+  15 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3-r1.ebuild, -clip-apps-conf-4.3.3.ebuild:
+  Rbump xf86-input-wacom.
+
+*clip-apps-conf-4.3.3 (13 Feb 2012)
+
+  13 Feb 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.3.ebuild, -clip-apps-conf-4.2.3-r4.ebuild,
+  +files/clip-apps-release-433.html, -files/clip-apps-release-423.html:
+  First 4.3.3 version, remove old.
+  Bump clip-config, clip-menu-xdg - typos.
+  Add xf86-input-wacom and rbump xorg-server and xf86-input-evdev for tablet 
+  hardware support, bump xf86-video-{ati,nouveau} - uvdev build fix.
+  Rbump adeskbar, xinit, slim, add Xaw3d and xvkbd - support virtual keyboards.
+
+*clip-apps-conf-4.3.2-r15 (08 Feb 2012)
+
+  08 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r15.ebuild, -clip-apps-conf-4.3.2-r14.ebuild:
+  Rbump xinit - touchscreen and Clip layout fix.
+
+*clip-apps-conf-4.3.2-r14 (19 Jan 2012)
+
+  19 Jan 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r14.ebuild, -clip-apps-conf-4.3.2-r13.ebuild:
+  Rbump xkeyboard-config.
+
+*clip-apps-conf-4.3.2-r13 (17 Jan 2012)
+
+  17 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r13.ebuild, -clip-apps-conf-4.3.2-r12.ebuild:
+  Rbump clip-menu-xdg - fix conflict against adeskbar.
+
+*clip-apps-conf-4.3.2-r12 (17 Jan 2012)
+
+  17 Jan 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r12.ebuild, -clip-apps-conf-4.3.2-r11.ebuild:
+  Bump clip-menu-xdg. Rbump adeskbar, xdialog - low battery warning.
+
+*clip-apps-conf-4.3.2-r11 (12 Jan 2012)
+
+  12 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r11.ebuild, -clip-apps-conf-4.3.2-r10.ebuild:
+  Rbump libxml2.
+
+*clip-apps-conf-4.3.2-r10 (10 Jan 2012)
+
+  10 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r10.ebuild, -clip-apps-conf-4.3.2-r9.ebuild:
+  Bump xscreensaver.
+
+*clip-apps-conf-4.3.2-r9 (04 Jan 2012)
+
+  04 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r9.ebuild, -clip-apps-conf-4.3.2-r8.ebuild:
+  Rbump slim - fix current.geom updates.
+
+*clip-apps-conf-4.3.2-r8 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r8.ebuild, -clip-apps-conf-4.3.2-r7.ebuild:
+  Bump clip-menu-xdg - cosmetic changes, add lxkeymap.
+  Bump clip-icons.
+
+*clip-apps-conf-4.3.2-r7 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r7.ebuild, -clip-apps-conf-4.3.2-r6.ebuild:
+  Bump clip-config - fix issues with time/date configuration.
+
+*clip-apps-conf-4.3.2-r6 (28 Dec 2011)
+
+  28 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r6.ebuild, -clip-apps-conf-4.3.2-r5.ebuild:
+  Rbump openbox - add window close icons in mixborder mode.
+  Bump clip-icons, clip-menu-xdg, clip-config, rbump 
+  baselayout-core-admin : configurable device attribution, cosmetic
+  improvements, new time/date configuration interface.
+
+*clip-apps-conf-4.3.2-r5 (08 Dec 2011)
+
+  08 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r5.ebuild, -clip-apps-conf-4.3.2-r4.ebuild:
+  Bump clip-menu-xdg, rbump adeskbar, gnome-menus, xinit - support
+  single RM jail configs once again.
+
+*clip-apps-conf-4.3.2-r4 (23 Nov 2011)
+
+  23 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r4.ebuild, -clip-apps-conf-4.3.2-r3.ebuild:
+  Rbump openbox.
+
+*clip-apps-conf-4.3.2-r3 (18 Nov 2011)
+
+  18 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r3.ebuild, -clip-apps-conf-4.3.2-r2.ebuild:
+  Bump xf86-video-*, python, clip-menu-xdg.
+  Rbump gnome-menus, gnome-python-desktop-base.
+
+*clip-apps-conf-4.3.2-r2 (14 Nov 2011)
+
+  14 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r2.ebuild, -clip-apps-conf-4.3.2-r1.ebuild:
+  Rbump slim, xinit.
+
+*clip-apps-conf-4.3.2-r1 (10 Nov 2011)
+
+  10 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2-r1.ebuild, -clip-apps-conf-4.3.2.ebuild:
+  Rbump xorg-server.
+
+*clip-apps-conf-4.3.2 (09 Nov 2011)
+
+  09 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.2.ebuild, +files/clip-apps-release-432.html:
+  Bump mesa, pixman, xf86-video-intel, qtcurve.
+  Rbump tigervnc, adeskbar, xinit, openbox, bump clip-icons and clip-menu-xdg
+  - switch to new mixborder mode for non-hestia configs.
+  Bump libffi, numpy.
+  Remove socat and fbpanel.
+
+*clip-apps-conf-4.3.1-r14 (02 Nov 2011)
+
+  02 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r14.ebuild, -clip-apps-conf-4.3.1-r13.ebuild:
+  Rbump xinit, adeskbar. Bump clip-menu-xdg.
+
+*clip-apps-conf-4.3.1-r13 (27 Oct 2011)
+
+  27 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r13.ebuild, -clip-apps-conf-4.3.1-r12.ebuild:
+  Rbump libxml2 - security update.
+
+*clip-apps-conf-4.3.1-r12 (26 Oct 2011)
+
+  26 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r12.ebuild, -clip-apps-conf-4.3.1-r11.ebuild:
+  Bump clip-config - ADMIN_TARGETS support. Bump libXt - build fix.
+
+*clip-apps-conf-4.3.1-r11 (24 Oct 2011)
+
+  24 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r11.ebuild, -clip-apps-conf-4.3.1-r10.ebuild:
+  Bump dbus - security update.
+
+*clip-apps-conf-4.3.1-r10 (21 Oct 2011)
+
+  21 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r10.ebuild, -clip-apps-conf-4.3.1-r9.ebuild:
+  Bump userd-client - nop.
+
+*clip-apps-conf-4.3.1-r9 (21 Oct 2011)
+
+  21 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r9.ebuild, -clip-apps-conf-4.3.1-r8.ebuild:
+  Bump clip-config.
+
+*clip-apps-conf-4.3.1-r8 (21 Oct 2011)
+
+  21 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r8.ebuild, -clip-apps-conf-4.3.1-r7.ebuild:
+  Rbump slim.
+
+*clip-apps-conf-4.3.1-r7 (19 Oct 2011)
+
+  19 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r7.ebuild, -clip-apps-conf-4.3.1-r6.ebuild:
+  Bump clip-menu-xdg. Rbump python-xlib.
+
+*clip-apps-conf-4.3.1-r6 (19 Oct 2011)
+
+  19 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r6.ebuild, -clip-apps-conf-4.3.1-r5.ebuild:
+  Rbump xf86-video-intel - fix udev dependency.
+
+*clip-apps-conf-4.3.1-r5 (19 Oct 2011)
+
+  19 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r5.ebuild, -clip-apps-conf-4.3.1-r4.ebuild:
+  Bump xorg-server.
+
+*clip-apps-conf-4.3.1-r4 (17 Oct 2011)
+
+  17 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r4.ebuild, -clip-apps-conf-4.3.1-r3.ebuild:
+  Add gnome-python-desktop-base, libwnck-python. Rbump xinit, adeskbar,
+  clip-menu-xdg - current level detection.
+  xinit - typo.
+
+*clip-apps-conf-4.3.1-r3 (12 Oct 2011)
+
+  12 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r3.ebuild, -clip-apps-conf-4.3.1-r2.ebuild:
+  Rbump slim - fix wallpaper resizing.
+
+*clip-apps-conf-4.3.1-r2 (11 Oct 2011)
+
+  11 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r2.ebuild, -clip-apps-conf-4.3.1-r1.ebuild:
+  Bump dbus-glib.
+
+*clip-apps-conf-4.3.1-r1 (06 Oct 2011)
+
+  06 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1-r1.ebuild, -clip-apps-conf-4.3.1.ebuild:
+  Bump clip-wallpapers, rbump slim - final version of the logo.
+
+*clip-apps-conf-4.3.1 (27 Sep 2011)
+
+  27 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.1.ebuild, +files/clip-apps-release-431.html:
+  Bump qt-* and qtcurve.
+  Rbump tigervnc.
+
+*clip-apps-conf-4.3.0-r17 (07 Sep 2011)
+
+  07 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r17.ebuild, -clip-apps-conf-4.3.0-r16.ebuild:
+  Rbump xscreensaver - theme change.
+
+*clip-apps-conf-4.3.0-r16 (05 Sep 2011)
+
+  05 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r16.ebuild, -clip-apps-conf-4.3.0-r15.ebuild:
+  Rbump xinit, bump clip-wallpapers - better X11 session wallpapers.
+
+*clip-apps-conf-4.3.0-r15 (31 Aug 2011)
+
+  31 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r15.ebuild, -clip-apps-conf-4.3.0-r14.ebuild:
+  Bump xterm.
+  Rbump xinit, slim, add clip-wallpapers.
+
+*clip-apps-conf-4.3.0-r14 (30 Aug 2011)
+
+  30 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r14.ebuild, -clip-apps-conf-4.3.0-r13.ebuild:
+  Rbump slim - remove useless delay.
+  Bump clip-menu-xdg, rbump adeskbar and python-xlib.
+
+*clip-apps-conf-4.3.0-r13 (23 Aug 2011)
+
+  23 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r13.ebuild, -clip-apps-conf-4.3.0-r12.ebuild:
+  Rbump fbpanel (no-op), bump xcb-util and add xcb-util-*, rbump 
+  cairo (no-op).
+
+*clip-apps-conf-4.3.0-r12 (18 Aug 2011)
+
+  18 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r12.ebuild, -clip-apps-conf-4.3.0-r11.ebuild:
+  Bump libXfont - security update.
+  Rbump tigervnc - follow RM version.
+
+*clip-apps-conf-4.3.0-r11 (03 Aug 2011)
+
+  03 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r11.ebuild, -clip-apps-conf-4.3.0-r10.ebuild:
+  Bump lxinput - fix sliders. Rbump arandr - fix localization.
+  Add lxkeymap and dependencies, rbump fbpanel-clip.
+
+*clip-apps-conf-4.3.0-r10 (01 Aug 2011)
+
+  01 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r10.ebuild, -clip-apps-conf-4.3.0-r9.ebuild:
+  Bump clip-config - use pre-generated optional package lists, reload
+  optional package list after a download.
+
+*clip-apps-conf-4.3.0-r9 (27 Jul 2011)
+
+  27 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r9.ebuild, -clip-apps-conf-4.3.0-r8.ebuild:
+  Rbump adeskbar.
+
+*clip-apps-conf-4.3.0-r8 (21 Jul 2011)
+
+  21 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r8.ebuild, -clip-apps-conf-4.3.0-r7.ebuild:
+  Rbump adeskbar, xf86-input-synaptics. Bump clip-menu-xdg.
+
+*clip-apps-conf-4.3.0-r7 (19 Jul 2011)
+
+  19 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r7.ebuild, -clip-apps-conf-4.3.0-r6.ebuild:
+  Bump clip-icons, clip-menu-xdg - touchpad.
+
+*clip-apps-conf-4.3.0-r6 (19 Jul 2011)
+
+  19 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r6.ebuild, -clip-apps-conf-4.3.0-r5.ebuild:
+  Bump py{cairo,gobject,gtk}.
+  Rbump xf86-input-synaptics and fbpanel - fixes for previous commit.
+
+*clip-apps-conf-4.3.0-r5 (18 Jul 2011)
+
+  18 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r5.ebuild, -clip-apps-conf-4.3.0-r4.ebuild:
+  Rbump fbpanel, xinit, xf86-input-synaptics - support synaptics advanced
+  config. Rbump xscreensaver - properly set DPMS timeouts.
+
+*clip-apps-conf-4.2.3-r4 (13 Jul 2011)
+
+  13 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.3-r4.ebuild, -clip-apps-conf-4.2.3-r3.ebuild:
+  Add python-xlib, rbump adeskbar, bump clip-menu-xdg, clip-icons - level switch
+  button.
+
+*clip-apps-conf-4.3.0-r4 (13 Jul 2011)
+
+  13 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r4.ebuild, -clip-apps-conf-4.3.0-r3.ebuild:
+  Bump notification-daemon and deps. Rbump qt-singleapplication.
+
+*clip-apps-conf-4.3.0-r3 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r3.ebuild, -clip-apps-conf-4.3.0-r2.ebuild:
+  Bump xrandr, arandr - fix for Latitude E6320.
+
+*clip-apps-conf-4.3.0-r2 (12 Jul 2011)
+
+  12 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r2.ebuild, -clip-apps-conf-4.3.0-r1.ebuild:
+  Add python-xlib, rbump adeskbar, bump clip-menu-xdg, clip-icons - level switch
+  button.
+
+*clip-apps-conf-4.3.0-r1 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0-r1.ebuild, -clip-apps-conf-4.3.0.ebuild:
+  Rbump xinit - fix gtkrc path.
+
+*clip-apps-conf-4.3.0 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.3.0.ebuild, +files/clip-apps-release-430.html,
+  -clip-apps-conf-4.2.0-r4.ebuild, -clip-apps-conf-4.2.1-r11.ebuild,
+  -clip-apps-conf-4.2.2.ebuild, -files/clip-apps-release-420.html,
+  -files/clip-apps-release-421.html, -files/clip-apps-release-422.html:
+  Bump xorg-server and dependencies, bump tigervnc, bump gtk+.
+
+*clip-apps-conf-4.2.3-r3 (08 Jul 2011)
+
+  08 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.3-r3.ebuild, -clip-apps-conf-4.2.3-r2.ebuild:
+  Rbump clip-config, add proper dependency on clip-core-conf for 
+  CLIP-Pkg-*.
+
+*clip-apps-conf-4.2.3-r2 (22 Jun 2011)
+
+  22 Jun 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.3-r2.ebuild, -clip-apps-conf-4.2.3-r1.ebuild:
+  Bump clip-config.
+
+*clip-apps-conf-4.2.3-r1 (25 May 2011)
+
+  25 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.3-r1.ebuild, -clip-apps-conf-4.2.3.ebuild:
+  Bump mime-types, dbus-glib, libutempter, rbump libXfont, 
+  tigervnc, mesa, fbpanel, xloadimage : match versions actually in portage.
+
+*clip-apps-conf-4.2.3 (24 May 2011)
+
+  24 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.3.ebuild, +files/clip-apps-release-423.html:
+  Remove useless and not build x11-libs/liblbxutil.
+  Bump busybox.
+
+*clip-apps-conf-4.2.2 (10 May 2011)
+
+  10 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.2.ebuild, +files/clip-apps-release-422.html:
+  Bump clip-config - add support for new networking options : PEER GTW
+  and dedicated ADMIN address.
+  Rbump xinit - fix viewmode on GTW configs.
+
+*clip-apps-conf-4.2.1-r11 (15 Apr 2011)
+
+  15 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r11.ebuild, -clip-apps-conf-4.2.1-r10.ebuild:
+  Bump openssh.
+
+*clip-apps-conf-4.2.1-r10 (14 Apr 2011)
+
+  14 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r10.ebuild, -clip-apps-conf-4.2.1-r9.ebuild:
+  Revert libxml2 in apps, will remove gettext from core to solve issue.
+
+*clip-apps-conf-4.2.1-r9 (14 Apr 2011)
+
+  14 Apr 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r9.ebuild, -clip-apps-conf-4.2.1-r8.ebuild:
+  Move libxml2 to clip-core-conf.
+
+*clip-apps-conf-4.2.1-r8 (13 Apr 2011)
+
+  13 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r8.ebuild, -clip-apps-conf-4.2.1-r7.ebuild:
+  Bump xrdb (security update). Rbump xinit - GTK2_RC fix.
+  Rbump gtk+ - same...
+
+*clip-apps-conf-4.2.1-r7 (13 Apr 2011)
+
+  13 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r7.ebuild, -clip-apps-conf-4.2.1-r6.ebuild:
+  Bump gtk+ and qtcurve engines, add gdk-pixbuf, remove gtk-engines.
+
+*clip-apps-conf-4.2.1-r6 (12 Apr 2011)
+
+  12 Apr 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r6.ebuild, -clip-apps-conf-4.2.1-r5.ebuild:
+  Rbump clip-menu-xdg, clip-icons.
+
+*clip-apps-conf-4.2.1-r5 (11 Apr 2011)
+
+  11 Apr 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r5.ebuild, -clip-apps-conf-4.2.1-r4.ebuild:
+  Rbump xinit, xorg-server - fix touchpad settings.
+
+*clip-apps-conf-4.2.1-r4 (06 Apr 2011)
+
+  06 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r4.ebuild, -clip-apps-conf-4.2.1-r3.ebuild:
+  Rbump xorg-server - even more cosmetic fix for device notification.
+
+*clip-apps-conf-4.2.1-r3 (06 Apr 2011)
+
+  06 Apr 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r3.ebuild, -clip-apps-conf-4.2.1-r2.ebuild:
+  Bump clip-menu-xdg, clip-config.
+
+*clip-apps-conf-4.2.1-r2 (06 Apr 2011)
+
+  06 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r2.ebuild, -clip-apps-conf-4.2.1-r1.ebuild:
+  Rbump xorg-server - cosmetic fix for device notification.
+
+*clip-apps-conf-4.2.1-r1 (06 Apr 2011)
+
+  06 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1-r1.ebuild, -clip-apps-conf-4.2.2.ebuild:
+  Rename 4.2.2 to 4.2.1 (no stabilized yet anyway).
+
+  30 Mar 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.2.ebuild, -clip-apps-conf-4.2.1.ebuild:
+  Rbump python, tigervnc, xinit, fbpanel, openbox.
+  Add adeskbar, gnome-menus, pyxdg, pyinotify, clip-icons, acpi, clip-menu-xdg
+  if IUSE clip-hermes.
+
+*clip-apps-conf-4.2.1 (22 Mar 2011)
+
+  22 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.1.ebuild, +files/clip-apps-release-421.html:
+  Initial 4.2.1 rev.
+  Bump cairo, pixman, add xcb-util. Rbump pango - security fix.
+  Rbump xorg-server, add xf86-input-synaptics and remove input-keyboard
+  and input-mouse - switch to fully dynamic mouse support through
+  evdev and synaptics.
+
+  22 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  -clip-apps-conf-4.1.4-r15.ebuild, -clip-apps-conf-4.1.5-r15.ebuild,
+  -files/clip-apps-release-414.html, -files/clip-apps-release-415.html:
+  Remove old.
+
+*clip-apps-conf-4.2.0-r4 (02 Mar 2011)
+
+  02 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.0-r4.ebuild, -clip-apps-conf-4.2.0-r3.ebuild:
+  Bump pango - security update.
+  Bump clip-config - refresh net_list on profile creation / deletion,
+  support whitespace in WPA keys.
+
+*clip-apps-conf-4.2.0-r3 (04 Feb 2011)
+
+  04 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.0-r3.ebuild, -clip-apps-conf-4.2.0-r2.ebuild:
+  Rbump openbox - make Ctrl-Alt-Del lock session.
+
+*clip-apps-conf-4.2.0-r2 (03 Feb 2011)
+
+  03 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.0-r2.ebuild, -clip-apps-conf-4.2.0-r1.ebuild:
+  Bump userd-client - smartcard update.
+  Bump openbox, rbump fbpanel, add libXinerama - fix panel strut.
+
+*clip-apps-conf-4.2.0-r1 (01 Feb 2011)
+
+  01 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.0-r1.ebuild, -clip-apps-conf-4.2.0.ebuild:
+  Bump clip-config, ClipQt - fix behaviour when a net profile's
+  interface is missing.
+
+*clip-apps-conf-4.2.0 (27 Jan 2011)
+
+  27 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.2.0.ebuild, -clip-apps-conf-4.1.6-r8.ebuild,
+  -files/clip-apps-release-416.html, +files/clip-apps-release-420.html:
+  No-op bump to 4.2.0.
+
+*clip-apps-conf-4.1.6-r8 (17 Jan 2011)
+
+  17 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r8.ebuild, -clip-apps-conf-4.1.6-r7.ebuild:
+  Rbump fbpanel, baselayout-core-admin - add PKCS11 CA admin.
+
+*clip-apps-conf-4.1.6-r7 (14 Jan 2011)
+
+  14 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r7.ebuild, -clip-apps-conf-4.1.6-r6.ebuild:
+  Bump userd-client. Rbump slim - fixes for screen geometry changes.
+
+*clip-apps-conf-4.1.6-r6 (13 Jan 2011)
+
+  13 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r6.ebuild, -clip-apps-conf-4.1.6-r5.ebuild:
+  Rbump talloc, xorg-server, disactivate MIT-SHM extension.
+
+*clip-apps-conf-4.1.6-r5 (13 Jan 2011)
+
+  13 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r5.ebuild, -clip-apps-conf-4.1.6-r4.ebuild:
+  Bump python.
+
+*clip-apps-conf-4.1.6-r4 (06 Jan 2011)
+
+  06 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r4.ebuild, -clip-apps-conf-4.1.6-r3.ebuild:
+  Bump slim, clip-config.
+
+*clip-apps-conf-4.1.6-r3 (04 Jan 2011)
+
+  04 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r3.ebuild, -clip-apps-conf-4.1.6-r2.ebuild:
+  Bump dbus, dbus-glib, userd-client.
+
+*clip-apps-conf-4.1.6-r2 (21 Dec 2010)
+
+  21 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r2.ebuild, -clip-apps-conf-4.1.6-r1.ebuild:
+  Rbump fbpanel - qtcurve color fixes.
+  Rbump libxml2 - DSO versioning fix.
+
+*clip-apps-conf-4.1.6-r1 (20 Dec 2010)
+
+  20 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6-r1.ebuild, -clip-apps-conf-4.1.6.ebuild:
+  Bump qt-*.
+  Bump userd-client.
+
+*clip-apps-conf-4.1.6 (16 Dec 2010)
+
+  16 Dec 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.6.ebuild, +files/clip-apps-release-416.html:
+  Initial release of 4.1.6. Bump gtk+ and deps.
+
+*clip-apps-conf-4.1.5-r15 (16 Nov 2010)
+
+  16 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r15.ebuild, -clip-apps-conf-4.1.5-r14.ebuild:
+  Bump libxml2 - security fix.
+  Rbump slim - disable netswitch entirely on !clip-hermes.
+
+*clip-apps-conf-4.1.5-r14 (12 Nov 2010)
+
+  12 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r14.ebuild, -clip-apps-conf-4.1.5-r13.ebuild:
+  Bump clip-config - DHCP warning fix.
+
+*clip-apps-conf-4.1.5-r13 (08 Nov 2010)
+
+  08 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r13.ebuild, -clip-apps-conf-4.1.5-r12.ebuild:
+  Rbump xinit, slim - persistent USER jail.
+
+*clip-apps-conf-4.1.5-r12 (04 Nov 2010)
+
+  04 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r12.ebuild, -clip-apps-conf-4.1.5-r11.ebuild:
+  Bump clip-viewer, clip-config, userd-client.
+
+*clip-apps-conf-4.1.5-r11 (29 Oct 2010)
+
+  29 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r11.ebuild, -clip-apps-conf-4.1.5-r10.ebuild:
+  Rbump xorg-server, bump libdrm and mesa, add xf86-video-ati, 
+  xf86-video-nouveau and talloc - radeon / nvidia support.
+  Bump xscreensaver-pwcheck / xscreensaver.
+
+*clip-apps-conf-4.1.5-r10 (26 Oct 2010)
+
+  26 Oct 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r10.ebuild, -clip-apps-conf-4.1.5-r9.ebuild:
+  Rbump slim.
+
+*clip-apps-conf-4.1.5-r9 (25 Oct 2010)
+
+  25 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r9.ebuild, -clip-apps-conf-4.1.5-r8.ebuild:
+  Rbump busybox-*.
+
+*clip-apps-conf-4.1.5-r8 (19 Oct 2010)
+
+  19 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r8.ebuild, -clip-apps-conf-4.1.5-r7.ebuild:
+  Rbump xinit - add 1024x600 resolution.
+
+*clip-apps-conf-4.1.5-r7 (11 Oct 2010)
+
+  11 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r7.ebuild, -clip-apps-conf-4.1.5-r6.ebuild:
+  Rbump xinit, fbpanel. Bump clip-config.
+
+*clip-apps-conf-4.1.5-r6 (08 Oct 2010)
+
+  08 Oct 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r6.ebuild, -clip-apps-conf-4.1.5-r5.ebuild:
+  Rbump tigervnc.
+
+*clip-apps-conf-4.1.5-r5 (27 Sep 2010)
+
+  27 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r5.ebuild, -clip-apps-conf-4.1.5-r4.ebuild:
+  Bump clip-config, fbpanel, rbump xinit and busybox. Add lxinput.
+
+*clip-apps-conf-4.1.5-r4 (20 Sep 2010)
+
+  20 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r4.ebuild, -clip-apps-conf-4.1.5-r3.ebuild:
+  Bump tigervnc, clip-config, rbump fbpanel - new clip_download config
+  gui.
+
+*clip-apps-conf-4.1.5-r3 (16 Sep 2010)
+
+  16 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r3.ebuild, -clip-apps-conf-4.1.5-r2.ebuild:
+  Bump libxml2 (following zlib bump).
+
+*clip-apps-conf-4.1.5-r2 (16 Sep 2010)
+
+  16 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r2.ebuild, -clip-apps-conf-4.1.5-r1.ebuild:
+  Bump busybox, rbump slim.
+
+*clip-apps-conf-4.1.5-r1 (13 Sep 2010)
+
+  13 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5-r1.ebuild, -clip-apps-conf-4.1.5.ebuild:
+  Bump clip-config, fbpanel.
+
+*clip-apps-conf-4.1.5 (08 Sep 2010)
+
+  08 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.5.ebuild, -clip-apps-conf-4.1.4-r16.ebuild:
+  +clip-apps-conf-4.1.4-r15.ebuild:
+  Bump 4.1.4-r16 to 4.1.5 and switch it to ~x86. Revert 4.1.4-r15 as
+  this is the tagged version.
+
+*clip-apps-conf-4.1.4-r16 (06 Sep 2010)
+
+  06 Sep 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r16.ebuild, -clip-apps-conf-4.1.4-r15.ebuild:
+  Bump fbpanel - netswitch.
+  rbump slim - login netchoose.
+
+*clip-apps-conf-4.1.4-r15 (06 Sep 2010)
+
+  06 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r15.ebuild, -clip-apps-conf-4.1.4-r14.ebuild:
+  Rbump xinit - fix brightness warnings.
+
+*clip-apps-conf-4.1.4-r14 (03 Sep 2010)
+
+  03 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r14.ebuild, -clip-apps-conf-4.1.4-r13.ebuild:
+  Bump xinit - new wallpaper size for DELL E4310.
+
+*clip-apps-conf-4.1.4-r13 (02 Sep 2010)
+
+  02 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r13.ebuild, -clip-apps-conf-4.1.4-r12.ebuild:
+  Bump userd-client, fbpanel - keep in sync with livecd.
+
+*clip-apps-conf-4.1.4-r12 (01 Sep 2010)
+
+  01 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r12.ebuild, -clip-apps-conf-4.1.4-r11.ebuild:
+  Bump clip-config, ClipQt, fbpanel, slim - mostly to keep up with
+  livecd updates.
+
+*clip-apps-conf-4.1.4-r11 (27 Aug 2010)
+
+  27 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r11.ebuild, -clip-apps-conf-4.1.4-r10.ebuild:
+  Bump busybox-*.
+
+*clip-apps-conf-4.1.4-r10 (26 Aug 2010)
+
+  26 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r10.ebuild, -clip-apps-conf-4.1.4-r9.ebuild:
+  Update clip-core-conf dependency.
+
+*clip-apps-conf-4.1.4-r9 (23 Aug 2010)
+
+  23 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r9.ebuild, -clip-apps-conf-4.1.4-r8.ebuild:
+  Rbump libnotify, libwnck - clip-deps fixes.
+
+*clip-apps-conf-4.1.4-r8 (23 Aug 2010)
+
+  23 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r8.ebuild, -clip-apps-conf-4.1.4-r7.ebuild:
+  Rbump fbpanel, xinit, python - networking fixes + add veriexec interpreter
+  entry.
+
+*clip-apps-conf-4.1.4-r7 (12 Aug 2010)
+
+  12 Aug 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r7.ebuild, -clip-apps-conf-4.1.4-r6.ebuild:
+  Bump fbpanel.
+
+  05 Jul 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  files/clip-apps-release-414.html, files/clip-apps-release-41.html:
+  Typo fix.
+
+*clip-apps-conf-4.1.4-r6 (04 Aug 2010)
+
+  04 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r6.ebuild, -clip-apps-conf-4.1.4-r5.ebuild:
+  Rbump xinit, slim - support for nonetwork mode. Bump clip-config,
+  userd-client, add ClipQt - clip-config code refactoring, PKCS#11
+  support, nonetwork support.
+
+*clip-apps-conf-4.1.4-r5 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r5.ebuild, -clip-apps-conf-4.1.4-r4.ebuild:
+  Bump socat (security update).
+
+*clip-apps-conf-4.1.4-r4 (28 Jul 2010)
+
+  28 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r4.ebuild, -clip-apps-conf-4.1.4-r3.ebuild:
+  Bump clip-config.
+
+*clip-apps-conf-4.1.4-r3 (20 Jul 2010)
+
+  20 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r3.ebuild, -clip-apps-conf-4.1.4-r2.ebuild:
+  Rbump xorg-server.
+
+*clip-apps-conf-4.1.4-r2 (19 Jul 2010)
+
+  19 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r2.ebuild, -clip-apps-conf-4.1.4-r1.ebuild:
+  Rbump xorg-server, bump xkeyboard-config, add xf86-input-evdev -
+  switch to evdev as keyboard driver.
+
+*clip-apps-conf-4.1.4-r1 (16 Jul 2010)
+
+  16 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4-r1.ebuild, -clip-apps-conf-4.1.4.ebuild:
+
+*clip-apps-conf-4.1.4 (12 Jul 2010)
+
+  12 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.4.ebuild, -clip-apps-conf-4.1.2-r11.ebuild,
+  +files/clip-apps-release-414.html:
+  Bump xorg-server and deps, bump tigervnc.
+  Remove old.
+
+*clip-apps-conf-4.1.3-r4 (06 Jul 2010)
+
+  06 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.3-r4.ebuild, -clip-apps-conf-4.1.3-r3.ebuild,
+  -clip-apps-conf-4.0.11-r4.ebuild, -files/clip-apps-release.html:
+  Bump clip-config.
+  Remove old.
+
+*clip-apps-conf-4.1.3-r3 (05 Jul 2010)
+
+  05 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.3-r3.ebuild, -clip-apps-conf-4.1.3-r2.ebuild:
+  Bump qtcurve (qt4, gtk2).
+
+*clip-apps-conf-4.1.3-r2 (01 Jul 2010)
+
+  01 Jul 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.3-r2.ebuild, -clip-apps-conf-4.1.3-r1.ebuild:
+  Bump fbpanel.
+
+*clip-apps-conf-4.1.3-r1 (29 Jun 2010)
+
+  29 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.3-r1.ebuild, -clip-apps-conf-4.1.3.ebuild:
+  Rbump qt-core.
+
+*clip-apps-conf-4.1.3 (24 Jun 2010)
+
+  24 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.3.ebuild:
+  First 4.1.3 release.
+  Bump qt-*. Rbump fbpanel.
+
+*clip-apps-conf-4.1.2-r11 (10 Jun 2010)
+
+  10 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r11.ebuild, -clip-apps-conf-4.1.2-r10.ebuild:
+  Rbump xorg-server (R500 support).
+
+*clip-apps-conf-4.1.2-r10 (07 Jun 2010)
+
+  07 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r10.ebuild, -clip-apps-conf-4.1.2-r9.ebuild:
+  Revert tigervnc to previous version (new one is buggy in RM jails).
+
+*clip-apps-conf-4.1.2-r9 (07 Jun 2010)
+
+  07 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r9.ebuild, -clip-apps-conf-4.1.2-r8.ebuild:
+  Bump fbpanel.
+
+*clip-apps-conf-4.1.2-r8 (03 Jun 2010)
+
+  03 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r8.ebuild, -clip-apps-conf-4.1.2-r7.ebuild:
+  Rbump slim, xinit, fbpanel and tigervnc.
+  Rbump libsexy / notification-daemon, sort packages and remove 
+  duplicate dbus.
+  N.B. : please keep packages organized alphabetically.
+
+*clip-apps-conf-4.1.2-r7 (03 Jun 2010)
+
+  03 Jun 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r7.ebuild, -clip-apps-conf-4.1.2-r6.ebuild:
+  Add notification-daemon along with dependencies.
+
+*clip-apps-conf-4.1.2-r6 (02 Jun 2010)
+
+  02 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r6.ebuild, -clip-apps-conf-4.1.2-r5.ebuild:
+  Rbump xinit - cleanup slim.log on DM startup.
+
+*clip-apps-conf-4.1.2-r5 (01 Jun 2010)
+
+  01 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r5.ebuild, -clip-apps-conf-4.1.2-r4.ebuild:
+  Add clip-viewer, bump xinit and fbpanel. Remove qt3 and kdestyles-base.
+
+*clip-apps-conf-4.1.2-r4 (31 May 2010)
+
+  31 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r4.ebuild, -clip-apps-conf-4.1.2-r3.ebuild:
+  Rbump slim and tigervnc (screen resizing support).
+
+*clip-apps-conf-4.1.2-r3 (27 May 2010)
+
+  27 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r3.ebuild, -clip-apps-conf-4.1.2-r2.ebuild:
+
+*clip-apps-conf-4.1.2-r2 (27 May 2010)
+
+  27 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r2.ebuild, -clip-apps-conf-4.1.2-r1.ebuild:
+  Bump clip-config.
+
+*clip-apps-conf-4.1.2-r1 (25 May 2010)
+
+  25 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2-r1.ebuild, -clip-apps-conf-4.1.2.ebuild:
+  Add qt4 + deps, bump clip-config to qt4 version.
+  Rbump xorg-server (X60 support).
+
+*clip-apps-conf-4.1.2 (10 May 2010)
+
+  10 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.2.ebuild, -clip-apps-conf-4.1.1-r8.ebuild:
+  Rbump fbpanel.
+
+*clip-apps-conf-4.1.1-r8 (28 Apr 2010)
+
+  28 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r8.ebuild, -clip-apps-conf-4.1.1-r7.ebuild:
+  Bump fbpanel (rmlaunch autostart fix).
+
+*clip-apps-conf-4.1.1-r7 (27 Apr 2010)
+
+  27 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r7.ebuild, -clip-apps-conf-4.1.1-r6.ebuild:
+  Bump clip-config (Ad-Hoc wireless, extra routes).
+
+*clip-apps-conf-4.1.1-r6 (23 Apr 2010)
+
+  23 Apr 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r6.ebuild, -clip-apps-conf-4.1.1-r5.ebuild:
+  Add clip-hermes to IUSE. Add CLIP-Hermes to clip-apps-release.
+
+*clip-apps-conf-4.1.1-r5 (22 Apr 2010)
+
+  22 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r5.ebuild, -clip-apps-conf-4.1.1-r4.ebuild:
+  Bump gtk+ and associated packages.
+
+*clip-apps-conf-4.1.1-r4 (19 Apr 2010)
+
+  19 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r4.ebuild, -clip-apps-conf-4.1.1-r3.ebuild:
+  Bump fbpanel.
+
+*clip-apps-conf-4.1.1-r3 (09 Apr 2010)
+
+  09 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r3.ebuild, -clip-apps-conf-4.1.1-r2.ebuild:
+  Bump libxcb, pixman, libdrm.
+
+*clip-apps-conf-4.1.1-r2 (08 Apr 2010)
+
+  08 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r2.ebuild, -clip-apps-conf-4.1.1-r1.ebuild:
+  Bump slim, rbump libfontenc.
+
+*clip-apps-conf-4.1.1-r1 (02 Apr 2010)
+
+  02 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1-r1.ebuild, -clip-apps-conf-4.1.1.ebuild:
+  Rbump fbpanel. Rbump qt, bump libmng (jpeg depends).
+
+*clip-apps-conf-4.1.1 (01 Apr 2010)
+
+  01 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.1.ebuild, -clip-apps-conf-4.1.0-r7.ebuild:
+  Bump fbpanel, tigervnc, libfontenc.
+
+*clip-apps-conf-4.1.0-r7 (24 Mar 2010)
+
+  24 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0-r7.ebuild, -clip-apps-conf-4.1.0-r6.ebuild:
+  Add arandr and deps.
+
+*clip-apps-conf-4.1.0-r6 (23 Mar 2010)
+
+  23 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0-r6.ebuild, -clip-apps-conf-4.1.0-r5.ebuild:
+  Bump fbpanel, add socat - quick profile switching.
+  Bump xorg-server and slim - activate KMS on all supported laptops.
+
+*clip-apps-conf-4.1.0-r5 (18 Mar 2010)
+
+  18 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0-r5.ebuild, -clip-apps-conf-4.1.0-r4.ebuild:
+  Bump xorg to 1.7.5, mesa to 7.7 and libdrm to 2.4.19, along
+  with dependencies.
+  Do not activate KMS by default.
+
+*clip-apps-conf-4.1.0-r4 (11 Mar 2010)
+
+  11 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0-r4.ebuild, -clip-apps-conf-4.1.0-r3.ebuild:
+  Bump x11-*, switch to xorg-server-1.6.5 and support KMS.
+
+*clip-apps-conf-4.1.0-r3 (09 Feb 2010)
+
+  09 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0-r3.ebuild, -clip-apps-conf-4.1.0-r2.ebuild:
+  Bump fbpanel.
+
+*clip-apps-conf-4.1.0-r2 (05 Feb 2010)
+
+  05 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0-r2.ebuild, -clip-apps-conf-4.1.0-r1.ebuild:
+  Bump xinit, fbpanel - fullscreen support (minmax plugin, autostart
+  in rmlaunch).
+
+*clip-apps-conf-4.1.0-r1 (01 Feb 2010)
+
+  01 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0-r1.ebuild, -clip-apps-conf-4.1.0.ebuild:
+  Bump fbpanel, openbox, tigervnc, xinit - automatic fullscreen
+  mode.
+  Bump slim - fix TakeConsole.
+
+*clip-apps-conf-4.1.0 (29 Jan 2010)
+
+  29 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.1.0.ebuild:
+  Initial release of clip-apps 4.1. Bump clip-config and userd-client
+  to support single RM jails configurations.
+
+*clip-apps-conf-4.0.11-r4 (25 Jan 2010)
+
+  25 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.11-r4.ebuild, -clip-apps-conf-4.0.11-r3.ebuild:
+  Bump libXft, xscreensaver, openbox. Add xset.
+
+*clip-apps-conf-4.0.11-r3 (25 Jan 2010)
+
+  25 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.11-r3.ebuild, -clip-apps-conf-4.0.11-r2.ebuild:
+  Bump xinit, fbpanel, xscreensaver.
+
+*clip-apps-conf-4.0.11-r2 (19 Jan 2010)
+
+  19 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.11-r2.ebuild, -clip-apps-conf-4.0.11-r1.ebuild:
+  Bump tigervnc, xscreensaver.
+
+*clip-apps-conf-4.0.11-r1 (19 Jan 2010)
+
+  19 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.11-r1.ebuild, -clip-apps-conf-4.0.11.ebuild:
+  Bump fbpanel, xinit, openbox, xdialog, tigervnc, xscreensaver.
+
+*clip-apps-conf-4.0.11 (12 Jan 2010)
+
+  12 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.11.ebuild, -clip-apps-conf-4.0.10-r2.ebuild:
+  Bump fbpanel, xinit, gtk-engines, openbox.
+
+*clip-apps-conf-4.0.10-r2 (22 Dec 2009)
+
+  22 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.10-r2.ebuild, -clip-apps-conf-4.0.10-r1.ebuild:
+  Bump fbpanel, clip-config.
+
+*clip-apps-conf-4.0.10-r1 (16 Dec 2009)
+
+  16 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.10-r1.ebuild, -clip-apps-conf-4.0.10.ebuild:
+  Bump openbox, fbpanel, slim.
+
+*clip-apps-conf-4.0.10 (16 Dec 2009)
+
+  16 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.10.ebuild, -clip-apps-conf-4.0.9-r5.ebuild:
+  Bump gtk+, pango, clip-config, fbpanel-clip.
+
+*clip-apps-conf-4.0.9-r5 (05 Nov 2009)
+
+  05 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.9-r5.ebuild, -clip-apps-conf-4.0.9-r4.ebuild:
+  Bump fbpanel - usb help fix.
+  Bump clip-config - WPA-EAP support fix.
+
+*clip-apps-conf-4.0.9-r4 (02 Nov 2009)
+
+  02 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.9-r4.ebuild, -clip-apps-conf-4.0.9-r3.ebuild:
+  Bump fbpanel, clip-config, userd-client, xorg-server, xinit, tigervnc.
+
+*clip-apps-conf-4.0.9-r3 (29 Oct 2009)
+
+  29 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.9-r3.ebuild, -clip-apps-conf-4.0.9-r2.ebuild:
+  Bump fbpanel, clip-config - 3G / WPA-EAP support, status monitoring
+  for net / usb.
+
+*clip-apps-conf-4.0.9-r2 (20 Oct 2009)
+
+  20 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.9-r2.ebuild, -clip-apps-conf-4.0.9-r1.ebuild:
+  Bump fbpanel, busybox-audit, busybox-admin.
+
+*clip-apps-conf-4.0.9-r1 (15 Oct 2009)
+
+  15 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.9-r1.ebuild, -clip-apps-conf-4.0.9.ebuild:
+  Bump tigervnc.
+
+*clip-apps-conf-4.0.9 (14 Oct 2009)
+
+  14 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.9.ebuild, -clip-apps-conf-4.0.8-r3.ebuild:
+  Bump fbpanel / slim - add reboot / halt actions.
+
+*clip-apps-conf-4.0.8-r3 (12 Oct 2009)
+
+  12 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.8-r3.ebuild, -clip-apps-conf-4.0.8-r2.ebuild:
+  Bump busybox-*.
+
+*clip-apps-conf-4.0.8-r2 (08 Oct 2009)
+
+  08 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.8-r2.ebuild, -clip-apps-conf-4.0.8-r1.ebuild:
+  Bump busybox-*.
+
+*clip-apps-conf-4.0.8-r1 (02 Oct 2009)
+
+  02 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.8-r1.ebuild, -clip-apps-conf-4.0.8.ebuild:
+  Silent bump, remove fake CONFDEPEND after successful testing.
+
+*clip-apps-conf-4.0.8 (02 Oct 2009)
+
+  02 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.8.ebuild, -clip-apps-conf-4.0.7.ebuild:
+  Bump clip-config. Add 'fake' CONFDEPEND on clip-core-conf > 
+  4.0.10-r2, to test new CONFDEPEND implementation.
+
+*clip-apps-conf-4.0.7 (29 Sep 2009)
+
+  29 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.7.ebuild, -clip-apps-conf-4.0.6-r5.ebuild:
+  Bump clip-config, xorg-server, xkeyboard-config, baselayout-core-admin.
+
+*clip-apps-conf-4.0.6-r5 (16 Sep 2009)
+
+  16 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.6-r5.ebuild, -clip-apps-conf-4.0.6-r4.ebuild:
+  Bump slim, clip-config.
+
+*clip-apps-conf-4.0.6-r4 (11 Sep 2009)
+
+  11 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.6-r4.ebuild, -clip-apps-conf-4.0.6-r3.ebuild:
+  Bump clip-config, fbpanel, userd-client.
+
+*clip-apps-conf-4.0.6-r3 (09 Sep 2009)
+
+  09 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.6-r3.ebuild, -clip-apps-conf-4.0.6-r2.ebuild:
+  Bump clip-config, fbpanel, add userd-client and remove all clip-userclt.
+
+*clip-apps-conf-4.0.6-r2 (08 Sep 2009)
+
+  08 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.6-r2.ebuild, -clip-apps-conf-4.0.6-r1.ebuild:
+  Bump xorg-server, clip-config.
+
+*clip-apps-conf-4.0.6-r1 (04 Sep 2009)
+
+  04 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.6-r1.ebuild, -clip-apps-conf-4.0.6.ebuild:
+  Bump xorg-server, tigervnc.
+
+*clip-apps-conf-4.0.6 (03 Sep 2009)
+
+  03 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.6.ebuild, -clip-apps-conf-4.0.5-r3.ebuild:
+  Bump clip-config (add proxy support). Bump Xorg and cairo.
+
+*clip-apps-conf-4.0.5-r3 (28 Aug 2009)
+
+  28 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.5-r3.ebuild, -clip-apps-conf-4.0.5-r2.ebuild:
+  Bump clip-config.
+
+*clip-apps-conf-4.0.5-r2 (27 Aug 2009)
+
+  27 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.5-r2.ebuild, -clip-apps-conf-4.0.5-r1.ebuild:
+  Add kdestyles-base for clip-gtw.
+  Bump fbpanel (for GTW).
+  Bump xorg (use fbdev resolution, rather than hardcoded one).
+  Bump tigervnc.
+
+*clip-apps-conf-4.0.5-r1 (26 Aug 2009)
+
+  26 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.5-r1.ebuild, -clip-apps-conf-4.0.5.ebuild:
+  Bump clip-config, fbpanel, again.
+
+*clip-apps-conf-4.0.5 (21 Aug 2009)
+
+  21 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.5.ebuild, -clip-apps-conf-4.0.4-r1.ebuild:
+  Bump clip-config, fbpanel.
+
+*clip-apps-conf-4.0.4-r1 (17 Aug 2009)
+
+  17 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.4-r1.ebuild, -clip-apps-conf-4.0.4.ebuild:
+  Bump libxml2, switch from tightvnc to tigervnc.
+  Add preinst to remove problematic /viewers from list of tightvnc
+  installed files.
+
+*clip-apps-conf-4.0.4 (07 Aug 2009)
+
+  07 Aug 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.4.ebuild, -clip-apps-conf-4.0.3-r1.ebuild:
+  Bump xinit, fbpanel, xorg-server.
+
+*clip-apps-conf-4.0.3-r1 (22 Jul 2009)
+
+  22 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.3-r1.ebuild, -clip-apps-conf-4.0.3.ebuild:
+  Silent bump for tests.
+
+*clip-apps-conf-4.0.3 (22 Jul 2009)
+
+  22 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.3.ebuild, -clip-apps-conf-4.0.2.ebuild:
+  Bump clip-usb-clt, fbpanel (in line with removable storage
+  improvements in clip-core-conf-4.0.5). 
+  Replace xdm with slim as login manager.
+
+*clip-apps-conf-4.0.2 (15 Jul 2009)
+
+  15 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.2.ebuild, -clip-apps-conf-4.0.1.ebuild:
+  Bump clip-config - support spaces in essids.
+
+*clip-apps-conf-4.0.1 (07 Jul 2009)
+
+  07 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.1.ebuild, -clip-apps-conf-4.0.0.ebuild:
+
+*clip-apps-conf-4.0.0 (24 Jun 2009)
+
+  24 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-4.0.0.ebuild, -clip-apps-conf-3.99.11.ebuild,
+  -files/clip-apps-release.log, +files/clip-apps-release.html:
+  Yeepee...
+
+*clip-apps-conf-3.99.11 (24 Jun 2009)
+
+  24 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.11.ebuild, -clip-apps-conf-3.99.10.ebuild:
+  Bump clip-config, openssh.
+
+*clip-apps-conf-3.99.10 (23 Jun 2009)
+
+  23 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.10.ebuild, -clip-apps-conf-3.99.9.ebuild:
+  Bump gtk-engines.
+
+*clip-apps-conf-3.99.9 (22 Jun 2009)
+
+  22 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.9.ebuild, -clip-apps-conf-3.99.8.ebuild:
+  Bump clip-config - detect wifi support.
+  Bump xinit, openbox, fbpanel : support priv_user user group.
+
+*clip-apps-conf-3.99.8 (19 Jun 2009)
+
+  19 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.8.ebuild, -clip-apps-conf-3.99.7.ebuild:
+  Bump gtk+ and dependencies.
+
+*clip-apps-conf-3.99.7 (18 Jun 2009)
+
+  18 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.7.ebuild, -clip-apps-conf-3.99.6.ebuild:
+  Bump xdm, xinit.
+
+*clip-apps-conf-3.99.6 (17 Jun 2009)
+
+  17 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.6.ebuild, -clip-apps-conf-3.99.5.ebuild:
+  Bump clip-config - support for netconf and wireless.
+
+*clip-apps-conf-3.99.5 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.5.ebuild, -clip-apps-conf-3.99.4.ebuild:
+  Bump openssh, baselayout-core-admin.
+
+*clip-apps-conf-3.99.4 (08 Jun 2009)
+
+  08 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.4.ebuild, -clip-apps-conf-3.99.3.ebuild:
+  Bump openbox, fbpanel, xinit and xdm to support new ADMIN / AUDIT
+  GUIs. Add openbox and fbpanel to non CLIP-RM configs.
+  Add clip-config + depends (qt, ttf-bitstream).
+
+*clip-apps-conf-3.99.3 (13 May 2009)
+
+  13 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.3.ebuild, -clip-apps-conf-3.99.2.ebuild:
+  Bump fbpanel.
+
+*clip-apps-conf-3.99.2 (24 Apr 2009)
+
+  24 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.2.ebuild, -clip-apps-conf-3.99.1.ebuild:
+  Bump busybox.
+
+*clip-apps-conf-3.99.1 (21 Apr 2009)
+
+  21 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-apps-conf-3.99.1.ebuild, -clip-apps-conf-3.99.0.ebuild:
+  Bump xdm.
+
+*clip-apps-conf-3.99.0 (25 Mar 2009)
+
+  25 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-apps-conf-3.99.0.ebuild:
+  Initial import.

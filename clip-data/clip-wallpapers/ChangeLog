@@ -1,0 +1,33 @@
+# CLIP ChangeLog for clip-data/clip-wallpapers
+
+*clip-wallpapers-2.1.0 (01 Mar 2013)
+
+  01 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-wallpapers-2.1.0.ebuild, -clip-wallpapers-2.0.3.ebuild:
+  Normalize wallpaper sizes : 16x9,16x10,16x12, etc.
+  Add 'splash' type normalized wallpapers.
+
+*clip-wallpapers-2.0.2-r1 (02 Apr 2012)
+
+  02 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-wallpapers-2.0.2-r1.ebuild, -clip-wallpapers-2.0.2.ebuild:
+  Force rebuild
+
+*clip-wallpapers-2.0.2 (05 Oct 2011)
+
+  05 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-wallpapers-2.0.2.ebuild, -clip-wallpapers-2.0.1.ebuild:
+  Bump logo to final version.
+
+*clip-wallpapers-2.0.1 (05 Sep 2011)
+
+  05 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-wallpapers-2.0.1.ebuild, -clip-wallpapers-2.0.0.ebuild:
+  Make the session wallpapers vertically centered versions of the
+  splash wallpaper.
+
+*clip-wallpapers-2.0.0 (31 Aug 2011)
+
+  31 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-wallpapers-2.0.0.ebuild:
+  Initial standalone release, used to be part of x11-apps/xinit.

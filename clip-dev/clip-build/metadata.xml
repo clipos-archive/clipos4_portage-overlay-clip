@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>clip-dcssi</herd>
+	<maintainer>
+		<name>Vincent Strubel</name>
+		<email>clipos@ssi.gouv.fr</email>
+	</maintainer>
+	<longdescription>
+		clip-build allows you to build fake root directories, with
+		as many nested jails/chroots as you may need, all based
+		on an xml spec file.
+	</longdescription>
+</pkgmetadata>

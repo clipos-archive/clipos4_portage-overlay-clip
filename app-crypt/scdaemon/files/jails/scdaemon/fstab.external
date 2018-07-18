@@ -1,0 +1,1 @@
+/var/run/pcscd	/var/run/pcscd	none	bind,ro,nosuid,nodev,noexec,noatime

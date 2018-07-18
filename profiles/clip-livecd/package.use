@@ -1,0 +1,27 @@
+app-arch/dpkg -nls lzma
+app-editors/gvim gtk
+#clip-dev/clip-installer clip-hermes
+dev-lang/python clip-devstation
+dev-libs/libxml2 python
+media-gfx/xloadimage -tiff
+media-libs/imlib2 X
+media-libs/mesa -llvm
+media-plugins/alsa-plugins -pulseaudio
+sys-apps/busybox static -pam
+sys-apps/shadow clip-devstation
+sys-apps/smartmontools minimal
+sys-apps/util-linux static-libs
+sys-apps/v86d x86emu
+sys-libs/glibc clip-tcb
+sys-fs/dmraid static
+sys-fs/lvm2 static static-libs -thin
+sys-fs/udev static-libs
+virtual/udev static-libs
+virtual/libudev static-libs
+x11-drivers/xf86-video-ati -glamor
+x11-libs/cairo -qt4
+x11-libs/libdrm libkms
+x11-themes/qtcurve gtk
+
+# Temporary disable udev to avoid update
+sys-apps/hwids udev

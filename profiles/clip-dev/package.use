@@ -1,0 +1,91 @@
+app-accessibility/speech-dispatcher -python
+app-arch/bzip2 static-libs
+app-arch/dpkg -nls
+app-arch/p7zip -kde
+app-misc/strigi exif -hyperestraier clucene -ffmpeg
+app-office/akonadi-server -mysql sqlite soprano
+app-office/libreoffice java
+app-text/poppler qt4 cxx cjk
+app-text/texlive-core xetex
+app-text/texlive -xml
+dev-db/sqlite threadsafe fts3 secure-delete unlock-notify
+dev-java/icedtea -jbootstrap pulseaudio
+dev-java/icedtea-web gtk2 -gtk3 
+dev-lang/perl -gdbm
+dev-lang/python tk
+dev-lang/yasm -python
+dev-libs/cyrus-sasl -ldap
+dev-libs/libgcrypt static-libs
+dev-libs/libgpg-error static-libs
+dev-libs/libverto -libev libevent
+dev-libs/libxml2 python
+dev-libs/openssl kerberos static-libs
+dev-libs/popt static-libs
+dev-libs/redland iodbc
+dev-libs/softhsm -softhsm_openssl softhsm_anssipki
+dev-ml/ocamlnet -gtk -pcre
+dev-python/docutils glep
+dev-python/ipython -smp -qt4
+dev-python/pillow tk
+dev-python/ply python
+dev-python/pypax -xtpax
+dev-python/PyQt4 declarative webkit svg sql phonon script
+dev-python/python-xlib clip-domains
+dev-python/simplejson python
+dev-qt/designer -phonon
+dev-vcs/git -gtk
+dev-vcs/subversion -kde
+gnome-base/gnome-menus python debug
+kde-base/kdebase-workspace python rss holidays
+kde-base/kdelibs spell -udisks -upower
+mail-client/thunderbird -gstreamer
+media-gfx/imagemagick -svg wmf
+media-gfx/inkscape wmf lcms dia
+media-libs/flac ogg
+media-libs/freetype static-libs
+media-libs/gegl -svg
+media-libs/imlib -gtk
+media-libs/libcanberra -sound -gtk3
+media-libs/libjpeg-turbo static-libs
+media-libs/libpng apng static-libs
+media-libs/libwebp -opengl
+media-libs/mesa -llvm
+media-libs/phonon -xine -gstreamer
+media-libs/xine-lib mad x264 xvid vorbis a52 aac dvd flac -samba
+media-plugins/alsa-plugins pulseaudio
+media-sound/pulseaudio -udev
+media-video/ffmpeg -faac faad theora x264 xvid vorbis -encode opus
+media-video/vlc -audioqueue ogg vorbis
+net-fs/cifs-utils -acl
+net-fs/samba -caps -server
+net-libs/xulrunner startup-notification java libnotify
+net-misc/openssh -ldap server
+net-nds/openldap sasl
+net-print/cups -X java -gnutls
+net-print/gutenprint ppds
+sys-apps/apt -nls
+sys-apps/busybox -pam
+sys-apps/elfix -xtpax
+sys-apps/hwids udev
+sys-apps/kmod -openrc
+sys-apps/man-pages -nls
+sys-apps/pcsc-lite usb
+sys-apps/smartmontools minimal
+sys-apps/util-linux static-libs
+sys-devel/make -static
+sys-fs/cryptsetup static-libs
+sys-fs/lvm2 static-libs -thin
+sys-libs/e2fsprogs-libs static-libs
+sys-libs/glibc clip-tcb
+sys-libs/talloc python
+sys-libs/zlib minizip static-libs
+virtual/jpeg static-libs
+www-client/chromium -system-sqlite
+www-client/firefox startup-notification java -gstreamer
+x11-base/xorg-server udev 
+x11-libs/cairo xcb svg opengl -qt4
+x11-libs/libdrm libkms
+x11-libs/qt-core iconv
+x11-libs/qt-gui mng
+x11-libs/qt-sql iconv
+x11-libs/vte python

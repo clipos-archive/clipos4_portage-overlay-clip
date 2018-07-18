@@ -1,0 +1,74 @@
+--- ./methods/copy.cc.orig	2011-07-28 13:14:56.000000000 +0200
++++ ./methods/copy.cc	2011-07-28 13:18:28.000000000 +0200
+@@ -50,34 +50,44 @@ bool CopyMethod::Fetch(FetchItem *Itm)
+    Res.IMSHit = false;      
+    URIStart(Res);
+    
+-   // See if the file exists
+-   FileFd From(File,FileFd::ReadOnly);
+-   FileFd To(Itm->DestFile,FileFd::WriteAtomic);
+-   To.EraseOnFailure();
+-   if (_error->PendingError() == true)
+-   {
+-      To.OpFail();
+-      return false;
++   /* CLIP */
++   // try the fast path (link)
++   struct stat Tmp;
++   if (stat(Itm->DestFile.c_str(), &Tmp) == 0) {
++	   if (unlink(Itm->DestFile.c_str())) 
++		   return _error->Errno("unlink", _("Failed to unlink"));
+    }
+-   
+-   // Copy the file
+-   if (CopyFile(From,To) == false)
+-   {
+-      To.OpFail();
+-      return false;
+-   }
+-
+-   From.Close();
+-   To.Close();
+-   
+-   // Transfer the modification times
+-   struct utimbuf TimeBuf;
+-   TimeBuf.actime = Buf.st_atime;
+-   TimeBuf.modtime = Buf.st_mtime;
+-   if (utime(Itm->DestFile.c_str(),&TimeBuf) != 0)
+-   {
+-      To.OpFail();
+-      return _error->Errno("utime",_("Failed to set modification time"));
++   if (link(File.c_str(), Itm->DestFile.c_str())) {
++       // If link fails, try a copy.
++       /* /CLIP */
++       
++       // See if the file exists
++       FileFd From(File,FileFd::ReadOnly);
++       FileFd To(Itm->DestFile,FileFd::WriteEmpty);
++       To.EraseOnFailure();
++       if (_error->PendingError() == true)
++       {
++          To.OpFail();
++          return false;
++       }
++       // Copy the file
++       if (CopyFile(From,To) == false)
++       {
++          To.OpFail();
++          return false;
++       }   
++       From.Close();
++       To.Close();
++       
++       // Transfer the modification times
++       struct utimbuf TimeBuf;
++       TimeBuf.actime = Buf.st_atime;
++       TimeBuf.modtime = Buf.st_mtime;
++       if (utime(Itm->DestFile.c_str(),&TimeBuf) != 0)
++       {
++          To.OpFail();
++          return _error->Errno("utime",_("Failed to set modification time"));
++       }
+    }
+    
+    Hashes Hash;

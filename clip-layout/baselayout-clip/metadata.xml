@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<herd>clip-dcssi</herd>
+	<maintainer>
+		<name>Vincent Strubel</name>
+		<email>clipos@ssi.gouv.fr</email>
+	</maintainer>
+	<longdescription>
+		baselayout-clip provides the basic UNIX directory structure and
+		system files needed for the CLIP core system.
+	</longdescription>
+</pkgmetadata>

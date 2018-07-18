@@ -1,0 +1,227 @@
+# ChangeLog for clip-layout/baselayout-rm
+
+  23 Jun 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  baselayout-rm-1.2.0-r4.ebuild:
+  Handle /lib and /lib64 folders on amd64.
+
+*baselayout-rm-1.2.0-r4 (03 Nov 2015)
+
+  03 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.2.0-r4.ebuild, -baselayout-rm-1.2.0-r3.ebuild:
+  Added directory for SSM fdp socket
+
+*baselayout-rm-1.2.0-r3 (23 Feb 2012)
+
+  23 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.2.0-r3.ebuild, -baselayout-rm-1.2.0-r2.ebuild:
+  Create /admin_priv/etc.admin/tls/cacerts to store RM AC (with install_cert).
+  Fix etc.admin perms, not used anyway.
+
+*baselayout-rm-1.2.0-r2 (23 Sep 2010)
+
+  23 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.2.0-r2.ebuild, -baselayout-rm-1.2.0-r1.ebuild:
+  Create /var/run/syslog in audit view for newer syslog.
+
+*baselayout-rm-1.2.0-r1 (30 Dec 2009)
+
+  30 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.2.0-r1.ebuild, -baselayout-rm-1.2.0.ebuild:
+  Use ${HOME}/.vartmp as user's /var/tmp, rather than a tmpfs.
+
+*baselayout-rm-1.2.0 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.2.0.ebuild, -baselayout-rm-1.1.0.ebuild:
+  Remove local networking config files, to switch to netconf 
+  profiles.
+
+*baselayout-rm-1.1.0 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.1.0.ebuild, -baselayout-rm-1.0.5-r7.ebuild:
+  Remove ADMIN view.
+
+*baselayout-rm-1.0.5-r7 (30 Jul 2008)
+
+  30 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5-r7.ebuild, -baselayout-rm-1.0.5-r6.ebuild:
+  Add jail name in /etc/shared/jail_name. This should enable 
+  maintainer scripts to adapt their behaviour from one jail to the 
+  other.
+
+*baselayout-rm-1.0.5-r6 (15 Apr 2008)
+
+  15 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5-r6.ebuild, -baselayout-rm-1.0.5-r5.ebuild:
+  Add /var/shared mount points in USER and UPDATE.
+
+*baselayout-rm-1.0.5-r5 (23 Nov 2007)
+
+  23 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5-r5.ebuild, -baselayout-rm-1.0.5-r4.ebuild:
+  Fix creation of /update_priv{/var,}/tmp.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove all ebuilds before 1.0.5-r4.
+
+*baselayout-rm-1.0.5-r4 (17 Oct 2007)
+
+  17 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5-r4.ebuild:
+  Add CLIP_CONF_FILES.
+
+*baselayout-rm-1.0.5-r3 (02 Oct 2007)
+
+  02 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5-r3.ebuild:
+  Do not chown admin_priv/home/admin, as it has become a simple 
+  mountpoint anyway. Wish there was a way I could trace the 
+  dependency on clip-vserver-2.0.13...
+
+*baselayout-rm-1.0.5-r2 (16 Jul 2007)
+
+  16 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5-r2.ebuild:
+  Create the full etc symlinks through views.eclass.
+
+*baselayout-rm-1.0.5-r1 (26 Jun 2007)
+
+  26 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5-r1.ebuild:
+  Smallish fix: create lastlog file in the admin view so that 
+  sshd doesn't complain...
+
+*baselayout-rm-1.0.5 (25 Jun 2007)
+
+  25 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.5.ebuild:
+  Clean up rm root. Use valid update symlinks for group and 
+  passwd rather than hardcoded files. 
+  Create basic audit tree.
+
+*baselayout-rm-1.0.4 (12 Jun 2007)
+
+  12 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.4.ebuild:
+  Removed /bin/sleeper.sh, which is no longer needed with the 
+  newest vsctl (although that dependency cannot be traced).
+  Also fixed utmp path.
+
+*baselayout-rm-1.0.3 (26 Apr 2007)
+
+  26 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.3.ebuild:
+  Bump, install new scripts /bin/sleeper.sh and /bin/verictl.sh.
+  First script can be launched at context startup, and keep the 
+  context alive while we perform misc configuration (particularly
+  veriexec) before launching jailmaster. Second script does the 
+  verictl configuration (jail root only) itself.
+  
+*baselayout-rm-1.0.2-r11 (05 Mar 2007)
+
+  05 Mar 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r11.ebuild:
+  Make /lib a symlink to /update/lib, so we can get a non-static 
+  jailmaster to work.
+
+*baselayout-rm-1.0.2-r10 (05 Dec 2006)
+
+  05 Dec 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r10.ebuild:
+  Fix ownership for etc.admin/ placeholder files.
+
+*baselayout-rm-1.0.2-r9 (20 Nov 2006)
+
+  20 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r9.ebuild:
+  Create /user_priv/var/run/vnc with perms 1777, rather than giving
+  those to /user_priv/var/run itself.
+
+*baselayout-rm-1.0.2-r8 (13 Nov 2006)
+
+  13 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r8.ebuild:
+  Add placeholder directory in update_priv for pkgs dowloaded by the
+  core update view (mount source, mount points are in baselayout-update
+  and baselayout-core-update; mounting is done through baselayout-clip 
+  and clip-vserver).
+  Also fix installation of resolv.conf and hosts in admin_priv/etc.admin :
+  somehow, they had ended up in update_priv...
+
+*baselayout-rm-1.0.2-r7 (12 Sep 2006)
+
+  12 Sep 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r7.ebuild:
+  Set ownership of /admin_priv/etc.admin to admin (4000:4000).
+
+*baselayout-rm-1.0.2-r6 (21 Aug 2006)
+
+  21 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r6.ebuild:
+  Created admin home with default ownership 4000:4000. Create 
+  /home/user as default mount point for users' encrypted homes.
+
+*baselayout-rm-1.0.2-r5 (08 Aug 2006)
+
+  08 Aug 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r5.ebuild:
+  Update to support sys-auth/pam_mount's tmpfs mountings on 
+  /user/tmp, by not creating a mountable directory for user's tmp
+  in user_priv and symlinking /var/tmp to /tmp. See baselayout-user
+  as well.
+  
+*baselayout-rm-1.0.2-r4 (28 Jul 2006)
+
+  28 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r4.ebuild:
+  Add user_priv/var/log/{u,w}tmp. Note that utmp group ownership
+  is based on the build host's notion of the utmp group...
+  See also initial import ClipChangeLog for sys-libs/libutempter.
+
+*baselayout-rm-1.0.2-r3 (27 Jul 2006)
+
+  27 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r3.ebuild:
+  Remove all devices. These should now be provided by the core.
+  See clip-layout/rm-devices.
+  Also add usr_local and opt to update_priv, and remove /usr from
+  it.
+
+*baselayout-rm-1.0.2-r2 (22 Jun 2006)
+
+  22 Jun 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r2.ebuild:
+  Remove BSD ptys, which are no longer supported by clip-kernel.
+
+*baselayout-rm-1.0.2-r1 (03 May 2006)
+
+  03 May 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2-r1.ebuild:
+  Create /admin_priv/etc.admin mountpoint
+  
+*baselayout-rm-1.0.2 (03 May 2006)
+  
+  03 May 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.2.ebuild:
+  Copy vncpasswd into user_priv/var/run, do not let baselayout-user
+  deal with it.
+
+*baselayout-rm-1.0.1 (14 apr 2006)
+
+  14 Apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.1.ebuild:
+  Create placeholder admin etc dirs and files.
+
+*baselayout-rm-1.0-r1 (08 apr 2006)
+
+  08 Apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0-r1.ebuild:
+  Build complete directory tree. Create dev/[pt]tyX according
+  to DEV_PTY_NBRS env variable
+
+*baselayout-rm-1.0 (04 apr 2006)
+
+  04 Apr 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +baselayout-rm-1.0.ebuild:
+  Initial import.  Largely inspired by sys-apps/baselayout-lite

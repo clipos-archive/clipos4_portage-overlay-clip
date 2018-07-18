@@ -1,0 +1,38 @@
+# CLIP Changelog for x11-plugins/enigmail
+
+*enigmail-2.0.7 (22 Jun 2018)
+
+  22 Jun 2018; Timothée Ravier <clipos@ssi.gouv.fr>
+  +enigmail-2.0.7.ebuild, -enigmail-2.0.6.ebuild:
+  2.0.7 upstream update.
+
+*enignmail-2.0.6 (28 May 2018)
+
+  1 Jun 2018; Tony Cheneau <clipos@ssi.gouv.fr>:
+  dpkg has some trouble with the current .deb output.
+  Let's change {R,}DEPENDS to make it more simple.
+
+  28 May 2018; Tony Cheneau <clipos@ssi.gouv.fr>
+  +enigmail-2.0.6.ebuild,-enigmail-2.0.5-r1.ebuild:
+  Security update (one vunerability with CVE number associated)
+
+*enignmail-2.0.5 (25 May 2018)
+
+  25 May 2018; Tony Cheneau <clipos@ssi.gouv.fr>
+  +enigmail-2.0.5-r1.ebuild,-enigmail-1.9.9.ebuild,
+  +files/enigmail-2.0.5-fix-missing-missingMdcError.patch:
+  Security update for EFAIL (CVE-2017-17689 and CVE-2017-17688)
+
+
+*enigmail-1.9.9 (14 Feb 2018)
+
+  14 Feb 2018; Tony Cheneau <clipos@ssi.gouv.fr>
+  +enigmail-1.9.9.ebuild,-enigmail-1.9.8.3-r1.ebuild:
+  Update to latest. This new version includes lots of security fixes
+  after the security audit from cure53
+
+*enigmail-1.9.8.3-r1 (13 Nov 2017)
+
+  13 Nov 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +enigmail-1.9.8.3-r1.ebuild:
+  Import enigmail from official package, changes its packaging method

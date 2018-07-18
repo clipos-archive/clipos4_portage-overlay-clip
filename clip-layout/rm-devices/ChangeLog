@@ -1,0 +1,83 @@
+# ChangeLog for <clip-layout>/<rm-devices>
+
+*rm-devices-1.1.2 (01 Feb 2011)
+
+  01 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.1.2.ebuild, -rm-devices-1.1.1.ebuild:
+  Create /dev/pts trees for jail_devs and update_devs (needed
+  for vsctl enter to work, respectively in rm_* jails and 
+  secure_update_rm_* jails), when PID namespaces are used.
+
+*rm-devices-1.1.1 (18 Jan 2011)
+
+  18 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.1.1.ebuild, -rm-devices-1.1.0.ebuild:
+  Make ptmx a symlink to pts/ptmx for use with multiple instances
+  of devpts.
+
+*rm-devices-1.1.0 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.1.0.ebuild, -rm-devices-1.0-r6.ebuild:
+  Remove ADMIN devices.
+
+*rm-devices-1.0-r6 (13 Mar 2008)
+
+  13 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.0-r6.ebuild, -rm-devices-1.0-r5.ebuild:
+  Make /dev/log point to /log rather than /var/run/log, to make
+  sure the log socket is protected against deletion from the inside
+  of the view.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove all ebuilds before 1.0-r5.
+
+*rm-devices-1.0-r5 (26 Sep 2007)
+
+  26 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.0-r5.ebuild:
+  Remove clip-lsm from IUSE.
+
+*rm-devices-1.0-r4 (16 Jul 2007)
+
+  16 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.0-r4.ebuild:
+  Make the jail_devs' /dev/log point to ../update/var/run/log, 
+  since syslog does not open a socket outside the views.
+
+*rm-devices-1.0-r3 (25 Jun 2007)
+
+  25 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.0-r3.ebuild:
+  Create basic devices for the audit view.
+  Create /dev/log symlink for every view.
+  Remove /dev/veriexec from the jail root, it is no longer 
+  needed.
+  Remove random from basic device set, it is not really needed 
+  and might expose use to a ressource exhaustion attack. Replace
+  it with a symlink to /dev/urandom for those few applications 
+  using it (e.g. gpg). That will have to be entropy enough for 
+  RM_X.
+
+*rm-devices-1.0-r2 (26 Apr 2007)
+
+  26 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.0-r2.ebuild:
+  Add /dev/mapper directory in jail_devs.
+  
+*rm-devices-1.0-r1 (30 Jan 2007)
+
+  30 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.0-r1.ebuild:
+  Add clip-lsm to IUSE. If set, create the veriexec device in jail_devs
+  and update_devs.
+  
+*rm-devices-1.0 (27 Jul 2006)
+
+  27 Jul 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +rm-devices-1.0.ebuild:
+  Initial version. Creates those devices needed by the update, user
+  and admin view in a given jail compartment, as well as those needed
+  by the jail core. 
+  To be emerged with a proper CLIP_VROOTS env var. We need to do that 
+  from a core package, since installing device nodes requires CAP_MKNOD.

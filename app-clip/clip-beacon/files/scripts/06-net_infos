@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd "$BEACON_REPORT_DIR"
+
+cat /etc/admin/netconf.d/default/ipsec > default_gateways

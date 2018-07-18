@@ -1,0 +1,608 @@
+# ChangeLog for <app-clip>/<clip-install-clip>
+
+*clip-install-clip-2.4.1 (18 Oct 2016)
+
+  18 Oct 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.4.1.ebuild, -clip-install-clip-2.4.0.ebuild:
+  Added dependency on jail_init virtual service provided by init_cgroups.
+
+*clip-install-clip-2.4.0 (28 Jun 2016)
+
+  28 Jun 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.4.0.ebuild, -clip-install-clip-2.3.15.ebuild:
+  Civil crypto support.
+
+*clip-install-clip-2.3.15 (12 Nov 2015)
+
+  12 Nov 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.15.ebuild, -clip-install-clip-2.3.14.ebuild:
+  Fix an error in clip_core_install service
+
+*clip-install-clip-2.3.14 (09 Jul 2015)
+
+  09 Jul 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.14.ebuild, -clip-install-clip-2.3.13.ebuild:
+  Change the way Syslinux is installed, in order to deal with UEFI
+  computers
+
+*clip-install-clip-2.3.13 (25 March 2015)
+
+  25 March 2015; Marion Daubignard <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.13.ebuild, -clip-install-clip-2.3.12.ebuild:
+  Update script clip-install-clip-core to copy all content of
+  /etc/admin/pkcs11/cacerts when updating core.
+
+
+*clip-install-clip-2.3.12 (15 May 2014)
+
+  15 May 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.12.ebuild, -clip-install-clip-2.3.11.ebuild:
+  Backup/copy all content of /etc/admin/ike/cert.
+
+*clip-install-clip-2.3.11 (04 Mar 2014)
+
+  04 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.11.ebuild, -clip-install-clip-2.3.10.ebuild:
+  Fix cleanup of rm_core.force flags.
+
+*clip-install-clip-2.3.10 (04 Mar 2014)
+
+  04 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.10.ebuild, -clip-install-clip-2.3.9.ebuild:
+  Add support for <dist>_<part>.force mirror flags, to force an upgrade
+  check in clip-apps, rm-core and rm-apps on the next reboot after
+  a clip-core upgrade.
+
+*clip-install-clip-2.3.9 (13 Jan 2014)
+
+  13 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.9.ebuild, -clip-install-clip-2.3.8.ebuild:
+  Fixup busybox in /vservers/*/bin at boot.
+
+*clip-install-clip-2.3.8 (08 Jan 2014)
+
+  08 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.8.ebuild, -clip-install-clip-2.3.7-r1.ebuild:
+  Fix invert_boot timeout.
+
+*clip-install-clip-2.3.7-r1 (30 Dec 2013)
+
+  30 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.7-r1.ebuild, -clip-install-clip-2.3.7.ebuild:
+  Force rebuild to add openrc dependency.
+
+*clip-install-clip-2.3.7 (28 Oct 2013)
+
+  28 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.7.ebuild, -clip-install-clip-2.3.6.ebuild:
+  Use tty8 for oldclip invert checks as well. Smallish dependency
+  fix - run rm_core_install after clip_apps_install.
+
+*clip-install-clip-2.3.6 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.6.ebuild, -clip-install-clip-2.3.5.ebuild:
+  Fix weird behavior in rm_apps_install prompt (I think).
+
+*clip-install-clip-2.3.5 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.5.ebuild, -clip-install-clip-2.3.4-r1.ebuild:
+  Prompt user at boot time on tty8, to avoid tty1 clutter.
+
+*clip-install-clip-2.3.4-r1 (23 Oct 2013)
+
+  23 Oct 2013; ANSSI <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.4-r1.ebuild, -clip-install-clip-2.3.4.ebuild:
+  Depends on syslinux only on x86 architecture.
+
+*clip-install-clip-2.3.4 (22 Oct 2013)
+
+  22 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.4.ebuild, -clip-install-clip-2.3.3.ebuild:
+  Add keyword -timeout to all init scripts.
+
+*clip-install-clip-2.3.3 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.3.ebuild, -clip-install-clip-2.3.2.ebuild:
+  Remove @LIBDIR@ references - we have to many references to '/lib' to
+  fix for now.
+
+*clip-install-clip-2.3.2 (18 Oct 2013)
+
+  18 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.2.ebuild, -clip-install-clip-2.3.1.ebuild:
+  Move common init file to /lib/rc/update.
+
+*clip-install-clip-2.3.1 (16 Oct 2013)
+
+  16 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.1.ebuild, -clip-install-clip-2.3.0.ebuild:
+  Core update :
+   - avoid double call to splash 'silent' that generates very verbose
+     warnings
+   - remove the clip_core mirror flag from altroot clip after updating
+     its mirror, since that flag in fact corresponds to the update we
+     just applied.
+
+*clip-install-clip-2.3.0 (15 Oct 2013)
+
+  15 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.3.0.ebuild, -clip-install-clip-2.2.15.ebuild:
+  Check for 'update available' flags in /var/pkg/mirrors/flags before
+  running clip-apps and rm-core/rm-apps upgrade checks on boot.
+
+*clip-install-clip-2.2.15 (10 Oct 2013)
+
+  10 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.15.ebuild, -clip-install-clip-2.2.14.ebuild:
+  Do not attempt to copy RM conffiles on core update, since RM jails
+  are now shared.
+
+*clip-install-clip-2.2.14 (10 Oct 2013)
+
+  10 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.14.ebuild, -clip-install-clip-2.2.13.ebuild:
+  Bind-mount current RM jails over /altroot/vservers/rm_* during 
+  core update, since RM jails will now be shared between clip1 and
+  clip2.
+
+*clip-install-clip-2.2.13 (26 Feb 2013)
+
+  26 Feb 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.13.ebuild, -clip-install-clip-2.2.12.ebuild:
+  Copy IKE public keys after a core upgrade.
+
+*clip-install-clip-2.2.12 (04 Dec 2012)
+
+  04 Dec 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.12.ebuild, -clip-install-clip-2.2.11.ebuild:
+  Fix confirm_invert typo.
+
+*clip-install-clip-2.2.11 (13 Jun 2012)
+
+  13 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.11.ebuild, -clip-install-clip-2.2.10-r1.ebuild:
+  Fix check in rm_core_update init script.
+
+*clip-install-clip-2.2.10-r1 (08 Jun 2012)
+
+  08 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.10-r1.ebuild, -clip-install-clip-2.2.10.ebuild:
+  Force rebuild with fixed distfile.
+
+*clip-install-clip-2.2.10 (07 Jun 2012)
+
+  07 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.10.ebuild, -clip-install-clip-2.2.9.ebuild:
+  Add confirmation prompt for clip-apps/rm-apps updates on boot.
+
+*clip-install-clip-2.2.9 (13 Mar 2012)
+
+  13 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.9.ebuild, -clip-install-clip-2.2.8.ebuild:
+  Use NET and PID ns for rm core update.
+  Support keyboard-less devices.
+
+*clip-install-clip-2.2.8 (06 Apr 2011)
+
+  06 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.8.ebuild, -clip-install-clip-2.2.7.ebuild:
+  Mount /dev in /altroot tree during core upgrade - needed with 
+  non-static /dev.
+
+*clip-install-clip-2.2.7 (28 Mar 2011)
+
+  28 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.7.ebuild, -clip-install-clip-2.2.6.ebuild:
+  Support full-disk encryption.
+
+*clip-install-clip-2.2.6 (19 Jan 2011)
+
+  19 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.6.ebuild, -clip-install-clip-2.2.5.ebuild:
+  Support using PID namespaces in the RM core update jails.
+
+*clip-install-clip-2.2.5 (13 Jan 2011)
+
+  13 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.5.ebuild, -clip-install-clip-2.2.4.ebuild:
+  Add a new init script to check if we are running the alternate 
+  CLIP install, and offer the user to revert that install to the 
+  default one.
+
+*clip-install-clip-2.2.4 (07 Oct 2010)
+
+  07 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.4.ebuild, -clip-install-clip-2.2.3.ebuild:
+  Make sure we create missing destination paths before replacing 
+  data files.
+
+*clip-install-clip-2.2.3 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.3.ebuild, -clip-install-clip-2.2.2.ebuild:
+  Use /etc/admin/conf.d/net conf file, use same addresses as RM_H / RM_B
+  for rm-core update.
+
+*clip-install-clip-2.2.2 (19 Apr 2010)
+
+  19 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.2.ebuild, -clip-install-clip-2.2.1.ebuild:
+  Fix RM jails configuration in clip_install_clip_core, in case 
+  of missing quotes (ie 'CLIP_JAILS=rm_h' instead of 'CLIP_JAILS="rm_h"').
+
+*clip-install-clip-2.2.1 (02 Feb 2010)
+
+  02 Feb 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.1.ebuild, -clip-install-clip-2.2.0.ebuild,
+  -files/clip-install-clip-1.3.4-noforce.patch:
+  Fix RM jails configuration in clip_install_clip_core.
+  Remove ultra-obsolete patch.
+
+*clip-install-clip-2.2.0 (26 Jan 2010)
+
+  26 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.2.0.ebuild, -clip-install-clip-2.1.1.ebuild:
+  Support reading the list of RM jails from /etc/conf.d/clip, to 
+  support 0, 1 or 2 RM jails from the same script.
+
+*clip-install-clip-2.1.1 (08 Jan 2010)
+
+  08 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.1.1.ebuild, -clip-install-clip-2.1.0.ebuild:
+  Compatibility mode for when RM CORE has not been updated yet.
+
+*clip-install-clip-2.1.0 (08 Jan 2010)
+
+  08 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.1.0.ebuild, -clip-install-clip-2.0.7.ebuild:
+  Disable the splashscreen and display logs when performing a boot-time
+  update of non-CLIP-core packages.
+
+*clip-install-clip-2.0.7 (22 Jul 2009)
+
+  22 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.7.ebuild, -clip-install-clip-2.0.6.ebuild:
+  Prompt the user before installing clip core upgrades on boot.
+
+*clip-install-clip-2.0.6 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.6.ebuild, -clip-install-clip-2.0.5.ebuild:
+  Copy netconf profiles on core upgrade.
+
+*clip-install-clip-2.0.5 (06 May 2009)
+
+  06 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.5.ebuild, -clip-install-clip-2.0.4.ebuild:
+  Revert previous change concerning RM optional files. 
+  clip_install_clip_core now copies all the optional files declared
+  in the RM_H/RM_B conffiles.list (in
+  /vservers/rm_X/admin_priv/etc.admin/clip_install).
+
+*clip-install-clip-2.0.4 (04 May 2009)
+
+  04 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.4.ebuild, -clip-install-clip-2.0.3.ebuild:
+  Use an empty optional files list for core updates, rather than 
+  /dev/null. Log to LOG_LOCAL7 rather than LOG_USER. Add RM optional
+  files to conffiles.
+
+*clip-install-clip-2.0.3 (11 Mar 2009)
+
+  11 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.3.ebuild, -clip-install-clip-2.0.2-r2.ebuild:
+  Port to latest CLIP::Pkg::Base.
+
+  29 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  files/root_clip_install_clip:
+  Really fix options parsing.
+
+*clip-install-clip-2.0.2-r2 (28 Jan 2009)
+
+  28 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.2-r2.ebuild, -clip-install-clip-2.0.2-r1.ebuild,
+  files/root_clip_install_clip:
+  Fix ionice options with a '--'.
+
+*clip-install-clip-2.0.2-r1 (23 Jan 2009)
+
+  23 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.2-r1.ebuild, -clip-install-clip-2.0.2.ebuild,
+  files/root_clip_install_clip:
+  Run clip_install cron jobs under ionice -c 3.
+
+*clip-install-clip-2.0.2 (21 Jan 2009)
+
+  21 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.2.ebuild, -clip-install-clip-2.0.1.ebuild:
+  Fix uninitialized optional config file path.
+
+*clip-install-clip-2.0.1 (20 Jan 2009)
+
+  20 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.1.ebuild, -clip-install-clip-2.0.ebuild:
+  Support for optional packages.
+
+*clip-install-clip-2.0 (23 Oct 2008)
+
+  23 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-2.0.ebuild, -clip-install-clip-1.3.99-r5.ebuild:
+  Stabilize next generation.
+
+*clip-install-clip-1.3.99-r5 (20 Oct 2008)
+
+  20 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.99-r5.ebuild, -clip-install-clip-1.3.99-r4.ebuild:
+  Update to new clippkg_gen_mirror() API (new parameter, unused in that case).
+
+*clip-install-clip-1.3.99-r4 (20 Oct 2008)
+
+  20 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.99-r4.ebuild, -clip-install-clip-1.3.99-r3.ebuild:
+  Add support for core update notification.
+
+*clip-install-clip-1.3.99-r3 (17 Oct 2008)
+
+  17 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.99-r3.ebuild, -clip-install-clip-1.3.99-r2.ebuild:
+  clip_install_clip_core : run our own clip_install, with the new -root 
+  option and a 'chrooted' apt config, rather than chrooting to run the 
+  alternate clip's clip_install. This makes us less dependent on (N-1) version
+  utilities.
+  Let *_install init.d scripts output command outputs on console, rather than
+  redirecting those to /var/log/*_install_*.log.
+
+*clip-install-clip-1.3.99-r2 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.99-r2.ebuild, -clip-install-clip-1.3.99-r1.ebuild:
+  Support manual locking for downloadrequest and backups.
+  Update the vserver mirrors as well as the clip mirror after an upgrade.
+
+*clip-install-clip-1.3.99-r1 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.99-r1.ebuild, -clip-install-clip-1.3.99.ebuild:
+  Misc fixes, this actually works now.
+
+*clip-install-clip-1.3.99 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.99.ebuild, -clip-install-clip-1.3.16.ebuild:
+  Bump to 'ng', perl based version.
+
+*clip-install-clip-1.3.16 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.16.ebuild, -clip-install-clip-1.3.15.ebuild:
+  Fix the way mirrors are backed-up by clip_update_clip_core, to better
+  match the way clip_install and clip_download back them up.
+
+*clip-install-clip-1.3.15 (10 Oct 2008)
+
+  10 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.15.ebuild, -clip-install-clip-1.3.14-r1.ebuild:
+  Use mirror backup if found, to be resilient to interrupted downloads (#392).
+  Create backups more reliably (#393).
+  Do not overwrite previous backups (#394).
+
+*clip-install-clip-1.3.14-r1 (03 Oct 2008)
+
+  03 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.14-r1.ebuild, -clip-install-clip-1.3.14.ebuild,
+  files/root_clip_install_clip:
+  Add nice -n 15 to periodic install.
+
+*clip-install-clip-1.3.14 (17 Sep 2008)
+
+  17 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.14.ebuild, -clip-install-clip-1.3.13-r1.ebuild:
+  Support core update availability notification through
+  /usr/local/etc/core_avail.
+
+*clip-install-clip-1.3.13-r1 (25 Aug 2008)
+
+  25 Aug 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.13-r1.ebuild, -clip-install-clip-1.3.13.ebuild:
+  Add conffiles.list as a CONF_FILES_VIRTUAL.
+
+*clip-install-clip-1.3.13 (17 Jul 2008)
+
+  17 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.13.ebuild, -clip-install-clip-1.3.12.ebuild:
+  Mount /etc/admin/ike2 on core update, to allow conffile management in 
+  there.
+  If USE core-rm is set, mount /vservers/rm_X as well, for the same reason.
+
+*clip-install-clip-1.3.12 (28 Apr 2008)
+
+  28 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.12.ebuild, -clip-install-clip-1.3.11.ebuild:
+  Copy up to date conffiles to the new clip install when doing a core
+  upgrade.
+
+*clip-install-clip-1.3.11 (07 Apr 2008)
+
+  07 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.11.ebuild, -clip-install-clip-1.3.10.ebuild:
+  Workaround for 'awk {system("basename "$2)}' not working with
+  busybox awk.
+
+*clip-install-clip-1.3.10 (28 Mar 2008)
+
+  28 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.10.ebuild, -clip-install-clip-1.3.9.ebuild,
+  Use two different keys for signature checks.
+
+*clip-install-clip-1.3.9 (19 Mar 2008)
+
+  19 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.9.ebuild, -clip-install-clip-1.3.8.ebuild,
+  files/_debian/postinst, files/_debian/prerm:
+  Change all references to /mounts/update_root into /update_root.
+
+*clip-install-clip-1.3.8 (13 Mar 2008)
+
+  13 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.8.ebuild, -clip-install-clip-1.3.7.ebuild:
+  Bump. Update /etc/init.d/rm_core_install to create the log socket
+  mountpoint at the root of UPDATE, to be compatible with its new 
+  location (/log in each view, see rm-devices-1.0-r6).
+
+*clip-install-clip-1.3.7 (14 Jan 2008)
+
+  14 Jan 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.7.ebuild, -clip-install-clip-1.3.6.ebuild:
+  Merge EADS's fixes for bug #53 (EADS's 1.3.3), with following 
+  ChangeLog:
+
+ 	*clip-install-clip-1.3.3 (14 Jan 2008)
+
+	  14 Jan 2008; EADS D&S <clipos@ssi.gouv.fr>
+	  Ticket 53 correction (bug in backup_list.txt treatment)
+
+
+*clip-install-clip-1.3.6 (05 Dec 2007)
+
+  05 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.6.ebuild, -clip-install-clip-1.3.5.ebuild,
+  Do some cleanup of clip_install_clip_core files on boot.
+  Do not hardcode the root device in clip_install_clip_core, read it
+  from /proc/cmdline instead.
+
+*clip-install-clip-1.3.5 (30 Nov 2007)
+
+  30 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.5.ebuild, -clip-install-clip-1.3.4.ebuild,
+  Fix init script dependencies : clip_apps_install needs clip_update,
+  clip_apps_install and rm_core_install should be run after clip_download.
+  Rewrite rm_apps_install : IP addresses are not needed for vsctl enter,
+  RM jails should be read from /etc/conf.d/clip.
+
+*clip-install-clip-1.3.4 (28 Nov 2007)
+
+  28 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.4.ebuild, -clip-install-clip-1.3.3.ebuild,
+  +files/clip-install-clip-1.3.4-noforce.patch,
+  -files/clip-install-clip-1.2-noforce.patch:
+  Merge from EADS's clip-install-clip-1.3.2, with the following ChangeLog:
+
+	*clip-install-clip-1.3.2 (21 Nov 2007)
+
+	  21 Nov 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  Ticket 31 correction (vsctl with --)
+	  Ticket 53 correction (bug in the backup_list.txt treatment)
+	  Ticket 54 correction (connection keys in /etc/clip_update)
+	  Ticket 55 correction (copy clip_install_clip_apps.conf, rollback if error)
+	  Ticket 60 correction (filter the packages according to the
+	  high impact parameter)
+	  Ticket 73 correction (race-conditions during file replacement)
+	  Ticket 74 correction (race-conditions during bootloader change)
+
+  Also reworked /etc/init.d/rm_core_install script, to take the jail
+  definitions from /etc/conf.d/clip like clip_servers does, and to call
+  cleanup_log.sh (busybox-update) in the upgrade jail before starting the
+  upgrade, to cleanup clip_install temp files.
+
+
+
+  20 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  -files/_debian/conffiles:
+  Remove static conffiles.
+
+*clip-install-clip-1.3.3 (16 Nov 2007)
+
+  16 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.3.ebuild:
+  Mount /etc/admin in the alternate CLIP install when upgrading the
+  core, since some packages install things there.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 1.3.2.
+
+*clip-install-clip-1.3.2 (30 Oct 2007)
+
+  30 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.2.ebuild:
+  Merge EADS's -1.3.1, with the changelog bellow. Also fixed version
+  string (1.3 -> 1.3.2), and a smallish bug in 
+  /etc/init.d/clip_apps_install (-- was missing for vsctl enter).
+
+	*clip-install-clip-1.3.1 (22 Oct 2007)
+
+	  22 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+	  Add the "-f" option to apt-get dist-upgrade calls
+	  to avoid errors if incoherent packages are installed.
+
+*clip-install-clip-1.3.1 (22 Oct 2007)
+
+  22 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.3.1.ebuild:
+  Merge changes from 1.2.1 and 1.2.2 into 1.3.0.
+
+  22 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  clip-install-clip-1.3.ebuild:
+  Use ${PN}-1.2-noforce.patch rather than -1.3, since there is no 
+  difference between the two - no point having a copy.
+
+*clip-install-clip-1.2.2 (17 Oct 2007)
+
+  17 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.2.2.ebuild, -files/_debian/conffiles:
+  Add CLIP_CONF_FILES. Fix Makefiles to install admin files in
+  /etc/admin rather than /mounts/admin_priv/... to be in line 
+  with clip-install-rm. Fix ebuild to install in /var rather
+  than /mounts/var.
+
+*clip-install-clip-1.3 (03 Oct 2007)
+
+  03 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  Modify the clip-install-clip-core script and the
+  backup_list.txt to take into account the new partition table.
+  Mount /dev/log in the other clip directory to get logs in syslog.
+
+*clip-install-clip-1.2.1 (27 Sep 2007)
+
+  27 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.2.1.ebuild:
+  Import net config from /etc/admin/conf.d rather than /etc/conf.d.
+
+*clip-install-clip-1.2-r1 (26 Sep 2007)
+
+  26 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.2-r1.ebuild:
+  Remove the /etc/admin -> /mounts/update_root/etc/admin symlink,
+  which does not make sense and conflicts with the existing 
+  mountpoint.
+
+*clip-install-clip-1.2 (03 Sep 2007)
+
+  03 Sep 2007; EADS D&S <clipos@ssi.gouv.fr>
+  Modify the clip-install-clip-core script and the
+  backup_list.txt to take into account the new partition table.
+
+  27 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.2.ebuild:
+  Integrates the new version of verify-sign-full.
+  Use_logger set to "yes".
+  Use the good disktype (sda,hda or md).
+  Modify postint and prerm scripts.
+  Add clip-install-rm init scripts.
+  Activate force_option if clip-devel flag is up
+  Modify /etc/admin installation dir
+  Change ownership of /mounts/admin_priv/etc.admin/clip_install directory
+
+*clip-install-clip-1.1 (17 Jun 2007)
+
+  17 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.1.ebuild:
+  The installation of the core's file in clip-install-rm are deplaced here.
+  
+*clip-install-clip-1.0 (29 Jun 2007)
+
+  29 Jun 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +clip-install-clip-1.0.ebuild:
+  Initial import.

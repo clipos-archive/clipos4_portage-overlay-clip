@@ -1,0 +1,5 @@
+#!/bin/sh
+
+/sbin/rc-update add smartcard-monitor default || echo " ! rc-update add smartcard-monitor failed !" >&2
+[[ -e "/etc/init.d/smartcard-notifier" ]] && ( /sbin/rc-update add smartcard-notifier default || echo " ! rc-update add smartcard-notifier failed !" >&2 )
+

@@ -1,0 +1,95 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+for script in clip_audit clip_admin clip_sshd clip_user clip_update ; do
+	/sbin/rc-update add ${script} default
+done
+/sbin/rc-update add clip_audit nonetwork
+
+if [[ ! -d "/mounts/audit_root/etc/audit" ]]; then
+	mkdir -p "/mounts/audit_root/etc/audit"
+fi
+
+if [[ ! -d "/mounts/admin_root/usr/share/zoneinfo" ]]; then
+	mkdir -p "/mounts/admin_root/usr/share/zoneinfo"
+fi
+
+if [[ ! -d "/mounts/admin_root/sys" ]]; then
+	mkdir -p "/mounts/admin_root/sys"
+fi
+
+if [[ ! -d "/etc/conf.d/session" ]]; then
+	mkdir -p "/etc/conf.d/session"
+fi
+
+if [[ ! -d "/mounts/user_root/etc/conf.d/session" ]]; then
+	mkdir -p "/mounts/user_root/etc/conf.d/session"
+fi
+
+if [[ ! -d "/mounts/user_root/tmp/session" ]]; then
+	mkdir -p "/mounts/user_root/tmp/session"
+fi
+
+if [[ ! -d "/var/run/smartcard" ]]; then
+	mkdir -p "/var/run/smartcard"
+fi
+
+
+
+NO_SP_JAILS=""
+if [[ -f "/etc/conf.d/net" ]]; then
+	source "/etc/conf.d/net"
+	[[ -n "${UPDATE_NOIPSEC}" ]] && NO_SP_JAILS="${NO_SP_JAILS} update"
+	[[ -n "${ADMIN_NOIPSEC}" || -n "${ADMIN_IF}" ]] && NO_SP_JAILS="${NO_SP_JAILS} admin audit"
+fi
+
+for jail in ${NO_SP_JAILS}; do
+	echo "* Adding no_sp flag to jail ${jail}"
+	echo "no_sp" >> "/etc/jails/${jail}/nflags"
+done
+
+add_rm_fstab_line() {
+	local jail="${1}"
+	local line="${2}"
+	local dest="${3}"
+
+	echo "${line}" | sed -e "s/RM_X/${jail}/g" >> "${dest}"
+}
+
+if [[ -e "/etc/conf.d/clip" ]]; then
+	source "/etc/conf.d/clip"
+else if [[ -e "/etc/conf.d/.clip.confnew" ]]; then
+	source "/etc/conf.d/.clip.confnew"
+fi
+fi
+
+USER_JAIL="/etc/jails/user"
+cp -f "${USER_JAIL}/fstab.external.base" "${USER_JAIL}/fstab.external"
+if [[ -n "${CLIP_JAILS}" ]]; then
+	cat "${USER_JAIL}/fstab.external.rm.base" >> "${USER_JAIL}/fstab.external"
+fi
+
+for jail in ${CLIP_JAILS}; do
+
+	[[ -d "/mounts/viewers/${jail}/usr/local/share" ]] || mkdir -p "/mounts/viewers/${jail}/usr/local/share" 
+
+	# ADMIN
+	add_rm_fstab_line "${jail}" \
+		"/vservers/RM_X/admin_priv/etc.admin   /etc/admin/RM_X  none    bind,rw,nosuid,nodev,noexec,noatime,nofollow" \
+		"/etc/jails/admin/fstab.external"
+	add_rm_fstab_line "${jail}" \
+		"/vservers/RM_X/update_priv/var/pkg   /var/pkg/RM_X  none    bind,ro,nosuid,nodev,noexec,noatime" \
+		"/etc/jails/admin/fstab.external"
+
+	# UPDATE
+	add_rm_fstab_line "${jail}" \
+		"/vservers/RM_X/update_priv/var/pkg   /var/pkg/RM_X  none    bind,rw,nosuid,nodev,noexec,noatime" \
+		"/etc/jails/update/fstab.external"
+	add_rm_fstab_line "${jail}" \
+		"/vservers/RM_X/admin_priv/etc.admin  /etc/admin/RM_X none   bind,rw,nosuid,nodev,noexec,noatime,nofollow" \
+		"/etc/jails/update/fstab.external"
+	# USER
+	sed -e "s:RM_X:${jail}:g" "${USER_JAIL}/fstab.external.rm_X" >> "${USER_JAIL}/fstab.external"
+done
+

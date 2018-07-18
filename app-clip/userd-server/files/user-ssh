@@ -1,0 +1,13 @@
+
+# Paths where a new user's ssh public key should be copied, 
+# based on user type
+# Note: '/.ssh/authorized_keys' is added implicitly
+
+declare -A PUBKEY_COPIES=(
+	[admin]="/home/adminclip"
+	[audit]="/home/auditclip"
+	[nomad]="/home/adminclip /home/auditclip"
+	[privuser]="/home/adminclip /home/auditclip"
+	[user]=""
+)
+

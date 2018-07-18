@@ -1,0 +1,60 @@
+--- methods/https.cc.orig	2011-07-28 16:37:44.000000000 +0200
++++ methods/https.cc	2011-07-28 16:53:58.000000000 +0200
+@@ -128,10 +128,17 @@ bool HttpsMethod::Fetch(FetchItem *Itm)
+ 
+    // SSL parameters are set by default to the common (non mirror-specific) value
+    // if available (or a default one) and gets overload by mirror-specific ones.
++   
++   // File containing the list of trusted CA.
++   string capath = _config->Find("Acquire::https::CaPath","");
++   string knob = "Acquire::https::"+remotehost+"::CaPath";
++   capath = _config->Find(knob.c_str(),capath.c_str());
++   if(capath.empty() == false)
++      curl_easy_setopt(curl, CURLOPT_CAPATH,capath.c_str());
+ 
+    // File containing the list of trusted CA.
+    string cainfo = _config->Find("Acquire::https::CaInfo","");
+-   string knob = "Acquire::https::"+remotehost+"::CaInfo";
++   knob = "Acquire::https::"+remotehost+"::CaInfo";
+    cainfo = _config->Find(knob.c_str(),cainfo.c_str());
+    if(cainfo.empty() == false)
+       curl_easy_setopt(curl, CURLOPT_CAINFO,cainfo.c_str());
+@@ -160,15 +167,25 @@ bool HttpsMethod::Fetch(FetchItem *Itm)
+    string pem = _config->Find("Acquire::https::SslCert","");
+    knob = "Acquire::https::"+remotehost+"::SslCert";
+    pem = _config->Find(knob.c_str(),pem.c_str());
+-   if(pem.empty() == false)
+-      curl_easy_setopt(curl, CURLOPT_SSLCERT, pem.c_str());
++   if(pem.empty() == false) {
++      struct stat Buf;
++      if (stat(pem.c_str(), &Buf) != 0)
++         _error->Warning("SslCert %s not found, continuing with it", pem.c_str());
++      else
++         curl_easy_setopt(curl, CURLOPT_SSLCERT, pem.c_str());
++   }
+ 
+    // ... and associated key.
+    string key = _config->Find("Acquire::https::SslKey","");
+    knob = "Acquire::https::"+remotehost+"::SslKey";
+    key = _config->Find(knob.c_str(),key.c_str());
+-   if(key.empty() == false)
+-      curl_easy_setopt(curl, CURLOPT_SSLKEY, key.c_str());
++   if(key.empty() == false) {
++      struct stat Buf;
++      if (stat(key.c_str(), &Buf) != 0)
++         _error->Warning("SslKey %s not found, continuing with it", key.c_str());
++      else
++         curl_easy_setopt(curl, CURLOPT_SSLKEY, key.c_str());
++   }
+ 
+    // Allow forcing SSL version to SSLv3 or TLSv1 (SSLv2 is not
+    // supported by GnuTLS).
+@@ -294,7 +311,7 @@ bool HttpsMethod::Fetch(FetchItem *Itm)
+       Res.Filename = File->Name();
+       Res.LastModified = Buf.st_mtime;
+       Res.IMSHit = false;
+-      if (curl_responsecode == 304)
++      if ( (curl_responsecode == 304) || (Buf.st_size == 0) ) 
+       {
+ 	 unlink(File->Name().c_str());
+ 	 Res.IMSHit = true;

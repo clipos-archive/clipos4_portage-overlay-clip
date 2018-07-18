@@ -1,0 +1,41 @@
+#!/sbin/runscript
+# Copyright 2006 SGDN/DCSSI
+# Copyright 2013 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+description="Lock up system by reducing rootcap, etc."
+
+depend() {
+	before xdm racoon iked
+	after networking netfilter setkey spmd
+    # We still need to start before vserver ATM
+	need veriexec vprocunhide devctl
+}
+
+start() {
+	local sysctl_entry="$(grep sysctl /etc/verictl.d/procps | awk '{print $1" 0 er SYS_ADMIN - SYS_ADMIN - "$8" "$9}')"
+
+	if [[ -z "${sysctl_entry}" ]]; then
+		ewarn "Cannot prepare veriexec entry for sysctl"
+	fi
+
+	ebegin "Dropping default root capabilities and locking up system"
+		local ret=0
+		sysctl kernel.clip.rootcap0=0x1180c8ff 1>/dev/null || ret=1
+		sysctl kernel.clip.rootcap1=0 1>/dev/null || ret=1
+		sysctl kernel.clip.mount=0 1>/dev/null || ret=1
+		# DROP CAP_SYS_MODULE (and CAP_SYS_RAWIO, already dropped anyway)
+		sysctl kernel.clip.capbound0=0xfffcffff 1>/dev/null || ret=1
+		# Remove now useless veriexec entry for sysctl
+		verictl -c '/sbin/sysctl 0 er - - - - sha256 dummy' -u || ret=1
+		if [[ -n "${sysctl_entry}" ]]; then
+			verictl -c "${sysctl_entry}" -l || ret=1
+		fi
+		# Remove now useless crond entry for sysctl
+		verictl -c '/usr/sbin/crond 0 Ier - - - - sha256 dummy' -u || ret=1
+		# Add the enforce_mntro and lvl_immutable flags to veriexec ctx 0
+		verictl -L active:enforce_mntro:enforce_inherit:lvl_immutable:ctx_immutable:ctxset_immutable || ret=1
+	eend $ret
+}
+# vim:ts=4

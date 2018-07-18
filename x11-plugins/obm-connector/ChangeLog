@@ -1,0 +1,63 @@
+# CLIP Changelog for x11-plugins/obm-connector
+
+  05 Jan 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  obm-connector-3.1.0.38.ebuild:
+  Add amd64 keyword.
+
+*obm-connector-3.1.0.38 (21 Nov 2012)
+
+  21 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-3.1.0.38.ebuild, -obm-connector-2.4.2.24.ebuild,
+  -files/install.rdf:
+  Bump to latest.
+
+*obm-connector-2.4.2.24 (26 Mar 2012)
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-2.4.2.24.ebuild, -obm-connector-2.4.2.22.ebuild:
+  Bump to latest.
+
+*obm-connector-2.4.2.22 (29 Dec 2011)
+
+  29 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-2.4.2.22.ebuild, -obm-connector-2.4.2.19.ebuild,
+  files/install.rdf:
+  Bump to latest, bump thunderbird compat to 10.*.
+
+*obm-connector-2.4.2.19 (14 Nov 2011)
+
+  14 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-2.4.2.19.ebuild, -obm-connector-2.4.1.0.ebuild,
+  files/install.rdf:
+  Bump to latest, move MOZILLA_FIVE_HOME following upgrade to
+  TB 8.0.
+
+*obm-connector-2.4.1.0 (26 Jul 2010)
+
+  26 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-2.4.1.0.ebuild, -obm-connector-2.4.0.1.ebuild,
+  files/install.rdf:
+  Bump to latest.
+
+*obm-connector-2.4.0.1 (22 Jun 2010)
+
+  22 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-2.4.0.1.ebuild, -obm-connector-2.3.1.3.ebuild,
+  files/install.rdf:
+  Bump to latest, support mail-client/thunderbird as alternative
+  to mail-client/mozilla-thunderbird.
+
+*obm-connector-2.3.1.3 (02 Mar 2010)
+
+  02 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-2.3.1.3.ebuild, -obm-connector-2.2.2.1.ebuild,
+  files/install.rdf:
+  Bump to latest, with support for TB3.
+
+*obm-connector-2.2.2.1 (25 Jan 2010)
+
+  25 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +obm-connector-2.2.2.1.ebuild, +files/install.rdf:
+  Initial import. Add custom install.rdf, with proper fields,
+  and disable support for thunderbird-3+, as it is crashes bad...
+

@@ -1,0 +1,18 @@
+--- a/etc/clip_update/clip_download/apt.conf.clip
++++ b/etc/clip_update/clip_download/apt.conf.clip
+@@ -14,2 +14,3 @@
++		Verify-Host false;
+ 	};
+ };
+--- a/etc/clip_update/clip_download/apt.conf.rm_h
++++ b/etc/clip_update/clip_download/apt.conf.rm_h
+@@ -14,2 +14,3 @@
++		Verify-Host false;
+ 	};
+ };
+--- a/etc/clip_update/clip_download/apt.conf.rm_b
++++ b/etc/clip_update/clip_download/apt.conf.rm_b
+@@ -14,2 +14,3 @@
++		Verify-Host false;
+ 	};
+ };

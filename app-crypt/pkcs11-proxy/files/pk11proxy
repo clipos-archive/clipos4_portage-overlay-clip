@@ -1,0 +1,116 @@
+#!/sbin/runscript
+# Copyright 2013 SGDSN/ANSSI
+# Author: Thomas Calderon <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+description="Run pkcs11proxy in appropriate jails"
+
+depend() {
+	need clock hostname veriexec pcscd jail_init
+	after reducecap
+}
+
+smartcards_supported() {
+	grep -q '^SMARTCARD_SUPPORT=yes' "/etc/admin/conf.d/smartcards" \
+		|| return 1
+	return 0
+}
+
+common_config() {
+	source /lib/clip/import.sub
+	source /lib/clip/jails.sub
+
+	#We delegate jails to start to this file
+	SMARTCARDS_CONF="/etc/admin/conf.d/smartcards"
+	#Proxy and filter path configuration
+	PKCS11PROXY_ADMIN_CONF_FILE="/etc/admin/conf.d/pkcs11proxyd"
+
+	import_conf_noerr "${SMARTCARDS_CONF}" \
+		'(core|rm_b|rm_h|[ ])*' PKCS11_JAILS 2>/dev/null \
+		|| true
+}
+
+get_config() {
+	common_config
+	[[ -n "${PKCS11_JAILS}" ]] || return 0
+
+	local jail import_vars=""
+	for jail in ${PKCS11_JAILS} ; do
+		# Default value ?
+		# ${jail}_CONF='/etc/pkcs11proxyd/pkcs11proxy.conf'
+		import_vars="${import_vars} ${jail}_CONF"
+	done
+	import_conf_noerr "${PKCS11PROXY_ADMIN_CONF_FILE}" \
+			'^/[a-z1._/-]*' $import_vars 2>/dev/null \
+			|| return 1
+	#Import default auth/disk labels
+	import_conf_noerr "${SMARTCARDS_CONF}" '^[- _a-zA-Z0-9]*' \
+		PKCS11_AUTH_LABEL PKCS11_DISK_LABEL 2>/dev/null \
+		|| return 1
+}
+
+start() {
+	smartcards_supported || return 0
+
+	if ! get_config; then
+		ewarn "Missing parameters, pk11proxy will not be started"
+		return 0
+	fi
+	[[ -n "${PKCS11_JAILS}" ]] || return 0
+
+	local jail ret=0
+
+	ebegin "Setting up pkcs11proxyd filtering proxy services"
+
+	# Manually generate pam_pkcs11.conf
+	if ! pampkcs11confgen.sh "${PKCS11_AUTH_LABEL}" 2>/dev/null; then
+		eend 1 "Failed to generate pam_pkcs11.conf"
+		return 1
+	fi	
+	eindent
+	export SOFTHSM2_CONF=/etc/softhsm2.conf
+	export SOFTHSM2_KEYFILE=/var/run/ssm_key/socket
+	for jail in ${PKCS11_JAILS} ; do
+		local p11proxyjail="p11proxy_${jail}"
+		local ctx="$(< "/etc/jails/${p11proxyjail}/context")"
+		
+		if ! jail_setup_wait "${p11proxyjail}"; then
+			ewarn "Failed to set up ${p11proxyjail} jail"
+			ret=1
+			eend 1 "Failed to create jail"
+			continue
+		fi
+
+		local conf="${jail}_CONF"
+		pkcs11proxyd-clip-launcher /usr/sbin/pkcs11proxyd \
+			-fg -daemonize-param "${ctx}" -conf "${!conf}" \
+			|| ret=1
+		touch "/var/run/pk11proxy-${jail}"
+	done
+	eoutdent
+
+	eend $ret
+}
+
+stop() {
+	smartcards_supported || return 0
+
+	common_config
+	[[ -n "${PKCS11_JAILS}" ]] || return 0
+
+	eindent
+	local jail ret=0
+	ebegin "Stopping pkcs11proxyd"
+	for jail in ${PKCS11_JAILS} ; do
+		[[ -e "/var/run/pk11proxy-${jail}" ]] || continue
+		if ! vsctl "p11proxy_${jail}" stop; then
+			ewarn "Failed to stop jail: p11proxy_${jail}"
+			ret=1
+		else
+			rm -f "/var/run/pk11proxy-${jail}"
+		fi
+	done
+	eoutdent
+	eend $ret
+}
+

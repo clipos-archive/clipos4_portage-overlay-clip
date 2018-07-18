@@ -1,0 +1,6 @@
+# ChangeLog for clip/amd64profile directory
+
+  12 Jun 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +Changelog, +make.defaults, +parent, +use.force, +use.mask:
+  New profile - common definitions for clip amd64 profiles.
+

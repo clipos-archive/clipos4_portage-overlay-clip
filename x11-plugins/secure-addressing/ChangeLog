@@ -1,0 +1,13 @@
+# CLIP Changelog for x11-plugins/secure-messaging
+
+*secure-addressing-1.8 (20 Dec 2017)
+
+  20 Dec 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +secure-addressing-1.8.ebuild, -secure-addressing-1.7.ebuild:
+  New upstream release - Support for Thunderbird 52.
+
+* secure-messaging-1.7 (17 Feb 2017)
+
+  17 Feb 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +secure-messaging-1.7.ebuild:
+  Initial import.

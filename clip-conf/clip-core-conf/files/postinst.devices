@@ -1,0 +1,30 @@
+source "/etc/conf.d/clip"
+
+setup_devices() {
+	local has_rmh= has_rmb=
+	local sound="rm_b" printer="rm_h" scanner="rm_b" 
+
+	[[ -n "${CLIP_JAILS}" ]] || return 0
+	[[ -e "/etc/admin/conf.d/devices" ]] && return 0
+
+	[[ "${CLIP_JAILS/rm_h/}" != "${CLIP_JAILS}" ]] && has_rmh="yes"
+	[[ "${CLIP_JAILS/rm_b/}" != "${CLIP_JAILS}" ]] && has_rmb="yes"
+
+	if [[ -z "${has_rmb}" ]]; then
+		sound="rm_h"
+		scanner="rm_h"
+	fi
+	[[ -z "${has_rmh}" ]] && printer="rm_b"
+
+	cat > "/etc/admin/conf.d/devices"<<EOF
+SOUNDCARD0_JAIL=${sound}
+PRINTER0_JAIL=${printer}
+SCANNER_JAIL=${scanner}
+EOF
+	chown 4000:4000 "/etc/admin/conf.d/devices"
+}
+
+setup_devices
+
+
+

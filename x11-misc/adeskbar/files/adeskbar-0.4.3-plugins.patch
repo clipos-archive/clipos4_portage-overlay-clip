@@ -1,0 +1,23 @@
+--- a/usr/share/adeskbar/plugins/__init__.py	2011-07-11 18:38:25.000000000 +0200
++++ b/usr/share/adeskbar/plugins/__init__.py	2011-05-05 10:08:58.000000000 +0200
+@@ -91,3 +91,13 @@
+     'desc':'Volume Mixer',
+     'icon':'images/plugins/volume.png',
+     }
++
++info['menuselect'] = {
++    'desc':'Menu Selection',
++    'icon':'start-here',
++    }
++
++info['switchview'] = {
++    'desc':'Switch between viewers',
++    'icon':'start-here',
++    }
++
++info['autohide'] = {
++    'desc':'Auto Hide Adeskbar',
++    'icon':'display',
++    }
++
+

@@ -1,0 +1,6 @@
+# ChangeLog for clip-build/armel profile directory
+
+  30 Aug 2013; ANSSI <clipos@ssi.gouv.fr>
+  +make.defaults, +parent:
+  New profile.
+

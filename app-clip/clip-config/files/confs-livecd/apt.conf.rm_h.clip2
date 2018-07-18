@@ -1,0 +1,4 @@
+Dir::Etc "/tmp";
+Dir::Cache "/var/pkg/cache/apt";
+Dir::State "/var/pkg/lib/apt"; 
+Dir::State::Status "/clip2/vservers/rm_h/update_priv/var/pkg/lib/dpkg/status";

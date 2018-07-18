@@ -1,0 +1,79 @@
+diff -urpN pkcs11proxy-1.0.0/src/bindings-pkcs11/pkcs11_functions.c pkcs11proxy-1.0.0.mod/src/bindings-pkcs11/pkcs11_functions.c
+--- pkcs11proxy-1.0.0/src/bindings-pkcs11/pkcs11_functions.c	2014-03-04 07:33:58.000000000 +0000
++++ pkcs11proxy-1.0.0.mod/src/bindings-pkcs11/pkcs11_functions.c	2014-03-04 07:52:14.560920402 +0000
+@@ -93,26 +93,66 @@ extern void custom_free(void **to_free);
+ #include "pkcs11_functions.h"
+ #include "pkcs11_aliasing.h"
+ 
++#include <clip/clip-vserver.h>
++#include <fcntl.h>
++#include <unistd.h>
++#include <stdlib.h>
++#include <errno.h>
++#include <limits.h>
++#include <sys/types.h>
++#include <sys/stat.h>
++
+ /* Global variable holding the current module handle        */
+ void *module_handle = NULL;
+ CK_C_GetFunctionList get_func_list;
+ CK_FUNCTION_LIST *pkcs11 = NULL;
+ 
++static int
++drop_privs(unsigned long g_xid) {
++  if (g_xid) {
++    if(clip_enter_context(g_xid)) {
++      fprintf(stderr, "Failed to enter context %lu\n", g_xid);
++      goto err;
++    }
++  }
++  return 0;
++err:
++  return -1;
++}
++
+ CK_RV ML_CK_C_Daemonize(unsigned char *param, unsigned long param_len)
+ {
+   CK_RV rv = 0;
++  unsigned long tmp;
++  unsigned long len;
++  /* No need for static g_xid declaration */
++  unsigned long g_xid = 505;
++  
++  (void)umask(0077);
+   DEBUG_CALL(ML_CK_C_Daemonize, " calling\n");
+-  /* TODO: If you decide so, it is possible to implement some privilege
+-   * reduction primitives here. The advantage of doing it here is that you
+-   * would not need the "sandbox" launcher.
+-   * This is called after the OCaml netplex binds the socket.
+-   */
++
+   /* Dummy stuff below */
+   if (param != NULL) {
+-    param = NULL;
+-  }
+-  if (param_len != 0) {
+-    param_len = 0;
++    len = strnlen((const char*)param, param_len);
++    /* Sanity check on length */
++    if(len != param_len){
++      fprintf(stderr, "xid out of bounds: %s", param);
++      return -1;
++    }
++    else{
++      /* Convert to unsigned long, endptr not used because we sanitized earlier */
++      tmp = strtoul((const char*)param, NULL, 0);
++      if (tmp == ULONG_MAX && errno == ERANGE) {
++        fprintf(stderr, "xid out of bounds: %s", param);
++        return -1;
++      }
++      g_xid = tmp;
++      DEBUG_CALL (ML_CK_C_Daemonize, " jailing process\n");
++      if(drop_privs(g_xid)) {
++        fprintf(stderr, "couldn't jail process\n");
++        exit(1);
++      }
++    }
+   }
+ 
+   return rv;

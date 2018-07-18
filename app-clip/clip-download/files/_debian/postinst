@@ -1,0 +1,85 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+let "minutes=${RANDOM}"
+let "minutes%=40"
+CLIP_MINS="$(( ${minutes} + 10 ))"
+CRONTAB="/update_root/etc/cron/crontab/root"
+
+rc-update add clip_download default
+
+if [[ -e "/etc/conf.d/clip" ]]; then
+	source "/etc/conf.d/clip"
+else
+	source "/etc/conf.d/.clip.confnew"
+fi
+
+echo "${CLIP_MINS} * * * *  /bin/ionice -c 3 -- /usr/bin/nice -n 15 /usr/bin/clip_download -j clip > /var/log/clip_download_clip.log 2>&1" \
+		>> "${CRONTAB}"
+
+if echo "${CLIP_JAILS}" | grep -q rm_h; then
+	RMH_MINS="$(( ( ( ${minutes} + 15 ) % 40 ) + 10 ))"
+
+	echo "${RMH_MINS} * * * *  /bin/ionice -c 3 -- /usr/bin/nice -n 15 /usr/bin/clip_download -j rm_h > /var/log/clip_download_rm_h.log 2>&1" \
+		>> "${CRONTAB}"
+
+
+fi
+
+if echo "${CLIP_JAILS}" | grep -q rm_b; then
+	RMB_MINS="$(( ( ( ${minutes} + 30 ) % 40 ) + 10 ))"
+
+	echo "${RMB_MINS} * * * *  /bin/ionice -c 3 -- /usr/bin/nice -n 15 /usr/bin/clip_download -j rm_b > /var/log/clip_download_rm_b.log 2>&1" \
+		>> "${CRONTAB}"
+fi
+
+
+mv_certs() {
+	# Update certificate location
+	local config="/etc/admin/clip_download"
+	if [ ! -e "${config}/cacerts" ]; then
+		# Fix x509 files owner
+		chown 4000:4000 "${config}/cert"/* || true
+
+		local priv="${config}/private"
+		mkdir "${priv}"
+		chmod 0770 "${priv}"
+		chown 0:4000 "${priv}"
+		local cert
+		for cert in "${config}/cert"/apt.{key,cert}.pem; do
+			if [ -e "${cert}" ]; then
+				mv "${cert}" "${priv}"
+			fi
+		done
+
+		local pub="${config}/cert"
+		mkdir -p -- "${pub}"
+		chmod 0775 "${pub}"
+		chown 0:4000 "${pub}"
+		mv "${pub}" "${config}/cacerts"
+	fi
+}
+
+mv_certs
+
+update_sources() {
+	local sourcelist_files="/etc/admin/clip_download/sources.list.clip"
+
+	for jail in ${CLIP_JAILS}; do
+		sourcelist_files="${sourcelist_files} /etc/admin/clip_download/sources.list.${jail}"
+	done
+
+	for f in ${sourcelist_files}; do
+		[[ -f "${f}" ]] || continue
+
+		sed -i -e 's|deb\s\+copy:///var/pkg|deb [local=true] copy:///var/pkg|' \
+			"${f}" || echo " ! sed failed on ${f} !" >&2
+		chmod 0644 "${f}"
+		chown 4000:4000 "${f}"
+	done
+
+	return 0
+}
+
+update_sources

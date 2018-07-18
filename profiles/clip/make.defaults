@@ -1,0 +1,79 @@
+# Copyright 1999-2013 Gentoo Foundation
+
+# $Header: /var/cvsroot/gentoo-x86/profiles/base/make.defaults,v 1.106 2013/08/23 17:52:23 olemarkus Exp $
+
+IUSE_IMPLICIT="prefix"
+USE_EXPAND_UNPREFIXED="ARCH"
+USE_EXPAND_IMPLICIT="ARCH ELIBC KERNEL USERLAND"
+USE_EXPAND_VALUES_ARCH="alpha amd64 amd64-fbsd amd64-linux arm arm-linux hppa hppa-hpux ia64 ia64-hpux ia64-linux m68k m68k-mint mips ppc ppc64 ppc64-linux ppc-aix ppc-macos ppc-openbsd s390 sh sparc sparc64-freebsd sparc64-solaris sparc-fbsd sparc-solaris x64-freebsd x64-macos x64-openbsd x64-solaris x86 x86-cygwin x86-fbsd x86-freebsd x86-interix x86-linux x86-macos x86-netbsd x86-openbsd x86-solaris x86-winnt"
+USE_EXPAND_VALUES_ELIBC="AIX Cygwin Darwin FreeBSD glibc HPUX Interix mintlib musl NetBSD OpenBSD SunOS uclibc Winnt"
+USE_EXPAND_VALUES_KERNEL="AIX Cygwin Darwin FreeBSD freemint HPUX Interix linux NetBSD OpenBSD SunOS Winnt"
+USE_EXPAND_VALUES_USERLAND="BSD GNU"
+
+# Env vars to expand into USE vars.  Modifying this requires prior
+# discussion on gentoo-dev@gentoo.org.
+USE_EXPAND="ABI_MIPS ABI_X86 ALSA_CARDS APACHE2_MODULES APACHE2_MPMS CALLIGRA_FEATURES CAMERAS COLLECTD_PLUGINS CROSSCOMPILE_OPTS CURL_SSL DRACUT_MODULES DVB_CARDS ELIBC ENLIGHTENMENT_MODULES FCDSL_CARDS FFTOOLS FOO2ZJS_DEVICES FRITZCAPI_CARDS GPSD_PROTOCOLS GRUB_PLATFORMS INPUT_DEVICES KERNEL LCD_DEVICES LIBREOFFICE_EXTENSIONS LINGUAS LIRC_DEVICES MONKEYD_PLUGINS NETBEANS_MODULES NGINX_MODULES_HTTP NGINX_MODULES_MAIL OFED_DRIVERS OFFICE_IMPLEMENTATION OPENMPI_FABRICS OPENMPI_OFED_FEATURES OPENMPI_RM PHP_TARGETS PYTHON_SINGLE_TARGET PYTHON_TARGETS QEMU_SOFTMMU_TARGETS QEMU_USER_TARGETS RUBY_TARGETS SANE_BACKENDS USERLAND VIDEO_CARDS VOICEMAIL_STORAGE XFCE_PLUGINS XTABLES_ADDONS"
+
+# USE_EXPAND variables whose contents are not shown in package manager
+# output. Changes need discussion on gentoo-dev.
+USE_EXPAND_HIDDEN="USERLAND KERNEL ELIBC CROSSCOMPILE_OPTS ABI_MIPS ABI_X86"
+#
+# Variables that are set exclusively by the profile
+# and not by user configuration files.
+PROFILE_ONLY_VARIABLES="ARCH ELIBC IUSE_IMPLICIT KERNEL USERLAND USE_EXPAND_IMPLICIT USE_EXPAND_UNPREFIXED USE_EXPAND_VALUES_ARCH USE_EXPAND_VALUES_ELIBC USE_EXPAND_VALUES_KERNEL USE_EXPAND_VALUES_USERLAND"
+
+# 'Sane' defaults
+ELIBC="glibc"
+KERNEL="linux"
+USERLAND="GNU"
+#
+# Benedikt Böhm <hollow@gentoo.org> (27 Nov 2007)
+# Sane defaults for built-in apache modules
+# Patrick Lauer <patrick@gentoo.org> (12 Oct 2012)
+# extend for apache 2.4
+APACHE2_MODULES="authn_core authz_core socache_shmcb unixd actions alias auth_basic authn_alias authn_anon authn_dbm authn_default authn_file authz_dbm authz_default authz_groupfile authz_host authz_owner authz_user autoindex cache cgi cgid dav dav_fs dav_lock deflate dir disk_cache env expires ext_filter file_cache filter headers include info log_config logio mem_cache mime mime_magic negotiation rewrite setenvif speling status unique_id userdir usertrack vhost_alias"
+
+# Default target(s) for python-r1.eclass
+PYTHON_TARGETS="python2_7"
+PYTHON_SINGLE_TARGET="python2_7"
+USE_PYTHON="2.7"
+
+# Default sane backends
+SANE_BACKENDS="abaton agfafocus apple artec artec_eplus48u as6e avision bh canon canon630u canon_dr cardscan coolscan coolscan2 coolscan3 dc210 dc240 dc25 dmc epjitsu epson epson2 fujitsu genesys gt68xx hp hp3500 hp3900 hp4200 hp5400 hp5590 hpljm1005 hs2p ibm kodak kvs1025 kvs20xx leo lexmark ma1509 magicolor matsushita microtek microtek2 mustek mustek_usb nec net niash p5 pie pixma plustek plustek_pp qcam ricoh rts8891 s9036 sceptre sharp sm3600 sm3840 snapscan sp15c st400 stv680 tamarack teco1 teco2 teco3 {test} u12 umax umax1220u umax_pp xerox_mfp" 
+
+# $Header: /var/cvsroot/gentoo-x86/profiles/features/multilib/make.defaults,v 1.10 2013/10/09 18:20:27 mgorny Exp $
+
+# Jorge Manuel B. S. Vicetto <jmbsvicetto@gentoo.org> (16 Nov 2011)
+# Rename STAGE1_USE to BOOTSTRAP_USE and stack it to the parent value
+# This is so we build with multilib from the start
+BOOTSTRAP_USE="${BOOTSTRAP_USE} multilib"
+
+# FEATURES="multilib-strict" specific settings.
+MULTILIB_STRICT_DIRS="/lib32 /lib /usr/lib32 /usr/lib /usr/kde/*/lib32 /usr/kde/*/lib /usr/qt/*/lib32 /usr/qt/*/lib /usr/X11R6/lib32 /usr/X11R6/lib"
+MULTILIB_STRICT_DENY="64-bit.*shared object"
+MULTILIB_STRICT_EXEMPT="(perl5|gcc|gcc-lib|binutils|eclipse-3|debug|portage|udev|systemd|clang|python-exec)"
+
+# 64-bit LIBDIR
+LIBDIR_amd64="lib64"
+LIBDIR_amd64_fbsd="lib64"
+LIBDIR_n64="lib64"	# MIPS n64
+LIBDIR_ppc64="lib64"
+LIBDIR_s390x="lib64"
+LIBDIR_sparc64="lib64"
+
+# 32-bit LIBDIR
+LIBDIR_x86="lib"
+LIBDIR_x86_fbsd="lib"
+LIBDIR_o32="lib"	# MIPS o32
+LIBDIR_ppc="lib"
+LIBDIR_s390="lib"
+LIBDIR_sparc32="lib"
+
+# Somewhere in-between!
+LIBDIR_x32="libx32"	# x86-64 x32
+LIBDIR_n32="lib32"	# MIPS n32
+
+
+FEATURES="distlocks metadata-transfer sandbox sfperms"
+
+ACCEPT_LICENSE="google-chrome AdobeFlash-11.x"

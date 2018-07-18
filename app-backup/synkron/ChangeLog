@@ -1,0 +1,24 @@
+# CLIP ChangeLog for app-backup/synkron
+
+*synkron-1.6.2 (07 Aug 2012)
+
+  07 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +synkron-1.6.2.ebuild, -synkron-1.6.1.90.ebuild,
+  +files/synkron-1.6.2-fr-only.patch,
+  -files/synkron-1.6.1-fr-only.patch:
+  Bump to stable.
+
+*synkron-1.6.1.90 (06 Jan 2011)
+
+  06 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +synkron-1.6.1.90.ebuild, -synkron-1.6.1.0.ebuild
+  -files/synkron-1.6.0-fr-only.patch, +files/synkron-1.6.1-fr-only.patch:
+  Bump to trunk from 20110106, which includes a fix for the case
+  where a removable token is ejected in the middle of a sync.
+  Smallish localization fix.
+
+*synkron-1.6.0 (31 Jul 2009)
+
+  31 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  synkron-1.6.0.ebuild:
+  Initial import.

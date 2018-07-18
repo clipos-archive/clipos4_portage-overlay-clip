@@ -1,0 +1,17 @@
+CLIP_BASE="/opt/clip-int"
+PORTDIR="${CLIP_BASE}/portage"
+DISTDIR="${CLIP_BASE}/distfiles-dev"
+
+GENTOO_MIRRORS="file://${CLIP_BASE}/distfiles-dev file://${CLIP_BASE}/distfiles file://${CLIP_BASE}/distfiles-extra-dev file://${CLIP_BASE}/distfiles-extra"
+FETCHCOMMAND="/usr/lib/portage/bin/clip-fetch \${URI} \${DISTDIR}/\${FILE}"
+RESUMECOMMAND="/usr/lib/portage/bin/clip-fetch \${URI} \${DISTDIR}/\${FILE}"
+
+
+USE="-clip-devstation -clip-domains clip-livecd -clip-tcb -kde udev xorg nptl png -introspection svg X pic python qt qt4 qt3support dbus nls bzip2 zlib hardened threads thread cxx ssl cracklib pam unicode -cups -clip-dev-lxc pcsclite usb"
+
+#CONFIG_PROTECT_MASK="/etc/init.d"
+
+VIDEO_CARDS="fbdev"
+INPUT_DEVICES="keyboard mouse evdev"
+
+LINGUAS="fr fr_FR fr-FR en en_US en-US"

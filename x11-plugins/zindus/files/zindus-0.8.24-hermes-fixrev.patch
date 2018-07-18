@@ -1,0 +1,16 @@
+diff -pruN zindus.jar.orig/content/zindus/syncfsm.js zindus.jar.new/content/zindus/syncfsm.js
+--- zindus.jar.orig/content/zindus/syncfsm.js	2010-08-24 18:25:38.000000000 +0200
++++ zindus.jar.new/content/zindus/syncfsm.js	2010-08-24 18:34:28.000000000 +0200
+@@ -1632,7 +1632,11 @@ SyncFsm.prototype.entryActionSyncRespons
+ 						else if ('token' in change)
+ 							rev_attr = change['token'];
+ 
+-						let isRevChange = !rev_attr || !zfi.isPresent(FeedItem.ATTR_REV) || rev_attr != zfi.get(FeedItem.ATTR_REV);
++						// let isRevChange = !rev_attr || !zfi.isPresent(FeedItem.ATTR_REV) || rev_attr != zfi.get(FeedItem.ATTR_REV);
++						let isRevChange = false;
++						if (((rev_attr != null) && !zfi.isPresent(FeedItem.ATTR_REV)) ||
++							(rev_attr != null) && zfi.isPresent(FeedItem.ATTR_REV) && (rev_attr != zfi.get(FeedItem.ATTR_REV)));
++							isRevChange = true;
+ 
+ 						// ms changes iff
+ 						// - it's present in attribute but not the zfi or

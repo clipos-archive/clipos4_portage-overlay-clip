@@ -1,0 +1,13 @@
+
+PROFILES_DIR="/etc/admin/netconf.d"
+
+# CLIP 4.3.6 : Gateway IPs moved into the 'ipsec' config file
+for d in "${PROFILES_DIR}"/*; do
+	[[ -d "${d}" ]] || continue
+
+	[[ -e "${d}/ipsec" ]] && continue
+
+	grep '_GW=' "${d}/net" > "${d}/ipsec"
+
+	chown -R 4000:4000 "${d}" || echo "! Chown failed on ${d} !" >&2
+done

@@ -1,0 +1,15 @@
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Icon=ganttproject
+TryExec=gantt.sh
+Exec=gantt.sh %f
+Type=Application
+Categories=Office;
+Name=Ganttproject
+MimeType=application/x-ganttproject;
+GenericName=Gantt charts editor
+GenericName[fr]=Editeur de diagrammes de Gantt
+Comment=Create and edit Gantt charts
+Comment[fr]=Création et édition de diagrammes de Gantt
+

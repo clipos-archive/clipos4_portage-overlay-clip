@@ -1,0 +1,226 @@
+# CLIP ChangeLog for app-crypt/cryptd-client-red
+
+  11 Sep 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  cryptd-client-red-1.5.17.ebuild:
+  Add amd64 keyword, masked for now.
+  Add dependency on libacidfile and libacidcrypt.
+
+*cryptd-client-red-1.5.17 (23 Sep 2013)
+
+  23 Sep 2013; ANSSI <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.17.ebuild, -cryptd-client-red-1.5.16.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.16 (06 May 2013)
+
+  06 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.16.ebuild, -cryptd-client-red-1.5.15.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.15 (28 Mar 2013)
+
+  28 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.15.ebuild, -cryptd-client-red-1.5.14.ebuild:
+  Fix handling of iconv errors.
+
+*cryptd-client-red-1.5.14 (16 Nov 2012)
+
+  16 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.14.ebuild, -cryptd-client-red-1.5.13.ebuild:
+  Add a CMD_DELETE command.
+
+*cryptd-client-red-1.5.13 (06 Sep 2012)
+
+  06 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.13.ebuild, -cryptd-client-red-1.5.12.ebuild:
+  Better fix for filename encoding.
+
+*cryptd-client-red-1.5.12 (28 Aug 2012)
+
+  28 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.12.ebuild, -cryptd-client-red-1.5.11.ebuild:
+  Fix filename encoding in CSA archives.
+
+*cryptd-client-red-1.5.11 (20 Jun 2012)
+
+  20 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.11.ebuild, -cryptd-client-red-1.5.10.ebuild:
+  Fix library symlinks.
+
+*cryptd-client-red-1.5.10 (01 Jun 2012)
+
+  01 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.10.ebuild, -cryptd-client-red-1.5.9.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.9 (17 Apr 2012)
+
+  17 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.9.ebuild, -cryptd-client-red-1.5.8.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.8 (16 Apr 2012)
+
+  16 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.8.ebuild, -cryptd-client-red-1.5.7.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.7 (13 Apr 2012)
+
+  13 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.7.ebuild, -cryptd-client-red-1.5.6-r1.ebuild:
+  Add CMD_CANCEL error code.
+
+  12 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  cryptd-client-red-1.5.6-r1.ebuild:
+  Add clip-lib dependency.
+
+*cryptd-client-red-1.5.6-r1 (26 Mar 2012)
+
+  26 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.6-r1.ebuild, -cryptd-client-red-1.5.6.ebuild:
+  Force rebuild
+
+*cryptd-client-red-1.5.6 (11 Aug 2011)
+
+  11 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.6.ebuild, -cryptd-client-red-1.5.5.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.5 (21 Apr 2011)
+
+  21 Apr 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.5.ebuild, -cryptd-client-red-1.5.4.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.4 (27 Jan 2011)
+
+  27 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.4.ebuild, -cryptd-client-red-1.5.3.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.3 (22 Nov 2010)
+
+  22 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.3.ebuild, -cryptd-client-red-1.5.2.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.2 (09 Nov 2010)
+
+  09 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.2.ebuild, -cryptd-client-red-1.5.1.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.5.1 (09 Aug 2010)
+
+  09 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.1.ebuild, -cryptd-client-red-1.5.0.ebuild:
+  Fix client encryption errors.
+
+*cryptd-client-red-1.5.0 (06 Aug 2010)
+
+  06 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.5.0.ebuild, -cryptd-client-red-1.4.5.ebuild:
+  Add support for red socket only encryption / decryption.
+  Switch to EAPI=3.
+
+*cryptd-client-red-1.4.5 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.4.5.ebuild, -cryptd-client-red-1.4.2.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.4.2 (30 Apr 2010)
+
+  30 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.4.2.ebuild, -cryptd-client-red-1.4.1.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.4.1 (29 Apr 2010)
+
+  29 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.4.1.ebuild, -cryptd-client-red-1.4.0.ebuild:
+  Bump, support password change + complete change in API naming.
+
+*cryptd-client-red-1.4.0 (19 Apr 2010)
+
+  19 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.4.0.ebuild, -cryptd-client-red-1.3.3.ebuild:
+  Support server info requests. Better crypto error notification.
+
+*cryptd-client-red-1.3.3 (13 Apr 2010)
+
+  13 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.3.3.ebuild, -cryptd-client-red-1.3.2.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.3.2 (16 Dec 2009)
+
+  16 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.3.2.ebuild, -cryptd-client-red-1.3.1.ebuild:
+  Silent bump to follow server update.
+
+*cryptd-client-red-1.3.1 (16 Nov 2009)
+
+  16 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.3.1.ebuild, -cryptd-client-red-1.3.0.ebuild:
+  Merge changes from CELAR audit.
+
+*cryptd-client-red-1.3.0 (06 Oct 2009)
+
+  06 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.3.0.ebuild, -cryptd-client-red-1.2.4.ebuild:
+  Merged BIS audit results, added support for allowing overwrite
+  in client put_file functions.
+
+*cryptd-client-red-1.2.4 (30 Jul 2009)
+
+  30 Jul 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.2.4.ebuild, -cryptd-client-red-1.2.3.ebuild:
+  Bump to latest server code.
+
+*cryptd-client-red-1.2.3 (26 May 2009)
+
+  26 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.2.3.ebuild, -cryptd-client-red-1.2.2.ebuild:
+  Fix cleartext title length.
+
+*cryptd-client-red-1.2.2 (12 May 2009)
+
+  12 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.2.2.ebuild, -cryptd-client-red-1.2.1.ebuild:
+  Supply more precise errors to caller.
+
+*cryptd-client-red-1.2.1 (06 May 2009)
+
+  06 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.2.1.ebuild, -cryptd-client-red-1.2.0.ebuild:
+  Bump to follow server bump.
+
+*cryptd-client-red-1.2.0 (30 Apr 2009)
+
+  30 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.2.0.ebuild, -cryptd-client-red-1.1.1.ebuild:
+  Support diode functionnality.
+  Support exporting the sender's public key on decryption.
+
+*cryptd-client-red-1.1.1 (20 Mar 2009)
+
+  20 Mar 2009; Olivier Levillain <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.1.1.ebuild, -cryptd-client-red-1.1.0.ebuild:
+  cryptd-1.1.1. Add missing prototypes to header files and. Change some
+  functions to be C++ compatible.
+	
+*cryptd-client-red-1.1.0 (12 Mar 2009)
+
+  12 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +cryptd-client-red-1.1.0.ebuild, -cryptd-client-red-1.0.ebuild:
+  cryptd-1.1.0. Most of the client code is now distributed as a library,
+  to which the client links. This allows us to better support alternative
+  clients (GUIs).
+
+*cryptd-client-red-1.0 (06 Feb 2009)
+
+  06 Feb 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  cryptd-client-red-1.0.ebuild:
+  Initial import.

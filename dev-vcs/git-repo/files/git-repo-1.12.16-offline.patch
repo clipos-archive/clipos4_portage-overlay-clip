@@ -1,0 +1,136 @@
+--- git-repo-1.12.16.orig/project.py
++++ git-repo-1.12.16/project.py
+@@ -2123,7 +2123,12 @@ class Project(object):
+           _error("%s: Not replacing %s hook", self.relpath, name)
+           continue
+       try:
+-        os.symlink(os.path.relpath(stock_hook, os.path.dirname(dst)), dst)
++        rp_path = os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
++        if rp_path == os.path.commonprefix([rp_path, dst]):
++          src = relpath(stock_hook, dst)
++        else:
++          src = stock_hook
++        os.symlink(src, dst)
+       except OSError as e:
+         if e.errno == errno.EPERM:
+           raise GitError('filesystem must support symlinks')
+--- git-repo-1.12.16/repo
++++ git-repo-1.12.16/repo
+@@ -4,6 +4,7 @@
+ ##
+ REPO_URL = 'https://gerrit.googlesource.com/git-repo'
+ REPO_REV = 'stable'
++REPO_INIT = False
+ 
+ # Copyright (C) 2008 Google Inc.
+ #
+@@ -230,18 +231,18 @@
+     sys.exit(1)
+ 
+   url = opt.repo_url
+-  if not url:
++  if REPO_INIT and not url:
+     url = REPO_URL
+     extra_args.append('--repo-url=%s' % url)
+ 
+   branch = opt.repo_branch
+-  if not branch:
++  if REPO_INIT and not branch:
+     branch = REPO_REV
+     extra_args.append('--repo-branch=%s' % branch)
+ 
+-  if branch.startswith('refs/heads/'):
++  if branch and branch.startswith('refs/heads/'):
+     branch = branch[len('refs/heads/'):]
+-  if branch.startswith('refs/'):
++  if branch and branch.startswith('refs/'):
+     _print("fatal: invalid branch name '%s'" % branch, file=sys.stderr)
+     raise CloneFailure()
+ 
+@@ -256,6 +257,9 @@
+       #
+       sys.exit(1)
+ 
++  if not REPO_INIT:
++    return
++
+   _CheckGitVersion()
+   try:
+     if NeedSetupGnuPG():
+@@ -609,17 +613,21 @@
+   """
+   curdir = os.getcwd()
+   repo = None
+-
++  main = None
+   olddir = None
++
+   while curdir != '/' \
+     and curdir != olddir \
+     and not repo:
+-    repo = os.path.join(curdir, repodir, REPO_MAIN)
+-    if not os.path.isfile(repo):
++    repo = os.path.join(curdir, repodir)
++    main = os.path.join(repo, REPO_MAIN)
++    if not os.path.isfile(main):
++      main = None
++    if not os.path.isdir(repo):
+       repo = None
+       olddir = curdir
+       curdir = os.path.dirname(curdir)
+-  return (repo, os.path.join(curdir, repodir))
++  return (main, repo)
+ 
+ 
+ class _Options:
+@@ -689,8 +697,10 @@
+   my_dir = os.path.dirname(wrapper_path)
+   my_main = os.path.join(my_dir, 'main.py')
+   my_git = os.path.join(my_dir, '.git')
++  if not os.path.isdir(my_git):
++    my_git = None
+ 
+-  if os.path.isfile(my_main) and os.path.isdir(my_git):
++  if os.path.isfile(my_main):
+     for name in ['git_config.py',
+                  'project.py',
+                  'subcmds']:
+@@ -729,7 +739,7 @@
+   wrapper_path = os.path.abspath(__file__)
+   my_main, my_git = _RunSelf(wrapper_path)
+ 
+-  if not repo_main:
++  if not rel_repo_dir:
+     if opt.help:
+       _Usage()
+     if cmd == 'help':
+--- git-repo-1.12.16.orig/subcmds/sync.py
++++ git-repo-1.12.16/subcmds/sync.py
+@@ -627,7 +627,7 @@ later is required to fix a server side p
+     if not opt.local_only:
+       to_fetch = []
+       now = time.time()
+-      if _ONE_DAY_S <= (now - rp.LastFetch):
++      if rp.Exists and _ONE_DAY_S <= (now - rp.LastFetch):
+         to_fetch.append(rp)
+       to_fetch.extend(all_projects)
+       to_fetch.sort(key=self._fetch_times.Get, reverse=True)
+@@ -692,6 +692,8 @@ def _PostRepoUpgrade(manifest, quiet=Fal
+       project.PostRepoUpgrade()
+ 
+ def _PostRepoFetch(rp, no_repo_verify=False, verbose=False):
++  if not rp.Exists:
++      return
+   if rp.HasChanges:
+     print('info: A new version of repo is available', file=sys.stderr)
+     print(file=sys.stderr)
+--- git-repo-1.12.16.orig/manifest_xml.py
++++ git-repo-1.12.16/manifest_xml.py
+@@ -395,7 +395,6 @@ class XmlManifest(object):
+         raise e
+ 
+       if self.IsMirror:
+-        self._AddMetaProjectMirror(self.repoProject)
+         self._AddMetaProjectMirror(self.manifestProject)
+ 
+       self._loaded = True

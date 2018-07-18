@@ -1,0 +1,11 @@
+--- buildlib/apti18n.h.in.orig	2011-07-28 13:56:08.000000000 +0200
++++ buildlib/apti18n.h.in	2011-07-28 13:56:36.000000000 +0200
+@@ -19,6 +19,8 @@
+ # define N_(x) x
+ #else
+ // apt will not use any gettext
++// libintl is still needed for dgettext() (used to parse dpkg output)
++# include <libintl.h>
+ # define setlocale(a, b)
+ # define textdomain(a)
+ # define bindtextdomain(a, b)

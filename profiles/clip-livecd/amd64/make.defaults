@@ -1,0 +1,5 @@
+CFLAGS="-O2 -pipe -march=core2 -fomit-frame-pointer"
+CXXFLAGS="${CFLAGS}"
+
+ACCEPT_KEYWORDS="~amd64"
+SYMLINK_LIB="yes"

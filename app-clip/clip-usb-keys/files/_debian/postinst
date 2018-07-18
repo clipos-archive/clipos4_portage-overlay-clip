@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ -e '/etc/usbkeys.conf' ]]; then
+	sed -i -e 's/LEVELS=\([^"]\+\)/LEVELS="\1"/' '/etc/usbkeys.conf'
+
+	grep -q "RO_LEVELS" "/etc/usbkeys.conf" \
+		|| echo 'RO_LEVELS="rm_h rm_b admin audit update"' >> "/etc/usbkeys.conf"
+fi

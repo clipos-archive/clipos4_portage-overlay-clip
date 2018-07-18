@@ -1,0 +1,27 @@
+# ChangeLog for clip-livecd/x86 profile directory
+
+  18 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  make.defaults, -use.force, parent:
+  Move most common definitions to a new parent profile: 'clip/x86'.
+
+  17 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  make.defaults, +use.force:
+  Add ARCH/ABI definitions.
+
+  12 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  make.defaults, +use.mask:
+  Add implicit IUSE, python targets, etc from current gentoo
+  base profile.
+
+  09 Oct 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +package.mask:
+  Temporary mask new syslinux.
+
+  22 Jun 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +make.defaults, +packages, +package.use:
+  Cleanup packages.
+  Add Xorg configuration + some useful tools.
+
+  16 Nov 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +ChangeLog, +make.defaults, +package.keywords, +packages, +package.use, +parent:
+  Initial import.

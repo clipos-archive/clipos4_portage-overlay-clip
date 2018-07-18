@@ -1,0 +1,893 @@
+# CLIP ChangeLog for app-clip/core-services
+
+*core-services-2.11.3 (18 Oct 2016)
+
+  18 Oct 2016; Alain Ozanne <clipos@ssi.gouv.fr>
+  +core-services-2.11.3.ebuild, -core-services-2.11.2-r1.ebuild:
+  Added dependency on jail_init virtual service provided by init_cgroups.
+
+*core-services-2.11.2-r1 (07 Jul 2016)
+
+  07 Jul 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +core-services-2.11.2-r1.ebuild, -core-services-2.11.2.ebuild:
+  Add extra mounts folders for RM jails (civil crypto/gen-crypt support).
+
+*core-services-2.11.2 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +core-services-2.11.2.ebuild, -core-services-2.11.1.ebuild:
+  Fix a remaining /lib on clip 64 bits.
+
+*core-services-2.11.1 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +core-services-2.11.1.ebuild, -core-services-2.11.0.ebuild:
+  Improve 32/64 support.
+
+*core-services-2.11.0 (07 Mar 2016)
+
+  07 Mar 2016; ANSSI <clipos@ssi.gouv.fr>
+  +core-services-2.11.0.ebuild, -core-services-2.10.0.ebuild:
+  Support clip 64 bits library paths in jails.
+
+*core-services-2.10.0 (03 Nov 2015)
+
+  03 Nov 2015; Piotr Chmielnicki <clipos@ssi.gouv.fr>
+  +core-services-2.10.0.ebuild, -core-services-2.9.12-r1.ebuild:
+  Added bind mount for SSM in the user jail
+
+*core-services-2.9.12-r1 (26 May 2015)
+
+  26 May 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +core-services-2.9.12-r1.ebuild, -core-services-2.9.12.ebuild:
+  Add clip-rb local addresses.
+
+*core-services-2.9.12 (26 Feb 2015)
+
+  26 Feb 2015; ANSSI <clipos@ssi.gouv.fr>
+  +core-services-2.9.12.ebuild, -core-services-2.9.11.ebuild,
+  files/_debian/postinst:
+  Bump core-services.
+  Create smartcard-monitor related directories.
+
+*core-services-2.9.10 (04 Jul 2014)
+
+  04 Jul 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.10.ebuild, -core-services-2.9.9.ebuild:
+  clip_audit: import REMOTE_LOG_OTHER to log extra info to 
+  a remote host.
+
+*core-services-2.9.9 (05 May 2014)
+
+  05 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.9.ebuild, -core-services-2.9.8.ebuild:
+  Unmount /home/user as needed when setting up jails.
+
+*core-services-2.9.8 (02 May 2014)
+
+  02 May 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.8.ebuild, -core-services-2.9.7.ebuild:
+  Migrate sysfs permission fix to hotplug-clip, to be run
+  at startup *and* when resuming from ACPI sleep.
+
+*core-services-2.9.7 (29 Apr 2014)
+
+  29 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.7.ebuild, -core-services-2.9.6.ebuild,
+  files/_debian/postinst:
+  Mount /sys in ADMIN and make power_supply sysfs files
+  readable by @admin at startup. Create /sys mount point
+  in ADMIN if needed during postinst.
+
+*core-services-2.9.6 (03 Mar 2014)
+
+  03 Mar 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.6.ebuild, -core-services-2.9.5.ebuild:
+  Add USB_USER definitions for ADMIN and audit.
+
+*core-services-2.9.5 (13 Jan 2014)
+
+  13 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.5.ebuild, -core-services-2.9.4-r1.ebuild:
+  Fix clip_sshd init dependencies.
+
+*core-services-2.9.4-r1 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.4-r1.ebuild, -core-services-2.9.4.ebuild:
+  Add /etc/jails/update/fstab.{external,internal}.d.
+
+*core-services-2.9.4 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.4.ebuild, -core-services-2.9.3.ebuild:
+  Run ssh-update-known-hosts before launching sshd in audit.
+
+*core-services-2.9.3 (02 Jan 2014)
+
+  02 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.3.ebuild, -core-services-2.9.2.ebuild:
+  Add 'ssh' config files for ADMIN and AUDIT jails.
+
+*core-services-2.9.2 (31 Dec 2013)
+
+  31 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.2.ebuild, -core-services-2.9.1-r1.ebuild,
+  files/_debian/postinst, files/_debian/prerm:
+  Assign individual SIGNED_ID/ENCRYPTED_ID to each USB-capable
+  jail. Remove CLIP_LEVEL kludge. Add JAIL_NAME definitions.
+  Fix rc-update calls in maintainer scripts.
+
+*core-services-2.9.1-r1 (30 Dec 2013)
+
+  30 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.1-r1.ebuild, -core-services-2.9.1.ebuild:
+  Force rebuild to add openrc dependency.
+
+*core-services-2.9.1 (30 Dec 2013)
+
+  30 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.1.ebuild, -core-services-2.9.0.ebuild:
+  Add usb.storage files for ADMIN, AUDIT and UPDATE.
+
+*core-services-2.9.0 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.9.0.ebuild, -core-services-2.8.6.ebuild:
+  More cleanup of init scripts.
+  Move veriexec context and level definitions in /etc/jails.
+
+*core-services-2.8.6 (14 Oct 2013)
+
+  14 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.6.ebuild, -core-services-2.8.5.ebuild:
+  Better compatibility of init scripts with openrc.
+
+*core-services-2.8.5 (20 Aug 2013)
+
+  20 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.5.ebuild, -core-services-2.8.4.ebuild,
+  -files/fstab.admin.core-rm, -files/fstab.update.core-rm,
+  -files/fstab.user.core-rm, -files/_debian/postinst:
+  Add /usr/local/share bind mount in RM viewers - needed to 
+  provide fltk with fonts, etc.
+
+*core-services-2.8.4 (08 Mar 2013)
+
+  08 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.4.ebuild, -core-services-2.8.3.ebuild:
+  Fix clip_admin dependencies - must run after clip_apps_install
+  to make sur status-monitor is up to date.
+
+*core-services-2.8.3 (04 Mar 2013)
+
+  04 Mar 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.3.ebuild, -core-services-2.8.2-r1.ebuild,
+  files/_debian/postinst:
+  Make /etc/core R/W in ADMIN, and mount /usr/share/zoneinfo,
+  to enable timezone configuration. postinst script updated
+  to make sure zoneinfo mountpoint exists in ADMIN.
+
+*core-services-2.8.2-r1 (15 Nov 2012)
+
+  15 Nov 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.2-r1.ebuild, -core-services-2.8.2.ebuild,
+  files/_debian/postinst:
+  Make /etc/rm_X/admin R/W in UPDATE, to enable optional conf
+  update by clip_download.
+
+  23 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  core-services-2.8.2.ebuild:
+  Make a bunch of RDEPENDs conditional on use clip, so that 
+  it doesn't break completely in case someone ever has the weird
+  idea of emerging this in their build environment.
+
+*core-services-2.8.2 (28 Aug 2012)
+
+  28 Aug 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.2.ebuild, -core-services-2.8.1.ebuild:
+  Rederict stdin/stdout to /dev/null when running sshd in 
+  jails.
+
+*core-services-2.8.1 (24 Jul 2012)
+
+  24 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.1.ebuild, -core-services-2.8.0.ebuild:
+  Create usb_status if needed before running status-monitor.
+
+*core-services-2.8.0 (26 Apr 2012)
+
+  26 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.8.0.ebuild, -core-services-2.7.2.ebuild:
+  Support virtual IP in UPDATE, ADMIN and AUDIT.
+
+*core-services-2.7.2 (24 Apr 2012)
+
+  24 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.7.2.ebuild, -core-services-2.7.1.ebuild:
+  Make sure clip_admin and clip_sshd are started after clip_update,
+  so that we launch the new sshd after an update.
+
+*core-services-2.7.1 (06 Apr 2012)
+
+  06 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.7.1.ebuild, -core-services-2.7.0.ebuild:
+  Fix USER /proc.
+
+*core-services-2.7.0 (14 Mar 2012)
+
+  14 Mar 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.7.0.ebuild, -core-services-2.6.11.ebuild,
+  +files/jail-net:
+  Switch CLIP jails to dedicated PID/NET namespaces and veth pairs.
+  Use hardcoded local addrs for those jails.
+  Install /lib/clip/jails.sub to provide common jail functions.
+
+*core-services-2.6.11 (08 Feb 2012)
+
+  08 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +core-services-2.6.11.ebuild, -core-services-2.6.10.ebuild:
+  Set default Clip layout.
+
+*core-services-2.6.10 (21 Oct 2011)
+
+  21 Oct 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.6.10.ebuild, -core-services-2.6.9.ebuild:
+  Fix ADMIN_CLEAR_ADDR definition for ADMIN/AUDIT, to support
+  hotplugging the admin interface.
+
+*core-services-2.6.9 (19 Oct 2011)
+
+  19 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +core-services-2.6.9.ebuild, -core-services-2.6.8.ebuild:
+  Rename files xlevel_* to xdom_*
+
+*core-services-2.6.8 (17 Oct 2011)
+
+  17 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +core-services-2.6.8.ebuild, -core-services-2.6.7.ebuild:
+  Mount /usr/local/var r/w in user jail.
+  Create /usr/local/var/xlevel_{focus,rm} writable for the user.
+
+*core-services-2.6.7 (01 Aug 2011)
+
+  01 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.6.7.ebuild, -core-services-2.6.6.ebuild:
+  Mount /sys read-only again in X11 jail.
+
+  07 Jun 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  core-services-2.6.6.ebuild:
+  Add missing core-rm IUSE.
+
+*core-services-2.6.6 (10 May 2011)
+
+  10 May 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.6.6.ebuild, -core-services-2.6.5.ebuild,
+  files/_debian/postinst:
+  Add support for optional second ADMIN/AUDIT interface.
+
+*core-services-2.6.5 (24 Mar 2011)
+
+  24 Mar 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +core-services-2.6.5.ebuild, -core-services-2.6.4.ebuild:
+  Start status-monitor daemon in admin jail.
+
+*core-services-2.6.4 (16 Mar 2011)
+
+  16 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.6.4.ebuild, -core-services-2.6.3.ebuild:
+  Do not mount /x11/dev from a static device tree, switch
+  to a tmpfs device tree.
+
+*core-services-2.6.3 (23 Feb 2011)
+
+  23 Feb 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +core-services-2.6.3.ebuild, -core-services-2.6.2.ebuild:
+  Mount /usr/local/var rw in admin jail.
+
+*core-services-2.6.2 (18 Jan 2011)
+
+  18 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.6.2.ebuild, -core-services-2.6.1.ebuild:
+  Switch to multiple instances of devpts.
+
+*core-services-2.6.1 (23 Nov 2010)
+
+  23 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.6.1.ebuild, -core-services-2.6.0.ebuild:
+  Add optional umount of /home/user to ike jail's nscleanup.
+  This avoids an active mount of /home/user being picked up in
+  the ike context on net profile activation, and preventing 
+  the corresponding dm-crypt device from being removed at 
+  session end. Optional umount support requires vsctl >= 1.1.6.
+
+*core-services-2.6.0 (08 Nov 2010)
+
+  08 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.6.0.ebuild, -core-services-2.5.5.ebuild:
+  Make USERclip a permanent jail.
+
+*core-services-2.5.5 (29 Oct 2010)
+
+  29 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.5.ebuild, -core-services-2.5.4.ebuild:
+  Fix ike fstab.external.
+
+*core-services-2.5.4 (28 Oct 2010)
+
+  28 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.4.ebuild, -core-services-2.5.3.ebuild:
+  Mount /sys rw in X11 jail.
+
+*core-services-2.5.3 (05 Oct 2010)
+
+  05 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.3.ebuild, -core-services-2.5.2.ebuild:
+  Add /etc/shared, /etc/core and /etc/admin mounts to ike jail.
+
+*core-services-2.5.2 (01 Oct 2010)
+
+  01 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.2.ebuild, -core-services-2.5.1.ebuild:
+  Add ike jail.
+
+*core-services-2.5.1 (28 Sep 2010)
+
+  28 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.1.ebuild, -core-services-2.5.0-r2.ebuild:
+  Fix-up clip_audit startup (import of yesno vars).
+
+*core-services-2.5.0-r2 (27 Sep 2010)
+
+  27 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.0-r2.ebuild, -core-services-2.5.0-r1.ebuild,
+  files/_debian/postinst:
+  Create /mounts/audit_root/etc/audit if it does not exist in postinst,
+  to enable clip_audit startup even though clip-apps-conf has not been
+  updated.
+
+*core-services-2.5.0-r1 (24 Sep 2010)
+
+  24 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.0-r1.ebuild, -core-services-2.5.0.ebuild,
+  files/_debian/postinst:
+  Manage no_sp flag differently in postinst : use UPDATE_NOIPSEC
+  rather than gtw-type for UPDATE, add support for ADMIN_NOIPSEC.
+
+*core-services-2.5.0 (23 Sep 2010)
+
+  23 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.5.0.ebuild, -core-services-2.4.5.ebuild:
+  clip_audit revamp :
+   - use configuration files from /etc/audit
+   - support syslog-ng 3.1
+   - generate syslog-ng.conf dynamically, initial support for
+   remote logging.
+
+*core-services-2.4.5 (23 Aug 2010)
+
+  23 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.4.5.ebuild, -core-services-2.4.4.ebuild:
+  Fix clip_admin startup in nonetwork mode.
+
+*core-services-2.4.4 (03 Aug 2010)
+
+  03 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.4.4.ebuild, -core-services-2.4.3.ebuild:
+  Use new netlocal init script from clip-generic-net-2.0.
+
+*core-services-2.4.3 (27 May 2010)
+
+  27 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.4.3.ebuild, -core-services-2.4.2.ebuild:
+  Add /var/shared mount for AUDIT and ADMIN.
+
+*core-services-2.4.2 (26 Mar 2010)
+
+  26 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.4.2.ebuild, -core-services-2.4.1.ebuild:
+  Share /var/shared between USER and UPDATE jails.
+
+*core-services-2.4.1 (11 Mar 2010)
+
+  11 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.4.1.ebuild, -core-services-2.4.0.ebuild:
+  Add /sys mount in x11 jail for KMS.
+
+*core-services-2.4.0 (27 Jan 2010)
+
+  27 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.4.0.ebuild, -core-services-2.3.6.ebuild,
+  +files/_debian/postinst, +files/_debian/prerm:
+  Statify most of the maintainer-scripts. Remove IUSE core-rm
+  and IUSE clip-gtw - those are now handled entirely in the 
+  generic postinst.
+
+*core-services-2.3.6 (27 Oct 2009)
+
+  27 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.6.ebuild, -core-services-2.3.5.ebuild:
+  Reset usb_status when creating USER jail.
+
+*core-services-2.3.5 (18 Jun 2009)
+
+  18 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.5.ebuild, -core-services-2.3.4.ebuild:
+  Make 127.0.1.1/24 (not /8, by the way, let's leave the rest
+  to core only) the default address for ADMIN/AUDIT, leaving
+  USER_ADDR as secondary address. This guarantees that we retain
+  a working local connection to ADMIN/AUDIT when dynamic 
+  reconfiguration fails, while still retaining an 'external' address.
+
+*core-services-2.3.4 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.4.ebuild, -core-services-2.3.3.ebuild:
+  Relax dependencies on networking init script, to allow 
+  restarting networking without killing everything.
+  Switch entirely to netconf files.
+
+*core-services-2.3.3 (09 Jun 2009)
+
+  09 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.3.ebuild, -core-services-2.3.2-r1.ebuild:
+  Support netconf networking profiles.
+
+*core-services-2.3.2-r1 (09 Jun 2009)
+
+  09 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.2-r1.ebuild, -core-services-2.3.2.ebuild,
+  files/fstab.admin.core-rm:
+  Mount RM_x's /var/pkg in ADMIN view on CLIP-RM, to allow inspection
+  of RM optional packages.
+
+*core-services-2.3.2 (24 Apr 2009)
+
+  24 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.2.ebuild, -core-services-2.3.1.ebuild:
+  Fix ADMIN / AUDIT fstab - do not remove noatime when bind
+  mounting /etc/ssh on /usr/local/etc/ssh, otherwise 
+  devctl not happy.
+
+*core-services-2.3.1 (23 Apr 2009)
+
+  23 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.1.ebuild, -core-services-2.3.0.ebuild:
+  Mount /usr/local in ADMIN / AUDIT to allow X11 access.
+  Set USER_ADDR, rather than 127.0.0.1, as AUDIT's first (loopback)
+  address.
+
+*core-services-2.3.0 (22 Apr 2009)
+
+  22 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.3.0.ebuild, -core-services-2.2.3-r2.ebuild:
+  Port to kernel 2.6.28. Update cflags / nflags.
+
+*core-services-2.2.3-r2 (11 Mar 2009)
+
+  11 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.2.3-r2.ebuild, -core-services-2.2.3-r1.ebuild:
+
+*core-services-2.2.3-r1 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.2.3-r1.ebuild, -core-services-2.2.3.ebuild,
+  +files/fstab.admin.core-rm:
+  Add RM /etc/admin mounts in ADMINclip jail.
+
+*core-services-2.2.3 (22 Dec 2008)
+
+  22 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.2.3.ebuild, -core-services-2.2.2.ebuild:
+  Adjust to new multi-socket pwcheckd.
+
+*core-services-2.2.2 (22 Dec 2008)
+
+  22 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.2.2.ebuild, -core-services-2.2.1.ebuild:
+  Mount /var/pkg in ADMIN and AUDIT to allow inspection of 
+  the UPDATE status.
+
+*core-services-2.2.1 (08 Dec 2008)
+
+  08 Dec 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.2.1.ebuild, -core-services-2.2.0-r1.ebuild:
+  Fix clip_audit:stop().
+
+*core-services-2.2.0-r1 (18 Nov 2008)
+
+  18 Nov 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.2.0-r1.ebuild, -core-services-2.2.0.ebuild:
+  Add 'no_sp' nflag to UPDATEclip on GTW-UPDATE configurations.
+
+*core-services-2.2.0 (24 Oct 2008)
+
+  24 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.2.0.ebuild, -core-services-2.1.99-r1.ebuild:
+  Stabilize 'ng' stuff.
+
+*core-services-2.1.99-r1 (20 Oct 2008)
+
+  20 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.99-r1.ebuild, -core-services-2.1.99.ebuild:
+  Fix race condition when starting up AUDITclip.
+
+*core-services-2.1.99 (16 Oct 2008)
+
+  16 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.99.ebuild, -core-services-2.1.24.ebuild,
+  files/fstab.update.core-rm:
+  Do not mount /pkgs in update. Mount the whole /var/pkg of 
+  every RM jail in update.
+
+*core-services-2.1.24 (04 Sep 2008)
+
+  04 Sep 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.24.ebuild, -core-services-2.1.23.ebuild:
+  fstab.user: mount /bin without nosuid, to allow fuser to
+  be raised to CLSM_PRIV_PROCFD in USERclip.
+
+*core-services-2.1.23 (04 Jul 2008)
+
+  04 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.23.ebuild, -core-services-2.1.22.ebuild,
+  -files/fstab.user.clip-single:
+  Smallish mount permission fixes. Fstab.user.clip-single no
+  longer needed, since /tmp as a whole is now a session tmpfs.
+
+*core-services-2.1.22 (03 Jul 2008)
+
+  03 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.22.ebuild, -core-services-2.1.21.ebuild:
+  Fix the way we stop syslog-ng : kill it from ADMIN context
+  after running vsctl audit stop, since this is the only way 
+  the killing process can retain the inheritable CAP_SYS_BOOT
+  needed for killing it (because of CLSM_PRIV_IMMORTAL).
+
+*core-services-2.1.21 (01 Jul 2008)
+
+  01 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.21.ebuild, -core-services-2.1.20.ebuild:
+  Start AUDITclip with a double address: 127.0.0.1 and USER_ADDR,
+  to make sure it remains available in failsafe mode.
+
+*core-services-2.1.20 (01 Jul 2008)
+
+  01 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.20.ebuild, -core-services-2.1.19.ebuild:
+  Merge {ADMIN,AUDIT}_{ADDR,MASK} with USER_ADDR and USER_MASK
+  for now.
+
+*core-services-2.1.19 (03 Jun 2008)
+
+  03 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.19.ebuild, -core-services-2.1.18.ebuild:
+  Add failsafe mode when /var/run/nonetwork is present : 
+  bind ADMIN and AUDIT to 127.0.0.1.
+
+*core-services-2.1.18 (28 Apr 2008)
+
+  28 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.18.ebuild, -core-services-2.1.17.ebuild:
+  Add /etc/admin/ike2 mount in ADMINclip.
+
+*core-services-2.1.17 (13 Mar 2008)
+
+  13 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.17.ebuild, -core-services-2.1.16.ebuild:
+  Mount /update_root as /update, rather than /mounts/update_root.
+
+*core-services-2.1.16 (07 Jan 2008)
+
+  07 Jan 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.16.ebuild, -core-services-2.1.15.ebuild:
+  Add noatime,nolock to all proc and devpts mounts. Fixes bug #114.
+
+*core-services-2.1.15 (12 Dec 2007)
+
+  12 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.15.ebuild, -core-services-2.1.14-r1.ebuild:
+  Umount temporary USER mounts in main namespace in 
+  clip_user:stop() (bug #104). Add clip_audit to runlevel
+  nonetwork (bug #105).
+ 
+*core-services-2.1.14-r1 (05 Dec 2007)
+
+  05 Dec 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.14-r1.ebuild, -core-services-2.1.14.ebuild:
+  Switch clip-*net dependency to virtual/clip-net-virtual.
+
+*core-services-2.1.14 (28 Nov 2007)
+
+  28 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.14.ebuild, -core-services-2.1.13.ebuild:
+  /etc/init.d/clip_update: add a call to cleanup_log.sh to remove
+  leftover clip_install temp files. Needs busybox-update-1.6.1-r2.
+
+  07 Nov 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  Remove stale ebuilds before 2.1.13.
+
+*core-services-2.1.13 (30 Oct 2007)
+
+  30 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.13.ebuild:
+  Merge from EADS's 2.1.4-r3 : do not mount /backup/* in ADMINclip.
+
+*core-services-2.1.12 (19 Oct 2007)
+
+  19 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.12.ebuild:
+  Merge from EADS's 2.1.4-r2 : mount /backup/* in ADMINclip.
+
+*core-services-2.1.4-r3 (16 Oct 2007)
+
+  16 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +core-services-2.1.4-r3.ebuild:
+  Do not mount backup partitions in the ADMIN jail.
+
+*core-services-2.1.11 (16 Oct 2007)
+
+  16 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.11.ebuild:
+  Add CAP_SYS_TIME and CAP_NET_BIND_SERVICE to UPDATEclip for
+  ntpdate.
+
+*core-services-2.1.10 (12 Oct 2007)
+
+  12 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.10.ebuild:
+  Add pwcheckd to clip-user init script.
+
+*core-services-2.1.9 (10 Oct 2007)
+
+  10 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.9.ebuild:
+*core-services-2.1.9 (10 Oct 2007)
+
+  10 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.9.ebuild:
+*core-services-2.1.9 (10 Oct 2007)
+
+  10 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.9.ebuild:
+*core-services-2.1.9 (10 Oct 2007)
+
+  10 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.9.ebuild:
+  Use a private /var for the x11 tree, so as not to expose /var/run
+  to x11.
+
+*core-services-2.1.8 (09 Oct 2007)
+
+  09 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.8.ebuild:
+  Add CAP_SYS_TIME to ADMIN's bcaps so that we can set up the date
+  from inside the jail.
+
+*core-services-2.1.4-r2 (04 Oct 2007)
+
+  04 Oct 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +core-services-2.1.4-r2.ebuild:
+  Mount backup partitions in the ADMIN jail.
+
+*core-services-2.1.7 (02 Oct 2007)
+
+  02 Oct 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.7.ebuild, +files/fstab.upade.core-rm:
+  Merge EADS's 2.1.4-r1:
+    - mount /home/{admin,audit}clip on /home/{admin,audit} in 
+    AUDIT and ADMIN.
+    - mount /mounts/update_priv/pkgs.
+    - mount /mounts/admin_priv/var in UPDATE
+  Note: 
+    - no /var/syslog/log mount
+    - no individual files bind mounts for openssl and install_cert,
+    these are dealt with in their own packages.
+
+  
+*core-services-2.1.6-r2 (26 Sep 2007)
+
+  26 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.6-r2.ebuild:
+  Remove clip-lsm from IUSE.
+  Note: does not include changes from EADS's 2.1.4-r1.
+
+*core-services-2.1.6-r1 (19 Sep 2007)
+
+  19 Sep 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.6-r1.ebuild, files/fstab.user-core-rm:
+  Add 'nolock' option to /viewers mount, which is somewhat shared
+  between the rm_h and rm_b domains.
+  Note: does not include changes from EADS's 2.1.4-r1.
+
+*core-services-2.1.4-r1 (03 Sep 2007)
+
+  03 Sep 2007; EADS D&S <clipos@ssi.gouv.fr>
+  Modify AUDIT and ADMIN jail to mount the home directory
+  from /home/auditclip and /home/adminclip.
+
+  31 Aug 2007; EADS D&S <clipos@ssi.gouv.fr>
+  Mount /mounts/admin_priv/var into the UPDATE jail
+  to get the socket of downloadmaster.
+  Mount /var/syslog/log in the AUDIT jail instead of /var/log.
+
+  13 Aug 2007; EADS D&S <clipos@ssi.gouv.fr>
+  Add /etc/admin/net, /etc/admin/hostname, /etc/admin/psk.txt,
+  /usr/bin/openssl, /usr/bin/install_cert.
+
+  27 Jul 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +core-services-2.1.4-r1.ebuild:
+  Mount /mounts/update_priv/pkgs to /update/pkgs with rw
+  permissions.
+
+*core-services-2.1.6 (28 Aug 2007)
+
+  28 Aug 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.6.ebuild:
+  Import conf from /etc/admin/conf.d. Mount /etc/admin rw in
+  update. Add proper dependencies on clip_audit. Remove 
+  uses of /etc/contexts and vcontext.
+  
+*core-services-2.1.5 (24 Jul 2007)
+
+  24 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.5.ebuild, +files/fstab.user.clip-single, 
+  +files/fstab.user.core-rm:
+  Add 'hide_vinfo' flag to every jail.
+  Add IUSE clip-x11, x11 pseudo-jail an clip_x11 init script. All
+  init services are now dynamically added through a postinst script.
+  Removed multiple files in src tar : /etc/fstab.user provides a basic
+  fstab, which can be completed through ${FILESDIR}/fstab.user.*.
+  Removed nosuid from /usr/local mount for user view, since I can't
+  be bothered to track wether I need it or not, and suid root can now
+  be prevented altogether from clip-lsm. Subsequently removed java from
+  IUSE (that was an ugly kludge if I ever saw one).
+  Fixed cflags.
+
+*core-services-2.1.4 (16 Jul 2007)
+
+  16 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.4.ebuild:
+  Add /etc/shared and /etc/admin mounts.
+
+*core-services-2.1.3 (09 Jul 2007)
+
+  09 Jul 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.3.ebuild:
+  Fix update jail's fstab.external: rm mounts got somehow removed
+  in the way...
+
+*core-services-2.1.2 (21 Jun 2007)
+
+  21 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.2.ebuild:
+  Added admin jail. Create /tmp/tmp in user jail, to mount a 
+  per-user tmpfs.
+  
+*core-services-2.1.1 (18 Jun 2007)
+
+  18 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.1.ebuild:
+  Add support for connecting to the audit view through sshd.
+  The sshd daemon is started through a specific script, since
+  it needs to be launched after the networking setup.
+  Some fixes for update view : remove nosuid on / and /usr,
+  so that verictl and apt[http] can work again with latest
+  clsm.
+  
+*core-services-2.1.0 (08 Jun 2007)
+
+  08 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.1.0.ebuild:
+  Bump, added audit view.
+  
+*core-services-2.0.4 (01 Jun 2007)
+
+  01 Jun 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.0.4.ebuild:
+  Bump to switch clip_update init script to dynamic IP addresses
+  imported from /etc/conf.d/net. Some rc dependency fixes :
+  start update after reducecap, user before (for now).
+  Also support java in clip-single mode by allowing suid bits in
+  /usr/local in the USER jail.
+
+*core-services-2.0.3 (30 May 2007)
+
+  30 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.0.3.ebuild:
+  Bump, switches update jail to use busybox-update.
+
+*core-services-2.0.2 (10 May 2007)
+
+  10 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.0.2.ebuild:
+  Bump, add pseudo vsctl config for user jail, finer depends for
+  update init : wait for networking to be up.
+
+*core-services-2.0.1 (07 May 2007)
+
+  07 May 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.0.1.ebuild:
+  Bump 2.0 branch to merge new jails from 1.2.2. Bump RDEPEND 
+  for baselayout-clip so we get the matching contexts declarations.
+
+*core-services-1.2.2 (04 May 2007)
+
+  04 May 2007; EADS D&S <clipos@ssi.gouv.fr>
+  +core-services-1.2.2.ebuild:
+  Add secure_update_rm_h and secure_update_rm_b jails 
+  NB (Vincent Strubel) : originally committed as 1.2.1, renamed 
+  to 1.2.2 to avoid conflict with 2007/04/16 commit.
+
+*core-services-2.0 (26 Apr 2007)
+
+  26 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-2.0.ebuild:
+  Bump, switch to vsctl.
+
+*core-services-1.2.1 (16 Apr 2007)
+
+  16 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.2.1.ebuild:
+  Bump, mount /dev/pts in user *and* update view, if the mountpoint
+  is present (TODO : remember this hack and remove if possible).
+  Also do some more killing in user/update contexts when stopping.
+
+*core-services-1.2.0-r2 (11 Apr 2007)
+
+  11 Apr 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.2.0-r2.ebuild:
+  Remove veriexec ccap, which is no longer used with clip-lsm.
+
+*core-services-1.2.0-r1 (06 Feb 2007)
+
+  06 Feb 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.2.0-r1.ebuild:
+  Add clip-lsm support, give veriexec ccap to update context if 
+  USE clip-lsm is set.
+
+*core-services-1.2.0 (16 Jan 2007)
+
+  16 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.2.0.ebuild:
+  Add clip-single support : this changes the user and update fstabs.
+
+*core-services-1.1.1 (10 Jan 2007)
+
+  10 Jan 2007; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.1.1.ebuild:
+  Update flags, put same flags as rm_h/rm_b (as of clip-vserver-1.3.6).
+  
+*core-services-1.1.0 (21 Nov 2006)
+
+  21 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.1.0.ebuild:
+  Bump. Rename update to clip_update. Add clip_user script for 
+  user view. Add dedicated fstabs for both of these : fstab.{user,update}.
+  Those are parsed through clip-sub's mount.sub, which allows us to 
+  perform the corresponding mounts after the RM_H/RM_B vservers have
+  been started, and thus not to have to worry about namespace pollution.
+  N.B. : restarting the vservers is still a bit messy at the moment.
+
+*core-services-1.0.2 (13 Nov 2006)
+
+  13 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.0.2.ebuild:
+  Bump, adding vservers to init.d/update's dependencies.
+
+*core-services-1.0.1 (10 Nov 2006)
+
+  10 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.0.1.ebuild:
+  Bump. Make the update service (still cron) run in a very simple
+  vserver, with its IP bound to UPDATE_ADDR, and XID 501. Stopping 
+  is done by simply killing the cron process - which I'm not quite sure
+  is sufficient, but that's okay since we don't expect to be actually 
+  restarting this service short of a full reboot.
+
+*core-services-1.0 (10 Nov 2006)
+
+  10 Nov 2006; Vincent Strubel <clipos@ssi.gouv.fr>
+  +core-services-1.0.ebuild:
+  Initial import, limited to update service. For now, we simply
+  start cron in the update chroot.

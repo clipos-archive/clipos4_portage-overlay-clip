@@ -1,0 +1,7 @@
+crypt:user:/home/parts/&.part /home/keys/&.key /home/user noexec,nosuid,nodev,noatime 
+ext2,ext4:clip:/dev/mapper/_home_parts_&.part /home/user noexec,nosuid,nodev,noatime
+tmpfs:user:tmp /tmp noexec,nosuid,nodev,noatime,mode=1777,size=32M 
+@USEX@none:user:/var/run/X11-unix /tmp/.X11-unix bind,ro,noexec,nosuid,nodev,noatime 1
+crypt:rm_X:/home/rm_X/parts/&.part /home/rm_X/keys/&.key /user/home/user noexec,nosuid,nodev,noatime
+tmpfs:rm_X:tmp /user/tmp noexec,nosuid,nodev,noatime,mode=1777,size=256M
+tmpfs:rm_X:shm /user/dev/shm noexec,nosuid,nodev,noatime,mode=1777,size=256M

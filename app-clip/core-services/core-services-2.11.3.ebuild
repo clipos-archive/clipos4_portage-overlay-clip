@@ -1,0 +1,68 @@
+# Copyright © 2007-2018 ANSSI. All Rights Reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="core services for CLIP : core update, etc..."
+HOMEPAGE="https://www.ssi.gouv.fr"
+SRC_URI="mirror://clip/${P}.tar.xz"
+
+inherit deb
+
+LICENSE="LGPL-2.1+"
+SLOT="0"
+KEYWORDS="x86 amd64"
+IUSE="clip core-rm clip-x11 clip-rb"
+
+RDEPEND="
+		clip? (
+			>=clip-layout/baselayout-clip-1.11.0
+			>=sys-apps/busybox-update-1.6.1-r2
+			>=clip-layout/baselayout-core-adminpriv-1.1.0-r4
+			>=clip-layout/baselayout-core-auditpriv-1.0-r8
+			>=clip-layout/baselayout-core-userpriv-1.0-r5
+			>=app-clip/clip-generic-net-2.0.0
+			>=virtual/clip-net-virtual-2.0.3
+		)
+		>=app-admin/syslog-ng-1.6.9-r2
+		core-rm? ( >=app-clip/clip-vserver-2.3.0 )
+		>=app-clip/vsctl-1.3.0
+		>=sys-libs/glibc-2.3.6-r6
+		>=sys-auth/pwcheckd-1.1.0
+		>=clip-libs/clip-sub-1.3.10
+"
+
+src_install () {
+	local conf=""
+	use clip-x11 && conf="WITH_X11=1"
+	[[ "${ARCH}" =~ ^.*64$ ]] && conf+=" ARCH_64=1"
+	make DESTDIR="${D}" $conf install || die "make install failed"
+
+	# Extra mounts for the UPDATE jail should go there
+	dodir "/etc/jails/update/fstab.external.d"
+	# Or here (but I don't really see a use case)
+	dodir "/etc/jails/update/fstab.internal.d"
+
+	# Extra mounts for RM jails should go there
+	dodir "/etc/jails/rm_h/fstab.external.d"
+	dodir "/etc/jails/rm_b/fstab.external.d"
+
+	insinto "/etc/conf.d"
+	doins "${FILESDIR}/jail-net"
+
+	if use clip-rb; then
+		cat "${FILESDIR}/rb/jail-net" >> "${D}/etc/conf.d/jail-net"
+	fi
+}
+
+pkg_predeb() {
+	init_maintainer "postinst"
+
+	if use clip-x11; then
+		echo "/sbin/rc-update add clip_x11 default" >> "${D}"/DEBIAN/postinst
+	fi
+
+	init_maintainer "prerm"
+
+	if use clip-x11; then
+		echo "/sbin/rc-update del clip_x11 default" >> "${D}"/DEBIAN/prerm
+	fi
+}

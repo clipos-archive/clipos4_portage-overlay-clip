@@ -1,0 +1,3 @@
+# Masked pending stabilization off gcc 4.8+
+>=app-text/libwps-0.4.2
+>=app-office/libreoffice-5.0

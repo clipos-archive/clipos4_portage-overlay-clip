@@ -1,0 +1,12 @@
+--- js/scriptsafe.js.orig	2013-03-27 18:17:39.000000000 +0000
++++ js/scriptsafe.js	2013-03-27 18:19:47.636666576 +0000
+@@ -634,7 +634,8 @@
+ 			}
+ 		}
+ 	});
+-	importSyncHandle(0);
++	// Remove synchronization popup at first start
++	//importSyncHandle(0);
+ }
+ function importSyncHandle(mode) {
+ 	if (storageapi) {

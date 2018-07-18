@@ -1,0 +1,9 @@
+#!/bin/sh
+
+for jail in rm_h rm_b; do
+	if [[ -f "/vservers/${jail}/admin_priv/etc.admin/clip_install/optional.conf.rm" ]]; then
+		sed -i -e '/^klamav$/d' "/vservers/${jail}/admin_priv/etc.admin/clip_install/optional.conf.rm"
+		chown 4000:4000 "/vservers/${jail}/admin_priv/etc.admin/clip_install/optional.conf.rm"
+		chmod a+r "/vservers/${jail}/admin_priv/etc.admin/clip_install/optional.conf.rm"
+	fi
+done

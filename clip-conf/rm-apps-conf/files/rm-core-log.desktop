@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=RM CORE ChangeLog
+Name[fr]=Derniers changements RM-CORE
+Comment=Show last changes to RM core
+Comment[fr]=Afficher les derniers changements du coeur RM
+Exec=konqueror /etc/shared/rm-release.html
+Icon=help_index
+Terminal=false
+Type=Application
+StartupNotify=false
+

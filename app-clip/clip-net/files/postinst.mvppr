@@ -1,0 +1,16 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+for p in /etc/ike2/cert/*.ppr; do
+	if [[ -f "${p}" ]]; then
+		# No overwrites
+		[[ -f  "/mounts/admin_priv/etc.ike2/cert/$(basename "${p}")" ]] && continue
+
+		cp -a "${p}" "/mounts/admin_priv/etc.ike2/cert/$(basename "${p}")"
+		if [[ $? -ne 0 ]]; then
+			echo " ! Failed to copy ppr bundle : ${p} !" >&2
+			exit 1
+		fi
+	fi
+done

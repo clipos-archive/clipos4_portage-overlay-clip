@@ -1,0 +1,15 @@
+NETCONF_FILE="/etc/admin/netconf.d/default/net"
+NET_CONST_FILE="/etc/admin/conf.d/net"
+
+if [[ ! -e "${NET_CONST_FILE}" ]]; then
+	if [[ ! -e "${NETCONF_FILE}" ]]; then
+		echo " ! Missing ${NETCONF_FILE} !" >&2
+		exit 1
+	fi
+	
+	grep -E "^(USER|UPDATE|RM_H|RM_B|RMH|RMB|TLS)" "${NETCONF_FILE}" | \
+		grep -vE "_UPD|(RMH|UPDATE)_GW" > "${NET_CONST_FILE}"
+	chown 4000:4000 "${NET_CONST_FILE}"
+	chmod 644 "${NET_CONST_FILE}"
+fi
+

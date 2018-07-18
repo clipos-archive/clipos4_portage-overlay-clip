@@ -1,0 +1,9 @@
+/proc/acpi/button
+/proc/acpi/dsdt
+/proc/acpi/embedded_controller
+/proc/acpi/event
+/proc/acpi/fadt
+/proc/acpi/fan
+/proc/acpi/power_resource
+/proc/acpi/processor
+/proc/acpi/thermal_zone

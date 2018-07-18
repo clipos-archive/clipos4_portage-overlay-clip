@@ -1,0 +1,1209 @@
+# CLIP ChangeLog for clip-data/clip-hardware
+
+*clip-hardware-4.4.9 (10 Nov 2017)
+
+  10 Nov 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.9.ebuild, -clip-hardware-4.4.8-r2.ebuild:
+  Add support for HP EliteBook 820 G3.
+  Add kernel 4.9 compatible firmware for iwlwifi in ThinkPad X260/X270 and HP
+  EliteBook profiles.
+
+*clip-hardware-4.4.8-r2 (02 Nov 2017)
+
+  02 Nov 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.8-r2.ebuild, -clip-hardware-4.4.8-r1.ebuild,
+  files/_debian/postinst:
+  Revert previous commit.
+
+*clip-hardware-4.4.8-r1 (30 Oct 2017)
+
+  30 Oct 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.8-r1.ebuild, -clip-hardware-4.4.8.ebuild,
+  files/_debian/postinst:
+  Upgrade xorg-server configuration durant postinst.
+
+*clip-hardware-4.4.8 (18 Oct 2017)
+
+  18 Oct 2017; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.8.ebuild, -clip-hardware-4.4.7.ebuild:
+  Add support for Lenovo ThinkPad X270.
+
+*clip-hardware-4.4.7 (08 Aug 2017)
+
+  08 Aug 2017; Alain Ozanne <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.7.ebuild, -clip-hardware-4.4.6-r1.ebuild:
+  Add support for Dell E5570, and support for bz2 distfiles for kernel 4.4.
+
+*clip-hardware-4.4.6-r1 (03 Jul 2017)
+
+  03 Jul 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.6-r1.ebuild, -clip-hardware-4.4.6.ebuild:
+  Extend postinst script to force rebuilding initrd and make sure the script
+  completes with a "success" return code.
+
+*clip-hardware-4.4.6 (10 May 2017)
+
+  10 May 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.6.ebuild, -clip-hardware-4.4.5.ebuild:
+  Various fixes for 4.4 kernels (Webcam, SD card, backlight and Wifi
+  support improved for Toshiba, Lenovo and HP laptops).
+
+*clip-hardware-4.4.5 (20 Feb 2017)
+
+  20 Feb 2017; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.5.ebuild, -clip-hardware-4.4.4.ebuild:
+  Fix distfile.
+
+*clip-hardware-4.4.4 (17 Feb 2017)
+
+  17 Feb 2017; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.4.ebuild, -clip-hardware-4.4.3.ebuild:
+  Bump clip-hardware for 4.4 kernel
+
+  Switch distfiles extension for 4.4 to bz2 (previous was xz). Clip distfiles
+  usually are compressed using bz2 and clip tools expect that behavior (for
+  instance, clip-mkdistfiles produces bz2 files).
+
+*clip-hardware-3.14.31 (17 Feb 2017)
+
+  17 Feb 2017; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.31.ebuild, -clip-hardware-3.14.30.ebuild:
+  Add TPM support for X240
+
+*clip-hardware-3.14.30 (17 Feb 2017)
+
+  17 Feb 2017; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.30.ebuild, -clip-hardware-3.14.29.ebuild:
+  Add EFI support for Lenovo Thinkpad X240
+
+*clip-hardware-4.4.3 (01 Feb 2017)
+
+  01 Feb 2017; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.3.ebuild,-clip-hardware-4.4.2.ebuild:
+  Add profile for Lenovo ThinkPad X260
+  Fix Wifi and MMC reader on ThinkPad X250
+
+*clip-hardware-4.4.2 (10 Jan 2017)
+
+  10 Jan 2017; Nicolas Belouin <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.2.ebuild, -clip-hardware-4.4.1.ebuild:
+  Update profiles for Lenovo ThinkPad x250, Toshiba Portege R30,
+  HP ProBook 430 G2 for 4.4 kernel support
+
+*clip-hardware-4.4.1 (23 Nov 2016)
+
+  23 Nov 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.1.ebuild, -clip-hardware-4.4.ebuild:
+  Update profile for Intel NUC5I5RYK for 4.4 kernel support.
+
+*clip-hardware-4.4 (17 Aug 2016)
+
+  17 Aug 2016; Timothée Ravier <clipos@ssi.gouv.fr>
+  +clip-hardware-4.4.ebuild:
+  clip-kernel 4.4 support.
+
+*clip-hardware-3.14.29 (29 Jun 2016)
+
+  29 Jun 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.29.ebuild, -clip-hardware-3.14.28.ebuild:
+  Add profile for LENOVO ThinkPad X250.
+
+*clip-hardware-3.14.28 (30 Mar 2016)
+
+  30 Mar 2016; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.28.ebuild, -clip-hardware-3.14.27.ebuild:
+  Add profile for IBM System x3650 m4.
+
+*clip-hardware-3.14.27 (18 Mar 2016)
+
+  18 Mar 2016; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.27.ebuild, -clip-hardware-3.14.26.ebuild:
+  Add profile for Intel NUC D34010WYKH and NUC5I5RYK.
+  Add support for Intel Wireless on HP ProBook 430 G2.
+
+*clip-hardware-3.14.26 (09 Dec 2015)
+
+  09 Dec 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.26.ebuild, -clip-hardware-3.14.25.ebuild:
+  Add proper trackpad support for LENOVO Thinkpad L450
+
+*clip-hardware-3.14.25 (19 Nov 2015)
+
+  19 Nov 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.25.ebuild, -clip-hardware-3.14.24.ebuild:
+  Add WiFi support for Lenovo Thinkpad L450 hardware
+
+*clip-hardware-3.14.24 (07 Oct 2015)
+
+  07 Oct 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.24.ebuild, -clip-hardware-3.14.23-r1.ebuild:
+  Add support for LENOVO Thinkpad L450
+
+*clip-hardware-3.14.23-r1 (05 Oct 2015)
+
+  05 Oct 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.23-r1.ebuild, -clip-hardware-3.14.23.ebuild:
+  Update /etc/shared/video when it changes in the hardware profile.
+
+*clip-hardware-3.14.23 (29 Sep 2015)
+
+  29 Sep 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.23.ebuild, -clip-hardware-3.14.22-r1.ebuild:
+  Fix iwldvm loading on X240 and E5550.
+
+*clip-hardware-3.14.22-r1 (28 Sep 2015)
+
+  28 Sep 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.22-r1.ebuild, -clip-hardware-3.14.22.ebuild:
+  Bump the wireless-firmware dependency needed by the DELL Latitude E5550.
+
+*clip-hardware-3.14.22 (17 Sep 2015)
+
+  26 Aug 2015; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.22.ebuild, -clip-hardware-3.14.21.ebuild:
+  Add new profile for Dell Latitude E5550 and Thinkpad X240.
+
+*clip-hardware-3.14.21 (26 Aug 2015)
+
+  26 Aug 2015; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.21.ebuild, -clip-hardware-3.14.20.ebuild:
+  Fix ad hoc hardware shared scripts. Now really disable ethernet flow control
+  on systems using an Intel 82579LM NIC (clip-hardware-3.2.0).
+
+*clip-hardware-3.14.20 (17 Aug 2015)
+
+  17 Aug 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.20.ebuild, -clip-hardware-3.14.19.ebuild:
+  Update HP ProBook 430 G2 profile - improve graphics support.
+
+*clip-hardware-3.14.19 (10 Aug 2015)
+
+  10 Aug 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.19.ebuild, -clip-hardware-3.14.18.ebuild:
+  Add UEFI support for HP ProBook 430 G2
+
+*clip-hardware-3.14.18 (03 Aug 2015)
+
+  03 Aug 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.18.ebuild, -clip-hardware-3.14.17-r1.ebuild:
+  Add new profile for Dell PowerEdge R430 gateway.
+
+*clip-hardware-3.14.17-r1 (30 Jul 2015)
+
+  30 Jul 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.17-r1.ebuild, -clip-hardware-3.14.17.ebuild:
+  Postinst script installs profile' fw file in /etc
+
+*clip-hardware-3.14.17 (13 Jul 2015)
+
+  13 Jul 2015; Tony Cheneau <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.17.ebuild, -clip-hardware-3.14.16.ebuild:
+  Add wifi firmware path within the Lenovo Thinkpad L510 hardware profile.
+
+*clip-hardware-3.14.16 (19 Jun 2015)
+
+  19 Jun 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.16.ebuild, -clip-hardware-3.14.15.ebuild:
+  Add UEFI support for Toshiba Portege R30
+
+*clip-hardware-3.14.15 (16 Jun 2015)
+
+  16 Jun 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.15.ebuild, -clip-hardware-3.14.14.ebuild:
+  Differentiate firmware type in profiles
+  Add new profile for Microsoft Surface Pro 3
+
+*clip-hardware-3.14.14 (04 Jun 2015)
+
+  04 Jun 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.14.ebuild, -clip-hardware-3.14.13.ebuild:
+  Add AHCI module in DELL_Latitude_530 profile
+
+*clip-hardware-3.14.12 (23 Apr 2015)
+
+  23 Apr 2015; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.12.ebuild, -clip-hardware-3.14.11.ebuild:
+  Add a new hardware profile for KVM with OVMF bios
+
+*clip-hardware-3.14.11 (22 Apr 2015)
+
+  22 Apr 2015; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.11.ebuild, -clip-hardware-3.14.10.ebuild:
+  Update KVM profile, use cirrus KMS driver and modesetting DDX.
+
+*clip-hardware-3.14.9 (03 Apr 2015)
+
+  03 Apr 2015; ANSSI <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.9.ebuild, -clip-hardware-3.14.8.ebuild:
+  Add support for HP ProBook 430 G2.
+
+*clip-hardware-3.14.8 (05 Feb 2015)
+
+  05 Feb 2015; ANSSI <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.8.ebuild, -clip-hardware-3.14.7.ebuild:
+  Add support for Eurisko.
+
+*clip-hardware-3.14.7 (06 Jan 2015)
+
+  06 Jan 2015; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.7.ebuild, -clip-hardware-3.14.6.ebuild:
+  Re-add missing 'nonumlock' files.
+
+*clip-hardware-3.14.6 (29 Dec 2014)
+
+  29 Dec 2014; Thomas Letan <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.6.ebuild, -clip-hardware-3.14.5.ebuild:
+  Add virtio modules for KVM profile.
+
+*clip-hardware-3.14.5 (24 Nov 2014)
+
+  24 Nov 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.5.ebuild, -clip-hardware-3.14.4.ebuild:
+  Add backlight support with keyboard for the Latitude E5440 and remove useless
+  WMI driver.
+
+*clip-hardware-3.14.4 (27 Aug 2014)
+
+  27 Aug 2014; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.4.ebuild, -clip-hardware-3.14.3.ebuild:
+  Add support for Toshiba Portege R30.
+
+*clip-hardware-3.14.3 (30 Jul 2014)
+
+  30 Jul 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.3.ebuild, -clip-hardware-3.14.2.ebuild:
+  Add DELL WMI support for the Latitude E5440.
+
+*clip-hardware-3.14.2 (23 Jul 2014)
+
+  23 Jul 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.2.ebuild, -clip-hardware-3.14.1.ebuild:
+  Add support for DELL Latitude E5440 (add wireless-firmwares dependency).
+
+*clip-hardware-3.14.1 (17 Jun 2014)
+
+  17 Jun 2014; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.1.ebuild, -clip-hardware-3.14.0.ebuild:
+  Bump for 3.14.
+
+*clip-hardware-3.14.0 (11 Jun 2014)
+
+  11 Jun 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.14.0.ebuild, -clip-hardware-3.13.0.ebuild:
+  Bump for 3.14.
+
+*clip-hardware-3.13.0 (29 Apr 2014)
+
+  29 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.13.0.ebuild, -clip-hardware-3.3.0.ebuild:
+  Add Mirabox configs. Bump to 3.13.0, since this works
+  with clip-kernel-3.13+.
+
+*clip-hardware-3.3.0 (29 Apr 2014)
+
+  29 Apr 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.3.0.ebuild, -clip-hardware-3.2.11.ebuild:
+  Bump to a version fit for use with a 3.13+ kernel.
+
+*clip-hardware-3.2.11 (28 Fev 2014)
+
+  28 Fev 2014; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.11.ebuild, -clip-hardware-3.2.10.ebuild:
+  Add support for HP ProBook 6570b with radeon graphic cards.
+
+*clip-hardware-3.2.10 (27 Fev 2014)
+
+  27 Fev 2014; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.10.ebuild, -clip-hardware-3.2.9.ebuild:
+  Add support for HP ProBook 6570b.
+
+*clip-hardware-3.2.9 (29 Jan 2014)
+
+  29 Jan 2014; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.9.ebuild, -clip-hardware-3.2.8-r2.ebuild:
+  Add SD card support for some Dell (Latitude), Lenovo and HP laptops.
+
+*clip-hardware-3.2.8-r2 (08 Jan 2014)
+
+  08 Jan 2014; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.8-r2.ebuild, -clip-hardware-3.2.8-r1.ebuild:
+  Replace module-init-tools with kmod.
+
+*clip-hardware-3.2.8-r1 (30 Dec 2013)
+
+  30 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.8-r1.ebuild, -clip-hardware-3.2.8.ebuild:
+  Force rebuild to add openrc dependency.
+
+*clip-hardware-3.2.8 (11 Dec 2013)
+
+  11 Dec 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.8.ebuild, -clip-hardware-3.2.7.ebuild:
+  Add 'nonumlock' to Sony Vaio profiles.
+
+  30 Oct 2013; ANSSI <clipos@ssi.gouv.fr>:
+  Fixed dependency on read-edid for non-x86 architecture.
+
+*clip-hardware-3.2.7 (24 Oct 2013)
+
+  24 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.7.ebuild, -clip-hardware-3.2.6.ebuild:
+  Add 'nonumlock' flags in the profiles for DELL_Latitute_D{4,5}{2,3}0,
+  to disable running numlockx on those at X11 session start.
+  Running numlockx on those models seems to mess up the internal
+  keyboard, by forcing on the 'function' key.
+
+*clip-hardware-3.2.6 (09 Oct 2013)
+
+  09 Oct 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.6.ebuild, -clip-hardware-3.2.5-r2.ebuild:
+  Add support for DELL Latitude E5530.
+
+*clip-hardware-3.2.5-r2 (30 Aug 2013)
+
+  30 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.5-r2.ebuild, -clip-hardware-3.2.5-r1.ebuild,
+  files/_debian/postinst:
+  Fix postinst grep expression - that's why I should RTFM first.
+
+*clip-hardware-3.2.5-r1 (28 Aug 2013)
+
+  28 Aug 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.5-r1.ebuild, -clip-hardware-3.2.5.ebuild,
+  files/_debian/postinst:
+  Postinst script - fix bootargs update - keep crypt0/crypt1
+  parameter extracted from previous bootargs or /proc/cmdline.
+
+*clip-hardware-3.2.5 (05 Aug 2013)
+
+  05 Aug 2013; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.5.ebuild, -clip-hardware-3.2.4.ebuild:
+  Add support for iMac 9_1 and fix of the IdeaPad profile.
+
+*clip-hardware-3.2.4 (17 Jul 2013)
+
+  17 Jul 2013; Hugo Chargois <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.4.ebuild, -clip-hardware-3.2.3.ebuild:
+  Add Toshiba Portege R930 profile.
+
+*clip-hardware-3.2.3 (16 Jul 2013)
+
+  16 Jul 2013; Benjamin Morin <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.3.ebuild, -clip-hardware-3.2.1.ebuild:
+  Add Lenovo IdeaPad profile.
+
+*clip-hardware-3.2.1 (05 Jul 2013)
+
+  05 Jul 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.1.ebuild, -clip-hardware-3.2.0.ebuild:
+  Add profile for Lenovo ThinkStation S20.
+
+*clip-hardware-3.2.0 (12 Jun 2013)
+
+  12 Jun 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.2.0.ebuild, -clip-hardware-3.1.1.ebuild,
+  +files/hwconfig.initd, +files/_debian/prerm, 
+  files/_debian/postinst:
+  Add an init.d script to run hardware-specific configuration
+  scripts a nonetwork runlevel. These scripts are found in
+  ${PROFILE}/scripts, and may be links to common scripts 
+  in /usr/share/clip-hardware/scripts.
+  For now, only one script is used, to disable ethernet 
+  flow control on systems using an Intel 82579LM NIC, since
+  we've encountered issues with those.
+
+*clip-hardware-3.1.1 (24 May 2013)
+
+  24 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.1.1.ebuild, -clip-hardware-3.1.0-r1.ebuild:
+  Rename iwlagn to iwlwifi in profiles, remove snd-*-oss and
+  snd-ac97-codec from module lists.
+
+*clip-hardware-3.1.0-r1 (24 May 2013)
+
+  24 May 2013; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-hardware-3.1.0-r1.ebuild, -clip-hardware-3.1.0.ebuild,
+  +files/_debian/postinst:
+  Add IUSE clip-livecd, change ebuild so that it can be installed
+  on CLIP as well, without the scripts, dependencies, or detailed
+  hardware info. Add a postinst script in that case to update the 
+  system config files (modules, firmwares, power management) if 
+  a profile matching /etc/core/machine is found.
+
+*clip-hardware-3.1.0 (29 Apr 2013)
+
+  29 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +clip-hardware-3.1.0.ebuild, -clip-hardware-3.0.2.ebuild:
+  Add support for PANASONIC_Toughbook_CF19.
+
+  29 Apr 2013; ANSSI <clipos@ssi.gouv.fr>:
+  Support SD card for TOSHIBA_Portege_R830.
+
+*clip-hardware-3.0.2 (12 Apr 2013)
+
+  12 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.0.2.ebuild, -clip-hardware-3.0.1.ebuild:
+  Prevent clip-hardware-infos error without argument.
+
+*clip-hardware-3.0.1 (12 Apr 2013)
+
+  12 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.0.1.ebuild, -clip-hardware-3.0.0.ebuild:
+  Simplify clip-hardware-infos .
+
+*clip-hardware-3.0.0 (10 Apr 2013)
+
+  10 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-hardware-3.0.0.ebuild, -clip-installer-2.12.12.ebuild:
+  Move clip-installer:{hw_conf,get-hw-infos.sh} in a standalone package.
+  Each minor version (second number) should mean a new hardware configuration
+  support (starting from 46 main hardwares and 5 derivatives).
+
+  05 Apr 2013; Yves-Alexis Perez <clipos@ssi.gouv.fr>:
+  Add support for SONY_Vaio_Duo.
+
+*clip-installer-2.12.12 (03 Apr 2013)
+
+  03 Apr 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.12.ebuild, -clip-installer-2.12.11.ebuild:
+  Fix optional packages installation and ipsec backup.
+
+*clip-installer-2.12.11 (14 Jan 2013)
+
+  14 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.11.ebuild, -clip-installer-2.12.10.ebuild:
+  Do not care of proxy configuration (already in netconf.d).
+
+*clip-installer-2.12.10 (14 Jan 2013)
+
+  14 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.10.ebuild, -clip-installer-2.12.9.ebuild:
+  Install and backup rm_{h,b}/proxy.
+
+*clip-installer-2.12.9 (14 Jan 2013)
+
+  14 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.9.ebuild, -clip-installer-2.12.8.ebuild:
+  Install and backup rm_{h,b}/rm-session-type.
+
+*clip-installer-2.12.8 (09 Jan 2013)
+
+  09 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.8.ebuild, -clip-installer-2.12.7.ebuild:
+  Fix encrypted installations.
+  Fix configuration cleanup.
+
+*clip-installer-2.12.7 (08 Jan 2013)
+
+  09 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.7.ebuild, -clip-installer-2.12.6.ebuild:
+  Fix initial minimal etc creation.
+
+*clip-installer-2.12.6 (08 Jan 2013)
+
+  08 Jan 2013; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.6.ebuild, -clip-installer-2.12.5.ebuild:
+  Fix clip-disk call.
+
+*clip-installer-2.12.4 (17 Dec 2012)
+
+  17 Dec 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.4.ebuild, -clip-installer-2.12.3.ebuild:
+  Fix usb_keys files matching.
+
+*clip-installer-2.12.3 (17 Dec 2012)
+
+  17 Dec 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.3.ebuild, -clip-installer-2.12.2.ebuild:
+  save.sh - Add missing configuration files.
+  common.sh - Strict file listing.
+
+*clip-installer-2.12.2 (13 Dec 2012)
+
+  13 Dec 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.2.ebuild, -clip-installer-2.12.1.ebuild:
+  Fix save.sh: pkcs11, no symlink, netconf.
+  Merge mount_fs with clip-install-gui:clip-postinst-common .
+
+*clip-installer-2.12.1 (12 Nov 2012)
+
+  12 Nov 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.1.ebuild, -clip-installer-2.12.0.ebuild:
+  Fix APT key import.
+  Update HP_2760p modules.
+
+*clip-installer-2.12.0 (06 Nov 2012)
+
+  06 Nov 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.12.0.ebuild, -clip-installer-2.11.16.ebuild:
+  Use "cacerts" and "private" directory for APT and IKE2 certificate & key.
+
+  31 Oct 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>:
+  Add support for HP_2760p.
+
+*clip-installer-2.11.16 (26 Oct 2012)
+
+  26 Oct 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.16.ebuild, -clip-installer-2.11.15.ebuild:
+  Fix list_optional command line.
+  Add more modules and firmwares.
+
+  02 Oct 2012; Yves-Alexis Perez <clipos@ssi.gouv.fr>:
+  Add support for:
+  - SONY_Vaio_T13
+  - LENOVO_Thinkpad_X230
+  - DELL_Latitude_ST
+  - HP_Slate_2
+
+*clip-installer-2.11.15 (18 Sep 2012)
+
+  18 Sep 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.15.ebuild, -clip-installer-2.11.14.ebuild:
+  Fix saved audit SSH keys.
+
+*clip-installer-2.11.14 (07 Sep 2012)
+
+  07 Sep 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.14.ebuild, -clip-installer-2.11.13.ebuild:
+  Add a 'type' field for those hardware profiles that are not 
+  laptops.
+
+*clip-installer-2.11.13 (30 Jul 2012)
+
+  30 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.13.ebuild, -clip-installer-2.11.12.ebuild:
+  Fix ssh host key perms in clip2.
+
+*clip-installer-2.11.12 (20 Jul 2012)
+
+  20 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.12.ebuild, -clip-installer-2.11.11.ebuild:
+  Revert some of the changes to APT cert directory, which were
+  merged a tad too soon in the previous two releases.
+
+*clip-installer-2.11.11 (19 Jul 2012)
+
+  19 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.11.ebuild, -clip-installer-2.11.10.ebuild:
+  TOSHIBA_Portege_R830 - add toshiba-acpi and xhci.
+  Add thinkpad-acpi to LENOVO configs.
+
+*clip-installer-2.11.10 (19 Jul 2012)
+
+  19 Jul 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.10.ebuild, -clip-installer-2.11.9.ebuild:
+  Add TOSHIBA_Portege_R830.
+
+*clip-installer-2.11.9 (01 Jun 2012)
+
+  01 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.9.ebuild, -clip-installer-2.11.8.ebuild:
+  Update DELL_LATITUDE_E6320 - add wifi support.
+
+*clip-installer-2.11.8 (01 Jun 2012)
+
+  01 Jun 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.8.ebuild, -clip-installer-2.11.7.ebuild:
+  Create /etc/conf.d/jail-net file for CLIP >= 4.3.4.
+
+*clip-installer-2.11.7 (24 May 2012)
+
+  24 May 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.7.ebuild, -clip-installer-2.11.6.ebuild:
+  Force vesa frequency to 60 MHz.
+  Add formfactor (information-only) file.
+  Add harware profile DELL_OptiPlex_GX620{,+igb}.
+  Rename DELL_OptiPlex_780{,+via+8139} and remove soft RAID.
+
+*clip-installer-2.11.6 (02 May 2012)
+
+  02 May 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.6.ebuild, -clip-installer-2.11.5.ebuild:
+  Temporary fix crypto installation (with null size bootargs) for some hardware
+  profiles.
+
+*clip-installer-2.11.5 (02 May 2012)
+
+  02 May 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.5.ebuild, -clip-installer-2.11.4.ebuild:
+  Add DELL_PE2950.
+  Fix get-hw-infos.sh - hard drive detection.
+
+*clip-installer-2.11.4 (20 Apr 2012)
+
+  20 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.4.ebuild, -clip-installer-2.11.3.ebuild:
+  Get EDID with get-hw-infos.sh.
+  Add hardware profiles:
+  - LENOVO_Thinkpad_L520 (Core-i3 or Celeron, with Wi-Fi)
+  - IBM_System_x3250_M3
+  - IBM_System_x3250_M3+igb (ethernet card extension)
+  Fix audit pubkeys premissions.
+
+*clip-installer-2.11.3 (20 Apr 2012)
+
+  20 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.3.ebuild, -clip-installer-2.11.2.ebuild:
+  Change admin/audit pubkeys install path to .ssh-remote.
+
+*clip-installer-2.11.2 (03 Apr 2012)
+
+  03 Apr 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.2.ebuild, -clip-installer-2.11.1.ebuild:
+  Fix uvesafb bootargs.
+
+*clip-installer-2.11.1 (02 Apr 2012)
+
+  02 Apr 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.1.ebuild, -clip-installer-2.11.0.ebuild:
+  Add user_root/etc/known_hosts generation to configuration step. 
+
+*clip-installer-2.11.0 (28 Mar 2012)
+
+  28 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.11.0.ebuild, -clip-installer-2.10.19.ebuild:
+  Add hardware profiles IBM_System_x3650_M2.
+  Add Matrox driver to HP_ProLiant_DL360_G7 DELL_PE_R610 and IBM_System_x3550_M3
+  New script get-hw-infos.sh
+
+  28 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  clip-installer-2.10.18.ebuild:
+  Clean hardware info samples.
+
+*clip-installer-2.10.18 (19 Mar 2012)
+
+  19 Mar 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.18.ebuild, -clip-installer-2.10.17.ebuild:
+  Fix AC rights.
+
+*clip-installer-2.10.17 (29 Feb 2012)
+
+  29 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.17.ebuild, -clip-installer-2.10.16.ebuild:
+  Add DELL_Optiplex_780-raid-3nic hardware profile.
+
+*clip-installer-2.10.16 (13 Feb 2012)
+
+  13 Feb 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.16.ebuild, -clip-installer-2.10.15.ebuild:
+  Add hardware profiles:
+  - DELL_PE_R610-optique
+  - HP_ProLiant_DL360_G7
+  - IBM_System_x3550_M3
+  - LENOVO_Thinkpad_X220t
+  Cleanup scsi_transport_* and megaraid* from DELL_PE* modules.
+  Fix DELL_PE* display driver.
+
+*clip-installer-2.10.15 (31 Jan 2012)
+
+  31 Jan 2012; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.15.ebuild, -clip-installer-2.10.14.ebuild:
+  Fix optional packages installation.
+
+*clip-installer-2.10.14 (02 Jan 2012)
+
+  02 Jan 2012; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.14.ebuild, -clip-installer-2.10.13.ebuild:
+  Remove useless video= boot arguments in KMS hardware profiles.
+
+*clip-installer-2.10.13 (28 Dec 2011)
+
+  28 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.13.ebuild, -clip-installer-2.10.12.ebuild:
+  Support installing 'devices' config file.
+
+*clip-installer-2.10.12 (14 Dec 2011)
+
+  14 Dec 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.12.ebuild, -clip-installer-2.10.11.ebuild:
+  Support installing an alternate net config + strongswan.algos.
+  Fix clip-gtw update keys path.
+
+*clip-installer-2.10.11 (24 Nov 2011)
+
+  24 Nov 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.11.ebuild, -clip-installer-2.10.10.ebuild:
+  Update H/W confs - change module names for kernel 3.1.2.
+  Add LENOVO_Thinkpad_R61 hardware conf.
+
+*clip-installer-2.10.10 (20 Oct 2011)
+
+  20 Oct 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.10.ebuild, -clip-installer-2.10.9.ebuild:
+  Add LENOVO_Thinkpad_L420 hardware profile.
+
+*clip-installer-2.10.9 (06 Sep 2011)
+
+  06 Sep 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.9.ebuild, -clip-installer-2.10.8.ebuild:
+  Add DELL_Latitude_E5520 hardware profile.
+
+*clip-installer-2.10.8 (19 Aug 2011)
+
+  19 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.8.ebuild, -clip-installer-2.10.7.ebuild:
+  Better support for NOCONF install.
+
+*clip-installer-2.10.7 (09 Aug 2011)
+
+  09 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.7.ebuild, -clip-installer-2.10.6.ebuild:
+  Add missing ath5k module to Thinkpad X200 hardware config.
+  Support openRC.
+
+*clip-installer-2.10.6 (04 Aug 2011)
+
+  04 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.6.ebuild, -clip-installer-2.10.5.ebuild:
+  Change module names for kernel 2.6.39 : brcmsmac, hda-codec-hdmi.
+
+*clip-installer-2.10.5 (01 Aug 2011)
+
+  01 Aug 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.5.ebuild, -clip-installer-2.10.4.ebuild:
+  Initialize optional.list files for optional package management
+  within freshly installed CLIP (up to the first successful 
+  download).
+
+*clip-installer-2.10.4 (29 Jul 2011)
+
+  29 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.4.ebuild, -clip-installer-2.10.3.ebuild:
+  Add iwlwifi firmwares to hw configs that use iwlagn.
+
+*clip-installer-2.10.3 (19 Jul 2011)
+
+  19 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.3.ebuild, -clip-installer-2.10.2.ebuild,
+  -clip-installer-2.8.12.ebuild:
+  Add KVM virtual hardware profile.
+  Remove old.
+
+*clip-installer-2.10.2 (12 Jul 2011)
+
+  12 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.2.ebuild, -clip-installer-2.10.1.ebuild:
+  Add DELL_Latitude_E6320 hardware profile.
+
+*clip-installer-2.10.1 (08 Jul 2011)
+
+  08 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.1.ebuild, -clip-installer-2.10.0.ebuild:
+  Fix conf files permissions when config tree lies on a read-only
+  filesystem.
+  Add support for leds configuration in hardware profile.
+
+*clip-installer-2.10.0 (05 Jul 2011)
+
+  05 Jul 2011; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.10.0.ebuild, -clip-installer-2.9.1.ebuild:
+  Add support for (clip-hermes) level specific configuration.
+
+*clip-installer-2.9.1 (01 Jul 2011)
+
+  01 Jul 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.9.1.ebuild, -clip-installer-2.9.0.ebuild:
+  Add support for LENOVO Thinkpad L510.
+
+*clip-installer-2.9.0 (28 Mar 2011)
+
+  28 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.9.0.ebuild, -clip-installer-2.8.13.ebuild:
+  Support full-disk encryption.
+
+*clip-installer-2.8.13 (25 Mar 2011)
+
+  25 Mar 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.13.ebuild:
+  Bind-mount /dev on installs, to go with the new tmpfs /dev.
+  Only ~x86 only for now as this would break installs before
+  4.2.1.
+
+*clip-installer-2.8.12 (07 Feb 2011)
+
+  07 Feb 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.12.ebuild, -clip-installer-2.8.11.ebuild:
+  Add DELL Latitude 13 config. Fix bootloader menu versions.
+
+*clip-installer-2.8.11 (17 Jan 2011)
+
+  17 Jan 2011; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.11.ebuild, -clip-installer-2.8.10.ebuild:
+  Fix user creation with newer clip-sub. Add PKCS11 CA cert install.
+
+*clip-installer-2.8.9 (06 Dec 2010)
+
+  06 Dec 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.9.ebuild, -clip-installer-2.8.8.ebuild:
+  Fix certificate import.
+
+*clip-installer-2.8.8 (19 Nov 2010)
+
+  19 Nov 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.8.ebuild, -clip-installer-2.8.7.ebuild:
+  Fix typo in /home/parts path.
+
+*clip-installer-2.8.7 (18 Nov 2010)
+
+  18 Nov 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.7.ebuild, -clip-installer-2.8.6.ebuild:
+  Install multiple certificate for clip_download (*.pem).
+
+*clip-installer-2.8.6 (29 Oct 2010)
+
+  29 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.6.ebuild, -clip-installer-2.8.5.ebuild:
+  Do not install params/conf.d/net file except on gtw configs.
+  Add TOSHIBA L630 12F config.
+
+*clip-installer-2.8.5 (19 Oct 2010)
+
+  19 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.5.ebuild, -clip-installer-2.8.4.ebuild:
+  Real fix for update key path.
+  Add SAMSUNG N230 HW config.
+
+*clip-installer-2.8.4 (18 Oct 2010)
+
+  18 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.4.ebuild, -clip-installer-2.8.3.ebuild:
+  Fix typo in update key path.
+
+*clip-installer-2.8.3 (11 Oct 2010)
+
+  11 Oct 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.3.ebuild, -clip-installer-2.8.2.ebuild:
+  Switch to a single, configurable gateway install. Move update
+  keys to mirrors rather than conf profile. Add PE2900 non-optical
+  config. Support optionnal SSH pubkeys on install.
+
+*clip-installer-2.8.2 (20 Sep 2010)
+
+  20 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.2.ebuild, -clip-installer-2.8.1.ebuild:
+  Support both chrooted and non-chrooted postinstall scripts.
+
+*clip-installer-2.8.1 (13 Sep 2010)
+
+  13 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.1.ebuild, -clip-installer-2.8.0.ebuild:
+  Small changes to create_user script - use same temporary 
+  mount point as userd (/var/tmp/newuser), pass that path as
+  first argument to user creation scripts.
+
+*clip-installer-2.8.0 (07 Sep 2010)
+
+  07 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.8.0.ebuild, -clip-installer-2.7.3.ebuild:
+  New user creation scheme, based on params/users.list. 
+  Support custom scripts from /mnt/cdrom/install_scripts - run
+  after installing - and /mnt/cdrom/user_scripts - copied to 
+  /etc/clip-useradd.d and run at each user partition initialization.
+
+*clip-installer-2.7.3 (03 Sep 2010)
+
+  03 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.7.3.ebuild, -clip-installer-2.7.2.ebuild:
+  Add DELL_Latitude_E4310 HW conf.
+
+*clip-installer-2.7.2 (01 Sep 2010)
+
+  01 Sep 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.7.2.ebuild, -clip-installer-2.7.1.ebuild:
+  Fix typo in install of conf/net.
+
+*clip-installer-2.7.1 (27 Aug 2010)
+
+  27 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.7.1.ebuild, -clip-installer-2.7.0.ebuild:
+  Fix install perms.
+
+*clip-installer-2.7.0 (26 Aug 2010)
+
+  26 Aug 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.7.0.ebuild, -clip-installer-2.6.9.ebuild:
+  Add install of initial net config for newer clip-generic-net
+  postinst. Fix SCREEN_GEOM typo. Switch to debootstrap-1.* and
+  add automatic extraction of optional dependencies.
+
+*clip-installer-2.6.9 (28 Jul 2010)
+
+  28 Jul 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.9.ebuild, -clip-installer-2.6.8.ebuild:
+  Add 'video' parameter to hardware configs, and install it.
+
+*clip-installer-2.6.8 (04 Jun 2010)
+
+  04 Jun 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.8.ebuild, -clip-installer-2.6.7.ebuild:
+  Add Lenovo R500 hw conf. Add missing wifi drivers for thinkpads.
+  Add missing hso driver to all laptop configs.
+
+*clip-installer-2.6.7 (21 May 2010)
+
+  21 May 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.7.ebuild, -clip-installer-2.6.6.ebuild:
+  Add LENOVO X60.
+  Install /etc/conf.d/power from hw_conf.
+
+*clip-installer-2.6.6 (28 Apr 2010)
+
+  28 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.6.ebuild, -clip-installer-2.6.5.ebuild:
+  Fix typo in SSH key copy introduced in 2.6.0.
+
+*clip-installer-2.6.5 (19 Apr 2010)
+
+  19 Apr 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.5.ebuild, -clip-installer-2.6.4.ebuild:
+  Fix sound driver on LENOVO_X200 config.
+
+*clip-installer-2.6.4 (24 Mar 2010)
+
+  24 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.4.ebuild, -clip-installer-2.6.3.ebuild:
+  Switch HW configs to intel KMS, when supported.
+
+*clip-installer-2.6.3 (05 Mar 2010)
+
+  05 Mar 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.3.ebuild, -clip-installer-2.6.2.ebuild:
+  Add support for initial firmwares. Add DELL PE R610 hw conf.
+
+*clip-installer-2.6.2 (03 Mar 2010)
+
+  03 Mar 2010; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.2.ebuild, -clip-installer-2.6.1.ebuild:
+  Rewrite properly compute_parts.sh. Moreover, RAID support and
+  CLIP_TYPE are now two decorelated parameters at installation.
+
+*clip-installer-2.6.1 (19 Feb 2010)
+
+  19 Feb 2010; Mickaël Salaün <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.1.ebuild, -clip-installer-2.6.0.ebuild:
+  Add /etc/ipsec.secrets link if needed.
+
+*clip-installer-2.6.0 (28 Jan 2010)
+
+  28 Jan 2010; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.6.0.ebuild, -clip-installer-2.5.2.ebuild:
+  Add DELL PE2900 (gateway) hardware config.
+  Fix some errors on missing param/conf files.
+  Support CLIP-RM configs with only one RM jail.
+
+*clip-installer-2.5.2 (15 Dec 2009)
+
+  15 Dec 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.5.2.ebuild, -clip-installer-2.5.1.ebuild:
+  Add thinkpad-crt to modules for Thinkpads.
+
+*clip-installer-2.5.1 (18 Nov 2009)
+
+  18 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.5.1.ebuild, -clip-installer-2.5.0.ebuild:
+  Add LENOVO X200 + only copy public keys from usb_keys...
+
+*clip-installer-2.5.0 (10 Nov 2009)
+
+  10 Nov 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.5.0.ebuild, -clip-installer-2.4.3.ebuild:
+  Install HW conf from HW confs dir only.
+
+*clip-installer-2.4.3 (13 Oct 2009)
+
+  13 Oct 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.4.3.ebuild, -clip-installer-2.4.2.ebuild:
+  Add HW confs.
+
+*clip-installer-2.4.2 (18 Sep 2009)
+
+  18 Sep 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.4.2.ebuild, -clip-installer-2.4.1.ebuild:
+  Fix some failures when no usb keys or ike2 keys are installed.
+  Automatically read SCREEN_GEOM from the bootargs file when 
+  -s is not passed by the user.
+
+*clip-installer-2.4.1 (19 Jun 2009)
+
+  19 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.4.1.ebuild, -clip-installer-2.4.0.ebuild:
+  Fix installation of update checking keys.
+
+*clip-installer-2.4.0 (18 Jun 2009)
+
+  18 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.4.0.ebuild, -clip-installer-2.3.0.ebuild:
+  Switch to cleaner config tree structure, with params/ for
+  installation-only params, and conf/ for everything that
+  is later modifiable by the ADMIN.
+  Put usermod.sh in the installer as well.
+
+*clip-installer-2.3.0 (12 Jun 2009)
+
+  12 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.3.0.ebuild, -clip-installer-2.2.5.ebuild:
+  Switch to netconf networking profiles.
+
+*clip-installer-2.2.5 (10 Jun 2009)
+
+  10 Jun 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.2.5.ebuild, -clip-installer-2.2.4.ebuild:
+  Support installation with configuration but without removing
+  user data.
+  Properly initialize cached copies of optional package lists.
+
+*clip-installer-2.2.4 (13 May 2009)
+
+  13 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.2.4.ebuild, -clip-installer-2.2.3.ebuild:
+  Fix save_conf() call in configure.sh.
+
+*clip-installer-2.2.3 (07 May 2009)
+
+  07 May 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.2.3.ebuild, -clip-installer-2.2.2.ebuild:
+  Support optional packages initialization for CLIP and RM.
+  Support new cryptd.algos config file.
+
+*clip-installer-2.2.2 (23 Apr 2009)
+
+  23 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.2.2.ebuild, -clip-installer-2.2.1.ebuild:
+  Fix ssh key paths, for newest CLIP version with X11 forwarding
+  to ADMIN and AUDIT.
+
+*clip-installer-2.2.1 (08 Apr 2009)
+
+  08 Apr 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.2.1.ebuild, -clip-installer-2.2.0.ebuild:
+  Fix sourcing path, and unneeded cp -a calls that fail on 
+  FAT mounts. Fix mirror paths.
+
+*clip-installer-2.2.0 (30 Mar 2009)
+
+  30 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.2.0.ebuild, -clip-installer-2.1.2.ebuild:
+  Support saving / restoring existing CLIP configurations.
+
+*clip-installer-2.1.2 (11 Mar 2009)
+
+  11 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.1.2.ebuild, -clip-installer-2.1.1.ebuild:
+  Correctly initialize the download caches.
+
+*clip-installer-2.1.1 (10 Mar 2009)
+
+  10 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.1.1.ebuild, -clip-installer-2.1.0.ebuild:
+  Remove RM ADMIN jails.
+  Support extra packages in debootstrap.
+  Initialize usb keys configuration.
+
+*clip-installer-2.1.0 (06 Mar 2009)
+
+  06 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.1.0.ebuild, -clip-installer-2.0.ebuild:
+  Switch to new, dynamic debootstrap-clip (no PKGFILE).
+  Correctly initialize the local mirrors.
+  Initialize the installation caches.
+  Install initial IKEv2 keys with proper ownership.
+  Mark 'x86'.
+
+*clip-installer-2.0 (14 Jan 2009)
+
+  14 Jan 2009; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-2.0.ebuild, -clip-installer-1.99.ebuild:
+  Switch to modular-only installs.
+
+*clip-installer-1.99 (17 Oct 2008)
+
+  17 Oct 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.99.ebuild, -clip-installer-1.12.ebuild:
+  New pre-release, for CLIP-NG. Updated mirror paths + added
+  initialization of install caches on the installed system.
+
+*clip-installer-1.12 (28 Jul 2008)
+
+  28 Jul 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-installer-1.12.ebuild, -clip-installer-1.11.ebuild:
+  Support the kind of mirrors used by the update server.
+
+*clip-installer-1.11 (16 Jul 2008)
+
+  16 Jul 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.11.ebuild, -clip-installer-1.10.ebuild:
+  Support new loop-mounted /home/adminrmX.
+
+*clip-installer-1.10 (19 Jun 2008)
+
+  19 Jun 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.10.ebuild, -clip-installer-1.9.ebuild:
+  Install cacert.pem file.
+  Switch to gentoo-ish console output using /sbin/functions.sh.
+  Quiet debootstrap run by default, with an optional verbose
+  mode.
+
+*clip-installer-1.9 (30 Apr 2008)
+
+  30 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.9.ebuild, -clip-installer-1.8.ebuild:
+  Add config files for clip-gtw installs.
+
+*clip-installer-1.8 (28 Apr 2008)
+
+  28 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.8.ebuild, -clip-installer-1.7.ebuild:
+  Support /etc/admin/ike2 as a separate mount.
+
+*clip-installer-1.7 (24 Apr 2008)
+
+  24 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.7.ebuild, -clip-installer-1.6.ebuild:
+  Enforce correct ownership on admin files copied into /etc/admin
+  by configure.sh.
+
+*clip-installer-1.6 (21 Apr 2008)
+
+  21 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.6.ebuild, -clip-installer-1.5.ebuild:
+  Add RSA export keys installation to the configure sequence, to
+  bootstrap the USB drive support.
+
+*clip-installer-1.5 (09 Apr 2008)
+
+  09 Apr 2008; Olivier Levillain <clipos@ssi.gouv.fr>
+  +clip-installer-1.5.ebuild, -clip-installer-1.4.ebuild:
+  Live-CD capable clip-install. Two new switches : select configuration
+  root, and enable real boot mount.
+
+*clip-installer-1.4 (08 Apr 2008)
+
+  08 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.4.ebuild, -clip-installer-1.3.ebuild:
+  Add support for non clip-devel package list. clip-devel
+  lists are only selected when a -D switch is passed on 
+  the command line.
+
+*clip-installer-1.3 (07 Apr 2008)
+
+  07 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.3.ebuild, -clip-installer-1.2.ebuild:
+  Fix initial ccsd cert install some more :)
+
+*clip-installer-1.2 (07 Apr 2008)
+
+  07 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.2.ebuild, -clip-installer-1.1.ebuild:
+  Fix initial ccsd cert install.
+
+*clip-installer-1.1 (03 Apr 2008)
+
+  03 Apr 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.1.ebuild, -clip-installer-1.0.ebuild:
+  Bump, adjust to new operationnal CCSD.
+
+*clip-installer-1.0 (21 Mar 2008)
+
+  21 Mar 2008; Vincent Strubel <clipos@ssi.gouv.fr>
+  +clip-installer-1.0.ebuild:
+  Initial import.

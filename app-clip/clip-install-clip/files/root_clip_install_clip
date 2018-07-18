@@ -1,0 +1,1 @@
+0 * * * *       /bin/ionice -c 3 -- /usr/bin/nice -n 15 /usr/bin/clip_install -d clip -p apps > /var/log/clip_install_clip_apps.log 2>&1

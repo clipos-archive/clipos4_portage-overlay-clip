@@ -1,0 +1,5 @@
+# ChangeLog for clip-dev/amd64 profile directory
+
+  12 Jun 2014; Yves-Alexis Perez <clipos@ssi.gouv.fr>
+  +ChangeLog, +make.defaults, +package.keywords, +package.use, +parent:
+  Initial import, from clip-dev/x86.

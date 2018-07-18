@@ -1,0 +1,56 @@
+diff -pruN zindus.jar.orig/content/zindus/contactconverter.js zindus.jar.new/content/zindus/contactconverter.js
+--- zindus.jar.orig/content/zindus/contactconverter.js	2010-08-24 18:25:38.000000000 +0200
++++ zindus.jar.new/content/zindus/contactconverter.js	2010-08-24 18:32:54.000000000 +0200
+@@ -417,6 +417,7 @@ isKeyConverted : function(format_to, for
+ crc32 : function(properties, a_extra) {
+ 	let ret = 0;
+ 	let str = "";
++	let cur_prop = "";
+ 	let aSorted = new Array();
+ 
+ 	for (var i in properties)
+@@ -433,7 +434,11 @@ crc32 : function(properties, a_extra) {
+ 
+ 	function callback_concat_str(element, index, array) {
+ 		let key = self.m_equivalents[index][FORMAT_TB];
+-		str += key + ":" + properties[key];
++		cur_prop = properties[key];
++		// (NC) les clefs de type prefix_tb_property_in_zimbra doivent être modifiées pour être égales aux clefs de TB
++		key = key.replace(ContactConverterStatic.prefix_tb_property_in_zimbra,"");
++		str += key + ":" + cur_prop;
++		// str += key + ":" + properties[key];
+ 	}
+ 
+ 	// after this, str == FirstName:FredLastName:BloggsDisplayName:Fred BloggsPrimaryEmail:fred.bloggs@example.com
+diff -pruN zindus.jar.orig/content/zindus/syncfsm.js zindus.jar.new/content/zindus/syncfsm.js
+--- zindus.jar.orig/content/zindus/syncfsm.js	2010-08-24 18:25:38.000000000 +0200
++++ zindus.jar.new/content/zindus/syncfsm.js	2010-08-24 18:32:54.000000000 +0200
+@@ -1345,11 +1345,14 @@ SyncFsm.prototype.exitActionGetAccountIn
+ 
+ 	if (scheme_url)
+ 		newSoapURL = scheme_url;
+-	else
++	else if (functor.a.length > 1)
+ 		newSoapURL = functor.a[0];
++ 	else
++		newSoapURL = this.state.zidbag.soapUrl();
+ 
+-	if (newSoapURL != this.state.zidbag.soapUrl())
+-		this.state.suggestedSoapURL = String(newSoapURL);
++	//if (newSoapURL != this.state.zidbag.soapUrl())
++	//	this.state.suggestedSoapURL = String(newSoapURL);
++	this.state.suggestedSoapURL = String(newSoapURL);
+ 
+ 	this.state.m_logger.debug("exitActionGetAccountInfo: suggestedSoapURL: " + this.state.suggestedSoapURL);
+ }
+@@ -9681,7 +9684,9 @@ SyncFsm.prototype.initialiseState = func
+ 	state.m_folder_converter       = new FolderConverter();
+ 	state.m_addressbook            = AddressBook.new();
+ 
+-	let style = sfcd.account().is_share_service() ? ContactConverter.eStyle.kZmMapsAllTbProperties : ContactConverter.eStyle.kBasic;
++	// (NC): let style = sfcd.account().is_share_service() ? ContactConverter.eStyle.kZmMapsAllTbProperties : ContactConverter.eStyle.kBasic;
++	let style = ContactConverter.eStyle.kZmMapsAllTbProperties;
++
+ 	state.m_contact_converter_style_basic = new ContactConverter();
+ 	state.m_contact_converter_style_basic.setup(style);
+ 

@@ -1,0 +1,50 @@
+#!/bin/sh
+# Copyright 2018 ANSSI
+# Distributed under the terms of the GNU General Public License v2
+
+configure_power() {
+	[[ -f "/etc/conf.d/power" ]] && return 0
+
+	local machine="$(cat /etc/core/machine)"
+
+	case ${machine} in
+		DELL_Latitude_D420)
+			slp="y"
+			;;
+		DELL_Latitude_D430)
+			slp="y"
+			;;
+		DELL_Latitude_D520)
+			slp="y"
+			;;
+		DELL_Latitude_D530)
+			slp="y"
+			;;
+		DELL_Latitude_E4300)
+			slp="y"
+			;;
+		DELL_Latitude_E5500)
+			slp="y"
+			;;
+		LENOVO_Thinkpad_X61)
+			slp="y"
+			;;
+		LENOVO_Thinkpad_X200)
+			slp="y"
+			;;
+		*)
+			slp="n"
+			;;
+	esac
+
+	if [[ "${slp}" == "y" ]]; then
+		echo " * Activating sleep support"
+		echo "SLEEP_CAPABLE=yes" > /etc/conf.d/power
+	fi
+
+	return 0
+}
+
+configure_power
+
+/sbin/rc-update add mkdevices default || echo "! rc-upadte add mkdevices failed !" >&2

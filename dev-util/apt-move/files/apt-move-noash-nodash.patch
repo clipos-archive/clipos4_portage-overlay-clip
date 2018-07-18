@@ -1,0 +1,11 @@
+--- apt-move.bkp
++++ apt-move
+21,28d20
+< if ! type exp > /dev/null 2>&1; then
+< 	if type dash > /dev/null 2>&1; then
+< 		exec dash $0 "$@"
+< 	else
+< 		exec ash $0 "$@"
+< 	fi
+< fi
+< 
