@@ -1,1 +1,0 @@
-.clip-kernel.ebuild.1
