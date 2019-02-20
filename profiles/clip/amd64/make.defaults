@@ -1,7 +1,7 @@
 CHOST="x86_64-pc-linux-gnu"
 LDFLAGS="-Wl,-O1 -Wl,--as-needed -Wl,--sort-common -Wl,--warn-once -Wl,--hash-style=gnu"
 ARCH="amd64"
-ACCEPT_KEYWORDS="amd64"
+ACCEPT_KEYWORDS="amd64 ~amd64"
 
 # 2006/06/07 - Danny van Dyk <kugelfang@gentoo.org>
 # Multilib settings for all amd64 subprofiles.
