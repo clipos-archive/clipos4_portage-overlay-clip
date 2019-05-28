@@ -8,7 +8,6 @@
 
 EAPI="3"
 ETYPE="image"
-SLOT="0"
 
 # Do not use PN in EXTRAVERSION
 K_NOUSENAME=1
@@ -35,6 +34,8 @@ PF_RING_PATCHES_SRC="pfring-kernel-patches-${PF_RING_PATCHES_PVR}.tar.xz"
 inherit kernel-2 eutils deb
 detect_version
 detect_arch
+
+SLOT="${KV_MAJOR}.${KV_MINOR}"
 
 UNIPATCH_STRICTORDER=1
 UNIPATCH_LIST="${DISTDIR}/${CLIP_PATCH} ${DISTDIR}/${I915_PATCH}"

@@ -8,7 +8,6 @@
 
 EAPI="3"
 ETYPE="image"
-SLOT="0"
 
 # Do not use PN in EXTRAVERSION
 K_NOUSENAME=1
@@ -30,6 +29,8 @@ CLSM_SRC="clip-lsm-${CLSM_PVR}.tar.xz"
 inherit kernel-2 eutils deb
 detect_version
 detect_arch
+
+SLOT="${KV_MAJOR}.${KV_MINOR}"
 
 UNIPATCH_STRICTORDER=1
 UNIPATCH_LIST="${DISTDIR}/${CLIP_PATCH}"
