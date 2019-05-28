@@ -1,7 +1,0 @@
-# CLIP Changelog for x11-plugins/importexporttools
-
-*importexporttools-3.3.0 (28 May 2018)
-
-  28 May 2018; Tony Cheneau <clipos@ssi.gouv.fr>
-  +importexporttools-3.3.0.ebuild:
-  Initial import.

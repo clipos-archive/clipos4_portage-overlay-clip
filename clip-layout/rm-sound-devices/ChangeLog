@@ -1,8 +1,0 @@
-# ChangeLog for clip-layout/rm-sound-devices
-
-*rm-sound-devices-1.0 (09 Mar 2009)
-
-  09 Mar 2009; Vincent Strubel <clipos@ssi.gouv.fr>
-  rm-sound-devices-1.0.ebuild:
-  Initial version.
-

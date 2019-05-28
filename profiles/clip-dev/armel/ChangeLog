@@ -1,5 +1,0 @@
-# ChangeLog for clip-dev/armel profile directory
-
-  30 Aug 2013; ANSSI <clipos@ssi.gouv.fr>
-  +ChangeLog, +make.defaults, +parent, +package.accept_keywords:
-  New profile.

@@ -1,5 +1,0 @@
-# ChangeLog for clip-livecd/armel profile directory
-
-  30 Aug 2013; ANSSI <clipos@ssi.gouv.fr>
-  +ChangeLog, +make.defaults, +package.keywords, +packages, +package.use, +parent:
-  New profile.

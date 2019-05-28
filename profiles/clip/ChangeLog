@@ -1,6 +1,0 @@
-# ChangeLog for clip profile directory
-
-  18 Jul 2013; Vincent Strubel <clipos@ssi.gouv.fr>
-  make.defaults, use.mask:
-  New profile - common definitions for clip profiles.
-

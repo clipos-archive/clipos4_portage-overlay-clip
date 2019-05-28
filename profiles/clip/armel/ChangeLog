@@ -1,6 +1,0 @@
-# ChangeLog for clip/armel profile directory
-
-  30 Aug 2013; ANSSI <clipos@ssi.gouv.fr>
-  make.defaults, parent, use.force:
-  New profile - common definitions for clip armel profiles.
-
