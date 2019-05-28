@@ -1,0 +1,61 @@
+# Copyright © 2007-2018 ANSSI. All Rights Reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+inherit eutils remove-other-perms
+
+DESCRIPTION="clip-install-clip: tool to install CLIP updates for clip distribution"
+HOMEPAGE="https://www.ssi.gouv.fr"
+SRC_URI="mirror://clip/${P}.tar.xz"
+
+LICENSE="LGPL-2.1+"
+SLOT="0"
+KEYWORDS="x86 arm ~amd64"
+IUSE="core-rm"
+
+DEPEND=">=sys-apps/portage-2.1.2.2-r12"
+RDEPEND=">=app-clip/clip-install-common-2.1.0
+		sys-apps/apt
+		app-arch/dpkg
+		>=dev-perl/CLIP-Pkg-Base-1.2.0
+		>=dev-perl/CLIP-Pkg-Download-1.1.2
+		>=dev-perl/CLIP-Pkg-Install-1.1.3
+		>=dev-perl/CLIP-Mount-1.0.1
+		>=sys-apps/busybox-update-1.12.0-r3
+		core-rm? ( >=sys-apps/busybox-rm-1.21.1-r2 )
+		x86? ( >=sys-boot/syslinux-3.11-r1 )"
+
+CLIP_CONF_FILES="/etc/admin/clip_install/apt.conf.d/debug
+				/etc/admin/clip_install/preferences.clip
+				/etc/admin/clip_install/clip_install_clip_apps.conf
+				/etc/admin/clip_install/clip_install_clip_core.conf
+				/etc/admin/clip_install/backup_list.txt
+				/etc/admin/clip_install/optional.conf.clip"
+
+CLIP_CONF_FILES_VIRTUAL="/etc/admin/clip_install/conffiles.list"
+
+src_unpack() {
+	unpack ${A}
+	cd "${S}" || die "Could not cd to ${S}"
+}
+
+src_compile() {
+	econf --libdir=/lib $(use_enable core-rm corerm) || die "could not configure"
+}
+
+src_install () {
+	make DESTDIR="${D}" install || die "make install failed"
+
+	keepdir /var/pkg/cache/apt/clip_install/clip/core/archives/partial
+	keepdir /var/pkg/cache/apt/clip_install/clip/core/lists/partial
+	keepdir /var/pkg/cache/apt/clip_install/clip/apps/archives/partial
+	keepdir /var/pkg/cache/apt/clip_install/clip/apps/lists/partial
+
+	keepdir /altroot
+	keepdir /update_root/etc/cron/crontab
+	cp "${FILESDIR}"/root_clip_install_clip ${D}/update_root/etc/cron/crontab/root_clip_install_clip || die "cp root_clip_install_clip"
+
+	chown -R 4000:4000 ${D}/etc/admin/clip_install
+
+	remove-other-perms
+}
+

@@ -1,0 +1,127 @@
+# Based on baselayout-lite-1.0_pre1.ebuild, which is 
+# Copyright 1999-2006 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="Baselayout for rm vservers"
+HOMEPAGE="https://www.ssi.gouv.fr"
+SRC_URI="mirror://clip/${P}.tar.xz"
+
+inherit views
+
+LICENSE="LGPL-2.1+"
+SLOT="0"
+KEYWORDS="x86 ~amd64"
+IUSE=""
+
+RDEPEND=">=app-clip/clip-user-mount-1.1.4"
+
+# Provide a virtual linux-sources as well here to fix
+# some borken run depends checking
+PROVIDE="virtual/baselayout virtual/linux-sources"
+
+src_install() {
+	if [[ ! ${VERY_BRAVE_OR_VERY_DUMB} == "yes" ]] && [[ ${ROOT} == "/" ]] ; then
+		ewarn "This should not be emerged to your root system..."
+		die "silly options will destroy your system"
+	fi
+
+	keepdir /bin /etc /etc/init.d /sbin /usr /var /root /mnt
+	keepdir /var/log /var/run /var/empty /proc /dev/pts /tmp
+
+	if use amd64; then
+		dosym lib64 /lib
+		dosym /update/lib64 /lib64
+	else
+		dosym /update/lib /lib
+	fi
+
+	insinto /etc
+	doins ${S}/{profile.env,protocols,shells}
+	# argh, doins breaks on symlinks
+	dosym /update/etc/core/passwd /etc/passwd
+	dosym /update/etc/core/group /etc/group
+
+	views_create_prefixed_etc_symlinks "/update/etc"
+
+	fperms 1777 /tmp
+
+	# Make rm-specific directories
+	cd ${D}
+	for dir in update update_priv update_root user user_priv admin_priv\
+					audit audit_priv ; do
+		keepdir ${dir}
+		fperms 0755 ${dir}
+	done
+	
+	# UPDATE tree
+	for dir in var root usr_local opt user_root audit_root ; do
+		keepdir /update_priv/${dir}
+		fperms 0755 /update_priv/${dir}
+	done
+	keepdir /update_priv/tmp
+	keepdir /update_priv/var/tmp
+	fperms 1777 /update_priv/tmp
+	fperms 1777 /update_priv/var/tmp
+	
+	# update pkgs placeholder
+	keepdir /update_priv/pkgs
+	
+	# USER and ADMIN tree
+	for base in  user_priv; do
+		for dir in var root home ; do
+			keepdir /${base}/${dir}
+			fperms 0755 /${base}/${dir}
+		done
+		keepdir /${base}/var/run
+	done
+	# Mount point for encrypted home
+	keepdir /user_priv/home/user
+	fperms 0600 /user_priv/home/user
+	keepdir /user_priv/var/run/vnc
+	fperms 1777 /user_priv/var/run/vnc
+	
+	# Create directory for SSM fdp socket
+	keepdir /user_priv/var/run/ssm_db
+	
+	# Store remanent tmp files in user encrypted home
+	# (putting them in a tmpfs makes us lose KDE's sycoca
+	# and other stuff like that, which slows down KDE startup)
+	dosym /home/user/.vartmp /user_priv/var/tmp
+
+	# User AC
+	keepdir /admin_priv/etc.admin/tls/cacerts
+	fowners 0:4000 /admin_priv/etc.admin/tls/cacerts
+	fperms 0775 /admin_priv/etc.admin/tls/cacerts
+
+	insinto /user_priv/var/run
+	newins ${S}/user/vncpasswd vncpasswd
+	fperms 444 /user_priv/var/run/vncpasswd
+
+	#create user_priv {u,w}tmp
+	dodir /user_priv/var/log
+	touch ${D}/user_priv/var/{log/wtmp,run/utmp}
+	fowners root:utmp /user_priv/var/run/utmp
+	fowners root:utmp /user_priv/var/log/wtmp
+	fperms 664 /user_priv/var/run/utmp
+	fperms 664 /user_priv/var/log/wtmp
+
+	#shared var subtree
+	keepdir /update_priv/var/shared /user_priv/var/shared
+
+	#AUDIT tree
+	keepdir /audit_priv/var/run/syslog
+	# Maybe removed later on when logs are passed on to core
+	keepdir /audit_priv/var/log
+	touch ${D}/audit_priv/var/log/{messages,debug}
+	fowners 300:300 /audit_priv/var/log/messages
+	fowners 300:300 /audit_priv/var/log/debug
+	fowners 300:300 /audit_priv/var/run/syslog
+
+	exeinto /bin
+	doexe ${S}/bin/*
+
+	local jail_name="$(basename ${D})"
+	einfo "Setting jail_name to ${jail_name}"
+	dodir /update_root/etc/shared
+	echo "${jail_name}" > "${D}"/update_root/etc/shared/jail_name
+}

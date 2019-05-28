@@ -1,0 +1,50 @@
+# Copyright © 2007-2018 ANSSI. All Rights Reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+DESCRIPTION="clip servers - start and stop clip vservers"
+HOMEPAGE="https://www.ssi.gouv.fr"
+CONFIG_BASE="vservers-config"
+SRC_URI="mirror://clip/${P}.tar.xz"
+
+inherit deb
+
+LICENSE="LGPL-2.1+"
+SLOT="0"
+KEYWORDS="x86 ~amd64"
+IUSE="java clip-hermes"
+
+RDEPEND="sys-apps/gawk
+		 >=clip-libs/clip-sub-1.2.3
+		 >=clip-layout/baselayout-clip-1.7.19
+		 >=clip-layout/rm-devices-1.1.2
+		 >=app-clip/core-services-2.7.0
+		 >=app-clip/vsctl-1.3.0"
+
+CLIP_CONF_FILES="/etc/conf.d/clip"
+
+src_install () {
+	make DESTDIR="${D}" install || die "make install failed"
+
+	if use java; then
+		for i in ${D}/etc/jails/*/fstab.internal ; do
+			sed -i -e '/\/user\/usr\/local\t/ s/,nosuid//' "${i}"
+		done
+	fi
+
+	if use clip-hermes; then
+		sed -i -r 's/^(MOUNT_CONFIRM=).*/\1"no"/' "${D}/etc/conf.d/clip"
+	fi
+}
+
+pkg_predeb() {
+	init_maintainer "postinst"
+	local mount_confirm="yes"
+	if use clip-hermes; then
+		mount_confirm="no"
+	fi
+	cat >> "${D}"/DEBIAN/postinst << ENDSCRIPT
+grep -q "^CLIP_LAYOUT=" /etc/conf.d/clip || echo "CLIP_LAYOUT=\"mixborder\"" >> /etc/conf.d/clip
+sed -i -e 's/^CLIP_LAYOUT=\(.*\)*window/CLIP_LAYOUT=\1mixborder/' /etc/conf.d/clip
+grep -q "^MOUNT_CONFIRM=" /etc/conf.d/clip || echo "MOUNT_CONFIRM=\"${mount_confirm}\"" >> /etc/conf.d/clip
+ENDSCRIPT
+}

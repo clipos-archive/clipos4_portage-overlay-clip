@@ -1,0 +1,371 @@
+# Copyright 2006-2008 SGDN/DCSSI
+# Copyright 2009-2011 SGDSN/ANSSI
+# Author: Vincent Strubel <clipos@ssi.gouv.fr>
+# Distributed under the terms of the GNU General Public License v2
+
+# Based largely upon : sys-kernel/vserver-sources, which is
+# Copyright 1999-2006 Gentoo Foundation
+
+EAPI="3"
+ETYPE="image"
+
+# Do not use PN in EXTRAVERSION
+K_NOUSENAME=1
+K_USEPV=1
+K_NOSETEXTRAVERSION=0
+
+KERNEL_DISTFILES_COMPRESSION="xz"
+
+CONFIG_PVR="4.9"
+PATCH_PVR="${PV}"
+# FIXME:
+#CLSM_PVR="4.9.74-r1"
+CLSM_PVR="4.9.74"
+
+MY_PN=${PN/-kernel/-patches}
+CLIP_PATCH="${MY_PN}-${PATCH_PVR}.tar.xz"
+CLSM_SRC="clip-lsm-${CLSM_PVR}.tar.xz"
+
+inherit kernel-2 eutils deb
+detect_version
+detect_arch
+
+SLOT="${KV_MAJOR}.${KV_MINOR}"
+
+UNIPATCH_STRICTORDER=1
+UNIPATCH_LIST="${DISTDIR}/${CLIP_PATCH}"
+
+KEYWORDS="~x86 ~arm ~amd64"
+IUSE="clip-devel clip-gtw clip-modular clip-devstation clip-livecd debug clip-light arm"
+
+# Eh, portage env doesn't go along too well with kernel compiles...
+CFLAGS=""
+ASFLAGS=""
+LDFLAGS=""
+ARCH=${ARCH#~}
+ARCH=${ARCH/x86/i386}
+ARCH=${ARCH/amd64/x86_64}
+
+
+DESCRIPTION="Clip kernel based on the ${KV_MAJOR}.${KV_MINOR} kernel tree"
+HOMEPAGE="https://www.ssi.gouv.fr"
+SRC_URI="${KERNEL_URI} mirror://clip/${CLIP_PATCH}
+			mirror://clip/${CLSM_SRC}
+		"
+
+DEPEND="sys-devel/bc
+	sys-apps/net-tools
+	sys-apps/kmod
+	>=sys-kernel/linux-headers-4.4
+	arm? ( dev-embedded/u-boot-tools )
+"
+# For now, we keep the same hardware profiles for 4.4 and 4.9 kernels
+# =clip-data/clip-hardware-${KV_MAJOR}.${KV_MINOR}*
+# =sys-kernel/wireless-firmwares-${KV_MAJOR}.${KV_MINOR}*
+# =sys-kernel/extra-firmwares-${KV_MAJOR}.${KV_MINOR}*
+RDEPEND="clip-modular? (	sys-apps/kmod
+							app-arch/cpio
+							=clip-data/clip-hardware-4.4*
+							>=app-clip/hotplug-clip-2.4.3
+							>=sys-fs/cryptsetup-1.1.3-r1
+							>=sys-apps/busybox-initrd-1.20.2
+							x86? ( >=sys-apps/v86d-0.1.10[x86emu] )
+							=sys-kernel/wireless-firmwares-4.4*
+							=sys-kernel/extra-firmwares-4.4*
+							!sys-kernel/clip-kernel-modular
+						)
+		!virtual/kernel"
+
+PROVIDE="virtual/kernel virtual/linux-sources"
+
+pkg_setup() {
+	opt_CONFIG_EXT=""
+	opt_MAKE=""
+	opt_LOADADDR_RAMDISK=""
+	if [[ "${ARCH}" = arm ]] ; then
+		case "${PLATFORM}" in
+			imx6q-sabrelite)
+				einfo "Target platform is FreeScale iMX6Q Sabre Lite"
+				opt_CONFIG_EXT=${PLATFORM}
+				opt_MAKE="LOADADDR=0x10800000"
+				opt_LOADADDR_RAMDISK="0x11000000"
+			;;
+			armada-370-mirabox)
+				einfo "Target platform is MiraBox"
+				opt_CONFIG_EXT=${PLATFORM}
+				opt_MAKE="LOADADDR=0x00008000"
+				opt_LOADADDR_RAMDISK="0x00000000"
+			;;
+			armada-370-eurisko)
+				einfo "Target platform is Eurisko"
+				opt_CONFIG_EXT=${PLATFORM}
+				opt_MAKE="LOADADDR=0x00008000"
+				opt_LOADADDR_RAMDISK="0x00000000"
+			;;
+
+			*)
+				eerror "Unknown platform !"
+				eerror "Please set PLATFORM variable"
+				die 1
+		esac
+		eend 0
+	fi
+	[[ "${ARCH}" == "x86_64" ]] && opt_CONFIG_EXT=amd64
+}
+
+
+set_opt() {
+	local optname=$1
+	local optval=$2
+	[[ -z "${optval}" ]] && optval='y'
+	einfo "Setting option $optname to $optval"
+	sed -i -e "s/^${optname}=.*/${optname}=${optval}/" "${S}/.config"
+	sed -i -e "s/^# ${optname} is not set.*/${optname}=${optval}/" "${S}/.config"
+	grep -qE "^${optname}=${optval}" "${S}/.config" \
+		|| echo "${optname}=${optval}" >> "${S}/.config"
+}
+
+unset_opt() {
+	local optname="$1"
+	local optmatch
+	local found=0
+	while read optmatch; do
+		found=1
+		einfo "Unsetting option ${optmatch}"
+		sed -i -r "s/^${optmatch}=.*/# ${optmatch} is not set/" "${S}/.config"
+	done < <(sed -n -r "s/^(${optname})=.*/\1/p" "${S}/.config")
+	if [[ ${found} -eq 0 ]]; then
+		einfo "Unsetting option ${optname}"
+	fi
+	# Be sure to unset invisible option too
+	echo "# ${optname} is not set" >>"${S}/.config"
+}
+
+src_unpack() {
+	UNIPATCH_EXCLUDE="1517_pax_elfreloc_flags.patch "
+	if use clip-livecd; then
+		UNIPATCH_EXCLUDE+="1509_sysctl_disable.patch "
+	fi
+	if use clip-light || use clip-devstation; then
+		UNIPATCH_EXCLUDE+="1508_sysctl_disable.patch 1512_vserver_nx_nosp.patch "
+	fi
+	kernel-2_src_unpack
+	cd "${WORKDIR}"
+	unpack "${CLSM_SRC}"
+}
+
+src_prepare() {
+	# CLSM
+	if use !clip-livecd && use !clip-light; then
+		epatch "${WORKDIR}/clip-lsm-${CLSM_PVR}/clsm.patch"
+		cp -a "${WORKDIR}/clip-lsm-${CLSM_PVR}"/{security,include} .
+	fi
+
+	# check proper config
+	einfo "checking proper config"
+	local my_conf=modular-smp
+
+	use clip-livecd && my_conf=livecd
+
+	[[ ! -z "${opt_CONFIG_EXT}" ]] && my_conf=${my_conf}.${opt_CONFIG_EXT}
+
+	ebegin "Copying CLIP kernel config : config-${CONFIG_PVR}.${my_conf}"
+	cp "${FILESDIR}/config-${CONFIG_PVR}.${my_conf}" "${S}/.config" || die "Copy failed"
+	eend $?
+
+	if use clip-devel; then
+		ewarn "Setting DEVEL options"
+		set_opt "CONFIG_CLSM_ROOTCAPS_DEVEL"
+		set_opt "CONFIG_CLSM_CHROOT_DEVEL"
+		set_opt "CONFIG_CLSM_NET_DEVEL"
+		set_opt "CONFIG_CLSM_MOUNT_DEVEL"
+		set_opt "CONFIG_MODULE_FORCE_LOAD"
+		set_opt "CONFIG_MODULE_UNLOAD"
+		set_opt "CONFIG_MODULE_FORCE_UNLOAD"
+		set_opt "CONFIG_MAGIC_SYSRQ"
+	fi
+
+	if use debug; then
+		ewarn "Setting DEBUG options"
+		unset_opt "CONFIG_GRKERNSEC_HIDESYM"
+		unset_opt "CONFIG_CLSM_CHROOT_PTRACE"
+		set_opt "CONFIG_DETECT_SOFTLOCKUP"
+		set_opt "CONFIG_DETECT_HUNG_TASK"
+		set_opt "CONFIG_DEBUG_RT_MUTEXES"
+		set_opt "CONFIG_DEBUG_LOCK_ALLOC"
+		set_opt "CONFIG_DEBUG_SPINLOCK_SLEEP"
+		set_opt "CONFIG_DEBUG_BUGVERBOSE"
+		set_opt "CONFIG_DEBUG_INFO"
+		set_opt "CONFIG_DEBUG_VM"
+		set_opt "CONFIG_DEBUG_LIST"
+		set_opt "CONFIG_FRAME_POINTER"
+		set_opt "CONFIG_NETCONSOLE" "m"
+		unset_opt "CONFIG_NETPOLL_TRAP"
+		set_opt "CONFIG_DEBUG_MEMORY_INIT"
+		set_opt "CONFIG_DEBUG_STACKOVERFLOW"
+		set_opt "CONFIG_KGDB"
+		set_opt "CONFIG_KGDBOE" "m"
+		set_opt "CONFIG_KGDB_LOW_LEVEL_TRAP"
+		set_opt "CONFIG_KGDB_KDB"
+	fi
+
+	if use clip-light || use clip-devstation; then
+		# No CLSM
+		unset_opt "CONFIG_CLIP_LSM_SUPPORT"
+		# No IPsec
+		unset_opt "CONFIG_INET_ESP"
+		unset_opt "CONFIG_INET_XFRM_MODE_TUNNEL"
+	fi
+
+	if use clip-devstation; then
+		einfo "Setting devstation options"
+		# Dev machine
+		set_opt "CONFIG_MODULE_UNLOAD"
+		set_opt "CONFIG_MODULE_FORCE_UNLOAD"
+		unset_opt "CONFIG_PAX_REFCOUNT"
+		set_opt "CONFIG_GRKERNSEC_SYSCTL"
+		set_opt "CONFIG_GRKERNSEC_SYSCTL_ON"
+		set_opt "CONFIG_DEVTMPFS"
+		set_opt "CONFIG_DEVTMPFS_MOUNT"
+		# Hardware
+		unset_opt "CONFIG_MPENTIUMIII"
+		set_opt "CONFIG_MCORE2"
+		set_opt "CONFIG_DMIID"
+		set_opt "CONFIG_SATA_AHCI"
+		set_opt "CONFIG_I2C_I801" "m"
+		set_opt "CONFIG_HOTPLUG_PCI_ACPI"
+		set_opt "CONFIG_DM_MIRROR"
+		# Virtualization support
+		set_opt "CONFIG_VIRTUALIZATION"
+		set_opt "CONFIG_KVM" "m"
+		set_opt "CONFIG_KVM_AMD" "m"
+		set_opt "CONFIG_KVM_INTEL" "m"
+		set_opt "CONFIG_VHOST_NET" "m"
+		set_opt "CONFIG_VIRTIO_BALLOON" "m"
+		set_opt "CONFIG_BALLOON_COMPACTION" "n"
+		set_opt "CONFIG_VIRTIO_BLK" "m"
+		set_opt "CONFIG_VIRTIO_CONSOLE" "m"
+		set_opt "CONFIG_VIRTIO_MMIO" "m"
+		set_opt "CONFIG_VIRTIO_NET" "m"
+		set_opt "CONFIG_VIRTIO_PCI" "m"
+		set_opt "CONFIG_SCSI_VIRTIO" "m"
+		set_opt "CONFIG_VIRTIO_MMIO_CMDLINE_DEVICES" "y"
+		set_opt "CONFIG_HW_RANDOM_VIRTIO" "m"
+		set_opt "CONFIG_BLK_DEV_NBD" "m"
+		# No wireless
+		unset_opt "CONFIG_.*80211"
+		# oldconfig...
+		unset_opt "CONFIG_TASK_XACCT"
+		unset_opt "CONFIG_DM_LOG_USERSPACE"
+		unset_opt "CONFIG_LGUEST"
+		# Version
+		set_opt "CONFIG_LOCALVERSION" "\"-devstation\""
+	fi
+
+	if use clip-livecd; then
+		set_opt "CONFIG_NFS_FS" "y"
+		set_opt "CONFIG_NFS_V3" "y"
+		unset_opt "CONFIG_NFS_V4"
+		set_opt "CONFIG_ROOT_NFS" "y"
+		set_opt "CONFIG_LOCKD" "y"
+		set_opt "CONFIG_SUNRPC" "y"
+		set_opt "CONFIG_IP_PNP" "y"
+		set_opt "CONFIG_IP_PNP_DHCP" "y"
+		set_opt "CONFIG_IP_PNP_BOOTP" "y"
+		unset_opt "CONFIG_IP_PNP_RARP"
+		if [[ "${ARCH}" = arm ]] ; then
+			set_opt "CONFIG_MVNETA"
+		fi
+	fi
+
+	local modopt="y"
+	use clip-modular && modopt="m"
+}
+
+src_compile() {
+	cd ${S}
+	ebegin "Configuring kernel"
+	# FIXME: This is temporary as the new config has not been validated yet.
+	# env -i make ARCH=${ARCH} ${opt_MAKE} silentoldconfig || die "Make silentoldconfig failed" 
+	env -i make ARCH=${ARCH} ${opt_MAKE} KCONFIG_ALLCONFIG=.config allnoconfig || die "Make allnoconfig failed"
+	eend $?
+
+	if use clip-devstation && ! use clip-livecd ; then
+	  env -i make ${MAKEOPTS} ARCH=${ARCH} ${opt_MAKE} prepare scripts || die "Make prepare scripts"
+	  if use clip-modular; then
+	    env -i make ${MAKEOPTS} ARCH=${ARCH} ${opt_MAKE} modules_prepare || die "Make modules_prepare"
+	  fi
+	  return 0
+	fi
+	env -i make ${MAKEOPTS} ARCH=${ARCH} ${opt_MAKE}  gcc-plugins  || die "Make gcc-plugins failed"
+
+	env -i make ${MAKEOPTS} ARCH=${ARCH} ${opt_MAKE} || die "Make failed"
+
+	if [[ "${ARCH}" = arm ]] ; then
+		env -i make ${MAKEOPTS} ARCH=${ARCH} ${opt_MAKE} dtbs || die "Make DTBs failed"
+		local dtb="arch/${ARCH}/boot/dts/${PLATFORM}.dtb"
+		[[ -f "${dtb}" ]] || die "Unknown DTS for platform '${PLATFORM}'"
+		cat "${dtb}" >> "arch/${ARCH}/boot/zImage"
+		env -i make ${MAKEFOPTS} ARCH=${ARCH} ${opt_MAKE} uImage || die "Make uImage failed"
+	fi
+}
+
+src_install() {
+	if use clip-devstation && ! use clip-livecd; then
+	  install_sources
+	  return 0
+	fi
+
+	cd ${S}
+	# No modules in clip kernel, at least for now
+	# make INSTALL_MOD_PATH=${D} modules_install
+	insinto /boot
+	local the_image=bzImage
+	if [[ "${ARCH}" = arm ]] ; then
+		the_image=uImage
+	fi
+	newins arch/${ARCH}/boot/${the_image} vmlinuz-clip
+
+	if use clip-livecd; then newins System.map System.map-clip; fi
+
+	if use clip-modular || use clip-livecd; then
+		env -i make ${MAKEOPTS} ARCH=${ARCH} ${opt_MAKE} INSTALL_MOD_PATH="${D}" modules_install
+		rm "${D}/lib/modules/${PV}"/{source,build}
+		into /
+		dosbin "${FILESDIR}/uvesafb_install"
+		dosbin "${FILESDIR}/kms_install"
+	fi
+
+	newsbin "${FILESDIR}/mkinitrd.clip-4.9" "mkinitrd.clip"
+	dosbin "${FILESDIR}/initrd-modprobe"
+
+	local do_uboot_image=false
+	if [[ "${ARCH}" = arm ]] ; then
+		do_uboot_image=true
+	fi
+	sed -i -e "s/@DO_UBOOT_IMAGE@/${do_uboot_image}/g" \
+		   -e "s/@ARCH@/${ARCH}/g" \
+		   -e "s/@LOADADDR_RAMDISK@/${opt_LOADADDR_RAMDISK}/g" \
+		   -e "s/@VERSION@/${PV}/g" \
+		   "${D}/sbin/mkinitrd.clip"
+
+	dosbin "${FILESDIR}/initrd-clip"
+	use clip-devel && sed -i -e "s,/proc/sys/kernel/modules_disabled,/dev/null," "${D}/sbin/initrd-clip"
+}
+
+pkg_postinst() {
+	if use clip-devstation; then
+		rm -f "${ROOT}/usr/src/linux"
+		ln -s "/usr/src/linux-${PV}" "${ROOT}/usr/src/linux"
+	fi
+}
+
+pkg_predeb() {
+	use clip-modular || return 0
+
+	init_maintainer "postinst"
+	init_maintainer "prerm"
+
+	cat "${FILESDIR}/postinst.vga" >> "${D}/DEBIAN/postinst"
+	echo "/sbin/mkinitrd.clip || exit 1" >> "${D}/DEBIAN/postinst"
+}

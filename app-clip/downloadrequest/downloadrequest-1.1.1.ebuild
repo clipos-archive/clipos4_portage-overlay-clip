@@ -1,18 +1,1 @@
-# Copyright © 2007-2018 ANSSI. All Rights Reserved.
-# Distributed under the terms of the GNU General Public License v2
-
-DESCRIPTION="clip-download client for the admin view"
-HOMEPAGE="https://www.ssi.gouv.fr"
-SRC_URI="mirror://clip/${P}.tar.xz"
-
-LICENSE="LGPL-2.1+"
-SLOT="0"
-KEYWORDS="x86 amd64"
-IUSE="core-deps"
-
-DEPEND=""
-RDEPEND="!core-deps? ( >=app-clip/clip-download-1.1 )"
-
-src_install () {
-	make DESTDIR="${D}" install || die "make install failed"
-}
+.downloadrequest.ebuild.0
