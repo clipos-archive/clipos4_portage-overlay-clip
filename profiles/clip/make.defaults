@@ -74,6 +74,6 @@ LIBDIR_x32="libx32"	# x86-64 x32
 LIBDIR_n32="lib32"	# MIPS n32
 
 
-FEATURES="distlocks metadata-transfer sandbox sfperms"
+FEATURES="distlocks metadata-transfer sandbox sfperms userfetch"
 
 ACCEPT_LICENSE="google-chrome AdobeFlash-11.x"
