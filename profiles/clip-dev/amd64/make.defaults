@@ -2,9 +2,16 @@
 VIDEO_CARDS="fbdev intel nouveau radeon"
 
 # TODO: tune C*FLAGS and MAKEOPTS for your architecture in /etc/make.conf
-# FIXME: 'haswell' set by default for now, but 'broadwell' strongly recommended
-# CFLAGS="-O2 -pipe -march=broadwell -mtune=broadwell -fomit-frame-pointer -Wformat -Wformat-security"
-CFLAGS="-O2 -pipe -march=haswell -mtune=haswell -fomit-frame-pointer -Wformat -Wformat-security"
+#
+# To get support for Supervisor Mode Access Prevention (SMAP), which is
+# strongly recommended, you must at least use "-march=broadwell", which should
+# be consistent with the clip-int/specs/include/compile_flags.xml
+# configuration.
+#
+# /!\ WARNING /!\
+# To let everyone test this proof of concept of CLIP 4, we use core2, but you
+# should switch to a more recent architecture in your /etc/make.conf .
+CFLAGS="-O2 -pipe -march=core2 -mtune=core2 -fomit-frame-pointer -Wformat -Wformat-security"
 CXXFLAGS="${CFLAGS}"
 
 ABI_X86="64 32"
