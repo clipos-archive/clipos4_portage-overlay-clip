@@ -1,7 +1,7 @@
 # Author ANSSI <clipos@ssi.gouv.fr>
 # Copyright 2013 SGDSN/ANSSI
 
-EAPI="2"
+EAPI=5
 
 inherit virtualx eutils autotools libtool deb pax-utils verictl2
 
