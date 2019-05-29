@@ -1,6 +1,8 @@
 # Copyright © 2007-2018 ANSSI. All Rights Reserved.
 # Distributed under the terms of the GNU General Public License v2
 
+EAPI=5
+
 inherit eutils remove-other-perms
 
 DESCRIPTION="clip-install-clip: tool to install CLIP updates for clip distribution"
