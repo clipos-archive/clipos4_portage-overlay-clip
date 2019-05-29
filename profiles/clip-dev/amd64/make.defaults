@@ -13,8 +13,3 @@ VIDEO_CARDS="fbdev intel nouveau radeon"
 # should switch to a more recent architecture in your /etc/make.conf .
 CFLAGS="-O2 -pipe -march=core2 -mtune=core2 -fomit-frame-pointer -Wformat -Wformat-security"
 CXXFLAGS="${CFLAGS}"
-
-ABI_X86="64 32"
-USE="-ccsd -clip-ccsd"
-
-USE="abi_x86_64 "

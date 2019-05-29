@@ -28,3 +28,6 @@ USE_EXPAND_HIDDEN="-ABI_X86"
 # by non-multilib ebuilds when non-native ABIs are disabled.
 IUSE_IMPLICIT="abi_x86_64"
 SYMLINK_LIB="yes"
+
+# CLIP:
+USE="-ccsd -clip-ccsd clip-civil"
