@@ -12,14 +12,14 @@ inherit verictl2 linux-info
 LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="x86 ~amd64"
-IUSE="doc clip"
+IUSE="doc clip clip-ccsd"
 
 RDEPEND=">=clip-libs/clip-lib-1.2.9
 	>=clip-libs/clip-libvserver-4.0.0
-	>=clip-libs/libacidfile-2.0.16
+	clip-ccsd? ( >=clip-libs/libacidfile-2.0.16 )
 	!clip? ( app-crypt/pinentry )
 	>=clip-libs/libacidcrypt-3.0.11"
-DEPEND="clip-dev/ccsd-headers:3.3
+DEPEND="clip-ccsd? ( clip-dev/ccsd-headers:3.3 )
 		doc? ( app-doc/doxygen )
 		${RDEPEND}"
 
