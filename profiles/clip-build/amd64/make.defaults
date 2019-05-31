@@ -1,3 +1,21 @@
+# TODO: copy VIDEO_CARDS and INPUT_DEVICES in your /etc/make.conf
 VIDEO_CARDS="fbdev intel nouveau radeon"
+LANG=C
 
+# TODO: tune C*FLAGS and MAKEOPTS for your architecture in /etc/make.conf
+#
+# To get support for Supervisor Mode Access Prevention (SMAP), which is
+# strongly recommended, you must at least use "-march=broadwell", which should
+# be consistent with the clip-int/specs/include/compile_flags.xml
+# configuration.
+#
+# /!\ WARNING /!\
+# To let everyone test this proof of concept of CLIP 4, we use core2, but you
+# should switch to a more recent architecture in your /etc/make.conf .
+CFLAGS="-O2 -pipe -fPIC -march=core2 -mtune=core2 -fomit-frame-pointer -Wformat -Wformat-security"
+CXXFLAGS="${CFLAGS}"
 
+ABI_X86="64"
+USE="-ccsd -clip-ccsd"
+
+USE="abi_x86_64 "
