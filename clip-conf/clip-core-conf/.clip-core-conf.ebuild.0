@@ -12,7 +12,7 @@ LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~x86 arm ~amd64"
 IUSE="core-rm clip-gtw clip-hermes
-clip-bare clip-rb"
+clip-bare clip-rb clip-anssi clip-ccsd clip-export"
 IUSE="${IUSE} clip-kernel-3_14 clip-kernel-4_9"
 
 DEPEND=""
@@ -28,14 +28,14 @@ RDEPEND="
 	=app-crypt/gen-crypt-1.0.3
 	=app-crypt/pkcs11-proxy-1.0.7-r3
 	=app-crypt/tpm-cmd-0.1
-	core-rm? (
+	core-rm? ( !clip-export? (
 		=dev-libs/softhsm-2.0.0_rc1
 		=dev-libs/libanssipki-crypto-2.1.1
 		=dev-libs/gmp-5.1.3-r1
 		=dev-db/sqlcipher-2.2.1-r2
 		=dev-lang/tcl-8.5.10-r1
 		=app-clip/fdp-1.1.5-r1
-	)
+	) )
 	core-rm? ( clip-hermes? ( =app-clip/clip-beacon-update-0.1.2 ) )
 	=app-clip/clip-download-2.4.1-r1
 	=app-clip/clip-generic-net-3.2.2
@@ -56,7 +56,7 @@ RDEPEND="
 	=app-clip/verictl-update-2.1.0-r1
 	=app-clip/vsctl-1.6.3
 	=app-crypt/ccid-1.4.20
-	core-rm? ( =app-crypt/cryptd-server-1.5.17-r2 )
+	core-rm? ( clip-ccsd? ( =app-crypt/cryptd-server-1.5.17-r2 ) )
 	core-rm? ( =app-crypt/scdaemon-0.2.3-r7 )
 	=app-crypt/hashalot-0.3-r2
 	=app-shells/bash-4.2_p48-r1
@@ -165,7 +165,7 @@ RDEPEND="
 	=sys-apps/util-linux-2.24.1-r5
 	x86? ( =sys-apps/v86d-0.1.10-r1 )
 	=sys-auth/ckiutl-0.0.3
-	=sys-auth/libgtop11dotnet-2.3.0.03
+	clip-anssi? ( =sys-auth/libgtop11dotnet-2.3.0.03 )
 	x86? ( =sys-auth/libxltck-5.5-r1 )
 	=sys-auth/pam_exec_pwd-1.0.3-r1
 	clip-bare? ( =sys-auth/pam_jail-1.1.0 )
@@ -173,8 +173,8 @@ RDEPEND="
 	=sys-auth/pam_userpass-1.0.2
 	=sys-auth/pwcheckd-1.1.7
 	x86? ( =sys-boot/syslinux-4.07-r7 )
-	amd64? ( =sys-boot/syslinux-4.07-r7 )
-	amd64? ( =sys-devel/gcc-lib-5.3.0-r1 )
+	amd64? ( =sys-boot/syslinux-4.07-r8 )
+	amd64? ( =sys-devel/gcc-lib-5.3.0-r3 )
 	!amd64? ( =sys-devel/gcc-lib-4.7.4 )
 	=sys-fs/cryptsetup-1.6.5-r1
 	=sys-fs/lvm2-2.02.109
