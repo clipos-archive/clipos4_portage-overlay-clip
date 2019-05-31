@@ -59,12 +59,12 @@ src_install() {
 
 	# Devices
 	if use clip-devstation && use clip-dev-lxc || use clip-sdk-bootstrap; then
-		_mknod /dev/null c 1 3
-		_mknod /dev/zero c 1 5
-		_mknod /dev/full c 1 7
-		_mknod /dev/random c 1 8
-		_mknod /dev/urandom c 1 9
-		_mknod /dev/tty c 5 0
+		_mknod /dev/null --mode=0666 c 1 3
+		_mknod /dev/zero --mode=0666 c 1 5
+		_mknod /dev/full --mode=0666 c 1 7
+		_mknod /dev/random --mode=0666 c 1 8
+		_mknod /dev/urandom --mode=0666 c 1 9
+		_mknod /dev/tty --mode=0666 c 5 0
 		for i in {1..12}; do
 			_mknod "/dev/tty${i}" c 4 "${i}"
 		done
