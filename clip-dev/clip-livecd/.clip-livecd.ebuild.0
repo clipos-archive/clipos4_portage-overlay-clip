@@ -39,15 +39,15 @@ RDEPEND="clip-livecd? (
 					sys-apps/timer_entropyd
 					x86? (
 						>=sys-boot/syslinux-3.83
-						=sys-kernel/clip-kernel-4.4*[clip-livecd]
+						=sys-kernel/clip-kernel-4.9*[clip-livecd]
 					)
 					amd64? (
 						>=sys-boot/syslinux-3.83
-						=sys-kernel/clip-kernel-4.4*[clip-livecd]
+						=sys-kernel/clip-kernel-4.9*[clip-livecd]
 					)
 					arm? (
 						dev-embedded/u-boot-tools
-						=sys-kernel/clip-kernel-4.4*[clip-livecd]
+						=sys-kernel/clip-kernel-4.9*[clip-livecd]
 					)
 					sys-fs/mdadm
 					sys-apps/sysvinit
