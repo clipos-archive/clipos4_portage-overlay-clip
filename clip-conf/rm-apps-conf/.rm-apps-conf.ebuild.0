@@ -7,25 +7,29 @@ SRC_URI=""
 LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
-IUSE="clip-hermes clip-devel rm-h rm-b"
+IUSE="clip-hermes clip-devel rm-h rm-b clip-ccsd clip-export clip-anssi clip-to-check"
 
 CONF_DEPENDS=">=clip-conf/rm-core-conf-4.4.2"
 
 SUG2RDEP_HERMES_H="
-	=app-crypt/acid-cryptofiler-7.0.1.13-r3
-	=app-crypt/cryptclt-red-2.4.23
-	=app-crypt/cryptd-client-red-1.5.17
+	clip-ccsd? (
+		=app-crypt/acid-cryptofiler-7.0.1.13-r3
+		=app-crypt/cryptclt-red-2.4.23
+		=app-crypt/cryptd-client-red-1.5.17
+	)
 	=x11-plugins/zindus-0.8.41
 "
 
 SUG2RDEP_HERMES_B="
 	=app-antivirus/clamav-0.98.7-r1
-	=app-crypt/cryptclt-black-2.4.23
-	=app-crypt/cryptd-client-black-1.5.17
+	clip-ccsd? (
+		=app-crypt/cryptclt-black-2.4.23
+		=app-crypt/cryptd-client-black-1.5.17
+	)
 "
 
 SUG2RDEP_HERMES="
-	=app-crypt/acid7-utils-1.0.10
+	clip-ccsd? ( =app-crypt/acid7-utils-1.0.10 )
 	=app-text/stardict-3.0.3-r2
 	=dev-libs/libsigc++-2.2.10
 	=www-plugins/chrome-binary-plugins-48.0.2564.116_p1
@@ -33,8 +37,10 @@ SUG2RDEP_HERMES="
 "
 
 SUG2SUG_HERMES_H="
-	=app-crypt/acid-cryptofiler5-5.4.3-r6
-	=app-crypt/acid5-utils-0.8
+	clip-ccsd? (
+		=app-crypt/acid-cryptofiler5-5.4.3-r6
+		=app-crypt/acid5-utils-0.8
+	)
 "
 
 DEPEND=""
@@ -70,12 +76,12 @@ RDEPEND="
 	=app-misc/strigi-0.7.8-r4
 	=app-office/akonadi-server-1.13.0
 	!amd64? ( =app-office/libreoffice-4.4.7.2 )
-	amd64? ( =app-office/libreoffice-5.0.5.2 )
+	clip-to-check? ( amd64? ( =app-office/libreoffice-5.0.5.2 ) )
 	=app-text/aspell-0.60.6.1
 	=app-text/build-docbook-catalog-1.4
 	=app-text/convertlit-1.8-r1
 	=app-text/convmv-1.14
-	=app-text/docbook-xml-dtd-4.2-r2
+	=app-text/docbook-xml-dtd-4.3-r1
 	=app-text/docbook-xsl-stylesheets-1.75.2
 	=app-text/enchant-1.6.0-r1
 	=app-text/djvu-3.5.25.3
@@ -103,7 +109,7 @@ RDEPEND="
 	=app-text/qpdf-5.0.1
 	=app-text/sgml-common-0.6.3-r5
 	=clip-data/clip-alternatives-2.0.5-r3
-	=clip-data/clip-doc-user-1.0.6
+	clip-anssi? ( =clip-data/clip-doc-user-1.0.6 )
 	=clip-layout/baselayout-audit-1.0.1
 	=clip-layout/baselayout-user-1.1.0-r9
 	=clip-libs/clip-emblem-1.0.3
@@ -463,7 +469,7 @@ RDEPEND="
 	=virtual/qt-xmlpatterns-4.8.4
 	=virtual/ttf-fonts-1
 	=virtual/x11-protos-1.1
-	=www-client/chromium-61.0.3163.79-r2
+	clip-to-check? ( =www-client/chromium-61.0.3163.79-r2 )
 	=www-client/firefox-52.8.0-r1
 	=www-misc/htdig-3.2.0_beta6-r4
 	=x11-apps/iceauth-1.0.6
@@ -544,9 +550,9 @@ RDEPEND="
 	=x11-themes/oxygen-gtk3-1.3.5
 	=x11-themes/qtcurve-1.8.18-r1
 	=x11-themes/qtcurve-nokde-1.8.18-r1
-	!clip-hermes? (
+	clip-anssi? ( !clip-hermes? (
 		=clip-data/kde-config-rm-2.2.1-r1
-	)
+	) )
 	clip-hermes? (
 		${SUG2RDEP_HERMES}
 		=app-clip/vaultguard-1.0.2
@@ -783,10 +789,12 @@ DEB_SUGGESTS="
 	=app-admin/keepassx-2.0.3-r1
 	=app-arch/p7zip-9.20.1-r4
 	!clip-hermes? ( =app-clip/rmh-config-1.1.6 )
-	=app-crypt/anssipki-cli-1.3.0
-	=app-crypt/AxDecrypt-1.7.2867-r1
+	clip-ccsd? ( =app-crypt/AxDecrypt-1.7.2867-r1 )
+	!clip-export? (
+		=app-crypt/anssipki-cli-1.3.0
+		=app-crypt/libanssipki-client-1.3.3-r1
+	)
 	=app-crypt/opkcs11-tool-0.1.0.20150319
-	=app-crypt/libanssipki-client-1.3.3-r1
 	x86? ( =app-crypt/zed-2.0.178 )
 	=app-dicts/myspell-de-2012.06.17-r1
 	=app-dicts/myspell-es-0.6
@@ -914,7 +922,7 @@ DEB_SUGGESTS="
 	=gnome-base/gvfs-1.16.4
 	=gnome-base/libgnomecanvas-2.30.3-r1
 	=gnome-extra/krb5-auth-dialog-3.12.0-r1
-	=kde-apps/akregator-4.14.8
+	=kde-apps/akregator-4.14.8-r1
 	=kde-apps/kopete-4.14.3
 	=kde-apps/krdc-4.14.3-r1
 	=kde-misc/basket-1.81-r1
@@ -1016,7 +1024,7 @@ DEB_SUGGESTS="
 	=x11-plugins/noscript-2.9.5.2-r1
 	=x11-plugins/nostalgy-0.2.33
 	=x11-plugins/obm-connector-3.1.0.38
-	=x11-plugins/exchangecalendar-3.9.0
+	=x11-plugins/exchangecalendar-4.0.0
 	=x11-plugins/secure-addressing-1.8
 	=x11-plugins/sogo-connector-24.0.0
 	=x11-plugins/user-agent-switcher-0.7.3-r5
