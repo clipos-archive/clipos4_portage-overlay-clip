@@ -9,7 +9,7 @@ SRC_URI="mirror://clip/${P}.tar.xz"
 LICENSE="LGPL-2.1+"
 SLOT="0"
 KEYWORDS="x86 ~arm ~amd64"
-IUSE="clip-livecd clip-hermes"
+IUSE="clip-livecd clip-hermes clip-ccsd"
 
 DEPEND=""
 RDEPEND="
@@ -22,9 +22,9 @@ RDEPEND="
 		dev-util/debootstrap
 		!<clip-dev/clip-install-gui-1.4.0
 	)
-	!clip-livecd? (
+	!clip-livecd? ( clip-ccsd? (
 		app-clip/install-ccsd
-	)
+	) )
 "
 
 src_install() {
