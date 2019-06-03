@@ -7,11 +7,7 @@ CLIP_BASE="/opt/clip-int"
 INPUT_DEVICES="keyboard mouse"
 
 PORTDIR="${CLIP_BASE}/portage"
-DISTDIR="${CLIP_BASE}/distfiles-dev"
-
-GENTOO_MIRRORS="file://${CLIP_BASE}/distfiles-dev file://${CLIP_BASE}/distfiles file://${CLIP_BASE}/distfiles-extra-dev file://${CLIP_BASE}/distfiles-extra"
-FETCHCOMMAND="/usr/lib/portage/bin/clip-fetch \${URI} \${DISTDIR}/\${FILE}"
-RESUMECOMMAND="/usr/lib/portage/bin/clip-fetch \${URI} \${DISTDIR}/\${FILE}"
+DISTDIR="${CLIP_BASE}/distfiles"
 
 MAKEOPTS="-j3"
 
