@@ -32,8 +32,6 @@ SUG2RDEP_HERMES="
 	clip-ccsd? ( =app-crypt/acid7-utils-1.0.10 )
 	=app-text/stardict-3.0.3-r2
 	=dev-libs/libsigc++-2.2.10
-	=www-plugins/chrome-binary-plugins-48.0.2564.116_p1
-	=www-plugins/adobe-flash-11.2.202.621
 "
 
 SUG2SUG_HERMES_H="
