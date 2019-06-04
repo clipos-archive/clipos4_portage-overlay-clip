@@ -50,7 +50,7 @@ RDEPEND="
 	core-rm? ( =app-clip/clip-vserver-3.5.3 )
 	=app-clip/core-services-2.11.3
 	=app-clip/hotplug-clip-2.6.2
-	=app-clip/smartcard-monitor-1.0
+	=app-clip/smartcard-monitor-2.0.0
 	=app-clip/userd-server-1.3.5
 	=app-clip/verictl-2.1.0-r1
 	=app-clip/verictl-update-2.1.0-r1
@@ -102,7 +102,7 @@ RDEPEND="
 	=dev-perl/TimeDate-2.300.0
 	!clip-gtw? ( !clip-bare? ( =dev-util/dialog-1.1.20080819 ) )
 	!clip-bare? (
-		=media-gfx/splash-theme-clip-2.1.1
+		=media-gfx/splash-theme-clip-3.0.0
 		=media-gfx/splashutils-1.5.4.4-r18
 	)
 	core-rm? ( =media-gfx/usb-scanner-devices-1.1.0-r1 )
@@ -185,21 +185,15 @@ RDEPEND="
 	clip-kernel-3_14? (
 		=clip-data/clip-hardware-3.14.31
 		=sys-kernel/clip-kernel-3.14.79-r11
-		=sys-kernel/extra-firmwares-3.13.0-r1
-		=sys-kernel/wireless-firmwares-3.14.4
 	)
 	!clip-kernel-3_14? (
 		!clip-kernel-4_9? (
-		=clip-data/clip-hardware-4.4.9
+		=clip-data/clip-hardware-5.0.0
 		=sys-kernel/clip-kernel-4.4.135
-		=sys-kernel/extra-firmwares-4.4
-		=sys-kernel/wireless-firmwares-4.4.4
 	)
 	clip-kernel-4_9? (
-			=clip-data/clip-hardware-4.4.9
+			=clip-data/clip-hardware-5.0.0
 			=sys-kernel/clip-kernel-4.9.74
-			=sys-kernel/extra-firmwares-4.4
-			=sys-kernel/wireless-firmwares-4.4.4
 		)
 	)
 	=sys-libs/cracklib-2.9.1-r1
