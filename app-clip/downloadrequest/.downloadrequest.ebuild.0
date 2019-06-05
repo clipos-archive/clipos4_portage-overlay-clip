@@ -3,6 +3,8 @@
 
 EAPI=5
 
+inherit autotools
+
 DESCRIPTION="clip-download client for the admin view"
 HOMEPAGE="https://www.ssi.gouv.fr"
 SRC_URI="mirror://clip/${P}.tar.xz"
@@ -15,6 +17,11 @@ IUSE="core-deps"
 DEPEND=""
 RDEPEND="!core-deps? ( >=app-clip/clip-download-1.1 )"
 
-src_install () {
-	make DESTDIR="${D}" install || die "make install failed"
+src_prepare() {
+	default
+	eautoreconf
+}
+
+src_install() {
+	emake DESTDIR="${D}" install || die "make install failed"
 }
