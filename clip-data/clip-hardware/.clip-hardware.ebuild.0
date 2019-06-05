@@ -25,10 +25,6 @@ RDEPEND="
 		sys-apps/usbutils
 		x86? ( x11-misc/read-edid )
 	)
-	clip? (
-		>=sys-kernel/extra-firmwares-4.4
-		>=sys-kernel/wireless-firmwares-4.4
-	)
 "
 
 src_install() {
