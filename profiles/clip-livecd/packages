@@ -26,7 +26,6 @@
 *sys-devel/patch
 *sys-fs/squashfs-tools
 *sys-kernel/linux-headers
-*sys-kernel/wireless-firmwares
 *sys-libs/glibc
 *sys-power/acpi
 *sys-process/lsof
