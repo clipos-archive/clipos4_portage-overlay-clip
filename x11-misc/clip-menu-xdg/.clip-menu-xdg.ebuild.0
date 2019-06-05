@@ -12,9 +12,7 @@ inherit distutils-r1
 DESCRIPTION="Clip dynamic menus"
 HOMEPAGE="https://www.ssi.gouv.fr"
 ANSSI_HELP_PVR="4.12"
-ANSSI_HELP="fbpanel-help-anssi-${ANSSI_HELP_PVR}"
-SRC_URI="mirror://clip/${P}.tar.xz
-		 clip-anssi? ( mirror://clip/${ANSSI_HELP}.tar.xz )"
+SRC_URI="mirror://clip/${P}.tar.xz"
 
 LICENSE="LGPL-2.1+"
 SLOT="0"
@@ -76,13 +74,6 @@ python_install_all() {
 	fi
 	insinto /usr/bin
 	dobin "${WORKDIR}/${P}/scripts"/*
-
-	if use clip-anssi; then
-		insinto /usr/share/help
-		doins "${WORKDIR}/${ANSSI_HELP}/html/"*.html
-		insinto /usr/share/help/img
-		doins "${WORKDIR}/${ANSSI_HELP}/html/img"/*
-	fi
 
 	if use clip-livecd; then
 		exeinto /usr/bin
