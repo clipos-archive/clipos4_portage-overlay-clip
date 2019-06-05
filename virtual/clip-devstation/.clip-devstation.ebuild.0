@@ -34,7 +34,6 @@ RDEPEND="
 		dev-perl/CLIP-Pkg-Install
 		dev-util/cmake
 		dev-util/lafilefixer
-		dev-vcs/subversion
 		net-misc/curl
 		net-misc/wget
 		sys-apps/apt
